@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Basic-Fit Coach V7</title>
+<title>Basic-Fit Coach V10</title>
 <meta name="theme-color" content="#f6c343" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -19,7 +19,7 @@ body{line-height:1.45;overscroll-behavior-y:none}
 header{padding:calc(18px + env(safe-area-inset-top)) 16px 14px;background:linear-gradient(135deg,#151923,#242a36);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
 h1{margin:0;font-size:22px;line-height:1.2}.subtitle{margin-top:7px;color:var(--muted);font-size:13px}
 main{padding:14px;max-width:880px;margin:0 auto;padding-bottom:calc(110px + var(--safe-bottom))}
-.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}
+.tabs{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:12px}
 button{border:1px solid var(--border);border-radius:15px;padding:11px 5px;font-size:11.7px;font-weight:800;background:var(--card2);color:var(--text)}
 button.active{background:var(--accent);color:#111;border-color:var(--accent)}
 .mini-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}.mini-actions button{font-size:13px;padding:11px 8px;font-weight:700}
@@ -42,13 +42,15 @@ select,input[type="text"],textarea{width:100%;border-radius:13px;border:1px soli
 .db-card{background:#131722;border:1px solid var(--border);border-radius:14px;padding:12px;margin:10px 0}.db-card strong{color:var(--accent)}
 .chat-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:13px;margin-bottom:12px}.chat-log{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;max-height:470px;overflow-y:auto;padding-right:4px}.msg{border-radius:14px;padding:10px 12px;font-size:14px;white-space:pre-wrap}.msg.bot{background:#242a36;color:var(--text);border:1px solid var(--border)}.msg.user{background:rgba(246,195,67,.16);color:#ffe39a;border:1px solid rgba(246,195,67,.35);align-self:flex-end;max-width:88%}.chat-input-row{display:grid;grid-template-columns:1fr auto;gap:8px}.chat-input{width:100%;border-radius:14px;border:1px solid var(--border);background:#111827;color:var(--text);padding:12px;font-size:15px;outline:none}.quick-questions{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px}.quick-questions button{white-space:nowrap;font-size:12px;padding:9px 10px;flex-shrink:0}
 .category-title{font-size:13px;color:var(--muted);margin:12px 0 8px}.coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}.coach-grid button{font-size:12px;padding:10px 8px}
+.understanding-card{background:rgba(51,209,122,.08);border:1px solid rgba(51,209,122,.35);border-radius:16px;padding:13px;margin-bottom:14px;color:#d6ffe5;font-size:14px}.understanding-card strong{color:#f6c343}
+.q-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.q-card{background:#131722;border:1px solid var(--border);border-radius:14px;padding:12px}.q-card h3{margin:0 0 8px;color:var(--accent);font-size:15px}.q-card button{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 10px;font-size:12px}
 .timer{position:fixed;left:10px;right:10px;bottom:calc(10px + var(--safe-bottom));max-width:880px;margin:0 auto;background:#1d222d;border:1px solid var(--border);border-radius:18px;padding:12px;display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,.35)}
 .timer strong{font-size:21px;color:var(--accent)}.timer button{padding:10px 12px;border-radius:12px;font-size:13px}.small{font-size:12px;color:var(--muted)}
-@media(max-width:520px){.form-grid{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(3,1fr)}button{font-size:12px}.coach-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.form-grid{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(3,1fr)}button{font-size:12px}.coach-grid,.q-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><h1>Basic-Fit Coach V7</h1><div class="subtitle">Programme machines + coach expert + générateur de séances personnalisées.</div></header>
+<header><h1>Basic-Fit Coach V10</h1><div class="subtitle">Programme machines + coach expert élargi.</div></header>
 <main>
 <div id="installBox" class="install-box"><strong>Installation iPhone :</strong> ouvre cette page dans <strong>Safari</strong>, puis <strong>Partager</strong> → <strong>Ajouter à l’écran d’accueil</strong>.</div>
 <div class="time-card"><div id="timeMain" class="time-main">Chargement...</div><div id="timeSub" class="time-sub">Le coach utilise le jour et l’heure.</div></div>
@@ -59,9 +61,10 @@ select,input[type="text"],textarea{width:100%;border-radius:13px;border:1px soli
 <button class="tab" data-target="custom">Séance<br>perso</button>
 <button class="tab" data-target="rules">Règles<br>progrès</button>
 <button class="tab" data-target="coach">Coach<br>expert</button>
+<button class="tab" data-target="questions">Questions<br>possibles</button>
 </div>
 <div class="mini-actions"><button onclick="resetChecks()">Réinitialiser</button><button onclick="showGenerator()">Créer une séance</button></div>
-<div class="coach-box"><strong>V7 :</strong> le coach peut maintenant générer une séance personnalisée et modifier l’interface “Séance perso”. Base intégrée : règles de charge, fatigue, durée, foot, douleurs, objectifs et alternatives machines.</div>
+<div class="coach-box"><strong>V10 :</strong> le coach comprend beaucoup plus de questions : séance conseillée, séance du jour, fatigue, foot/match, douleurs, objectifs, durée, machines prises, nutrition et récupération.</div>
 
 <section id="s1" class="session active"></section>
 <section id="s2" class="session"></section>
@@ -95,8 +98,9 @@ select,input[type="text"],textarea{width:100%;border-radius:13px;border:1px soli
 
 <section id="coach" class="session">
 <h2 class="section-title">Coach expert Basic-Fit</h2>
-<div class="info-box">Pose tes questions librement. Le coach peut aussi créer une séance personnalisée si tu demandes par exemple : “crée-moi une séance jambes 45 min avec foot demain”.</div>
+<div class="info-box">Pose tes questions naturellement : “Quelle séance tu me conseilles ?”, “J’ai foot demain”, “J’ai que 45 minutes”, “J’ai mal au genou”, “Je veux sécher”.</div>
 <div class="quick-questions">
+<button onclick="askQuick('Quelle séance tu me conseilles aujourd’hui ?')">Quelle séance ?</button>
 <button onclick="askQuick('Crée-moi une séance jambes 45 min')">Créer jambes 45</button>
 <button onclick="askQuick('Crée-moi une séance haut du corps')">Créer haut</button>
 <button onclick="askQuick('Crée-moi une séance légère car je suis fatigué')">Créer léger</button>
@@ -109,6 +113,13 @@ select,input[type="text"],textarea{width:100%;border-radius:13px;border:1px soli
 </div>
 <div class="warning">Sécurité : douleur vive, gonflement, instabilité ou douleur qui reste = stop et avis pro.</div>
 </section>
+
+<section id="questions" class="session">
+<h2 class="section-title">Questions possibles</h2>
+<div class="info-box">Clique sur une question pour l’envoyer au coach. Tu peux aussi écrire la même idée avec tes mots.</div>
+<div id="questionList" class="q-list"></div>
+</section>
+
 </main>
 <div class="timer"><div><div class="small">Minuteur repos</div><strong id="timerDisplay">01:30</strong></div><button onclick="startTimer(90)">1min30</button><button onclick="startTimer(60)">1min</button></div>
 
@@ -216,8 +227,214 @@ function addChatMessage(text,type){const log=chatLog;const div=document.createEl
 function askQuick(text){chatInput.value=text;sendCoachMessage();}
 function normalize(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
 function paramsFromText(text){const q=normalize(text);let p={goal:"athletic",duration:"60",fatigue:"medium",football:"none",pain:"none",intensity:"normal",free:text};if(q.includes("jambe"))p.goal="legs";if(q.includes("haut"))p.goal="upper";if(q.includes("full"))p.goal="athletic";if(q.includes("leger")||q.includes("récup")||q.includes("recup")){p.goal="recovery";p.intensity="easy";}if(q.includes("seche")||q.includes("bruler")||q.includes("perdre"))p.goal="fatloss";if(q.includes("muscle")||q.includes("masse"))p.goal="muscle";if(q.includes("pre match")||q.includes("pré match"))p.goal="prematch";if(q.includes("45"))p.duration="45";if(q.includes("75"))p.duration="75";if(q.includes("fatigue")||q.includes("crame")||q.includes("courbature"))p.fatigue="high";if(q.includes("foot demain")||q.includes("entrainement demain"))p.football="trainingTomorrow";if(q.includes("match demain"))p.football="matchTomorrow";if(q.includes("match aujourd"))p.football="matchToday";if(q.includes("genou"))p.pain="knee";if(q.includes("adduct"))p.pain="adductor";if(q.includes("cheville"))p.pain="ankle";if(q.includes("epaule"))p.pain="shoulder";if(q.includes("dos"))p.pain="back";if(q.includes("grosse")||q.includes("intense"))p.intensity="hard";return p;}
-function coachAnswer(question){const q=normalize(question);if(q.includes("cree")||q.includes("crée")||q.includes("seance perso")||q.includes("séance perso")||q.includes("fais moi une seance")||q.includes("fais-moi une seance")){const title=generateCustomSession(paramsFromText(question));return `C’est fait. J’ai généré : ${title}. Va dans l’onglet “Séance perso”, l’interface a été mise à jour.`;}if(q.includes("tu peux")||q.includes("capable"))return "Je peux créer des séances personnalisées selon objectif, durée, fatigue, foot/match proche, douleur simple, intensité. Demande par exemple : “crée une séance jambes 45 min avec foot demain”. Je ne peux pas faire de diagnostic médical ni connaître ton calendrier automatiquement.";if(q.includes("charge"))return "Charge : prends un poids où les 2 dernières reps sont dures mais propres. Tu dois garder environ 2 reps en réserve.";if(q.includes("douleur")||q.includes("mal"))return "Douleur : baisse charge/amplitude. Douleur vive, gonflement, instabilité ou douleur persistante = stop et avis pro.";if(q.includes("aujourd"))return `On est ${nowInfo().dateText}, ${nowInfo().time}. Tu peux générer une séance adaptée avec l’onglet Séance perso.`;return "Je peux répondre surtout sur ton programme ou créer une séance personnalisée. Exemple : “crée une séance haut du corps 60 min”, “j’ai foot demain crée une séance légère”, “j’ai mal au genou crée une séance jambes adaptée”.";
+
+const POSSIBLE_QUESTIONS={
+"Conseil de séance":["Quelle séance tu me conseilles aujourd’hui ?","Je fais quoi aujourd’hui ?","Je dois faire jambes ou haut du corps ?","Quelle séance si j’ai foot demain ?","Quelle séance si j’ai match demain ?","Je suis fatigué, je fais quoi ?","J’ai que 30 minutes, tu me conseilles quoi ?","J’ai que 45 minutes, tu me conseilles quoi ?","Je reviens après une pause, je fais quoi ?","Je débute à la salle, je commence par quoi ?"],
+"Génération personnalisée":["Crée une séance jambes 45 min","Crée une séance haut du corps","Crée une séance full body 60 min","Crée une séance légère car je suis fatigué","Crée une séance avec douleur genou","Crée une séance pré-match","Crée une séance sèche 45 min","Crée une séance prise de muscle 75 min","Crée une séance récupération","Crée une séance si la salle est blindée"],
+"Douleurs / sécurité":["J’ai mal au genou","J’ai mal aux adducteurs","J’ai mal à la cheville","J’ai mal à l’épaule","J’ai mal au dos","Est-ce que je dois arrêter ?","Je sens une douleur vive","J’ai des courbatures","J’ai la tête qui tourne","J’ai mal à la poitrine","Je suis essoufflé bizarrement","J’ai une douleur 5 sur 10"],
+"Machines / technique":["Comment faire la presse ?","Explique le leg curl","Explique le leg extension","Explique le tirage vertical","Explique le rowing","Explique le chest press","Explique le shoulder press","La presse est prise","Le tirage vertical est pris","Par quoi remplacer le leg extension ?","Comment régler le siège ?","Je ne sens pas le bon muscle"],
+"Progression":["Quelle charge je mets ?","Quand augmenter le poids ?","Combien de repos ?","Combien de répétitions ?","Je dois aller à l’échec ?","Comment progresser plus vite ?","Quand faire une semaine légère ?","Comment noter mes charges ?","Je stagne, je fais quoi ?","Je dois faire lourd ou léger ?","Combien de séries pour prendre du muscle ?"],
+"Nutrition / récupération":["Je mange quoi avant la salle ?","Je mange quoi après la salle ?","Je veux sécher","Je veux prendre du muscle","Je veux être plus explosif","Combien d’eau boire ?","Je dors mal, je fais quoi ?","Je peux faire cardio après ?","Je peux venir à jeun ?","Je dois prendre de la whey ?","Créatine ou pas ?","J’ai mangé lourd avant la salle"],
+"Organisation semaine":["Je peux faire 4 séances ?","Je peux faire 2 séances ?","Je dois y aller combien de fois ?","Comment placer muscu et foot ?","Je fais quoi si je rate une séance ?","Je dois m’entraîner le soir ?","Trop tard pour s’entraîner ?","Je peux faire deux jours de suite ?"]
 }
+function renderQuestions(){if(!document.getElementById('questionList'))return;let out="";Object.entries(POSSIBLE_QUESTIONS).forEach(([cat,qs])=>{out+=`<div class="q-card"><h3>${cat}</h3>`;qs.forEach(q=>{out+=`<button onclick="askQuestionFromList('${q.replace(/'/g,"\\'")}')">${q}</button>`});out+=`</div>`});questionList.innerHTML=out;}
+function askQuestionFromList(q){switchTab('coach');chatInput.value=q;sendCoachMessage();}
+renderQuestions();
+function includesAny(q,arr){return arr.some(x=>q.includes(normalize(x)));}
+function recommendSessionV8(text=""){const q=normalize(text);const n=nowInfo();let p=paramsFromText(text);
+ if(p.football==='matchToday')return "Je te conseille récupération/activation très légère : vélo 5-8 min, mobilité, éventuellement haut du corps très léger. Match aujourd’hui = fraîcheur prioritaire.";
+ if(p.football==='matchTomorrow')return "Je te conseille séance 2 haut du corps ou séance pré-match légère. Évite jambes lourdes et cardio intense pour garder les jambes fraîches.";
+ if(p.football==='trainingToday')return "Si tu as foot aujourd’hui, fais soit haut du corps modéré, soit repos. Évite grosse séance jambes avant l’entraînement.";
+ if(p.football==='trainingTomorrow')return "Si tu as foot demain, je conseille plutôt haut du corps. Si tu veux full body, fais allégé et supprime le cardio finisher.";
+ if(p.fatigue==='high')return "Comme tu es fatigué, je te conseille une séance récupération/légère : charges -10 à -20 %, moins de séries, pas d’échec, pas de cardio intense.";
+ if(p.pain!=='none')return "Avec une gêne, je conseille une séance adaptée : charge légère, amplitude confortable, pas de mouvement douloureux. Utilise l’onglet Séance perso et sélectionne la douleur.";
+ if(q.includes("jambes ou haut")||q.includes("haut ou jambes"))return "Si tu as foot/match dans les 24-48h : haut du corps. Si tu es frais et pas de foot proche : jambes. Si tu hésites : full body allégé.";
+ if(n.day==='mardi')return "Aujourd’hui je te conseille Séance 1 jambes, sauf si tu as foot/match demain ou les jambes lourdes. Dans ce cas : Séance 2 haut du corps.";
+ if(n.day==='jeudi')return "Aujourd’hui je te conseille Séance 2 haut du corps. C’est le meilleur choix pour construire un physique solide sans trop fatiguer les jambes.";
+ if(n.day==='samedi')return "Aujourd’hui je te conseille Séance 3 full body. Si tu as match demain, fais-la allégée et supprime le cardio finisher.";
+ if(n.day==='dimanche')return "Aujourd’hui je te conseille repos, match ou récupération. Si tu veux bouger : vélo tranquille + mobilité, pas grosse muscu.";
+ if(n.day==='lundi')return "Aujourd’hui je te conseille repos actif. Si tu as loupé une séance et que tu es frais, tu peux faire Séance 1 jambes.";
+ if(n.day==='mercredi')return "Aujourd’hui je te conseille repos ou foot. Si tu veux aller à la salle : Séance 2 haut du corps plutôt que jambes.";
+ return "Aujourd’hui je te conseille repos ou Séance 2 haut du corps. Si tu veux t’entraîner quand même : full body allégé.";
+}
+const knowledgeV8=[
+{keys:["quelle seance","quelle séance","tu me conseille","conseilles","je fais quoi","quoi faire","programme aujourd","aujourd hui","aujourdhui","jambes ou haut"],res:(q)=>recommendSessionV8(q)},
+{keys:["cree","crée","genere","génère","fais moi une seance","fais-moi une seance","fais-moi une séance","seance perso","séance perso","personnalisee","personnalisée"],res:(q)=>{const plan=generateCustomSession(paramsFromText(q));return `C’est fait. J’ai généré : ${plan.title}. L’onglet “Séance perso” vient d’être mis à jour.`}},
+{keys:["30 minutes","que 30","pas le temps"],res:()=> "En 30 min : échauffement 5 min puis 4 machines max. Jambes : presse, leg curl, adducteurs, abdos. Haut : tirage, chest press, rowing, reverse pec deck. Demande “crée une séance 30 min” pour que je te la mette dans Séance perso."},
+{keys:["45 minutes","que 45"],res:()=> "En 45 min : garde les priorités, supprime les accessoires. Jambes : vélo, presse, leg curl, adducteurs, mollets. Haut : tirage, chest press, rowing, reverse pec deck, abdos. Je peux te générer une séance 45 min."},
+{keys:["foot demain","entrainement demain","entraînement demain"],res:()=> "Foot demain : évite de détruire les jambes. Meilleur choix : séance haut du corps. Sinon full body allégé sans cardio finisher."},
+{keys:["match demain"],res:()=> "Match demain : pas de jambes lourdes. Je conseille séance pré-match légère ou haut du corps modéré. Supprime presse lourde, leg extension lourd et cardio intense."},
+{keys:["match aujourd"],res:()=> "Match aujourd’hui : pas de muscu lourde. Activation légère uniquement : vélo 5-8 min, mobilité, éventuellement haut du corps très léger. Priorité performance au match."},
+{keys:["fatigue","fatigué","crame","cramé","courbature"],res:()=> "Fatigue/courbatures : baisse les charges de 10-20 %, enlève une série, supprime le cardio finisher. Si tu es vraiment cramé : séance récupération ou repos."},
+{keys:["mal au genou","douleur genou","genou"],res:()=> "Genou : évite lourd sur leg extension/presse. Réduis l’amplitude, contrôle la descente, ne verrouille jamais. Douleur vive/gonflement/instabilité = stop. Je peux générer une séance adaptée genou."},
+{keys:["adducteur","adducteurs","aine"],res:()=> "Adducteurs : machine adducteurs très légère, mouvement lent. Pas d’à-coups, pas d’écartement violent. Si douleur vive : stop."},
+{keys:["cheville"],res:()=> "Cheville : vélo plutôt que course, mollets contrôlés, pas de rebonds. Si gonflement ou appui instable : pas de cardio intense."},
+{keys:["epaule","épaule"],res:()=> "Épaule : baisse chest press/shoulder press, garde reverse pec deck léger. Si pincement : amplitude plus courte ou stop."},
+{keys:["dos","lombaire"],res:()=> "Dos : garde buste stable, pas de cambrure. Sur rowing, ne te balance pas. Si douleur lombaire : baisse charge et privilégie machines avec dossier."},
+{keys:["charge","poids","combien je mets"],res:()=> "Charge : les 2 dernières reps doivent être dures mais propres. Si tu dois faire 10 reps, tu dois pouvoir en faire environ 12 max. Trop facile = augmente. Technique sale = baisse."},
+{keys:["augmenter","monter le poids","progression"],res:()=> "Tu augmentes quand toutes les séries sont réussies proprement. Presse +5 kg. Tirage/chest/rowing/leg curl +2,5 à 5 kg. Jamais au prix d’une mauvaise technique."},
+{keys:["repos","pause"],res:()=> "Repos : gros exercices 1min30-2min. Exercices moyens 1min15. Isolation bras/mollets/adducteurs/abdos 1min."},
+{keys:["echec","échec"],res:()=> "Pas besoin d’aller à l’échec. Pour ton objectif athlétique/foot : garde 1-2 reps en réserve. L’échec fatigue trop et peut gêner le foot."},
+{keys:["presse"],res:()=> "Presse : pieds largeur épaules, genoux dans l’axe, descente contrôlée, pousse fort, ne bloque jamais les genoux. C’est ton exercice principal jambes."},
+{keys:["leg curl","ischio"],res:()=> "Leg curl : arrière des cuisses. Ramène les talons, bloque 1 seconde, reviens lentement. Priorité pour sprint et protection du genou."},
+{keys:["tirage vertical"],res:()=> "Tirage vertical : tire vers le haut de poitrine, épaules basses, pas derrière la nuque. Contrôle la remontée."},
+{keys:["rowing"],res:()=> "Rowing : tire les poignées vers le ventre, dos droit, coudes vers l’arrière, pas d’élan avec le buste."},
+{keys:["chest press"],res:()=> "Chest press : poignées au niveau du milieu des pecs. Pousse devant toi et reviens doucement sans avancer les épaules."},
+{keys:["machine prise","est prise","occupée","occupee"],res:()=> "Machine prise : presse → leg curl/adducteurs en attendant. Tirage vertical → rowing. Chest press → pec deck. Shoulder press → reverse pec deck. Garde le même groupe musculaire."},
+{keys:["remplacer","alternative"],res:()=> "Alternatives : presse ↔ leg extension + leg curl. Tirage vertical ↔ rowing. Chest press ↔ pec deck. Vélo ↔ tapis incliné. Abdos machine ↔ gainage."},
+{keys:["seche","sèche","perdre du gras","maigrir"],res:()=> "Pour sécher : garde la muscu, ajoute cardio court si pas match proche, protéines à chaque repas, légumes, féculents autour du sport, limite sodas/grignotage."},
+{keys:["prendre du muscle","masse","grossir"],res:()=> "Pour prendre du muscle : progression sur les charges + manger assez + protéines + sommeil. Sans progression et sans assez manger, tu stagnes."},
+{keys:["explosif","explosivite","explosivité","athletique"],res:()=> "Pour être explosif : force propre sur presse/leg curl/fessiers, gainage, cardio court, et transfert sur terrain avec accélérations/appuis. Machines = base de force, terrain = transfert."},
+{keys:["manger avant","repas avant","avant la salle"],res:()=> "Avant la salle : 1h30-3h avant, féculent + protéine + eau. Exemple pommes de terre/riz/pâtes + œufs/jambon/poulet. Si petit : banane + skyr."},
+{keys:["manger apres","manger après","apres la salle","après la salle"],res:()=> "Après la salle : protéines + glucides + eau. Exemple riz/pommes de terre/pâtes + œufs/poulet/jambon + légumes. Collation possible : skyr + fruit."},
+{keys:["eau","hydratation","boire"],res:()=> "Hydratation : bois avant, quelques gorgées pendant, puis après. Si tu transpires beaucoup, repas salé derrière."},
+{keys:["sommeil","dormir","recuperation","récupération"],res:()=> "Sommeil/récup : si tu dors mal, ne cherche pas les records. Baisse les charges et fais propre. Le muscle se construit aussi au repos."},
+{keys:["tu peux repondre","tu sais faire","capable"],res:()=> "Je peux conseiller la séance du jour, créer une séance personnalisée, adapter selon fatigue/foot/douleur/durée, expliquer les machines, proposer des alternatives, gérer charges/repos/progression, donner nutrition simple et récupération. Je ne fais pas diagnostic médical ni recherche internet."}
+];
+
+
+const SYNONYMS_V10={
+ "fatigue":["fatigue","fatigué","fatiguee","fatiguée","mort","cramé","crame","ko","hs","épuisé","epuise","rincé","rince","courbature","courbatures","jambes lourdes","plus d energie","plus d'énergie"],
+ "temps_court":["pas le temps","peu de temps","vite","rapide","court","pressé","presse","speed","30 min","trente minutes","45 min","quarante cinq minutes","demi heure","demi-heure"],
+ "seance":["seance","séance","programme","training","entrainement","entraînement","workout","session","quoi faire","je fais quoi"],
+ "conseil":["conseille","conseil","recommande","recommandes","mieux","meilleur","choisir","choix","quoi faire"],
+ "aujourd":["aujourd hui","aujourd'hui","aujourdhui","today","ce jour","maintenant","ce soir","cet aprem","cet après-midi","ce matin"],
+ "foot":["foot","football","entrainement","entraînement","training club","terrain","séance foot","seance foot"],
+ "match":["match","rencontre","competition","compétition","tournoi"],
+ "demain":["demain","le lendemain","dans 24h","dans vingt quatre heures"],
+ "douleur":["douleur","mal","gêne","gene","tiraillement","pincement","sensible","ça tire","ca tire","bobo"],
+ "genou":["genou","rotule","patella"],
+ "adducteur":["adducteur","adducteurs","aine","intérieur cuisse","interieur cuisse"],
+ "cheville":["cheville","pied","tendon","malléole","malleole"],
+ "epaule":["épaule","epaule","shoulder"],
+ "dos":["dos","lombaire","lombaires","bas du dos"],
+ "machine_prise":["machine prise","occupée","occupee","occupé","occupe","pas libre","quelqu un dessus","quelqu’un dessus","salle pleine","salle blindée","salle blinde","trop de monde"],
+ "remplacer":["remplacer","alternative","autre exercice","à la place","a la place","substitut","quoi faire si"],
+ "seche":["sèche","seche","sécher","secher","perdre du gras","perdre du poids","maigrir","définition","definition","calories","déficit","deficit"],
+ "muscle":["prendre du muscle","prise de muscle","masse","grossir","hypertrophie","volume","devenir plus musclé","muscle"],
+ "explosif":["explosif","explosivité","explosivite","puissant","puissance","vitesse","athlétique","athletique","rapide","appuis","accélération","acceleration"],
+ "nutrition":["manger","repas","bouffe","aliment","nutrition","avant salle","après salle","apres salle","collation","protéine","proteine"],
+ "hydratation":["eau","boire","hydratation","soif","transpire","transpiration"],
+ "sommeil":["sommeil","dormir","nuit","mal dormi","dors mal","recup","récup","récupération","recuperation"],
+ "charge":["charge","poids","kg","kilos","lourd","léger","leger","combien mettre","combien je met","combien je mets"],
+ "progression":["augmenter","progresser","progression","monter","stagne","bloqué","bloque","plus fort","évoluer","evoluer"],
+ "repos":["repos","pause","récup entre séries","recup entre series","temps entre","combien attendre"],
+ "technique":["technique","comment faire","forme","position","réglage","reglage","placer","exécuter","executer"],
+ "echec":["échec","echec","jusqu au bout","à fond","a fond","max reps","failure"]
+};
+
+function expandQueryV10(q){
+ let expanded = " " + q + " ";
+ Object.entries(SYNONYMS_V10).forEach(([root, words])=>{
+   words.forEach(w=>{
+     const nw = normalize(w);
+     if(q.includes(nw)) expanded += " " + root + " " + words.map(normalize).join(" ");
+   });
+ });
+ return expanded.trim();
+}
+
+function tokensV10(s){
+ return normalize(s).split(" ").filter(t=>t.length>2 && !["les","des","une","avec","pour","dans","quoi","comment","est","que","qui","sur","mon","mes","ton","tes","moi","toi","j ai","jai"].includes(t));
+}
+
+function editDistanceV10(a,b){
+ if(Math.abs(a.length-b.length)>2) return 99;
+ const dp=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0));
+ for(let i=0;i<=a.length;i++)dp[i][0]=i;
+ for(let j=0;j<=b.length;j++)dp[0][j]=j;
+ for(let i=1;i<=a.length;i++){
+  for(let j=1;j<=b.length;j++){
+   dp[i][j]=Math.min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  }
+ }
+ return dp[a.length][b.length];
+}
+
+function fuzzyTokenMatchV10(a,b){
+ if(a===b) return true;
+ if(a.length>=5 && b.length>=5 && (a.includes(b)||b.includes(a))) return true;
+ if(a.length>=5 && b.length>=5 && editDistanceV10(a,b)<=1) return true;
+ if(a.length>=7 && b.length>=7 && editDistanceV10(a,b)<=2) return true;
+ return false;
+}
+
+function scoreItemV10(q,item){
+ const nq=normalize(q);
+ const expanded=expandQueryV10(nq);
+ const qTokens=tokensV10(expanded);
+ let score=0;
+
+ item.keys.forEach(k=>{
+   const nk=normalize(k);
+   if(nq.includes(nk)) score += 100 + nk.length;
+   else if(expanded.includes(nk)) score += 70 + nk.length;
+
+   const kTokens=tokensV10(nk);
+   kTokens.forEach(kt=>{
+     if(qTokens.includes(kt)) score += 16;
+     else if(qTokens.some(qt=>fuzzyTokenMatchV10(qt,kt))) score += 8;
+   });
+ });
+
+ return score;
+}
+
+function detectIntentDirectV10(text){
+ const q=expandQueryV10(normalize(text));
+ const has=(...words)=>words.some(w=>q.includes(normalize(w)));
+
+ if(has("seance","séance","programme","quoi faire","je fais quoi") && has("conseil","conseille","recommande","choisir","meilleur","aujourd","today","maintenant")){
+   return recommendSessionV8(text);
+ }
+ if(has("temps_court") && has("seance","séance","programme","training")){
+   return q.includes("30") || q.includes("demi") ? 
+     "Tu as peu de temps : je te conseille une séance 30 min avec 4 priorités maximum. Demande “crée séance 30 min” et je la mets dans Séance perso." :
+     "Tu as peu de temps : fais une séance 45 min. Garde les gros exercices, supprime les accessoires. Je peux te la générer dans Séance perso.";
+ }
+ if(has("machine_prise")){
+   return "Machine prise ou salle pleine : garde le même groupe musculaire. Presse → leg curl/adducteurs. Tirage vertical → rowing. Chest press → pec deck. Shoulder press → reverse pec deck. Pas besoin d’attendre 20 minutes.";
+ }
+ if(has("douleur") && (has("genou")||has("adducteur")||has("cheville")||has("epaule")||has("dos"))){
+   if(has("genou")) return "Tu parles d’une gêne au genou : baisse charge et amplitude, évite leg extension lourd/presse lourde, contrôle la descente. Douleur vive, gonflement ou instabilité = stop et avis pro.";
+   if(has("adducteur")) return "Tu parles des adducteurs : charge très légère, mouvement lent, pas d’à-coups. Si ça tire fort ou douleur vive = stop.";
+   if(has("cheville")) return "Tu parles de la cheville : vélo plutôt que course, mollets contrôlés, pas de rebonds. Si gonflement/instabilité = stop.";
+   if(has("epaule")) return "Tu parles de l’épaule : baisse chest/shoulder press, amplitude confortable, reverse pec deck léger. Si pincement = stop.";
+   if(has("dos")) return "Tu parles du dos : machines avec dossier, buste stable, pas d’élan. Douleur lombaire forte = stop.";
+ }
+ if(has("perdre du poids","maigrir","seche","sèche","secher","sécher")){
+   return "Objectif perte de poids/sèche : garde la muscu pour conserver le muscle, ajoute cardio court si pas de match proche, protéines à chaque repas, légumes, féculents surtout autour du sport, limite sodas/grignotage.";
+ }
+ if(has("prendre du muscle","muscle","masse","grossir")){
+   return "Objectif prise de muscle : progression sur les charges, 8-12 reps propres, protéines à chaque repas, assez de calories et sommeil. Ne change pas de programme toutes les semaines.";
+ }
+ if(has("explosif","puissant","athletique","athlétique","vitesse")){
+   return "Objectif explosivité/puissance : machines = base de force avec presse, leg curl, fessiers, mollets, gainage. Pour transférer au foot, ajoute sur terrain accélérations courtes et appuis quand tu peux.";
+ }
+ if(has("je peux écrire","mes mots","mots différents","formulation","pas les mêmes mots")){
+   return "Oui. En V10 tu peux écrire avec tes mots. Je cherche les synonymes, les idées proches et même certains mots approximatifs. Exemple : “je suis mort” = fatigue, “machine occupée” = machine prise, “perdre du poids” = sèche.";
+ }
+ return null;
+}
+
+function coachAnswer(question){
+ const q=normalize(question);
+ if(q.length<3)return "Écris ta question avec un peu plus de détails.";
+
+ const direct=detectIntentDirectV10(question);
+ if(direct) return direct;
+
+ let best=null;
+ for(const item of knowledgeV8){
+   const score=scoreItemV10(question,item);
+   if(score>0 && (!best || score>best.score)) best={item,score};
+ }
+
+ if(best && best.score>=18) return best.item.res(question);
+
+ return "Je ne suis pas sûr à 100 %, mais je peux essayer si tu reformules avec l’idée principale : séance conseillée, créer une séance, fatigue, foot/match, douleur, machine prise, charge, repos, nutrition, sèche, prise de muscle, explosivité. En V10, tu n’as pas besoin des mots exacts, mais il me faut au moins le thème.";
+}
+
 function sendCoachMessage(){const text=chatInput.value.trim();if(!text)return;addChatMessage(text,'user');chatInput.value='';setTimeout(()=>addChatMessage(coachAnswer(text),'bot'),180);}
 if('serviceWorker'in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').catch(()=>{});});}
 </script>
