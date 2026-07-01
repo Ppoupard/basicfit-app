@@ -1,315 +1,225 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Programme Basic-Fit V2</title>
-
-  <meta name="theme-color" content="#f6c343" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="Basic-Fit" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="icons/icon-180.png" />
-
-  <style>
-    :root {
-      --bg: #0f1115;
-      --card: #181b22;
-      --card2: #20242d;
-      --text: #f4f4f5;
-      --muted: #b7bbc5;
-      --accent: #f6c343;
-      --green: #33d17a;
-      --border: #303542;
-      --red: #ff6b6b;
-      --safe-bottom: env(safe-area-inset-bottom);
-    }
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font-family: Arial, sans-serif; }
-    body { line-height: 1.45; overscroll-behavior-y: none; }
-    header {
-      padding: calc(18px + env(safe-area-inset-top)) 16px 14px;
-      background: linear-gradient(135deg, #151923, #242a36);
-      border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; z-index: 10;
-    }
-    h1 { margin: 0; font-size: 22px; line-height: 1.2; }
-    .subtitle { margin-top: 7px; color: var(--muted); font-size: 13px; }
-    main { padding: 14px; max-width: 780px; margin: 0 auto; padding-bottom: calc(105px + var(--safe-bottom)); }
-    .tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-bottom: 12px; }
-    button {
-      border: 1px solid var(--border); border-radius: 15px; padding: 12px 6px;
-      font-size: 12.5px; font-weight: 800; background: var(--card2); color: var(--text);
-    }
-    button.active { background: var(--accent); color: #111; border-color: var(--accent); }
-    .mini-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0 14px; }
-    .mini-actions button { font-size: 13px; padding: 11px 8px; font-weight: 700; }
-    .install-box {
-      display: none;
-      background: rgba(246,195,67,0.10);
-      border: 1px solid rgba(246,195,67,0.45);
-      border-radius: 16px;
-      padding: 13px;
-      margin: 0 0 14px;
-      color: #ffe8a3;
-      font-size: 14px;
-    }
-    .install-box strong { color: var(--accent); }
-    .info-box, .coach-box {
-      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
-      padding: 13px; color: var(--muted); margin-bottom: 14px;
-    }
-    .coach-box { border-color: rgba(51,209,122,0.4); background: rgba(51,209,122,0.07); color: #d6ffe5; }
-    .session { display: none; }
-    .session.active { display: block; }
-    .section-title { margin: 18px 0 10px; font-size: 19px; color: var(--accent); }
-    .exercise {
-      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
-      padding: 14px; margin-bottom: 11px;
-    }
-    .exercise-top { display: flex; gap: 10px; align-items: flex-start; }
-    .exercise input { width: 24px; height: 24px; margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
-    .exercise.done { opacity: 0.62; }
-    .exercise h3 { margin: 0; font-size: 17px; }
-    .tag {
-      display: inline-block; margin-top: 7px; margin-right: 5px; padding: 4px 8px;
-      border-radius: 999px; background: #2a303c; color: var(--muted); font-size: 12px;
-    }
-    .tag.main { background: rgba(246,195,67,0.16); color: #ffe39a; }
-    .desc { margin: 10px 0 0 34px; color: var(--muted); font-size: 14px; }
-    .warning {
-      color: #ffdada; background: rgba(255,107,107,.12); border: 1px solid rgba(255,107,107,.35);
-      border-radius: 14px; padding: 12px; margin: 12px 0; font-size: 14px;
-    }
-    details { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin: 14px 0; }
-    summary { cursor: pointer; font-weight: 800; color: var(--accent); }
-    .terms p, .terms li { color: var(--muted); margin: 10px 0; font-size: 14px; }
-    .terms ul { padding-left: 19px; }
-    .timer {
-      position: fixed; left: 10px; right: 10px; bottom: calc(10px + var(--safe-bottom));
-      max-width: 780px; margin: 0 auto; background: #1d222d; border: 1px solid var(--border);
-      border-radius: 18px; padding: 12px; display: grid; grid-template-columns: 1fr auto auto;
-      gap: 8px; align-items: center; box-shadow: 0 8px 30px rgba(0,0,0,.35);
-    }
-    .timer strong { font-size: 21px; color: var(--accent); }
-    .timer button { padding: 10px 12px; border-radius: 12px; font-size: 13px; }
-    .small { font-size: 12px; color: var(--muted); }
-    @media (max-width: 390px) {
-      h1 { font-size: 20px; }
-      button { font-size: 11.5px; }
-      .tabs { gap: 5px; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Basic-Fit Coach V7</title>
+<meta name="theme-color" content="#f6c343" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="BF Coach" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icons/icon-180.png" />
+<style>
+:root{--bg:#0f1115;--card:#181b22;--card2:#20242d;--text:#f4f4f5;--muted:#b7bbc5;--accent:#f6c343;--green:#33d17a;--border:#303542;--red:#ff6b6b;--safe-bottom:env(safe-area-inset-bottom)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+body{line-height:1.45;overscroll-behavior-y:none}
+header{padding:calc(18px + env(safe-area-inset-top)) 16px 14px;background:linear-gradient(135deg,#151923,#242a36);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+h1{margin:0;font-size:22px;line-height:1.2}.subtitle{margin-top:7px;color:var(--muted);font-size:13px}
+main{padding:14px;max-width:880px;margin:0 auto;padding-bottom:calc(110px + var(--safe-bottom))}
+.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}
+button{border:1px solid var(--border);border-radius:15px;padding:11px 5px;font-size:11.7px;font-weight:800;background:var(--card2);color:var(--text)}
+button.active{background:var(--accent);color:#111;border-color:var(--accent)}
+.mini-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}.mini-actions button{font-size:13px;padding:11px 8px;font-weight:700}
+.install-box{display:none;background:rgba(246,195,67,.10);border:1px solid rgba(246,195,67,.45);border-radius:16px;padding:13px;margin:0 0 14px;color:#ffe8a3;font-size:14px}.install-box strong{color:var(--accent)}
+.time-card{background:linear-gradient(135deg,rgba(246,195,67,.13),rgba(51,209,122,.08));border:1px solid rgba(246,195,67,.35);border-radius:16px;padding:13px;margin-bottom:14px}.time-main{font-size:18px;font-weight:900;color:var(--accent);margin-bottom:4px}.time-sub{font-size:13px;color:var(--muted)}
+.info-box,.coach-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:13px;color:var(--muted);margin-bottom:14px}
+.coach-box{border-color:rgba(51,209,122,.4);background:rgba(51,209,122,.07);color:#d6ffe5}
+.session{display:none}.session.active{display:block}.section-title{margin:18px 0 10px;font-size:19px;color:var(--accent)}
+.exercise{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;margin-bottom:11px}
+.exercise-top{display:flex;gap:10px;align-items:flex-start}.exercise input{width:24px;height:24px;margin-top:2px;accent-color:var(--green);flex-shrink:0}.exercise.done{opacity:.62}
+.exercise h3{margin:0;font-size:17px}.tag{display:inline-block;margin-top:7px;margin-right:5px;padding:4px 8px;border-radius:999px;background:#2a303c;color:var(--muted);font-size:12px}.tag.main{background:rgba(246,195,67,.16);color:#ffe39a}
+.desc{margin:10px 0 0 34px;color:var(--muted);font-size:14px}.warning{color:#ffdada;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.35);border-radius:14px;padding:12px;margin:12px 0;font-size:14px}
+details{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;margin:14px 0}summary{cursor:pointer;font-weight:800;color:var(--accent)}
+.terms p,.terms li{color:var(--muted);margin:10px 0;font-size:14px}.terms ul{padding-left:19px}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;margin-bottom:12px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:13px;color:var(--muted);font-weight:800}
+select,input[type="text"],textarea{width:100%;border-radius:13px;border:1px solid var(--border);background:#111827;color:var(--text);padding:12px;font-size:15px;outline:none}textarea{min-height:82px;resize:vertical}
+.generate-btn{width:100%;font-size:15px;background:var(--accent);color:#111;border-color:var(--accent);margin-top:12px;padding:13px}
+.custom-empty{background:rgba(246,195,67,.08);border:1px dashed rgba(246,195,67,.45);border-radius:16px;padding:16px;color:#ffe8a3;margin-bottom:12px}
+.db-card{background:#131722;border:1px solid var(--border);border-radius:14px;padding:12px;margin:10px 0}.db-card strong{color:var(--accent)}
+.chat-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:13px;margin-bottom:12px}.chat-log{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;max-height:470px;overflow-y:auto;padding-right:4px}.msg{border-radius:14px;padding:10px 12px;font-size:14px;white-space:pre-wrap}.msg.bot{background:#242a36;color:var(--text);border:1px solid var(--border)}.msg.user{background:rgba(246,195,67,.16);color:#ffe39a;border:1px solid rgba(246,195,67,.35);align-self:flex-end;max-width:88%}.chat-input-row{display:grid;grid-template-columns:1fr auto;gap:8px}.chat-input{width:100%;border-radius:14px;border:1px solid var(--border);background:#111827;color:var(--text);padding:12px;font-size:15px;outline:none}.quick-questions{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px}.quick-questions button{white-space:nowrap;font-size:12px;padding:9px 10px;flex-shrink:0}
+.category-title{font-size:13px;color:var(--muted);margin:12px 0 8px}.coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}.coach-grid button{font-size:12px;padding:10px 8px}
+.timer{position:fixed;left:10px;right:10px;bottom:calc(10px + var(--safe-bottom));max-width:880px;margin:0 auto;background:#1d222d;border:1px solid var(--border);border-radius:18px;padding:12px;display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.timer strong{font-size:21px;color:var(--accent)}.timer button{padding:10px 12px;border-radius:12px;font-size:13px}.small{font-size:12px;color:var(--muted)}
+@media(max-width:520px){.form-grid{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(3,1fr)}button{font-size:12px}.coach-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Programme Basic-Fit V2</h1>
-    <div class="subtitle">Version optimisée coach — machines simples, objectif athlétique et football.</div>
-  </header>
+<header><h1>Basic-Fit Coach V7</h1><div class="subtitle">Programme machines + coach expert + générateur de séances personnalisées.</div></header>
+<main>
+<div id="installBox" class="install-box"><strong>Installation iPhone :</strong> ouvre cette page dans <strong>Safari</strong>, puis <strong>Partager</strong> → <strong>Ajouter à l’écran d’accueil</strong>.</div>
+<div class="time-card"><div id="timeMain" class="time-main">Chargement...</div><div id="timeSub" class="time-sub">Le coach utilise le jour et l’heure.</div></div>
+<div class="tabs">
+<button class="tab active" data-target="s1">Séance 1<br>Jambes</button>
+<button class="tab" data-target="s2">Séance 2<br>Haut</button>
+<button class="tab" data-target="s3">Séance 3<br>Full</button>
+<button class="tab" data-target="custom">Séance<br>perso</button>
+<button class="tab" data-target="rules">Règles<br>progrès</button>
+<button class="tab" data-target="coach">Coach<br>expert</button>
+</div>
+<div class="mini-actions"><button onclick="resetChecks()">Réinitialiser</button><button onclick="showGenerator()">Créer une séance</button></div>
+<div class="coach-box"><strong>V7 :</strong> le coach peut maintenant générer une séance personnalisée et modifier l’interface “Séance perso”. Base intégrée : règles de charge, fatigue, durée, foot, douleurs, objectifs et alternatives machines.</div>
 
-  <main>
-    <div id="installBox" class="install-box">
-      <strong>Installation iPhone :</strong> ouvre cette page dans <strong>Safari</strong>, puis <strong>Partager</strong> → <strong>Ajouter à l’écran d’accueil</strong>.
-    </div>
+<section id="s1" class="session active"></section>
+<section id="s2" class="session"></section>
+<section id="s3" class="session"></section>
 
-    <div class="tabs">
-      <button class="tab active" data-target="s1">Séance 1<br>Jambes</button>
-      <button class="tab" data-target="s2">Séance 2<br>Haut</button>
-      <button class="tab" data-target="s3">Séance 3<br>Full</button>
-      <button class="tab" data-target="rules">Règles<br>progrès</button>
-    </div>
+<section id="custom" class="session">
+<h2 class="section-title">Générateur de séance personnalisée</h2>
+<div class="info-box">Remplis ta demande. Le coach crée une séance adaptée et remplace l’interface ci-dessous par ta séance du jour.</div>
+<div class="form-card">
+<div class="form-grid">
+<div class="field"><label>Objectif principal</label><select id="goal"><option value="athletic">Athlétique complet</option><option value="legs">Jambes puissantes</option><option value="upper">Haut du corps</option><option value="recovery">Récupération / léger</option><option value="fatloss">Sèche / brûler</option><option value="muscle">Prise de muscle</option><option value="prematch">Pré-match / garder les jambes fraîches</option></select></div>
+<div class="field"><label>Temps disponible</label><select id="duration"><option value="45">45 min</option><option value="60" selected>60 min</option><option value="75">75 min</option></select></div>
+<div class="field"><label>Fatigue</label><select id="fatigue"><option value="low">Je suis frais</option><option value="medium" selected>Fatigue normale</option><option value="high">Je suis fatigué</option></select></div>
+<div class="field"><label>Foot / match proche</label><select id="football"><option value="none">Rien de spécial</option><option value="trainingTomorrow">Foot demain</option><option value="matchTomorrow">Match demain</option><option value="matchToday">Match aujourd’hui</option></select></div>
+<div class="field"><label>Douleur / gêne</label><select id="pain"><option value="none">Aucune</option><option value="knee">Genou</option><option value="adductor">Adducteurs</option><option value="ankle">Cheville</option><option value="shoulder">Épaule</option><option value="back">Dos</option></select></div>
+<div class="field"><label>Intensité voulue</label><select id="intensity"><option value="normal" selected>Normale</option><option value="hard">Grosse séance</option><option value="easy">Séance facile</option></select></div>
+</div>
+<div class="field" style="margin-top:10px"><label>Demande libre</label><textarea id="freeRequest" placeholder="Exemple : je veux une séance jambes mais j’ai foot demain, pas trop longue..."></textarea></div>
+<button class="generate-btn" onclick="generateCustomSession()">Générer ma séance personnalisée</button>
+</div>
+<div id="customOutput" class="custom-empty">Aucune séance personnalisée générée pour l’instant.</div>
+<details class="terms"><summary>Base de données coach intégrée</summary>
+<div class="db-card"><strong>Priorités haut niveau :</strong> gros exercices d’abord, technique propre, progression simple, fatigue contrôlée, prévention blessures.</div>
+<div class="db-card"><strong>Règles foot :</strong> pas de grosse séance jambes avant match, cardio réduit si match proche, priorité fraîcheur neuromusculaire.</div>
+<div class="db-card"><strong>Règles douleur :</strong> réduire charge/amplitude, éviter mouvements douloureux, stop si douleur vive/gonflement/instabilité.</div>
+<div class="db-card"><strong>Règles machines :</strong> alternatives prévues si machine prise, séances 45/60/75 min, adaptation selon fatigue.</div>
+</details>
+</section>
 
-    <div class="mini-actions">
-      <button onclick="resetChecks()">Réinitialiser</button>
-      <button onclick="showAllTerms()">Explications</button>
-    </div>
+<section id="rules" class="session"></section>
 
-    <div class="coach-box">
-      <strong>Version V2 validée :</strong> programme plus propre pour ton objectif : jambes fortes, dos solide, prévention genou/adducteurs, cardio court et progression simple.
-    </div>
+<section id="coach" class="session">
+<h2 class="section-title">Coach expert Basic-Fit</h2>
+<div class="info-box">Pose tes questions librement. Le coach peut aussi créer une séance personnalisée si tu demandes par exemple : “crée-moi une séance jambes 45 min avec foot demain”.</div>
+<div class="quick-questions">
+<button onclick="askQuick('Crée-moi une séance jambes 45 min')">Créer jambes 45</button>
+<button onclick="askQuick('Crée-moi une séance haut du corps')">Créer haut</button>
+<button onclick="askQuick('Crée-moi une séance légère car je suis fatigué')">Créer léger</button>
+<button onclick="askQuick('J’ai foot demain crée une séance')">Créer foot demain</button>
+<button onclick="askQuick('Tu peux répondre à quoi ?')">Tu sais faire quoi ?</button>
+</div>
+<div class="chat-box">
+<div id="chatLog" class="chat-log"><div class="msg bot">Je suis ton coach V7. Tu peux me poser des questions ou me demander de créer une séance personnalisée. Exemple : “crée une séance full body 45 min, je suis fatigué et j’ai foot demain”.</div></div>
+<div class="chat-input-row"><input id="chatInput" class="chat-input" type="text" placeholder="Écris ta question..." onkeydown="if(event.key==='Enter'){sendCoachMessage()}" /><button onclick="sendCoachMessage()">Envoyer</button></div>
+</div>
+<div class="warning">Sécurité : douleur vive, gonflement, instabilité ou douleur qui reste = stop et avis pro.</div>
+</section>
+</main>
+<div class="timer"><div><div class="small">Minuteur repos</div><strong id="timerDisplay">01:30</strong></div><button onclick="startTimer(90)">1min30</button><button onclick="startTimer(60)">1min</button></div>
 
-    <section id="s1" class="session active">
-      <h2 class="section-title">Séance 1 — Jambes puissantes + prévention</h2>
-      <div class="info-box">Idéal mardi. Évite la veille d’un match. Objectif : puissance jambes, genoux solides, appuis, accélération.</div>
+<script>
+const DB={
+machines:{
+warmup:{name:"Vélo",sets:"8 à 10 min",reps:"tranquille",rest:"—",desc:"Chauffe sans taper dans les genoux."},
+presse:{name:"Presse à cuisses",sets:"4 séries",reps:"8 à 10 reps",rest:"1min30-2min",desc:"Pieds largeur épaules, genoux dans l’axe, descente contrôlée, ne verrouille pas les genoux.",main:true},
+legcurl:{name:"Leg curl",sets:"4 séries",reps:"10 à 12 reps",rest:"1min30",desc:"Arrière des cuisses. Important pour sprint et protection du genou.",main:true},
+legext:{name:"Leg extension",sets:"3 séries",reps:"10 à 12 reps",rest:"1min15",desc:"Devant des cuisses. Contrôle propre, commence léger si gêne genou."},
+glute:{name:"Machine fessiers",sets:"3 séries",reps:"10 par jambe",rest:"1min",desc:"Puissance, accélération, stabilité du bassin."},
+add:{name:"Adducteurs",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Intérieur des cuisses, utile pour le foot et les changements de direction."},
+abd:{name:"Abducteurs",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Hanches et appuis. Important pour stabilité."},
+calves:{name:"Mollets machine ou presse",sets:"4 séries",reps:"12 à 15 reps",rest:"1min",desc:"Monte sur la pointe, bloque 1 seconde, redescends doucement."},
+tirage:{name:"Tirage vertical",sets:"4 séries",reps:"8 à 10 reps",rest:"1min30",desc:"Tire vers le haut de poitrine, pas derrière la nuque. Dos fort = posture.",main:true},
+chest:{name:"Chest press",sets:"4 séries",reps:"8 à 10 reps",rest:"1min30",desc:"Poussée haut du corps. Reviens doucement sans laisser les épaules partir."},
+row:{name:"Rowing assis",sets:"4 séries",reps:"10 reps",rest:"1min30",desc:"Tire vers le ventre, dos droit, épaules basses.",main:true},
+shoulder:{name:"Shoulder press",sets:"3 séries",reps:"8 à 10 reps",rest:"1min30",desc:"Poussée épaules. Ne force pas si douleur/pincement."},
+reverse:{name:"Reverse pec deck",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Arrière d’épaules et posture. Très important pour protéger les épaules.",main:true},
+pecdeck:{name:"Pec deck",sets:"2 à 3 séries",reps:"12 reps",rest:"1min",desc:"Complément pectoraux, mouvement propre."},
+triceps:{name:"Triceps machine ou poulie",sets:"3 séries",reps:"10 à 12 reps",rest:"1min",desc:"Arrière du bras. Coudes stables."},
+biceps:{name:"Curl biceps machine",sets:"2 à 3 séries",reps:"10 à 12 reps",rest:"1min",desc:"Devant du bras, contrôle sans balancer."},
+abs:{name:"Machine abdos",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Contracte les abdos, ne tire pas avec le cou."},
+plank:{name:"Gainage planche",sets:"3 séries",reps:"30 à 45 sec",rest:"45 sec",desc:"Stabilité, duels et appuis."},
+cardio:{name:"Cardio vélo",sets:"10 tours",reps:"20 sec rapide / 40 sec lent",rest:"—",desc:"Court et efficace. À supprimer si match proche ou grosse fatigue."}
+},
+templates:{
+s1:["warmup","presse","legcurl","legext","glute","add","abd","calves","plank"],
+s2:["warmup","tirage","chest","row","shoulder","reverse","pecdeck","triceps","biceps","abs"],
+s3:["warmup","presse","legcurl","tirage","chest","row","shoulder","abs","calves","cardio"]
+}
+};
 
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-velo"><div><h3>Vélo</h3><span class="tag">8 à 10 min</span><span class="tag">tranquille</span></div></div><p class="desc">Chauffe les jambes sans taper dans les genoux.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-presse"><div><h3>Presse à cuisses</h3><span class="tag main">exercice principal</span><span class="tag">4 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30-2min</span></div></div><p class="desc">Priorité de progression. Pousse fort, redescends doucement, ne bloque jamais les genoux.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-legcurl"><div><h3>Leg curl</h3><span class="tag main">important foot</span><span class="tag">4 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Arrière des cuisses. Très important pour les sprints et la protection du genou.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-legext"><div><h3>Leg extension</h3><span class="tag">3 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Devant des cuisses. Contrôle bien, ne mets pas trop lourd au début.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-glute"><div><h3>Machine fessiers</h3><span class="tag">3 séries</span><span class="tag">10 par jambe</span><span class="tag">repos 1min</span></div></div><p class="desc">Utile pour accélération, stabilité du bassin et puissance.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-add"><div><h3>Adducteurs</h3><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu ramènes les jambes vers l’intérieur. Important pour les changements de direction.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-abd"><div><h3>Abducteurs</h3><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu écartes les jambes. Renforce les hanches et les appuis.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-mollets"><div><h3>Mollets machine ou presse</h3><span class="tag">4 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Monte sur la pointe des pieds, bloque 1 seconde, redescends doucement.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-gainage"><div><h3>Gainage planche</h3><span class="tag">3 séries</span><span class="tag">30 à 45 sec</span><span class="tag">repos 45 sec</span></div></div><p class="desc">Simple, mais essentiel pour être solide dans les duels et les appuis.</p></article>
-    </section>
+function nowInfo(){const now=new Date();const jours=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];const mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];const hour=now.getHours();let moment='journée';if(hour<11)moment='matin';else if(hour<14)moment='midi';else if(hour<18)moment='après-midi';else if(hour<22)moment='soir';else moment='nuit';return{now,day:jours[now.getDay()],month:mois[now.getMonth()],hour,minute:now.getMinutes().toString().padStart(2,'0'),time:`${hour}h${now.getMinutes().toString().padStart(2,'0')}`,moment,tz:Intl.DateTimeFormat().resolvedOptions().timeZone||'local',dateText:`${jours[now.getDay()]} ${now.getDate()} ${mois[now.getMonth()]}`};}
+function updateTimeCard(){const n=nowInfo();document.getElementById('timeMain').textContent=`${n.dateText} — ${n.time}`;document.getElementById('timeSub').textContent=`Moment : ${n.moment} • Fuseau : ${n.tz}`;}updateTimeCard();setInterval(updateTimeCard,30000);
 
-    <section id="s2" class="session">
-      <h2 class="section-title">Séance 2 — Haut du corps solide et athlétique</h2>
-      <div class="info-box">Idéal jeudi. Objectif : être plus fort dans les duels, meilleur dos, meilleures épaules, meilleur physique.</div>
+const tabs=document.querySelectorAll('.tab'),sessions=document.querySelectorAll('.session'),installBox=document.getElementById('installBox');
+const isStandalone=window.navigator.standalone===true||window.matchMedia('(display-mode: standalone)').matches;const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);if(isIOS&&!isStandalone)installBox.style.display='block';
+tabs.forEach(tab=>{tab.addEventListener('click',()=>switchTab(tab.dataset.target));});
+function switchTab(id){tabs.forEach(t=>t.classList.toggle('active',t.dataset.target===id));sessions.forEach(s=>s.classList.toggle('active',s.id===id));window.scrollTo({top:0,behavior:'smooth'});}
+function showGenerator(){switchTab('custom');}
 
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-echauff"><div><h3>Rameur ou vélo</h3><span class="tag">8 min</span><span class="tag">tranquille</span></div></div><p class="desc">Si tu n’es pas à l’aise avec le rameur, prends le vélo.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-tirage"><div><h3>Tirage vertical</h3><span class="tag main">priorité dos</span><span class="tag">4 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires la barre du haut vers la poitrine. Dos fort = meilleure posture et épaules plus stables.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-chest"><div><h3>Chest press</h3><span class="tag">4 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses devant toi. Pectoraux, épaules, triceps.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-row"><div><h3>Rowing assis</h3><span class="tag main">priorité dos</span><span class="tag">4 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires les poignées vers ton ventre. Garde le dos droit et les épaules basses.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-shoulder"><div><h3>Shoulder press</h3><span class="tag">3 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses au-dessus de la tête. Travaille les épaules.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-reverse"><div><h3>Reverse pec deck</h3><span class="tag main">posture</span><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu tires les bras vers l’arrière. Protège les épaules et améliore la posture.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-pecdeck"><div><h3>Pec deck</h3><span class="tag">2 à 3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu rapproches les bras devant toi. Complément pectoraux, pas la priorité absolue.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-triceps"><div><h3>Triceps machine ou poulie</h3><span class="tag">3 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses vers le bas. Arrière du bras.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-biceps"><div><h3>Curl biceps machine</h3><span class="tag">2 à 3 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu plies les bras. Devant du bras.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Contracte les abdos, ne tire pas avec le cou ou les bras.</p></article>
-    </section>
+function renderExercise(key,i,prefix){const ex=typeof key==='string'?DB.machines[key]:key;return `<article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="${prefix}-${i}"><div><h3>${ex.name}</h3>${ex.main?'<span class="tag main">priorité</span>':''}<span class="tag">${ex.sets}</span><span class="tag">${ex.reps}</span><span class="tag">repos ${ex.rest}</span></div></div><p class="desc">${ex.desc}</p></article>`;}
+function renderBase(id,title,info,keys){document.getElementById(id).innerHTML=`<h2 class="section-title">${title}</h2><div class="info-box">${info}</div>`+keys.map((k,i)=>renderExercise(k,i,id)).join('');}
+renderBase('s1','Séance 1 — Jambes puissantes + prévention','Idéal mardi. Évite la veille d’un match. Objectif : puissance jambes, genoux solides, appuis, accélération.',DB.templates.s1);
+renderBase('s2','Séance 2 — Haut du corps solide et athlétique','Idéal jeudi. Objectif : dos fort, épaules solides, puissance dans les duels.',DB.templates.s2);
+renderBase('s3','Séance 3 — Full body athlétique + cardio','Idéal samedi. Objectif : corps complet, condition physique et puissance générale.',DB.templates.s3);
+document.getElementById('rules').innerHTML=`<h2 class="section-title">Règles de progression</h2><div class="info-box"><strong>Charge :</strong> finis avec environ 2 répétitions en réserve. Si tu dois faire 10 reps, tu dois sentir que tu pourrais en faire 12 maximum.</div><details class="terms" open><summary>Progression</summary><ul><li>Quand toutes tes séries passent proprement, augmente.</li><li>Presse : +5 kg.</li><li>Tirage/chest/rowing/leg curl : +2,5 à 5 kg.</li><li>Si la technique se dégrade, baisse.</li></ul></details><details id="terms" class="terms"><summary>Explications</summary><p><strong>Série :</strong> bloc de répétitions.</p><p><strong>Repos :</strong> temps entre les séries.</p><p><strong>Amplitude :</strong> mouvement assez grand mais sans douleur.</p></details>`;
 
-    <section id="s3" class="session">
-      <h2 class="section-title">Séance 3 — Full body athlétique + cardio</h2>
-      <div class="info-box">Idéal samedi. Objectif : corps complet, condition physique, dépense et puissance générale.</div>
+function applyChecks(){document.querySelectorAll('input[type="checkbox"]').forEach(box=>{const id=box.dataset.id;box.checked=localStorage.getItem(id)==='true';updateDone(box);box.onchange=()=>{localStorage.setItem(id,box.checked);updateDone(box);};});}
+function updateDone(box){const ex=box.closest('.exercise');if(ex)ex.classList.toggle('done',box.checked);}
+applyChecks();
+function resetChecks(){document.querySelectorAll('input[type="checkbox"]').forEach(box=>{box.checked=false;localStorage.removeItem(box.dataset.id);updateDone(box);});}
 
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-velo"><div><h3>Vélo</h3><span class="tag">8 à 10 min</span><span class="tag">tranquille</span></div></div><p class="desc">Échauffement simple avant la séance.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-presse"><div><h3>Presse à cuisses</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Rappel jambes. Ne va pas aussi lourd que sur la séance 1 si tu es fatigué.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-legcurl"><div><h3>Leg curl</h3><span class="tag">3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Arrière des cuisses. Garde un mouvement contrôlé.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-tirage"><div><h3>Tirage vertical</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Dos + biceps.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-chest"><div><h3>Chest press</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Poussée haut du corps.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-row"><div><h3>Rowing assis</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Tirage horizontal. Garde le buste stable.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-shoulder"><div><h3>Shoulder press</h3><span class="tag">2 à 3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Épaules. Si tu es fatigué, fais seulement 2 séries.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Abdos. Mouvement propre et contrôlé.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-mollets"><div><h3>Mollets machine</h3><span class="tag">3 séries</span><span class="tag">15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Monte sur la pointe des pieds, redescends doucement.</p></article>
-      <div class="warning"><strong>Cardio finisher :</strong> vélo 10 fois : 20 secondes rapide / 40 secondes lent. Court, intense et moins violent que courir.</div>
-    </section>
+function adaptExercise(key,context){let ex={...DB.machines[key]};if(context.easy){ex.sets=reduceSets(ex.sets);ex.desc+=" Adapté : charge plus légère, technique parfaite.";}if(context.short&&["pecdeck","biceps","triceps","calves","cardio"].includes(key))ex.skip=true;if(context.noLegs&&["presse","legext","glute","cardio"].includes(key))ex.skip=true;if(context.pain==='knee'&&["presse","legext"].includes(key)){ex.desc+=" Genou : amplitude réduite, pas lourd, stop si douleur.";ex.reps="12 reps propres";}if(context.pain==='adductor'&&key==='add'){ex.desc+=" Adducteurs : très léger, pas d’à-coups.";ex.sets="2 séries";}if(context.pain==='ankle'&&["calves","cardio"].includes(key)){ex.desc+=" Cheville : très contrôlé ou remplace par vélo tranquille.";ex.sets="2 séries";}if(context.pain==='shoulder'&&["shoulder","chest"].includes(key)){ex.desc+=" Épaule : baisse la charge, amplitude confortable.";ex.sets="2 séries";}if(context.pain==='back'&&["row","shoulder"].includes(key)){ex.desc+=" Dos : buste stable, pas de cambrure, charge modérée.";ex.sets="2 séries";}return ex;}
+function reduceSets(s){return s.replace('4 séries','3 séries').replace('3 séries','2 séries').replace('2 à 3 séries','2 séries').replace('10 tours','6 tours');}
 
-    <section id="rules" class="session">
-      <h2 class="section-title">Règles de progression</h2>
-      <div class="info-box">
-        <strong>Charge :</strong> tu dois finir avec environ 2 répétitions en réserve. Exemple : si tu fais 10 reps, tu dois sentir que tu aurais pu en faire 12 maximum, pas 18.
-      </div>
+function buildPlan(params){
+ let keys=[];let title="Séance personnalisée";
+ const noLegs=params.football==='matchTomorrow'||params.football==='matchToday'||params.goal==='prematch';
+ if(params.goal==='legs')keys=["warmup","presse","legcurl","legext","glute","add","abd","calves","plank"];
+ else if(params.goal==='upper')keys=["warmup","tirage","chest","row","shoulder","reverse","pecdeck","triceps","biceps","abs"];
+ else if(params.goal==='recovery')keys=["warmup","abd","add","legcurl","tirage","reverse","abs"];
+ else if(params.goal==='fatloss')keys=["warmup","presse","legcurl","tirage","chest","row","abs","cardio"];
+ else if(params.goal==='muscle')keys=["warmup","presse","legcurl","tirage","chest","row","shoulder","pecdeck","triceps","biceps","abs"];
+ else if(params.goal==='prematch')keys=["warmup","tirage","chest","row","reverse","abs"];
+ else keys=["warmup","presse","legcurl","tirage","chest","row","shoulder","abs","calves","cardio"];
+ if(noLegs&&params.goal!=='upper')keys=["warmup","tirage","chest","row","reverse","triceps","biceps","abs"];
+ const context={easy:params.fatigue==='high'||params.intensity==='easy'||params.football==='matchTomorrow'||params.football==='matchToday',short:params.duration==='45',noLegs,pain:params.pain};
+ let exercises=keys.map(k=>adaptExercise(k,context)).filter(e=>!e.skip);
+ if(params.duration==='75'&&params.fatigue!=='high'&&params.football==='none'){ if(params.goal==='legs')exercises.push(adaptExercise("abs",context)); if(params.goal==='upper')exercises.push(adaptExercise("pecdeck",context));}
+ if(params.intensity==='hard'&&params.fatigue==='low'&&params.football==='none'){exercises=exercises.map(e=>({...e,desc:e.desc+" Intensité : garde 1-2 reps en réserve, pas à l’échec."}));}
+ let notes=[];
+ if(params.football==='matchToday')notes.push("Match aujourd’hui : séance très légère uniquement. Pas de jambes lourdes, pas de cardio intense.");
+ if(params.football==='matchTomorrow')notes.push("Match demain : priorité jambes fraîches. Pas de grosse presse, pas de finisher.");
+ if(params.football==='trainingTomorrow')notes.push("Foot demain : évite de finir détruit, surtout sur les jambes.");
+ if(params.fatigue==='high')notes.push("Fatigue élevée : baisse les charges de 10 à 20 % et enlève une série si besoin.");
+ if(params.pain!=='none')notes.push("Gêne indiquée : aucune douleur vive acceptée. Adapte charge/amplitude.");
+ if(params.duration==='45')notes.push("Format court : les exercices secondaires sont supprimés.");
+ title += ` — ${labelGoal(params.goal)} / ${params.duration} min`;
+ return{title,exercises,notes};
+}
+function labelGoal(g){return{athletic:"athlétique",legs:"jambes",upper:"haut du corps",recovery:"récupération",fatloss:"sèche",muscle:"prise de muscle",prematch:"pré-match"}[g]||"athlétique";}
+function collectParams(){return{goal:goal.value,duration:duration.value,fatigue:fatigue.value,football:football.value,pain:pain.value,intensity:intensity.value,free:freeRequest.value.trim()};}
+function generateCustomSession(params=collectParams()){
+ const plan=buildPlan(params);
+ let html=`<h2 class="section-title">${plan.title}</h2><div class="info-box"><strong>Créée le ${nowInfo().dateText} à ${nowInfo().time}.</strong><br>${params.free?`Demande : ${params.free}`:"Séance générée depuis tes choix."}</div>`;
+ if(plan.notes.length)html+=`<div class="warning">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`;
+ html+=plan.exercises.map((e,i)=>renderExercise(e,i,'custom-'+Date.now())).join('');
+ html+=`<div class="coach-box"><strong>Règle coach :</strong> termine avec 2 répétitions en réserve. Si la technique se dégrade, baisse la charge. Si douleur vive : stop.</div>`;
+ customOutput.className="";
+ customOutput.innerHTML=html;
+ applyChecks();
+ localStorage.setItem("lastCustomSessionV7",customOutput.innerHTML);
+ switchTab('custom');
+ return plan.title;
+}
+const savedCustom=localStorage.getItem("lastCustomSessionV7");if(savedCustom){customOutput.className="";customOutput.innerHTML=savedCustom;applyChecks();}
 
-      <details class="terms" open>
-        <summary>Comment progresser chaque semaine</summary>
-        <ul>
-          <li>Quand tu réussis toutes les séries proprement, augmente la charge la séance suivante.</li>
-          <li>Presse à cuisses : augmente de 5 kg.</li>
-          <li>Leg curl, chest press, tirage vertical, rowing : augmente de 2,5 à 5 kg.</li>
-          <li>Si la technique devient mauvaise, baisse le poids.</li>
-        </ul>
-      </details>
+let timer=null,remaining=90;function formatTime(sec){const m=Math.floor(sec/60).toString().padStart(2,'0'),s=(sec%60).toString().padStart(2,'0');return `${m}:${s}`;}
+function startTimer(seconds){clearInterval(timer);remaining=seconds;timerDisplay.textContent=formatTime(remaining);timer=setInterval(()=>{remaining-=1;timerDisplay.textContent=formatTime(remaining);if(remaining<=0){clearInterval(timer);timerDisplay.textContent="GO !";if(navigator.vibrate)navigator.vibrate([200,100,200]);}},1000);}
+function showAllTerms(){switchTab('rules');}
 
-      <details class="terms" open>
-        <summary>Tempo à respecter</summary>
-        <p><strong>Rythme :</strong> pousser ou tirer fort, puis revenir doucement en environ 2 secondes.</p>
-        <p>Tu ne balances pas le poids. Tu contrôles. C’est comme ça que tu construis du muscle utile et que tu évites les blessures.</p>
-      </details>
-
-      <details class="terms" open>
-        <summary>Semaine légère toutes les 4 semaines</summary>
-        <ul>
-          <li>Mêmes exercices.</li>
-          <li>Moins lourd.</li>
-          <li>Une série en moins sur chaque machine.</li>
-          <li>Objectif : récupérer, éviter les blessures, repartir plus fort.</li>
-        </ul>
-      </details>
-
-      <details id="terms" class="terms">
-        <summary>Explications des mots importants</summary>
-        <p><strong>Série :</strong> un bloc de répétitions. Exemple : 3 séries de 10 = tu fais 10 fois, repos, 10 fois, repos, 10 fois.</p>
-        <p><strong>Répétition :</strong> une fois le mouvement.</p>
-        <p><strong>Repos :</strong> temps entre deux séries. Utilise le minuteur en bas.</p>
-        <p><strong>Charge :</strong> le poids choisi sur la machine.</p>
-        <p><strong>Amplitude :</strong> jusqu’où tu fais le mouvement, sans douleur.</p>
-        <p><strong>Mouvement contrôlé :</strong> tu pousses ou tires proprement, puis tu reviens doucement.</p>
-        <p><strong>Full body :</strong> séance où tu travailles tout le corps.</p>
-      </details>
-    </section>
-  </main>
-
-  <div class="timer">
-    <div>
-      <div class="small">Minuteur repos</div>
-      <strong id="timerDisplay">01:30</strong>
-    </div>
-    <button onclick="startTimer(90)">1min30</button>
-    <button onclick="startTimer(60)">1min</button>
-  </div>
-
-  <script>
-    const tabs = document.querySelectorAll('.tab');
-    const sessions = document.querySelectorAll('.session');
-    const installBox = document.getElementById('installBox');
-
-    const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    if (isIOS && !isStandalone) installBox.style.display = 'block';
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        sessions.forEach(s => s.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.target).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
-    const checks = document.querySelectorAll('input[type="checkbox"]');
-    checks.forEach(box => {
-      const id = box.dataset.id;
-      box.checked = localStorage.getItem(id) === 'true';
-      updateDone(box);
-      box.addEventListener('change', () => {
-        localStorage.setItem(id, box.checked);
-        updateDone(box);
-      });
-    });
-
-    function updateDone(box) {
-      const ex = box.closest('.exercise');
-      if (ex) ex.classList.toggle('done', box.checked);
-    }
-
-    function resetChecks() {
-      checks.forEach(box => {
-        box.checked = false;
-        localStorage.removeItem(box.dataset.id);
-        updateDone(box);
-      });
-    }
-
-    function showAllTerms() {
-      document.querySelector('[data-target="rules"]').click();
-      const terms = document.getElementById('terms');
-      terms.open = true;
-      setTimeout(() => terms.scrollIntoView({ behavior: 'smooth' }), 100);
-    }
-
-    let timer = null;
-    let remaining = 90;
-
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60).toString().padStart(2, '0');
-      const s = (sec % 60).toString().padStart(2, '0');
-      return `${m}:${s}`;
-    }
-
-    function startTimer(seconds) {
-      clearInterval(timer);
-      remaining = seconds;
-      document.getElementById('timerDisplay').textContent = formatTime(remaining);
-      timer = setInterval(() => {
-        remaining -= 1;
-        document.getElementById('timerDisplay').textContent = formatTime(remaining);
-        if (remaining <= 0) {
-          clearInterval(timer);
-          document.getElementById('timerDisplay').textContent = "GO !";
-          if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
-        }
-      }, 1000);
-    }
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
-      });
-    }
-  </script>
+function addChatMessage(text,type){const log=chatLog;const div=document.createElement('div');div.className='msg '+type;div.textContent=text;log.appendChild(div);log.scrollTop=log.scrollHeight;}
+function askQuick(text){chatInput.value=text;sendCoachMessage();}
+function normalize(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+function paramsFromText(text){const q=normalize(text);let p={goal:"athletic",duration:"60",fatigue:"medium",football:"none",pain:"none",intensity:"normal",free:text};if(q.includes("jambe"))p.goal="legs";if(q.includes("haut"))p.goal="upper";if(q.includes("full"))p.goal="athletic";if(q.includes("leger")||q.includes("récup")||q.includes("recup")){p.goal="recovery";p.intensity="easy";}if(q.includes("seche")||q.includes("bruler")||q.includes("perdre"))p.goal="fatloss";if(q.includes("muscle")||q.includes("masse"))p.goal="muscle";if(q.includes("pre match")||q.includes("pré match"))p.goal="prematch";if(q.includes("45"))p.duration="45";if(q.includes("75"))p.duration="75";if(q.includes("fatigue")||q.includes("crame")||q.includes("courbature"))p.fatigue="high";if(q.includes("foot demain")||q.includes("entrainement demain"))p.football="trainingTomorrow";if(q.includes("match demain"))p.football="matchTomorrow";if(q.includes("match aujourd"))p.football="matchToday";if(q.includes("genou"))p.pain="knee";if(q.includes("adduct"))p.pain="adductor";if(q.includes("cheville"))p.pain="ankle";if(q.includes("epaule"))p.pain="shoulder";if(q.includes("dos"))p.pain="back";if(q.includes("grosse")||q.includes("intense"))p.intensity="hard";return p;}
+function coachAnswer(question){const q=normalize(question);if(q.includes("cree")||q.includes("crée")||q.includes("seance perso")||q.includes("séance perso")||q.includes("fais moi une seance")||q.includes("fais-moi une seance")){const title=generateCustomSession(paramsFromText(question));return `C’est fait. J’ai généré : ${title}. Va dans l’onglet “Séance perso”, l’interface a été mise à jour.`;}if(q.includes("tu peux")||q.includes("capable"))return "Je peux créer des séances personnalisées selon objectif, durée, fatigue, foot/match proche, douleur simple, intensité. Demande par exemple : “crée une séance jambes 45 min avec foot demain”. Je ne peux pas faire de diagnostic médical ni connaître ton calendrier automatiquement.";if(q.includes("charge"))return "Charge : prends un poids où les 2 dernières reps sont dures mais propres. Tu dois garder environ 2 reps en réserve.";if(q.includes("douleur")||q.includes("mal"))return "Douleur : baisse charge/amplitude. Douleur vive, gonflement, instabilité ou douleur persistante = stop et avis pro.";if(q.includes("aujourd"))return `On est ${nowInfo().dateText}, ${nowInfo().time}. Tu peux générer une séance adaptée avec l’onglet Séance perso.`;return "Je peux répondre surtout sur ton programme ou créer une séance personnalisée. Exemple : “crée une séance haut du corps 60 min”, “j’ai foot demain crée une séance légère”, “j’ai mal au genou crée une séance jambes adaptée”.";
+}
+function sendCoachMessage(){const text=chatInput.value.trim();if(!text)return;addChatMessage(text,'user');chatInput.value='';setTimeout(()=>addChatMessage(coachAnswer(text),'bot'),180);}
+if('serviceWorker'in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').catch(()=>{});});}
+</script>
 </body>
 </html>
