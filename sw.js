@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basicfit-coach-v14';
+const CACHE_NAME = 'basicfit-coach-v16';
 const ASSETS = [
   './','./index.html','./manifest.webmanifest','./css/styles.css',
   './js/data.js','./js/storage.js','./js/timer.js','./js/performance.js','./js/nutrition.js','./js/coach.js','./js/app.js',
