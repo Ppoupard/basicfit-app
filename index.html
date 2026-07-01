@@ -761,8 +761,8 @@ function machineKeyFromName(name){
  return "other";
 }
 function perfLabel(key){const found=PERF_MACHINES.find(x=>x[0]===key);return found?found[1]:key;}
-function getPerfData(){try{return JSON.parse(localStorage.getItem("bfPerformancesV12")||"{}")}catch(e){return{}}}
-function setPerfData(data){localStorage.setItem("bfPerformancesV12",JSON.stringify(data));}
+function getPerfData(){try{return JSON.parse(localStorage.getItem("bfPerformancesV13")||"{}")}catch(e){return{}}}
+function setPerfData(data){localStorage.setItem("bfPerformancesV13",JSON.stringify(data));}
 function initPerfSelectors(){
  const opts=PERF_MACHINES.map(([k,l])=>`<option value="${k}">${l}</option>`).join("");
  if(document.getElementById("perfMachine"))perfMachine.innerHTML=opts;
