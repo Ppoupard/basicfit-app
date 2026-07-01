@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Programme Basic-Fit</title>
+
+  <!-- PWA + iPhone -->
+  <meta name="theme-color" content="#f6c343" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Basic-Fit" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #181b22;
+      --card2: #20242d;
+      --text: #f4f4f5;
+      --muted: #b7bbc5;
+      --accent: #f6c343;
+      --green: #33d17a;
+      --border: #303542;
+      --red: #ff6b6b;
+      --safe-bottom: env(safe-area-inset-bottom);
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font-family: Arial, sans-serif; }
+    body { line-height: 1.45; overscroll-behavior-y: none; }
+    header {
+      padding: calc(18px + env(safe-area-inset-top)) 16px 14px;
+      background: linear-gradient(135deg, #151923, #242a36);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 10;
+    }
+    h1 { margin: 0; font-size: 22px; line-height: 1.2; }
+    .subtitle { margin-top: 7px; color: var(--muted); font-size: 13px; }
+    main { padding: 14px; max-width: 780px; margin: 0 auto; padding-bottom: calc(100px + var(--safe-bottom)); }
+    .tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+    button {
+      border: 1px solid var(--border); border-radius: 15px; padding: 13px 8px;
+      font-size: 14px; font-weight: 800; background: var(--card2); color: var(--text);
+    }
+    button.active { background: var(--accent); color: #111; border-color: var(--accent); }
+    .mini-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0 14px; }
+    .mini-actions button { font-size: 13px; padding: 11px 8px; font-weight: 700; }
+    .install-box {
+      display: none;
+      background: rgba(246,195,67,0.10);
+      border: 1px solid rgba(246,195,67,0.45);
+      border-radius: 16px;
+      padding: 13px;
+      margin: 0 0 14px;
+      color: #ffe8a3;
+      font-size: 14px;
+    }
+    .install-box strong { color: var(--accent); }
+    .info-box {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 13px; color: var(--muted); margin-bottom: 14px;
+    }
+    .session { display: none; }
+    .session.active { display: block; }
+    .section-title { margin: 18px 0 10px; font-size: 19px; color: var(--accent); }
+    .exercise {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 14px; margin-bottom: 11px;
+    }
+    .exercise-top { display: flex; gap: 10px; align-items: flex-start; }
+    .exercise input { width: 24px; height: 24px; margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+    .exercise.done { opacity: 0.62; }
+    .exercise h3 { margin: 0; font-size: 17px; }
+    .tag {
+      display: inline-block; margin-top: 7px; margin-right: 5px; padding: 4px 8px;
+      border-radius: 999px; background: #2a303c; color: var(--muted); font-size: 12px;
+    }
+    .desc { margin: 10px 0 0 34px; color: var(--muted); font-size: 14px; }
+    .warning {
+      color: #ffdada; background: rgba(255,107,107,.12); border: 1px solid rgba(255,107,107,.35);
+      border-radius: 14px; padding: 12px; margin: 12px 0; font-size: 14px;
+    }
+    details { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin: 14px 0; }
+    summary { cursor: pointer; font-weight: 800; color: var(--accent); }
+    .terms p { color: var(--muted); margin: 10px 0; font-size: 14px; }
+    .timer {
+      position: fixed; left: 10px; right: 10px; bottom: calc(10px + var(--safe-bottom));
+      max-width: 780px; margin: 0 auto; background: #1d222d; border: 1px solid var(--border);
+      border-radius: 18px; padding: 12px; display: grid; grid-template-columns: 1fr auto auto;
+      gap: 8px; align-items: center; box-shadow: 0 8px 30px rgba(0,0,0,.35);
+    }
+    .timer strong { font-size: 21px; color: var(--accent); }
+    .timer button { padding: 10px 12px; border-radius: 12px; font-size: 13px; }
+    .small { font-size: 12px; color: var(--muted); }
+    @media (max-width: 390px) {
+      h1 { font-size: 20px; }
+      button { font-size: 12.5px; }
+      .tabs { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Programme Basic-Fit</h1>
+    <div class="subtitle">3 séances machines simples — objectif : corps athlétique, solide et performant.</div>
+  </header>
+
+  <main>
+    <div id="installBox" class="install-box">
+      <strong>Installation iPhone :</strong> ouvre cette page dans <strong>Safari</strong>, puis appuie sur <strong>Partager</strong> → <strong>Ajouter à l’écran d’accueil</strong>.
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-target="s1">Séance 1<br>Jambes</button>
+      <button class="tab" data-target="s2">Séance 2<br>Haut</button>
+      <button class="tab" data-target="s3">Séance 3<br>Full body</button>
+    </div>
+
+    <div class="mini-actions">
+      <button onclick="resetChecks()">Réinitialiser</button>
+      <button onclick="showAllTerms()">Explications</button>
+    </div>
+
+    <div class="info-box">
+      <strong>Règle de charge :</strong> prends un poids où les 2 dernières répétitions sont dures, mais propres. Pas besoin de mettre trop lourd dès le début.
+    </div>
+
+    <section id="s1" class="session active">
+      <h2 class="section-title">Séance 1 — Jambes athlétiques</h2>
+      <div class="info-box">Idéal mardi. Évite la veille d’un match. Objectif : jambes solides, genoux protégés, meilleurs appuis.</div>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-velo"><div><h3>Vélo</h3><span class="tag">8 à 10 min</span><span class="tag">échauffement</span></div></div><p class="desc">Pédale tranquillement pour chauffer les jambes.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-presse"><div><h3>Presse à cuisses</h3><span class="tag">4 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses une plateforme avec les pieds. Cuisses + fessiers. Ne bloque pas les genoux en haut.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-legcurl"><div><h3>Leg curl</h3><span class="tag">4 séries</span><span class="tag">10-12 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Arrière des cuisses. Tu ramènes les talons vers les fesses.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-legext"><div><h3>Leg extension</h3><span class="tag">3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Devant des cuisses. Tu tends les jambes devant toi. Fais propre et contrôlé.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-glute"><div><h3>Machine fessiers</h3><span class="tag">3 séries</span><span class="tag">10 par jambe</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses une jambe vers l’arrière. Utile pour accélération et stabilité.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-add"><div><h3>Adducteurs</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu ramènes les jambes vers l’intérieur. Très utile pour le foot.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-abd"><div><h3>Abducteurs</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu écartes les jambes vers l’extérieur. Travaille les hanches et les appuis.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-mollets"><div><h3>Mollets machine ou presse</h3><span class="tag">4 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses avec la pointe des pieds. Monte, bloque 1 seconde, redescends doucement.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-gainage"><div><h3>Gainage simple</h3><span class="tag">3 x 30-45 sec</span></div></div><p class="desc">Planche au sol. Simple et très important pour être solide au foot.</p></article>
+    </section>
+
+    <section id="s2" class="session">
+      <h2 class="section-title">Séance 2 — Haut du corps puissant</h2>
+      <div class="info-box">Idéal jeudi. Objectif : dos fort, épaules solides, puissance dans les duels.</div>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-rameur"><div><h3>Rameur ou vélo</h3><span class="tag">8 min</span><span class="tag">échauffement</span></div></div><p class="desc">Si tu n’es pas à l’aise avec le rameur, prends le vélo.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-chest"><div><h3>Chest press</h3><span class="tag">4 séries</span><span class="tag">8-10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses devant toi. Pectoraux, épaules, triceps.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-tirage"><div><h3>Tirage vertical</h3><span class="tag">4 séries</span><span class="tag">8-10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires une barre du haut vers la poitrine. Dos + biceps.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-row"><div><h3>Rowing assis</h3><span class="tag">4 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires les poignées vers ton ventre. Garde le dos droit.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-shoulder"><div><h3>Shoulder press</h3><span class="tag">3 séries</span><span class="tag">8-10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses au-dessus de la tête. Épaules solides.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-pecdeck"><div><h3>Pec deck</h3><span class="tag">3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu rapproches les bras devant toi. Travaille les pectoraux.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-reverse"><div><h3>Reverse pec deck</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu tires les bras vers l’arrière. Arrière d’épaules + posture.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-biceps"><div><h3>Curl biceps machine</h3><span class="tag">3 séries</span><span class="tag">10-12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu plies les bras pour travailler le devant du bras.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-triceps"><div><h3>Extension triceps machine ou poulie</h3><span class="tag">3 séries</span><span class="tag">10-12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses vers le bas avec une corde ou une barre.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span></div></div><p class="desc">Tu rapproches le buste vers les jambes. Contracte les abdos.</p></article>
+    </section>
+
+    <section id="s3" class="session">
+      <h2 class="section-title">Séance 3 — Full body machines + cardio</h2>
+      <div class="info-box">Idéal samedi. Objectif : tout le corps + cardio court.</div>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-velo"><div><h3>Vélo ou tapis incliné</h3><span class="tag">8 à 10 min</span><span class="tag">échauffement</span></div></div><p class="desc">Tapis incliné = marche rapide avec pente.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-presse"><div><h3>Presse à cuisses</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu pousses avec les jambes. Mouvement contrôlé.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-legcurl"><div><h3>Leg curl</h3><span class="tag">3 séries</span><span class="tag">12 reps</span></div></div><p class="desc">Arrière des cuisses. Important pour les sprints et les genoux.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-chest"><div><h3>Chest press</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu pousses devant toi.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-tirage"><div><h3>Tirage vertical</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu tires une barre du haut vers la poitrine.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-row"><div><h3>Rowing assis</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu tires les poignées vers ton ventre.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-shoulder"><div><h3>Shoulder press</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu pousses au-dessus de la tête.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">15 reps</span></div></div><p class="desc">Abdos. Contrôle le mouvement.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-mollets"><div><h3>Mollets machine</h3><span class="tag">3 séries</span><span class="tag">15 reps</span></div></div><p class="desc">Monte sur la pointe des pieds, redescends doucement.</p></article>
+      <div class="warning"><strong>Cardio finisher :</strong> vélo 10 fois : 20 secondes rapide / 40 secondes lent.</div>
+    </section>
+
+    <details id="terms" class="terms">
+      <summary>Explications des mots importants</summary>
+      <p><strong>Série :</strong> un bloc de répétitions. Exemple : 3 séries de 10 = tu fais 10 fois, repos, 10 fois, repos, 10 fois.</p>
+      <p><strong>Répétition :</strong> une fois le mouvement.</p>
+      <p><strong>Repos :</strong> temps entre deux séries. Utilise le minuteur en bas.</p>
+      <p><strong>Charge :</strong> le poids choisi sur la machine.</p>
+      <p><strong>Amplitude :</strong> jusqu’où tu fais le mouvement, sans douleur.</p>
+      <p><strong>Mouvement contrôlé :</strong> tu pousses ou tires proprement, puis tu reviens doucement.</p>
+      <p><strong>Full body :</strong> séance où tu travailles tout le corps.</p>
+    </details>
+  </main>
+
+  <div class="timer">
+    <div>
+      <div class="small">Minuteur repos</div>
+      <strong id="timerDisplay">01:30</strong>
+    </div>
+    <button onclick="startTimer(90)">1min30</button>
+    <button onclick="startTimer(60)">1min</button>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const sessions = document.querySelectorAll('.session');
+    const installBox = document.getElementById('installBox');
+
+    const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (isIOS && !isStandalone) installBox.style.display = 'block';
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        sessions.forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    const checks = document.querySelectorAll('input[type="checkbox"]');
+    checks.forEach(box => {
+      const id = box.dataset.id;
+      box.checked = localStorage.getItem(id) === 'true';
+      updateDone(box);
+      box.addEventListener('change', () => {
+        localStorage.setItem(id, box.checked);
+        updateDone(box);
+      });
+    });
+
+    function updateDone(box) {
+      const ex = box.closest('.exercise');
+      if (ex) ex.classList.toggle('done', box.checked);
+    }
+
+    function resetChecks() {
+      checks.forEach(box => {
+        box.checked = false;
+        localStorage.removeItem(box.dataset.id);
+        updateDone(box);
+      });
+    }
+
+    function showAllTerms() {
+      const terms = document.getElementById('terms');
+      terms.open = true;
+      terms.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    let timer = null;
+    let remaining = 90;
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60).toString().padStart(2, '0');
+      const s = (sec % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    function startTimer(seconds) {
+      clearInterval(timer);
+      remaining = seconds;
+      document.getElementById('timerDisplay').textContent = formatTime(remaining);
+      timer = setInterval(() => {
+        remaining -= 1;
+        document.getElementById('timerDisplay').textContent = formatTime(remaining);
+        if (remaining <= 0) {
+          clearInterval(timer);
+          document.getElementById('timerDisplay').textContent = "GO !";
+          if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
+        }
+      }, 1000);
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
