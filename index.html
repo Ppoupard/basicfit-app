@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V16</title>
+  <title>Basic-Fit Coach V17</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -11,7 +11,262 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icons/icon-180.png" />
-  <link rel="stylesheet" href="css/styles.css" />
+<style>
+
+:root{
+  --bg:#070A12;
+  --panel:rgba(16,22,34,.78);
+  --panel2:rgba(22,30,46,.86);
+  --text:#F8FAFC;
+  --muted:#9AA8BA;
+  --accent:#FFD166;
+  --accent2:#35D07F;
+  --blue:#7DB3FF;
+  --danger:#FF6B6B;
+  --border:rgba(255,255,255,.10);
+  --shadow:0 18px 45px rgba(0,0,0,.32);
+  --radius:24px;
+  --safe-bottom:env(safe-area-inset-bottom);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+body{
+  background:
+    radial-gradient(circle at 10% -10%,rgba(255,209,102,.22),transparent 30%),
+    radial-gradient(circle at 88% 4%,rgba(53,208,127,.13),transparent 26%),
+    radial-gradient(circle at 50% 110%,rgba(125,179,255,.14),transparent 40%),
+    #070A12;
+  line-height:1.45;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:38px 38px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 78%);
+  z-index:-1;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.app-shell{max-width:980px;margin:0 auto;min-height:100vh;padding-bottom:calc(122px + var(--safe-bottom))}
+.topbar{
+  position:sticky;top:0;z-index:30;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:calc(16px + env(safe-area-inset-top)) 15px 12px;
+  background:rgba(7,10,18,.76);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  backdrop-filter:blur(24px);
+}
+.eyebrow,.card-kicker,.hero-label{margin:0;color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.9px;text-transform:uppercase}
+h1{margin:3px 0 0;font-size:21px;letter-spacing:-.6px;line-height:1.1}
+h2{margin:0;font-size:24px;letter-spacing:-.8px;line-height:1.1}
+h3{margin:0 0 8px;font-size:18px;letter-spacing:-.35px}
+p{margin:0}
+main{padding:14px 13px}
+.icon-btn,.ghost-btn,.primary-btn,.danger-btn,.app-nav button,.quick-grid button,.quick-scroll button,.segmented button,.timer-dock button{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(255,255,255,.07);
+  color:var(--text);
+  padding:11px 13px;
+  font-weight:850;
+  transition:transform .13s ease, border-color .13s ease, background .13s ease;
+}
+button:active{transform:scale(.97)}
+.icon-btn{width:44px;height:44px;border-radius:16px;font-size:20px;padding:0}
+.primary-btn{
+  background:linear-gradient(135deg,#FFD166,#FFB703);
+  color:#0C1220;
+  border:0;
+  box-shadow:0 16px 34px rgba(255,183,3,.16);
+}
+.danger-btn{color:#FFDADA;background:rgba(255,107,107,.11);border-color:rgba(255,107,107,.28)}
+.full{width:100%;margin-top:12px}
+.hidden{display:none!important}
+.hero{
+  position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:30px;
+  padding:20px;
+  min-height:190px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+  background:
+    linear-gradient(135deg,rgba(255,209,102,.22),rgba(53,208,127,.12) 48%,rgba(125,179,255,.11)),
+    rgba(16,22,34,.76);
+  box-shadow:0 24px 70px rgba(0,0,0,.38);
+  backdrop-filter:blur(24px);
+}
+.hero::after{content:"";position:absolute;width:190px;height:190px;border-radius:999px;right:-70px;top:-80px;background:rgba(255,255,255,.11);filter:blur(2px)}
+.hero-content{position:relative;z-index:1;max-width:76%}
+.hero h2{font-size:30px;margin:7px 0 10px}
+.hero p:last-child{color:#D7E1EE;font-size:14px}
+.hero-orb{position:relative;z-index:1;width:70px;height:70px;border-radius:24px;background:rgba(255,255,255,.16);display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);font-weight:1000;font-size:22px}
+.hint{margin:12px 0;padding:13px;border:1px solid rgba(255,209,102,.26);background:rgba(255,209,102,.10);border-radius:20px;color:#FFE9AD}
+.app-nav{
+  display:flex;gap:9px;overflow-x:auto;
+  padding:13px 2px 14px;
+  position:sticky;top:70px;z-index:25;
+  background:linear-gradient(to bottom,rgba(7,10,18,.96),rgba(7,10,18,.80),rgba(7,10,18,0));
+  backdrop-filter:blur(18px);
+  scrollbar-width:none;
+}
+.app-nav::-webkit-scrollbar{display:none}
+.app-nav button{min-width:82px;padding:10px 11px;border-radius:20px;line-height:1.15}
+.app-nav span{display:block;font-size:11px;margin-top:3px;color:#D9E3F0}
+.app-nav button.active{background:linear-gradient(135deg,#FFD166,#FFB703);color:#0C1220;border-color:transparent}
+.app-nav button.active span{color:#0C1220}
+.view{display:none;animation:fadeIn .18s ease}
+.view.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.grid{display:grid;gap:12px}
+.cards-2{grid-template-columns:1fr 1fr}
+.cards-3{grid-template-columns:repeat(3,1fr)}
+.card,.exercise-card,.empty-state{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(20px);
+  padding:15px;
+}
+.accent-card{background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(53,208,127,.09)),var(--panel)}
+.card p{color:var(--muted);font-size:14px}
+.card-kicker{margin-bottom:6px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:20px 0 12px}
+.section-head.compact{margin:2px 0 12px}
+.mini-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.quick-grid button{min-height:54px;text-align:left}
+.stats-row{margin:12px 0}
+.stat-card{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:14px;box-shadow:var(--shadow)}
+.stat-card strong{display:block;font-size:24px;letter-spacing:-.8px;color:#fff}
+.stat-card span{color:var(--muted);font-size:12px}
+.segmented{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:22px;padding:6px}
+.segmented button{border-radius:17px;border:0;background:transparent;color:#C8D4E4}
+.segmented button.active{background:rgba(255,209,102,.18);color:#FFE5A5}
+.session-title{margin:14px 0 12px}
+.session-subtitle{color:var(--muted);margin-bottom:12px}
+.exercise-card{position:relative;overflow:hidden;margin-bottom:11px}
+.exercise-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--accent),var(--accent2))}
+.exercise-top{display:flex;gap:12px;align-items:flex-start}
+.exercise-card input[type=checkbox]{width:26px;height:26px;accent-color:var(--accent2);flex:0 0 auto;margin-top:1px}
+.exercise-title{font-size:17px;font-weight:950;letter-spacing:-.25px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.tag{font-size:11.5px;color:#D7E0ED;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px 8px}
+.tag.main{background:rgba(255,209,102,.16);color:#FFE4A3;border-color:rgba(255,209,102,.18)}
+.exercise-desc{margin:10px 0 0 38px;color:var(--muted);font-size:13.5px}
+.perf-line{margin:10px 0 0 38px;padding:8px 10px;border-radius:14px;background:rgba(53,208,127,.09);border:1px solid rgba(53,208,127,.20);color:#D9FFE9;font-size:12.8px}
+.done{opacity:.58}
+.form-card label{display:flex;flex-direction:column;gap:7px;color:#C7D3E4;font-size:12px;font-weight:850;letter-spacing:.2px;margin-bottom:10px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input,select,textarea{
+  width:100%;border-radius:17px;border:1px solid rgba(255,255,255,.12);
+  background:rgba(5,8,15,.76);color:#fff;padding:12px;outline:none;
+}
+textarea{min-height:78px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:rgba(255,209,102,.65);box-shadow:0 0 0 4px rgba(255,209,102,.10)}
+.empty-state{color:#FFE9AD;border-style:dashed;background:rgba(255,209,102,.08)}
+.history-box,.result-box{margin-top:12px;color:var(--muted)}
+.table-wrap{overflow-x:auto;border-radius:18px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left}
+th{color:var(--accent);background:rgba(255,209,102,.09)}
+tr:last-child td{border-bottom:0}
+.chat-card{padding:13px}
+.chat-log{display:flex;flex-direction:column;gap:10px;max-height:520px;overflow-y:auto;padding:2px 2px 12px}
+.msg{border-radius:20px;padding:11px 12px;font-size:14px;white-space:pre-wrap}
+.msg.bot{background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.08)}
+.msg.user{align-self:flex-end;max-width:88%;background:linear-gradient(135deg,rgba(255,209,102,.22),rgba(255,183,3,.16));color:#FFF0C7;border:1px solid rgba(255,209,102,.20)}
+.chat-input-row{display:grid;grid-template-columns:1fr auto;gap:8px}
+.chat-input-row button{border-radius:17px;border:0;background:linear-gradient(135deg,#FFD166,#FFB703);color:#0C1220;font-weight:950;padding:0 14px}
+.quick-scroll{display:flex;gap:8px;overflow-x:auto;padding:0 0 12px;scrollbar-width:none}
+.quick-scroll::-webkit-scrollbar{display:none}
+.quick-scroll button{white-space:nowrap}
+.questions-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.question-card{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
+.question-card h3{font-size:16px}
+.question-card button{display:block;width:100%;text-align:left;margin:7px 0;border-radius:15px;border:1px solid var(--border);background:rgba(255,255,255,.07);color:#E5EDF8;padding:9px 10px;font-weight:800}
+.timer-dock{
+  position:fixed;left:12px;right:12px;bottom:calc(12px + var(--safe-bottom));z-index:40;
+  max-width:980px;margin:0 auto;padding:12px;
+  display:grid;grid-template-columns:1fr repeat(4,auto);gap:8px;align-items:center;
+  background:rgba(10,14,24,.88);border:1px solid rgba(255,255,255,.14);
+  border-radius:28px;box-shadow:0 24px 70px rgba(0,0,0,.55);backdrop-filter:blur(24px);
+}
+.timer-dock span{display:block;color:var(--muted);font-size:11px}
+.timer-dock strong{display:block;font-size:25px;letter-spacing:-.7px}
+.timer-dock p{margin:0;color:#9EE9BD;font-size:11px}
+.timer-dock button{min-width:48px;border-radius:16px}
+.timer-dock .featured{background:linear-gradient(135deg,#FFD166,#FFB703);color:#0C1220;border:0}
+@media(max-width:760px){
+  .cards-2,.cards-3,.quick-grid,.questions-grid{grid-template-columns:1fr}
+  .hero{min-height:180px}
+  .hero-content{max-width:82%}
+  .hero h2{font-size:27px}
+  .form-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .topbar{padding-left:13px;padding-right:13px}
+  main{padding-left:12px;padding-right:12px}
+  .app-nav{top:68px}
+  .app-nav button{min-width:76px}
+  .timer-dock{grid-template-columns:1fr repeat(2,auto)}
+  .timer-dock button:nth-of-type(3),.timer-dock button:nth-of-type(4){display:none}
+}
+
+
+/* V17 : nettoyage du bas de l'application */
+.clean-timer{
+  grid-template-columns:1fr repeat(4,auto);
+}
+.clean-timer > div{
+  display:flex;
+  align-items:center;
+}
+.clean-timer strong{
+  font-size:27px;
+}
+.sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+@media(max-width:520px){
+  .clean-timer{
+    grid-template-columns:1fr repeat(2,auto);
+  }
+}
+
+
+/* V17 : suppression du texte parasite tout en bas */
+.page-end-spacer{
+  height: calc(92px + var(--safe-bottom));
+  pointer-events:none;
+}
+.hint#installHint{
+  display:none!important;
+}
+.app-shell > footer,
+footer{
+  display:none!important;
+}
+body > p:last-child,
+body > div:not(.app-shell):last-child{
+  display:none!important;
+}
+
+</style>
 </head>
 <body>
   <div class="app-shell">
@@ -26,7 +281,7 @@
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V16 CLEAN</p>
+          <p class="hero-label">V17 ONEFILE</p>
           <h2>Entraîne-toi comme un joueur sérieux.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -298,7 +553,7 @@
             <button data-quick="Je veux sécher">Sèche</button>
           </div>
           <div id="coachChat" class="chat-log">
-            <div class="msg bot">Je suis ton coach V16. Écris avec tes mots, je comprends les formulations proches.</div>
+            <div class="msg bot">Je suis ton coach V17. Écris avec tes mots, je comprends les formulations proches.</div>
           </div>
           <div class="chat-input-row">
             <input id="coachInput" placeholder="Écris ta question..." />
@@ -330,13 +585,520 @@
       <button id="soundBtn">🔔</button>
     </aside>
   </div>
+<script>
 
-  <script src="js/data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/timer.js"></script>
-  <script src="js/performance.js"></script>
-  <script src="js/nutrition.js"></script>
-  <script src="js/coach.js"></script>
-  <script src="js/app.js"></script>
+window.BF_DATA = {
+  machines: {
+    warmup:{name:"Vélo",sets:"8 à 10 min",reps:"tranquille",rest:"—",desc:"Chauffe sans taper dans les genoux."},
+    presse:{name:"Presse à cuisses",sets:"4 séries",reps:"8 à 10 reps",rest:"1min30-2min",desc:"Pieds largeur épaules, genoux dans l’axe, descente contrôlée, ne verrouille pas les genoux.",main:true},
+    legcurl:{name:"Leg curl",sets:"4 séries",reps:"10 à 12 reps",rest:"1min30",desc:"Arrière des cuisses. Priorité pour sprint et protection du genou.",main:true},
+    legext:{name:"Leg extension",sets:"3 séries",reps:"10 à 12 reps",rest:"1min15",desc:"Devant des cuisses. Contrôle propre, commence léger si gêne genou."},
+    glute:{name:"Machine fessiers",sets:"3 séries",reps:"10 par jambe",rest:"1min",desc:"Puissance, accélération et stabilité du bassin."},
+    add:{name:"Adducteurs",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Intérieur des cuisses, utile pour le foot et les changements de direction."},
+    abd:{name:"Abducteurs",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Hanches et appuis. Important pour stabilité."},
+    calves:{name:"Mollets",sets:"4 séries",reps:"12 à 15 reps",rest:"1min",desc:"Monte sur la pointe, bloque 1 seconde, redescends doucement."},
+    tirage:{name:"Tirage vertical",sets:"4 séries",reps:"8 à 10 reps",rest:"1min30",desc:"Tire vers le haut de poitrine, épaules basses, pas derrière la nuque.",main:true},
+    chest:{name:"Chest press",sets:"4 séries",reps:"8 à 10 reps",rest:"1min30",desc:"Poussée haut du corps. Reviens doucement sans avancer les épaules."},
+    row:{name:"Rowing assis",sets:"4 séries",reps:"10 reps",rest:"1min30",desc:"Tire vers le ventre, dos droit, épaules basses.",main:true},
+    shoulder:{name:"Shoulder press",sets:"3 séries",reps:"8 à 10 reps",rest:"1min30",desc:"Poussée épaules. Ne force pas si douleur/pincement."},
+    reverse:{name:"Reverse pec deck",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Arrière d’épaules et posture. Protège les épaules.",main:true},
+    pecdeck:{name:"Pec deck",sets:"2 à 3 séries",reps:"12 reps",rest:"1min",desc:"Complément pectoraux, mouvement propre."},
+    triceps:{name:"Triceps machine / poulie",sets:"3 séries",reps:"10 à 12 reps",rest:"1min",desc:"Arrière du bras. Coudes stables."},
+    biceps:{name:"Curl biceps machine",sets:"2 à 3 séries",reps:"10 à 12 reps",rest:"1min",desc:"Devant du bras, contrôle sans balancer."},
+    abs:{name:"Machine abdos",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Contracte les abdos, ne tire pas avec le cou."},
+    plank:{name:"Gainage planche",sets:"3 séries",reps:"30 à 45 sec",rest:"45 sec",desc:"Stabilité, duels et appuis."},
+    cardio:{name:"Cardio vélo",sets:"10 tours",reps:"20 sec rapide / 40 sec lent",rest:"—",desc:"À supprimer si match proche ou grosse fatigue."}
+  },
+  sessions: {
+    s1:{title:"Séance 1 — Jambes puissantes",subtitle:"Puissance jambes, prévention, appuis, accélération.",keys:["warmup","presse","legcurl","legext","glute","add","abd","calves","plank"]},
+    s2:{title:"Séance 2 — Haut du corps",subtitle:"Dos fort, épaules solides, puissance dans les duels.",keys:["warmup","tirage","chest","row","shoulder","reverse","pecdeck","triceps","biceps","abs"]},
+    s3:{title:"Séance 3 — Full body athlétique",subtitle:"Corps complet, condition physique et puissance générale.",keys:["warmup","presse","legcurl","tirage","chest","row","shoulder","abs","calves","cardio"]}
+  },
+  perfMachines: [
+    ["presse","Presse à cuisses"],["legcurl","Leg curl"],["legext","Leg extension"],["glute","Machine fessiers"],["add","Adducteurs"],["abd","Abducteurs"],["calves","Mollets"],["tirage","Tirage vertical"],["chest","Chest press"],["row","Rowing assis"],["shoulder","Shoulder press"],["reverse","Reverse pec deck"],["pecdeck","Pec deck"],["triceps","Triceps"],["biceps","Biceps"],["abs","Machine abdos"],["plank","Gainage"],["cardio","Cardio vélo"]
+  ],
+  replacements: {
+    presse:"Remplacement presse : leg extension 3x12 + leg curl 3x12. Si tu maîtrises : hack squat léger. Le plus simple : leg extension + leg curl puis reviens à la presse.",
+    legcurl:"Remplacement leg curl : autre leg curl si dispo, sinon machine fessiers + presse pieds hauts contrôlée. Reviens au leg curl dès qu’il est libre.",
+    legext:"Remplacement leg extension : presse pieds un peu plus bas, hack squat léger, ou une série de presse en plus. Si genou sensible, ne force pas.",
+    tirage:"Remplacement tirage vertical : rowing assis, machine dorsaux, tirage prise différente, ou assisted pull-up si tu maîtrises. Le plus simple : rowing assis.",
+    row:"Remplacement rowing : tirage vertical, rowing machine poitrine appuyée, tirage poulie basse si dispo.",
+    chest:"Remplacement chest press : pec deck, machine développé convergent, ou pompes inclinées. Le plus simple : pec deck.",
+    shoulder:"Remplacement shoulder press : élévations latérales machine/câble léger, reverse pec deck, ou développé épaules machine alternative. Si épaule sensible, évite lourd.",
+    pecdeck:"Remplacement pec deck : chest press plus léger, câble vis-à-vis si tu sais faire, ou pompes inclinées.",
+    reverse:"Remplacement reverse pec deck : face pull à la poulie, rowing léger coudes ouverts, ou tirage horizontal léger.",
+    add:"Remplacement adducteurs : isométrie légère en serrant un ballon/serviette entre les genoux. Pas d’à-coups.",
+    abd:"Remplacement abducteurs : machine fessiers, abduction poulie si tu connais, ou pas chassés élastique si dispo.",
+    calves:"Remplacement mollets : mollets à la presse, mollets debout guidé/Smith, ou mollets au poids du corps lentement.",
+    abs:"Remplacement machine abdos : gainage planche 3x30-45 sec, dead bug contrôlé ou crunch machine.",
+    warmup:"Remplacement vélo : tapis incliné facile, elliptique ou rameur tranquille. Si genou/cheville sensible, vélo reste le meilleur."
+  },
+  questionGroups: {
+    "Séance":["Quelle séance tu me conseilles aujourd’hui ?","Je fais quoi aujourd’hui ?","J’ai que 45 minutes","Je suis fatigué","J’ai foot demain","J’ai match demain"],
+    "Créer":["Crée une séance jambes 45 min","Crée une séance haut du corps","Crée une séance légère","Crée une séance avec douleur genou","Crée une séance sèche"],
+    "Machines":["La presse est prise","Le tirage vertical est occupé","Par quoi remplacer le chest press ?","Je ne sens pas le bon muscle","Comment régler le siège ?"],
+    "Progression":["Quelle charge je mets ?","Quand augmenter le poids ?","Combien de repos ?","Je dois aller à l’échec ?","Je stagne, je fais quoi ?"],
+    "Nutrition":["Je mange quoi avant la salle ?","Je mange quoi après la salle ?","Je veux sécher","Whey ou pas ?","Créatine ou pas ?","J’ai match demain je mange quoi ?"]
+  }
+};
+
+
+
+window.BF_STORE = {
+  get(key, fallback=null){
+    try{ const v=localStorage.getItem(key); return v===null ? fallback : JSON.parse(v); }
+    catch(e){ return fallback; }
+  },
+  set(key, value){ localStorage.setItem(key, JSON.stringify(value)); },
+  remove(key){ localStorage.removeItem(key); }
+};
+window.BF_UTIL = {
+  normalize(s){
+    return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’']/g," ").replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
+  },
+  nowInfo(){
+    const now=new Date();
+    const jours=["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+    const mois=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+    const hour=now.getHours();
+    let moment="journée";
+    if(hour<11) moment="matin"; else if(hour<14) moment="midi"; else if(hour<18) moment="après-midi"; else if(hour<22) moment="soir"; else moment="nuit";
+    return {now, day:jours[now.getDay()], dateText:`${jours[now.getDay()]} ${now.getDate()} ${mois[now.getMonth()]}`, time:`${hour}h${String(now.getMinutes()).padStart(2,"0")}`, hour, moment};
+  },
+  $(id){ return document.getElementById(id); },
+  toast(text){ console.log(text); }
+};
+
+
+
+(function(){
+  const KEY_END="bf_v17_timer_end";
+  const KEY_SOUND="bf_v17_sound";
+  let timer=null;
+  let end=Number(localStorage.getItem(KEY_END)||0);
+  let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
+  let finishedNotified=false;
+
+  function fmt(sec){ const m=Math.floor(sec/60).toString().padStart(2,"0"); const s=(sec%60).toString().padStart(2,"0"); return `${m}:${s}`; }
+  function beep(freq=700,duration=.12){
+    if(!soundOn) return;
+    try{
+      const Ctx=window.AudioContext||window.webkitAudioContext;
+      if(!Ctx) return;
+      const ctx=new Ctx(), osc=ctx.createOscillator(), gain=ctx.createGain();
+      osc.type="sine"; osc.frequency.value=freq;
+      gain.gain.setValueAtTime(.001, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(.18, ctx.currentTime+.02);
+      gain.gain.exponentialRampToValueAtTime(.001, ctx.currentTime+duration);
+      osc.connect(gain); gain.connect(ctx.destination); osc.start(); osc.stop(ctx.currentTime+duration+.03);
+    }catch(e){}
+  }
+  function finishSound(){ beep(740,.12); setTimeout(()=>beep(980,.13),140); setTimeout(()=>beep(1180,.15),290); }
+  async function notify(){
+    try{
+      if(!("Notification" in window) || Notification.permission!=="granted") return;
+      if(navigator.serviceWorker?.ready){
+        const reg=await navigator.serviceWorker.ready;
+        reg.showNotification("Repos terminé 💪",{body:"Tu peux repartir sur ta série.",tag:"bf-rest"});
+      }
+    }catch(e){}
+  }
+  function update(){
+    const display=BF_UTIL.$("timerDisplay"), status=BF_UTIL.$("timerStatus");
+    if(!display||!status) return;
+    if(!end){
+      display.textContent="01:30"; status.textContent=soundOn?"Sons ON":"Sons OFF"; return;
+    }
+    const left=Math.ceil((end-Date.now())/1000);
+    if(left>0){ display.textContent=fmt(left); status.textContent="En cours"; return; }
+    display.textContent="GO !"; status.textContent="Repos terminé";
+    localStorage.removeItem(KEY_END); end=0; clearInterval(timer); timer=null;
+    if(!finishedNotified){ finishedNotified=true; finishSound(); if(navigator.vibrate) navigator.vibrate([200,100,200]); notify(); }
+  }
+  window.BF_TIMER = {
+    start(seconds){
+      finishedNotified=false;
+      end=Date.now()+seconds*1000;
+      localStorage.setItem(KEY_END,String(end));
+      clearInterval(timer); timer=setInterval(update,250); update(); beep(440,.08);
+    },
+    async toggleSound(){
+      soundOn=!soundOn; localStorage.setItem(KEY_SOUND,soundOn?"on":"off"); beep(soundOn?660:220,.12); update();
+      if("Notification" in window && Notification.permission==="default"){
+        try{ await Notification.requestPermission(); }catch(e){}
+      }
+    },
+    update
+  };
+  document.addEventListener("visibilitychange",update);
+  window.addEventListener("focus",update);
+  window.addEventListener("pageshow",update);
+  setInterval(update,1000);
+})();
+
+
+
+(function(){
+  const KEY="bf_v17_performances";
+  const DATA=window.BF_DATA;
+
+  function data(){ return BF_STORE.get(KEY,{}); }
+  function save(d){ BF_STORE.set(KEY,d); }
+  function e1rm(w,r){ w=parseFloat(String(w).replace(",",".")); r=parseFloat(r); if(!isFinite(w)||!isFinite(r)||w<=0||r<=0)return null; return Math.round(w*(1+r/30)); }
+  function label(key){ const f=DATA.perfMachines.find(x=>x[0]===key); return f?f[1]:key; }
+  function last(key){ const arr=data()[key]||[]; return arr[arr.length-1]||null; }
+  function best(key){ const arr=data()[key]||[]; if(!arr.length)return null; return arr.reduce((b,e)=>(e.score||0)>(b.score||0)?e:b,arr[0]); }
+  function advice(entry){
+    if(!entry) return "—";
+    if(entry.feeling==="facile") return "Augmente légèrement";
+    if(entry.feeling==="limite") return "Garde ou baisse";
+    return "Garde ou + petit";
+  }
+  function countAll(){
+    const d=data(); let total=0, machines=0, latest=null;
+    Object.entries(d).forEach(([k,arr])=>{ if(arr.length){ machines++; total+=arr.length; const l=arr[arr.length-1]; if(!latest||l.id>latest.id) latest=l; }});
+    return {total,machines,latest};
+  }
+  function populateSelects(){
+    const html=DATA.perfMachines.map(([k,l])=>`<option value="${k}">${l}</option>`).join("");
+    ["perfMachine","perfHistoryMachine"].forEach(id=>{ const el=BF_UTIL.$(id); if(el) el.innerHTML=html; });
+    const date=BF_UTIL.$("perfDate"); if(date&&!date.value) date.value=new Date().toLocaleDateString("fr-FR");
+  }
+  function renderHistory(){
+    const box=BF_UTIL.$("perfHistory"); if(!box) return;
+    const machine=BF_UTIL.$("perfHistoryMachine")?.value || "presse";
+    const arr=data()[machine]||[];
+    const b=best(machine);
+    if(BF_UTIL.$("perfBest")) BF_UTIL.$("perfBest").textContent=b?`${b.score} kg`:"—";
+    if(BF_UTIL.$("perfAdvice")) BF_UTIL.$("perfAdvice").textContent=advice(arr[arr.length-1]);
+    if(!arr.length){ box.innerHTML=`<p>Aucune perf sur ${label(machine)}.</p>`; return; }
+    const rows=arr.slice().reverse().map(e=>`<tr><td>${e.date}</td><td>${e.weight} kg</td><td>${e.sets}x${e.reps}</td><td>${e.feeling}</td><td>${e.score||"—"} kg</td></tr>`).join("");
+    box.innerHTML=`<div class="table-wrap"><table><thead><tr><th>Date</th><th>Charge</th><th>Séries</th><th>Ressenti</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
+  function updateStats(){
+    const c=countAll();
+    const ids={statPerfCount:c.total,statMachines:c.machines,perfTotal:c.total};
+    Object.entries(ids).forEach(([id,v])=>{ const el=BF_UTIL.$(id); if(el) el.textContent=v; });
+    const lastEl=BF_UTIL.$("statLastWorkout"); if(lastEl) lastEl.textContent=c.latest?`${c.latest.weight}kg`:"—";
+  }
+  function updateExerciseLines(){
+    document.querySelectorAll("[data-perf-key]").forEach(el=>{
+      const k=el.dataset.perfKey, l=last(k);
+      if(!l){ el.textContent="Dernière perf : —"; return; }
+      el.textContent=`Dernière perf : ${l.weight} kg • ${l.sets}x${l.reps} • ${l.feeling} → ${advice(l)}`;
+    });
+  }
+  function clearInputs(){
+    ["perfWeight","perfReps","perfSets","perfNote"].forEach(id=>{ const el=BF_UTIL.$(id); if(el) el.value=""; });
+    const f=BF_UTIL.$("perfFeeling"); if(f) f.value="propre";
+    const date=BF_UTIL.$("perfDate"); if(date) date.value=new Date().toLocaleDateString("fr-FR");
+  }
+
+  window.BF_PERF = {
+    label,last,advice,
+    init(){
+      populateSelects(); renderHistory(); updateStats(); updateExerciseLines();
+      BF_UTIL.$("perfHistoryMachine")?.addEventListener("change",renderHistory);
+      BF_UTIL.$("savePerfBtn")?.addEventListener("click",()=>{
+        const machine=BF_UTIL.$("perfMachine").value;
+        const weight=parseFloat(BF_UTIL.$("perfWeight").value.replace(",","."));
+        const reps=parseInt(BF_UTIL.$("perfReps").value,10);
+        const sets=parseInt(BF_UTIL.$("perfSets").value,10);
+        if(!isFinite(weight)||!isFinite(reps)||!isFinite(sets)){ alert("Remplis charge, répétitions et séries."); return; }
+        const entry={id:Date.now(),date:BF_UTIL.$("perfDate").value||new Date().toLocaleDateString("fr-FR"),weight,reps,sets,feeling:BF_UTIL.$("perfFeeling").value,note:BF_UTIL.$("perfNote").value.trim(),score:e1rm(weight,reps)};
+        const d=data(); if(!d[machine]) d[machine]=[]; d[machine].push(entry); d[machine]=d[machine].slice(-40); save(d);
+        BF_UTIL.$("perfHistoryMachine").value=machine; renderHistory(); updateStats(); updateExerciseLines();
+        window.BF_APP?.botMessage?.("coach",`Perf sauvegardée : ${label(machine)} — ${weight} kg, ${sets}x${reps}.`);
+      });
+      BF_UTIL.$("fillLastPerfBtn")?.addEventListener("click",()=>{
+        const l=last(BF_UTIL.$("perfMachine").value); if(!l){ alert("Pas encore de perf sur cette machine."); return; }
+        BF_UTIL.$("perfWeight").value=l.weight; BF_UTIL.$("perfReps").value=l.reps; BF_UTIL.$("perfSets").value=l.sets; BF_UTIL.$("perfFeeling").value=l.feeling; BF_UTIL.$("perfNote").value=l.note||"";
+      });
+      BF_UTIL.$("clearPerfBtn")?.addEventListener("click",clearInputs);
+      BF_UTIL.$("deleteMachineBtn")?.addEventListener("click",()=>{
+        const machine=BF_UTIL.$("perfHistoryMachine").value; if(!confirm("Effacer cette machine ?"))return;
+        const d=data(); delete d[machine]; save(d); renderHistory(); updateStats(); updateExerciseLines();
+      });
+      BF_UTIL.$("exportPerfBtn")?.addEventListener("click",()=>{
+        const text=JSON.stringify(data(),null,2);
+        navigator.clipboard?.writeText(text).then(()=>alert("Perfs copiées."),()=>alert(text));
+      });
+    }
+  };
+})();
+
+
+
+(function(){
+  function weight(){ const w=parseFloat((BF_UTIL.$("nutritionWeight")?.value||"75").replace(",",".")); return isFinite(w)&&w>30&&w<180?w:75; }
+  function plan(){
+    const w=weight(), goal=BF_UTIL.$("nutritionGoal").value, moment=BF_UTIL.$("nutritionMoment").value, hunger=BF_UTIL.$("nutritionHunger").value;
+    let pLow=Math.round(w*1.4), pHigh=Math.round(w*2.0);
+    if(goal==="cut"){ pLow=Math.round(w*1.8); pHigh=Math.round(w*2.3); }
+    const waterLow=(w*0.03).toFixed(1), waterHigh=(w*0.035).toFixed(1);
+    let out=`<strong>Protéines :</strong> ${pLow}-${pHigh} g/jour environ.<br><strong>Eau :</strong> ${waterLow}-${waterHigh} L/jour + transpiration.<br><br>`;
+    if(goal==="cut") out+="<strong>Sèche :</strong> garde les protéines hautes, légumes, féculents autour du sport, limite sodas/grignotage.<br>";
+    if(goal==="muscle") out+="<strong>Muscle :</strong> mange assez, protéines à chaque repas, féculents autour de la séance, progression à la salle.<br>";
+    if(goal==="performance") out+="<strong>Performance :</strong> repas simple, glucides autour de l’effort, hydratation sérieuse.<br>";
+    if(goal==="match") out+="<strong>Foot/match :</strong> glucides digestes, pas trop gras juste avant, eau régulièrement.<br>";
+    if(goal==="recovery") out+="<strong>Récupération :</strong> protéines + glucides + eau + sommeil. Ne saute pas le repas après grosse séance.<br>";
+    if(moment==="before") out+="<br><strong>Avant séance :</strong> 1h30-3h avant : riz/pâtes/pommes de terre + œufs/jambon/poulet + eau. Si rapide : banane + skyr.";
+    if(moment==="after") out+="<br><strong>Après séance :</strong> protéines 25-40 g + glucides. Exemple : riz/pommes de terre + poulet/œufs/jambon + légumes.";
+    if(moment==="evening") out+="<br><strong>Soir tard :</strong> repas léger utile : skyr/fromage blanc + fruit, ou œufs/jambon + féculent modéré.";
+    if(moment==="matchday") out+="<br><strong>Jour de match :</strong> repas 3-4h avant, digeste, riche en glucides, pas trop gras.";
+    if(hunger==="low") out+="<br><strong>Pas faim :</strong> skyr, compote, banane, eau. Évite le repas lourd.";
+    if(hunger==="high") out+="<br><strong>Très faim :</strong> protéine + féculent + légumes, mange lentement.";
+    return out;
+  }
+  function answer(text){
+    const q=BF_UTIL.normalize(text);
+    if(q.includes("avant")) return "Avant salle : 1h30-3h avant, féculent + protéine + eau. Si tu as peu de temps : banane + skyr.";
+    if(q.includes("apres")||q.includes("après")) return "Après salle : protéines + glucides + eau. Exemple riz/pommes de terre + poulet/œufs/jambon + légumes.";
+    if(q.includes("seche")||q.includes("maigrir")||q.includes("perdre")) return "Sèche : déficit léger, protéines hautes, muscu conservée, légumes, féculents autour du sport. Ne coupe pas tout.";
+    if(q.includes("muscle")||q.includes("masse")) return "Prise de muscle : protéines à chaque repas, assez de calories, féculents autour de la séance, sommeil.";
+    if(q.includes("whey")) return "Whey : pratique, pas obligatoire. Elle sert juste à atteindre tes protéines.";
+    if(q.includes("creatine")||q.includes("créatine")) return "Créatine : option intéressante force/puissance, souvent 3-5 g/jour. Repas/sommeil/entraînement restent prioritaires.";
+    if(q.includes("match")) return "Match : glucides digestes + hydratation. Évite repas très gras juste avant. Repas 3-4h avant si possible.";
+    if(q.includes("eau")||q.includes("boire")) return "Hydratation : bois régulièrement. Après grosse transpiration : eau + repas salé.";
+    return "Je peux répondre sur : avant/après séance, sèche, prise de muscle, protéines, whey, créatine, hydratation, match, repas tardif.";
+  }
+  window.BF_NUTRITION = {
+    init(){
+      BF_UTIL.$("generateNutritionBtn")?.addEventListener("click",()=>{ BF_UTIL.$("nutritionResult").innerHTML=plan(); });
+      BF_UTIL.$("sendNutritionBtn")?.addEventListener("click",()=>window.BF_NUTRITION.send());
+      BF_UTIL.$("nutritionInput")?.addEventListener("keydown",e=>{ if(e.key==="Enter") window.BF_NUTRITION.send(); });
+    },
+    send(){
+      const input=BF_UTIL.$("nutritionInput"); const text=input.value.trim(); if(!text)return;
+      window.BF_APP.addMessage("nutrition","user",text); input.value="";
+      setTimeout(()=>window.BF_APP.addMessage("nutrition","bot",answer(text)),150);
+    },
+    answer
+  };
+})();
+
+
+
+(function(){
+  const SYN={
+    fatigue:["fatigue","fatigué","mort","cramé","ko","hs","rincé","courbature","jambes lourdes"],
+    temps:["pas le temps","peu de temps","vite","rapide","30","45","demi heure"],
+    seance:["seance","séance","programme","training","entrainement","workout","je fais quoi"],
+    conseil:["conseille","recommande","quoi faire","choix","meilleur"],
+    foot:["foot","football","entrainement","terrain"],
+    match:["match","competition","tournoi"],
+    douleur:["douleur","mal","gêne","bobo","tiraillement","pincement"],
+    machine:["machine prise","occupée","pas libre","indisponible","salle pleine","salle blindée"],
+    seche:["seche","sèche","maigrir","perdre du poids","perdre du gras"],
+    muscle:["muscle","masse","grossir","hypertrophie"],
+    explosif:["explosif","puissant","puissance","vitesse","athletique","athlétique"],
+    nutrition:["manger","repas","whey","creatine","créatine","proteine","protéine"]
+  };
+  function expand(q){
+    let e=" "+q+" ";
+    Object.entries(SYN).forEach(([k,arr])=>arr.forEach(w=>{ if(q.includes(BF_UTIL.normalize(w))) e+=" "+k+" "+arr.map(BF_UTIL.normalize).join(" "); }));
+    return e;
+  }
+  function paramsFromText(text){
+    const q=expand(BF_UTIL.normalize(text));
+    const p={goal:"athletic",duration:"60",fatigue:"medium",football:"none",pain:"none",intensity:"normal",free:text};
+    if(q.includes("jambe"))p.goal="legs"; if(q.includes("haut"))p.goal="upper"; if(q.includes("recup")||q.includes("léger")||q.includes("leger")){p.goal="recovery";p.intensity="easy";}
+    if(q.includes("seche")||q.includes("perdre"))p.goal="fatloss"; if(q.includes("muscle")||q.includes("masse"))p.goal="muscle"; if(q.includes("pre match"))p.goal="prematch";
+    if(q.includes("30"))p.duration="30"; else if(q.includes("45"))p.duration="45"; else if(q.includes("75"))p.duration="75";
+    if(q.includes("fatigue")||q.includes("mort")||q.includes("crame"))p.fatigue="high";
+    if(q.includes("foot")&&q.includes("demain"))p.football="trainingTomorrow"; if(q.includes("foot")&&q.includes("aujourd"))p.football="trainingToday";
+    if(q.includes("match")&&q.includes("demain"))p.football="matchTomorrow"; if(q.includes("match")&&q.includes("aujourd"))p.football="matchToday";
+    if(q.includes("genou"))p.pain="knee"; if(q.includes("adduct"))p.pain="adductor"; if(q.includes("cheville"))p.pain="ankle"; if(q.includes("epaule"))p.pain="shoulder"; if(q.includes("dos"))p.pain="back";
+    return p;
+  }
+  function recommend(text=""){
+    const p=paramsFromText(text), n=BF_UTIL.nowInfo();
+    if(p.football==="matchToday") return "Match aujourd’hui : pas de muscu lourde. Activation légère uniquement.";
+    if(p.football==="matchTomorrow") return "Match demain : je conseille haut du corps modéré ou séance pré-match légère. Pas de jambes lourdes.";
+    if(p.football==="trainingTomorrow") return "Foot demain : je conseille séance haut du corps. Sinon full body allégé sans finisher.";
+    if(p.fatigue==="high") return "Fatigué : séance récupération/légère. Charges -10 à -20 %, moins de séries, pas d’échec.";
+    if(p.pain!=="none") return "Avec une gêne : séance adaptée, charge légère, amplitude confortable, pas de mouvement douloureux.";
+    if(n.day==="mardi") return "Aujourd’hui : séance jambes si tu es frais. Si foot demain ou jambes lourdes : haut du corps.";
+    if(n.day==="jeudi") return "Aujourd’hui : séance haut du corps. Très bon choix pour progresser sans cramer les jambes.";
+    if(n.day==="samedi") return "Aujourd’hui : full body. Si match demain : allège et enlève le cardio.";
+    if(n.day==="dimanche") return "Aujourd’hui : repos, match ou récupération légère.";
+    return "Je conseille haut du corps ou repos actif selon ta fatigue. Tu peux aussi générer une séance personnalisée.";
+  }
+  function replacement(text){
+    const q=BF_UTIL.normalize(text);
+    const map={presse:"presse","leg curl":"legcurl","leg extension":"legext","tirage":"tirage","rowing":"row","chest":"chest","shoulder":"shoulder","epaule":"shoulder","pec deck":"pecdeck","reverse":"reverse","adducteur":"add","abducteur":"abd","mollet":"calves","abdo":"abs","velo":"warmup"};
+    for(const [word,key] of Object.entries(map)){ if(q.includes(word)) return BF_DATA.replacements[key]||"Je n’ai pas trouvé cette machine."; }
+    return "Dis-moi quelle machine est prise. Exemple : presse prise, tirage vertical occupé, chest press indisponible.";
+  }
+  function createCustom(text){
+    const p=paramsFromText(text);
+    window.BF_APP.generateCustom(p);
+    return "C’est fait : j’ai généré une séance dans l’onglet Perso.";
+  }
+  function answer(text){
+    const q=expand(BF_UTIL.normalize(text));
+    if(q.includes("cree")||q.includes("crée")||q.includes("genere")||q.includes("séance perso")||q.includes("seance perso")) return createCustom(text);
+    if((q.includes("seance")||q.includes("programme"))&&(q.includes("conseil")||q.includes("quoi faire")||q.includes("aujourd"))) return recommend(text);
+    if(q.includes("machine")||q.includes("occup")||q.includes("indisponible")||q.includes("remplacer")) return replacement(text);
+    if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes("creatine")||q.includes("protéine")||q.includes("proteine")) return BF_NUTRITION.answer(text);
+    if(q.includes("charge")||q.includes("poids")||q.includes("kg")) return "Charge : les 2 dernières reps doivent être dures mais propres. Si tu peux faire beaucoup plus, augmente. Si la technique casse, baisse.";
+    if(q.includes("repos")||q.includes("pause")) return "Repos : gros exercices 1min30-2min, exercices moyens 1min15, accessoires environ 1min.";
+    if(q.includes("echec")||q.includes("échec")) return "Pas besoin d’aller à l’échec. Pour ton objectif foot/athlétique : garde 1-2 reps en réserve.";
+    if(q.includes("genou")) return "Genou : baisse charge/amplitude, évite presse/leg extension lourd. Douleur vive, gonflement ou instabilité = stop.";
+    if(q.includes("fatigue")||q.includes("mort")||q.includes("crame")) return "Fatigue : baisse 10-20 %, enlève une série, supprime le cardio. Si tu es cramé : récupération.";
+    if(q.includes("seche")||q.includes("maigrir")) return BF_NUTRITION.answer("je veux sécher");
+    if(q.includes("muscle")||q.includes("masse")) return BF_NUTRITION.answer("prendre muscle");
+    if(q.includes("explosif")||q.includes("puissant")) return "Explosivité : construis la force sur presse/leg curl/fessiers/mollets + transfert terrain avec accélérations et appuis.";
+    if(q.includes("performance")||q.includes("perf")) return "Va dans Perfs : note machine, charge, reps, séries et ressenti. L’app affichera la dernière perf sous chaque exercice.";
+    return "Je peux t’aider sur : séance conseillée, séance personnalisée, machine prise, charge, repos, douleur, nutrition, sèche, muscle, explosivité et performances.";
+  }
+  window.BF_COACH={answer,paramsFromText,recommend,replacement};
+})();
+
+
+
+(function(){
+  const DATA=window.BF_DATA;
+  let currentSession="s1";
+
+  function el(id){ return BF_UTIL.$(id); }
+  function showView(view){
+    document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+    el(view+"View")?.classList.add("active");
+    document.querySelectorAll(".app-nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function renderExercise(key,i,prefix){
+    const ex=typeof key==="string"?DATA.machines[key]:key;
+    const perfKey=typeof key==="string"?key:(ex.perfKey||"other");
+    const id=`${prefix}-${i}-${perfKey}`;
+    return `<article class="exercise-card">
+      <div class="exercise-top">
+        <input type="checkbox" data-check="${id}" />
+        <div>
+          <div class="exercise-title">${ex.name}</div>
+          <div class="tags">${ex.main?'<span class="tag main">priorité</span>':''}<span class="tag">${ex.sets}</span><span class="tag">${ex.reps}</span><span class="tag">repos ${ex.rest}</span></div>
+        </div>
+      </div>
+      <p class="exercise-desc">${ex.desc}</p>
+      <div class="perf-line" data-perf-key="${perfKey}">Dernière perf : —</div>
+    </article>`;
+  }
+  function bindChecks(){
+    document.querySelectorAll("[data-check]").forEach(box=>{
+      const k="bf_v17_check_"+box.dataset.check;
+      box.checked=localStorage.getItem(k)==="true";
+      box.closest(".exercise-card")?.classList.toggle("done",box.checked);
+      box.addEventListener("change",()=>{
+        localStorage.setItem(k,box.checked?"true":"false");
+        box.closest(".exercise-card")?.classList.toggle("done",box.checked);
+      });
+    });
+  }
+  function renderSession(){
+    const s=DATA.sessions[currentSession];
+    el("sessionContent").innerHTML=`<div class="session-title"><h2>${s.title}</h2><p class="session-subtitle">${s.subtitle}</p></div>${s.keys.map((k,i)=>renderExercise(k,i,currentSession)).join("")}`;
+    bindChecks();
+    window.BF_PERF?.init?.();
+  }
+  function reduceSets(s){return s.replace("4 séries","3 séries").replace("3 séries","2 séries").replace("2 à 3 séries","2 séries").replace("10 tours","6 tours");}
+  function adapt(key,ctx){
+    const ex={...DATA.machines[key], perfKey:key};
+    if(ctx.easy){ ex.sets=reduceSets(ex.sets); ex.desc+=" Adapté : charge plus légère, technique parfaite."; }
+    if(ctx.short && ["pecdeck","biceps","triceps","calves","cardio","glute"].includes(key)) ex.skip=true;
+    if(ctx.veryShort && ["legext","glute","add","abd","shoulder","pecdeck","biceps","triceps","calves","cardio"].includes(key)) ex.skip=true;
+    if(ctx.noLegs && ["presse","legext","glute","calves","cardio"].includes(key)) ex.skip=true;
+    if(ctx.pain==="knee"&&["presse","legext"].includes(key)){ ex.desc+=" Genou : amplitude réduite, pas lourd, stop si douleur."; ex.reps="12 reps propres"; ex.sets=reduceSets(ex.sets); }
+    if(ctx.pain==="adductor"&&key==="add"){ ex.desc+=" Adducteurs : très léger, pas d’à-coups."; ex.sets="2 séries"; }
+    if(ctx.pain==="ankle"&&["calves","cardio"].includes(key)){ ex.desc+=" Cheville : contrôlé ou remplace par vélo tranquille."; ex.sets="2 séries"; }
+    if(ctx.pain==="shoulder"&&["shoulder","chest"].includes(key)){ ex.desc+=" Épaule : charge réduite, amplitude confortable."; ex.sets="2 séries"; }
+    return ex;
+  }
+  function buildCustom(p){
+    let keys=[];
+    const noLegs=p.football==="matchTomorrow"||p.football==="matchToday"||p.goal==="prematch";
+    if(p.goal==="legs") keys=["warmup","presse","legcurl","legext","glute","add","abd","calves","plank"];
+    else if(p.goal==="upper") keys=["warmup","tirage","chest","row","shoulder","reverse","pecdeck","triceps","biceps","abs"];
+    else if(p.goal==="recovery") keys=["warmup","abd","add","legcurl","tirage","reverse","abs"];
+    else if(p.goal==="fatloss") keys=["warmup","presse","legcurl","tirage","chest","row","abs","cardio"];
+    else if(p.goal==="muscle") keys=["warmup","presse","legcurl","tirage","chest","row","shoulder","pecdeck","triceps","biceps","abs"];
+    else if(p.goal==="prematch") keys=["warmup","tirage","chest","row","reverse","abs"];
+    else keys=["warmup","presse","legcurl","tirage","chest","row","shoulder","abs","calves","cardio"];
+    if(noLegs && p.goal!=="upper") keys=["warmup","tirage","chest","row","reverse","triceps","biceps","abs"];
+    const ctx={easy:p.fatigue==="high"||p.intensity==="easy"||p.football==="matchTomorrow"||p.football==="matchToday",short:p.duration==="45",veryShort:p.duration==="30",noLegs,pain:p.pain};
+    const exercises=keys.map(k=>adapt(k,ctx)).filter(e=>!e.skip);
+    const notes=[];
+    if(p.football==="matchToday") notes.push("Match aujourd’hui : séance très légère uniquement.");
+    if(p.football==="matchTomorrow") notes.push("Match demain : priorité jambes fraîches, pas de finisher.");
+    if(p.fatigue==="high") notes.push("Fatigue élevée : charges -10 à -20 %, pas d’échec.");
+    if(p.pain!=="none") notes.push("Gêne indiquée : aucune douleur vive acceptée.");
+    return {title:`Séance personnalisée — ${p.duration} min`,exercises,notes};
+  }
+  function formCustomParams(){
+    return {goal:customGoal.value,duration:customDuration.value,fatigue:customFatigue.value,football:customFootball.value,pain:customPain.value,intensity:customIntensity.value,free:customRequest.value.trim()};
+  }
+  function generateCustom(params=formCustomParams()){
+    const plan=buildCustom(params);
+    const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
+    customOutput.className="";
+    customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
+    BF_STORE.set("bf_v17_custom_html",customOutput.innerHTML);
+    bindChecks(); BF_PERF.updateExerciseLines?.();
+    showView("custom");
+  }
+  function addMessage(target,type,text){
+    const log=target==="nutrition"?el("nutritionChat"):el("coachChat");
+    const div=document.createElement("div"); div.className="msg "+type; div.textContent=text; log.appendChild(div); log.scrollTop=log.scrollHeight;
+  }
+  function botMessage(target,text){ addMessage(target,"bot",text); }
+  function renderQuestions(){
+    const grid=el("questionsGrid");
+    grid.innerHTML=Object.entries(DATA.questionGroups).map(([cat,qs])=>`<article class="question-card"><h3>${cat}</h3>${qs.map(q=>`<button data-question="${q.replace(/"/g,'&quot;')}">${q}</button>`).join("")}</article>`).join("");
+    grid.querySelectorAll("[data-question]").forEach(b=>b.addEventListener("click",()=>{ showView("coach"); coachInput.value=b.dataset.question; sendCoach(); }));
+  }
+  function sendCoach(){
+    const text=coachInput.value.trim(); if(!text) return;
+    addMessage("coach","user",text); coachInput.value="";
+    setTimeout(()=>addMessage("coach","bot",BF_COACH.answer(text)),150);
+  }
+  function updateToday(){
+    const n=BF_UTIL.nowInfo();
+    todayLine.textContent=`${n.dateText} • ${n.time} • ${n.moment}`;
+    const advice=BF_COACH.recommend("quelle séance aujourd’hui");
+    dailyAdviceText.textContent=advice;
+  }
+  function init(){
+    const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+    const standalone=window.navigator.standalone===true||window.matchMedia("(display-mode: standalone)").matches;
+    if(isiOS&&!standalone) installHint.classList.remove("hidden");
+
+    document.querySelectorAll(".app-nav button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+    document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.open)));
+    document.querySelectorAll("[data-quick]").forEach(b=>b.addEventListener("click",()=>{ showView("coach"); coachInput.value=b.dataset.quick; sendCoach(); }));
+    document.querySelectorAll("[data-timer]").forEach(b=>b.addEventListener("click",()=>BF_TIMER.start(Number(b.dataset.timer))));
+    soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
+
+    sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v17_check_")) localStorage.removeItem(k); }); renderSession(); });
+    generateCustomBtn.addEventListener("click",()=>generateCustom());
+    sendCoachBtn.addEventListener("click",sendCoach);
+    coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
+    openRecommendedBtn.addEventListener("click",()=>showView("sessions"));
+
+    renderSession();
+    const saved=BF_STORE.get("bf_v17_custom_html","");
+    if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
+    BF_PERF.init();
+    BF_NUTRITION.init();
+    renderQuestions();
+    updateToday();
+    BF_TIMER.update();
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+  }
+  window.BF_APP={showView,generateCustom,addMessage,botMessage};
+  document.addEventListener("DOMContentLoaded",init);
+})();
+
+</script>
 </body>
 </html>
