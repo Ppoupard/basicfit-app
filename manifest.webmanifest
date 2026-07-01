@@ -1,10 +1,10 @@
 {
-  "name": "Programme Basic-Fit Coach V13",
-  "short_name": "BF Coach V13",
+  "name": "Programme Basic-Fit Coach V14",
+  "short_name": "BF Coach V14",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#070a12",
-  "theme_color": "#ffd166",
+  "background_color": "#070A12",
+  "theme_color": "#FFD166",
   "orientation": "portrait",
   "icons": [
     {
