@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basicfit-ios-v1';
+const CACHE_NAME = 'basicfit-ios-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -14,7 +14,12 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.map(key => key !== CACHE_NAME ? caches.delete(key) : null))
+    )
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {

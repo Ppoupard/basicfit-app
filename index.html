@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Programme Basic-Fit</title>
+  <title>Programme Basic-Fit V2</title>
 
-  <!-- PWA + iPhone -->
   <meta name="theme-color" content="#f6c343" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -38,11 +37,11 @@
     }
     h1 { margin: 0; font-size: 22px; line-height: 1.2; }
     .subtitle { margin-top: 7px; color: var(--muted); font-size: 13px; }
-    main { padding: 14px; max-width: 780px; margin: 0 auto; padding-bottom: calc(100px + var(--safe-bottom)); }
-    .tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+    main { padding: 14px; max-width: 780px; margin: 0 auto; padding-bottom: calc(105px + var(--safe-bottom)); }
+    .tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-bottom: 12px; }
     button {
-      border: 1px solid var(--border); border-radius: 15px; padding: 13px 8px;
-      font-size: 14px; font-weight: 800; background: var(--card2); color: var(--text);
+      border: 1px solid var(--border); border-radius: 15px; padding: 12px 6px;
+      font-size: 12.5px; font-weight: 800; background: var(--card2); color: var(--text);
     }
     button.active { background: var(--accent); color: #111; border-color: var(--accent); }
     .mini-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0 14px; }
@@ -58,10 +57,11 @@
       font-size: 14px;
     }
     .install-box strong { color: var(--accent); }
-    .info-box {
+    .info-box, .coach-box {
       background: var(--card); border: 1px solid var(--border); border-radius: 16px;
       padding: 13px; color: var(--muted); margin-bottom: 14px;
     }
+    .coach-box { border-color: rgba(51,209,122,0.4); background: rgba(51,209,122,0.07); color: #d6ffe5; }
     .session { display: none; }
     .session.active { display: block; }
     .section-title { margin: 18px 0 10px; font-size: 19px; color: var(--accent); }
@@ -77,6 +77,7 @@
       display: inline-block; margin-top: 7px; margin-right: 5px; padding: 4px 8px;
       border-radius: 999px; background: #2a303c; color: var(--muted); font-size: 12px;
     }
+    .tag.main { background: rgba(246,195,67,0.16); color: #ffe39a; }
     .desc { margin: 10px 0 0 34px; color: var(--muted); font-size: 14px; }
     .warning {
       color: #ffdada; background: rgba(255,107,107,.12); border: 1px solid rgba(255,107,107,.35);
@@ -84,7 +85,8 @@
     }
     details { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin: 14px 0; }
     summary { cursor: pointer; font-weight: 800; color: var(--accent); }
-    .terms p { color: var(--muted); margin: 10px 0; font-size: 14px; }
+    .terms p, .terms li { color: var(--muted); margin: 10px 0; font-size: 14px; }
+    .terms ul { padding-left: 19px; }
     .timer {
       position: fixed; left: 10px; right: 10px; bottom: calc(10px + var(--safe-bottom));
       max-width: 780px; margin: 0 auto; background: #1d222d; border: 1px solid var(--border);
@@ -96,26 +98,27 @@
     .small { font-size: 12px; color: var(--muted); }
     @media (max-width: 390px) {
       h1 { font-size: 20px; }
-      button { font-size: 12.5px; }
-      .tabs { gap: 6px; }
+      button { font-size: 11.5px; }
+      .tabs { gap: 5px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Programme Basic-Fit</h1>
-    <div class="subtitle">3 séances machines simples — objectif : corps athlétique, solide et performant.</div>
+    <h1>Programme Basic-Fit V2</h1>
+    <div class="subtitle">Version optimisée coach — machines simples, objectif athlétique et football.</div>
   </header>
 
   <main>
     <div id="installBox" class="install-box">
-      <strong>Installation iPhone :</strong> ouvre cette page dans <strong>Safari</strong>, puis appuie sur <strong>Partager</strong> → <strong>Ajouter à l’écran d’accueil</strong>.
+      <strong>Installation iPhone :</strong> ouvre cette page dans <strong>Safari</strong>, puis <strong>Partager</strong> → <strong>Ajouter à l’écran d’accueil</strong>.
     </div>
 
     <div class="tabs">
       <button class="tab active" data-target="s1">Séance 1<br>Jambes</button>
       <button class="tab" data-target="s2">Séance 2<br>Haut</button>
-      <button class="tab" data-target="s3">Séance 3<br>Full body</button>
+      <button class="tab" data-target="s3">Séance 3<br>Full</button>
+      <button class="tab" data-target="rules">Règles<br>progrès</button>
     </div>
 
     <div class="mini-actions">
@@ -123,64 +126,100 @@
       <button onclick="showAllTerms()">Explications</button>
     </div>
 
-    <div class="info-box">
-      <strong>Règle de charge :</strong> prends un poids où les 2 dernières répétitions sont dures, mais propres. Pas besoin de mettre trop lourd dès le début.
+    <div class="coach-box">
+      <strong>Version V2 validée :</strong> programme plus propre pour ton objectif : jambes fortes, dos solide, prévention genou/adducteurs, cardio court et progression simple.
     </div>
 
     <section id="s1" class="session active">
-      <h2 class="section-title">Séance 1 — Jambes athlétiques</h2>
-      <div class="info-box">Idéal mardi. Évite la veille d’un match. Objectif : jambes solides, genoux protégés, meilleurs appuis.</div>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-velo"><div><h3>Vélo</h3><span class="tag">8 à 10 min</span><span class="tag">échauffement</span></div></div><p class="desc">Pédale tranquillement pour chauffer les jambes.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-presse"><div><h3>Presse à cuisses</h3><span class="tag">4 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses une plateforme avec les pieds. Cuisses + fessiers. Ne bloque pas les genoux en haut.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-legcurl"><div><h3>Leg curl</h3><span class="tag">4 séries</span><span class="tag">10-12 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Arrière des cuisses. Tu ramènes les talons vers les fesses.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-legext"><div><h3>Leg extension</h3><span class="tag">3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Devant des cuisses. Tu tends les jambes devant toi. Fais propre et contrôlé.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-glute"><div><h3>Machine fessiers</h3><span class="tag">3 séries</span><span class="tag">10 par jambe</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses une jambe vers l’arrière. Utile pour accélération et stabilité.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-add"><div><h3>Adducteurs</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu ramènes les jambes vers l’intérieur. Très utile pour le foot.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-abd"><div><h3>Abducteurs</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu écartes les jambes vers l’extérieur. Travaille les hanches et les appuis.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-mollets"><div><h3>Mollets machine ou presse</h3><span class="tag">4 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses avec la pointe des pieds. Monte, bloque 1 seconde, redescends doucement.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s1-gainage"><div><h3>Gainage simple</h3><span class="tag">3 x 30-45 sec</span></div></div><p class="desc">Planche au sol. Simple et très important pour être solide au foot.</p></article>
+      <h2 class="section-title">Séance 1 — Jambes puissantes + prévention</h2>
+      <div class="info-box">Idéal mardi. Évite la veille d’un match. Objectif : puissance jambes, genoux solides, appuis, accélération.</div>
+
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-velo"><div><h3>Vélo</h3><span class="tag">8 à 10 min</span><span class="tag">tranquille</span></div></div><p class="desc">Chauffe les jambes sans taper dans les genoux.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-presse"><div><h3>Presse à cuisses</h3><span class="tag main">exercice principal</span><span class="tag">4 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30-2min</span></div></div><p class="desc">Priorité de progression. Pousse fort, redescends doucement, ne bloque jamais les genoux.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-legcurl"><div><h3>Leg curl</h3><span class="tag main">important foot</span><span class="tag">4 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Arrière des cuisses. Très important pour les sprints et la protection du genou.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-legext"><div><h3>Leg extension</h3><span class="tag">3 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Devant des cuisses. Contrôle bien, ne mets pas trop lourd au début.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-glute"><div><h3>Machine fessiers</h3><span class="tag">3 séries</span><span class="tag">10 par jambe</span><span class="tag">repos 1min</span></div></div><p class="desc">Utile pour accélération, stabilité du bassin et puissance.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-add"><div><h3>Adducteurs</h3><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu ramènes les jambes vers l’intérieur. Important pour les changements de direction.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-abd"><div><h3>Abducteurs</h3><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu écartes les jambes. Renforce les hanches et les appuis.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-mollets"><div><h3>Mollets machine ou presse</h3><span class="tag">4 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Monte sur la pointe des pieds, bloque 1 seconde, redescends doucement.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s1-gainage"><div><h3>Gainage planche</h3><span class="tag">3 séries</span><span class="tag">30 à 45 sec</span><span class="tag">repos 45 sec</span></div></div><p class="desc">Simple, mais essentiel pour être solide dans les duels et les appuis.</p></article>
     </section>
 
     <section id="s2" class="session">
-      <h2 class="section-title">Séance 2 — Haut du corps puissant</h2>
-      <div class="info-box">Idéal jeudi. Objectif : dos fort, épaules solides, puissance dans les duels.</div>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-rameur"><div><h3>Rameur ou vélo</h3><span class="tag">8 min</span><span class="tag">échauffement</span></div></div><p class="desc">Si tu n’es pas à l’aise avec le rameur, prends le vélo.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-chest"><div><h3>Chest press</h3><span class="tag">4 séries</span><span class="tag">8-10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses devant toi. Pectoraux, épaules, triceps.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-tirage"><div><h3>Tirage vertical</h3><span class="tag">4 séries</span><span class="tag">8-10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires une barre du haut vers la poitrine. Dos + biceps.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-row"><div><h3>Rowing assis</h3><span class="tag">4 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires les poignées vers ton ventre. Garde le dos droit.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-shoulder"><div><h3>Shoulder press</h3><span class="tag">3 séries</span><span class="tag">8-10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses au-dessus de la tête. Épaules solides.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-pecdeck"><div><h3>Pec deck</h3><span class="tag">3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu rapproches les bras devant toi. Travaille les pectoraux.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-reverse"><div><h3>Reverse pec deck</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu tires les bras vers l’arrière. Arrière d’épaules + posture.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-biceps"><div><h3>Curl biceps machine</h3><span class="tag">3 séries</span><span class="tag">10-12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu plies les bras pour travailler le devant du bras.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-triceps"><div><h3>Extension triceps machine ou poulie</h3><span class="tag">3 séries</span><span class="tag">10-12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses vers le bas avec une corde ou une barre.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s2-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">12-15 reps</span></div></div><p class="desc">Tu rapproches le buste vers les jambes. Contracte les abdos.</p></article>
+      <h2 class="section-title">Séance 2 — Haut du corps solide et athlétique</h2>
+      <div class="info-box">Idéal jeudi. Objectif : être plus fort dans les duels, meilleur dos, meilleures épaules, meilleur physique.</div>
+
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-echauff"><div><h3>Rameur ou vélo</h3><span class="tag">8 min</span><span class="tag">tranquille</span></div></div><p class="desc">Si tu n’es pas à l’aise avec le rameur, prends le vélo.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-tirage"><div><h3>Tirage vertical</h3><span class="tag main">priorité dos</span><span class="tag">4 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires la barre du haut vers la poitrine. Dos fort = meilleure posture et épaules plus stables.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-chest"><div><h3>Chest press</h3><span class="tag">4 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses devant toi. Pectoraux, épaules, triceps.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-row"><div><h3>Rowing assis</h3><span class="tag main">priorité dos</span><span class="tag">4 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu tires les poignées vers ton ventre. Garde le dos droit et les épaules basses.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-shoulder"><div><h3>Shoulder press</h3><span class="tag">3 séries</span><span class="tag">8 à 10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Tu pousses au-dessus de la tête. Travaille les épaules.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-reverse"><div><h3>Reverse pec deck</h3><span class="tag main">posture</span><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu tires les bras vers l’arrière. Protège les épaules et améliore la posture.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-pecdeck"><div><h3>Pec deck</h3><span class="tag">2 à 3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu rapproches les bras devant toi. Complément pectoraux, pas la priorité absolue.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-triceps"><div><h3>Triceps machine ou poulie</h3><span class="tag">3 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu pousses vers le bas. Arrière du bras.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-biceps"><div><h3>Curl biceps machine</h3><span class="tag">2 à 3 séries</span><span class="tag">10 à 12 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Tu plies les bras. Devant du bras.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s2-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">12 à 15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Contracte les abdos, ne tire pas avec le cou ou les bras.</p></article>
     </section>
 
     <section id="s3" class="session">
-      <h2 class="section-title">Séance 3 — Full body machines + cardio</h2>
-      <div class="info-box">Idéal samedi. Objectif : tout le corps + cardio court.</div>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-velo"><div><h3>Vélo ou tapis incliné</h3><span class="tag">8 à 10 min</span><span class="tag">échauffement</span></div></div><p class="desc">Tapis incliné = marche rapide avec pente.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-presse"><div><h3>Presse à cuisses</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu pousses avec les jambes. Mouvement contrôlé.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-legcurl"><div><h3>Leg curl</h3><span class="tag">3 séries</span><span class="tag">12 reps</span></div></div><p class="desc">Arrière des cuisses. Important pour les sprints et les genoux.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-chest"><div><h3>Chest press</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu pousses devant toi.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-tirage"><div><h3>Tirage vertical</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu tires une barre du haut vers la poitrine.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-row"><div><h3>Rowing assis</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu tires les poignées vers ton ventre.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-shoulder"><div><h3>Shoulder press</h3><span class="tag">3 séries</span><span class="tag">10 reps</span></div></div><p class="desc">Tu pousses au-dessus de la tête.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">15 reps</span></div></div><p class="desc">Abdos. Contrôle le mouvement.</p></article>
-      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="s3-mollets"><div><h3>Mollets machine</h3><span class="tag">3 séries</span><span class="tag">15 reps</span></div></div><p class="desc">Monte sur la pointe des pieds, redescends doucement.</p></article>
-      <div class="warning"><strong>Cardio finisher :</strong> vélo 10 fois : 20 secondes rapide / 40 secondes lent.</div>
+      <h2 class="section-title">Séance 3 — Full body athlétique + cardio</h2>
+      <div class="info-box">Idéal samedi. Objectif : corps complet, condition physique, dépense et puissance générale.</div>
+
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-velo"><div><h3>Vélo</h3><span class="tag">8 à 10 min</span><span class="tag">tranquille</span></div></div><p class="desc">Échauffement simple avant la séance.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-presse"><div><h3>Presse à cuisses</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min30</span></div></div><p class="desc">Rappel jambes. Ne va pas aussi lourd que sur la séance 1 si tu es fatigué.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-legcurl"><div><h3>Leg curl</h3><span class="tag">3 séries</span><span class="tag">12 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Arrière des cuisses. Garde un mouvement contrôlé.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-tirage"><div><h3>Tirage vertical</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Dos + biceps.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-chest"><div><h3>Chest press</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Poussée haut du corps.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-row"><div><h3>Rowing assis</h3><span class="tag">3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min15</span></div></div><p class="desc">Tirage horizontal. Garde le buste stable.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-shoulder"><div><h3>Shoulder press</h3><span class="tag">2 à 3 séries</span><span class="tag">10 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Épaules. Si tu es fatigué, fais seulement 2 séries.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-abdos"><div><h3>Machine abdos</h3><span class="tag">3 séries</span><span class="tag">15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Abdos. Mouvement propre et contrôlé.</p></article>
+      <article class="exercise"><div class="exercise-top"><input type="checkbox" data-id="v2-s3-mollets"><div><h3>Mollets machine</h3><span class="tag">3 séries</span><span class="tag">15 reps</span><span class="tag">repos 1min</span></div></div><p class="desc">Monte sur la pointe des pieds, redescends doucement.</p></article>
+      <div class="warning"><strong>Cardio finisher :</strong> vélo 10 fois : 20 secondes rapide / 40 secondes lent. Court, intense et moins violent que courir.</div>
     </section>
 
-    <details id="terms" class="terms">
-      <summary>Explications des mots importants</summary>
-      <p><strong>Série :</strong> un bloc de répétitions. Exemple : 3 séries de 10 = tu fais 10 fois, repos, 10 fois, repos, 10 fois.</p>
-      <p><strong>Répétition :</strong> une fois le mouvement.</p>
-      <p><strong>Repos :</strong> temps entre deux séries. Utilise le minuteur en bas.</p>
-      <p><strong>Charge :</strong> le poids choisi sur la machine.</p>
-      <p><strong>Amplitude :</strong> jusqu’où tu fais le mouvement, sans douleur.</p>
-      <p><strong>Mouvement contrôlé :</strong> tu pousses ou tires proprement, puis tu reviens doucement.</p>
-      <p><strong>Full body :</strong> séance où tu travailles tout le corps.</p>
-    </details>
+    <section id="rules" class="session">
+      <h2 class="section-title">Règles de progression</h2>
+      <div class="info-box">
+        <strong>Charge :</strong> tu dois finir avec environ 2 répétitions en réserve. Exemple : si tu fais 10 reps, tu dois sentir que tu aurais pu en faire 12 maximum, pas 18.
+      </div>
+
+      <details class="terms" open>
+        <summary>Comment progresser chaque semaine</summary>
+        <ul>
+          <li>Quand tu réussis toutes les séries proprement, augmente la charge la séance suivante.</li>
+          <li>Presse à cuisses : augmente de 5 kg.</li>
+          <li>Leg curl, chest press, tirage vertical, rowing : augmente de 2,5 à 5 kg.</li>
+          <li>Si la technique devient mauvaise, baisse le poids.</li>
+        </ul>
+      </details>
+
+      <details class="terms" open>
+        <summary>Tempo à respecter</summary>
+        <p><strong>Rythme :</strong> pousser ou tirer fort, puis revenir doucement en environ 2 secondes.</p>
+        <p>Tu ne balances pas le poids. Tu contrôles. C’est comme ça que tu construis du muscle utile et que tu évites les blessures.</p>
+      </details>
+
+      <details class="terms" open>
+        <summary>Semaine légère toutes les 4 semaines</summary>
+        <ul>
+          <li>Mêmes exercices.</li>
+          <li>Moins lourd.</li>
+          <li>Une série en moins sur chaque machine.</li>
+          <li>Objectif : récupérer, éviter les blessures, repartir plus fort.</li>
+        </ul>
+      </details>
+
+      <details id="terms" class="terms">
+        <summary>Explications des mots importants</summary>
+        <p><strong>Série :</strong> un bloc de répétitions. Exemple : 3 séries de 10 = tu fais 10 fois, repos, 10 fois, repos, 10 fois.</p>
+        <p><strong>Répétition :</strong> une fois le mouvement.</p>
+        <p><strong>Repos :</strong> temps entre deux séries. Utilise le minuteur en bas.</p>
+        <p><strong>Charge :</strong> le poids choisi sur la machine.</p>
+        <p><strong>Amplitude :</strong> jusqu’où tu fais le mouvement, sans douleur.</p>
+        <p><strong>Mouvement contrôlé :</strong> tu pousses ou tires proprement, puis tu reviens doucement.</p>
+        <p><strong>Full body :</strong> séance où tu travailles tout le corps.</p>
+      </details>
+    </section>
   </main>
 
   <div class="timer">
@@ -236,9 +275,10 @@
     }
 
     function showAllTerms() {
+      document.querySelector('[data-target="rules"]').click();
       const terms = document.getElementById('terms');
       terms.open = true;
-      terms.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => terms.scrollIntoView({ behavior: 'smooth' }), 100);
     }
 
     let timer = null;
