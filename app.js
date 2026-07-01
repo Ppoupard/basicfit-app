@@ -28,7 +28,7 @@
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v14_check_"+box.dataset.check;
+      const k="bf_v16_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -84,7 +84,7 @@
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v14_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v16_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -121,14 +121,14 @@
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v14_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v16_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
     openRecommendedBtn.addEventListener("click",()=>showView("sessions"));
 
     renderSession();
-    const saved=BF_STORE.get("bf_v14_custom_html","");
+    const saved=BF_STORE.get("bf_v16_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();

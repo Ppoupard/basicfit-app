@@ -1,7 +1,7 @@
 
 (function(){
-  const KEY_END="bf_v14_timer_end";
-  const KEY_SOUND="bf_v14_sound";
+  const KEY_END="bf_v16_timer_end";
+  const KEY_SOUND="bf_v16_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";

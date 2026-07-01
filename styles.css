@@ -206,7 +206,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V15 : nettoyage du bas de l'application */
+/* V16 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
