@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V17</title>
+  <title>Basic-Fit Coach V18</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V17 : nettoyage du bas de l'application */
+/* V18 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V17 : suppression du texte parasite tout en bas */
+/* V18 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -264,6 +264,78 @@ footer{
 body > p:last-child,
 body > div:not(.app-shell):last-child{
   display:none!important;
+}
+
+
+/* V18 : mode séance live + actions rapides */
+.exercise-actions{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:11px 0 0 38px;
+}
+.exercise-actions button{
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:rgba(255,255,255,.075);
+  color:#E5EDF8;
+  padding:9px 8px;
+  font-size:12px;
+  font-weight:850;
+}
+.live-panel{
+  margin-top:12px;
+  background:linear-gradient(135deg,rgba(255,209,102,.12),rgba(53,208,127,.08)),var(--panel);
+}
+.live-progress{
+  display:grid;
+  gap:8px;
+  margin-bottom:13px;
+}
+.live-progress span{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+.live-bar{
+  height:9px;
+  border-radius:999px;
+  background:rgba(255,255,255,.09);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+}
+.live-bar i{
+  display:block;
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  border-radius:999px;
+  transition:width .25s ease;
+}
+.live-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+.live-form label{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  color:#C7D3E4;
+  font-size:12px;
+  font-weight:850;
+}
+.live-nav-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+@media(max-width:520px){
+  .exercise-actions{grid-template-columns:1fr;margin-left:38px}
+  .live-form{grid-template-columns:1fr}
 }
 
 </style>
@@ -281,7 +353,7 @@ body > div:not(.app-shell):last-child{
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V17 ONEFILE</p>
+          <p class="hero-label">V18 LIVE</p>
           <h2>Entraîne-toi comme un joueur sérieux.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -293,6 +365,7 @@ body > div:not(.app-shell):last-child{
       <nav class="app-nav" id="appNav">
         <button data-view="dashboard" class="active">🏠<span>Accueil</span></button>
         <button data-view="sessions">🏋️<span>Séances</span></button>
+        <button data-view="live">▶️<span>Live</span></button>
         <button data-view="custom">✨<span>Perso</span></button>
         <button data-view="performances">📈<span>Perfs</span></button>
         <button data-view="nutrition">🥗<span>Nutrition</span></button>
@@ -356,6 +429,64 @@ body > div:not(.app-shell):last-child{
           <button data-session="s3">Full body</button>
         </div>
         <div id="sessionContent"></div>
+      </section>
+
+
+      <section class="view" id="liveView">
+        <div class="section-head">
+          <div>
+            <p class="card-kicker">MODE SÉANCE EN DIRECT</p>
+            <h2>Suis ta séance étape par étape</h2>
+          </div>
+        </div>
+
+        <article class="card accent-card">
+          <p class="card-kicker">DÉMARRAGE</p>
+          <h3>Choisis ta séance</h3>
+          <p>L’app te guide exercice par exercice. Tu peux noter tes séries, lancer le repos, remplacer une machine et sauvegarder tes perfs.</p>
+          <div class="mini-row">
+            <button class="primary-btn" data-start-live="s1">Jambes</button>
+            <button class="primary-btn" data-start-live="s2">Haut</button>
+            <button class="primary-btn" data-start-live="s3">Full</button>
+            <button class="ghost-btn" id="startCustomLiveBtn">Perso</button>
+          </div>
+        </article>
+
+        <article id="livePanel" class="live-panel card hidden">
+          <div class="live-progress">
+            <span id="liveCounter">Exercice 1/1</span>
+            <div class="live-bar"><i id="liveBar"></i></div>
+          </div>
+          <h3 id="liveExerciseTitle">Exercice</h3>
+          <p id="liveExerciseDesc">Description</p>
+          <div id="liveTags" class="tags"></div>
+
+          <div class="live-form">
+            <label>Charge <input id="liveWeight" inputmode="decimal" placeholder="kg"></label>
+            <label>Reps <input id="liveReps" inputmode="numeric" placeholder="ex : 10"></label>
+            <label>Séries <input id="liveSets" inputmode="numeric" placeholder="ex : 4"></label>
+            <label>Ressenti
+              <select id="liveFeeling">
+                <option value="facile">Facile</option>
+                <option value="propre" selected>Dur mais propre</option>
+                <option value="limite">Limite / trop dur</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="mini-row">
+            <button class="primary-btn" id="saveLivePerfBtn">Sauvegarder perf</button>
+            <button class="ghost-btn" id="liveRestBtn">Repos 90s</button>
+            <button class="ghost-btn" id="liveReplaceBtn">Machine prise</button>
+          </div>
+
+          <div id="liveReplacement" class="result-box hidden"></div>
+
+          <div class="live-nav-row">
+            <button class="ghost-btn" id="livePrevBtn">← Précédent</button>
+            <button class="primary-btn" id="liveNextBtn">Suivant →</button>
+          </div>
+        </article>
       </section>
 
       <section class="view" id="customView">
@@ -553,7 +684,7 @@ body > div:not(.app-shell):last-child{
             <button data-quick="Je veux sécher">Sèche</button>
           </div>
           <div id="coachChat" class="chat-log">
-            <div class="msg bot">Je suis ton coach V17. Écris avec tes mots, je comprends les formulations proches.</div>
+            <div class="msg bot">Je suis ton coach V18. Écris avec tes mots, je comprends les formulations proches.</div>
           </div>
           <div class="chat-input-row">
             <input id="coachInput" placeholder="Écris ta question..." />
@@ -672,8 +803,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v17_timer_end";
-  const KEY_SOUND="bf_v17_sound";
+  const KEY_END="bf_v18_timer_end";
+  const KEY_SOUND="bf_v18_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -739,7 +870,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v17_performances";
+  const KEY="bf_v18_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -795,7 +926,7 @@ window.BF_UTIL = {
   }
 
   window.BF_PERF = {
-    label,last,advice,
+    label,last,advice,updateExerciseLines,
     init(){
       populateSelects(); renderHistory(); updateStats(); updateExerciseLines();
       BF_UTIL.$("perfHistoryMachine")?.addEventListener("change",renderHistory);
@@ -982,11 +1113,16 @@ window.BF_UTIL = {
       </div>
       <p class="exercise-desc">${ex.desc}</p>
       <div class="perf-line" data-perf-key="${perfKey}">Dernière perf : —</div>
+      <div class="exercise-actions">
+        <button data-note-perf="${perfKey}">Noter perf</button>
+        <button data-replace-machine="${perfKey}">Machine prise</button>
+        <button data-live-one="${perfKey}">Mode live</button>
+      </div>
     </article>`;
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v17_check_"+box.dataset.check;
+      const k="bf_v18_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1042,7 +1178,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v17_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v18_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1067,6 +1203,119 @@ window.BF_UTIL = {
     const advice=BF_COACH.recommend("quelle séance aujourd’hui");
     dailyAdviceText.textContent=advice;
   }
+
+  let livePlan=[], liveIndex=0, liveSessionName="";
+
+  function machineKeyFromRendered(key){
+    return key || "other";
+  }
+
+  function startLive(sessionKey){
+    const session=DATA.sessions[sessionKey];
+    if(!session) return;
+    livePlan=session.keys.map(k=>({key:k, ex:DATA.machines[k]})).filter(x=>x.ex);
+    liveIndex=0;
+    liveSessionName=session.title;
+    showView("live");
+    livePanel.classList.remove("hidden");
+    renderLiveStep();
+  }
+
+  function startLiveFromCustom(){
+    const cards=[...customOutput.querySelectorAll(".exercise-card")];
+    if(!cards.length){ alert("Génère d’abord une séance personnalisée."); return; }
+    livePlan=cards.map((card,i)=>{
+      const title=card.querySelector(".exercise-title")?.textContent || "Exercice";
+      const desc=card.querySelector(".exercise-desc")?.textContent || "";
+      const key=card.querySelector("[data-perf-key]")?.dataset.perfKey || "other";
+      return {key, ex:{name:title,desc,sets:"à noter",reps:"à noter",rest:"90s"}};
+    });
+    liveIndex=0;
+    liveSessionName="Séance personnalisée";
+    showView("live");
+    livePanel.classList.remove("hidden");
+    renderLiveStep();
+  }
+
+  function renderLiveStep(){
+    if(!livePlan.length) return;
+    const item=livePlan[liveIndex], ex=item.ex, key=item.key;
+    liveCounter.textContent=`${liveSessionName} • Exercice ${liveIndex+1}/${livePlan.length}`;
+    liveBar.style.width=`${Math.round(((liveIndex+1)/livePlan.length)*100)}%`;
+    liveExerciseTitle.textContent=ex.name;
+    liveExerciseDesc.textContent=ex.desc || "";
+    liveTags.innerHTML=`<span class="tag">${ex.sets||""}</span><span class="tag">${ex.reps||""}</span><span class="tag">repos ${ex.rest||"90s"}</span>`;
+    liveReplacement.classList.add("hidden");
+    liveReplacement.textContent="";
+    const last=BF_PERF?.last?.(key);
+    liveWeight.value=last?.weight || "";
+    liveReps.value=last?.reps || "";
+    liveSets.value=last?.sets || "";
+    liveFeeling.value="propre";
+  }
+
+  function saveLivePerf(){
+    if(!livePlan.length) return;
+    const item=livePlan[liveIndex], machine=item.key;
+    if(!machine || machine==="warmup" || machine==="cardio" || machine==="other"){
+      alert("Cet exercice ne se sauvegarde pas comme une machine classique. Note plutôt une machine de musculation.");
+      return;
+    }
+    perfMachine.value=machine;
+    perfWeight.value=liveWeight.value;
+    perfReps.value=liveReps.value;
+    perfSets.value=liveSets.value;
+    perfFeeling.value=liveFeeling.value;
+    perfDate.value=new Date().toLocaleDateString("fr-FR");
+    perfNote.value=`Noté depuis le mode live — ${liveSessionName}`;
+    savePerfBtn.click();
+  }
+
+  function liveReplacementAnswer(){
+    if(!livePlan.length) return;
+    const item=livePlan[liveIndex];
+    const machineName=item.ex.name || item.key;
+    const answer=BF_COACH.replacement(machineName);
+    liveReplacement.textContent=answer;
+    liveReplacement.classList.remove("hidden");
+  }
+
+  function openPerfForMachine(key){
+    showView("performances");
+    if(perfMachine) perfMachine.value=key;
+    const last=BF_PERF?.last?.(key);
+    if(last){
+      perfWeight.value=last.weight;
+      perfReps.value=last.reps;
+      perfSets.value=last.sets;
+      perfFeeling.value=last.feeling || "propre";
+    }else{
+      perfWeight.value=""; perfReps.value=""; perfSets.value=""; perfFeeling.value="propre";
+    }
+    perfDate.value=new Date().toLocaleDateString("fr-FR");
+    perfNote.value="";
+  }
+
+  function showReplacementForMachine(key){
+    const label=BF_PERF?.label?.(key) || key;
+    showView("coach");
+    const answer=BF_COACH.replacement(label);
+    addMessage("coach","user",`${label} est prise`);
+    setTimeout(()=>addMessage("coach","bot",answer),120);
+  }
+
+  function startSingleExerciseLive(key){
+    const ex=DATA.machines[key];
+    if(!ex){ showReplacementForMachine(key); return; }
+    livePlan=[{key,ex}];
+    liveIndex=0;
+    liveSessionName="Exercice seul";
+    showView("live");
+    livePanel.classList.remove("hidden");
+    renderLiveStep();
+  }
+
+
   function init(){
     const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
     const standalone=window.navigator.standalone===true||window.matchMedia("(display-mode: standalone)").matches;
@@ -1079,14 +1328,31 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v17_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v18_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
     openRecommendedBtn.addEventListener("click",()=>showView("sessions"));
 
+
+    document.querySelectorAll("[data-start-live]").forEach(b=>b.addEventListener("click",()=>startLive(b.dataset.startLive)));
+    startCustomLiveBtn?.addEventListener("click",startLiveFromCustom);
+    saveLivePerfBtn?.addEventListener("click",saveLivePerf);
+    liveRestBtn?.addEventListener("click",()=>BF_TIMER.start(90));
+    liveReplaceBtn?.addEventListener("click",liveReplacementAnswer);
+    livePrevBtn?.addEventListener("click",()=>{ if(liveIndex>0){ liveIndex--; renderLiveStep(); }});
+    liveNextBtn?.addEventListener("click",()=>{ if(liveIndex<livePlan.length-1){ liveIndex++; renderLiveStep(); } else { liveExerciseTitle.textContent="Séance terminée ✅"; liveExerciseDesc.textContent="Bien joué. Pense à boire et à noter tes dernières perfs si ce n’est pas fait."; liveTags.innerHTML=""; liveBar.style.width="100%"; }});
+    document.addEventListener("click",e=>{
+      const note=e.target.closest("[data-note-perf]");
+      if(note){ openPerfForMachine(note.dataset.notePerf); return; }
+      const rep=e.target.closest("[data-replace-machine]");
+      if(rep){ showReplacementForMachine(rep.dataset.replaceMachine); return; }
+      const live=e.target.closest("[data-live-one]");
+      if(live){ startSingleExerciseLive(live.dataset.liveOne); return; }
+    });
+
     renderSession();
-    const saved=BF_STORE.get("bf_v17_custom_html","");
+    const saved=BF_STORE.get("bf_v18_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
