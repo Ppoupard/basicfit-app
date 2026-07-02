@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basicfit-coach-v25-3-onefile';
+const CACHE_NAME = 'basicfit-coach-v25-4-onefile';
 const ASSETS = [
   './',
   './index.html',
