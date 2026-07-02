@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V25.2</title>
+  <title>Basic-Fit Coach V25.3</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V25.2 : correctif anti-flou */
+/* V25.3 : correctif définitif no-blur */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -547,6 +547,46 @@ body.app-locked #onboarding{
   padding:10px;
   border-radius:16px;
   font-size:13px;
+}
+
+
+/* V25.3 : correctif définitif écran flou / impossible d'écrire */
+body.app-locked .app-shell{
+  filter:none!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  user-select:auto!important;
+}
+body.app-locked{
+  overflow:auto!important;
+}
+body.app-locked #onboarding,
+#onboarding.intro-gate{
+  display:grid!important;
+  pointer-events:auto!important;
+  user-select:auto!important;
+  filter:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  z-index:9999!important;
+}
+#onboarding.hidden{
+  display:none!important;
+}
+#onboarding textarea,
+#onboarding input,
+#onboarding select,
+#onboarding button{
+  pointer-events:auto!important;
+  user-select:text!important;
+  opacity:1!important;
+  filter:none!important;
+}
+#onboarding button{
+  user-select:none!important;
+}
+.app-blocker{
+  pointer-events:none!important;
 }
 
 </style>
@@ -612,7 +652,7 @@ body.app-locked #onboarding{
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V25.2 ANTI-FLOU</p>
+          <p class="hero-label">V25.3 NO-BLUR</p>
           <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1150,8 +1190,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v25_2_timer_end";
-  const KEY_SOUND="bf_v25_2_sound";
+  const KEY_END="bf_v25_3_timer_end";
+  const KEY_SOUND="bf_v25_3_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -1217,7 +1257,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v25_2_performances";
+  const KEY="bf_v25_3_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1378,7 +1418,7 @@ window.BF_UTIL = {
   window.v25PersonalProfile = function(){
     const fallback={name:"",weight:75,height:166,age:20,sex:"male",goal:"muscle",level:"intermediate",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
     try{
-      return JSON.parse(localStorage.getItem("bf_v25_2_profile")||"null") || fallback;
+      return JSON.parse(localStorage.getItem("bf_v25_3_profile")||"null") || fallback;
     }catch(e){ return fallback; }
   };
   window.v25NutritionTargets = function(p){
@@ -1587,7 +1627,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v25_2_check_"+box.dataset.check;
+      const k="bf_v25_3_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1643,7 +1683,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v25_2_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v25_3_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1670,8 +1710,8 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v25_2_profile";
-  const MONTH_KEY="bf_v25_2_month_plan";
+  const PROFILE_KEY="bf_v25_3_profile";
+  const MONTH_KEY="bf_v25_3_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
@@ -2030,6 +2070,7 @@ window.BF_UTIL = {
       onboarding.style.display="grid";
       onboarding.style.visibility="visible";
       onboarding.style.opacity="1";
+      onboarding.style.pointerEvents="auto";
     }
   }
   function unlockApp(){
@@ -2039,6 +2080,7 @@ window.BF_UTIL = {
       onboarding.style.display="";
       onboarding.style.visibility="";
       onboarding.style.opacity="";
+      onboarding.style.pointerEvents="";
     }
   }
   function professionalDiagnosis(p){
@@ -2069,7 +2111,7 @@ window.BF_UTIL = {
     const p=safeProfile();
     if(!p || (!p.presentation && !p.name)){
       lockApp();
-      setIntroStep("write");
+      setIntroStep("write"); setTimeout(()=>onPresentation?.focus(),150);
     }else{
       unlockApp();
     }
@@ -2258,7 +2300,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=25-2." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=25-3." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -2269,7 +2311,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=25-2-reset-"+Date.now();
+      location.href=location.pathname+"?v=25-3-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -2279,7 +2321,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=25-2. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=25-3. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -2297,7 +2339,7 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v25_2_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v25_3_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
@@ -2341,6 +2383,17 @@ window.BF_UTIL = {
     safeOpenResetBtn?.addEventListener("click",openSafetyPanel);
     openSafetyFromProfileBtn?.addEventListener("click",openSafetyPanel);
     introEmergencyBtn?.addEventListener("click",openSafetyPanel);
+    hardResetLink?.addEventListener("click",()=>{
+      document.body.classList.remove("app-locked");
+      if(window.onboarding){
+        onboarding.classList.remove("hidden");
+        onboarding.style.display="grid";
+        onboarding.style.pointerEvents="auto";
+        onboarding.style.visibility="visible";
+        onboarding.style.opacity="1";
+      }
+      setTimeout(()=>onPresentation?.focus(),100);
+    });
     repairIntroBtn?.addEventListener("click",restartIntroSafe);
     repairProfileBtn?.addEventListener("click",resetProfileOnly);
     repairMonthBtn?.addEventListener("click",resetMonthOnly);
@@ -2373,7 +2426,7 @@ window.BF_UTIL = {
     });
 
     renderSession();
-    const saved=BF_STORE.get("bf_v25_2_custom_html","");
+    const saved=BF_STORE.get("bf_v25_3_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
@@ -2390,7 +2443,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=25-2").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=25-3").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
