@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V22</title>
+  <title>Basic-Fit Coach V24</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V22 : nettoyage du bas de l'application */
+/* V24 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V22 : suppression du texte parasite tout en bas */
+/* V24 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V22 : mode séance live + actions rapides */
+/* V24 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -339,7 +339,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V22 : profil + programme mensuel */
+/* V24 : profil + programme mensuel */
 .month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
 .month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
 .month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
@@ -350,7 +350,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
 
 
-/* V22 : onboarding + personnalisation par objectif */
+/* V24 : onboarding + personnalisation par objectif */
 .onboarding{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(7,10,18,.82);backdrop-filter:blur(22px)}
 .onboarding-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(53,208,127,.08)),var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55);padding:20px}
 .onboarding-card>p:not(.card-kicker){color:var(--muted);margin:8px 0 16px}
@@ -363,7 +363,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.objective-strip{align-items:flex-start;flex-direction:column}.objective-strip button{width:100%}}
 
 
-/* V22 : base coach pro élargie */
+/* V24 : base coach pro élargie */
 .pro-base-card{
   display:flex;
   justify-content:space-between;
@@ -390,7 +390,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.pro-base-card{flex-direction:column;align-items:flex-start}.pro-base-card button{width:100%}}
 
 
-/* V22 : présentation libre intelligente */
+/* V24 : présentation libre intelligente */
 .free-onboarding-card{width:min(820px,100%)}
 .presentation-textarea{min-height:260px;font-size:15px;line-height:1.5;resize:vertical}
 .free-actions{grid-template-columns:1fr 1fr 1fr}
@@ -400,6 +400,39 @@ body > div:not(.app-shell):last-child{
 .analysis-item{background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:9px;color:var(--muted);font-size:13px}
 .analysis-item strong{display:block;color:#fff;margin-bottom:3px}
 @media(max-width:620px){.free-actions{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}
+
+
+/* V24 : introduction obligatoire + déblocage */
+body.app-locked .app-shell{filter:blur(10px);pointer-events:none;user-select:none}
+body.app-locked{overflow:hidden}
+.intro-gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 20% 10%,rgba(255,209,102,.18),transparent 30%),radial-gradient(circle at 80% 20%,rgba(125,179,255,.18),transparent 32%),rgba(7,10,18,.92);backdrop-filter:blur(24px);overflow:auto}
+.intro-gate.hidden{display:none}
+.intro-bg-orb{position:absolute;border-radius:999px;filter:blur(30px);opacity:.5;pointer-events:none}
+.orb-a{width:220px;height:220px;background:rgba(255,209,102,.25);top:8%;left:4%}
+.orb-b{width:260px;height:260px;background:rgba(53,208,127,.18);bottom:5%;right:3%}
+.intro-card{position:relative;width:min(900px,100%);max-height:94vh;overflow:auto;background:linear-gradient(145deg,rgba(16,22,34,.94),rgba(12,16,25,.94));border:1px solid rgba(255,255,255,.14);border-radius:34px;box-shadow:0 32px 110px rgba(0,0,0,.68);padding:22px}
+.intro-top{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.brand-badge{display:grid;place-items:center;width:54px;height:54px;border-radius:19px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081019;font-weight:1000;box-shadow:0 14px 45px rgba(255,209,102,.22)}
+.intro-card h1{font-size:clamp(28px,5vw,46px);line-height:.98;margin:3px 0;letter-spacing:-1.4px}
+.intro-lead{color:var(--muted);font-size:15px;line-height:1.55;margin:12px 0 16px}
+.intro-steps-ui{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.intro-step-badge{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.055);color:var(--muted);border-radius:18px;padding:10px;font-size:12px;font-weight:900}
+.intro-step-badge span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:999px;background:rgba(255,255,255,.09);color:#fff;margin-right:5px}
+.intro-step-badge.active{color:#fff;border-color:rgba(255,209,102,.35);background:rgba(255,209,102,.11)}
+.intro-panel label{display:flex;flex-direction:column;gap:8px;color:#C7D3E4;font-size:13px;font-weight:900}
+.presentation-textarea{min-height:285px;font-size:15.5px;line-height:1.55;resize:vertical}
+.intro-help{margin:12px 0;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--muted);padding:12px;border-radius:18px;font-size:13.5px}
+.intro-help strong{color:#fff}
+.intro-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.analysis-preview{margin-top:12px}
+.coach-diagnosis{margin-top:12px;border:1px solid rgba(53,208,127,.22);background:linear-gradient(135deg,rgba(53,208,127,.10),rgba(125,179,255,.07));border-radius:22px;padding:14px}
+.coach-diagnosis h3{margin-bottom:8px}
+.diagnosis-list{display:grid;gap:8px;margin-top:10px}
+.diagnosis-list div{border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.15);border-radius:16px;padding:10px;color:var(--muted)}
+.diagnosis-list strong{color:#fff}
+.intro-unlock{margin-top:12px;text-align:center}
+.intro-unlock p{color:var(--muted);font-size:13px;margin-top:8px}
+@media(max-width:700px){.intro-steps-ui{grid-template-columns:1fr}.intro-actions{grid-template-columns:1fr}.intro-card{border-radius:26px;padding:16px}}
 
 </style>
 </head>
@@ -464,8 +497,8 @@ body > div:not(.app-shell):last-child{
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V22 FREE</p>
-          <h2>Présente-toi librement, l’app adapte ton sport et ta nutrition.</h2>
+          <p class="hero-label">V24 INTRO</p>
+          <h2>Présente-toi d’abord, puis débloque ton coach personnel.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
         <div class="hero-orb">
@@ -565,6 +598,7 @@ body > div:not(.app-shell):last-child{
           <label>Présentation libre <textarea id="profilePresentation" placeholder="Ta présentation complète..."></textarea></label>
           <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : poisson, petit-déjeuner, ketchup..."></textarea></label>
           <button class="primary-btn full" id="saveProfileBtn">Sauvegarder mon profil</button>
+          <button class="ghost-btn full" id="restartIntroBtn">Refaire l’introduction</button>
         </article>
       </section>
 
@@ -863,7 +897,7 @@ body > div:not(.app-shell):last-child{
             <button data-quick="Je veux sécher">Sèche</button>
           </div>
           <div id="coachChat" class="chat-log">
-            <div class="msg bot">Je suis ton coach V22. Écris avec tes mots, je comprends les formulations proches.</div>
+            <div class="msg bot">Je suis ton coach V24. Écris avec tes mots, je comprends les formulations proches.</div>
           </div>
           <div class="chat-input-row">
             <input id="coachInput" placeholder="Écris ta question..." />
@@ -982,8 +1016,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v22_timer_end";
-  const KEY_SOUND="bf_v22_sound";
+  const KEY_END="bf_v24_timer_end";
+  const KEY_SOUND="bf_v24_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -1049,7 +1083,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v22_performances";
+  const KEY="bf_v24_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1262,7 +1296,7 @@ window.BF_UTIL = {
     if(q.includes("programme mois")||q.includes("1 mois")||q.includes("mois")) return "Va dans l’onglet Mois : l’app génère ton programme sportif 4 semaines + nutrition 1 mois + liste de courses + bilan pour créer le mois suivant."; 
     if(q.includes("profil")) return "Va dans Profil : poids, taille, objectif, jours d’entraînement, repas et douleurs. Plus ton profil est précis, plus le mois généré sera adapté."; 
     if(q.includes("performance")||q.includes("perf")) return "Va dans Perfs : note machine, charge, reps, séries et ressenti. L’app affichera la dernière perf sous chaque exercice.";
-    const v22=v22ProAnswer(text); if(v22) return v22;
+    const v24=v24ProAnswer(text); if(v24) return v24;
     return "Je peux t’aider sur : objectif, programme, progression, charge, repos, douleur, nutrition, calories, protéines, sèche, muscle, force, récupération, performances et bilan mensuel.";
   }
   window.BF_COACH={answer,paramsFromText,recommend,replacement};
@@ -1304,7 +1338,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v22_check_"+box.dataset.check;
+      const k="bf_v24_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1360,7 +1394,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v22_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v24_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1387,8 +1421,8 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v22_profile";
-  const MONTH_KEY="bf_v22_month_plan";
+  const PROFILE_KEY="bf_v24_profile";
+  const MONTH_KEY="bf_v24_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
@@ -1586,27 +1620,27 @@ window.BF_UTIL = {
   }
 
   function detectGoal(q){
-    if(v22Has(q,"sèche","seche","perdre du gras","perte de gras","maigrir","perdre du poids","définir")) return "cut";
-    if(v22Has(q,"prise de muscle","prendre du muscle","masse","hypertrophie","muscle propre","prendre de la masse")) return "muscle";
-    if(v22Has(q,"force","plus fort","charges lourdes","devenir fort")) return "strength";
-    if(v22Has(q,"performance","athletique","athlétique","explosif","puissance","condition physique")) return "performance";
-    if(v22Has(q,"remise en forme","santé","sante","reprendre le sport","être en forme","etre en forme")) return "health";
-    if(v22Has(q,"maintien","maintenir","rester comme ça","rester comme ca")) return "maintain";
+    if(v24Has(q,"sèche","seche","perdre du gras","perte de gras","maigrir","perdre du poids","définir")) return "cut";
+    if(v24Has(q,"prise de muscle","prendre du muscle","masse","hypertrophie","muscle propre","prendre de la masse")) return "muscle";
+    if(v24Has(q,"force","plus fort","charges lourdes","devenir fort")) return "strength";
+    if(v24Has(q,"performance","athletique","athlétique","explosif","puissance","condition physique")) return "performance";
+    if(v24Has(q,"remise en forme","santé","sante","reprendre le sport","être en forme","etre en forme")) return "health";
+    if(v24Has(q,"maintien","maintenir","rester comme ça","rester comme ca")) return "maintain";
     return "muscle";
   }
 
   function detectLevel(q){
-    if(v22Has(q,"débutant","debutant","je commence","jamais fait","nouveau","reprends la salle")) return "beginner";
-    if(v22Has(q,"avancé","avance","confirmé","confirme","plusieurs années","expert")) return "advanced";
+    if(v24Has(q,"débutant","debutant","je commence","jamais fait","nouveau","reprends la salle")) return "beginner";
+    if(v24Has(q,"avancé","avance","confirmé","confirme","plusieurs années","expert")) return "advanced";
     return "intermediate";
   }
 
   function detectPain(q){
-    if(v22Has(q,"genou","rotule")) return "knee";
-    if(v22Has(q,"adducteur","adducteurs")) return "adductor";
-    if(v22Has(q,"cheville","pied")) return "ankle";
-    if(v22Has(q,"épaule","epaule")) return "shoulder";
-    if(v22Has(q,"dos","lombaire","lombaires")) return "back";
+    if(v24Has(q,"genou","rotule")) return "knee";
+    if(v24Has(q,"adducteur","adducteurs")) return "adductor";
+    if(v24Has(q,"cheville","pied")) return "ankle";
+    if(v24Has(q,"épaule","epaule")) return "shoulder";
+    if(v24Has(q,"dos","lombaire","lombaires")) return "back";
     return "none";
   }
 
@@ -1614,8 +1648,8 @@ window.BF_UTIL = {
     const q=BF_UTIL.normalize(raw);
     const direct=extractNumberAfter(raw,[/(\d)\s*repas/i]);
     if(direct && direct>=1 && direct<=5) return direct>=4?4:direct;
-    if(v22Has(q,"pas petit déjeuner","pas de petit déjeuner","pas petit dejeuner","je ne dejeune pas","je ne déjeune pas")) return 2;
-    if(v22Has(q,"collation","goûter","gouter")) return 4;
+    if(v24Has(q,"pas petit déjeuner","pas de petit déjeuner","pas petit dejeuner","je ne dejeune pas","je ne déjeune pas")) return 2;
+    if(v24Has(q,"collation","goûter","gouter")) return 4;
     return 3;
   }
 
@@ -1623,8 +1657,8 @@ window.BF_UTIL = {
     const q=BF_UTIL.normalize(raw);
     const direct=extractNumberAfter(raw,[/(\d)\s*(?:fois|séances|seances|jours)\s*(?:par|\/)\s*semaine/i,/salle\s*(\d)\s*(?:fois|x)/i]);
     if(direct && direct>=1 && direct<=6) return Math.round(direct);
-    if(v22Has(q,"tous les jours")) return 5;
-    if(v22Has(q,"week-end seulement","week end seulement")) return 2;
+    if(v24Has(q,"tous les jours")) return 5;
+    if(v24Has(q,"week-end seulement","week end seulement")) return 2;
     return 3;
   }
 
@@ -1643,14 +1677,14 @@ window.BF_UTIL = {
   }
 
   function detectSex(q){
-    if(v22Has(q,"femme","fille")) return "female";
-    if(v22Has(q,"homme","garçon","garcon")) return "male";
+    if(v24Has(q,"femme","fille")) return "female";
+    if(v24Has(q,"homme","garçon","garcon")) return "male";
     return "male";
   }
 
   function detectBudget(q){
-    if(v22Has(q,"pas cher","économique","economique","petit budget","budget serré","budget serre")) return "simple";
-    if(v22Has(q,"varié","varie","je veux varier")) return "varied";
+    if(v24Has(q,"pas cher","économique","economique","petit budget","budget serré","budget serre")) return "simple";
+    if(v24Has(q,"varié","varie","je veux varier")) return "varied";
     return "normal";
   }
 
@@ -1668,7 +1702,7 @@ window.BF_UTIL = {
     for(const f of foods){
       if(q.includes(BF_UTIL.normalize(f)) && dislikeTriggers.some(t=>q.includes(BF_UTIL.normalize(t)))) found.push(f);
     }
-    if(v22Has(q,"pas petit déjeuner","pas de petit déjeuner","pas petit dejeuner","je ne dejeune pas","je ne déjeune pas")) found.push("petit déjeuner");
+    if(v24Has(q,"pas petit déjeuner","pas de petit déjeuner","pas petit dejeuner","je ne dejeune pas","je ne déjeune pas")) found.push("petit déjeuner");
     return [...new Set(found)].join(", ");
   }
 
@@ -1724,23 +1758,62 @@ window.BF_UTIL = {
     if(window.dailyAdviceTitle) dailyAdviceTitle.textContent=p.name ? `Plan du jour pour ${p.name}` : "Plan du jour";
   }
 
-  function showOnboardingIfNeeded(){
-    const p=BF_STORE.get(PROFILE_KEY,null);
-    if(!p || (!p.presentation && !p.name)) onboarding.classList.remove("hidden");
-  }
 
   function savePresentationProfile(){
     if(!parsedPresentationProfile){
       parsedPresentationProfile=analyzePresentation(onPresentation.value);
     }
     BF_STORE.set(PROFILE_KEY,parsedPresentationProfile);
-    onboarding.classList.add("hidden");
+    unlockApp();
     fillProfileForm();
     updatePersonalUI();
     renderMonthSummary(null,parsedPresentationProfile);
     const plan=buildMonthPlan();
     activeMonthTab="sport";
     renderMonth(plan);
+  }
+
+
+  function lockApp(){
+    document.body.classList.add("app-locked");
+    onboarding.classList.remove("hidden");
+  }
+  function unlockApp(){
+    document.body.classList.remove("app-locked");
+    onboarding.classList.add("hidden");
+  }
+  function professionalDiagnosis(p){
+    const t=nutritionTargets(p);
+    const painLabel={none:"aucune limite majeure détectée",knee:"genou à surveiller",adductor:"adducteurs à surveiller",ankle:"cheville à surveiller",shoulder:"épaule à surveiller",back:"dos à surveiller"}[p.pain]||"limite à surveiller";
+    const levelLabel={beginner:"débutant",intermediate:"intermédiaire",advanced:"avancé"}[p.level]||"intermédiaire";
+    let sportPriority="construire une base régulière et progressive";
+    if(p.goal==="cut") sportPriority="garder la musculation prioritaire pour préserver le muscle pendant la perte de gras";
+    if(p.goal==="muscle") sportPriority="augmenter progressivement le volume et les charges sans sacrifier la technique";
+    if(p.goal==="strength") sportPriority="prioriser les charges lourdes contrôlées, les temps de repos longs et la qualité technique";
+    if(p.goal==="performance") sportPriority="développer force utile, gainage, condition physique et récupération";
+    if(p.goal==="health") sportPriority="installer une routine simple, durable, avec mobilité et cardio modéré";
+    return `<h3>Analyse professionnelle de ton profil</h3>
+      <p>D’après ta présentation, ton objectif principal est <strong>${goalLabel(p.goal)}</strong>. Ton niveau semble <strong>${levelLabel}</strong>, avec <strong>${p.gymDays} séances/semaine</strong> d’environ <strong>${p.duration} min</strong>.</p>
+      <div class="diagnosis-list">
+        <div><strong>Priorité sportive :</strong> ${sportPriority}.</div>
+        <div><strong>Nutrition :</strong> viser environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour comme point de départ.</div>
+        <div><strong>Point de vigilance :</strong> ${painLabel}. En cas de douleur vive, gonflement, instabilité ou gêne persistante, stop et avis professionnel.</div>
+        <div><strong>Plan long terme :</strong> démarre par 4 semaines, fais un bilan, puis ajuste le mois suivant selon poids, fatigue, faim, douleurs et performances.</div>
+      </div>`;
+  }
+  function setIntroStep(step){
+    badgeWrite?.classList.toggle("active",step==="write");
+    badgeAnalyze?.classList.toggle("active",step==="analyze");
+    badgeUnlock?.classList.toggle("active",step==="unlock");
+  }
+  function showOnboardingIfNeeded(){
+    const p=BF_STORE.get(PROFILE_KEY,null);
+    if(!p || (!p.presentation && !p.name)){
+      lockApp();
+      setIntroStep("write");
+    }else{
+      unlockApp();
+    }
   }
 
   function init(){
@@ -1755,7 +1828,7 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v22_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v24_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
@@ -1767,15 +1840,33 @@ window.BF_UTIL = {
     updatePersonalUI();
     showOnboardingIfNeeded();
     onExampleBtn?.addEventListener("click",()=>{
+      setIntroStep("write");
+      analysisPreview?.classList.add("hidden");
+      coachDiagnosis?.classList.add("hidden");
+      unlockPanel?.classList.add("hidden");
       onPresentation.value="Salut je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle proprement sans trop prendre de gras. Je peux aller à la salle 3 fois par semaine pendant environ 1h. Je préfère les machines. Je mange 2 à 3 repas par jour, j’aime le riz, les œufs, le poulet, le skyr, les pommes de terre et les bananes. J’ai parfois une gêne au genou donc je veux faire attention.";
     });
     onAnalyzeBtn?.addEventListener("click",()=>{
       if(onPresentation.value.trim().length<30){ alert("Écris une présentation un peu plus complète pour que l’app comprenne mieux."); return; }
       parsedPresentationProfile=analyzePresentation(onPresentation.value);
       renderAnalysisPreview(parsedPresentationProfile);
+      coachDiagnosis.innerHTML=professionalDiagnosis(parsedPresentationProfile);
+      coachDiagnosis.classList.remove("hidden");
+      unlockPanel.classList.remove("hidden");
       onFinishBtn.classList.remove("hidden");
+      setIntroStep("unlock");
     });
     onFinishBtn?.addEventListener("click",savePresentationProfile);
+    restartIntroBtn?.addEventListener("click",()=>{
+      parsedPresentationProfile=null;
+      const p=getProfile();
+      onPresentation.value=p.presentation||"";
+      analysisPreview?.classList.add("hidden");
+      coachDiagnosis?.classList.add("hidden");
+      unlockPanel?.classList.add("hidden");
+      lockApp();
+      setIntroStep("write");
+    });
     renderMonthSummary(null,getProfile());
     saveProfileBtn?.addEventListener("click",saveProfile);
     generateMonthBtn?.addEventListener("click",()=>{ const p=readProfileForm(); BF_STORE.set(PROFILE_KEY,p); const plan=buildMonthPlan(); activeMonthTab="sport"; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x.dataset.monthTab==="sport")); renderMonth(plan); });
@@ -1801,7 +1892,7 @@ window.BF_UTIL = {
     });
 
     renderSession();
-    const saved=BF_STORE.get("bf_v22_custom_html","");
+    const saved=BF_STORE.get("bf_v24_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
