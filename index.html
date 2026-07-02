@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V26</title>
+  <title>Basic-Fit Coach V27</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V26 : sport nutrition courses */
+/* V27 : séances personnalisées */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -596,7 +596,7 @@ body.app-locked #onboarding,
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V26 : sport nutrition courses définitivement */
+/* V27 : séances personnalisées définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V26 : sport nutrition courses */
+/* V27 : séances personnalisées */
 .hint{
   position:fixed;
   left:12px;
@@ -740,6 +740,76 @@ body.app-locked{overflow:auto!important}
 }
 @media(max-width:700px){
   .v26-grid{grid-template-columns:1fr}
+}
+
+
+/* V27 : séances personnalisées + exercices manuels */
+.v27-controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+.v27-form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:12px 0;
+}
+.v27-form-grid label,
+#sessionsView label{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  color:#C7D3E4;
+  font-size:13px;
+  font-weight:900;
+}
+.small-textarea{
+  min-height:90px;
+  resize:vertical;
+}
+.generated-session{
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.045);
+  border-radius:22px;
+  padding:14px;
+  margin:12px 0;
+}
+.generated-session h3{
+  margin-bottom:6px;
+}
+.generated-session-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:8px 0 10px;
+}
+.generated-exercise{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.14);
+  border-radius:16px;
+  padding:10px;
+  margin:8px 0;
+}
+.generated-exercise strong{color:#fff}
+.generated-exercise p{color:var(--muted);font-size:13px;margin-top:4px}
+.manual-exercise-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:flex-start;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+  border-radius:16px;
+  padding:10px;
+  margin:8px 0;
+}
+.manual-exercise-row p{color:var(--muted);font-size:13px;margin-top:3px}
+@media(max-width:760px){
+  .v27-form-grid{grid-template-columns:1fr}
+  .v27-controls button{width:100%}
+  .manual-exercise-row{flex-direction:column}
 }
 
 </style>
@@ -897,7 +967,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V26 SPORT NUTRITION COURSES</p>
+          <p class="hero-label">V27 SÉANCES PERSONNALISÉES</p>
           <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1029,20 +1099,89 @@ body.app-locked{overflow:auto!important}
         </article>
       </section>
 
+
       <section class="view" id="sessionsView">
-        <div class="section-head">
-          <div>
-            <p class="card-kicker">PROGRAMME DE BASE</p>
-            <h2>Séances Basic-Fit</h2>
+        <article class="card">
+          <p class="card-kicker">V27 — SÉANCES PERSONNALISÉES</p>
+          <h2>Mes séances générées</h2>
+          <p>L’app génère tes séances selon ton profil : objectif, niveau, nombre de séances, durée, douleurs et exercices ajoutés manuellement.</p>
+
+          <div class="v27-controls">
+            <button type="button" class="primary-btn" id="generatePersonalSessionsBtn">Générer mes séances</button>
+            <button type="button" class="ghost-btn" id="copySessionsBtn">Copier mes séances</button>
+            <button type="button" class="ghost-btn danger-btn" id="resetSessionsBtn">Réinitialiser</button>
           </div>
-          <button class="ghost-btn" id="resetChecksBtn">Reset cases</button>
-        </div>
-        <div class="segmented" id="sessionTabs">
-          <button data-session="s1" class="active">Jambes</button>
-          <button data-session="s2">Haut</button>
-          <button data-session="s3">Full body</button>
-        </div>
-        <div id="sessionContent"></div>
+
+          <div id="sessionProfileSummary" class="result-box"></div>
+          <div id="personalSessionsResult"></div>
+        </article>
+
+        <article class="card">
+          <p class="card-kicker">EXERCICES MANUELS</p>
+          <h2>Ajouter un exercice</h2>
+          <p>Ajoute une machine, un exercice libre, un exercice cardio ou mobilité. L’app pourra l’intégrer dans tes séances générées.</p>
+
+          <div class="v27-form-grid">
+            <label>Nom de l’exercice
+              <input id="manualExerciseName" placeholder="Ex : Hack squat, tirage neutre, hip thrust..." />
+            </label>
+            <label>Zone principale
+              <select id="manualExerciseMuscle">
+                <option value="jambes">Jambes</option>
+                <option value="dos">Dos</option>
+                <option value="pectoraux">Pectoraux</option>
+                <option value="épaules">Épaules</option>
+                <option value="bras">Bras</option>
+                <option value="abdos">Abdos / gainage</option>
+                <option value="cardio">Cardio</option>
+                <option value="mobilité">Mobilité / prévention</option>
+              </select>
+            </label>
+            <label>Type
+              <select id="manualExerciseType">
+                <option value="machine">Machine</option>
+                <option value="libre">Charge libre</option>
+                <option value="poids du corps">Poids du corps</option>
+                <option value="cardio">Cardio</option>
+                <option value="mobilité">Mobilité</option>
+              </select>
+            </label>
+            <label>Difficulté
+              <select id="manualExerciseLevel">
+                <option value="beginner">Facile</option>
+                <option value="intermediate" selected>Intermédiaire</option>
+                <option value="advanced">Avancé</option>
+              </select>
+            </label>
+            <label>Séries
+              <input id="manualExerciseSets" placeholder="Ex : 3" inputmode="numeric" />
+            </label>
+            <label>Répétitions / durée
+              <input id="manualExerciseReps" placeholder="Ex : 8-12 ou 30 sec" />
+            </label>
+            <label>Repos
+              <input id="manualExerciseRest" placeholder="Ex : 1min30" />
+            </label>
+            <label>Priorité
+              <select id="manualExercisePriority">
+                <option value="normal">Normal</option>
+                <option value="priority">À intégrer en priorité</option>
+              </select>
+            </label>
+          </div>
+
+          <label>Consignes
+            <textarea id="manualExerciseDesc" class="small-textarea" placeholder="Ex : mouvement contrôlé, ne pas verrouiller les genoux, garder le dos stable..."></textarea>
+          </label>
+
+          <div class="v27-controls">
+            <button type="button" class="primary-btn" id="addManualExerciseBtn">Ajouter l’exercice</button>
+            <button type="button" class="ghost-btn" id="clearManualExerciseFormBtn">Vider le formulaire</button>
+          </div>
+
+          <div id="manualExerciseStatus" class="validation-status hidden"></div>
+          <div id="manualExercisesList"></div>
+        </article>
       </section>
 
 
@@ -1050,19 +1189,17 @@ body.app-locked{overflow:auto!important}
         <div class="section-head">
           <div>
             <p class="card-kicker">MODE SÉANCE EN DIRECT</p>
-            <h2>Suis ta séance étape par étape</h2>
+            <h2>Utilise tes séances personnalisées</h2>
           </div>
         </div>
 
         <article class="card accent-card">
           <p class="card-kicker">DÉMARRAGE</p>
           <h3>Choisis ta séance</h3>
-          <p>L’app te guide exercice par exercice. Tu peux noter tes séries, lancer le repos, remplacer une machine et sauvegarder tes perfs.</p>
+          <p>Les anciennes séances préfaites sont remplacées par tes séances personnalisées. Génère-les dans l’onglet Séances, puis note tes perfs dans Perfs.</p>
           <div class="mini-row">
-            <button class="primary-btn" data-start-live="s1">Jambes</button>
-            <button class="primary-btn" data-start-live="s2">Haut</button>
-            <button class="primary-btn" data-start-live="s3">Full</button>
-            <button class="ghost-btn" id="startCustomLiveBtn">Perso</button>
+            <button class="primary-btn" data-view-jump="sessions">Voir mes séances personnalisées</button>
+            <button class="ghost-btn" id="startCustomLiveBtn">Créer une séance perso rapide</button>
           </div>
         </article>
 
@@ -1471,8 +1608,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v26_timer_end";
-  const KEY_SOUND="bf_v26_sound";
+  const KEY_END="bf_v27_timer_end";
+  const KEY_SOUND="bf_v27_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -1538,7 +1675,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v26_performances";
+  const KEY="bf_v27_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1699,7 +1836,7 @@ window.BF_UTIL = {
   window.v25PersonalProfile = function(){
     const fallback={name:"",weight:75,height:166,age:20,sex:"male",goal:"muscle",level:"intermediate",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
     try{
-      return JSON.parse(localStorage.getItem("bf_v26_profile")||"null") || fallback;
+      return JSON.parse(localStorage.getItem("bf_v27_profile")||"null") || fallback;
     }catch(e){ return fallback; }
   };
   window.v25NutritionTargets = function(p){
@@ -1851,6 +1988,10 @@ window.BF_UTIL = {
   function answer(text){
     const personal=window.v25ProAnswer?.(text); if(personal) return personal;
     const q=expand(BF_UTIL.normalize(text));
+    
+    if(q.includes("séance personnalisée")||q.includes("seance personnalisee")||q.includes("mes séances")||q.includes("mes seances")||q.includes("exercice manuel")){
+      return "Va dans l’onglet Séances : l’app génère tes séances selon ton profil, ton objectif, ton nombre de séances, ta durée et tes douleurs. Tu peux aussi ajouter tes propres exercices manuellement.";
+    }
     if(q.includes("cree")||q.includes("crée")||q.includes("genere")||q.includes("séance perso")||q.includes("seance perso")) return createCustom(text);
     if((q.includes("seance")||q.includes("programme"))&&(q.includes("conseil")||q.includes("quoi faire")||q.includes("aujourd"))) return recommend(text);
     if(q.includes("machine")||q.includes("occup")||q.includes("indisponible")||q.includes("remplacer")) return replacement(text);
@@ -1908,7 +2049,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v26_check_"+box.dataset.check;
+      const k="bf_v27_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1964,7 +2105,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v26_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v27_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1991,8 +2132,8 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v26_profile";
-  const MONTH_KEY="bf_v26_month_plan";
+  const PROFILE_KEY="bf_v27_profile";
+  const MONTH_KEY="bf_v27_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
@@ -2574,7 +2715,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=26." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=27." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -2585,7 +2726,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=26-reset-"+Date.now();
+      location.href=location.pathname+"?v=27-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -2595,7 +2736,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=26. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=27. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -2698,8 +2839,8 @@ window.BF_UTIL = {
   }
 
 
-  const V26_PROFILE_KEY="bf_v26_profile";
-  const V26_GROCERY_KEY="bf_v26_grocery";
+  const V26_PROFILE_KEY="bf_v27_profile";
+  const V26_GROCERY_KEY="bf_v27_grocery";
   let v26SportProfile=null;
   let v26NutritionProfile=null;
 
@@ -2874,7 +3015,8 @@ window.BF_UTIL = {
     v26StoreSet(V26_GROCERY_KEY,v26NutritionProfile);
     unlockApp();
     try{fillProfileForm();updatePersonalUI();renderMonthSummary(null,merged);renderMonth(buildMonthPlan());}catch(e){console.warn(e);}
-    try{v26RenderCoursesView();}catch(e){console.warn(e);}
+    try{v26RenderCoursesView();
+    v27Bind();}catch(e){console.warn(e);}
     return true;
   }
   function v26RenderCoursesView(){
@@ -2916,6 +3058,231 @@ window.BF_UTIL = {
   }
 
 
+
+  const V27_MANUAL_EXERCISES_KEY="bf_v27_manual_exercises";
+  const V27_SESSIONS_KEY="bf_v27_generated_sessions";
+
+  const V27_EXERCISE_LIBRARY=[
+    {name:"Presse à cuisses",muscle:"jambes",type:"machine",level:"beginner",sets:4,reps:"8-12",rest:"1min30-2min",desc:"Pieds stables, descente contrôlée, pousse fort sans verrouiller violemment les genoux.",avoid:["knee_heavy"],priority:true},
+    {name:"Leg curl",muscle:"jambes",type:"machine",level:"beginner",sets:3,reps:"10-12",rest:"1min15",desc:"Contrôle la descente, garde les hanches posées, cherche les ischios.",priority:true},
+    {name:"Leg extension",muscle:"jambes",type:"machine",level:"beginner",sets:3,reps:"10-15",rest:"1min15",desc:"Mouvement contrôlé, ne force pas si gêne au genou.",avoid:["knee"],priority:false},
+    {name:"Abducteurs machine",muscle:"jambes",type:"machine",level:"beginner",sets:3,reps:"12-15",rest:"1min",desc:"Contrôle, pause courte en ouverture, utile pour stabilité bassin/genou."},
+    {name:"Adducteurs machine",muscle:"jambes",type:"machine",level:"beginner",sets:2,reps:"12-15",rest:"1min",desc:"Progressif, ne force pas l’écartement.",avoid:["adductor"]},
+    {name:"Mollets machine",muscle:"jambes",type:"machine",level:"beginner",sets:3,reps:"12-20",rest:"1min",desc:"Amplitude complète, pause en haut."},
+
+    {name:"Tirage vertical",muscle:"dos",type:"machine",level:"beginner",sets:4,reps:"8-12",rest:"1min30",desc:"Tire les coudes vers le bas, poitrine sortie, contrôle la remontée.",priority:true},
+    {name:"Rowing assis",muscle:"dos",type:"machine",level:"beginner",sets:4,reps:"8-12",rest:"1min30",desc:"Dos stable, tire les coudes en arrière, ne balance pas.",priority:true},
+    {name:"Chest press",muscle:"pectoraux",type:"machine",level:"beginner",sets:4,reps:"8-12",rest:"1min30",desc:"Omoplates serrées, pousse fort, retour contrôlé.",priority:true},
+    {name:"Pec deck",muscle:"pectoraux",type:"machine",level:"beginner",sets:2,reps:"12-15",rest:"1min",desc:"Contrôle, légère flexion des coudes, ressens les pectoraux."},
+    {name:"Shoulder press",muscle:"épaules",type:"machine",level:"intermediate",sets:3,reps:"8-10",rest:"1min30",desc:"Ne cambre pas, trajectoire propre, stop si douleur épaule.",avoid:["shoulder"]},
+    {name:"Reverse pec deck",muscle:"épaules",type:"machine",level:"beginner",sets:3,reps:"12-15",rest:"1min",desc:"Cible arrière d’épaule, contrôle sans élan."},
+    {name:"Curl biceps machine",muscle:"bras",type:"machine",level:"beginner",sets:2,reps:"10-12",rest:"1min",desc:"Coudes stables, pas d’élan."},
+    {name:"Extension triceps poulie",muscle:"bras",type:"machine",level:"beginner",sets:3,reps:"10-12",rest:"1min",desc:"Coudes près du corps, verrouille proprement."},
+
+    {name:"Machine abdos",muscle:"abdos",type:"machine",level:"beginner",sets:3,reps:"12-15",rest:"1min",desc:"Enroule sans tirer avec les bras."},
+    {name:"Gainage planche",muscle:"abdos",type:"poids du corps",level:"beginner",sets:3,reps:"30-45 sec",rest:"45 sec",desc:"Bassin neutre, respiration contrôlée.",priority:true},
+    {name:"Vélo",muscle:"cardio",type:"cardio",level:"beginner",sets:1,reps:"8-15 min",rest:"-",desc:"Cardio facile ou finisher selon objectif."},
+    {name:"Tapis incliné",muscle:"cardio",type:"cardio",level:"beginner",sets:1,reps:"10-20 min",rest:"-",desc:"Marche active, utile en sèche sans trop impacter les articulations."},
+    {name:"Mobilité hanches/chevilles",muscle:"mobilité",type:"mobilité",level:"beginner",sets:1,reps:"5-8 min",rest:"-",desc:"Préparation articulaire avant jambes ou full body."}
+  ];
+
+  function v27GetManualExercises(){
+    try{return JSON.parse(localStorage.getItem(V27_MANUAL_EXERCISES_KEY)||"[]");}catch(e){return [];}
+  }
+  function v27SaveManualExercises(list){
+    localStorage.setItem(V27_MANUAL_EXERCISES_KEY,JSON.stringify(list));
+  }
+  function v27SetStatus(msg,type="ok"){
+    const el=document.getElementById("manualExerciseStatus");
+    if(el){el.textContent=msg;el.className="validation-status "+type;el.classList.remove("hidden");}
+  }
+  function v27Profile(){
+    const v26=v26StoreGet?.(V26_PROFILE_KEY,null);
+    return v26?.merged || getProfile();
+  }
+  function v27PainKey(p){
+    if(p.pain==="knee") return "knee";
+    if(p.pain==="adductor") return "adductor";
+    if(p.pain==="shoulder") return "shoulder";
+    if(p.pain==="back") return "back";
+    if(p.pain==="ankle") return "ankle";
+    return "none";
+  }
+  function v27ExerciseAllowed(ex,p){
+    const pain=v27PainKey(p);
+    if(!ex.avoid) return true;
+    if(pain==="knee" && (ex.avoid.includes("knee")||ex.avoid.includes("knee_heavy"))) return false;
+    if(pain==="adductor" && ex.avoid.includes("adductor")) return false;
+    if(pain==="shoulder" && ex.avoid.includes("shoulder")) return false;
+    return true;
+  }
+  function v27AllExercises(){
+    return [...V27_EXERCISE_LIBRARY,...v27GetManualExercises().map(x=>({...x,manual:true}))];
+  }
+  function v27Pick(pool,muscle,count,p,preferPriority=false){
+    let arr=pool.filter(e=>e.muscle===muscle && v27ExerciseAllowed(e,p));
+    if(preferPriority) arr.sort((a,b)=>(b.priority?1:0)-(a.priority?1:0));
+    return arr.slice(0,count);
+  }
+  function v27SessionTemplate(p){
+    const days=Math.max(2,Math.min(5,Number(p.gymDays)||3));
+    const goal=p.goal||"muscle";
+    const duration=Number(p.duration)||60;
+    let split=[];
+    if(days<=2){
+      split=[["Full body A",["jambes","dos","pectoraux","abdos","cardio"]],["Full body B",["jambes","dos","épaules","bras","abdos"]]];
+    }else if(days===3){
+      if(goal==="strength") split=[["Force bas du corps",["jambes","jambes","dos","abdos"]],["Force haut du corps",["pectoraux","dos","épaules","bras","abdos"]],["Full body force",["jambes","pectoraux","dos","abdos","cardio"]]];
+      else split=[["Jambes personnalisées",["jambes","jambes","abdos","cardio"]],["Haut du corps personnalisé",["dos","pectoraux","épaules","bras","abdos"]],["Full body personnalisé",["jambes","dos","pectoraux","abdos","cardio"]]];
+    }else{
+      split=[["Bas du corps A",["jambes","jambes","abdos","cardio"]],["Haut du corps A",["dos","pectoraux","épaules","bras"]],["Bas du corps B",["jambes","jambes","mobilité","abdos"]],["Haut du corps B",["pectoraux","dos","épaules","bras","abdos"]]];
+      if(days>=5) split.push(["Cardio + mobilité",["cardio","mobilité","abdos","jambes"]]);
+    }
+    return split.slice(0,days).map((s,i)=>({name:`Séance ${i+1} — ${s[0]}`,focus:s[1],duration}));
+  }
+  function v27AdjustExercise(ex,p,index,total){
+    const goal=p.goal||"muscle";
+    const copy={...ex};
+    if(goal==="strength" && ["jambes","dos","pectoraux"].includes(copy.muscle)){
+      copy.sets=Math.max(Number(copy.sets)||3,4);
+      copy.reps=copy.reps==="12-15"?"8-10":copy.reps;
+      copy.rest="1min45-2min30";
+    }
+    if(goal==="cut"){
+      copy.rest=copy.type==="cardio"?"-":"1min-1min30";
+      if(copy.type==="cardio") copy.reps="12-20 min";
+    }
+    if(goal==="health"){
+      copy.sets=Math.min(Number(copy.sets)||3,3);
+      copy.rest=copy.type==="cardio"?"-":"1min15";
+    }
+    if((Number(p.duration)||60)<=45 && index>4) copy.optional=true;
+    return copy;
+  }
+  function v27GenerateSessions(){
+    const p=v27Profile();
+    const pool=v27AllExercises();
+    const templates=v27SessionTemplate(p);
+    const manualPriority=v27GetManualExercises().filter(e=>e.priority==="priority");
+    const sessions=templates.map((tpl,idx)=>{
+      let selected=[];
+      tpl.focus.forEach((muscle,i)=>{
+        const count=muscle==="jambes" && tpl.focus.filter(x=>x==="jambes").length>1 ? 1 : 1;
+        const chosen=v27Pick(pool,muscle,count,p,true).filter(e=>!selected.some(s=>s.name===e.name));
+        selected.push(...chosen);
+      });
+      // Add priority manual exercises if matching focus and not already selected
+      manualPriority.forEach(ex=>{
+        if(tpl.focus.includes(ex.muscle) && !selected.some(s=>s.name===ex.name) && v27ExerciseAllowed(ex,p)){
+          selected.splice(Math.min(2,selected.length),0,{...ex,manual:true});
+        }
+      });
+      // Fill if too short
+      const target=(Number(p.duration)||60)<=45?5:6;
+      for(const ex of pool){
+        if(selected.length>=target) break;
+        if(tpl.focus.includes(ex.muscle) && !selected.some(s=>s.name===ex.name) && v27ExerciseAllowed(ex,p)) selected.push(ex);
+      }
+      selected=selected.slice(0,target).map((ex,i)=>v27AdjustExercise(ex,p,i,target));
+      return {...tpl,exercises:selected,goal:p.goal,level:p.level,pain:p.pain};
+    });
+    localStorage.setItem(V27_SESSIONS_KEY,JSON.stringify(sessions));
+    return sessions;
+  }
+  function v27RenderSessions(sessions=null){
+    const p=v27Profile();
+    sessions=sessions || JSON.parse(localStorage.getItem(V27_SESSIONS_KEY)||"null") || v27GenerateSessions();
+    const summary=document.getElementById("sessionProfileSummary");
+    if(summary){
+      summary.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabel(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}`;
+    }
+    const box=document.getElementById("personalSessionsResult");
+    if(!box) return;
+    box.innerHTML=sessions.map((s,si)=>`<div class="generated-session">
+      <h3>${s.name}</h3>
+      <div class="generated-session-meta">
+        <span class="tag">${goalLabel(s.goal)}</span>
+        <span class="tag">${s.duration} min</span>
+        <span class="tag">${s.exercises.length} exercices</span>
+        <span class="tag">personnalisée</span>
+      </div>
+      ${s.exercises.map((ex,i)=>`<div class="generated-exercise">
+        <strong>${i+1}. ${ex.name}${ex.manual?' <span class="tag">manuel</span>':''}${ex.optional?' <span class="tag">optionnel</span>':''}</strong>
+        <p>${ex.muscle} · ${ex.type} · ${ex.sets||3} séries · ${ex.reps||"8-12"} · repos ${ex.rest||"1min30"}</p>
+        <p>${ex.desc||"Exécution contrôlée, garde 1-2 répétitions en réserve."}</p>
+      </div>`).join("")}
+    </div>`).join("");
+  }
+  function v27ClearExerciseForm(){
+    ["manualExerciseName","manualExerciseSets","manualExerciseReps","manualExerciseRest","manualExerciseDesc"].forEach(id=>{const el=document.getElementById(id); if(el) el.value="";});
+    if(document.getElementById("manualExerciseMuscle")) manualExerciseMuscle.value="jambes";
+    if(document.getElementById("manualExerciseType")) manualExerciseType.value="machine";
+    if(document.getElementById("manualExerciseLevel")) manualExerciseLevel.value="intermediate";
+    if(document.getElementById("manualExercisePriority")) manualExercisePriority.value="normal";
+  }
+  function v27AddManualExercise(){
+    const name=(document.getElementById("manualExerciseName")?.value||"").trim();
+    if(name.length<2){v27SetStatus("Ajoute au moins le nom de l’exercice.","err");return;}
+    const ex={
+      id:"manual_"+Date.now(),
+      name,
+      muscle:document.getElementById("manualExerciseMuscle")?.value||"jambes",
+      type:document.getElementById("manualExerciseType")?.value||"machine",
+      level:document.getElementById("manualExerciseLevel")?.value||"intermediate",
+      sets:Number(document.getElementById("manualExerciseSets")?.value||3),
+      reps:(document.getElementById("manualExerciseReps")?.value||"8-12").trim(),
+      rest:(document.getElementById("manualExerciseRest")?.value||"1min30").trim(),
+      priority:document.getElementById("manualExercisePriority")?.value||"normal",
+      desc:(document.getElementById("manualExerciseDesc")?.value||"Exécution contrôlée, garde 1-2 répétitions en réserve.").trim(),
+      manual:true
+    };
+    const list=v27GetManualExercises();
+    list.push(ex);
+    v27SaveManualExercises(list);
+    v27SetStatus("Exercice ajouté. Régénère tes séances pour l’intégrer.","ok");
+    v27ClearExerciseForm();
+    v27RenderManualExercises();
+  }
+  function v27DeleteManualExercise(id){
+    v27SaveManualExercises(v27GetManualExercises().filter(e=>e.id!==id));
+    v27RenderManualExercises();
+    v27SetStatus("Exercice supprimé.","ok");
+  }
+  function v27RenderManualExercises(){
+    const box=document.getElementById("manualExercisesList");
+    if(!box) return;
+    const list=v27GetManualExercises();
+    if(!list.length){box.innerHTML=`<div class="result-box">Aucun exercice manuel pour le moment.</div>`;return;}
+    box.innerHTML=list.map(ex=>`<div class="manual-exercise-row">
+      <div>
+        <strong>${ex.name}</strong>
+        <p>${ex.muscle} · ${ex.type} · ${ex.sets} séries · ${ex.reps} · repos ${ex.rest}${ex.priority==="priority"?" · priorité":""}</p>
+        <p>${ex.desc||""}</p>
+      </div>
+      <button type="button" class="ghost-btn danger-btn" data-delete-manual="${ex.id}">Supprimer</button>
+    </div>`).join("");
+    box.querySelectorAll("[data-delete-manual]").forEach(btn=>btn.addEventListener("click",()=>v27DeleteManualExercise(btn.dataset.deleteManual)));
+  }
+  function v27CopySessions(){
+    const txt=document.getElementById("personalSessionsResult")?.innerText||"";
+    if(!txt.trim()) return alert("Génère d’abord tes séances.");
+    navigator.clipboard?.writeText(txt).then(()=>alert("Séances copiées.")).catch(()=>alert("Copie impossible, sélectionne le texte manuellement."));
+  }
+  function v27Bind(){
+    document.getElementById("generatePersonalSessionsBtn")?.addEventListener("click",()=>v27RenderSessions(v27GenerateSessions()));
+    document.getElementById("copySessionsBtn")?.addEventListener("click",v27CopySessions);
+    document.getElementById("resetSessionsBtn")?.addEventListener("click",()=>{
+      localStorage.removeItem(V27_SESSIONS_KEY);
+      v27RenderSessions(v27GenerateSessions());
+    });
+    document.getElementById("addManualExerciseBtn")?.addEventListener("click",v27AddManualExercise);
+    document.getElementById("clearManualExerciseFormBtn")?.addEventListener("click",v27ClearExerciseForm);
+    document.querySelectorAll("[data-view-jump]").forEach(btn=>btn.addEventListener("click",()=>showView(btn.dataset.viewJump)));
+    v27RenderManualExercises();
+    v27RenderSessions();
+  }
+
+
   function init(){
     document.querySelectorAll("[id]").forEach(el=>{ try{ window[el.id]=el; }catch(e){} });
     try{ safeProfile(); }catch(e){ BF_STORE.remove(PROFILE_KEY); }
@@ -2930,7 +3297,7 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v26_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v27_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
@@ -3005,7 +3372,7 @@ window.BF_UTIL = {
     });
 
     renderSession();
-    const saved=BF_STORE.get("bf_v26_custom_html","");
+    const saved=BF_STORE.get("bf_v27_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
@@ -3022,7 +3389,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=26").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=27").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
