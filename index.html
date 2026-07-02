@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V19</title>
+  <title>Basic-Fit Coach V22</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V19 : nettoyage du bas de l'application */
+/* V22 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V19 : suppression du texte parasite tout en bas */
+/* V22 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -257,8 +257,8 @@ tr:last-child td{border-bottom:0}
 .hint#installHint{
   display:none!important;
 }
-.app-shell > footer,
-footer{
+.app-shell > sporter,
+sporter{
   display:none!important;
 }
 body > p:last-child,
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V19 : mode séance live + actions rapides */
+/* V22 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -339,7 +339,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V19 : profil + programme mensuel */
+/* V22 : profil + programme mensuel */
 .month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
 .month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
 .month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
@@ -348,6 +348,58 @@ body > div:not(.app-shell):last-child{
 .meal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.meal-card{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.045);border-radius:18px;padding:12px;color:var(--muted);font-size:13.5px}.meal-card strong{display:block;color:var(--accent);margin-bottom:4px}
 .shopping-list{columns:2;color:var(--muted)}.shopping-list li{margin-bottom:7px}
 @media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
+
+
+/* V22 : onboarding + personnalisation par objectif */
+.onboarding{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(7,10,18,.82);backdrop-filter:blur(22px)}
+.onboarding-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(53,208,127,.08)),var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55);padding:20px}
+.onboarding-card>p:not(.card-kicker){color:var(--muted);margin:8px 0 16px}
+.onboarding-card label{display:flex;flex-direction:column;gap:7px;color:#C7D3E4;font-size:12px;font-weight:850;margin-bottom:10px}
+.on-step{display:none}.on-step.active{display:block;animation:fadeIn .18s ease}
+.onboarding-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.objective-strip{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(16,22,34,.78);border:1px solid rgba(255,255,255,.10);border-radius:24px;box-shadow:var(--shadow);backdrop-filter:blur(20px);padding:15px;margin:13px 0}
+.objective-strip h3{margin:4px 0}.objective-strip p:last-child{color:var(--muted);font-size:13.5px}
+.goal-chip{display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(255,209,102,.15);color:#FFE4A3;border:1px solid rgba(255,209,102,.20);font-size:12px;font-weight:900}
+@media(max-width:620px){.objective-strip{align-items:flex-start;flex-direction:column}.objective-strip button{width:100%}}
+
+
+/* V22 : base coach pro élargie */
+.pro-base-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  background:linear-gradient(135deg,rgba(125,179,255,.13),rgba(53,208,127,.09)),var(--panel);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(20px);
+  padding:15px;
+  margin:13px 0;
+}
+.pro-base-card p:last-child{color:var(--muted);font-size:13.5px}
+.coach-note{
+  margin-top:10px;
+  color:#FFE4A3;
+  background:rgba(255,209,102,.10);
+  border:1px solid rgba(255,209,102,.18);
+  padding:10px;
+  border-radius:16px;
+  font-size:13px;
+}
+@media(max-width:620px){.pro-base-card{flex-direction:column;align-items:flex-start}.pro-base-card button{width:100%}}
+
+
+/* V22 : présentation libre intelligente */
+.free-onboarding-card{width:min(820px,100%)}
+.presentation-textarea{min-height:260px;font-size:15px;line-height:1.5;resize:vertical}
+.free-actions{grid-template-columns:1fr 1fr 1fr}
+.analysis-preview{margin-top:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.055);border-radius:20px;padding:13px}
+.analysis-preview h3{margin-bottom:8px}
+.analysis-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.analysis-item{background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:9px;color:var(--muted);font-size:13px}
+.analysis-item strong{display:block;color:#fff;margin-bottom:3px}
+@media(max-width:620px){.free-actions{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -361,11 +413,59 @@ body > div:not(.app-shell):last-child{
       <button class="icon-btn" id="installHelpBtn" aria-label="Installation">⌁</button>
     </header>
 
+
+    <section id="onboarding" class="onboarding hidden">
+      <div class="onboarding-card">
+        <p class="card-kicker">PREMIER LANCEMENT</p>
+        <h2>Personnalise ton coach</h2>
+        <p>Réponds rapidement. L’app adaptera l’accueil, le programme sportif, la nutrition et les conseils selon ton objectif.</p>
+        <div class="on-step active" data-step="0">
+          <label>Ton prénom <input id="onName" placeholder="ex : Pablo"></label>
+          <label>Objectif principal
+            <select id="onGoal">
+              <option value="cut">Sèche / perdre du gras</option>
+              <option value="muscle" selected>Prise de muscle</option>
+              <option value="strength">Force</option>
+              <option value="performance">Performance / athlétique</option>
+              <option value="health">Remise en forme / santé</option>
+              <option value="maintain">Maintien</option>
+            </select>
+          </label>
+        </div>
+        <div class="on-step" data-step="1">
+          <div class="form-grid">
+            <label>Poids <input id="onWeight" inputmode="decimal" value="75"></label>
+            <label>Taille <input id="onHeight" inputmode="numeric" value="166"></label>
+            <label>Âge <input id="onAge" inputmode="numeric" value="20"></label>
+            <label>Sexe <select id="onSex"><option value="male" selected>Homme</option><option value="female">Femme</option></select></label>
+          </div>
+        </div>
+        <div class="on-step" data-step="2">
+          <div class="form-grid">
+            <label>Niveau salle <select id="onLevel"><option value="beginner">Débutant</option><option value="intermediate" selected>Intermédiaire</option><option value="advanced">Avancé</option></select></label>
+            <label>Séances / semaine <select id="onGymDays"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option></select></label>
+            <label>Durée séance <select id="onDuration"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>60 min</option><option value="75">75 min</option></select></label>
+            <label>Repas / jour <select id="onMeals"><option value="2">2 repas</option><option value="3" selected>3 repas</option><option value="4">3 repas + collation</option></select></label>
+          </div>
+        </div>
+        <div class="on-step" data-step="3">
+          <label>Douleurs / limites à surveiller <select id="onPain"><option value="none">Aucune</option><option value="knee">Genou</option><option value="adductor">Adducteurs</option><option value="ankle">Cheville</option><option value="shoulder">Épaule</option><option value="back">Dos</option></select></label>
+          <label>Aliments aimés <textarea id="onLikes" placeholder="ex : œufs, riz, poulet, skyr, pommes de terre..."></textarea></label>
+          <label>Aliments à éviter <textarea id="onDislikes" placeholder="ex : poisson, lactose, petit-déj..."></textarea></label>
+        </div>
+        <div class="onboarding-actions">
+          <button class="ghost-btn" id="onPrevBtn">Retour</button>
+          <button class="primary-btn" id="onNextBtn">Continuer</button>
+          <button class="primary-btn hidden" id="onFinishBtn">Créer mon coach</button>
+        </div>
+      </div>
+    </section>
+
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V19 MONTH</p>
-          <h2>Construis ton mois comme un joueur sérieux.</h2>
+          <p class="hero-label">V22 FREE</p>
+          <h2>Présente-toi librement, l’app adapte ton sport et ta nutrition.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
         <div class="hero-orb">
@@ -387,6 +487,16 @@ body > div:not(.app-shell):last-child{
       </nav>
 
       <section class="view active" id="dashboardView">
+
+        <section class="objective-strip" id="objectiveStrip">
+          <div>
+            <p class="card-kicker">TON OBJECTIF</p>
+            <h3 id="personalGreeting">Salut, ton coach est prêt.</h3>
+            <p id="objectiveText">Complète ton profil pour personnaliser l’app.</p>
+          </div>
+          <button class="ghost-btn" data-open="profile">Modifier</button>
+        </section>
+
         <div class="grid cards-2">
           <article class="card accent-card">
             <p class="card-kicker">CONSEIL DU JOUR</p>
@@ -433,23 +543,26 @@ body > div:not(.app-shell):last-child{
 
       <section class="view" id="profileView">
         <div class="section-head"><div><p class="card-kicker">PROFIL LONG TERME</p><h2>Mon profil coach</h2></div></div>
-        <article class="card accent-card"><h3>Profil = programme plus intelligent</h3><p>Le coach utilise ton poids, ta taille, ton objectif, tes jours de foot, tes douleurs et tes repas pour créer ton mois sportif et nutrition.</p></article>
+        <article class="card accent-card"><h3>Profil = programme plus intelligent</h3><p>Le coach utilise ton poids, ta taille, ton objectif, tes jours d’entraînement, tes douleurs et tes repas pour créer ton mois sportif et nutrition.</p></article>
         <article class="card form-card">
           <div class="form-grid">
+            <label>Prénom <input id="profileName" placeholder="ex : Pablo"></label>
             <label>Poids actuel en kg <input id="profileWeight" inputmode="decimal" value="75"></label>
             <label>Taille en cm <input id="profileHeight" inputmode="numeric" value="166"></label>
             <label>Âge <input id="profileAge" inputmode="numeric" value="20"></label>
             <label>Sexe <select id="profileSex"><option value="male" selected>Homme</option><option value="female">Femme</option></select></label>
-            <label>Objectif principal <select id="profileGoal"><option value="performance" selected>Performance foot / athlétique</option><option value="cut">Sèche / perdre du gras</option><option value="muscle">Prise de muscle</option><option value="maintain">Maintien</option></select></label>
+            <label>Objectif principal <select id="profileGoal"><option value="cut">Sèche / perdre du gras</option><option value="muscle" selected>Prise de muscle</option><option value="strength">Force</option><option value="performance">Performance / athlétique</option><option value="health">Remise en forme / santé</option><option value="maintain">Maintien</option></select></label>
             <label>Niveau salle <select id="profileLevel"><option value="beginner">Débutant</option><option value="intermediate" selected>Intermédiaire</option><option value="advanced">Avancé</option></select></label>
             <label>Séances muscu/semaine <select id="profileGymDays"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option></select></label>
+            <label>Durée séance <select id="profileDuration"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>60 min</option><option value="75">75 min</option></select></label>
             <label>Repas/jour <select id="profileMeals"><option value="2" selected>2 repas</option><option value="3">3 repas</option><option value="4">3 repas + collation</option></select></label>
-            <label>Foot dans la semaine <input id="profileFootball" placeholder="ex : mardi, jeudi"></label>
-            <label>Jour de match <input id="profileMatch" placeholder="ex : dimanche"></label>
+            <label>Autres sports / cardio <input id="profileSportball" placeholder="ex : cardio mercredi, sport collectif samedi"></label>
+            <label>Contrainte importante <input id="profileCompétition" placeholder="ex : compétition dimanche, travail tard jeudi"></label>
             <label>Douleurs à surveiller <select id="profilePain"><option value="none">Aucune</option><option value="knee">Genou</option><option value="adductor">Adducteurs</option><option value="ankle">Cheville</option><option value="shoulder">Épaule</option><option value="back">Dos</option></select></label>
             <label>Budget nutrition <select id="profileBudget"><option value="simple" selected>Simple / économique</option><option value="normal">Normal</option><option value="varied">Plus varié</option></select></label>
           </div>
           <label>Aliments que tu aimes <textarea id="profileLikes" placeholder="ex : œufs, jambon, skyr, pommes de terre, brocoli, banane..."></textarea></label>
+          <label>Présentation libre <textarea id="profilePresentation" placeholder="Ta présentation complète..."></textarea></label>
           <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : poisson, petit-déjeuner, ketchup..."></textarea></label>
           <button class="primary-btn full" id="saveProfileBtn">Sauvegarder mon profil</button>
         </article>
@@ -573,7 +686,7 @@ body > div:not(.app-shell):last-child{
                 <option value="recovery">Récupération</option>
                 <option value="fatloss">Sèche</option>
                 <option value="muscle">Prise de muscle</option>
-                <option value="prematch">Pré-match</option>
+                <option value="precompétition">Pré-compétition</option>
               </select>
             </label>
             <label>Durée
@@ -591,13 +704,13 @@ body > div:not(.app-shell):last-child{
                 <option value="high">Fatigué</option>
               </select>
             </label>
-            <label>Foot / match
-              <select id="customFootball">
+            <label>Sport / compétition
+              <select id="customSportball">
                 <option value="none">Rien</option>
-                <option value="trainingToday">Foot aujourd’hui</option>
-                <option value="trainingTomorrow">Foot demain</option>
-                <option value="matchToday">Match aujourd’hui</option>
-                <option value="matchTomorrow">Match demain</option>
+                <option value="trainingToday">Sport aujourd’hui</option>
+                <option value="trainingTomorrow">Sport demain</option>
+                <option value="compétitionToday">Compétition aujourd’hui</option>
+                <option value="compétitionTomorrow">Compétition demain</option>
               </select>
             </label>
             <label>Douleur / gêne
@@ -619,7 +732,7 @@ body > div:not(.app-shell):last-child{
             </label>
           </div>
           <label>Demande libre
-            <textarea id="customRequest" placeholder="Ex : jambes 45 min, je suis fatigué et j’ai foot demain..."></textarea>
+            <textarea id="customRequest" placeholder="Ex : jambes 45 min, je suis fatigué et j’ai sport demain..."></textarea>
           </label>
           <button class="primary-btn full" id="generateCustomBtn">Générer ma séance</button>
         </article>
@@ -696,7 +809,7 @@ body > div:not(.app-shell):last-child{
                 <option value="performance">Performance</option>
                 <option value="cut">Sèche</option>
                 <option value="muscle">Prise de muscle</option>
-                <option value="match">Foot / match</option>
+                <option value="compétition">Sport / compétition</option>
                 <option value="recovery">Récupération</option>
               </select>
             </label>
@@ -706,7 +819,7 @@ body > div:not(.app-shell):last-child{
                 <option value="after">Après séance</option>
                 <option value="day">Journée complète</option>
                 <option value="evening">Soir tard</option>
-                <option value="matchday">Jour de match</option>
+                <option value="compétitionday">Contrainte importante</option>
               </select>
             </label>
             <label>Faim
@@ -724,7 +837,7 @@ body > div:not(.app-shell):last-child{
         <article class="card chat-card">
           <p class="card-kicker">QUESTION NUTRITION</p>
           <div id="nutritionChat" class="chat-log">
-            <div class="msg bot">Pose une question : “je mange quoi avant la salle ?”, “whey ou pas ?”, “créatine ?”, “je veux sécher”.</div>
+            <div class="msg bot">Pose une question : calories, protéines, sèche, prise de muscle, faim, repas dehors, whey, créatine, liste de courses.</div>
           </div>
           <div class="chat-input-row">
             <input id="nutritionInput" placeholder="Écris ta question nutrition..." />
@@ -744,13 +857,13 @@ body > div:not(.app-shell):last-child{
         <article class="card chat-card">
           <div class="quick-scroll">
             <button data-quick="Quelle séance tu me conseilles aujourd’hui ?">Quelle séance ?</button>
-            <button data-quick="J’ai foot demain, je fais quoi ?">Foot demain</button>
+            <button data-quick="J’ai sport demain, je fais quoi ?">Sport demain</button>
             <button data-quick="La presse est prise">Machine prise</button>
             <button data-quick="Je suis fatigué">Fatigué</button>
             <button data-quick="Je veux sécher">Sèche</button>
           </div>
           <div id="coachChat" class="chat-log">
-            <div class="msg bot">Je suis ton coach V19. Écris avec tes mots, je comprends les formulations proches.</div>
+            <div class="msg bot">Je suis ton coach V22. Écris avec tes mots, je comprends les formulations proches.</div>
           </div>
           <div class="chat-input-row">
             <input id="coachInput" placeholder="Écris ta question..." />
@@ -791,7 +904,7 @@ window.BF_DATA = {
     legcurl:{name:"Leg curl",sets:"4 séries",reps:"10 à 12 reps",rest:"1min30",desc:"Arrière des cuisses. Priorité pour sprint et protection du genou.",main:true},
     legext:{name:"Leg extension",sets:"3 séries",reps:"10 à 12 reps",rest:"1min15",desc:"Devant des cuisses. Contrôle propre, commence léger si gêne genou."},
     glute:{name:"Machine fessiers",sets:"3 séries",reps:"10 par jambe",rest:"1min",desc:"Puissance, accélération et stabilité du bassin."},
-    add:{name:"Adducteurs",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Intérieur des cuisses, utile pour le foot et les changements de direction."},
+    add:{name:"Adducteurs",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Intérieur des cuisses, utile pour le sport et les changements de direction."},
     abd:{name:"Abducteurs",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Hanches et appuis. Important pour stabilité."},
     calves:{name:"Mollets",sets:"4 séries",reps:"12 à 15 reps",rest:"1min",desc:"Monte sur la pointe, bloque 1 seconde, redescends doucement."},
     tirage:{name:"Tirage vertical",sets:"4 séries",reps:"8 à 10 reps",rest:"1min30",desc:"Tire vers le haut de poitrine, épaules basses, pas derrière la nuque.",main:true},
@@ -804,7 +917,7 @@ window.BF_DATA = {
     biceps:{name:"Curl biceps machine",sets:"2 à 3 séries",reps:"10 à 12 reps",rest:"1min",desc:"Devant du bras, contrôle sans balancer."},
     abs:{name:"Machine abdos",sets:"3 séries",reps:"12 à 15 reps",rest:"1min",desc:"Contracte les abdos, ne tire pas avec le cou."},
     plank:{name:"Gainage planche",sets:"3 séries",reps:"30 à 45 sec",rest:"45 sec",desc:"Stabilité, duels et appuis."},
-    cardio:{name:"Cardio vélo",sets:"10 tours",reps:"20 sec rapide / 40 sec lent",rest:"—",desc:"À supprimer si match proche ou grosse fatigue."}
+    cardio:{name:"Cardio vélo",sets:"10 tours",reps:"20 sec rapide / 40 sec lent",rest:"—",desc:"À supprimer si compétition proche ou grosse fatigue."}
   },
   sessions: {
     s1:{title:"Séance 1 — Jambes puissantes",subtitle:"Puissance jambes, prévention, appuis, accélération.",keys:["warmup","presse","legcurl","legext","glute","add","abd","calves","plank"]},
@@ -831,11 +944,11 @@ window.BF_DATA = {
     warmup:"Remplacement vélo : tapis incliné facile, elliptique ou rameur tranquille. Si genou/cheville sensible, vélo reste le meilleur."
   },
   questionGroups: {
-    "Séance":["Quelle séance tu me conseilles aujourd’hui ?","Je fais quoi aujourd’hui ?","J’ai que 45 minutes","Je suis fatigué","J’ai foot demain","J’ai match demain"],
+    "Séance":["Quelle séance tu me conseilles aujourd’hui ?","Je fais quoi aujourd’hui ?","J’ai que 45 minutes","Je suis fatigué","J’ai sport demain","J’ai compétition demain"],
     "Créer":["Crée une séance jambes 45 min","Crée une séance haut du corps","Crée une séance légère","Crée une séance avec douleur genou","Crée une séance sèche"],
     "Machines":["La presse est prise","Le tirage vertical est occupé","Par quoi remplacer le chest press ?","Je ne sens pas le bon muscle","Comment régler le siège ?"],
     "Progression":["Quelle charge je mets ?","Quand augmenter le poids ?","Combien de repos ?","Je dois aller à l’échec ?","Je stagne, je fais quoi ?"],
-    "Nutrition":["Je mange quoi avant la salle ?","Je mange quoi après la salle ?","Je veux sécher","Whey ou pas ?","Créatine ou pas ?","J’ai match demain je mange quoi ?"]
+    "Nutrition":["Je mange quoi avant la salle ?","Je mange quoi après la salle ?","Je veux sécher","Whey ou pas ?","Créatine ou pas ?","J’ai compétition demain je mange quoi ?"]
   }
 };
 
@@ -869,8 +982,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v19_timer_end";
-  const KEY_SOUND="bf_v19_sound";
+  const KEY_END="bf_v22_timer_end";
+  const KEY_SOUND="bf_v22_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -936,7 +1049,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v19_performances";
+  const KEY="bf_v22_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1037,12 +1150,12 @@ window.BF_UTIL = {
     if(goal==="cut") out+="<strong>Sèche :</strong> garde les protéines hautes, légumes, féculents autour du sport, limite sodas/grignotage.<br>";
     if(goal==="muscle") out+="<strong>Muscle :</strong> mange assez, protéines à chaque repas, féculents autour de la séance, progression à la salle.<br>";
     if(goal==="performance") out+="<strong>Performance :</strong> repas simple, glucides autour de l’effort, hydratation sérieuse.<br>";
-    if(goal==="match") out+="<strong>Foot/match :</strong> glucides digestes, pas trop gras juste avant, eau régulièrement.<br>";
+    if(goal==="compétition") out+="<strong>Sport/compétition :</strong> glucides digestes, pas trop gras juste avant, eau régulièrement.<br>";
     if(goal==="recovery") out+="<strong>Récupération :</strong> protéines + glucides + eau + sommeil. Ne saute pas le repas après grosse séance.<br>";
     if(moment==="before") out+="<br><strong>Avant séance :</strong> 1h30-3h avant : riz/pâtes/pommes de terre + œufs/jambon/poulet + eau. Si rapide : banane + skyr.";
     if(moment==="after") out+="<br><strong>Après séance :</strong> protéines 25-40 g + glucides. Exemple : riz/pommes de terre + poulet/œufs/jambon + légumes.";
     if(moment==="evening") out+="<br><strong>Soir tard :</strong> repas léger utile : skyr/fromage blanc + fruit, ou œufs/jambon + féculent modéré.";
-    if(moment==="matchday") out+="<br><strong>Jour de match :</strong> repas 3-4h avant, digeste, riche en glucides, pas trop gras.";
+    if(moment==="compétitionday") out+="<br><strong>Contrainte importante :</strong> repas 3-4h avant, digeste, riche en glucides, pas trop gras.";
     if(hunger==="low") out+="<br><strong>Pas faim :</strong> skyr, compote, banane, eau. Évite le repas lourd.";
     if(hunger==="high") out+="<br><strong>Très faim :</strong> protéine + féculent + légumes, mange lentement.";
     return out;
@@ -1055,9 +1168,9 @@ window.BF_UTIL = {
     if(q.includes("muscle")||q.includes("masse")) return "Prise de muscle : protéines à chaque repas, assez de calories, féculents autour de la séance, sommeil.";
     if(q.includes("whey")) return "Whey : pratique, pas obligatoire. Elle sert juste à atteindre tes protéines.";
     if(q.includes("creatine")||q.includes("créatine")) return "Créatine : option intéressante force/puissance, souvent 3-5 g/jour. Repas/sommeil/entraînement restent prioritaires.";
-    if(q.includes("match")) return "Match : glucides digestes + hydratation. Évite repas très gras juste avant. Repas 3-4h avant si possible.";
+    if(q.includes("compétition")) return "Compétition : glucides digestes + hydratation. Évite repas très gras juste avant. Repas 3-4h avant si possible.";
     if(q.includes("eau")||q.includes("boire")) return "Hydratation : bois régulièrement. Après grosse transpiration : eau + repas salé.";
-    return "Je peux répondre sur : avant/après séance, sèche, prise de muscle, protéines, whey, créatine, hydratation, match, repas tardif.";
+    return "Je peux répondre sur : avant/après séance, sèche, prise de muscle, protéines, whey, créatine, hydratation, compétition, repas tardif.";
   }
   window.BF_NUTRITION = {
     init(){
@@ -1082,8 +1195,8 @@ window.BF_UTIL = {
     temps:["pas le temps","peu de temps","vite","rapide","30","45","demi heure"],
     seance:["seance","séance","programme","training","entrainement","workout","je fais quoi"],
     conseil:["conseille","recommande","quoi faire","choix","meilleur"],
-    foot:["foot","football","entrainement","terrain"],
-    match:["match","competition","tournoi"],
+    sport:["sport","sportball","entrainement","terrain"],
+    compétition:["compétition","competition","tournoi"],
     douleur:["douleur","mal","gêne","bobo","tiraillement","pincement"],
     machine:["machine prise","occupée","pas libre","indisponible","salle pleine","salle blindée"],
     seche:["seche","sèche","maigrir","perdre du poids","perdre du gras"],
@@ -1098,27 +1211,27 @@ window.BF_UTIL = {
   }
   function paramsFromText(text){
     const q=expand(BF_UTIL.normalize(text));
-    const p={goal:"athletic",duration:"60",fatigue:"medium",football:"none",pain:"none",intensity:"normal",free:text};
+    const p={goal:"athletic",duration:"60",fatigue:"medium",sportball:"none",pain:"none",intensity:"normal",free:text};
     if(q.includes("jambe"))p.goal="legs"; if(q.includes("haut"))p.goal="upper"; if(q.includes("recup")||q.includes("léger")||q.includes("leger")){p.goal="recovery";p.intensity="easy";}
-    if(q.includes("seche")||q.includes("perdre"))p.goal="fatloss"; if(q.includes("muscle")||q.includes("masse"))p.goal="muscle"; if(q.includes("pre match"))p.goal="prematch";
+    if(q.includes("seche")||q.includes("perdre"))p.goal="fatloss"; if(q.includes("muscle")||q.includes("masse"))p.goal="muscle"; if(q.includes("pre compétition"))p.goal="precompétition";
     if(q.includes("30"))p.duration="30"; else if(q.includes("45"))p.duration="45"; else if(q.includes("75"))p.duration="75";
     if(q.includes("fatigue")||q.includes("mort")||q.includes("crame"))p.fatigue="high";
-    if(q.includes("foot")&&q.includes("demain"))p.football="trainingTomorrow"; if(q.includes("foot")&&q.includes("aujourd"))p.football="trainingToday";
-    if(q.includes("match")&&q.includes("demain"))p.football="matchTomorrow"; if(q.includes("match")&&q.includes("aujourd"))p.football="matchToday";
+    if(q.includes("sport")&&q.includes("demain"))p.sportball="trainingTomorrow"; if(q.includes("sport")&&q.includes("aujourd"))p.sportball="trainingToday";
+    if(q.includes("compétition")&&q.includes("demain"))p.sportball="compétitionTomorrow"; if(q.includes("compétition")&&q.includes("aujourd"))p.sportball="compétitionToday";
     if(q.includes("genou"))p.pain="knee"; if(q.includes("adduct"))p.pain="adductor"; if(q.includes("cheville"))p.pain="ankle"; if(q.includes("epaule"))p.pain="shoulder"; if(q.includes("dos"))p.pain="back";
     return p;
   }
   function recommend(text=""){
     const p=paramsFromText(text), n=BF_UTIL.nowInfo();
-    if(p.football==="matchToday") return "Match aujourd’hui : pas de muscu lourde. Activation légère uniquement.";
-    if(p.football==="matchTomorrow") return "Match demain : je conseille haut du corps modéré ou séance pré-match légère. Pas de jambes lourdes.";
-    if(p.football==="trainingTomorrow") return "Foot demain : je conseille séance haut du corps. Sinon full body allégé sans finisher.";
+    if(p.sportball==="compétitionToday") return "Compétition aujourd’hui : pas de muscu lourde. Activation légère uniquement.";
+    if(p.sportball==="compétitionTomorrow") return "Compétition demain : je conseille haut du corps modéré ou séance pré-compétition légère. Pas de jambes lourdes.";
+    if(p.sportball==="trainingTomorrow") return "Sport demain : je conseille séance haut du corps. Sinon full body allégé sans finisher.";
     if(p.fatigue==="high") return "Fatigué : séance récupération/légère. Charges -10 à -20 %, moins de séries, pas d’échec.";
     if(p.pain!=="none") return "Avec une gêne : séance adaptée, charge légère, amplitude confortable, pas de mouvement douloureux.";
-    if(n.day==="mardi") return "Aujourd’hui : séance jambes si tu es frais. Si foot demain ou jambes lourdes : haut du corps.";
+    if(n.day==="mardi") return "Aujourd’hui : séance jambes si tu es frais. Si sport demain ou jambes lourdes : haut du corps.";
     if(n.day==="jeudi") return "Aujourd’hui : séance haut du corps. Très bon choix pour progresser sans cramer les jambes.";
-    if(n.day==="samedi") return "Aujourd’hui : full body. Si match demain : allège et enlève le cardio.";
-    if(n.day==="dimanche") return "Aujourd’hui : repos, match ou récupération légère.";
+    if(n.day==="samedi") return "Aujourd’hui : full body. Si compétition demain : allège et enlève le cardio.";
+    if(n.day==="dimanche") return "Aujourd’hui : repos, compétition ou récupération légère.";
     return "Je conseille haut du corps ou repos actif selon ta fatigue. Tu peux aussi générer une séance personnalisée.";
   }
   function replacement(text){
@@ -1140,16 +1253,17 @@ window.BF_UTIL = {
     if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes("creatine")||q.includes("protéine")||q.includes("proteine")) return BF_NUTRITION.answer(text);
     if(q.includes("charge")||q.includes("poids")||q.includes("kg")) return "Charge : les 2 dernières reps doivent être dures mais propres. Si tu peux faire beaucoup plus, augmente. Si la technique casse, baisse.";
     if(q.includes("repos")||q.includes("pause")) return "Repos : gros exercices 1min30-2min, exercices moyens 1min15, accessoires environ 1min.";
-    if(q.includes("echec")||q.includes("échec")) return "Pas besoin d’aller à l’échec. Pour ton objectif foot/athlétique : garde 1-2 reps en réserve.";
+    if(q.includes("echec")||q.includes("échec")) return "Pas besoin d’aller à l’échec. Pour ton objectif sport/athlétique : garde 1-2 reps en réserve.";
     if(q.includes("genou")) return "Genou : baisse charge/amplitude, évite presse/leg extension lourd. Douleur vive, gonflement ou instabilité = stop.";
     if(q.includes("fatigue")||q.includes("mort")||q.includes("crame")) return "Fatigue : baisse 10-20 %, enlève une série, supprime le cardio. Si tu es cramé : récupération.";
     if(q.includes("seche")||q.includes("maigrir")) return BF_NUTRITION.answer("je veux sécher");
     if(q.includes("muscle")||q.includes("masse")) return BF_NUTRITION.answer("prendre muscle");
     if(q.includes("explosif")||q.includes("puissant")) return "Explosivité : construis la force sur presse/leg curl/fessiers/mollets + transfert terrain avec accélérations et appuis.";
     if(q.includes("programme mois")||q.includes("1 mois")||q.includes("mois")) return "Va dans l’onglet Mois : l’app génère ton programme sportif 4 semaines + nutrition 1 mois + liste de courses + bilan pour créer le mois suivant."; 
-    if(q.includes("profil")) return "Va dans Profil : poids, taille, objectif, jours de foot, repas et douleurs. Plus ton profil est précis, plus le mois généré sera adapté."; 
+    if(q.includes("profil")) return "Va dans Profil : poids, taille, objectif, jours d’entraînement, repas et douleurs. Plus ton profil est précis, plus le mois généré sera adapté."; 
     if(q.includes("performance")||q.includes("perf")) return "Va dans Perfs : note machine, charge, reps, séries et ressenti. L’app affichera la dernière perf sous chaque exercice.";
-    return "Je peux t’aider sur : séance conseillée, séance personnalisée, machine prise, charge, repos, douleur, nutrition, sèche, muscle, explosivité et performances.";
+    const v22=v22ProAnswer(text); if(v22) return v22;
+    return "Je peux t’aider sur : objectif, programme, progression, charge, repos, douleur, nutrition, calories, protéines, sèche, muscle, force, récupération, performances et bilan mensuel.";
   }
   window.BF_COACH={answer,paramsFromText,recommend,replacement};
 })();
@@ -1190,7 +1304,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v19_check_"+box.dataset.check;
+      const k="bf_v22_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1220,33 +1334,33 @@ window.BF_UTIL = {
   }
   function buildCustom(p){
     let keys=[];
-    const noLegs=p.football==="matchTomorrow"||p.football==="matchToday"||p.goal==="prematch";
+    const noLegs=p.sportball==="compétitionTomorrow"||p.sportball==="compétitionToday"||p.goal==="precompétition";
     if(p.goal==="legs") keys=["warmup","presse","legcurl","legext","glute","add","abd","calves","plank"];
     else if(p.goal==="upper") keys=["warmup","tirage","chest","row","shoulder","reverse","pecdeck","triceps","biceps","abs"];
     else if(p.goal==="recovery") keys=["warmup","abd","add","legcurl","tirage","reverse","abs"];
     else if(p.goal==="fatloss") keys=["warmup","presse","legcurl","tirage","chest","row","abs","cardio"];
     else if(p.goal==="muscle") keys=["warmup","presse","legcurl","tirage","chest","row","shoulder","pecdeck","triceps","biceps","abs"];
-    else if(p.goal==="prematch") keys=["warmup","tirage","chest","row","reverse","abs"];
+    else if(p.goal==="precompétition") keys=["warmup","tirage","chest","row","reverse","abs"];
     else keys=["warmup","presse","legcurl","tirage","chest","row","shoulder","abs","calves","cardio"];
     if(noLegs && p.goal!=="upper") keys=["warmup","tirage","chest","row","reverse","triceps","biceps","abs"];
-    const ctx={easy:p.fatigue==="high"||p.intensity==="easy"||p.football==="matchTomorrow"||p.football==="matchToday",short:p.duration==="45",veryShort:p.duration==="30",noLegs,pain:p.pain};
+    const ctx={easy:p.fatigue==="high"||p.intensity==="easy"||p.sportball==="compétitionTomorrow"||p.sportball==="compétitionToday",short:p.duration==="45",veryShort:p.duration==="30",noLegs,pain:p.pain};
     const exercises=keys.map(k=>adapt(k,ctx)).filter(e=>!e.skip);
     const notes=[];
-    if(p.football==="matchToday") notes.push("Match aujourd’hui : séance très légère uniquement.");
-    if(p.football==="matchTomorrow") notes.push("Match demain : priorité jambes fraîches, pas de finisher.");
+    if(p.sportball==="compétitionToday") notes.push("Compétition aujourd’hui : séance très légère uniquement.");
+    if(p.sportball==="compétitionTomorrow") notes.push("Compétition demain : priorité jambes fraîches, pas de finisher.");
     if(p.fatigue==="high") notes.push("Fatigue élevée : charges -10 à -20 %, pas d’échec.");
     if(p.pain!=="none") notes.push("Gêne indiquée : aucune douleur vive acceptée.");
     return {title:`Séance personnalisée — ${p.duration} min`,exercises,notes};
   }
   function formCustomParams(){
-    return {goal:customGoal.value,duration:customDuration.value,fatigue:customFatigue.value,football:customFootball.value,pain:customPain.value,intensity:customIntensity.value,free:customRequest.value.trim()};
+    return {goal:customGoal.value,duration:customDuration.value,fatigue:customFatigue.value,sportball:customSportball.value,pain:customPain.value,intensity:customIntensity.value,free:customRequest.value.trim()};
   }
   function generateCustom(params=formCustomParams()){
     const plan=buildCustom(params);
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v19_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v22_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1273,25 +1387,25 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v19_profile";
-  const MONTH_KEY="bf_v19_month_plan";
+  const PROFILE_KEY="bf_v22_profile";
+  const MONTH_KEY="bf_v22_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
-    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,meals:2,football:"",match:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:""};
+    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,meals:2,sportball:"",compétition:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:"",presentation:""};
   }
   function fillProfileForm(){
     const p=getProfile();
     if(!window.profileWeight) return;
-    profileWeight.value=p.weight; profileHeight.value=p.height; profileAge.value=p.age; profileSex.value=p.sex;
-    profileGoal.value=p.goal; profileLevel.value=p.level; profileGymDays.value=p.gymDays; profileMeals.value=p.meals;
-    profileFootball.value=p.football||""; profileMatch.value=p.match||""; profilePain.value=p.pain||"none"; profileBudget.value=p.budget||"simple";
-    profileLikes.value=p.likes||""; profileDislikes.value=p.dislikes||""; if(window.reviewWeight) reviewWeight.value=p.weight||"";
+    profileName.value=p.name||""; profileWeight.value=p.weight; profileHeight.value=p.height; profileAge.value=p.age; profileSex.value=p.sex;
+    profileGoal.value=p.goal; profileLevel.value=p.level; profileGymDays.value=p.gymDays; if(window.profileDuration) profileDuration.value=p.duration||60; profileMeals.value=p.meals;
+    profileSportball.value=p.sportball||""; profileCompétition.value=p.compétition||""; profilePain.value=p.pain||"none"; profileBudget.value=p.budget||"simple";
+    profileLikes.value=p.likes||""; if(window.profilePresentation) profilePresentation.value=p.presentation||""; profileDislikes.value=p.dislikes||""; if(window.reviewWeight) reviewWeight.value=p.weight||"";
   }
   function readProfileForm(){
-    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,meals:parseInt(profileMeals.value,10)||2,football:profileFootball.value.trim(),match:profileMatch.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim()};
+    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,meals:parseInt(profileMeals.value,10)||2,sportball:profileSportball.value.trim(),compétition:profileCompétition.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim(),presentation:profilePresentation?.value?.trim()||""};
   }
-  function saveProfile(){const p=readProfileForm();BF_STORE.set(PROFILE_KEY,p);alert("Profil sauvegardé.");renderMonthSummary(null,p);}
+  function saveProfile(){const p=readProfileForm();BF_STORE.set(PROFILE_KEY,p);alert("Profil sauvegardé.");renderMonthSummary(null,p);updatePersonalUI();}
   function mifflin(p){return Math.round(10*p.weight + 6.25*p.height - 5*p.age + (p.sex==="male"?5:-161));}
   function nutritionTargets(p,review=null){
     const bmr=mifflin(p);let factor=p.gymDays>=4?1.65:(p.gymDays>=3?1.55:1.45);let kcal=Math.round(bmr*factor);
@@ -1302,16 +1416,16 @@ window.BF_UTIL = {
   function sportMonth(p,review=null){
     const fatigueHigh=review?.fatigue==="high";
     const weeks=[{name:"Semaine 1 — Adaptation",focus:"Trouver les charges, technique propre, aucune douleur.",mod:fatigueHigh?"Très légère":"Normale"},{name:"Semaine 2 — Progression",focus:"Augmenter légèrement si les séries sont propres.",mod:"+2,5 à +5 kg selon machine"},{name:"Semaine 3 — Intensification",focus:"Pousser proprement sans aller à l’échec.",mod:"Volume complet"},{name:"Semaine 4 — Semaine légère",focus:"Récupérer et préparer le mois suivant.",mod:"-10 à -20% charge, une série en moins"}];
-    const days3=["Mardi : Séance jambes","Jeudi : Haut du corps","Samedi : Full body athlétique"],days2=["Mardi : Jambes puissantes","Vendredi : Haut du corps + full léger"],days4=["Lundi : Haut du corps","Mardi : Jambes","Jeudi : Haut du corps 2","Samedi : Full body léger"];
+    const days3=["Jour 1 : Bas du corps","Jour 2 : Haut du corps","Jour 3 : Full body"],days2=["Jour 1 : Full body force","Jour 2 : Full body hypertrophie"],days4=["Jour 1 : Haut du corps","Jour 2 : Bas du corps","Jour 3 : Haut du corps 2","Jour 4 : Full body léger"];
     let template=p.gymDays>=4?days4:(p.gymDays<=2?days2:days3);
-    if(p.match) template=template.map(d=>d.includes("Samedi")?d+" / allégé si match le lendemain":d);
-    if(p.pain==="knee") template=template.map(d=>d.toLowerCase().includes("jambes")?d+" — genou : presse/leg extension modérés":d);
-    if(p.pain==="adductor") template=template.map(d=>d.toLowerCase().includes("jambes")?d+" — adducteurs légers":d);
+    if(p.compétition) template=template.map(d=>d.includes("Jour 4")?d+" / allégé si grosse contrainte le lendemain":d);
+    if(p.pain==="knee") template=template.map(d=>(d.toLowerCase().includes("bas")||d.toLowerCase().includes("jambes"))?d+" — genou : presse/leg extension modérés":d);
+    if(p.pain==="adductor") template=template.map(d=>(d.toLowerCase().includes("bas")||d.toLowerCase().includes("jambes"))?d+" — adducteurs légers":d);
     return weeks.map((w,i)=>({week:i+1,...w,days:template}));
   }
   function mealTemplates(p,t){
     const noBreakfast=p.meals===2;const baseProteins=p.budget==="simple"?["œufs","jambon blanc","skyr/fromage blanc","thon","poulet"]:["œufs","poulet","steak 5%","thon","skyr","jambon blanc"];const carbs=["pommes de terre","riz","pâtes","semoule","pain complet","flocons d’avoine"];const veg=["brocoli","haricots verts","salade","carottes","courgettes"];const fruits=["banane","pomme","compote"];const weeks=[];
-    for(let w=1;w<=4;w++){const days=[];for(let d=1;d<=7;d++){const prot=baseProteins[(w+d)%baseProteins.length],carb=carbs[(w+d)%carbs.length],vegetable=veg[(w+d)%veg.length],fruit=fruits[(w+d)%fruits.length];const meals=[];if(!noBreakfast)meals.push(["Petit-déj",`Skyr/fromage blanc + ${fruit} + flocons d’avoine si grosse séance.`]);meals.push(["Repas 1",`${prot} + ${carb} + ${vegetable} + 1 filet d’huile d’olive.`]);if(p.meals>=4)meals.push(["Collation",`Skyr/fromage blanc ou jambon + ${fruit}.`]);meals.push(["Repas 2",`${baseProteins[(w+d+2)%baseProteins.length]} + ${carbs[(w+d+2)%carbs.length]} + légumes.`]);if(d===6||d===7)meals.push(["Foot/match",`Avant effort : glucides digestes + eau. Après : protéines + féculents.`]);days.push({day:["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"][d-1],meals});}weeks.push({week:w,days});}
+    for(let w=1;w<=4;w++){const days=[];for(let d=1;d<=7;d++){const prot=baseProteins[(w+d)%baseProteins.length],carb=carbs[(w+d)%carbs.length],vegetable=veg[(w+d)%veg.length],fruit=fruits[(w+d)%fruits.length];const meals=[];if(!noBreakfast)meals.push(["Petit-déj",`Skyr/fromage blanc + ${fruit} + flocons d’avoine si grosse séance.`]);meals.push(["Repas 1",`${prot} + ${carb} + ${vegetable} + 1 filet d’huile d’olive.`]);if(p.meals>=4)meals.push(["Collation",`Skyr/fromage blanc ou jambon + ${fruit}.`]);meals.push(["Repas 2",`${baseProteins[(w+d+2)%baseProteins.length]} + ${carbs[(w+d+2)%carbs.length]} + légumes.`]);if(d===6||d===7)meals.push(["Sport/compétition",`Avant effort : glucides digestes + eau. Après : protéines + féculents.`]);days.push({day:["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"][d-1],meals});}weeks.push({week:w,days});}
     return weeks;
   }
   function shoppingList(p){const items=["œufs","jambon blanc","skyr ou fromage blanc","poulet","thon","riz","pâtes","pommes de terre","semoule","brocoli","haricots verts","salade","carottes","bananes","pommes","compotes","huile d’olive","eau"];if(p.budget!=="simple")items.push("steak 5%","pain complet","flocons d’avoine","courgettes");return items;}
@@ -1446,9 +1560,192 @@ window.BF_UTIL = {
   }
 
 
+
+
+  let parsedPresentationProfile=null;
+
+  function extractNumberAfter(text,patterns){
+    for(const pattern of patterns){
+      const m=text.match(pattern);
+      if(m) return parseFloat(String(m[1]).replace(",","."));
+    }
+    return null;
+  }
+
+  function detectName(raw){
+    const clean=raw.trim();
+    const patterns=[
+      /(?:je m(?:'|e)appelle|moi c(?:'|e)est|mon prenom est|mon prénom est)\s+([A-Za-zÀ-ÿ-]{2,})/i,
+      /(?:salut|bonjour)[, ]+([A-Za-zÀ-ÿ-]{2,})[, ]/i
+    ];
+    for(const p of patterns){
+      const m=clean.match(p);
+      if(m) return m[1][0].toUpperCase()+m[1].slice(1).toLowerCase();
+    }
+    return "";
+  }
+
+  function detectGoal(q){
+    if(v22Has(q,"sèche","seche","perdre du gras","perte de gras","maigrir","perdre du poids","définir")) return "cut";
+    if(v22Has(q,"prise de muscle","prendre du muscle","masse","hypertrophie","muscle propre","prendre de la masse")) return "muscle";
+    if(v22Has(q,"force","plus fort","charges lourdes","devenir fort")) return "strength";
+    if(v22Has(q,"performance","athletique","athlétique","explosif","puissance","condition physique")) return "performance";
+    if(v22Has(q,"remise en forme","santé","sante","reprendre le sport","être en forme","etre en forme")) return "health";
+    if(v22Has(q,"maintien","maintenir","rester comme ça","rester comme ca")) return "maintain";
+    return "muscle";
+  }
+
+  function detectLevel(q){
+    if(v22Has(q,"débutant","debutant","je commence","jamais fait","nouveau","reprends la salle")) return "beginner";
+    if(v22Has(q,"avancé","avance","confirmé","confirme","plusieurs années","expert")) return "advanced";
+    return "intermediate";
+  }
+
+  function detectPain(q){
+    if(v22Has(q,"genou","rotule")) return "knee";
+    if(v22Has(q,"adducteur","adducteurs")) return "adductor";
+    if(v22Has(q,"cheville","pied")) return "ankle";
+    if(v22Has(q,"épaule","epaule")) return "shoulder";
+    if(v22Has(q,"dos","lombaire","lombaires")) return "back";
+    return "none";
+  }
+
+  function detectMeals(raw){
+    const q=BF_UTIL.normalize(raw);
+    const direct=extractNumberAfter(raw,[/(\d)\s*repas/i]);
+    if(direct && direct>=1 && direct<=5) return direct>=4?4:direct;
+    if(v22Has(q,"pas petit déjeuner","pas de petit déjeuner","pas petit dejeuner","je ne dejeune pas","je ne déjeune pas")) return 2;
+    if(v22Has(q,"collation","goûter","gouter")) return 4;
+    return 3;
+  }
+
+  function detectGymDays(raw){
+    const q=BF_UTIL.normalize(raw);
+    const direct=extractNumberAfter(raw,[/(\d)\s*(?:fois|séances|seances|jours)\s*(?:par|\/)\s*semaine/i,/salle\s*(\d)\s*(?:fois|x)/i]);
+    if(direct && direct>=1 && direct<=6) return Math.round(direct);
+    if(v22Has(q,"tous les jours")) return 5;
+    if(v22Has(q,"week-end seulement","week end seulement")) return 2;
+    return 3;
+  }
+
+  function detectDuration(raw){
+    const h=raw.match(/(\d+(?:[,.]\d+)?)\s*h/i);
+    if(h){
+      const minutes=Math.round(parseFloat(h[1].replace(",","."))*60);
+      if(minutes>=30 && minutes<=120) return minutes;
+    }
+    const m=raw.match(/(\d{2,3})\s*(?:min|minutes)/i);
+    if(m){
+      const minutes=parseInt(m[1],10);
+      if(minutes>=20 && minutes<=120) return minutes;
+    }
+    return 60;
+  }
+
+  function detectSex(q){
+    if(v22Has(q,"femme","fille")) return "female";
+    if(v22Has(q,"homme","garçon","garcon")) return "male";
+    return "male";
+  }
+
+  function detectBudget(q){
+    if(v22Has(q,"pas cher","économique","economique","petit budget","budget serré","budget serre")) return "simple";
+    if(v22Has(q,"varié","varie","je veux varier")) return "varied";
+    return "normal";
+  }
+
+  function detectLikes(raw){
+    const q=BF_UTIL.normalize(raw);
+    const foods=["riz","pâtes","pates","pommes de terre","poulet","œufs","oeufs","jambon","skyr","fromage blanc","thon","steak","banane","pomme","brocoli","haricots verts","semoule","avoine","salade"];
+    return foods.filter(f=>q.includes(BF_UTIL.normalize(f))).join(", ");
+  }
+
+  function detectDislikes(raw){
+    const q=BF_UTIL.normalize(raw);
+    const found=[];
+    const dislikeTriggers=["je n'aime pas","j aime pas","je déteste","je deteste","à éviter","a eviter","sans "];
+    const foods=["poisson","lait","lactose","œufs","oeufs","poulet","riz","pâtes","pates","légumes","legumes","petit déjeuner","petit dejeuner"];
+    for(const f of foods){
+      if(q.includes(BF_UTIL.normalize(f)) && dislikeTriggers.some(t=>q.includes(BF_UTIL.normalize(t)))) found.push(f);
+    }
+    if(v22Has(q,"pas petit déjeuner","pas de petit déjeuner","pas petit dejeuner","je ne dejeune pas","je ne déjeune pas")) found.push("petit déjeuner");
+    return [...new Set(found)].join(", ");
+  }
+
+  function analyzePresentation(raw){
+    let height=null;
+    const mHeight=raw.match(/(1)[,.](\d{2})\s*m/i);
+    if(mHeight) height=parseInt(mHeight[1]+mHeight[2],10);
+    if(!height) height=extractNumberAfter(raw,[/(\d{3})\s*cm/i,/taille\s*(?:de|:)?\s*(\d{3})/i]);
+    return {
+      name:detectName(raw),
+      weight:extractNumberAfter(raw,[/(\d{2,3}(?:[,.]\d+)?)\s*kg/i,/poids\s*(?:de|:)?\s*(\d{2,3}(?:[,.]\d+)?)/i]) || 75,
+      height:height || 166,
+      age:extractNumberAfter(raw,[/(\d{1,2})\s*ans/i,/âge\s*(?:de|:)?\s*(\d{1,2})/i,/age\s*(?:de|:)?\s*(\d{1,2})/i]) || 20,
+      sex:detectSex(BF_UTIL.normalize(raw)),
+      goal:detectGoal(BF_UTIL.normalize(raw)),
+      level:detectLevel(BF_UTIL.normalize(raw)),
+      gymDays:detectGymDays(raw),
+      duration:detectDuration(raw),
+      meals:detectMeals(raw),
+      football:"",
+      match:"",
+      pain:detectPain(BF_UTIL.normalize(raw)),
+      budget:detectBudget(BF_UTIL.normalize(raw)),
+      likes:detectLikes(raw),
+      dislikes:detectDislikes(raw),
+      presentation:raw.trim()
+    };
+  }
+
+  function renderAnalysisPreview(p){
+    const painLabel={none:"Aucune",knee:"Genou",adductor:"Adducteurs",ankle:"Cheville",shoulder:"Épaule",back:"Dos"}[p.pain]||"Aucune";
+    analysisPreview.classList.remove("hidden");
+    analysisPreview.innerHTML=`<h3>Profil détecté</h3>
+      <div class="analysis-grid">
+        <div class="analysis-item"><strong>Prénom</strong>${p.name||"Non détecté"}</div>
+        <div class="analysis-item"><strong>Objectif</strong>${goalLabel(p.goal)}</div>
+        <div class="analysis-item"><strong>Poids / taille</strong>${p.weight} kg • ${p.height} cm</div>
+        <div class="analysis-item"><strong>Âge</strong>${p.age} ans</div>
+        <div class="analysis-item"><strong>Niveau</strong>${p.level}</div>
+        <div class="analysis-item"><strong>Séances</strong>${p.gymDays}x/semaine • ${p.duration} min</div>
+        <div class="analysis-item"><strong>Repas</strong>${p.meals} repas/jour</div>
+        <div class="analysis-item"><strong>Douleur</strong>${painLabel}</div>
+        <div class="analysis-item"><strong>Aliments aimés</strong>${p.likes||"À compléter"}</div>
+        <div class="analysis-item"><strong>À éviter</strong>${p.dislikes||"Aucun détecté"}</div>
+      </div>
+      <p class="coach-note">Si une info est fausse, tu pourras la modifier dans l’onglet Profil.</p>`;
+  }
+
+  function updatePersonalUI(){
+    const p=getProfile();
+    if(window.personalGreeting) personalGreeting.textContent=`Salut ${p.name||"toi"}, objectif : ${goalLabel(p.goal)}`;
+    if(window.objectiveText) objectiveText.innerHTML=`<span class="goal-chip">${goalLabel(p.goal)}</span> ${goalAdvice(p.goal)}`;
+    if(window.dailyAdviceTitle) dailyAdviceTitle.textContent=p.name ? `Plan du jour pour ${p.name}` : "Plan du jour";
+  }
+
+  function showOnboardingIfNeeded(){
+    const p=BF_STORE.get(PROFILE_KEY,null);
+    if(!p || (!p.presentation && !p.name)) onboarding.classList.remove("hidden");
+  }
+
+  function savePresentationProfile(){
+    if(!parsedPresentationProfile){
+      parsedPresentationProfile=analyzePresentation(onPresentation.value);
+    }
+    BF_STORE.set(PROFILE_KEY,parsedPresentationProfile);
+    onboarding.classList.add("hidden");
+    fillProfileForm();
+    updatePersonalUI();
+    renderMonthSummary(null,parsedPresentationProfile);
+    const plan=buildMonthPlan();
+    activeMonthTab="sport";
+    renderMonth(plan);
+  }
+
   function init(){
     const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
-    const standalone=window.navigator.standalone===true||window.matchMedia("(display-mode: standalone)").matches;
+    const standalone=window.navigator.standalone===true||window.compétitionMedia("(display-mode: standalone)").compétitiones;
     if(isiOS&&!standalone) installHint.classList.remove("hidden");
 
     document.querySelectorAll(".app-nav button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
@@ -1458,7 +1755,7 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v19_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v22_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
@@ -1467,6 +1764,18 @@ window.BF_UTIL = {
 
 
     fillProfileForm();
+    updatePersonalUI();
+    showOnboardingIfNeeded();
+    onExampleBtn?.addEventListener("click",()=>{
+      onPresentation.value="Salut je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle proprement sans trop prendre de gras. Je peux aller à la salle 3 fois par semaine pendant environ 1h. Je préfère les machines. Je mange 2 à 3 repas par jour, j’aime le riz, les œufs, le poulet, le skyr, les pommes de terre et les bananes. J’ai parfois une gêne au genou donc je veux faire attention.";
+    });
+    onAnalyzeBtn?.addEventListener("click",()=>{
+      if(onPresentation.value.trim().length<30){ alert("Écris une présentation un peu plus complète pour que l’app comprenne mieux."); return; }
+      parsedPresentationProfile=analyzePresentation(onPresentation.value);
+      renderAnalysisPreview(parsedPresentationProfile);
+      onFinishBtn.classList.remove("hidden");
+    });
+    onFinishBtn?.addEventListener("click",savePresentationProfile);
     renderMonthSummary(null,getProfile());
     saveProfileBtn?.addEventListener("click",saveProfile);
     generateMonthBtn?.addEventListener("click",()=>{ const p=readProfileForm(); BF_STORE.set(PROFILE_KEY,p); const plan=buildMonthPlan(); activeMonthTab="sport"; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x.dataset.monthTab==="sport")); renderMonth(plan); });
@@ -1492,11 +1801,20 @@ window.BF_UTIL = {
     });
 
     renderSession();
-    const saved=BF_STORE.get("bf_v19_custom_html","");
+    const saved=BF_STORE.get("bf_v22_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
-    renderQuestions();
+
+    Object.assign(DATA.questionGroups,{
+      "Présentation libre":["Comment marche la présentation libre ?","Analyse ma présentation","Que dois-je écrire ?"],
+      "Coach pro":["Explique ta base coach pro","Quel objectif choisir ?","Je veux sécher proprement","Je veux prendre du muscle sans trop de gras","Je veux devenir plus fort","Je veux me remettre en forme"],
+      "Programmation":["Combien de séries par muscle ?","Combien de séances par semaine ?","C’est quoi la surcharge progressive ?","Je stagne, je fais quoi ?","Quand faire une semaine légère ?","Je dois faire cardio ou muscu ?"],
+      "Nutrition avancée":["Combien de calories je dois manger ?","Combien de protéines par jour ?","Glucides avant ou après séance ?","Comment gérer la faim ?","Je mange dehors, je fais quoi ?","Liste de courses simple"],
+      "Récupération":["Je dors mal, je fais quoi ?","Je suis stressé","J’ai la flemme","Je pars en vacances sans salle","Je bois de l’alcool ce week-end"]
+    });
+
+        renderQuestions();
     updateToday();
     BF_TIMER.update();
     if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
