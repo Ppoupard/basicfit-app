@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V25.4</title>
+  <title>Basic-Fit Coach V25.6</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -447,7 +447,7 @@ body.app-locked{overflow:hidden}
 .personal-answer .small-note{display:block;color:var(--muted);font-size:12.5px;margin-top:6px}
 
 
-/* V25.1 : sécurité anti-bug */
+/* V25.6 : sécurité anti-bug */
 .safety-card{
   display:flex;
   justify-content:space-between;
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V25.4 : validation corrigée */
+/* V25.6 : audit stable */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -550,7 +550,7 @@ body.app-locked #onboarding{
 }
 
 
-/* V25.3 : correctif définitif écran flou / impossible d'écrire */
+/* V25.6 : correctif définitif écran flou / impossible d'écrire */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -590,14 +590,106 @@ body.app-locked #onboarding,
 }
 
 
-/* V25.4 : validation forcée */
+/* V25.6 : validation forcée */
 .validation-status{margin-top:10px;border:1px solid rgba(125,179,255,.22);background:rgba(125,179,255,.08);color:#E6F0FF;padding:10px;border-radius:16px;font-size:13px}
 .validation-status.ok{border-color:rgba(53,208,127,.28);background:rgba(53,208,127,.10);color:#DFFFEA}
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
+
+/* V25.6 : audit stable définitivement */
+body.app-locked .app-shell{
+  filter:none!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  user-select:auto!important;
+}
+body.app-locked{overflow:auto!important}
+#onboarding.intro-gate{
+  display:grid;
+  pointer-events:auto!important;
+  user-select:auto!important;
+  filter:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  z-index:9999!important;
+}
+#onboarding.hidden{display:none!important}
+#onboarding textarea,
+#onboarding input,
+#onboarding select,
+#onboarding button{
+  pointer-events:auto!important;
+  opacity:1!important;
+  filter:none!important;
+}
+#onboarding textarea,
+#onboarding input{
+  user-select:text!important;
+  -webkit-user-select:text!important;
+}
+.intro-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;
+}
+@media(max-width:760px){
+  .intro-actions{grid-template-columns:1fr}
+}
+
+
+/* V25.6 : audit stable */
+.hint{
+  position:fixed;
+  left:12px;
+  right:12px;
+  bottom:calc(88px + var(--safe-bottom));
+  z-index:10000;
+  background:rgba(12,16,25,.96);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:10px;
+  color:#fff;
+  box-shadow:0 18px 60px rgba(0,0,0,.45);
+  font-size:13px;
+}
+.hint.hidden{display:none!important}
+body.app-locked .app-shell{
+  filter:none!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  user-select:auto!important;
+}
+body.app-locked{overflow:auto!important}
+#onboarding.intro-gate{
+  display:grid;
+  pointer-events:auto!important;
+  user-select:auto!important;
+  filter:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  z-index:9999!important;
+}
+#onboarding.hidden{display:none!important}
+#onboarding textarea,
+#onboarding input,
+#onboarding select,
+#onboarding button{
+  pointer-events:auto!important;
+  opacity:1!important;
+  filter:none!important;
+}
+#onboarding textarea,
+#onboarding input{
+  user-select:text!important;
+  -webkit-user-select:text!important;
+}
+
 </style>
 </head>
 <body>
+  <div class="hint hidden" id="installHint">
+    Sur iPhone : ouvre dans Safari puis “Ajouter à l’écran d’accueil”.
+  </div>
   <div class="app-shell">
     <header class="topbar">
       <div>
@@ -608,57 +700,77 @@ body.app-locked #onboarding,
     </header>
 
 
-    <section id="onboarding" class="onboarding hidden">
-      <div class="onboarding-card">
-        <p class="card-kicker">PREMIER LANCEMENT</p>
-        <h2>Personnalise ton coach</h2>
-        <p>Réponds rapidement. L’app adaptera l’accueil, le programme sportif, la nutrition et les conseils selon ton objectif.</p>
-        <div class="on-step active" data-step="0">
-          <label>Ton prénom <input id="onName" placeholder="ex : Pablo"></label>
-          <label>Objectif principal
-            <select id="onGoal">
-              <option value="cut">Sèche / perdre du gras</option>
-              <option value="muscle" selected>Prise de muscle</option>
-              <option value="strength">Force</option>
-              <option value="performance">Performance / athlétique</option>
-              <option value="health">Remise en forme / santé</option>
-              <option value="maintain">Maintien</option>
-            </select>
+
+    <section id="onboarding" class="intro-gate">
+      <div class="intro-bg-orb orb-a"></div>
+      <div class="intro-bg-orb orb-b"></div>
+      <div class="intro-card">
+        <div class="intro-top">
+          <div class="brand-badge">BF</div>
+          <div>
+            <p class="card-kicker">DÉMARRAGE DU COACH</p>
+            <h1>Présente-toi à ton coach</h1>
+          </div>
+        </div>
+
+        <p class="intro-lead">Écris librement qui tu es et ce que tu recherches. L’app va analyser ton texte, créer ton profil, puis débloquer ton coach personnel.</p>
+
+        <div class="intro-steps-ui">
+          <div class="intro-step-badge active" id="badgeWrite"><span>1</span> Présentation</div>
+          <div class="intro-step-badge" id="badgeAnalyze"><span>2</span> Analyse</div>
+          <div class="intro-step-badge" id="badgeUnlock"><span>3</span> Déblocage</div>
+        </div>
+
+        <div id="introWritePanel" class="intro-panel">
+          <label>Ta présentation libre
+            <textarea id="onPresentation" class="presentation-textarea" placeholder="Exemple : Salut je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle sans trop prendre de gras. Je peux aller à la salle 3 fois par semaine pendant 1h. Je préfère les machines. Je mange plutôt 2 ou 3 repas par jour, j’aime le riz, les œufs, le poulet et le skyr. J’ai parfois une gêne au genou donc je veux faire attention."></textarea>
           </label>
-        </div>
-        <div class="on-step" data-step="1">
-          <div class="form-grid">
-            <label>Poids <input id="onWeight" inputmode="decimal" value="75"></label>
-            <label>Taille <input id="onHeight" inputmode="numeric" value="166"></label>
-            <label>Âge <input id="onAge" inputmode="numeric" value="20"></label>
-            <label>Sexe <select id="onSex"><option value="male" selected>Homme</option><option value="female">Femme</option></select></label>
+
+          <div class="intro-help">
+            <strong>À écrire :</strong> prénom, âge, poids, taille, objectif, niveau, nombre de séances, durée, alimentation, aliments aimés/à éviter, douleurs ou limites.
+          </div>
+
+          <div class="intro-actions">
+            <button type="button" class="ghost-btn" id="onExampleBtn">Remplir un exemple</button>
+            <button type="button" class="primary-btn" id="onAnalyzeBtn">Analyser ma présentation</button>
+            <button type="button" class="primary-btn" id="onDirectUnlockBtn">Analyser et débloquer</button>
           </div>
         </div>
-        <div class="on-step" data-step="2">
-          <div class="form-grid">
-            <label>Niveau salle <select id="onLevel"><option value="beginner">Débutant</option><option value="intermediate" selected>Intermédiaire</option><option value="advanced">Avancé</option></select></label>
-            <label>Séances / semaine <select id="onGymDays"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option></select></label>
-            <label>Durée séance <select id="onDuration"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>60 min</option><option value="75">75 min</option></select></label>
-            <label>Repas / jour <select id="onMeals"><option value="2">2 repas</option><option value="3" selected>3 repas</option><option value="4">3 repas + collation</option></select></label>
-          </div>
+
+        <div class="analysis-preview hidden" id="analysisPreview"></div>
+        <div id="coachDiagnosis" class="coach-diagnosis hidden"></div>
+        <div id="validationStatus" class="validation-status hidden"></div>
+
+        <div class="intro-unlock hidden" id="unlockPanel">
+          <button type="button" class="primary-btn full" id="onFinishBtn">Confirmer et débloquer mon coach</button>
+          <p>Après validation, tu auras accès à toute l’app. Tu pourras modifier ton profil plus tard.</p>
         </div>
-        <div class="on-step" data-step="3">
-          <label>Douleurs / limites à surveiller <select id="onPain"><option value="none">Aucune</option><option value="knee">Genou</option><option value="adductor">Adducteurs</option><option value="ankle">Cheville</option><option value="shoulder">Épaule</option><option value="back">Dos</option></select></label>
-          <label>Aliments aimés <textarea id="onLikes" placeholder="ex : œufs, riz, poulet, skyr, pommes de terre..."></textarea></label>
-          <label>Aliments à éviter <textarea id="onDislikes" placeholder="ex : poisson, lactose, petit-déj..."></textarea></label>
-        </div>
-        <div class="onboarding-actions">
-          <button class="ghost-btn" id="onPrevBtn">Retour</button>
-          <button class="primary-btn" id="onNextBtn">Continuer</button>
-          <button class="primary-btn hidden" id="onFinishBtn">Créer mon coach</button>
-        </div>
+
+        <button type="button" class="ghost-btn full intro-emergency" id="introEmergencyBtn">Mode secours si l’intro bug</button>
+        <button type="button" class="ghost-btn full intro-emergency" id="hardResetLink">Débloquer sans flou</button>
+
+        <div class="anti-blur-note">Correctif V25.6 : l’introduction a été reconstruite proprement. Tu peux écrire, analyser et débloquer depuis cette page.</div>
+        <p class="coach-note">Analyse hors ligne : rapide, privée et sans serveur. Pour blessure, maladie, trouble alimentaire ou suivi médical, demande l’avis d’un professionnel.</p>
       </div>
     </section>
 
     <main>
+
+        <section class="safety-card">
+          <div>
+            <p class="card-kicker">SÉCURITÉ V25.6</p>
+            <h3>Mode secours stable</h3>
+            <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
+          </div>
+          <div class="safety-actions">
+            <button type="button" class="ghost-btn" id="safeRestartIntroBtn">Relancer intro</button>
+            <button type="button" class="ghost-btn danger-btn" id="safeOpenResetBtn">Secours</button>
+          </div>
+        </section>
+
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V25.4 VALIDATION</p>
+          <p class="hero-label">V25.6 AUDIT STABLE</p>
           <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1196,8 +1308,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v25_4_timer_end";
-  const KEY_SOUND="bf_v25_4_sound";
+  const KEY_END="bf_v25_6_timer_end";
+  const KEY_SOUND="bf_v25_6_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -1263,7 +1375,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v25_4_performances";
+  const KEY="bf_v25_6_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1424,7 +1536,7 @@ window.BF_UTIL = {
   window.v25PersonalProfile = function(){
     const fallback={name:"",weight:75,height:166,age:20,sex:"male",goal:"muscle",level:"intermediate",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
     try{
-      return JSON.parse(localStorage.getItem("bf_v25_4_profile")||"null") || fallback;
+      return JSON.parse(localStorage.getItem("bf_v25_6_profile")||"null") || fallback;
     }catch(e){ return fallback; }
   };
   window.v25NutritionTargets = function(p){
@@ -1633,7 +1745,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v25_4_check_"+box.dataset.check;
+      const k="bf_v25_6_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1689,7 +1801,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v25_4_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v25_6_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1716,8 +1828,8 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v25_4_profile";
-  const MONTH_KEY="bf_v25_4_month_plan";
+  const PROFILE_KEY="bf_v25_6_profile";
+  const MONTH_KEY="bf_v25_6_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
@@ -2061,22 +2173,24 @@ window.BF_UTIL = {
 
   function lockApp(){
     document.body.classList.add("app-locked");
-    if(window.onboarding){
-      onboarding.classList.remove("hidden");
-      onboarding.style.display="grid";
-      onboarding.style.visibility="visible";
-      onboarding.style.opacity="1";
-      onboarding.style.pointerEvents="auto";
+    const intro=document.getElementById("onboarding");
+    if(intro){
+      intro.classList.remove("hidden");
+      intro.style.display="grid";
+      intro.style.visibility="visible";
+      intro.style.opacity="1";
+      intro.style.pointerEvents="auto";
     }
   }
   function unlockApp(){
     document.body.classList.remove("app-locked");
-    if(window.onboarding){
-      onboarding.classList.add("hidden");
-      onboarding.style.display="";
-      onboarding.style.visibility="";
-      onboarding.style.opacity="";
-      onboarding.style.pointerEvents="";
+    const intro=document.getElementById("onboarding");
+    if(intro){
+      intro.classList.add("hidden");
+      intro.style.display="";
+      intro.style.visibility="";
+      intro.style.opacity="";
+      intro.style.pointerEvents="";
     }
   }
   function professionalDiagnosis(p){
@@ -2296,7 +2410,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=25-4." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=25-6." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -2307,7 +2421,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=25-4-reset-"+Date.now();
+      location.href=location.pathname+"?v=25-6-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -2317,7 +2431,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=25-4. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=25-6. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -2332,26 +2446,28 @@ window.BF_UTIL = {
   }
 
   function forceAnalyzePresentation(){
+    const txt=(document.getElementById("onPresentation")?.value||"").trim();
+    if(txt.length<25){
+      setValidationStatus("Écris une présentation un peu plus complète avant de confirmer.", "err");
+      document.getElementById("onPresentation")?.focus();
+      return false;
+    }
     try{
-      const txt=(window.onPresentation?.value||"").trim();
-      if(txt.length<25){
-        setValidationStatus("Écris une présentation un peu plus complète avant de confirmer.", "err");
-        window.onPresentation?.focus();
-        return false;
-      }
       parsedPresentationProfile=analyzePresentation(txt);
       renderAnalysisPreview(parsedPresentationProfile);
-      if(window.coachDiagnosis){
-        coachDiagnosis.innerHTML=professionalDiagnosis(parsedPresentationProfile);
-        coachDiagnosis.classList.remove("hidden");
+      const diag=document.getElementById("coachDiagnosis");
+      if(diag){
+        diag.innerHTML=professionalDiagnosis(parsedPresentationProfile);
+        diag.classList.remove("hidden");
       }
-      unlockPanel?.classList.remove("hidden");
-      onFinishBtn?.classList.remove("hidden");
+      document.getElementById("unlockPanel")?.classList.remove("hidden");
+      document.getElementById("onFinishBtn")?.classList.remove("hidden");
       setIntroStep("unlock");
-      setValidationStatus("Analyse validée. Tu peux maintenant débloquer ton coach.", "ok");
+      setValidationStatus("Analyse validée. Clique sur “Confirmer et débloquer mon coach”.", "ok");
       return true;
     }catch(e){
-      setValidationStatus("Erreur pendant l’analyse. Clique sur le mode secours ou recharge avec ?v=25-4.", "err");
+      console.error(e);
+      setValidationStatus("Erreur pendant l’analyse. Essaie de raccourcir ta présentation ou utilise le mode secours.", "err");
       return false;
     }
   }
@@ -2359,20 +2475,22 @@ window.BF_UTIL = {
   function forceUnlockCoach(){
     try{
       if(!parsedPresentationProfile){
-        const ok=forceAnalyzePresentation();
-        if(!ok) return false;
+        if(!forceAnalyzePresentation()) return false;
       }
       BF_STORE.set(PROFILE_KEY,parsedPresentationProfile);
       unlockApp();
-      fillProfileForm();
-      updatePersonalUI();
-      renderMonthSummary(null,parsedPresentationProfile);
-      const plan=buildMonthPlan();
-      activeMonthTab="sport";
-      renderMonth(plan);
+      try{ fillProfileForm(); }catch(e){ console.warn(e); }
+      try{ updatePersonalUI(); }catch(e){ console.warn(e); }
+      try{ renderMonthSummary(null,parsedPresentationProfile); }catch(e){ console.warn(e); }
+      try{
+        const plan=buildMonthPlan();
+        activeMonthTab="sport";
+        renderMonth(plan);
+      }catch(e){ console.warn(e); }
       return true;
     }catch(e){
-      setValidationStatus("Impossible de débloquer automatiquement. Essaie le mode secours puis reset profil.", "err");
+      console.error(e);
+      setValidationStatus("Impossible de débloquer automatiquement. Mode secours recommandé.", "err");
       return false;
     }
   }
@@ -2380,33 +2498,47 @@ window.BF_UTIL = {
   function bindIntroButtonsRobust(){
     const analyze=()=>forceAnalyzePresentation();
     const finish=()=>forceUnlockCoach();
-    window.onAnalyzeBtn?.addEventListener("click",e=>{e.preventDefault();analyze();});
-    window.onFinishBtn?.addEventListener("click",e=>{e.preventDefault();finish();});
+
+    document.getElementById("onAnalyzeBtn")?.addEventListener("click",e=>{e.preventDefault(); analyze();});
+    document.getElementById("onFinishBtn")?.addEventListener("click",e=>{e.preventDefault(); finish();});
+    document.getElementById("onDirectUnlockBtn")?.addEventListener("click",e=>{e.preventDefault(); if(analyze()) finish();});
+
     document.addEventListener("click",e=>{
       const t=e.target;
       if(!t) return;
       const id=t.id||"";
       const txt=(t.textContent||"").toLowerCase();
+      const introOpen=document.getElementById("onboarding") && !document.getElementById("onboarding").classList.contains("hidden");
+      if(!introOpen) return;
+
       if(id==="onAnalyzeBtn" || txt.includes("analyser ma présentation") || txt.includes("analyser ma presentation") || txt.includes("confirmer")){
-        if(window.onboarding && !onboarding.classList.contains("hidden")){
-          e.preventDefault();
-          analyze();
-        }
+        e.preventDefault();
+        analyze();
       }
-      if(id==="onFinishBtn" || txt.includes("débloquer mon coach") || txt.includes("debloquer mon coach") || txt.includes("créer mon coach") || txt.includes("creer mon coach")){
-        if(window.onboarding && !onboarding.classList.contains("hidden")){
-          e.preventDefault();
-          finish();
-        }
+      if(id==="onFinishBtn" || id==="onDirectUnlockBtn" || txt.includes("débloquer") || txt.includes("debloquer") || txt.includes("créer mon coach") || txt.includes("creer mon coach")){
+        e.preventDefault();
+        if(id==="onDirectUnlockBtn") { if(analyze()) finish(); }
+        else finish();
       }
     },true);
   }
 
+
+  function finalV256Bindings(){
+    const byId=(id)=>document.getElementById(id);
+    byId("onAnalyzeBtn")?.addEventListener("click",e=>{ e.preventDefault(); forceAnalyzePresentation(); });
+    byId("onFinishBtn")?.addEventListener("click",e=>{ e.preventDefault(); forceUnlockCoach(); });
+    byId("onDirectUnlockBtn")?.addEventListener("click",e=>{ e.preventDefault(); if(forceAnalyzePresentation()) forceUnlockCoach(); });
+    byId("safeRestartIntroBtn")?.addEventListener("click",e=>{ e.preventDefault(); restartIntroSafe(); });
+    byId("safeOpenResetBtn")?.addEventListener("click",e=>{ e.preventDefault(); openSafetyPanel(); });
+  }
+
   function init(){
+    document.querySelectorAll("[id]").forEach(el=>{ try{ window[el.id]=el; }catch(e){} });
     try{ safeProfile(); }catch(e){ BF_STORE.remove(PROFILE_KEY); }
     const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
     const standalone=window.navigator.standalone===true||((window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches)||false);
-    if(isiOS&&!standalone) installHint.classList.remove("hidden");
+    if(isiOS&&!standalone) document.getElementById("installHint")?.classList.remove("hidden");
 
     document.querySelectorAll(".app-nav button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
     document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.open)));
@@ -2415,7 +2547,7 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v25_4_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v25_6_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
@@ -2426,28 +2558,21 @@ window.BF_UTIL = {
     fillProfileForm();
     updatePersonalUI();
     showOnboardingIfNeeded();
-    onExampleBtn?.addEventListener("click",()=>{
+    document.getElementById("onExampleBtn")?.addEventListener("click",()=>{
       setIntroStep("write");
-      analysisPreview?.classList.add("hidden");
-      coachDiagnosis?.classList.add("hidden");
-      unlockPanel?.classList.add("hidden");
-      onPresentation.value="Salut je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle proprement sans trop prendre de gras. Je peux aller à la salle 3 fois par semaine pendant environ 1h. Je préfère les machines. Je mange 2 à 3 repas par jour, j’aime le riz, les œufs, le poulet, le skyr, les pommes de terre et les bananes. J’ai parfois une gêne au genou donc je veux faire attention.";
+      document.getElementById("analysisPreview")?.classList.add("hidden");
+      document.getElementById("coachDiagnosis")?.classList.add("hidden");
+      document.getElementById("unlockPanel")?.classList.add("hidden");
+      const area=document.getElementById("onPresentation");
+      if(area){
+        area.value="Salut je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle proprement sans trop prendre de gras. Je peux aller à la salle 3 fois par semaine pendant environ 1h. Je préfère les machines. Je mange 2 à 3 repas par jour, j’aime le riz, les œufs, le poulet, le skyr, les pommes de terre et les bananes. J’ai parfois une gêne au genou donc je veux faire attention.";
+        area.focus();
+      }
     });
-    onAnalyzeBtn?.addEventListener("click",(e)=>{ e.preventDefault(); forceAnalyzePresentation(); });
-    onFinishBtn?.addEventListener("click",(e)=>{ e.preventDefault(); forceUnlockCoach(); });
-    restartIntroBtn?.addEventListener("click",()=>{
-      parsedPresentationProfile=null;
-      const p=getProfile();
-      onPresentation.value=p.presentation||"";
-      analysisPreview?.classList.add("hidden");
-      coachDiagnosis?.classList.add("hidden");
-      unlockPanel?.classList.add("hidden");
-      lockApp();
-      setIntroStep("write");
-    });
+    document.getElementById("onAnalyzeBtn")?.addEventListener("click",(e)=>{ e.preventDefault(); forceAnalyzePresentation(); });
     
-    safeRestartIntroBtn?.addEventListener("click",restartIntroSafe);
-    safeOpenResetBtn?.addEventListener("click",openSafetyPanel);
+    document.getElementById("safeRestartIntroBtn")?.addEventListener("click",restartIntroSafe);
+    document.getElementById("safeOpenResetBtn")?.addEventListener("click",openSafetyPanel);
     openSafetyFromProfileBtn?.addEventListener("click",openSafetyPanel);
     introEmergencyBtn?.addEventListener("click",openSafetyPanel);
     hardResetLink?.addEventListener("click",()=>{
@@ -2469,6 +2594,7 @@ window.BF_UTIL = {
     closeSafetyBtn?.addEventListener("click",closeSafetyPanel);
 
     bindIntroButtonsRobust();
+    finalV256Bindings();
     renderMonthSummary(null,getProfile());
     saveProfileBtn?.addEventListener("click",saveProfile);
     generateMonthBtn?.addEventListener("click",()=>{ const p=readProfileForm(); BF_STORE.set(PROFILE_KEY,p); const plan=buildMonthPlan(); activeMonthTab="sport"; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x.dataset.monthTab==="sport")); renderMonth(plan); });
@@ -2494,7 +2620,7 @@ window.BF_UTIL = {
     });
 
     renderSession();
-    const saved=BF_STORE.get("bf_v25_4_custom_html","");
+    const saved=BF_STORE.get("bf_v25_6_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
@@ -2511,7 +2637,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=25-4").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=25-6").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
