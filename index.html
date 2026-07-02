@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V18</title>
+  <title>Basic-Fit Coach V19</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V18 : nettoyage du bas de l'application */
+/* V19 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V18 : suppression du texte parasite tout en bas */
+/* V19 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V18 : mode séance live + actions rapides */
+/* V19 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -338,6 +338,17 @@ body > div:not(.app-shell):last-child{
   .live-form{grid-template-columns:1fr}
 }
 
+
+/* V19 : profil + programme mensuel */
+.month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
+.month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
+.month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
+.month-output{margin-top:12px}.week-card{background:var(--panel);border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow);padding:15px;margin-bottom:12px}
+.day-plan{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.045);border-radius:18px;padding:12px;margin:9px 0}.day-plan strong{color:var(--accent)}
+.meal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.meal-card{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.045);border-radius:18px;padding:12px;color:var(--muted);font-size:13.5px}.meal-card strong{display:block;color:var(--accent);margin-bottom:4px}
+.shopping-list{columns:2;color:var(--muted)}.shopping-list li{margin-bottom:7px}
+@media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
+
 </style>
 </head>
 <body>
@@ -353,8 +364,8 @@ body > div:not(.app-shell):last-child{
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V18 LIVE</p>
-          <h2>Entraîne-toi comme un joueur sérieux.</h2>
+          <p class="hero-label">V19 MONTH</p>
+          <h2>Construis ton mois comme un joueur sérieux.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
         <div class="hero-orb">
@@ -364,6 +375,8 @@ body > div:not(.app-shell):last-child{
 
       <nav class="app-nav" id="appNav">
         <button data-view="dashboard" class="active">🏠<span>Accueil</span></button>
+        <button data-view="profile">👤<span>Profil</span></button>
+        <button data-view="month">🗓️<span>Mois</span></button>
         <button data-view="sessions">🏋️<span>Séances</span></button>
         <button data-view="live">▶️<span>Live</span></button>
         <button data-view="custom">✨<span>Perso</span></button>
@@ -408,10 +421,63 @@ body > div:not(.app-shell):last-child{
           </div>
           <div class="quick-grid">
             <button data-quick="Quelle séance tu me conseilles aujourd’hui ?">Quelle séance ?</button>
+            <button data-open="month">Créer mon mois</button>
+            <button data-open="profile">Profil</button>
             <button data-open="custom">Créer séance perso</button>
             <button data-open="performances">Noter une perf</button>
             <button data-open="nutrition">Conseil nutrition</button>
           </div>
+        </article>
+      </section>
+
+
+      <section class="view" id="profileView">
+        <div class="section-head"><div><p class="card-kicker">PROFIL LONG TERME</p><h2>Mon profil coach</h2></div></div>
+        <article class="card accent-card"><h3>Profil = programme plus intelligent</h3><p>Le coach utilise ton poids, ta taille, ton objectif, tes jours de foot, tes douleurs et tes repas pour créer ton mois sportif et nutrition.</p></article>
+        <article class="card form-card">
+          <div class="form-grid">
+            <label>Poids actuel en kg <input id="profileWeight" inputmode="decimal" value="75"></label>
+            <label>Taille en cm <input id="profileHeight" inputmode="numeric" value="166"></label>
+            <label>Âge <input id="profileAge" inputmode="numeric" value="20"></label>
+            <label>Sexe <select id="profileSex"><option value="male" selected>Homme</option><option value="female">Femme</option></select></label>
+            <label>Objectif principal <select id="profileGoal"><option value="performance" selected>Performance foot / athlétique</option><option value="cut">Sèche / perdre du gras</option><option value="muscle">Prise de muscle</option><option value="maintain">Maintien</option></select></label>
+            <label>Niveau salle <select id="profileLevel"><option value="beginner">Débutant</option><option value="intermediate" selected>Intermédiaire</option><option value="advanced">Avancé</option></select></label>
+            <label>Séances muscu/semaine <select id="profileGymDays"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option></select></label>
+            <label>Repas/jour <select id="profileMeals"><option value="2" selected>2 repas</option><option value="3">3 repas</option><option value="4">3 repas + collation</option></select></label>
+            <label>Foot dans la semaine <input id="profileFootball" placeholder="ex : mardi, jeudi"></label>
+            <label>Jour de match <input id="profileMatch" placeholder="ex : dimanche"></label>
+            <label>Douleurs à surveiller <select id="profilePain"><option value="none">Aucune</option><option value="knee">Genou</option><option value="adductor">Adducteurs</option><option value="ankle">Cheville</option><option value="shoulder">Épaule</option><option value="back">Dos</option></select></label>
+            <label>Budget nutrition <select id="profileBudget"><option value="simple" selected>Simple / économique</option><option value="normal">Normal</option><option value="varied">Plus varié</option></select></label>
+          </div>
+          <label>Aliments que tu aimes <textarea id="profileLikes" placeholder="ex : œufs, jambon, skyr, pommes de terre, brocoli, banane..."></textarea></label>
+          <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : poisson, petit-déjeuner, ketchup..."></textarea></label>
+          <button class="primary-btn full" id="saveProfileBtn">Sauvegarder mon profil</button>
+        </article>
+      </section>
+
+      <section class="view" id="monthView">
+        <div class="section-head"><div><p class="card-kicker">COACH MENSUEL</p><h2>Programme sur 1 mois</h2></div></div>
+        <article class="card accent-card">
+          <p class="card-kicker">LOGIQUE LONG TERME</p><h3>Créer → suivre → bilan → ajuster</h3>
+          <p>Le mois est construit en 4 semaines : adaptation, progression, intensification, semaine légère. À la fin, tu fais un bilan et l’app prépare le mois suivant.</p>
+          <div class="mini-row"><button class="primary-btn" id="generateMonthBtn">Générer mon mois</button><button class="ghost-btn" id="loadMonthBtn">Charger mois sauvegardé</button><button class="ghost-btn" id="clearMonthBtn">Effacer le mois</button></div>
+        </article>
+        <div id="monthSummary" class="month-summary"></div>
+        <div class="segmented month-tabs" id="monthTabs">
+          <button data-month-tab="sport" class="active">Sport</button><button data-month-tab="nutrition">Nutrition</button><button data-month-tab="shopping">Courses</button><button data-month-tab="review">Bilan</button>
+        </div>
+        <div id="monthOutput" class="month-output empty-state">Remplis ton profil puis clique sur “Générer mon mois”.</div>
+        <article class="card form-card">
+          <p class="card-kicker">BILAN FIN DE MOIS</p><h3>Ajuster le mois suivant</h3>
+          <div class="form-grid">
+            <label>Poids actuel <input id="reviewWeight" inputmode="decimal" placeholder="ex : 74.5"></label>
+            <label>Fatigue générale <select id="reviewFatigue"><option value="low">Faible</option><option value="normal" selected>Normale</option><option value="high">Haute</option></select></label>
+            <label>Respect des séances <select id="reviewTraining"><option value="low">Moins de 50%</option><option value="medium" selected>Environ 70%</option><option value="high">Presque tout</option></select></label>
+            <label>Nutrition suivie <select id="reviewNutrition"><option value="low">Peu</option><option value="medium" selected>Moyen</option><option value="high">Bien</option></select></label>
+          </div>
+          <label>Douleurs / remarques <textarea id="reviewNotes" placeholder="ex : genou sensible semaine 3, grosse fatigue, faim le soir..."></textarea></label>
+          <button class="primary-btn full" id="generateNextMonthBtn">Créer le mois suivant avec adaptation</button>
+          <div id="reviewAdvice" class="result-box"></div>
         </article>
       </section>
 
@@ -684,7 +750,7 @@ body > div:not(.app-shell):last-child{
             <button data-quick="Je veux sécher">Sèche</button>
           </div>
           <div id="coachChat" class="chat-log">
-            <div class="msg bot">Je suis ton coach V18. Écris avec tes mots, je comprends les formulations proches.</div>
+            <div class="msg bot">Je suis ton coach V19. Écris avec tes mots, je comprends les formulations proches.</div>
           </div>
           <div class="chat-input-row">
             <input id="coachInput" placeholder="Écris ta question..." />
@@ -803,8 +869,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v18_timer_end";
-  const KEY_SOUND="bf_v18_sound";
+  const KEY_END="bf_v19_timer_end";
+  const KEY_SOUND="bf_v19_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -870,7 +936,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v18_performances";
+  const KEY="bf_v19_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1080,6 +1146,8 @@ window.BF_UTIL = {
     if(q.includes("seche")||q.includes("maigrir")) return BF_NUTRITION.answer("je veux sécher");
     if(q.includes("muscle")||q.includes("masse")) return BF_NUTRITION.answer("prendre muscle");
     if(q.includes("explosif")||q.includes("puissant")) return "Explosivité : construis la force sur presse/leg curl/fessiers/mollets + transfert terrain avec accélérations et appuis.";
+    if(q.includes("programme mois")||q.includes("1 mois")||q.includes("mois")) return "Va dans l’onglet Mois : l’app génère ton programme sportif 4 semaines + nutrition 1 mois + liste de courses + bilan pour créer le mois suivant."; 
+    if(q.includes("profil")) return "Va dans Profil : poids, taille, objectif, jours de foot, repas et douleurs. Plus ton profil est précis, plus le mois généré sera adapté."; 
     if(q.includes("performance")||q.includes("perf")) return "Va dans Perfs : note machine, charge, reps, séries et ressenti. L’app affichera la dernière perf sous chaque exercice.";
     return "Je peux t’aider sur : séance conseillée, séance personnalisée, machine prise, charge, repos, douleur, nutrition, sèche, muscle, explosivité et performances.";
   }
@@ -1122,7 +1190,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v18_check_"+box.dataset.check;
+      const k="bf_v19_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1178,7 +1246,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v18_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v19_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1202,6 +1270,68 @@ window.BF_UTIL = {
     todayLine.textContent=`${n.dateText} • ${n.time} • ${n.moment}`;
     const advice=BF_COACH.recommend("quelle séance aujourd’hui");
     dailyAdviceText.textContent=advice;
+  }
+
+
+  const PROFILE_KEY="bf_v19_profile";
+  const MONTH_KEY="bf_v19_month_plan";
+  let activeMonthTab="sport";
+  function getProfile(){
+    const saved=BF_STORE.get(PROFILE_KEY,null);
+    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,meals:2,football:"",match:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:""};
+  }
+  function fillProfileForm(){
+    const p=getProfile();
+    if(!window.profileWeight) return;
+    profileWeight.value=p.weight; profileHeight.value=p.height; profileAge.value=p.age; profileSex.value=p.sex;
+    profileGoal.value=p.goal; profileLevel.value=p.level; profileGymDays.value=p.gymDays; profileMeals.value=p.meals;
+    profileFootball.value=p.football||""; profileMatch.value=p.match||""; profilePain.value=p.pain||"none"; profileBudget.value=p.budget||"simple";
+    profileLikes.value=p.likes||""; profileDislikes.value=p.dislikes||""; if(window.reviewWeight) reviewWeight.value=p.weight||"";
+  }
+  function readProfileForm(){
+    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,meals:parseInt(profileMeals.value,10)||2,football:profileFootball.value.trim(),match:profileMatch.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim()};
+  }
+  function saveProfile(){const p=readProfileForm();BF_STORE.set(PROFILE_KEY,p);alert("Profil sauvegardé.");renderMonthSummary(null,p);}
+  function mifflin(p){return Math.round(10*p.weight + 6.25*p.height - 5*p.age + (p.sex==="male"?5:-161));}
+  function nutritionTargets(p,review=null){
+    const bmr=mifflin(p);let factor=p.gymDays>=4?1.65:(p.gymDays>=3?1.55:1.45);let kcal=Math.round(bmr*factor);
+    if(p.goal==="cut") kcal-=350;if(p.goal==="muscle") kcal+=250;if(review?.fatigue==="high") kcal+=100;if(review?.nutrition==="low"&&p.goal==="cut") kcal+=100;
+    const proteinLow=Math.round(p.weight*(p.goal==="cut"?1.8:1.6));const proteinHigh=Math.round(p.weight*(p.goal==="cut"?2.2:2.0));const fats=Math.round(p.weight*0.8);const carbs=Math.max(120,Math.round((kcal-((proteinLow*4)+(fats*9)))/4));
+    return {bmr,kcal,proteinLow,proteinHigh,fats,carbs};
+  }
+  function sportMonth(p,review=null){
+    const fatigueHigh=review?.fatigue==="high";
+    const weeks=[{name:"Semaine 1 — Adaptation",focus:"Trouver les charges, technique propre, aucune douleur.",mod:fatigueHigh?"Très légère":"Normale"},{name:"Semaine 2 — Progression",focus:"Augmenter légèrement si les séries sont propres.",mod:"+2,5 à +5 kg selon machine"},{name:"Semaine 3 — Intensification",focus:"Pousser proprement sans aller à l’échec.",mod:"Volume complet"},{name:"Semaine 4 — Semaine légère",focus:"Récupérer et préparer le mois suivant.",mod:"-10 à -20% charge, une série en moins"}];
+    const days3=["Mardi : Séance jambes","Jeudi : Haut du corps","Samedi : Full body athlétique"],days2=["Mardi : Jambes puissantes","Vendredi : Haut du corps + full léger"],days4=["Lundi : Haut du corps","Mardi : Jambes","Jeudi : Haut du corps 2","Samedi : Full body léger"];
+    let template=p.gymDays>=4?days4:(p.gymDays<=2?days2:days3);
+    if(p.match) template=template.map(d=>d.includes("Samedi")?d+" / allégé si match le lendemain":d);
+    if(p.pain==="knee") template=template.map(d=>d.toLowerCase().includes("jambes")?d+" — genou : presse/leg extension modérés":d);
+    if(p.pain==="adductor") template=template.map(d=>d.toLowerCase().includes("jambes")?d+" — adducteurs légers":d);
+    return weeks.map((w,i)=>({week:i+1,...w,days:template}));
+  }
+  function mealTemplates(p,t){
+    const noBreakfast=p.meals===2;const baseProteins=p.budget==="simple"?["œufs","jambon blanc","skyr/fromage blanc","thon","poulet"]:["œufs","poulet","steak 5%","thon","skyr","jambon blanc"];const carbs=["pommes de terre","riz","pâtes","semoule","pain complet","flocons d’avoine"];const veg=["brocoli","haricots verts","salade","carottes","courgettes"];const fruits=["banane","pomme","compote"];const weeks=[];
+    for(let w=1;w<=4;w++){const days=[];for(let d=1;d<=7;d++){const prot=baseProteins[(w+d)%baseProteins.length],carb=carbs[(w+d)%carbs.length],vegetable=veg[(w+d)%veg.length],fruit=fruits[(w+d)%fruits.length];const meals=[];if(!noBreakfast)meals.push(["Petit-déj",`Skyr/fromage blanc + ${fruit} + flocons d’avoine si grosse séance.`]);meals.push(["Repas 1",`${prot} + ${carb} + ${vegetable} + 1 filet d’huile d’olive.`]);if(p.meals>=4)meals.push(["Collation",`Skyr/fromage blanc ou jambon + ${fruit}.`]);meals.push(["Repas 2",`${baseProteins[(w+d+2)%baseProteins.length]} + ${carbs[(w+d+2)%carbs.length]} + légumes.`]);if(d===6||d===7)meals.push(["Foot/match",`Avant effort : glucides digestes + eau. Après : protéines + féculents.`]);days.push({day:["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"][d-1],meals});}weeks.push({week:w,days});}
+    return weeks;
+  }
+  function shoppingList(p){const items=["œufs","jambon blanc","skyr ou fromage blanc","poulet","thon","riz","pâtes","pommes de terre","semoule","brocoli","haricots verts","salade","carottes","bananes","pommes","compotes","huile d’olive","eau"];if(p.budget!=="simple")items.push("steak 5%","pain complet","flocons d’avoine","courgettes");return items;}
+  function buildMonthPlan(review=null){const profile=getProfile();const targets=nutritionTargets(profile,review);const plan={id:Date.now(),profile,targets,sport:sportMonth(profile,review),meals:mealTemplates(profile,targets),shopping:shoppingList(profile),review};BF_STORE.set(MONTH_KEY,plan);return plan;}
+  function renderMonthSummary(plan=null,profile=getProfile()){
+    if(!window.monthSummary)return;const t=plan?.targets||nutritionTargets(profile);
+    monthSummary.innerHTML=`<div class="month-pill"><strong>${t.kcal}</strong><span>kcal/jour estimées</span></div><div class="month-pill"><strong>${t.proteinLow}-${t.proteinHigh}g</strong><span>protéines/jour</span></div><div class="month-pill"><strong>${profile.gymDays}x</strong><span>muscu/semaine</span></div>`;
+  }
+  function renderMonth(plan=BF_STORE.get(MONTH_KEY,null)){
+    if(!window.monthOutput)return;if(!plan){monthOutput.className="month-output empty-state";monthOutput.textContent="Aucun mois généré.";renderMonthSummary(null);return;}
+    monthOutput.className="month-output";renderMonthSummary(plan,plan.profile);
+    if(activeMonthTab==="sport"){monthOutput.innerHTML=plan.sport.map(w=>`<article class="week-card"><p class="card-kicker">${w.name}</p><h3>${w.focus}</h3><p class="session-subtitle">Ajustement : ${w.mod}</p>${w.days.map(d=>`<div class="day-plan"><strong>${d}</strong></div>`).join("")}</article>`).join("");}
+    else if(activeMonthTab==="nutrition"){monthOutput.innerHTML=`<article class="week-card"><h3>Objectif nutrition</h3><p>Calories estimées : <strong>${plan.targets.kcal} kcal/j</strong> • Protéines : <strong>${plan.targets.proteinLow}-${plan.targets.proteinHigh} g/j</strong> • Glucides repère : <strong>${plan.targets.carbs} g/j</strong> • Lipides repère : <strong>${plan.targets.fats} g/j</strong>.</p></article>`+plan.meals.map(w=>`<article class="week-card"><p class="card-kicker">Semaine ${w.week}</p><h3>Repas proposés</h3>${w.days.map(d=>`<div class="day-plan"><strong>${d.day}</strong><div class="meal-grid">${d.meals.map(m=>`<div class="meal-card"><strong>${m[0]}</strong>${m[1]}</div>`).join("")}</div></div>`).join("")}</article>`).join("");}
+    else if(activeMonthTab==="shopping"){monthOutput.innerHTML=`<article class="week-card"><h3>Liste de courses simple</h3><ul class="shopping-list">${plan.shopping.map(i=>`<li>${i}</li>`).join("")}</ul><p class="session-subtitle">Adapte les quantités selon ton appétit, ton budget et ton bilan.</p></article>`;}
+    else{monthOutput.innerHTML=`<article class="week-card"><h3>Bilan fin de mois</h3><p>Renseigne ton poids, fatigue, séances faites, nutrition et douleurs. Ensuite clique sur “Créer le mois suivant avec adaptation”.</p></article>`;}
+  }
+  function generateNextMonth(){
+    const old=getProfile();const rw=parseFloat(String(reviewWeight.value).replace(",","."))||old.weight;const review={weight:rw,fatigue:reviewFatigue.value,training:reviewTraining.value,nutrition:reviewNutrition.value,notes:reviewNotes.value.trim()};BF_STORE.set(PROFILE_KEY,{...old,weight:rw});fillProfileForm();const plan=buildMonthPlan(review);const advice=[];
+    if(review.fatigue==="high")advice.push("Fatigue haute : mois suivant démarré plus léger.");if(review.training==="low")advice.push("Peu de séances réalisées : plan plus réaliste à privilégier.");if(review.nutrition==="low")advice.push("Nutrition peu suivie : repas plus simples et répétables.");if(old.goal==="cut"&&rw>=old.weight)advice.push("Sèche : si le poids ne baisse pas, réduis légèrement les portions de féculents ou les grignotages.");if(old.goal==="muscle"&&rw<=old.weight)advice.push("Prise de muscle : augmente un peu les portions autour des séances.");if(!advice.length)advice.push("Mois suivant généré : continue la progression contrôlée.");
+    reviewAdvice.innerHTML=advice.map(a=>"• "+a).join("<br>");renderMonth(plan);alert("Mois suivant généré.");
   }
 
   let livePlan=[], liveIndex=0, liveSessionName="";
@@ -1328,14 +1458,24 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v18_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v19_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
     openRecommendedBtn.addEventListener("click",()=>showView("sessions"));
 
 
-    document.querySelectorAll("[data-start-live]").forEach(b=>b.addEventListener("click",()=>startLive(b.dataset.startLive)));
+
+    fillProfileForm();
+    renderMonthSummary(null,getProfile());
+    saveProfileBtn?.addEventListener("click",saveProfile);
+    generateMonthBtn?.addEventListener("click",()=>{ const p=readProfileForm(); BF_STORE.set(PROFILE_KEY,p); const plan=buildMonthPlan(); activeMonthTab="sport"; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x.dataset.monthTab==="sport")); renderMonth(plan); });
+    loadMonthBtn?.addEventListener("click",()=>renderMonth());
+    clearMonthBtn?.addEventListener("click",()=>{ BF_STORE.remove(MONTH_KEY); renderMonth(null); });
+    generateNextMonthBtn?.addEventListener("click",generateNextMonth);
+    document.querySelectorAll("[data-month-tab]").forEach(b=>b.addEventListener("click",()=>{ activeMonthTab=b.dataset.monthTab; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x===b)); renderMonth(); }));
+
+        document.querySelectorAll("[data-start-live]").forEach(b=>b.addEventListener("click",()=>startLive(b.dataset.startLive)));
     startCustomLiveBtn?.addEventListener("click",startLiveFromCustom);
     saveLivePerfBtn?.addEventListener("click",saveLivePerf);
     liveRestBtn?.addEventListener("click",()=>BF_TIMER.start(90));
@@ -1352,7 +1492,7 @@ window.BF_UTIL = {
     });
 
     renderSession();
-    const saved=BF_STORE.get("bf_v18_custom_html","");
+    const saved=BF_STORE.get("bf_v19_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
