@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V25</title>
+  <title>Basic-Fit Coach V25.1</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -446,6 +446,82 @@ body.app-locked{overflow:hidden}
 .personal-answer strong{color:#fff}
 .personal-answer .small-note{display:block;color:var(--muted);font-size:12.5px;margin-top:6px}
 
+
+/* V25.1 : sécurité anti-bug */
+.safety-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  background:linear-gradient(135deg,rgba(255,99,99,.12),rgba(255,209,102,.08)),var(--panel);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(20px);
+  padding:15px;
+  margin:13px 0;
+}
+.safety-card p:last-child{color:var(--muted);font-size:13.5px}
+.safety-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.danger-btn{
+  border-color:rgba(255,99,99,.28)!important;
+  color:#FFD1D1!important;
+}
+.safety-panel{
+  position:fixed;
+  inset:0;
+  z-index:650;
+  display:grid;
+  place-items:center;
+  padding:18px;
+  background:rgba(7,10,18,.78);
+  backdrop-filter:blur(20px);
+}
+.safety-panel.hidden{display:none}
+.safety-panel article{
+  width:min(620px,100%);
+  max-height:90vh;
+  overflow:auto;
+}
+.repair-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+.danger-full{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,#ff6b6b,#ffd166)!important;
+}
+.intro-emergency{
+  margin-top:10px;
+}
+.error-box{
+  position:fixed;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  z-index:900;
+  background:rgba(45,12,12,.96);
+  border:1px solid rgba(255,99,99,.45);
+  color:#FFECEC;
+  border-radius:18px;
+  padding:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  font-size:13px;
+}
+@media(max-width:700px){
+  .safety-card{flex-direction:column;align-items:flex-start}
+  .safety-actions,.safety-actions button{width:100%}
+  .repair-grid{grid-template-columns:1fr}
+  .danger-full{grid-column:auto}
+}
+
 </style>
 </head>
 <body>
@@ -509,7 +585,7 @@ body.app-locked{overflow:hidden}
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V25 PERSONAL</p>
+          <p class="hero-label">V25.1 SAFETY</p>
           <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -611,6 +687,7 @@ body.app-locked{overflow:hidden}
           <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : poisson, petit-déjeuner, ketchup..."></textarea></label>
           <button class="primary-btn full" id="saveProfileBtn">Sauvegarder mon profil</button>
           <button class="ghost-btn full" id="restartIntroBtn">Refaire l’introduction</button>
+          <button class="ghost-btn full" id="openSafetyFromProfileBtn">Mode secours / reset</button>
         </article>
       </section>
 
@@ -928,6 +1005,24 @@ body.app-locked{overflow:hidden}
         <div id="questionsGrid" class="questions-grid"></div>
       </section>
     <div class="page-end-spacer" aria-hidden="true"></div>
+
+      <section id="safetyPanel" class="safety-panel hidden">
+        <article class="card">
+          <p class="card-kicker">MODE SECOURS</p>
+          <h2>Réparer l’app</h2>
+          <p>Utilise ces boutons seulement si l’app bug, reste bloquée, affiche une ancienne version ou si le profil semble corrompu.</p>
+          <div class="repair-grid">
+            <button class="ghost-btn" id="repairIntroBtn">Refaire l’introduction</button>
+            <button class="ghost-btn" id="repairProfileBtn">Effacer profil seulement</button>
+            <button class="ghost-btn" id="repairMonthBtn">Effacer programme du mois</button>
+            <button class="ghost-btn" id="repairSWBtn">Vider cache PWA</button>
+            <button class="primary-btn danger-full" id="repairAllBtn">Reset complet</button>
+            <button class="ghost-btn" id="closeSafetyBtn">Fermer</button>
+          </div>
+          <div id="repairStatus" class="result-box"></div>
+        </article>
+      </section>
+
     </main>
 
     <aside class="timer-dock clean-timer">
@@ -1028,8 +1123,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v25_timer_end";
-  const KEY_SOUND="bf_v25_sound";
+  const KEY_END="bf_v25_1_timer_end";
+  const KEY_SOUND="bf_v25_1_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -1095,7 +1190,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v25_performances";
+  const KEY="bf_v25_1_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1256,7 +1351,7 @@ window.BF_UTIL = {
   window.v25PersonalProfile = function(){
     const fallback={name:"",weight:75,height:166,age:20,sex:"male",goal:"muscle",level:"intermediate",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
     try{
-      return JSON.parse(localStorage.getItem("bf_v25_profile")||"null") || fallback;
+      return JSON.parse(localStorage.getItem("bf_v25_1_profile")||"null") || fallback;
     }catch(e){ return fallback; }
   };
   window.v25NutritionTargets = function(p){
@@ -1465,7 +1560,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v25_check_"+box.dataset.check;
+      const k="bf_v25_1_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -1521,7 +1616,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v25_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v25_1_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -1548,8 +1643,8 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v25_profile";
-  const MONTH_KEY="bf_v25_month_plan";
+  const PROFILE_KEY="bf_v25_1_profile";
+  const MONTH_KEY="bf_v25_1_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
@@ -1934,7 +2029,7 @@ window.BF_UTIL = {
     badgeUnlock?.classList.toggle("active",step==="unlock");
   }
   function showOnboardingIfNeeded(){
-    const p=BF_STORE.get(PROFILE_KEY,null);
+    const p=safeProfile();
     if(!p || (!p.presentation && !p.name)){
       lockApp();
       setIntroStep("write");
@@ -2050,7 +2145,110 @@ window.BF_UTIL = {
     return null;
   }
 
+
+  function safeSetStatus(msg){
+    if(window.repairStatus) repairStatus.innerHTML=msg;
+  }
+
+  function safeProfile(){
+    try{
+      const p=getProfile();
+      if(!p || typeof p!=="object") throw new Error("profil invalide");
+      if(!p.goal) p.goal="muscle";
+      if(!p.weight || Number.isNaN(Number(p.weight))) p.weight=75;
+      if(!p.height || Number.isNaN(Number(p.height))) p.height=166;
+      if(!p.age || Number.isNaN(Number(p.age))) p.age=20;
+      if(!p.gymDays || Number.isNaN(Number(p.gymDays))) p.gymDays=3;
+      if(!p.meals || Number.isNaN(Number(p.meals))) p.meals=3;
+      BF_STORE.set(PROFILE_KEY,p);
+      return p;
+    }catch(e){
+      BF_STORE.remove(PROFILE_KEY);
+      return null;
+    }
+  }
+
+  function openSafetyPanel(){
+    safetyPanel?.classList.remove("hidden");
+    safeSetStatus("Choisis une réparation. Le reset complet doit être utilisé seulement si l’app bug vraiment.");
+  }
+
+  function closeSafetyPanel(){
+    safetyPanel?.classList.add("hidden");
+  }
+
+  async function clearPwaCaches(){
+    try{
+      if("serviceWorker" in navigator){
+        const regs=await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r=>r.unregister()));
+      }
+      if(window.caches){
+        const names=await caches.keys();
+        await Promise.all(names.map(n=>caches.delete(n)));
+      }
+      return true;
+    }catch(e){
+      return false;
+    }
+  }
+
+  function restartIntroSafe(){
+    try{
+      parsedPresentationProfile=null;
+      const p=safeProfile() || {};
+      if(window.onPresentation) onPresentation.value=p.presentation||"";
+      analysisPreview?.classList.add("hidden");
+      coachDiagnosis?.classList.add("hidden");
+      unlockPanel?.classList.add("hidden");
+      lockApp();
+      setIntroStep("write");
+      closeSafetyPanel();
+    }catch(e){
+      location.reload();
+    }
+  }
+
+  function resetProfileOnly(){
+    BF_STORE.remove(PROFILE_KEY);
+    safeSetStatus("Profil effacé. Clique sur “Refaire l’introduction” ou recharge la page.");
+  }
+
+  function resetMonthOnly(){
+    BF_STORE.remove(MONTH_KEY);
+    safeSetStatus("Programme du mois effacé. Tu peux en générer un nouveau depuis l’onglet Mois.");
+  }
+
+  async function resetCacheOnly(){
+    const ok=await clearPwaCaches();
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=25-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+  }
+
+  async function resetAllData(){
+    const confirmReset=confirm("Reset complet ? Cela efface profil, programme, perfs et cache local de cette app.");
+    if(!confirmReset) return;
+    try{
+      Object.keys(localStorage).forEach(k=>{
+        if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
+      });
+      await clearPwaCaches();
+      location.href=location.pathname+"?v=25-1-reset-"+Date.now();
+    }catch(e){
+      localStorage.clear();
+      location.reload();
+    }
+  }
+
+  window.addEventListener("error",e=>{
+    const box=document.createElement("div");
+    box.className="error-box";
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=25-1. Détail : "+String(e.message||"erreur");
+    document.body.appendChild(box);
+    setTimeout(()=>box.remove(),10000);
+  });
+
   function init(){
+    try{ safeProfile(); }catch(e){ BF_STORE.remove(PROFILE_KEY); }
     const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
     const standalone=window.navigator.standalone===true||window.compétitionMedia("(display-mode: standalone)").compétitiones;
     if(isiOS&&!standalone) installHint.classList.remove("hidden");
@@ -2062,7 +2260,7 @@ window.BF_UTIL = {
     soundBtn.addEventListener("click",()=>BF_TIMER.toggleSound());
 
     sessionTabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; sessionTabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); renderSession(); }));
-    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v25_check_")) localStorage.removeItem(k); }); renderSession(); });
+    resetChecksBtn.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v25_1_check_")) localStorage.removeItem(k); }); renderSession(); });
     generateCustomBtn.addEventListener("click",()=>generateCustom());
     sendCoachBtn.addEventListener("click",sendCoach);
     coachInput.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
@@ -2101,6 +2299,18 @@ window.BF_UTIL = {
       lockApp();
       setIntroStep("write");
     });
+    
+    safeRestartIntroBtn?.addEventListener("click",restartIntroSafe);
+    safeOpenResetBtn?.addEventListener("click",openSafetyPanel);
+    openSafetyFromProfileBtn?.addEventListener("click",openSafetyPanel);
+    introEmergencyBtn?.addEventListener("click",openSafetyPanel);
+    repairIntroBtn?.addEventListener("click",restartIntroSafe);
+    repairProfileBtn?.addEventListener("click",resetProfileOnly);
+    repairMonthBtn?.addEventListener("click",resetMonthOnly);
+    repairSWBtn?.addEventListener("click",resetCacheOnly);
+    repairAllBtn?.addEventListener("click",resetAllData);
+    closeSafetyBtn?.addEventListener("click",closeSafetyPanel);
+
     renderMonthSummary(null,getProfile());
     saveProfileBtn?.addEventListener("click",saveProfile);
     generateMonthBtn?.addEventListener("click",()=>{ const p=readProfileForm(); BF_STORE.set(PROFILE_KEY,p); const plan=buildMonthPlan(); activeMonthTab="sport"; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x.dataset.monthTab==="sport")); renderMonth(plan); });
@@ -2126,7 +2336,7 @@ window.BF_UTIL = {
     });
 
     renderSession();
-    const saved=BF_STORE.get("bf_v25_custom_html","");
+    const saved=BF_STORE.get("bf_v25_1_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
@@ -2143,7 +2353,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=25-1").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   document.addEventListener("DOMContentLoaded",init);
