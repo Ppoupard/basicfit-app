@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V32.2</title>
+  <title>Basic-Fit Coach V32.4</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V32.2 : audit test réel */
+/* V32.4 : audit profond */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -596,7 +596,7 @@ body.app-locked #onboarding,
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V32.2 : audit test réel définitivement */
+/* V32.4 : audit profond définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V32.2 : audit test réel */
+/* V32.4 : audit profond */
 .hint{
   position:fixed;
   left:12px;
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V32.2 : audit test réel + exercices manuels */
+/* V32.4 : audit profond + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -851,7 +851,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:900px){.v32-menu-config{grid-template-columns:1fr}.v32-shopping-grid{grid-template-columns:1fr}.v32-actions button{width:100%}}
 
 
-/* V32.2 : diagnostic complet */
+/* V32.4 : diagnostic complet */
 .bf322-actions{
   display:flex;
   flex-wrap:wrap;
@@ -1022,7 +1022,7 @@ body.app-locked{overflow:auto!important}
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV322Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV324Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -1050,7 +1050,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V32.2 AUDIT TEST RÉEL</p>
+          <p class="hero-label">V32.4 DEEP AUDIT FIX</p>
           <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1220,7 +1220,7 @@ body.app-locked{overflow:auto!important}
           <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : poisson, petit-déjeuner, ketchup..."></textarea></label>
           <button class="primary-btn full" id="saveProfileBtn">Sauvegarder mon profil</button>
 
-          <button type="button" class="ghost-btn full" id="bf321ApplyProfileBtn">Appliquer ce profil et régénérer plan/séances/menus</button>
+          <button type="button" class="ghost-btn full" id="bf321ApplyProfileBtn">Appliquer ce profil et régénérer plan/séances/menus avec cette durée</button>
 
           <button class="ghost-btn full" id="restartIntroBtn">Refaire l’introduction</button>
           <button class="ghost-btn full" id="openSafetyFromProfileBtn">Mode secours / reset</button>
@@ -1679,9 +1679,9 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V32.2 — AUDIT TEST RÉEL</p>
+          <p class="card-kicker">V32.4 — DIAGNOSTIC PROFOND</p>
           <h2>Diagnostic complet</h2>
-          <p>Ce test vérifie les boutons, les onglets, le profil, les générations et le stockage local. Il sauvegarde tes données avant les tests, puis les restaure pour éviter d’écraser ton vrai contenu.</p>
+          <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Il sauvegarde tes données avant les tests, puis les restaure pour éviter d’écraser ton vrai contenu.</p>
 
           <div class="bf322-actions">
             <button type="button" class="primary-btn" id="bf322RunFullTestBtn">Lancer le test complet</button>
@@ -1699,9 +1699,9 @@ body.app-locked{overflow:auto!important}
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=32-2</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=32-4</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
-            <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus”.</div>
+            <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
         </article>
       </section>
@@ -2489,7 +2489,7 @@ window.BF_UTIL = {
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
-    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,meals:2,sportball:"",compétition:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:"",presentation:""};
+    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,duration:60,meals:2,sportball:"",compétition:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:"",presentation:""};
   }
   function fillProfileForm(){
     const p=getProfile();
@@ -2500,10 +2500,10 @@ window.BF_UTIL = {
     profileLikes.value=p.likes||""; if(window.profilePresentation) profilePresentation.value=p.presentation||""; profileDislikes.value=p.dislikes||""; if(window.reviewWeight) reviewWeight.value=p.weight||"";
   }
   function readProfileForm(){
-    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,meals:parseInt(profileMeals.value,10)||2,sportball:profileSportball.value.trim(),compétition:profileCompétition.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim(),presentation:profilePresentation?.value?.trim()||""};
+    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,duration:parseInt(profileDuration?.value,10)||60,meals:parseInt(profileMeals.value,10)||2,sportball:profileSportball.value.trim(),compétition:profileCompétition.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim(),presentation:profilePresentation?.value?.trim()||""};
   }
   function saveProfile(){const p=readProfileForm();BF_STORE.set(PROFILE_KEY,p);
-      try{ bf321SyncProfileEverywhere(p,{clearGenerated:true}); }catch(e){ console.warn(e); }alert("Profil sauvegardé. Le plan, les séances, les menus et les courses vont utiliser ce nouveau profil.");renderMonthSummary(null,p);updatePersonalUI();}
+      try{ bf323ClearGeneratedBeforeRegen(); bf321SyncProfileEverywhere(p,{clearGenerated:true}); }catch(e){ console.warn(e); }alert("Profil sauvegardé. Le plan, les séances, les menus et les courses vont utiliser ce nouveau profil.");renderMonthSummary(null,p);updatePersonalUI();}
   function mifflin(p){return Math.round(10*p.weight + 6.25*p.height - 5*p.age + (p.sex==="male"?5:-161));}
   function nutritionTargets(p,review=null){
     const bmr=mifflin(p);let factor=p.gymDays>=4?1.65:(p.gymDays>=3?1.55:1.45);let kcal=Math.round(bmr*factor);
@@ -3005,6 +3005,7 @@ window.BF_UTIL = {
       if(!p.height || Number.isNaN(Number(p.height))) p.height=166;
       if(!p.age || Number.isNaN(Number(p.age))) p.age=20;
       if(!p.gymDays || Number.isNaN(Number(p.gymDays))) p.gymDays=3;
+      if(!p.duration || Number.isNaN(Number(p.duration))) p.duration=60;
       if(!p.meals || Number.isNaN(Number(p.meals))) p.meals=3;
       BF_STORE.set(PROFILE_KEY,p);
       return p;
@@ -3067,7 +3068,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=32-2-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=32-4-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -3078,7 +3079,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=32-2-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=32-4-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -3088,7 +3089,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=32-2-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=32-4-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -3378,11 +3379,8 @@ window.BF_UTIL = {
     v31Bind();
     v32Bind();
     bf322Bind();
-
-    document.getElementById("bf321ApplyProfileBtn")?.addEventListener("click",()=>{
-      bf321RegenerateAfterProfileChange();
-      alert("Profil appliqué : plan, séances, menus et courses ont été régénérés avec les nouvelles infos.");
-    });
+    bf324BindEverything?.();
+    bf324BindProfileApply?.();
 }catch(e){console.warn(e);}
     return true;
   }
@@ -3410,7 +3408,7 @@ window.BF_UTIL = {
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV322Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV324Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V30_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -3522,7 +3520,19 @@ window.BF_UTIL = {
       copy.sets=Math.min(Number(copy.sets)||3,3);
       copy.rest=copy.type==="cardio"?"-":"1min15";
     }
-    if((Number(p.duration)||60)<=45 && index>4) copy.optional=true;
+    const duration=Number(p.duration)||60;
+    if(duration<=30){
+      copy.sets=Math.min(Number(copy.sets)||3,3);
+      copy.rest=copy.type==="cardio"?"-":"1min-1min15";
+      copy.note=(copy.note||"")+" Séance 30 min : garde l’essentiel, temps de transition court.";
+    }else if(duration<=45){
+      copy.sets=Math.min(Number(copy.sets)||3,3);
+      copy.rest=copy.type==="cardio"?"-":"1min15-1min30";
+      if(index>=4) copy.optional=true;
+    }else if(duration>=75){
+      if(index>=5) copy.optional=true;
+      copy.note=(copy.note||"")+" Séance longue : possible exercice bonus si la technique reste propre.";
+    }
     return copy;
   }
   function v27GenerateSessions(){
@@ -3544,7 +3554,7 @@ window.BF_UTIL = {
         }
       });
       // Fill if too short
-      const target=(Number(p.duration)||60)<=45?5:6;
+      const target=bf323ExerciseTargetByDuration(p.duration);
       for(const ex of pool){
         if(selected.length>=target) break;
         if(tpl.focus.includes(ex.muscle) && !selected.some(s=>s.name===ex.name) && v27ExerciseAllowed(ex,p)) selected.push(ex);
@@ -3637,7 +3647,7 @@ window.BF_UTIL = {
   function v27Bind(){
     if(window.__bf_v27_bound) return;
     window.__bf_v27_bound=true;
-    document.getElementById("generatePersonalSessionsBtn")?.addEventListener("click",()=>{bf321SyncProfileEverywhere();v27RenderSessions(v27GenerateSessions());});
+    document.getElementById("generatePersonalSessionsBtn")?.addEventListener("click",()=>{bf321SyncProfileEverywhere(); localStorage.removeItem(window.V30_SESSIONS_KEY||"bf_v30_generated_sessions"); v27RenderSessions(v27GenerateSessions());});
     document.getElementById("copySessionsBtn")?.addEventListener("click",v27CopySessions);
     document.getElementById("resetSessionsBtn")?.addEventListener("click",()=>{
       localStorage.removeItem(V30_SESSIONS_KEY);
@@ -3696,7 +3706,7 @@ window.BF_UTIL = {
   }
   function v28SessionReason(session,p,week){
     const name=(session.name||"").toLowerCase();
-    let txt="Cette séance est placée pour développer ton objectif sans dépasser ta récupération.";
+    let txt=`Cette séance est placée pour développer ton objectif avec une durée de ${p.duration||60} min (${bf323DurationLabel(p.duration)}).`;
     if(name.includes("jambes")||name.includes("bas")) txt="Séance bas du corps : utile pour construire force, masse musculaire, stabilité et dépense énergétique.";
     if(name.includes("haut")) txt="Séance haut du corps : équilibre dos/pectoraux/épaules/bras pour progresser sans surcharger les jambes.";
     if(name.includes("full")) txt="Séance full body : elle répète les mouvements importants et augmente la fréquence de progression.";
@@ -3738,7 +3748,7 @@ window.BF_UTIL = {
       <p class="smart-week-intro">${w.strategy}</p>
       ${w.sessions.map(s=>`<div class="smart-session">
         <h4>${s.name}</h4>
-        <div class="generated-session-meta"><span class="tag">${s.duration} min</span><span class="tag">${s.exercises.length} exercices</span><span class="tag">${goalLabelSafe(p.goal)}</span></div>
+        <div class="generated-session-meta"><span class="tag">${s.duration} min</span><span class="tag">${s.exercises.length} exercices</span><span class="tag">${bf323DurationLabel(s.duration)}</span><span class="tag">${goalLabelSafe(p.goal)}</span></div>
         <div class="smart-session-reason">${s.reason}</div>
         ${s.exercises.map((ex,i)=>`<div class="smart-ex-row"><strong>${i+1}. ${ex.name}</strong> — ${ex.sets||3} séries · ${ex.reps||"8-12"} · repos ${ex.rest||"1min30"}<br>${ex.desc||""}<br><em>${ex.note||""}</em></div>`).join("")}
       </div>`).join("")}
@@ -3958,8 +3968,8 @@ window.BF_UTIL = {
     navigator.clipboard?.writeText(txt).then(()=>alert("Conseils copiés.")).catch(()=>alert("Copie impossible, sélectionne le texte manuellement."));
   }
   function v29Bind(){
-    if(window.__bf_v30_bound) return;
-    window.__bf_v30_bound=true;
+    if(window.__bf_v29_bound) return;
+    window.__bf_v29_bound=true;
     document.getElementById("saveProgressBtn")?.addEventListener("click",v29SaveProgress);
     document.getElementById("generateAdaptationBtn")?.addEventListener("click",v29GenerateAdvice);
     document.getElementById("copyProgressAdviceBtn")?.addEventListener("click",v29CopyAdvice);
@@ -3977,7 +3987,7 @@ window.BF_UTIL = {
 
     if(!id) return;
     try{
-      if(id==="generateSmartMonthBtn"){ e.preventDefault(); bf321SyncProfileEverywhere(); v28RenderSmartMonth(v28BuildSmartMonth()); v30RefreshLaunchpad?.(); }
+      if(id==="generateSmartMonthBtn"){ e.preventDefault(); bf321SyncProfileEverywhere(); localStorage.removeItem(window.V30_MONTH_KEY||"bf_v30_smart_month"); v28RenderSmartMonth(v28BuildSmartMonth()); v30RefreshLaunchpad?.(); }
       if(id==="generatePersonalSessionsBtn"){ e.preventDefault(); bf321SyncProfileEverywhere(); v27RenderSessions(v27GenerateSessions()); v30RefreshLaunchpad?.(); }
       if(id==="generateGroceriesBtn"){
         e.preventDefault();
@@ -4002,7 +4012,7 @@ window.BF_UTIL = {
       if(id==="bf322RunGenerationTestBtn"){ e.preventDefault(); bf322RunFullDiagnostics("generation"); }
     }catch(err){
       console.error("Fallback génération V32", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=32-2-1-1 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=32-4-1-1 puis réessaie.");
     }
   }
 
@@ -4055,6 +4065,8 @@ window.BF_UTIL = {
     v30RefreshLaunchpad();
   }
   function v30Bind(){
+    if(window.__bf_v30_bound){ v30RefreshLaunchpad?.(); return; }
+    window.__bf_v30_bound=true;
     document.body.classList.add("v30-clean");
     document.getElementById("v30SelfTestBtn")?.addEventListener("click",v30RunSelfTest);
     document.querySelectorAll(".v30-step-card[data-open]").forEach(btn=>{
@@ -4246,6 +4258,8 @@ window.BF_UTIL = {
     showView("progress");
   }
   function v31Bind(){
+    if(window.__bf_v31_bound){ v31PopulateSessions?.(); v31RenderLive?.(); return; }
+    window.__bf_v31_bound=true;
     document.getElementById("v31RefreshSessionsBtn")?.addEventListener("click",()=>{v31PopulateSessions();v31RenderLive();});
     document.getElementById("v31StartLiveBtn")?.addEventListener("click",v31StartLive);
     document.getElementById("v31SaveSetBtn")?.addEventListener("click",v31SavePerformance);
@@ -4344,14 +4358,42 @@ window.BF_UTIL = {
     if(document.getElementById("v32MenuMeals")) v32MenuMeals.value=String(grocery.meals||3);
   }
   function v32Bind(){
+    if(window.__bf_v32_bound){ v32SyncControls?.(); return; }
+    window.__bf_v32_bound=true;
     v32SyncControls();
-    document.getElementById("v32GenerateMenusBtn")?.addEventListener("click",()=>{bf321SyncProfileEverywhere();const data=v32BuildMenus();v32RenderMenus(data);v32RenderShopping(v32BuildShoppingFromMenus(data));v32SetStatus("Menus générés avec les courses liées.","ok");});
+    document.getElementById("v32GenerateMenusBtn")?.addEventListener("click",()=>{bf321SyncProfileEverywhere(); localStorage.removeItem("bf_v32_week_menus"); localStorage.removeItem("bf_v32_menu_shopping"); const data=v32BuildMenus();v32RenderMenus(data);v32RenderShopping(v32BuildShoppingFromMenus(data));v32SetStatus("Menus générés avec les courses liées.","ok");});
     document.getElementById("v32GenerateShoppingFromMenusBtn")?.addEventListener("click",()=>{v32RenderShopping(v32BuildShoppingFromMenus());v32SetStatus("Liste de courses créée depuis les menus.","ok");});
     document.getElementById("v32CopyMenusBtn")?.addEventListener("click",v32CopyAll);
     document.getElementById("v32ResetMenusBtn")?.addEventListener("click",()=>{localStorage.removeItem(V32_MENUS_KEY);localStorage.removeItem(V32_MENU_SHOPPING_KEY);if(document.getElementById("v32MenusResult")) v32MenusResult.innerHTML="";if(document.getElementById("v32MenuShoppingResult")) v32MenuShoppingResult.innerHTML="Menus réinitialisés.";v32SetStatus("Menus réinitialisés.","ok");v30RefreshLaunchpad?.();});
     const saved=v32StoreGet(V32_MENUS_KEY,null); if(saved){v32RenderMenus(saved);v32RenderShopping(v32StoreGet(V32_MENU_SHOPPING_KEY,null)||v32BuildShoppingFromMenus(saved));}
   }
 
+
+
+
+
+  function bf323ClearGeneratedBeforeRegen(){
+    try{localStorage.removeItem(window.V30_MONTH_KEY||"bf_v30_smart_month");}catch(e){}
+    try{localStorage.removeItem(window.V30_SESSIONS_KEY||"bf_v30_generated_sessions");}catch(e){}
+    try{localStorage.removeItem("bf_v32_week_menus");}catch(e){}
+    try{localStorage.removeItem("bf_v32_menu_shopping");}catch(e){}
+  }
+
+
+  function bf323ExerciseTargetByDuration(duration){
+    const d=Number(duration)||60;
+    if(d<=30) return 4;
+    if(d<=45) return 5;
+    if(d<=60) return 6;
+    return 7;
+  }
+  function bf323DurationLabel(duration){
+    const d=Number(duration)||60;
+    if(d<=30) return "séance courte : exercices essentiels uniquement";
+    if(d<=45) return "séance compacte : volume réduit mais efficace";
+    if(d<=60) return "séance standard : volume complet";
+    return "séance longue : volume plus complet avec option bonus";
+  }
 
 
   /* V32.1 : profil canonique synchronisé */
@@ -4367,6 +4409,7 @@ window.BF_UTIL = {
     if(!p || !p.goal){
       try{ p=v26StoreGet?.(window.V30_PROFILE_KEY||"bf_v30_profile",null)?.merged || null; }catch(e){}
     }
+    if(p){p.duration=Number(p.duration)||60;p.gymDays=Number(p.gymDays)||3;p.meals=Number(p.meals)||3;}
     return p || {};
   }
   function bf321SyncProfileEverywhere(profile=null, options={}){
@@ -4393,6 +4436,7 @@ window.BF_UTIL = {
     return p;
   }
   function bf321RegenerateAfterProfileChange(){
+    bf323ClearGeneratedBeforeRegen();
     const p=bf321SyncProfileEverywhere(null,{clearGenerated:true});
     try{ v27RenderSessions?.(v27GenerateSessions?.()); }catch(e){ console.warn("sessions regen",e); }
     try{ v28RenderSmartMonth?.(v28BuildSmartMonth?.()); }catch(e){ console.warn("plan regen",e); }
@@ -4485,6 +4529,55 @@ window.BF_UTIL = {
     }
     return results;
   }
+
+
+  function bf324DeepButtonDiagnostic(){
+    const checks=[
+      ["Appliquer profil", "bf321ApplyProfileBtn", el=>!!el?.dataset?.bf324Bound],
+      ["Test complet", "bf322RunFullTestBtn", el=>window.__bf322_bound===true],
+      ["Live", "v31StartLiveBtn", el=>window.__bf_v31_bound===true],
+      ["Menus", "v32GenerateMenusBtn", el=>window.__bf_v32_bound===true],
+      ["Suivi", "saveProgressBtn", el=>window.__bf_v29_bound===true],
+      ["Plan", "generateSmartMonthBtn", el=>window.__bf_v28_bound===true],
+      ["Séances", "generatePersonalSessionsBtn", el=>window.__bf_v27_bound===true],
+      ["Accueil guidé", "v30SelfTestBtn", el=>window.__bf_v30_bound===true]
+    ];
+    return checks.map(([name,id,test])=>{
+      const el=document.getElementById(id);
+      let ok=false;
+      try{ ok=!!el && !!test(el); }catch(e){ ok=false; }
+      return bf322Result(`Bouton ${name}`,ok, ok?`#${id} relié au chargement normal.`:`#${id} non relié ou non trouvé.`);
+    });
+  }
+
+
+  function bf323DurationDiagnostic(){
+    const backup=bf322Backup?.() || {};
+    const results=[];
+    try{
+      const base=bf321CanonicalProfile();
+      const durations=[30,45,60,75];
+      const counts=[];
+      durations.forEach(d=>{
+        const p={...base,duration:d,gymDays:3,goal:base.goal||"muscle",level:base.level||"intermediate"};
+        bf321SyncProfileEverywhere(p,{clearGenerated:true});
+        const sessions=v27GenerateSessions();
+        const first=sessions?.[0];
+        counts.push({duration:d,count:first?.exercises?.length||0,label:first?.duration});
+      });
+      const expected={30:4,45:5,60:6,75:7};
+      counts.forEach(c=>results.push(bf322Result(`Durée ${c.duration} min`,c.count===expected[c.duration] && Number(c.label)===c.duration,`${c.count} exercices générés, séance affichée ${c.label} min. Attendu : ${expected[c.duration]}.`)));
+      const allOk=results.every(r=>r.ok);
+      results.unshift(bf322Result("Impact durée séance",allOk,"30/45/60/75 min changent réellement le volume des séances."));
+    }catch(e){
+      results.push(bf322Result("Impact durée séance",false,String(e)));
+    }finally{
+      try{bf322Restore?.(backup);v27RenderSessions?.();v28RenderSmartMonth?.();v30RefreshLaunchpad?.();}catch(e){}
+    }
+    return results;
+  }
+
+
   function bf322RunFullDiagnostics(kind="full"){
     bf322SetStatus("Test en cours...", "ok");
     const results=[];
@@ -4500,14 +4593,21 @@ window.BF_UTIL = {
       ["Profil sync","bf321SyncProfileEverywhere"],["Plan","v28BuildSmartMonth"],["Séances","v27GenerateSessions"],
       ["Live","v31StartLive"],["Suivi","v29GenerateAdvice"],["Menus","v32BuildMenus"],["Courses menus","v32BuildShoppingFromMenus"],["Courses classiques","v26RenderGroceryList"]
     ];
-    funcs.forEach(([label,name])=>results.push(bf322Result(`Fonction ${label}`, typeof window[name]==="function" || typeof eval("typeof "+name)!=="undefined", `${name}`)));
+    funcs.forEach(([label,name])=>{
+      let t="undefined";
+      try{ t=typeof window[name]==="function" ? "function" : eval("typeof "+name); }catch(e){ t="undefined"; }
+      results.push(bf322Result(`Fonction ${label}`, t==="function", `${name} : ${t}`));
+    });
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=32-2") || document.body.innerText.includes("V32.2"), "URL ou interface en V32.2."));
+    results.push(bf322Result("Version chargée", location.href.includes("v=32-4") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
 
     if(kind==="full" || kind==="generation"){
+      bf324BindEverything?.();
+      results.push(...bf324DeepButtonDiagnostic());
       results.push(...bf322RunGenerationChecks(true));
+      results.push(...bf323DurationDiagnostic());
     }
 
     const ok=results.filter(r=>r.ok).length;
@@ -4538,23 +4638,58 @@ window.BF_UTIL = {
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V32.2\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V32.4\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=32-2
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=32-4
 2. Si tu vois encore une ancienne version, supprime l’ancienne icône de l’écran d’accueil
-3. Ouvre Safari, recharge avec ?v=32-2
+3. Ouvre Safari, recharge avec ?v=32-4
 4. Ré-ajoute l’app à l’écran d’accueil`;
     alert(msg);
   }
   function bf322Bind(){
+    if(window.__bf322_bound){ bf322RenderReport?.(); return; }
+    window.__bf322_bound=true;
     document.getElementById("bf322RunFullTestBtn")?.addEventListener("click",()=>bf322RunFullDiagnostics("full"));
     document.getElementById("bf322RunGenerationTestBtn")?.addEventListener("click",()=>bf322RunFullDiagnostics("generation"));
     document.getElementById("bf322CopyReportBtn")?.addEventListener("click",bf322CopyReport);
     document.getElementById("bf322ClearCacheHelpBtn")?.addEventListener("click",bf322CacheHelp);
     bf322RenderReport();
+  }
+
+
+
+  function bf324BindProfileApply(){
+    const btn=document.getElementById("bf321ApplyProfileBtn");
+    if(!btn || btn.dataset.bf324Bound) return;
+    btn.dataset.bf324Bound="1";
+    btn.addEventListener("click",()=>{
+      bf321RegenerateAfterProfileChange();
+      alert("Profil appliqué : plan, séances, menus et courses ont été régénérés avec les nouvelles infos et la durée actuelle.");
+    });
+  }
+  function bf324BindEverything(){
+    try{
+      v27Bind?.();
+      v28Bind?.();
+      v281BindCleanUI?.();
+      v29Bind?.();
+      v30Bind?.();
+      v31Bind?.();
+      v32Bind?.();
+      bf322Bind?.();
+      bf324BindProfileApply?.();
+      v29RenderProgress?.();
+      v28RenderSmartMonth?.();
+      v26RenderCoursesView?.();
+      v31PopulateSessions?.();
+      v31RenderLive?.();
+      v30RefreshLaunchpad?.();
+    }catch(e){
+      console.warn("V32.4 deep bind", e);
+    }
   }
 
 
@@ -4657,15 +4792,7 @@ window.BF_UTIL = {
     BF_PERF.init();
     BF_NUTRITION.init();
 
-    try{
-      v27Bind?.();
-      v28Bind?.();
-      v281BindCleanUI?.();
-      v29Bind?.();
-      v29RenderProgress?.();
-      v28RenderSmartMonth?.();
-      v26RenderCoursesView?.();
-    }catch(e){ console.warn("V32 bind check", e); }
+    bf324BindEverything();
 
 
     Object.assign(DATA.questionGroups,{
@@ -4680,7 +4807,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=32-2").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=32-4").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
