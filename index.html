@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V32.4</title>
+  <title>Basic-Fit Coach V33</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V32 : nettoyage du bas de l'application */
+/* V33 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V32 : suppression du texte parasite tout en bas */
+/* V33 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V32 : mode séance live + actions rapides */
+/* V33 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -339,7 +339,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V32 : profil + programme mensuel */
+/* V33 : profil + programme mensuel */
 .month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
 .month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
 .month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
@@ -350,7 +350,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
 
 
-/* V32 : onboarding + personnalisation par objectif */
+/* V33 : onboarding + personnalisation par objectif */
 .onboarding{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(7,10,18,.82);backdrop-filter:blur(22px)}
 .onboarding-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(53,208,127,.08)),var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55);padding:20px}
 .onboarding-card>p:not(.card-kicker){color:var(--muted);margin:8px 0 16px}
@@ -363,7 +363,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.objective-strip{align-items:flex-start;flex-direction:column}.objective-strip button{width:100%}}
 
 
-/* V32 : base coach pro élargie */
+/* V33 : base coach pro élargie */
 .pro-base-card{
   display:flex;
   justify-content:space-between;
@@ -390,7 +390,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.pro-base-card{flex-direction:column;align-items:flex-start}.pro-base-card button{width:100%}}
 
 
-/* V32 : présentation libre intelligente */
+/* V33 : présentation libre intelligente */
 .free-onboarding-card{width:min(820px,100%)}
 .presentation-textarea{min-height:260px;font-size:15px;line-height:1.5;resize:vertical}
 .free-actions{grid-template-columns:1fr 1fr 1fr}
@@ -402,7 +402,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.free-actions{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}
 
 
-/* V32 : introduction obligatoire + déblocage */
+/* V33 : introduction obligatoire + déblocage */
 body.app-locked .app-shell{filter:blur(10px);pointer-events:none;user-select:none}
 body.app-locked{overflow:hidden}
 .intro-gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 20% 10%,rgba(255,209,102,.18),transparent 30%),radial-gradient(circle at 80% 20%,rgba(125,179,255,.18),transparent 32%),rgba(7,10,18,.92);backdrop-filter:blur(24px);overflow:auto}
@@ -435,7 +435,7 @@ body.app-locked{overflow:hidden}
 @media(max-width:700px){.intro-steps-ui{grid-template-columns:1fr}.intro-actions{grid-template-columns:1fr}.intro-card{border-radius:26px;padding:16px}}
 
 
-/* V32 : réponses coach personnalisées */
+/* V33 : réponses coach personnalisées */
 .personal-answer{
   border:1px solid rgba(255,209,102,.18);
   background:linear-gradient(135deg,rgba(255,209,102,.10),rgba(53,208,127,.07));
@@ -447,7 +447,7 @@ body.app-locked{overflow:hidden}
 .personal-answer .small-note{display:block;color:var(--muted);font-size:12.5px;margin-top:6px}
 
 
-/* V32.1 : sécurité anti-bug */
+/* V33.1 : sécurité anti-bug */
 .safety-card{
   display:flex;
   justify-content:space-between;
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V32.4 : audit profond */
+/* V33 : split coach */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -550,7 +550,7 @@ body.app-locked #onboarding{
 }
 
 
-/* V32.1 : correctif écran flou / impossible d'écrire */
+/* V33.1 : correctif écran flou / impossible d'écrire */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -590,13 +590,13 @@ body.app-locked #onboarding,
 }
 
 
-/* V32.1 : validation forcée */
+/* V33.1 : validation forcée */
 .validation-status{margin-top:10px;border:1px solid rgba(125,179,255,.22);background:rgba(125,179,255,.08);color:#E6F0FF;padding:10px;border-radius:16px;font-size:13px}
 .validation-status.ok{border-color:rgba(53,208,127,.28);background:rgba(53,208,127,.10);color:#DFFFEA}
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V32.4 : audit profond définitivement */
+/* V33 : split coach définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V32.4 : audit profond */
+/* V33 : split coach */
 .hint{
   position:fixed;
   left:12px;
@@ -685,7 +685,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V32.1 : double présentation + courses */
+/* V33.1 : double présentation + courses */
 .v26-intro-card{width:min(980px,100%)}
 .v26-steps{grid-template-columns:repeat(6,1fr)}
 .v26-step-panel{
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V32.4 : audit profond + exercices manuels */
+/* V33 : split coach + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -813,7 +813,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V32 : plan personnalisé + interface simplifiée */
+/* V33 : plan personnalisé + interface simplifiée */
 .v28-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
 .smart-week{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:24px;padding:14px;margin:14px 0}
 .smart-week h3{margin-bottom:4px}
@@ -825,18 +825,18 @@ body.app-locked{overflow:auto!important}
 .smart-ex-row strong{color:#fff}
 @media(max-width:760px){.v28-actions button{width:100%}}
 
-/* V32 : onglets simplifiés */
+/* V33 : onglets simplifiés */
 #customView,#performancesView,#questionsView{
   display:none!important;
 }
 
 
-/* V32 : onglets simplifiés */
+/* V33 : onglets simplifiés */
 #customView,#performancesView,#questionsView,#monthView{
   display:none!important;
 }
 
-/* V32 : menus + courses liées */
+/* V33 : menus + courses liées */
 .v32-menu-config{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
 .v32-menu-config label,#menusView label{display:flex;flex-direction:column;gap:7px;color:#C7D3E4;font-size:13px;font-weight:900}
 .v32-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
@@ -851,7 +851,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:900px){.v32-menu-config{grid-template-columns:1fr}.v32-shopping-grid{grid-template-columns:1fr}.v32-actions button{width:100%}}
 
 
-/* V32.4 : diagnostic complet */
+/* V33.4 : diagnostic complet */
 .bf322-actions{
   display:flex;
   flex-wrap:wrap;
@@ -916,7 +916,7 @@ body.app-locked{overflow:auto!important}
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V32 — COACH COMPLET</p>
+            <p class="card-kicker">V33 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -1022,7 +1022,7 @@ body.app-locked{overflow:auto!important}
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV324Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV33Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -1038,7 +1038,7 @@ body.app-locked{overflow:auto!important}
 
         <section class="safety-card">
           <div>
-            <p class="card-kicker">SÉCURITÉ V32</p>
+            <p class="card-kicker">SÉCURITÉ V33</p>
             <h3>Mode secours stable</h3>
             <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
           </div>
@@ -1050,7 +1050,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V32.4 DEEP AUDIT FIX</p>
+          <p class="hero-label">V33 SPLIT COACH</p>
           <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1088,7 +1088,7 @@ body.app-locked{overflow:auto!important}
         <article class="card v30-launchpad" id="v30Launchpad">
           <div class="section-head">
             <div>
-              <p class="card-kicker">PARCOURS V32</p>
+              <p class="card-kicker">PARCOURS V33</p>
               <h3>Utilise l’app dans le bon ordre</h3>
             </div>
             <button class="ghost-btn" id="v30SelfTestBtn">Tester l’app</button>
@@ -1182,7 +1182,7 @@ body.app-locked{overflow:auto!important}
           </div>
           <div class="quick-grid">
             <button data-open="plan">Créer mon plan</button>
-            <button data-open="sessions">Générer mes séances</button>
+            <button data-open="sessions">Construire mes séances</button>
             <button data-open="live">Lancer le live</button>
             <button data-open="progress">Noter ma séance</button>
             <button data-open="menus">Menus semaine</button>
@@ -1230,7 +1230,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V32 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V33 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -1246,12 +1246,91 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V32 — SÉANCES PERSONNALISÉES</p>
-          <h2>Mes séances générées</h2>
-          <p>L’app génère tes séances selon ton profil : objectif, niveau, nombre de séances, durée, douleurs et exercices ajoutés manuellement.</p>
+          <p class="card-kicker">V33 — SÉANCES INTELLIGENTES</p>
+          <h2>Mes séances : auto, semi-auto ou manuel</h2>
+          <p>L’app peut recommander un split comme un coach, mais tu peux aussi choisir ton split ou créer tes séances toi-même.</p>
+
+          
+          <div class="bf33-strategy-card">
+            <div class="section-head">
+              <div>
+                <p class="card-kicker">V33 — CHOIX DU SPLIT</p>
+                <h3>Comment tu veux construire tes séances ?</h3>
+              </div>
+              <button type="button" class="ghost-btn" id="bf33RefreshRecommendationBtn">Recalculer la recommandation</button>
+            </div>
+
+            <div class="bf33-config-grid">
+              <label>Mode
+                <select id="bf33SessionMode">
+                  <option value="auto">Automatique coach : l’app choisit</option>
+                  <option value="semi">Semi-auto : je choisis le split, l’app complète</option>
+                  <option value="manual">Manuel : je crée mes séances</option>
+                </select>
+              </label>
+              <label>Split souhaité
+                <select id="bf33SplitChoice">
+                  <option value="recommended">Recommandé par le coach</option>
+                  <option value="full_body">Full body</option>
+                  <option value="upper_lower">Upper / Lower</option>
+                  <option value="push_pull_legs">Push / Pull / Legs</option>
+                  <option value="legs_upper_full">Jambes / Haut / Full body</option>
+                  <option value="custom_manual">Libre / manuel</option>
+                </select>
+              </label>
+            </div>
+
+            <div id="bf33SplitRecommendation" class="result-box"></div>
+
+            <div class="bf33-actions">
+              <button type="button" class="primary-btn" id="bf33ApplyStrategyBtn">Appliquer ce choix</button>
+              <button type="button" class="ghost-btn" id="bf33UseRecommendedBtn">Utiliser le split recommandé</button>
+              <button type="button" class="ghost-btn" id="bf33ExplainSplitBtn">Pourquoi ce split ?</button>
+            </div>
+          </div>
+
+          <div class="bf33-manual-card">
+            <p class="card-kicker">MODE MANUEL</p>
+            <h3>Créer une séance toi-même</h3>
+            <p>Ajoute une séance complète à la main. Le Live pourra ensuite la lancer comme une séance normale.</p>
+
+            <div class="bf33-config-grid">
+              <label>Nom de la séance
+                <input id="bf33ManualSessionName" placeholder="Ex : Jambes lourd, Push court, Full body A..." />
+              </label>
+              <label>Type de séance
+                <select id="bf33ManualSessionType">
+                  <option value="full_body">Full body</option>
+                  <option value="upper">Haut du corps</option>
+                  <option value="lower">Bas du corps / jambes</option>
+                  <option value="push">Push</option>
+                  <option value="pull">Pull</option>
+                  <option value="legs">Legs</option>
+                  <option value="cardio">Cardio + gainage</option>
+                  <option value="custom">Libre</option>
+                </select>
+              </label>
+            </div>
+
+            <label>Exercices de la séance
+              <textarea id="bf33ManualSessionExercises" class="small-textarea" placeholder="1 exercice par ligne. Exemple :
+Presse à cuisses | 4 | 8-12 | 1min30 | jambes
+Tirage vertical | 4 | 8-12 | 1min30 | dos
+Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
+            </label>
+
+            <div class="bf33-actions">
+              <button type="button" class="primary-btn" id="bf33AddManualSessionBtn">Ajouter cette séance</button>
+              <button type="button" class="ghost-btn" id="bf33UseManualSessionsBtn">Utiliser mes séances manuelles</button>
+              <button type="button" class="ghost-btn danger-btn" id="bf33ClearManualSessionsBtn">Supprimer mes séances manuelles</button>
+            </div>
+
+            <div id="bf33ManualSessionsResult" class="result-box"></div>
+          </div>
+
 
           <div class="v27-controls">
-            <button type="button" class="primary-btn" id="generatePersonalSessionsBtn">Générer mes séances</button>
+            <button type="button" class="primary-btn" id="generatePersonalSessionsBtn">Construire mes séances</button>
             <button type="button" class="ghost-btn" id="copySessionsBtn">Copier mes séances</button>
             <button type="button" class="ghost-btn danger-btn" id="resetSessionsBtn">Réinitialiser</button>
           </div>
@@ -1332,7 +1411,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="liveView">
         <article class="card">
-          <p class="card-kicker">V32 — LIVE PERSONNALISÉ</p>
+          <p class="card-kicker">V33 — LIVE PERSONNALISÉ</p>
           <h2>Séance en direct</h2>
           <p>Choisis une séance générée, suis les exercices un par un, note tes perfs, lance le repos et enregistre automatiquement dans le suivi.</p>
 
@@ -1533,7 +1612,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="progressView">
         <article class="card">
-          <p class="card-kicker">V32 — SUIVI PROGRESSION</p>
+          <p class="card-kicker">V33 — SUIVI PROGRESSION</p>
           <h2>Noter ma séance</h2>
           <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
 
@@ -1679,7 +1758,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V32.4 — DIAGNOSTIC PROFOND</p>
+          <p class="card-kicker">V33 — DIAGNOSTIC PROFOND</p>
           <h2>Diagnostic complet</h2>
           <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Il sauvegarde tes données avant les tests, puis les restaure pour éviter d’écraser ton vrai contenu.</p>
 
@@ -1699,7 +1778,7 @@ body.app-locked{overflow:auto!important}
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=32-4</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=33</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -1747,7 +1826,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="menusView">
         <article class="card">
-          <p class="card-kicker">V32 — MENUS + COURSES</p>
+          <p class="card-kicker">V33 — MENUS + COURSES</p>
           <h2>Menus personnalisés de la semaine</h2>
           <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p>
           <div class="v32-menu-config">
@@ -1796,7 +1875,7 @@ body.app-locked{overflow:auto!important}
         <article class="card">
           <p class="card-kicker">COURSES</p>
           <h2>Liste de courses personnalisée</h2>
-          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V32 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
+          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V33 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
           <div class="v26-grid">
             <label>Magasin
               <select id="coursesStore">
@@ -2156,7 +2235,7 @@ window.BF_UTIL = {
   function goalLabelSafe(goal){return (window.goalLabel||((g)=>g||'objectif'))(goal);}
   function goalAdviceSafe(goal){return (window.goalAdvice||(()=>''))(goal);}
 
-  /* V32 global helpers: accessible from every coach module */
+  /* V33 global helpers: accessible from every coach module */
   window.v25Has = window.v25Has || function(q,...words){
     q = (window.BF_UTIL?.normalize ? BF_UTIL.normalize(q) : String(q).toLowerCase());
     return words.some(w=>q.includes(window.BF_UTIL?.normalize ? BF_UTIL.normalize(w) : String(w).toLowerCase()));
@@ -3068,7 +3147,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=32-4-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=33-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -3079,7 +3158,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=32-4-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=33-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -3089,7 +3168,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=32-4-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=33-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -3408,7 +3487,7 @@ window.BF_UTIL = {
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV324Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV33Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V30_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -3488,21 +3567,255 @@ window.BF_UTIL = {
     if(preferPriority) arr.sort((a,b)=>(b.priority?1:0)-(a.priority?1:0));
     return arr.slice(0,count);
   }
-  function v27SessionTemplate(p){
-    const days=Math.max(2,Math.min(5,Number(p.gymDays)||3));
-    const goal=p.goal||"muscle";
+
+  const BF33_STRATEGY_KEY="bf_v33_session_strategy";
+  const BF33_MANUAL_SESSIONS_KEY="bf_v33_manual_sessions";
+
+  function bf33GetStrategy(){
+    try{return JSON.parse(localStorage.getItem(BF33_STRATEGY_KEY)||"null") || {mode:"auto",split:"recommended"};}catch(e){return {mode:"auto",split:"recommended"};}
+  }
+  function bf33SaveStrategy(strategy){
+    localStorage.setItem(BF33_STRATEGY_KEY,JSON.stringify(strategy));
+    return strategy;
+  }
+  function bf33GetManualSessions(){
+    try{return JSON.parse(localStorage.getItem(BF33_MANUAL_SESSIONS_KEY)||"[]");}catch(e){return [];}
+  }
+  function bf33SaveManualSessions(list){
+    localStorage.setItem(BF33_MANUAL_SESSIONS_KEY,JSON.stringify(list));
+  }
+  function bf33SplitLabel(split){
+    return {
+      full_body:"Full body",
+      upper_lower:"Upper / Lower",
+      push_pull_legs:"Push / Pull / Legs",
+      legs_upper_full:"Jambes / Haut / Full body",
+      custom_manual:"Libre / manuel",
+      recommended:"Recommandé"
+    }[split] || split;
+  }
+  function bf33RecommendSplit(profile=null){
+    const p=profile || bf321CanonicalProfile?.() || {};
+    const days=Math.max(2,Math.min(6,Number(p.gymDays)||3));
     const duration=Number(p.duration)||60;
-    let split=[];
+    const level=p.level||"intermediate";
+    const goal=p.goal||"muscle";
+    let split="full_body";
+    let why="";
     if(days<=2){
-      split=[["Full body A",["jambes","dos","pectoraux","abdos","cardio"]],["Full body B",["jambes","dos","épaules","bras","abdos"]]];
+      split="full_body";
+      why="Avec 2 séances, le full body est le plus logique : tu touches tout le corps plusieurs fois sans perdre de fréquence.";
     }else if(days===3){
-      if(goal==="strength") split=[["Force bas du corps",["jambes","jambes","dos","abdos"]],["Force haut du corps",["pectoraux","dos","épaules","bras","abdos"]],["Full body force",["jambes","pectoraux","dos","abdos","cardio"]]];
-      else split=[["Jambes personnalisées",["jambes","jambes","abdos","cardio"]],["Haut du corps personnalisé",["dos","pectoraux","épaules","bras","abdos"]],["Full body personnalisé",["jambes","dos","pectoraux","abdos","cardio"]]];
-    }else{
-      split=[["Bas du corps A",["jambes","jambes","abdos","cardio"]],["Haut du corps A",["dos","pectoraux","épaules","bras"]],["Bas du corps B",["jambes","jambes","mobilité","abdos"]],["Haut du corps B",["pectoraux","dos","épaules","bras","abdos"]]];
-      if(days>=5) split.push(["Cardio + mobilité",["cardio","mobilité","abdos","jambes"]]);
+      if(duration<=45){
+        split="full_body";
+        why="Avec 3 séances courtes, le full body garde une bonne fréquence et évite de trop charger une seule séance.";
+      }else if(goal==="strength" || level==="advanced"){
+        split="upper_lower";
+        why="Avec 3 séances et un objectif plus intense, Upper/Lower avec une séance mixte permet de mieux gérer la récupération.";
+      }else{
+        split="legs_upper_full";
+        why="Avec 3 séances standard, Jambes/Haut/Full est simple, équilibré et facile à suivre.";
+      }
+    }else if(days===4){
+      split="upper_lower";
+      why="Avec 4 séances, Upper/Lower est souvent le plus propre : chaque zone revient 2 fois dans la semaine.";
+    }else if(days>=5){
+      split="push_pull_legs";
+      why="Avec 5 séances ou plus, Push/Pull/Legs permet de répartir le volume sans faire des séances trop longues.";
     }
-    return split.slice(0,days).map((s,i)=>({name:`Séance ${i+1} — ${s[0]}`,focus:s[1],duration}));
+    if(duration<=30 && split!=="full_body"){
+      split="full_body";
+      why+=" Comme tes séances sont très courtes, je privilégie un format plus direct et efficace.";
+    }
+    return {split,why,days,duration,goal,level};
+  }
+  function bf33FocusForSplit(split,days){
+    const d=Math.max(2,Math.min(6,Number(days)||3));
+    const maps={
+      full_body:[
+        ["Full body A",["jambes","dos","pectoraux","abdos"]],
+        ["Full body B",["jambes","dos","épaules","bras","abdos"]],
+        ["Full body C",["jambes","pectoraux","dos","cardio","abdos"]],
+        ["Full body D",["jambes","dos","pectoraux","mobilité"]],
+        ["Full body E",["jambes","épaules","bras","cardio"]],
+        ["Full body F",["jambes","dos","pectoraux","abdos"]]
+      ],
+      upper_lower:[
+        ["Lower A",["jambes","jambes","abdos","cardio"]],
+        ["Upper A",["dos","pectoraux","épaules","bras"]],
+        ["Lower B",["jambes","jambes","mobilité","abdos"]],
+        ["Upper B",["pectoraux","dos","épaules","bras","abdos"]],
+        ["Mixte rappel",["jambes","dos","pectoraux","abdos"]],
+        ["Cardio mobilité",["cardio","mobilité","abdos","jambes"]]
+      ],
+      push_pull_legs:[
+        ["Push",["pectoraux","épaules","bras","abdos"]],
+        ["Pull",["dos","dos","bras","abdos"]],
+        ["Legs",["jambes","jambes","abdos","cardio"]],
+        ["Push 2",["pectoraux","épaules","bras"]],
+        ["Pull 2",["dos","bras","abdos"]],
+        ["Legs 2",["jambes","jambes","mobilité"]]
+      ],
+      legs_upper_full:[
+        ["Jambes",["jambes","jambes","abdos","cardio"]],
+        ["Haut du corps",["dos","pectoraux","épaules","bras","abdos"]],
+        ["Full body",["jambes","dos","pectoraux","abdos","cardio"]],
+        ["Jambes 2",["jambes","jambes","mobilité","abdos"]],
+        ["Haut 2",["pectoraux","dos","épaules","bras"]],
+        ["Full body 2",["jambes","dos","pectoraux","abdos"]]
+      ],
+      custom_manual:[]
+    };
+    return (maps[split]||maps.full_body).slice(0,d);
+  }
+  function bf33StrategyForGeneration(profile=null){
+    const p=profile || bf321CanonicalProfile?.() || {};
+    const saved=bf33GetStrategy();
+    const reco=bf33RecommendSplit(p);
+    let split=saved.mode==="auto" || saved.split==="recommended" ? reco.split : saved.split;
+    if(saved.mode==="manual") split="custom_manual";
+    return {...saved,recommended:reco,actualSplit:split};
+  }
+  function bf33SessionTemplate(profile=null){
+    const p=profile || bf321CanonicalProfile?.() || {};
+    const strategy=bf33StrategyForGeneration(p);
+    const duration=Number(p.duration)||60;
+    if(strategy.mode==="manual"){
+      const manual=bf33GetManualSessions();
+      if(manual.length){
+        return manual.map((s,i)=>({name:`Séance ${i+1} — ${s.name}`,focus:s.focus||["custom"],duration,manualSession:true,manualExercises:s.exercises||[],split:"custom_manual"}));
+      }
+      return [{name:"Séance 1 — Manuel à créer",focus:["custom"],duration,manualSession:true,manualExercises:[],split:"custom_manual",emptyManual:true}];
+    }
+    return bf33FocusForSplit(strategy.actualSplit,p.gymDays).map((s,i)=>({name:`Séance ${i+1} — ${s[0]}`,focus:s[1],duration,split:strategy.actualSplit,strategyMode:strategy.mode}));
+  }
+  function bf33ParseManualExercises(text){
+    const lines=String(text||"").split("\n").map(l=>l.trim()).filter(Boolean);
+    return lines.map((line,i)=>{
+      const parts=line.split("|").map(p=>p.trim());
+      return {
+        name:parts[0]||`Exercice ${i+1}`,
+        sets:Number(parts[1])||3,
+        reps:parts[2]||"8-12",
+        rest:parts[3]||"1min30",
+        muscle:parts[4]||"custom",
+        type:"manuel",
+        level:"intermediate",
+        desc:"Séance créée manuellement. Garde une exécution propre et une douleur normale.",
+        manual:true
+      };
+    });
+  }
+  function bf33ManualFocus(type){
+    return {
+      full_body:["jambes","dos","pectoraux","abdos"],
+      upper:["dos","pectoraux","épaules","bras"],
+      lower:["jambes","jambes","abdos"],
+      push:["pectoraux","épaules","bras"],
+      pull:["dos","dos","bras"],
+      legs:["jambes","jambes","abdos"],
+      cardio:["cardio","abdos","mobilité"],
+      custom:["custom"]
+    }[type] || ["custom"];
+  }
+  function bf33AddManualSession(){
+    const name=(document.getElementById("bf33ManualSessionName")?.value||"").trim();
+    const type=document.getElementById("bf33ManualSessionType")?.value||"custom";
+    const exercises=bf33ParseManualExercises(document.getElementById("bf33ManualSessionExercises")?.value||"");
+    if(name.length<2) return alert("Ajoute un nom de séance.");
+    if(!exercises.length) return alert("Ajoute au moins un exercice dans la séance.");
+    const list=bf33GetManualSessions();
+    list.push({id:"manual_session_"+Date.now(),name,type,focus:bf33ManualFocus(type),exercises});
+    bf33SaveManualSessions(list);
+    if(document.getElementById("bf33ManualSessionName")) bf33ManualSessionName.value="";
+    if(document.getElementById("bf33ManualSessionExercises")) bf33ManualSessionExercises.value="";
+    bf33RenderManualSessions();
+    alert("Séance manuelle ajoutée.");
+  }
+  function bf33RenderManualSessions(){
+    const box=document.getElementById("bf33ManualSessionsResult");
+    if(!box) return;
+    const list=bf33GetManualSessions();
+    if(!list.length){
+      box.innerHTML="Aucune séance manuelle créée pour le moment.";
+      return;
+    }
+    box.innerHTML=list.map((s,i)=>`<div class="bf33-manual-session">
+      <strong>${i+1}. ${s.name}</strong>
+      <p>${bf33SplitLabel(s.type)} · ${(s.exercises||[]).length} exercices</p>
+      <p>${(s.exercises||[]).map(e=>e.name).join(" · ")}</p>
+    </div>`).join("");
+  }
+  function bf33RenderRecommendation(){
+    const p=bf321CanonicalProfile?.() || {};
+    const reco=bf33RecommendSplit(p);
+    const saved=bf33GetStrategy();
+    const box=document.getElementById("bf33SplitRecommendation");
+    if(box){
+      box.classList.add("bf33-reco-good");
+      box.innerHTML=`<h3>Recommandation coach : ${bf33SplitLabel(reco.split)}</h3>
+        <p>${reco.why}</p>
+        <p>
+          <span class="bf33-split-badge">${reco.days} séances/semaine</span>
+          <span class="bf33-split-badge">${reco.duration} min</span>
+          <span class="bf33-split-badge">${goalLabelSafe(reco.goal)}</span>
+          <span class="bf33-split-badge">${reco.level}</span>
+        </p>
+        <p><strong>Choix actuel :</strong> mode ${saved.mode} · split ${bf33SplitLabel(saved.split==="recommended"?reco.split:saved.split)}</p>`;
+    }
+    if(document.getElementById("bf33SessionMode")) bf33SessionMode.value=saved.mode||"auto";
+    if(document.getElementById("bf33SplitChoice")) bf33SplitChoice.value=saved.split||"recommended";
+    bf33RenderManualSessions();
+  }
+  function bf33ApplyStrategy(){
+    const mode=document.getElementById("bf33SessionMode")?.value||"auto";
+    const split=document.getElementById("bf33SplitChoice")?.value||"recommended";
+    bf33SaveStrategy({mode,split,updatedAt:new Date().toISOString()});
+    bf321SyncProfileEverywhere?.();
+    localStorage.removeItem(window.V30_SESSIONS_KEY||"bf_v30_generated_sessions");
+    localStorage.removeItem(window.V30_MONTH_KEY||"bf_v30_smart_month");
+    v27RenderSessions?.(v27GenerateSessions?.());
+    v28RenderSmartMonth?.(v28BuildSmartMonth?.());
+    v31PopulateSessions?.();
+    v30RefreshLaunchpad?.();
+    bf33RenderRecommendation();
+  }
+  function bf33UseRecommended(){
+    const reco=bf33RecommendSplit();
+    bf33SaveStrategy({mode:"semi",split:reco.split,updatedAt:new Date().toISOString()});
+    bf33ApplyStrategy();
+  }
+  function bf33UseManual(){
+    bf33SaveStrategy({mode:"manual",split:"custom_manual",updatedAt:new Date().toISOString()});
+    bf33ApplyStrategy();
+  }
+  function bf33ExplainSplit(){
+    const reco=bf33RecommendSplit();
+    alert(`Split recommandé : ${bf33SplitLabel(reco.split)}\n\n${reco.why}\n\nTu peux quand même choisir un autre split en mode semi-auto, ou créer tes séances en manuel.`);
+  }
+  function bf33ClearManualSessions(){
+    if(!confirm("Supprimer toutes les séances manuelles ?")) return;
+    localStorage.removeItem(BF33_MANUAL_SESSIONS_KEY);
+    bf33RenderManualSessions();
+    if(bf33GetStrategy().mode==="manual") bf33ApplyStrategy();
+  }
+  function bf33Bind(){
+    if(window.__bf33_bound){bf33RenderRecommendation?.();return;}
+    window.__bf33_bound=true;
+    document.getElementById("bf33RefreshRecommendationBtn")?.addEventListener("click",bf33RenderRecommendation);
+    document.getElementById("bf33ApplyStrategyBtn")?.addEventListener("click",bf33ApplyStrategy);
+    document.getElementById("bf33UseRecommendedBtn")?.addEventListener("click",bf33UseRecommended);
+    document.getElementById("bf33ExplainSplitBtn")?.addEventListener("click",bf33ExplainSplit);
+    document.getElementById("bf33AddManualSessionBtn")?.addEventListener("click",bf33AddManualSession);
+    document.getElementById("bf33UseManualSessionsBtn")?.addEventListener("click",bf33UseManual);
+    document.getElementById("bf33ClearManualSessionsBtn")?.addEventListener("click",bf33ClearManualSessions);
+    document.getElementById("bf33SessionMode")?.addEventListener("change",()=>{ if(bf33SessionMode.value==="auto") bf33SplitChoice.value="recommended"; });
+    bf33RenderRecommendation();
+  }
+
+
+  function v27SessionTemplate(p){
+    return bf33SessionTemplate(p);
   }
   function v27AdjustExercise(ex,p,index,total){
     const goal=p.goal||"muscle";
@@ -3540,47 +3853,55 @@ window.BF_UTIL = {
     const pool=v27AllExercises();
     const templates=v27SessionTemplate(p);
     const manualPriority=v27GetManualExercises().filter(e=>e.priority==="priority");
+    const strategy=bf33StrategyForGeneration(p);
     const sessions=templates.map((tpl,idx)=>{
+      if(tpl.manualSession){
+        const manualExercises=(tpl.manualExercises||[]).map((ex,i)=>v27AdjustExercise(ex,p,i,tpl.manualExercises.length||1));
+        return {...tpl,exercises:manualExercises,goal:p.goal,level:p.level,pain:p.pain,split:"custom_manual",strategyMode:"manual"};
+      }
       let selected=[];
       tpl.focus.forEach((muscle,i)=>{
-        const count=muscle==="jambes" && tpl.focus.filter(x=>x==="jambes").length>1 ? 1 : 1;
-        const chosen=v27Pick(pool,muscle,count,p,true).filter(e=>!selected.some(s=>s.name===e.name));
+        const chosen=v27Pick(pool,muscle,1,p,true).filter(e=>!selected.some(s=>s.name===e.name));
         selected.push(...chosen);
       });
-      // Add priority manual exercises if matching focus and not already selected
       manualPriority.forEach(ex=>{
         if(tpl.focus.includes(ex.muscle) && !selected.some(s=>s.name===ex.name) && v27ExerciseAllowed(ex,p)){
           selected.splice(Math.min(2,selected.length),0,{...ex,manual:true});
         }
       });
-      // Fill if too short
       const target=bf323ExerciseTargetByDuration(p.duration);
       for(const ex of pool){
         if(selected.length>=target) break;
         if(tpl.focus.includes(ex.muscle) && !selected.some(s=>s.name===ex.name) && v27ExerciseAllowed(ex,p)) selected.push(ex);
       }
       selected=selected.slice(0,target).map((ex,i)=>v27AdjustExercise(ex,p,i,target));
-      return {...tpl,exercises:selected,goal:p.goal,level:p.level,pain:p.pain};
+      return {...tpl,exercises:selected,goal:p.goal,level:p.level,pain:p.pain,split:tpl.split||strategy.actualSplit,strategyMode:strategy.mode};
     });
     localStorage.setItem(V30_SESSIONS_KEY,JSON.stringify(sessions));
     return sessions;
   }
   function v27RenderSessions(sessions=null){
     const p=v27Profile();
+    const strategy=bf33StrategyForGeneration(p);
     sessions=sessions || JSON.parse(localStorage.getItem(V30_SESSIONS_KEY)||"null") || v27GenerateSessions();
     const summary=document.getElementById("sessionProfileSummary");
     if(summary){
-      summary.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabelSafe(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}`;
+      summary.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabelSafe(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}<br><strong>Mode séances :</strong> ${strategy.mode} · split ${bf33SplitLabel(strategy.actualSplit)}<br><span class="small-note">${strategy.recommended.why}</span>`;
     }
     const box=document.getElementById("personalSessionsResult");
     if(!box) return;
+    if(strategy.mode==="manual" && (!sessions.length || sessions.some(s=>s.emptyManual))){
+      box.innerHTML=`<div class="result-box"><strong>Mode manuel activé.</strong><p>Crée au moins une séance dans le bloc “Mode manuel”, puis clique sur “Utiliser mes séances manuelles”.</p></div>`;
+      return;
+    }
     box.innerHTML=sessions.map((s,si)=>`<div class="generated-session">
       <h3>${s.name}</h3>
       <div class="generated-session-meta">
-        <span class="tag">${goalLabel(s.goal)}</span>
+        <span class="tag">${goalLabelSafe(s.goal)}</span>
         <span class="tag">${s.duration} min</span>
         <span class="tag">${s.exercises.length} exercices</span>
-        <span class="tag">personnalisée</span>
+        <span class="tag">${bf33SplitLabel(s.split||strategy.actualSplit)}</span>
+        <span class="tag">${s.strategyMode==="manual"?"manuelle":(s.strategyMode==="semi"?"semi-auto":"auto")}</span>
       </div>
       ${s.exercises.map((ex,i)=>`<div class="generated-exercise">
         <strong>${i+1}. ${ex.name}${ex.manual?' <span class="tag">manuel</span>':''}${ex.optional?' <span class="tag">optionnel</span>':''}</strong>
@@ -3657,6 +3978,7 @@ window.BF_UTIL = {
     document.getElementById("clearManualExerciseFormBtn")?.addEventListener("click",v27ClearExerciseForm);
     document.querySelectorAll("[data-view-jump]").forEach(btn=>btn.addEventListener("click",()=>showView(btn.dataset.viewJump)));
     v27RenderManualExercises();
+    bf33Bind?.();
     v27RenderSessions();
   }
 
@@ -3706,7 +4028,7 @@ window.BF_UTIL = {
   }
   function v28SessionReason(session,p,week){
     const name=(session.name||"").toLowerCase();
-    let txt=`Cette séance est placée pour développer ton objectif avec une durée de ${p.duration||60} min (${bf323DurationLabel(p.duration)}).`;
+    let strategy=bf33StrategyForGeneration?.(p); let txt=`Cette séance est placée pour développer ton objectif avec une durée de ${p.duration||60} min (${bf323DurationLabel(p.duration)}) et un split ${bf33SplitLabel(strategy?.actualSplit||"recommended")}.`;
     if(name.includes("jambes")||name.includes("bas")) txt="Séance bas du corps : utile pour construire force, masse musculaire, stabilité et dépense énergétique.";
     if(name.includes("haut")) txt="Séance haut du corps : équilibre dos/pectoraux/épaules/bras pour progresser sans surcharger les jambes.";
     if(name.includes("full")) txt="Séance full body : elle répète les mouvements importants et augmente la fréquence de progression.";
@@ -4010,9 +4332,13 @@ window.BF_UTIL = {
       if(id==="v32GenerateShoppingFromMenusBtn"){ e.preventDefault(); v32RenderShopping(v32BuildShoppingFromMenus()); }
       if(id==="bf322RunFullTestBtn"){ e.preventDefault(); bf322RunFullDiagnostics("full"); }
       if(id==="bf322RunGenerationTestBtn"){ e.preventDefault(); bf322RunFullDiagnostics("generation"); }
+      if(id==="bf33ApplyStrategyBtn"){ e.preventDefault(); bf33ApplyStrategy(); }
+      if(id==="bf33UseRecommendedBtn"){ e.preventDefault(); bf33UseRecommended(); }
+      if(id==="bf33AddManualSessionBtn"){ e.preventDefault(); bf33AddManualSession(); }
+      if(id==="bf33UseManualSessionsBtn"){ e.preventDefault(); bf33UseManual(); }
     }catch(err){
-      console.error("Fallback génération V32", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=32-4-1-1 puis réessaie.");
+      console.error("Fallback génération V33", err);
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=33-1-1 puis réessaie.");
     }
   }
 
@@ -4059,7 +4385,7 @@ window.BF_UTIL = {
     const box=document.getElementById("v30SystemCheck");
     if(!box) return;
     box.classList.remove("hidden");
-    box.innerHTML=`<h3>Test système V32</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
+    box.innerHTML=`<h3>Test système V33</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
       tests.map(([name,ok])=>`<div class="v30-test-line"><strong>${name}</strong><span>${ok?"✅ OK":"⚠️ À vérifier"}</span></div>`).join("")+
       `</div>`;
     v30RefreshLaunchpad();
@@ -4396,7 +4722,7 @@ window.BF_UTIL = {
   }
 
 
-  /* V32.1 : profil canonique synchronisé */
+  /* V33.1 : profil canonique synchronisé */
   function bf321CanonicalProfile(){
     let p=null;
     try{ p=typeof readProfileForm==="function" ? readProfileForm() : null; }catch(e){}
@@ -4456,7 +4782,7 @@ window.BF_UTIL = {
   function bf322RequiredIds(){
     return [
       "dashboardView","planView","sessionsView","liveView","progressView","nutritionView","menusView","coursesView","diagnosticView","coachView","profileView",
-      "generateSmartMonthBtn","smartMonthResult","generatePersonalSessionsBtn","personalSessionsResult",
+      "generateSmartMonthBtn","smartMonthResult","generatePersonalSessionsBtn","personalSessionsResult","bf33SessionMode","bf33SplitChoice","bf33ApplyStrategyBtn","bf33AddManualSessionBtn",
       "v31StartLiveBtn","v31LiveSessionSelect","saveProgressBtn","generateAdaptationBtn",
       "v32GenerateMenusBtn","v32GenerateShoppingFromMenusBtn","v32MenusResult","v32MenuShoppingResult",
       "generateGroceriesBtn","groceriesResult","saveProfileBtn","bf321ApplyProfileBtn","appNav"
@@ -4531,6 +4857,41 @@ window.BF_UTIL = {
   }
 
 
+
+  function bf33Diagnostic(){
+    const backup=bf322Backup?.() || {};
+    const results=[];
+    try{
+      const base=bf321CanonicalProfile?.() || {};
+      const cases=[
+        {gymDays:2,duration:60,expected:"full_body"},
+        {gymDays:3,duration:30,expected:"full_body"},
+        {gymDays:4,duration:60,expected:"upper_lower"},
+        {gymDays:5,duration:60,expected:"push_pull_legs"}
+      ];
+      cases.forEach(c=>{
+        const p={...base,...c,goal:base.goal||"muscle",level:base.level||"intermediate"};
+        const r=bf33RecommendSplit(p);
+        results.push(bf322Result(`Split recommandé ${c.gymDays}j / ${c.duration}min`,r.split===c.expected,`Obtenu : ${bf33SplitLabel(r.split)} · attendu : ${bf33SplitLabel(c.expected)}.`));
+      });
+      bf33SaveStrategy({mode:"semi",split:"upper_lower"});
+      bf321SyncProfileEverywhere({...base,gymDays:4,duration:60},{clearGenerated:true});
+      const semi=v27GenerateSessions();
+      results.push(bf322Result("Mode semi-auto",semi.every(s=>s.split==="upper_lower"),`${semi.length} séances en Upper/Lower.`));
+
+      bf33SaveManualSessions([{id:"test",name:"Séance test manuel",type:"custom",focus:["custom"],exercises:[{name:"Test exercice",sets:3,reps:"10",rest:"1min",muscle:"custom",type:"manuel"}]}]);
+      bf33SaveStrategy({mode:"manual",split:"custom_manual"});
+      const manual=v27GenerateSessions();
+      results.push(bf322Result("Mode manuel",manual?.[0]?.strategyMode==="manual" && manual?.[0]?.exercises?.[0]?.name==="Test exercice","Séance manuelle transformée en séance utilisable par le Live."));
+    }catch(e){
+      results.push(bf322Result("Diagnostic split V33",false,String(e)));
+    }finally{
+      try{bf322Restore?.(backup);bf33RenderRecommendation?.();v27RenderSessions?.();v28RenderSmartMonth?.();v30RefreshLaunchpad?.();}catch(e){}
+    }
+    return results;
+  }
+
+
   function bf324DeepButtonDiagnostic(){
     const checks=[
       ["Appliquer profil", "bf321ApplyProfileBtn", el=>!!el?.dataset?.bf324Bound],
@@ -4540,7 +4901,8 @@ window.BF_UTIL = {
       ["Suivi", "saveProgressBtn", el=>window.__bf_v29_bound===true],
       ["Plan", "generateSmartMonthBtn", el=>window.__bf_v28_bound===true],
       ["Séances", "generatePersonalSessionsBtn", el=>window.__bf_v27_bound===true],
-      ["Accueil guidé", "v30SelfTestBtn", el=>window.__bf_v30_bound===true]
+      ["Accueil guidé", "v30SelfTestBtn", el=>window.__bf_v30_bound===true],
+      ["Stratégie séances V33", "bf33ApplyStrategyBtn", el=>window.__bf33_bound===true]
     ];
     return checks.map(([name,id,test])=>{
       const el=document.getElementById(id);
@@ -4601,11 +4963,12 @@ window.BF_UTIL = {
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=32-4") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
+    results.push(bf322Result("Version chargée", location.href.includes("v=33") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
       results.push(...bf324DeepButtonDiagnostic());
+      results.push(...bf33Diagnostic());
       results.push(...bf322RunGenerationChecks(true));
       results.push(...bf323DurationDiagnostic());
     }
@@ -4638,14 +5001,14 @@ window.BF_UTIL = {
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V32.4\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V33\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=32-4
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=33
 2. Si tu vois encore une ancienne version, supprime l’ancienne icône de l’écran d’accueil
-3. Ouvre Safari, recharge avec ?v=32-4
+3. Ouvre Safari, recharge avec ?v=33
 4. Ré-ajoute l’app à l’écran d’accueil`;
     alert(msg);
   }
@@ -4679,6 +5042,7 @@ window.BF_UTIL = {
       v30Bind?.();
       v31Bind?.();
       v32Bind?.();
+      bf33Bind?.();
       bf322Bind?.();
       bf324BindProfileApply?.();
       v29RenderProgress?.();
@@ -4688,7 +5052,7 @@ window.BF_UTIL = {
       v31RenderLive?.();
       v30RefreshLaunchpad?.();
     }catch(e){
-      console.warn("V32.4 deep bind", e);
+      console.warn("V33 deep bind", e);
     }
   }
 
@@ -4807,7 +5171,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=32-4").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=33").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
