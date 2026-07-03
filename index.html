@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V29</title>
+  <title>Basic-Fit Coach V31</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V25 : nettoyage du bas de l'application */
+/* V31 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V25 : suppression du texte parasite tout en bas */
+/* V31 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V25 : mode séance live + actions rapides */
+/* V31 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -339,7 +339,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V25 : profil + programme mensuel */
+/* V31 : profil + programme mensuel */
 .month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
 .month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
 .month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
@@ -350,7 +350,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
 
 
-/* V25 : onboarding + personnalisation par objectif */
+/* V31 : onboarding + personnalisation par objectif */
 .onboarding{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(7,10,18,.82);backdrop-filter:blur(22px)}
 .onboarding-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(53,208,127,.08)),var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55);padding:20px}
 .onboarding-card>p:not(.card-kicker){color:var(--muted);margin:8px 0 16px}
@@ -363,7 +363,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.objective-strip{align-items:flex-start;flex-direction:column}.objective-strip button{width:100%}}
 
 
-/* V25 : base coach pro élargie */
+/* V31 : base coach pro élargie */
 .pro-base-card{
   display:flex;
   justify-content:space-between;
@@ -390,7 +390,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.pro-base-card{flex-direction:column;align-items:flex-start}.pro-base-card button{width:100%}}
 
 
-/* V25 : présentation libre intelligente */
+/* V31 : présentation libre intelligente */
 .free-onboarding-card{width:min(820px,100%)}
 .presentation-textarea{min-height:260px;font-size:15px;line-height:1.5;resize:vertical}
 .free-actions{grid-template-columns:1fr 1fr 1fr}
@@ -402,7 +402,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.free-actions{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}
 
 
-/* V25 : introduction obligatoire + déblocage */
+/* V31 : introduction obligatoire + déblocage */
 body.app-locked .app-shell{filter:blur(10px);pointer-events:none;user-select:none}
 body.app-locked{overflow:hidden}
 .intro-gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 20% 10%,rgba(255,209,102,.18),transparent 30%),radial-gradient(circle at 80% 20%,rgba(125,179,255,.18),transparent 32%),rgba(7,10,18,.92);backdrop-filter:blur(24px);overflow:auto}
@@ -435,7 +435,7 @@ body.app-locked{overflow:hidden}
 @media(max-width:700px){.intro-steps-ui{grid-template-columns:1fr}.intro-actions{grid-template-columns:1fr}.intro-card{border-radius:26px;padding:16px}}
 
 
-/* V25 : réponses coach personnalisées */
+/* V31 : réponses coach personnalisées */
 .personal-answer{
   border:1px solid rgba(255,209,102,.18);
   background:linear-gradient(135deg,rgba(255,209,102,.10),rgba(53,208,127,.07));
@@ -447,7 +447,7 @@ body.app-locked{overflow:hidden}
 .personal-answer .small-note{display:block;color:var(--muted);font-size:12.5px;margin-top:6px}
 
 
-/* V27.1 : sécurité anti-bug */
+/* V31.1 : sécurité anti-bug */
 .safety-card{
   display:flex;
   justify-content:space-between;
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V29 : suivi progression */
+/* V31 : live personnalisé */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -550,7 +550,7 @@ body.app-locked #onboarding{
 }
 
 
-/* V27.1 : correctif écran flou / impossible d'écrire */
+/* V31.1 : correctif écran flou / impossible d'écrire */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -590,13 +590,13 @@ body.app-locked #onboarding,
 }
 
 
-/* V27.1 : validation forcée */
+/* V31.1 : validation forcée */
 .validation-status{margin-top:10px;border:1px solid rgba(125,179,255,.22);background:rgba(125,179,255,.08);color:#E6F0FF;padding:10px;border-radius:16px;font-size:13px}
 .validation-status.ok{border-color:rgba(53,208,127,.28);background:rgba(53,208,127,.10);color:#DFFFEA}
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V29 : suivi progression définitivement */
+/* V31 : live personnalisé définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V29 : suivi progression */
+/* V31 : live personnalisé */
 .hint{
   position:fixed;
   left:12px;
@@ -685,7 +685,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V27.1 : double présentation + courses */
+/* V31.1 : double présentation + courses */
 .v26-intro-card{width:min(980px,100%)}
 .v26-steps{grid-template-columns:repeat(6,1fr)}
 .v26-step-panel{
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V29 : suivi progression + exercices manuels */
+/* V31 : live personnalisé + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -813,7 +813,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V28 : plan personnalisé + interface simplifiée */
+/* V31 : plan personnalisé + interface simplifiée */
 .v28-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
 .smart-week{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:24px;padding:14px;margin:14px 0}
 .smart-week h3{margin-bottom:4px}
@@ -825,14 +825,14 @@ body.app-locked{overflow:auto!important}
 .smart-ex-row strong{color:#fff}
 @media(max-width:760px){.v28-actions button{width:100%}}
 
-/* V28 : onglets simplifiés */
-#liveView,#customView,#performancesView,#questionsView{
+/* V31 : onglets simplifiés */
+#customView,#performancesView,#questionsView{
   display:none!important;
 }
 
 
-/* V29 : onglets simplifiés */
-#liveView,#customView,#performancesView,#questionsView,#monthView{
+/* V31 : onglets simplifiés */
+#customView,#performancesView,#questionsView,#monthView{
   display:none!important;
 }
 </style>
@@ -860,7 +860,7 @@ body.app-locked{overflow:auto!important}
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V29 — COACH COMPLET</p>
+            <p class="card-kicker">V31 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -966,7 +966,7 @@ body.app-locked{overflow:auto!important}
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV29Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV31Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -982,7 +982,7 @@ body.app-locked{overflow:auto!important}
 
         <section class="safety-card">
           <div>
-            <p class="card-kicker">SÉCURITÉ V29</p>
+            <p class="card-kicker">SÉCURITÉ V31</p>
             <h3>Mode secours stable</h3>
             <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
           </div>
@@ -994,8 +994,8 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V29 SUIVI ADAPTATION</p>
-          <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
+          <p class="hero-label">V31 LIVE PERSONNALISÉ</p>
+          <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
         <div class="hero-orb">
@@ -1007,6 +1007,7 @@ body.app-locked{overflow:auto!important}
         <button data-view="dashboard" class="active">🏠<span>Accueil</span></button>
         <button data-view="plan">🗓️<span>Plan</span></button>
         <button data-view="sessions">🏋️<span>Séances</span></button>
+        <button data-view="live">▶️<span>Live</span></button>
         <button data-view="progress">📈<span>Suivi</span></button>
         <button data-view="nutrition">🥗<span>Nutrition</span></button>
         <button data-view="courses">🛒<span>Courses</span></button>
@@ -1024,6 +1025,58 @@ body.app-locked{overflow:auto!important}
           </div>
           <button class="ghost-btn" data-open="profile">Modifier</button>
         </section>
+
+
+        <article class="card v30-launchpad" id="v30Launchpad">
+          <div class="section-head">
+            <div>
+              <p class="card-kicker">PARCOURS V31</p>
+              <h3>Utilise l’app dans le bon ordre</h3>
+            </div>
+            <button class="ghost-btn" id="v30SelfTestBtn">Tester l’app</button>
+          </div>
+
+          <div class="v30-steps-grid">
+            <button type="button" class="v30-step-card" data-open="profile">
+              <span class="v30-step-number">1</span>
+              <strong>Profil</strong>
+              <small>objectif, niveau, durée, douleurs</small>
+              <em id="v30StatusProfile">à vérifier</em>
+            </button>
+            <button type="button" class="v30-step-card" data-open="plan">
+              <span class="v30-step-number">2</span>
+              <strong>Plan</strong>
+              <small>4 semaines expliquées</small>
+              <em id="v30StatusPlan">à générer</em>
+            </button>
+            <button type="button" class="v30-step-card" data-open="sessions">
+              <span class="v30-step-number">3</span>
+              <strong>Séances</strong>
+              <small>personnalisées + exercices manuels</small>
+              <em id="v30StatusSessions">à générer</em>
+            </button>
+            <button type="button" class="v30-step-card" data-open="live">
+              <span class="v30-step-number">4</span>
+              <strong>Live</strong>
+              <small>lancer une séance et noter en direct</small>
+              <em id="v31StatusLive">prêt</em>
+            </button>
+            <button type="button" class="v30-step-card" data-open="progress">
+              <span class="v30-step-number">5</span>
+              <strong>Suivi</strong>
+              <small>charges, reps, douleur, fatigue</small>
+              <em id="v30StatusProgress">à remplir</em>
+            </button>
+            <button type="button" class="v30-step-card" data-open="courses">
+              <span class="v30-step-number">6</span>
+              <strong>Courses</strong>
+              <small>magasin + prix semaine/mois</small>
+              <em id="v30StatusCourses">à configurer</em>
+            </button>
+          </div>
+
+          <div id="v30SystemCheck" class="result-box hidden"></div>
+        </article>
 
         <div class="grid cards-2">
           <article class="card accent-card">
@@ -1058,12 +1111,13 @@ body.app-locked{overflow:auto!important}
             </div>
           </div>
           <div class="quick-grid">
-            <button data-quick="Quelle séance tu me conseilles aujourd’hui ?">Quelle séance ?</button>
             <button data-open="plan">Créer mon plan</button>
-            <button data-open="profile">Profil</button>
-            <button data-open="custom">Créer séance perso</button>
-            <button data-open="performances">Noter une perf</button>
-            <button data-open="nutrition">Conseil nutrition</button>
+            <button data-open="sessions">Générer mes séances</button>
+            <button data-open="live">Lancer le live</button>
+            <button data-open="progress">Noter ma séance</button>
+            <button data-open="courses">Faire ma liste de courses</button>
+            <button data-open="nutrition">Nutrition</button>
+            <button data-open="coach">Question au coach</button>
           </div>
         </article>
       </section>
@@ -1101,7 +1155,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V29 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V31 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -1117,7 +1171,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V29 — SÉANCES PERSONNALISÉES</p>
+          <p class="card-kicker">V31 — SÉANCES PERSONNALISÉES</p>
           <h2>Mes séances générées</h2>
           <p>L’app génère tes séances selon ton profil : objectif, niveau, nombre de séances, durée, douleurs et exercices ajoutés manuellement.</p>
 
@@ -1200,60 +1254,81 @@ body.app-locked{overflow:auto!important}
       </section>
 
 
-      <section class="view" id="liveView">
-        <div class="section-head">
-          <div>
-            <p class="card-kicker">MODE SÉANCE EN DIRECT</p>
-            <h2>Utilise tes séances personnalisées</h2>
-          </div>
-        </div>
 
-        <article class="card accent-card">
-          <p class="card-kicker">DÉMARRAGE</p>
-          <h3>Choisis ta séance</h3>
-          <p>Les anciennes séances préfaites sont remplacées par tes séances personnalisées. Génère-les dans l’onglet Séances, puis note tes perfs dans Perfs.</p>
-          <div class="mini-row">
-            <button class="primary-btn" data-view-jump="sessions">Voir mes séances personnalisées</button>
-            <button class="ghost-btn" id="startCustomLiveBtn">Créer une séance perso rapide</button>
+      <section class="view" id="liveView">
+        <article class="card">
+          <p class="card-kicker">V31 — LIVE PERSONNALISÉ</p>
+          <h2>Séance en direct</h2>
+          <p>Choisis une séance générée, suis les exercices un par un, note tes perfs, lance le repos et enregistre automatiquement dans le suivi.</p>
+
+          <div class="v31-live-setup">
+            <label>Séance à lancer
+              <select id="v31LiveSessionSelect"></select>
+            </label>
+            <button type="button" class="ghost-btn" id="v31RefreshSessionsBtn">Actualiser les séances</button>
+            <button type="button" class="primary-btn" id="v31StartLiveBtn">Lancer la séance</button>
           </div>
+
+          <div id="v31LiveStatus" class="validation-status hidden"></div>
         </article>
 
-        <article id="livePanel" class="live-panel card hidden">
-          <div class="live-progress">
-            <span id="liveCounter">Exercice 1/1</span>
-            <div class="live-bar"><i id="liveBar"></i></div>
+        <article class="card v31-live-card" id="v31LivePanel">
+          <div class="section-head">
+            <div>
+              <p class="card-kicker">EXERCICE EN COURS</p>
+              <h2 id="v31LiveExerciseTitle">Aucune séance lancée</h2>
+            </div>
+            <span class="tag" id="v31LiveProgressTag">0/0</span>
           </div>
-          <h3 id="liveExerciseTitle">Exercice</h3>
-          <p id="liveExerciseDesc">Description</p>
-          <div id="liveTags" class="tags"></div>
 
-          <div class="live-form">
-            <label>Charge <input id="liveWeight" inputmode="decimal" placeholder="kg"></label>
-            <label>Reps <input id="liveReps" inputmode="numeric" placeholder="ex : 10"></label>
-            <label>Séries <input id="liveSets" inputmode="numeric" placeholder="ex : 4"></label>
-            <label>Ressenti
-              <select id="liveFeeling">
-                <option value="facile">Facile</option>
-                <option value="propre" selected>Dur mais propre</option>
-                <option value="limite">Limite / trop dur</option>
+          <div id="v31LiveExerciseDetails" class="result-box">
+            Génère tes séances dans l’onglet Séances, puis reviens ici pour lancer le live.
+          </div>
+
+          <div class="v31-live-form">
+            <label>Charge
+              <input id="v31LiveLoad" inputmode="decimal" placeholder="Ex : 80" />
+            </label>
+            <label>Reps faites
+              <input id="v31LiveReps" inputmode="numeric" placeholder="Ex : 10" />
+            </label>
+            <label>Difficulté
+              <select id="v31LiveRpe">
+                <option value="6">6/10 facile</option>
+                <option value="7">7/10 moyen</option>
+                <option value="8" selected>8/10 dur propre</option>
+                <option value="9">9/10 très dur</option>
+                <option value="10">10/10 échec</option>
+              </select>
+            </label>
+            <label>Douleur
+              <select id="v31LivePain">
+                <option value="0" selected>0/10 aucune</option>
+                <option value="1">1/10 légère</option>
+                <option value="2">2/10 légère</option>
+                <option value="3">3/10 gênante</option>
+                <option value="4">4/10 à surveiller</option>
+                <option value="5">5+/10 réduire</option>
               </select>
             </label>
           </div>
 
-          <div class="mini-row">
-            <button class="primary-btn" id="saveLivePerfBtn">Sauvegarder perf</button>
-            <button class="ghost-btn" id="liveRestBtn">Repos 90s</button>
-            <button class="ghost-btn" id="liveReplaceBtn">Machine prise</button>
+          <label>Note rapide
+            <textarea id="v31LiveNotes" class="small-textarea" placeholder="Ex : charge facile, genou sensible, machine prise..."></textarea>
+          </label>
+
+          <div class="v31-live-actions">
+            <button type="button" class="primary-btn" id="v31SaveSetBtn">Enregistrer cette perf</button>
+            <button type="button" class="ghost-btn" id="v31RestBtn">Repos</button>
+            <button type="button" class="ghost-btn" id="v31PrevExerciseBtn">Exercice précédent</button>
+            <button type="button" class="ghost-btn" id="v31NextExerciseBtn">Exercice suivant</button>
+            <button type="button" class="ghost-btn danger-btn" id="v31FinishLiveBtn">Terminer</button>
           </div>
 
-          <div id="liveReplacement" class="result-box hidden"></div>
-
-          <div class="live-nav-row">
-            <button class="ghost-btn" id="livePrevBtn">← Précédent</button>
-            <button class="primary-btn" id="liveNextBtn">Suivant →</button>
-          </div>
+          <div id="v31RestDisplay" class="result-box hidden"></div>
         </article>
       </section>
+
 
       <section class="view" id="customView">
         <div class="section-head">
@@ -1383,7 +1458,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="progressView">
         <article class="card">
-          <p class="card-kicker">V29 — SUIVI PROGRESSION</p>
+          <p class="card-kicker">V31 — SUIVI PROGRESSION</p>
           <h2>Noter ma séance</h2>
           <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
 
@@ -1928,7 +2003,7 @@ window.BF_UTIL = {
   function goalLabelSafe(goal){return (window.goalLabel||((g)=>g||'objectif'))(goal);}
   function goalAdviceSafe(goal){return (window.goalAdvice||(()=>''))(goal);}
 
-  /* V25 global helpers: accessible from every coach module */
+  /* V31 global helpers: accessible from every coach module */
   window.v25Has = window.v25Has || function(q,...words){
     q = (window.BF_UTIL?.normalize ? BF_UTIL.normalize(q) : String(q).toLowerCase());
     return words.some(w=>q.includes(window.BF_UTIL?.normalize ? BF_UTIL.normalize(w) : String(w).toLowerCase()));
@@ -1949,7 +2024,7 @@ window.BF_UTIL = {
   window.v25PersonalProfile = function(){
     const fallback={name:"",weight:75,height:166,age:20,sex:"male",goal:"muscle",level:"intermediate",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
     try{
-      return JSON.parse(localStorage.getItem("bf_v28_2_profile")||"null") || fallback;
+      return JSON.parse(localStorage.getItem("bf_v30_profile")||"null") || fallback;
     }catch(e){ return fallback; }
   };
   window.v25NutritionTargets = function(p){
@@ -2118,6 +2193,11 @@ window.BF_UTIL = {
     if(q.includes("muscle")||q.includes("masse")) return BF_NUTRITION.answer("prendre muscle");
     if(q.includes("explosif")||q.includes("puissant")) return "Explosivité : construis la force sur presse/leg curl/fessiers/mollets + transfert terrain avec accélérations et appuis.";
     
+    
+    if(q.includes("live")||q.includes("direct")||q.includes("pendant la séance")||q.includes("pendant la seance")){
+      return "Va dans l’onglet Live : choisis une séance générée, lance-la, suis les exercices un par un, note tes charges/reps/douleurs et l’app enregistre automatiquement dans le suivi.";
+    }
+
     if(q.includes("progression")||q.includes("charge")||q.includes("reps")||q.includes("douleur")||q.includes("fatigue")||q.includes("adapter")){
       return "Va dans l’onglet Suivi : note ta charge, tes reps, la difficulté, la douleur et la fatigue. L’app te dira si tu dois augmenter, garder, réduire ou remplacer un exercice à la prochaine séance.";
     }
@@ -2251,7 +2331,7 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v28_2_profile";
+  const PROFILE_KEY="bf_v30_profile";
   const MONTH_KEY="bf_v28_2_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
@@ -2641,7 +2721,7 @@ window.BF_UTIL = {
     badgeUnlock?.classList.toggle("active",step==="unlock");
   }
   function showOnboardingIfNeeded(){
-    const v26=v26StoreGet(V26_PROFILE_KEY,null);
+    const v26=v26StoreGet(V30_PROFILE_KEY,null);
     const p=safeProfile();
     if(!v26 && (!p || (!p.presentation && !p.name))){
       lockApp();
@@ -2834,7 +2914,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=29-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=31-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -2845,7 +2925,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=29-1-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=31-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -2855,7 +2935,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=29-1-1-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=31-1-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -2948,7 +3028,7 @@ window.BF_UTIL = {
   }
 
 
-  function finalV26Bindings(){
+  function finalV30Bindings(){
     const byId=(id)=>document.getElementById(id);
     byId("onAnalyzeBtn")?.addEventListener("click",e=>{ e.preventDefault(); forceAnalyzePresentation(); });
     byId("onFinishBtn")?.addEventListener("click",e=>{ e.preventDefault(); forceUnlockCoach(); });
@@ -2958,8 +3038,8 @@ window.BF_UTIL = {
   }
 
 
-  const V26_PROFILE_KEY="bf_v28_2_profile";
-  const V26_GROCERY_KEY="bf_v28_2_grocery";
+  const V30_PROFILE_KEY="bf_v30_profile";
+  const V30_GROCERY_KEY="bf_v30_grocery";
   let v26SportProfile=null;
   let v26NutritionProfile=null;
 
@@ -3050,10 +3130,10 @@ window.BF_UTIL = {
     </div>`;
   }
 
-  const V26_BASE_PRICES={
+  const V30_BASE_PRICES={
     "Hyper U / Super U":1.00,"E.Leclerc":0.94,"Carrefour":1.04,"Intermarché":1.02,"Lidl":0.86,"Aldi":0.84,"Auchan":1.01,"Grand Frais":1.08,"Autre magasin":1.00
   };
-  const V26_ITEMS=[
+  const V30_ITEMS=[
     {cat:"Protéines",name:"Œufs",unit:"boîte de 12",qtyWeek:1.5,price:3.2,eco:true},
     {cat:"Protéines",name:"Poulet",unit:"kg",qtyWeek:1.0,price:10.5},
     {cat:"Protéines",name:"Jambon blanc",unit:"paquet",qtyWeek:2,price:2.4,eco:true},
@@ -3070,15 +3150,15 @@ window.BF_UTIL = {
     {cat:"Divers",name:"Flocons d’avoine",unit:"kg",qtyWeek:0.5,price:2.5,eco:true}
   ];
   function v26GroceryList(period="week"){
-    const sport=v26StoreGet(V26_PROFILE_KEY,null)?.sport || getProfile();
-    const nut=v26StoreGet(V26_PROFILE_KEY,null)?.nutrition || v26StoreGet(V26_GROCERY_KEY,{store:"Hyper U / Super U",budget:"normal",meals:3});
+    const sport=v26StoreGet(V30_PROFILE_KEY,null)?.sport || getProfile();
+    const nut=v26StoreGet(V30_PROFILE_KEY,null)?.nutrition || v26StoreGet(V30_GROCERY_KEY,{store:"Hyper U / Super U",budget:"normal",meals:3});
     const store=nut.store || document.getElementById("coursesStore")?.value || "Hyper U / Super U";
     const budget=nut.budget || document.getElementById("coursesBudget")?.value || "normal";
-    const factor=(V26_BASE_PRICES[store]||1)*(budget==="eco"?0.88:(budget==="comfort"?1.16:1));
+    const factor=(V30_BASE_PRICES[store]||1)*(budget==="eco"?0.88:(budget==="comfort"?1.16:1));
     const goal=sport.goal||"muscle";
     const qtyGoal=goal==="muscle"?1.15:(goal==="cut"?0.95:1);
     const month=period==="month"?4:1;
-    const items=V26_ITEMS.map(it=>{
+    const items=V30_ITEMS.map(it=>{
       const qty=it.qtyWeek*month*qtyGoal;
       const price=it.price*factor*qty;
       return {...it,qty,price};
@@ -3119,7 +3199,7 @@ window.BF_UTIL = {
       <div><strong>Magasin :</strong> liste adaptée pour ${v26NutritionProfile.store}, budget ${v26NutritionProfile.budget}.</div>
       <div><strong>Priorité :</strong> protéines régulières, féculents autour des séances, aliments simples et courses réalistes.</div>
     </div>`;
-    v26StoreSet(V26_GROCERY_KEY,v26NutritionProfile);
+    v26StoreSet(V30_GROCERY_KEY,v26NutritionProfile);
     document.getElementById("groceryPreview").innerHTML=v26RenderGroceryList("month");
     v26ShowStep("NutritionAnalysis");
     setValidationStatus("Analyse nutrition validée. Tu peux débloquer l’app.","ok");
@@ -3130,8 +3210,8 @@ window.BF_UTIL = {
     if(!v26NutritionProfile && !v26AnalyzeNutritionAction()) return false;
     const merged={...v26SportProfile, meals:v26NutritionProfile.meals, likes:v26NutritionProfile.likes||v26SportProfile.likes, dislikes:v26NutritionProfile.dislikes||v26SportProfile.dislikes, presentation:v26SportProfile.sportPresentation+"\\n\\nNutrition : "+v26NutritionProfile.nutritionPresentation};
     BF_STORE.set(PROFILE_KEY,merged);
-    v26StoreSet(V26_PROFILE_KEY,{sport:v26SportProfile,nutrition:v26NutritionProfile,merged});
-    v26StoreSet(V26_GROCERY_KEY,v26NutritionProfile);
+    v26StoreSet(V30_PROFILE_KEY,{sport:v26SportProfile,nutrition:v26NutritionProfile,merged});
+    v26StoreSet(V30_GROCERY_KEY,v26NutritionProfile);
     unlockApp();
     try{fillProfileForm();updatePersonalUI();renderMonthSummary(null,merged);renderMonth(buildMonthPlan());}catch(e){console.warn(e);}
     try{v26RenderCoursesView();
@@ -3140,11 +3220,13 @@ window.BF_UTIL = {
     v27Bind();
     v28Bind();
     v281BindCleanUI();
-    v29Bind();}catch(e){console.warn(e);}
+    v29Bind();
+    v30Bind();
+    v31Bind();}catch(e){console.warn(e);}
     return true;
   }
   function v26RenderCoursesView(){
-    const saved=v26StoreGet(V26_GROCERY_KEY,{store:"Hyper U / Super U",budget:"normal"});
+    const saved=v26StoreGet(V30_GROCERY_KEY,{store:"Hyper U / Super U",budget:"normal"});
     if(document.getElementById("coursesStore")) coursesStore.value=saved.store||"Hyper U / Super U";
     if(document.getElementById("coursesBudget")) coursesBudget.value=saved.budget||"normal";
     const box=document.getElementById("groceriesResult");
@@ -3167,12 +3249,12 @@ window.BF_UTIL = {
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV29Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV31Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
-      const current=v26StoreGet(V26_GROCERY_KEY,{});
+      const current=v26StoreGet(V30_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
       current.budget=document.getElementById("coursesBudget")?.value||current.budget||"normal";
-      v26StoreSet(V26_GROCERY_KEY,current);
+      v26StoreSet(V30_GROCERY_KEY,current);
       v26RenderCoursesView();
     });
     document.getElementById("copyGroceriesBtn")?.addEventListener("click",async()=>{
@@ -3183,10 +3265,10 @@ window.BF_UTIL = {
 
 
 
-  const V27_MANUAL_EXERCISES_KEY="bf_v28_2_manual_exercises";
-  const V27_SESSIONS_KEY="bf_v28_2_generated_sessions";
+  const V30_MANUAL_EXERCISES_KEY="bf_v30_manual_exercises";
+  const V30_SESSIONS_KEY="bf_v30_generated_sessions";
 
-  const V27_EXERCISE_LIBRARY=[
+  const V30_EXERCISE_LIBRARY=[
     {name:"Presse à cuisses",muscle:"jambes",type:"machine",level:"beginner",sets:4,reps:"8-12",rest:"1min30-2min",desc:"Pieds stables, descente contrôlée, pousse fort sans verrouiller violemment les genoux.",avoid:["knee_heavy"],priority:true},
     {name:"Leg curl",muscle:"jambes",type:"machine",level:"beginner",sets:3,reps:"10-12",rest:"1min15",desc:"Contrôle la descente, garde les hanches posées, cherche les ischios.",priority:true},
     {name:"Leg extension",muscle:"jambes",type:"machine",level:"beginner",sets:3,reps:"10-15",rest:"1min15",desc:"Mouvement contrôlé, ne force pas si gêne au genou.",avoid:["knee"],priority:false},
@@ -3211,17 +3293,17 @@ window.BF_UTIL = {
   ];
 
   function v27GetManualExercises(){
-    try{return JSON.parse(localStorage.getItem(V27_MANUAL_EXERCISES_KEY)||"[]");}catch(e){return [];}
+    try{return JSON.parse(localStorage.getItem(V30_MANUAL_EXERCISES_KEY)||"[]");}catch(e){return [];}
   }
   function v27SaveManualExercises(list){
-    localStorage.setItem(V27_MANUAL_EXERCISES_KEY,JSON.stringify(list));
+    localStorage.setItem(V30_MANUAL_EXERCISES_KEY,JSON.stringify(list));
   }
   function v27SetStatus(msg,type="ok"){
     const el=document.getElementById("manualExerciseStatus");
     if(el){el.textContent=msg;el.className="validation-status "+type;el.classList.remove("hidden");}
   }
   function v27Profile(){
-    const v26=v26StoreGet?.(V26_PROFILE_KEY,null);
+    const v26=v26StoreGet?.(V30_PROFILE_KEY,null);
     return v26?.merged || getProfile();
   }
   function v27PainKey(p){
@@ -3241,7 +3323,7 @@ window.BF_UTIL = {
     return true;
   }
   function v27AllExercises(){
-    return [...V27_EXERCISE_LIBRARY,...v27GetManualExercises().map(x=>({...x,manual:true}))];
+    return [...V30_EXERCISE_LIBRARY,...v27GetManualExercises().map(x=>({...x,manual:true}))];
   }
   function v27Pick(pool,muscle,count,p,preferPriority=false){
     let arr=pool.filter(e=>e.muscle===muscle && v27ExerciseAllowed(e,p));
@@ -3310,12 +3392,12 @@ window.BF_UTIL = {
       selected=selected.slice(0,target).map((ex,i)=>v27AdjustExercise(ex,p,i,target));
       return {...tpl,exercises:selected,goal:p.goal,level:p.level,pain:p.pain};
     });
-    localStorage.setItem(V27_SESSIONS_KEY,JSON.stringify(sessions));
+    localStorage.setItem(V30_SESSIONS_KEY,JSON.stringify(sessions));
     return sessions;
   }
   function v27RenderSessions(sessions=null){
     const p=v27Profile();
-    sessions=sessions || JSON.parse(localStorage.getItem(V27_SESSIONS_KEY)||"null") || v27GenerateSessions();
+    sessions=sessions || JSON.parse(localStorage.getItem(V30_SESSIONS_KEY)||"null") || v27GenerateSessions();
     const summary=document.getElementById("sessionProfileSummary");
     if(summary){
       summary.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabelSafe(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}`;
@@ -3393,11 +3475,13 @@ window.BF_UTIL = {
     navigator.clipboard?.writeText(txt).then(()=>alert("Séances copiées.")).catch(()=>alert("Copie impossible, sélectionne le texte manuellement."));
   }
   function v27Bind(){
+    if(window.__bf_v27_bound) return;
+    window.__bf_v27_bound=true;
     document.getElementById("generatePersonalSessionsBtn")?.addEventListener("click",()=>v27RenderSessions(v27GenerateSessions()));
     document.getElementById("copySessionsBtn")?.addEventListener("click",v27CopySessions);
     document.getElementById("resetSessionsBtn")?.addEventListener("click",()=>{
-      localStorage.removeItem(V27_SESSIONS_KEY);
-      v27RenderSessions(v27GenerateSessions());
+      localStorage.removeItem(V30_SESSIONS_KEY);
+      v27RenderSessions(v27GenerateSessions()); v30RefreshLaunchpad?.();
     });
     document.getElementById("addManualExerciseBtn")?.addEventListener("click",v27AddManualExercise);
     document.getElementById("clearManualExerciseFormBtn")?.addEventListener("click",v27ClearExerciseForm);
@@ -3409,13 +3493,13 @@ window.BF_UTIL = {
 
 
 
-  // V28.2 : aliases globaux sûrs pour éviter les bugs de génération
+  // V30 : aliases globaux sûrs pour éviter les bugs de génération
   const goalLabelSafe=(typeof goalLabel!=="undefined")?goalLabel:(window.goalLabel||((g)=>g||"objectif"));
   const goalAdviceSafe=(typeof goalAdvice!=="undefined")?goalAdvice:(window.goalAdvice||(()=>"" ));
 
-  const V28_MONTH_KEY="bf_v28_smart_month";
+  const V30_MONTH_KEY="bf_v30_smart_month";
   function v28GetProfile(){
-    const v26=v26StoreGet?.(V26_PROFILE_KEY,null);
+    const v26=v26StoreGet?.(V30_PROFILE_KEY,null);
     return v26?.merged || getProfile();
   }
   function v28GoalExplanation(goal){
@@ -3478,11 +3562,11 @@ window.BF_UTIL = {
       }))
     }));
     const plan={profile:p,weeks,createdAt:new Date().toISOString()};
-    localStorage.setItem(V28_MONTH_KEY,JSON.stringify(plan));
+    localStorage.setItem(V30_MONTH_KEY,JSON.stringify(plan));
     return plan;
   }
   function v28RenderSmartMonth(plan=null){
-    plan=plan || JSON.parse(localStorage.getItem(V28_MONTH_KEY)||"null") || v28BuildSmartMonth();
+    plan=plan || JSON.parse(localStorage.getItem(V30_MONTH_KEY)||"null") || v28BuildSmartMonth();
     const p=plan.profile || v28GetProfile();
     const profileBox=document.getElementById("smartMonthProfile");
     if(profileBox){
@@ -3507,7 +3591,7 @@ window.BF_UTIL = {
     navigator.clipboard?.writeText(txt).then(()=>alert("Plan copié.")).catch(()=>alert("Copie impossible, sélectionne le texte manuellement."));
   }
   function v28EnsureGrocerySetup(){
-    const saved=v26StoreGet?.(V26_GROCERY_KEY,null);
+    const saved=v26StoreGet?.(V30_GROCERY_KEY,null);
     const box=document.getElementById("coursesSetupPanel");
     if(!box) return;
     if(!saved || !saved.store){
@@ -3517,9 +3601,11 @@ window.BF_UTIL = {
     }
   }
   function v28Bind(){
+    if(window.__bf_v28_bound) return;
+    window.__bf_v28_bound=true;
     document.getElementById("generateSmartMonthBtn")?.addEventListener("click",()=>v28RenderSmartMonth(v28BuildSmartMonth()));
     document.getElementById("copySmartMonthBtn")?.addEventListener("click",v28CopySmartMonth);
-    document.getElementById("resetSmartMonthBtn")?.addEventListener("click",()=>{localStorage.removeItem(V28_MONTH_KEY);v28RenderSmartMonth(v28BuildSmartMonth());});
+    document.getElementById("resetSmartMonthBtn")?.addEventListener("click",()=>{localStorage.removeItem(V30_MONTH_KEY);v28RenderSmartMonth(v28BuildSmartMonth()); v30RefreshLaunchpad?.();});
     v28RenderSmartMonth();
     v28EnsureGrocerySetup();
   }
@@ -3527,7 +3613,7 @@ window.BF_UTIL = {
 
 
   function v281UpdateHomeGroceryCard(){
-    const saved=window.v26StoreGet?.(window.V26_GROCERY_KEY,null);
+    const saved=window.v26StoreGet?.(window.V30_GROCERY_KEY,null);
     const txt=document.getElementById("grocerySetupHomeText");
     if(!txt) return;
     if(saved && saved.store){
@@ -3547,14 +3633,14 @@ window.BF_UTIL = {
 
 
 
-  const V29_PROGRESS_KEY="bf_v29_progress_log";
-  const V29_ADVICE_KEY="bf_v29_next_advice";
+  const V30_PROGRESS_KEY="bf_v30_progress_log";
+  const V30_ADVICE_KEY="bf_v30_next_advice";
 
   function v29GetProgress(){
-    try{return JSON.parse(localStorage.getItem(V29_PROGRESS_KEY)||"[]");}catch(e){return [];}
+    try{return JSON.parse(localStorage.getItem(V30_PROGRESS_KEY)||"[]");}catch(e){return [];}
   }
   function v29SaveProgressList(list){
-    localStorage.setItem(V29_PROGRESS_KEY,JSON.stringify(list));
+    localStorage.setItem(V30_PROGRESS_KEY,JSON.stringify(list));
   }
   function v29SetStatus(msg,type="ok"){
     const el=document.getElementById("progressStatus");
@@ -3568,7 +3654,7 @@ window.BF_UTIL = {
     const names=new Set();
     try{
       (v27AllExercises?.()||[]).forEach(e=>names.add(e.name));
-      const sessions=JSON.parse(localStorage.getItem(V27_SESSIONS_KEY)||"[]");
+      const sessions=JSON.parse(localStorage.getItem(V30_SESSIONS_KEY)||"[]");
       sessions.forEach(s=>(s.exercises||[]).forEach(e=>names.add(e.name)));
     }catch(e){}
     const dl=document.getElementById("exerciseSuggestions");
@@ -3675,7 +3761,7 @@ window.BF_UTIL = {
       <p>${a.detail}</p>
     </div>`).join("");
     box.innerHTML=`<h3>Conseils pour la prochaine séance</h3>${htmlAdvice}`;
-    localStorage.setItem(V29_ADVICE_KEY,JSON.stringify({date:new Date().toISOString(),advices,highPain,highFatigue,text:box.innerText}));
+    localStorage.setItem(V30_ADVICE_KEY,JSON.stringify({date:new Date().toISOString(),advices,highPain,highFatigue,text:box.innerText}));
     return advices;
   }
   function v29RenderProgress(){
@@ -3702,8 +3788,8 @@ window.BF_UTIL = {
   }
   function v29ClearProgress(){
     if(!confirm("Supprimer tout le suivi de progression ?")) return;
-    localStorage.removeItem(V29_PROGRESS_KEY);
-    localStorage.removeItem(V29_ADVICE_KEY);
+    localStorage.removeItem(V30_PROGRESS_KEY);
+    localStorage.removeItem(V30_ADVICE_KEY);
     v29RenderProgress();
     v29SetStatus("Suivi vidé.","ok");
   }
@@ -3713,12 +3799,295 @@ window.BF_UTIL = {
     navigator.clipboard?.writeText(txt).then(()=>alert("Conseils copiés.")).catch(()=>alert("Copie impossible, sélectionne le texte manuellement."));
   }
   function v29Bind(){
+    if(window.__bf_v30_bound) return;
+    window.__bf_v30_bound=true;
     document.getElementById("saveProgressBtn")?.addEventListener("click",v29SaveProgress);
     document.getElementById("generateAdaptationBtn")?.addEventListener("click",v29GenerateAdvice);
     document.getElementById("copyProgressAdviceBtn")?.addEventListener("click",v29CopyAdvice);
     document.getElementById("clearProgressBtn")?.addEventListener("click",v29ClearProgress);
     v29ExerciseSuggestions();
     v29RenderProgress();
+  }
+
+
+
+  function v291DirectClickFallback(e){
+    const id=e.target?.id;
+
+      if(e.target?.dataset?.open){ const view=e.target.dataset.open; if(document.getElementById(view+"View")){ e.preventDefault(); showView(view); } }
+
+    if(!id) return;
+    try{
+      if(id==="generateSmartMonthBtn"){ e.preventDefault(); v28RenderSmartMonth(v28BuildSmartMonth()); v30RefreshLaunchpad?.(); }
+      if(id==="generatePersonalSessionsBtn"){ e.preventDefault(); v27RenderSessions(v27GenerateSessions()); v30RefreshLaunchpad?.(); }
+      if(id==="generateGroceriesBtn"){
+        e.preventDefault();
+        const current=v26StoreGet(V30_GROCERY_KEY,{});
+        current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
+        current.budget=document.getElementById("coursesBudget")?.value||current.budget||"normal";
+        v26StoreSet(V30_GROCERY_KEY,current);
+        v26RenderCoursesView();
+        v28EnsureGrocerySetup?.();
+        v30RefreshLaunchpad?.();
+        v281UpdateHomeGroceryCard?.();
+      }
+      if(id==="saveProgressBtn"){ e.preventDefault(); v29SaveProgress(); v30RefreshLaunchpad?.(); }
+      if(id==="generateAdaptationBtn"){ e.preventDefault(); v29GenerateAdvice(); }
+      if(id==="v31StartLiveBtn"){ e.preventDefault(); v31StartLive(); }
+      if(id==="v31SaveSetBtn"){ e.preventDefault(); v31SavePerformance(); }
+      if(id==="v31NextExerciseBtn"){ e.preventDefault(); v31Next(); }
+      if(id==="v31PrevExerciseBtn"){ e.preventDefault(); v31Prev(); }
+    }catch(err){
+      console.error("Fallback génération V31", err);
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=31 puis réessaie.");
+    }
+  }
+
+
+
+  function v30StorageJson(key,fallback=null){
+    try{return JSON.parse(localStorage.getItem(key)||"null") || fallback;}catch(e){return fallback;}
+  }
+  function v30SetStep(id, ok, okText, missingText){
+    const el=document.getElementById(id);
+    if(!el) return;
+    el.textContent=ok ? okText : missingText;
+    el.closest(".v30-step-card")?.classList.toggle("is-missing",!ok);
+  }
+  function v30RefreshLaunchpad(){
+    const profile=window.v26StoreGet?.(window.V26_PROFILE_KEY,null) || safeProfile?.();
+    const plan=v30StorageJson(window.V28_MONTH_KEY || "bf_v30_smart_month",null);
+    const sessions=v30StorageJson(window.V27_SESSIONS_KEY || "bf_v30_generated_sessions",[]);
+    const progress=v30StorageJson(window.V30_PROGRESS_KEY || "bf_v30_progress_log",[]);
+    const grocery=window.v26StoreGet?.(window.V26_GROCERY_KEY,null);
+
+    v30SetStep("v30StatusProfile",!!profile,"configuré","à compléter");
+    v30SetStep("v30StatusPlan",!!plan,"généré","à générer");
+    v30SetStep("v30StatusSessions",Array.isArray(sessions)&&sessions.length>0,"générées","à générer");
+    v30SetStep("v30StatusProgress",Array.isArray(progress)&&progress.length>0,"suivi actif","à remplir");
+    v30SetStep("v30StatusCourses",!!(grocery&&grocery.store),"configurées","à configurer");
+  }
+  function v30RunSelfTest(){
+    const tests=[
+      ["Navigation", document.getElementById("appNav") && [...document.querySelectorAll("#appNav [data-view]")].every(b=>document.getElementById(b.dataset.view+"View"))],
+      ["Plan", !!document.getElementById("generateSmartMonthBtn") && typeof v28BuildSmartMonth==="function"],
+      ["Séances", !!document.getElementById("generatePersonalSessionsBtn") && typeof v27GenerateSessions==="function"],
+      ["Courses", !!document.getElementById("generateGroceriesBtn") && typeof v26RenderGroceryList==="function"],
+      ["Live", !!document.getElementById("v31StartLiveBtn") && typeof v31StartLive==="function"],
+      ["Suivi", !!document.getElementById("saveProgressBtn") && typeof v29GenerateAdvice==="function"],
+      ["Coach", !!document.getElementById("coachInput") && !!document.getElementById("sendCoachBtn")],
+      ["Cache", !!navigator.serviceWorker]
+    ];
+    const okCount=tests.filter(t=>t[1]).length;
+    const box=document.getElementById("v30SystemCheck");
+    if(!box) return;
+    box.classList.remove("hidden");
+    box.innerHTML=`<h3>Test système V31</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
+      tests.map(([name,ok])=>`<div class="v30-test-line"><strong>${name}</strong><span>${ok?"✅ OK":"⚠️ À vérifier"}</span></div>`).join("")+
+      `</div>`;
+    v30RefreshLaunchpad();
+  }
+  function v30Bind(){
+    document.body.classList.add("v30-clean");
+    document.getElementById("v30SelfTestBtn")?.addEventListener("click",v30RunSelfTest);
+    document.querySelectorAll(".v30-step-card[data-open]").forEach(btn=>{
+      if(btn.dataset.v30Bound) return;
+      btn.dataset.v30Bound="1";
+      btn.addEventListener("click",()=>showView(btn.dataset.open));
+    });
+    v30RefreshLaunchpad();
+  }
+
+
+
+  const V31_LIVE_STATE_KEY="bf_v31_live_state";
+  let v31RestInterval=null;
+
+  function v31GetSessions(){
+    let sessions=[];
+    try{sessions=JSON.parse(localStorage.getItem(window.V30_SESSIONS_KEY||"bf_v30_generated_sessions")||"[]");}catch(e){sessions=[];}
+    if(!Array.isArray(sessions) || !sessions.length){
+      try{
+        sessions=v27GenerateSessions();
+        localStorage.setItem(window.V30_SESSIONS_KEY||"bf_v30_generated_sessions",JSON.stringify(sessions));
+        v27RenderSessions?.(sessions);
+      }catch(e){console.warn("Impossible de générer les séances live",e);sessions=[];}
+    }
+    return sessions;
+  }
+  function v31SetStatus(msg,type="ok"){
+    const el=document.getElementById("v31LiveStatus");
+    if(el){el.textContent=msg;el.className="validation-status "+type;el.classList.remove("hidden");}
+  }
+  function v31PopulateSessions(){
+    const select=document.getElementById("v31LiveSessionSelect");
+    if(!select) return;
+    const sessions=v31GetSessions();
+    if(!sessions.length){
+      select.innerHTML=`<option value="">Aucune séance générée</option>`;
+      v31SetStatus("Génère d’abord tes séances dans l’onglet Séances.","err");
+      return;
+    }
+    select.innerHTML=sessions.map((s,i)=>`<option value="${i}">${s.name||("Séance "+(i+1))} · ${(s.exercises||[]).length} exercices</option>`).join("");
+    v31SetStatus("Séances prêtes pour le live.","ok");
+  }
+  function v31SaveState(state){
+    localStorage.setItem(V31_LIVE_STATE_KEY,JSON.stringify(state));
+  }
+  function v31GetState(){
+    try{return JSON.parse(localStorage.getItem(V31_LIVE_STATE_KEY)||"null");}catch(e){return null;}
+  }
+  function v31StartLive(){
+    const sessions=v31GetSessions();
+    const idx=Number(document.getElementById("v31LiveSessionSelect")?.value||0);
+    const session=sessions[idx];
+    if(!session || !(session.exercises||[]).length){
+      v31SetStatus("Aucune séance valide à lancer.","err");
+      return;
+    }
+    const state={sessionIndex:idx,exerciseIndex:0,startedAt:new Date().toISOString(),session};
+    v31SaveState(state);
+    v31RenderLive();
+    showView("live");
+    v31SetStatus("Séance lancée. Note tes perfs exercice par exercice.","ok");
+  }
+  function v31Current(){
+    const state=v31GetState();
+    if(!state || !state.session) return null;
+    const exercises=state.session.exercises||[];
+    return {state,exercises,current:exercises[state.exerciseIndex],index:state.exerciseIndex,total:exercises.length};
+  }
+  function v31RenderLive(){
+    const data=v31Current();
+    const title=document.getElementById("v31LiveExerciseTitle");
+    const details=document.getElementById("v31LiveExerciseDetails");
+    const tag=document.getElementById("v31LiveProgressTag");
+    if(!data || !data.current){
+      if(title) title.textContent="Aucune séance lancée";
+      if(tag) tag.textContent="0/0";
+      if(details) details.innerHTML="Génère tes séances puis clique sur “Lancer la séance”.";
+      return;
+    }
+    const {state,current,index,total}=data;
+    if(title) title.textContent=current.name||"Exercice";
+    if(tag) tag.textContent=`${index+1}/${total}`;
+    const pct=total?Math.round(((index+1)/total)*100):0;
+    if(details){
+      details.innerHTML=`<div class="v31-exercise-main">
+        <strong>${state.session.name||"Séance personnalisée"}</strong>
+        <p>${current.muscle||"muscle"} · ${current.type||"exercice"} · ${current.sets||3} séries · ${current.reps||"8-12"} · repos ${current.rest||"1min30"}</p>
+        <p>${current.desc||"Exécution contrôlée, garde 1-2 répétitions en réserve."}</p>
+        <p><em>${current.note||"Objectif : propre, contrôlé, sans douleur anormale."}</em></p>
+        <div class="v31-progress-bar"><div class="v31-progress-fill" style="width:${pct}%"></div></div>
+      </div>`;
+    }
+    const repsTarget=String(current.reps||"").match(/\d+/);
+    if(document.getElementById("v31LiveReps") && !v31LiveReps.value) v31LiveReps.value=repsTarget?repsTarget[0]:"";
+  }
+  function v31Number(v,fallback=0){
+    const n=Number(String(v||"").replace(",","."));
+    return Number.isFinite(n)?n:fallback;
+  }
+  function v31SavePerformance(){
+    const data=v31Current();
+    if(!data || !data.current){v31SetStatus("Lance d’abord une séance.","err");return;}
+    const {state,current}=data;
+    const entry={
+      id:"live_"+Date.now(),
+      date:new Date().toISOString(),
+      session:state.session.name||"Séance live",
+      exercise:current.name||"Exercice",
+      load:v31Number(document.getElementById("v31LiveLoad")?.value,0),
+      unit:"kg",
+      sets:Number(current.sets)||1,
+      reps:v31Number(document.getElementById("v31LiveReps")?.value,0),
+      rpe:v31Number(document.getElementById("v31LiveRpe")?.value,8),
+      pain:v31Number(document.getElementById("v31LivePain")?.value,0),
+      fatigue:"normal",
+      bodyweight:0,
+      notes:(document.getElementById("v31LiveNotes")?.value||"").trim()+" · enregistré depuis le live V31"
+    };
+    try{
+      const list=(typeof v29GetProgress==="function")?v29GetProgress():JSON.parse(localStorage.getItem(window.V30_PROGRESS_KEY||"bf_v30_progress_log")||"[]");
+      list.unshift(entry);
+      if(typeof v29SaveProgressList==="function") v29SaveProgressList(list.slice(0,160));
+      else localStorage.setItem(window.V30_PROGRESS_KEY||"bf_v30_progress_log",JSON.stringify(list.slice(0,160)));
+      v29RenderProgress?.();
+      v29GenerateAdvice?.();
+      v30RefreshLaunchpad?.();
+      v31SetStatus("Perf enregistrée dans le suivi.","ok");
+    }catch(e){
+      console.error(e);
+      v31SetStatus("Impossible d’enregistrer la perf.","err");
+    }
+  }
+  function v31Next(){
+    const data=v31Current();
+    if(!data) return;
+    data.state.exerciseIndex=Math.min(data.total-1,data.index+1);
+    v31SaveState(data.state);
+    v31ClearInputs(false);
+    v31RenderLive();
+  }
+  function v31Prev(){
+    const data=v31Current();
+    if(!data) return;
+    data.state.exerciseIndex=Math.max(0,data.index-1);
+    v31SaveState(data.state);
+    v31ClearInputs(false);
+    v31RenderLive();
+  }
+  function v31ClearInputs(clearLoad=true){
+    if(clearLoad && document.getElementById("v31LiveLoad")) v31LiveLoad.value="";
+    if(document.getElementById("v31LiveReps")) v31LiveReps.value="";
+    if(document.getElementById("v31LiveRpe")) v31LiveRpe.value="8";
+    if(document.getElementById("v31LivePain")) v31LivePain.value="0";
+    if(document.getElementById("v31LiveNotes")) v31LiveNotes.value="";
+  }
+  function v31ParseRest(rest){
+    const txt=String(rest||"90");
+    const nums=txt.match(/\d+/g)||["90"];
+    let n=Number(nums[0])||90;
+    if(txt.includes("min")) n=n*60;
+    if(n<20) n=90;
+    return Math.min(240,n);
+  }
+  function v31StartRest(){
+    const data=v31Current();
+    const seconds=v31ParseRest(data?.current?.rest||"90");
+    const box=document.getElementById("v31RestDisplay");
+    if(!box) return;
+    clearInterval(v31RestInterval);
+    let left=seconds;
+    box.classList.remove("hidden");
+    const tick=()=>{
+      const m=Math.floor(left/60), s=left%60;
+      box.innerHTML=`<div class="v31-rest-big">${m}:${String(s).padStart(2,"0")}</div><p>Repos en cours. Respire, prépare la série suivante.</p>`;
+      if(left<=0){clearInterval(v31RestInterval);box.innerHTML=`<strong>Repos terminé.</strong><p>Tu peux repartir si tu te sens prêt.</p>`;}
+      left--;
+    };
+    tick();
+    v31RestInterval=setInterval(tick,1000);
+  }
+  function v31Finish(){
+    const data=v31Current();
+    if(!data){showView("progress");return;}
+    localStorage.removeItem(V31_LIVE_STATE_KEY);
+    clearInterval(v31RestInterval);
+    v31RenderLive();
+    v31SetStatus("Séance terminée. Va dans Suivi pour voir tes conseils.","ok");
+    showView("progress");
+  }
+  function v31Bind(){
+    document.getElementById("v31RefreshSessionsBtn")?.addEventListener("click",()=>{v31PopulateSessions();v31RenderLive();});
+    document.getElementById("v31StartLiveBtn")?.addEventListener("click",v31StartLive);
+    document.getElementById("v31SaveSetBtn")?.addEventListener("click",v31SavePerformance);
+    document.getElementById("v31RestBtn")?.addEventListener("click",v31StartRest);
+    document.getElementById("v31PrevExerciseBtn")?.addEventListener("click",v31Prev);
+    document.getElementById("v31NextExerciseBtn")?.addEventListener("click",v31Next);
+    document.getElementById("v31FinishLiveBtn")?.addEventListener("click",v31Finish);
+    v31PopulateSessions();
+    v31RenderLive();
   }
 
 
@@ -3788,7 +4157,7 @@ window.BF_UTIL = {
     document.getElementById("closeSafetyBtn")?.addEventListener("click",closeSafetyPanel);
 
     bindIntroButtonsRobust();
-    finalV26Bindings();
+    finalV30Bindings();
     v26Bind();
     v26RenderCoursesView();
     renderMonthSummary(null,getProfile());
@@ -3800,10 +4169,10 @@ window.BF_UTIL = {
     document.querySelectorAll("[data-month-tab]").forEach(b=>b.addEventListener("click",()=>{ activeMonthTab=b.dataset.monthTab; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x===b)); renderMonth(); }));
 
         document.querySelectorAll("[data-start-live]").forEach(b=>b.addEventListener("click",()=>startLive(b.dataset.startLive)));
-    startCustomLiveBtn?.addEventListener("click",startLiveFromCustom);
+    document.getElementById("startCustomLiveBtn")?.addEventListener("click",startLiveFromCustom);
     document.getElementById("saveLivePerfBtn")?.addEventListener("click",saveLivePerf);
-    liveRestBtn?.addEventListener("click",()=>BF_TIMER.start(90));
-    liveReplaceBtn?.addEventListener("click",liveReplacementAnswer);
+    document.getElementById("liveRestBtn")?.addEventListener("click",()=>BF_TIMER.start(90));
+    document.getElementById("liveReplaceBtn")?.addEventListener("click",liveReplacementAnswer);
     document.getElementById("livePrevBtn")?.addEventListener("click",()=>{ if(liveIndex>0){ liveIndex--; renderLiveStep(); }});
     document.getElementById("liveNextBtn")?.addEventListener("click",()=>{ if(liveIndex<livePlan.length-1){ liveIndex++; renderLiveStep(); } else { liveExerciseTitle.textContent="Séance terminée ✅"; liveExerciseDesc.textContent="Bien joué. Pense à boire et à noter tes dernières perfs si ce n’est pas fait."; liveTags.innerHTML=""; liveBar.style.width="100%"; }});
     document.addEventListener("click",e=>{
@@ -3821,6 +4190,17 @@ window.BF_UTIL = {
     BF_PERF.init();
     BF_NUTRITION.init();
 
+    try{
+      v27Bind?.();
+      v28Bind?.();
+      v281BindCleanUI?.();
+      v29Bind?.();
+      v29RenderProgress?.();
+      v28RenderSmartMonth?.();
+      v26RenderCoursesView?.();
+    }catch(e){ console.warn("V31 bind check", e); }
+
+
     Object.assign(DATA.questionGroups,{
       "Mon profil":["Donne moi mon résumé personnalisé","Combien de protéines je dois manger ?","Combien de calories je dois manger ?","Quel programme pour mon objectif ?","J’ai une douleur, j’adapte comment ?","Je stagne, je fais quoi ?"],
       "Présentation libre":["Comment marche la présentation libre ?","Analyse ma présentation","Que dois-je écrire ?"],
@@ -3833,7 +4213,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=29-1-1").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=31").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
@@ -3855,6 +4235,7 @@ window.BF_UTIL = {
     },500);
   });
 
+  document.addEventListener("click",v291DirectClickFallback);
   document.addEventListener("DOMContentLoaded",init);
 })();
 
