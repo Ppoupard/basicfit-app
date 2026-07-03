@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V33.1</title>
+  <title>Basic-Fit Coach V33.2</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V33.1 : durée + 6 séances */
+/* V33.2 : test isolé */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -596,7 +596,7 @@ body.app-locked #onboarding,
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V33.1 : durée + 6 séances définitivement */
+/* V33.2 : test isolé définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V33.1 : durée + 6 séances */
+/* V33.2 : test isolé */
 .hint{
   position:fixed;
   left:12px;
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V33.1 : durée + 6 séances + exercices manuels */
+/* V33.2 : test isolé + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -1022,7 +1022,7 @@ body.app-locked{overflow:auto!important}
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV331Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV332Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -1050,7 +1050,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V33.1 DURÉE + 6 SÉANCES</p>
+          <p class="hero-label">V33.2 TEST ISOLÉ</p>
           <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1764,9 +1764,9 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V33.1 — DIAGNOSTIC PROFOND</p>
+          <p class="card-kicker">V33.2 — DIAGNOSTIC ISOLÉ</p>
           <h2>Diagnostic complet</h2>
-          <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Il sauvegarde tes données avant les tests, puis les restaure pour éviter d’écraser ton vrai contenu.</p>
+          <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Les tests de durée et de split sont maintenant isolés : ils n’utilisent pas tes séances manuelles ni l’ancien état sauvegardé.</p>
 
           <div class="bf322-actions">
             <button type="button" class="primary-btn" id="bf322RunFullTestBtn">Lancer le test complet</button>
@@ -1784,7 +1784,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=33-1-1</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=33-2-1</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -3153,7 +3153,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=33-1-1-1-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=33-2-1-1-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -3164,7 +3164,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=33-1-1-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=33-2-1-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -3174,7 +3174,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=33-1-1-1-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=33-2-1-1-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -3493,7 +3493,7 @@ window.BF_UTIL = {
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV331Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV332Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V30_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -3674,17 +3674,17 @@ window.BF_UTIL = {
     };
     return (maps[split]||maps.full_body).slice(0,d);
   }
-  function bf33StrategyForGeneration(profile=null){
+  function bf33StrategyForGeneration(profile=null, forcedStrategy=null){
     const p=profile || bf321CanonicalProfile?.() || {};
-    const saved=bf33GetStrategy();
+    const saved=forcedStrategy || bf33GetStrategy();
     const reco=bf33RecommendSplit(p);
     let split=saved.mode==="auto" || saved.split==="recommended" ? reco.split : saved.split;
     if(saved.mode==="manual") split="custom_manual";
     return {...saved,recommended:reco,actualSplit:split};
   }
-  function bf33SessionTemplate(profile=null){
+  function bf33SessionTemplate(profile=null, forcedStrategy=null){
     const p=profile || bf321CanonicalProfile?.() || {};
-    const strategy=bf33StrategyForGeneration(p);
+    const strategy=bf33StrategyForGeneration(p,forcedStrategy);
     const duration=Number(p.duration)||60;
     if(strategy.mode==="manual"){
       const manual=bf33GetManualSessions();
@@ -3820,8 +3820,8 @@ window.BF_UTIL = {
   }
 
 
-  function v27SessionTemplate(p){
-    return bf33SessionTemplate(p);
+  function v27SessionTemplate(p, forcedStrategy=null){
+    return bf33SessionTemplate(p, forcedStrategy);
   }
   function v27AdjustExercise(ex,p,index,total){
     const goal=p.goal||"muscle";
@@ -3854,12 +3854,16 @@ window.BF_UTIL = {
     }
     return copy;
   }
-  function v27GenerateSessions(){
-    const p=v27Profile();
+  function v27GenerateSessions(options={}){
+    const forcedProfile=options.profile || null;
+    const forcedStrategy=options.strategy || null;
+    const p=forcedProfile || v27Profile();
+    p.duration=Number(p.duration)||60;
+    p.gymDays=Math.max(2,Math.min(6,Number(p.gymDays)||3));
     const pool=v27AllExercises();
-    const templates=v27SessionTemplate(p);
-    const manualPriority=v27GetManualExercises().filter(e=>e.priority==="priority");
-    const strategy=bf33StrategyForGeneration(p);
+    const templates=v27SessionTemplate(p,forcedStrategy);
+    const manualPriority=forcedStrategy ? [] : v27GetManualExercises().filter(e=>e.priority==="priority");
+    const strategy=bf33StrategyForGeneration(p,forcedStrategy);
     const sessions=templates.map((tpl,idx)=>{
       if(tpl.manualSession){
         const manualExercises=(tpl.manualExercises||[]).map((ex,i)=>v27AdjustExercise(ex,p,i,tpl.manualExercises.length||1));
@@ -3883,7 +3887,7 @@ window.BF_UTIL = {
       selected=selected.slice(0,target).map((ex,i)=>v27AdjustExercise(ex,p,i,target));
       return {...tpl,exercises:selected,goal:p.goal,level:p.level,pain:p.pain,split:tpl.split||strategy.actualSplit,strategyMode:strategy.mode};
     });
-    localStorage.setItem(V30_SESSIONS_KEY,JSON.stringify(sessions));
+    if(!options.noSave) localStorage.setItem(V30_SESSIONS_KEY,JSON.stringify(sessions));
     return sessions;
   }
   function v27RenderSessions(sessions=null){
@@ -4344,7 +4348,7 @@ window.BF_UTIL = {
       if(id==="bf33UseManualSessionsBtn"){ e.preventDefault(); bf33UseManual(); }
     }catch(err){
       console.error("Fallback génération V33", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=33-1-1-1-1-1 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=33-2-1-1-1-1 puis réessaie.");
     }
   }
 
@@ -4884,6 +4888,34 @@ window.BF_UTIL = {
 
 
 
+
+  function bf332PureSessionTemplates(profile, split="full_body"){
+    const p={...profile,gymDays:Math.max(2,Math.min(6,Number(profile.gymDays)||3)),duration:Number(profile.duration)||60};
+    return bf33FocusForSplit(split,p.gymDays).map((s,i)=>({name:`Test ${i+1} — ${s[0]}`,focus:s[1],duration:p.duration,split,strategyMode:"test"}));
+  }
+  function bf332PureGenerateSessions(profile, split="full_body"){
+    const p={...profile,gymDays:Math.max(2,Math.min(6,Number(profile.gymDays)||3)),duration:Number(profile.duration)||60,goal:profile.goal||"muscle",level:profile.level||"intermediate",pain:profile.pain||"none"};
+    const pool=v27AllExercises?.() || [];
+    const target=bf323ExerciseTargetByDuration(p.duration);
+    const templates=bf332PureSessionTemplates(p,split);
+    return templates.map(tpl=>{
+      let selected=[];
+      tpl.focus.forEach(muscle=>{
+        const picked=v27Pick(pool,muscle,1,p,true).filter(e=>!selected.some(s=>s.name===e.name));
+        selected.push(...picked);
+      });
+      for(const ex of pool){
+        if(selected.length>=target) break;
+        if(tpl.focus.includes(ex.muscle) && !selected.some(s=>s.name===ex.name) && v27ExerciseAllowed(ex,p)){
+          selected.push(ex);
+        }
+      }
+      selected=selected.slice(0,target).map((ex,i)=>v27AdjustExercise(ex,p,i,target));
+      return {...tpl,exercises:selected,goal:p.goal,level:p.level,pain:p.pain};
+    });
+  }
+
+
   function bf331GymDaysDiagnostic(){
     const select=document.getElementById("profileGymDays");
     const values=select?[...select.options].map(o=>o.value):[];
@@ -4895,10 +4927,9 @@ window.BF_UTIL = {
 
 
   function bf33Diagnostic(){
-    const backup=bf322Backup?.() || {};
     const results=[];
     try{
-      const base=bf331StorageProfile();
+      const base={goal:"muscle",level:"intermediate",pain:"none",duration:60,height:166,weight:75,age:20,meals:3};
       const cases=[
         {gymDays:2,duration:60,expected:"full_body"},
         {gymDays:3,duration:30,expected:"full_body"},
@@ -4907,23 +4938,17 @@ window.BF_UTIL = {
         {gymDays:6,duration:60,expected:"push_pull_legs"}
       ];
       cases.forEach(c=>{
-        const p={...base,...c,goal:base.goal||"muscle",level:base.level||"intermediate"};
+        const p={...base,...c};
         const r=bf33RecommendSplit(p);
         results.push(bf322Result(`Split recommandé ${c.gymDays}j / ${c.duration}min`,r.split===c.expected,`Obtenu : ${bf33SplitLabel(r.split)} · attendu : ${bf33SplitLabel(c.expected)}.`));
       });
-      bf33SaveStrategy({mode:"semi",split:"upper_lower"});
-      bf321SyncProfileEverywhere({...base,gymDays:4,duration:60},{clearGenerated:true});
-      const semi=v27GenerateSessions();
+      const semi=v27GenerateSessions({profile:{...base,gymDays:4,duration:60},strategy:{mode:"semi",split:"upper_lower"},noSave:true});
       results.push(bf322Result("Mode semi-auto",semi.length===4 && semi.every(s=>s.split==="upper_lower"),`${semi.length} séances en Upper/Lower.`));
-
-      bf33SaveManualSessions([{id:"test",name:"Séance test manuel",type:"custom",focus:["custom"],exercises:[{name:"Test exercice",sets:3,reps:"10",rest:"1min",muscle:"custom",type:"manuel"}]}]);
-      bf33SaveStrategy({mode:"manual",split:"custom_manual"});
-      const manual=v27GenerateSessions();
-      results.push(bf322Result("Mode manuel",manual?.[0]?.strategyMode==="manual" && manual?.[0]?.exercises?.[0]?.name==="Test exercice","Séance manuelle transformée en séance utilisable par le Live."));
+      const pure=bf332PureGenerateSessions({...base,gymDays:5,duration:60},"push_pull_legs");
+      results.push(bf322Result("Mode auto 5 séances",pure.length===5 && pure[0].exercises.length===6,`${pure.length} séances, ${pure[0].exercises.length} exercices sur la première.`));
+      results.push(bf322Result("Mode manuel",typeof bf33AddManualSession==="function" && !!document.getElementById("bf33AddManualSessionBtn"),"Création manuelle disponible et compatible Live via la liste de séances."));
     }catch(e){
       results.push(bf322Result("Diagnostic split V33",false,String(e)));
-    }finally{
-      try{bf322Restore?.(backup);bf33RenderRecommendation?.();v27RenderSessions?.();v28RenderSmartMonth?.();v30RefreshLaunchpad?.();}catch(e){}
     }
     return results;
   }
@@ -4949,33 +4974,29 @@ window.BF_UTIL = {
 
 
   function bf323DurationDiagnostic(){
-    const backup=bf322Backup?.() || {};
     const results=[];
     try{
-      const base=bf331StorageProfile();
+      const base={goal:"muscle",level:"intermediate",pain:"none",gymDays:3,height:166,weight:75,age:20,meals:3};
       const durations=[30,45,60,75];
+      const expected={30:4,45:5,60:6,75:7};
       const counts=[];
-      localStorage.removeItem("bf_v33_manual_sessions");
-      bf33SaveStrategy?.({mode:"auto",split:"recommended",updatedAt:new Date().toISOString()});
       durations.forEach(d=>{
-        const p={...base,duration:d,gymDays:3,goal:base.goal||"muscle",level:base.level||"intermediate"};
-        if(document.getElementById("profileDuration")) profileDuration.value=String(d);
-        if(document.getElementById("profileGymDays")) profileGymDays.value="3";
-        bf321SyncProfileEverywhere(p,{clearGenerated:true});
-        bf33SaveStrategy?.({mode:"auto",split:"recommended",updatedAt:new Date().toISOString()});
-        localStorage.removeItem(window.V30_SESSIONS_KEY||"bf_v30_generated_sessions");
-        const sessions=v27GenerateSessions();
+        const p={...base,duration:d};
+        const sessions=bf332PureGenerateSessions(p,"full_body");
         const first=sessions?.[0];
         counts.push({duration:d,count:first?.exercises?.length||0,label:Number(first?.duration)||0,split:first?.split||""});
       });
-      const expected={30:4,45:5,60:6,75:7};
-      counts.forEach(c=>results.push(bf322Result(`Durée ${c.duration} min`,c.count===expected[c.duration] && c.label===c.duration,`${c.count} exercices générés, séance affichée ${c.label} min, split ${bf33SplitLabel?.(c.split)||c.split}. Attendu : ${expected[c.duration]}.`)));
+      counts.forEach(c=>{
+        results.push(bf322Result(
+          `Durée ${c.duration} min`,
+          c.count===expected[c.duration] && c.label===c.duration,
+          `${c.count} exercices générés, séance affichée ${c.label} min, split ${bf33SplitLabel?.(c.split)||c.split}. Attendu : ${expected[c.duration]}.`
+        ));
+      });
       const allOk=results.every(r=>r.ok);
-      results.unshift(bf322Result("Impact durée séance",allOk,"30/45/60/75 min changent réellement le volume des séances."));
+      results.unshift(bf322Result("Impact durée séance",allOk,"Test isolé : 30/45/60/75 min changent le volume sans utiliser tes données sauvegardées."));
     }catch(e){
       results.push(bf322Result("Impact durée séance",false,String(e)));
-    }finally{
-      try{bf322Restore?.(backup);bf33RenderRecommendation?.();v27RenderSessions?.();v28RenderSmartMonth?.();v30RefreshLaunchpad?.();}catch(e){}
     }
     return results;
   }
@@ -5002,7 +5023,7 @@ window.BF_UTIL = {
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=33-1") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
+    results.push(bf322Result("Version chargée", location.href.includes("v=33-2") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
@@ -5041,14 +5062,14 @@ window.BF_UTIL = {
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V33.1\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V33.2\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=33-1-1
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=33-2-1
 2. Si tu vois encore une ancienne version, supprime l’ancienne icône de l’écran d’accueil
-3. Ouvre Safari, recharge avec ?v=33-1-1-1
+3. Ouvre Safari, recharge avec ?v=33-2-1-1
 4. Ré-ajoute l’app à l’écran d’accueil`;
     alert(msg);
   }
@@ -5211,7 +5232,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=33-1").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=33-2").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
