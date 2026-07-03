@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V27.1</title>
+  <title>Basic-Fit Coach V28</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V27.1 : séances personnalisées stable */
+/* V28 : plan personnalisé courses */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -596,7 +596,7 @@ body.app-locked #onboarding,
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V27.1 : séances personnalisées stable définitivement */
+/* V28 : plan personnalisé courses définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V27.1 : séances personnalisées stable */
+/* V28 : plan personnalisé courses */
 .hint{
   position:fixed;
   left:12px;
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V27.1 : séances personnalisées stable + exercices manuels */
+/* V28 : plan personnalisé courses + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -810,6 +810,24 @@ body.app-locked{overflow:auto!important}
   .v27-form-grid{grid-template-columns:1fr}
   .v27-controls button{width:100%}
   .manual-exercise-row{flex-direction:column}
+}
+
+
+/* V28 : plan personnalisé + interface simplifiée */
+.v28-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.smart-week{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:24px;padding:14px;margin:14px 0}
+.smart-week h3{margin-bottom:4px}
+.smart-week-intro{color:var(--muted);font-size:13.5px;margin-bottom:10px}
+.smart-session{border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.16);border-radius:18px;padding:12px;margin:10px 0}
+.smart-session h4{color:#fff;margin-bottom:5px}
+.smart-session-reason{color:#DFFFEA;background:rgba(53,208,127,.08);border:1px solid rgba(53,208,127,.18);padding:8px;border-radius:14px;margin:8px 0;font-size:13px}
+.smart-ex-row{border-top:1px solid rgba(255,255,255,.07);padding:8px 0;color:var(--muted);font-size:13px}
+.smart-ex-row strong{color:#fff}
+@media(max-width:760px){.v28-actions button{width:100%}}
+
+/* V28 : onglets simplifiés */
+#liveView,#customView,#performancesView,#questionsView{
+  display:none!important;
 }
 
 </style>
@@ -891,6 +909,10 @@ body.app-locked{overflow:auto!important}
             <textarea id="nutritionPresentation" class="presentation-textarea" placeholder="Exemple : Je mange 2 à 3 repas par jour. Je fais souvent mes courses à Hyper U. Je veux manger simple et pas trop cher. J’aime le riz, les œufs, le poulet, le jambon, les pommes de terre, les bananes et le skyr. Je n’aime pas trop les plats compliqués. Je veux une liste de courses pour le mois avec estimation du prix."></textarea>
           </label>
 
+          <div id="coursesSetupPanel" class="coach-diagnosis">
+            <h3>Configuration courses</h3>
+            <p>Choisis ton magasin et ton budget. L’app garde ces infos pour les prochaines listes.</p>
+          </div>
           <div class="v26-grid">
             <label>Magasin principal
               <select id="groceryStore">
@@ -967,7 +989,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V27.1 AUDIT STABLE</p>
+          <p class="hero-label">V28 PLAN COURSES CLEAN</p>
           <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -978,15 +1000,12 @@ body.app-locked{overflow:auto!important}
 
       <nav class="app-nav" id="appNav">
         <button data-view="dashboard" class="active">🏠<span>Accueil</span></button>
-        <button data-view="profile">👤<span>Profil</span></button>
-        <button data-view="month">🗓️<span>Mois</span></button>
+        <button data-view="plan">🗓️<span>Plan</span></button>
         <button data-view="sessions">🏋️<span>Séances</span></button>
-        <button data-view="live">▶️<span>Live</span></button>
-        <button data-view="custom">✨<span>Perso</span></button>
-        <button data-view="performances">📈<span>Perfs</span></button>
         <button data-view="nutrition">🥗<span>Nutrition</span></button>
+        <button data-view="courses">🛒<span>Courses</span></button>
         <button data-view="coach">🤖<span>Coach</span></button>
-        <button data-view="questions">💬<span>Questions</span></button>
+        <button data-view="profile">👤<span>Profil</span></button>
       </nav>
 
       <section class="view active" id="dashboardView">
@@ -1073,29 +1092,19 @@ body.app-locked{overflow:auto!important}
         </article>
       </section>
 
-      <section class="view" id="monthView">
-        <div class="section-head"><div><p class="card-kicker">COACH MENSUEL</p><h2>Programme sur 1 mois</h2></div></div>
-        <article class="card accent-card">
-          <p class="card-kicker">LOGIQUE LONG TERME</p><h3>Créer → suivre → bilan → ajuster</h3>
-          <p>Le mois est construit en 4 semaines : adaptation, progression, intensification, semaine légère. À la fin, tu fais un bilan et l’app prépare le mois suivant.</p>
-          <div class="mini-row"><button class="primary-btn" id="generateMonthBtn">Générer mon mois</button><button class="ghost-btn" id="loadMonthBtn">Charger mois sauvegardé</button><button class="ghost-btn" id="clearMonthBtn">Effacer le mois</button></div>
-        </article>
-        <div id="monthSummary" class="month-summary"></div>
-        <div class="segmented month-tabs" id="monthTabs">
-          <button data-month-tab="sport" class="active">Sport</button><button data-month-tab="nutrition">Nutrition</button><button data-month-tab="shopping">Courses</button><button data-month-tab="review">Bilan</button>
-        </div>
-        <div id="monthOutput" class="month-output empty-state">Remplis ton profil puis clique sur “Générer mon mois”.</div>
-        <article class="card form-card">
-          <p class="card-kicker">BILAN FIN DE MOIS</p><h3>Ajuster le mois suivant</h3>
-          <div class="form-grid">
-            <label>Poids actuel <input id="reviewWeight" inputmode="decimal" placeholder="ex : 74.5"></label>
-            <label>Fatigue générale <select id="reviewFatigue"><option value="low">Faible</option><option value="normal" selected>Normale</option><option value="high">Haute</option></select></label>
-            <label>Respect des séances <select id="reviewTraining"><option value="low">Moins de 50%</option><option value="medium" selected>Environ 70%</option><option value="high">Presque tout</option></select></label>
-            <label>Nutrition suivie <select id="reviewNutrition"><option value="low">Peu</option><option value="medium" selected>Moyen</option><option value="high">Bien</option></select></label>
+
+      <section class="view" id="planView">
+        <article class="card">
+          <p class="card-kicker">V28 — PLAN 4 SEMAINES</p>
+          <h2>Plan personnalisé du mois</h2>
+          <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
+          <div class="v28-actions">
+            <button type="button" class="primary-btn" id="generateSmartMonthBtn">Générer mon plan personnalisé</button>
+            <button type="button" class="ghost-btn" id="copySmartMonthBtn">Copier le plan</button>
+            <button type="button" class="ghost-btn danger-btn" id="resetSmartMonthBtn">Réinitialiser</button>
           </div>
-          <label>Douleurs / remarques <textarea id="reviewNotes" placeholder="ex : genou sensible semaine 3, grosse fatigue, faim le soir..."></textarea></label>
-          <button class="primary-btn full" id="generateNextMonthBtn">Créer le mois suivant avec adaptation</button>
-          <div id="reviewAdvice" class="result-box"></div>
+          <div id="smartMonthProfile" class="result-box"></div>
+          <div id="smartMonthResult"></div>
         </article>
       </section>
 
@@ -2004,7 +2013,7 @@ window.BF_UTIL = {
     if(q.includes("seche")||q.includes("maigrir")) return BF_NUTRITION.answer("je veux sécher");
     if(q.includes("muscle")||q.includes("masse")) return BF_NUTRITION.answer("prendre muscle");
     if(q.includes("explosif")||q.includes("puissant")) return "Explosivité : construis la force sur presse/leg curl/fessiers/mollets + transfert terrain avec accélérations et appuis.";
-    if(q.includes("programme mois")||q.includes("1 mois")||q.includes("mois")) return "Va dans l’onglet Mois : l’app génère ton programme sportif 4 semaines + nutrition 1 mois + liste de courses + bilan pour créer le mois suivant."; 
+    if(q.includes("programme mois")||q.includes("1 mois")||q.includes("mois")||q.includes("plan")) return "Va dans l’onglet Plan : l’app génère un vrai plan 4 semaines personnalisé avec explications, progression semaine par semaine et adaptation à ton objectif."; 
     if(q.includes("profil")) return "Va dans Profil : poids, taille, objectif, jours d’entraînement, repas et douleurs. Plus ton profil est précis, plus le mois généré sera adapté."; 
     if(q.includes("performance")||q.includes("perf")) return "Va dans Perfs : note machine, charge, reps, séries et ressenti. L’app affichera la dernière perf sous chaque exercice.";
     const v25=window.v25ProAnswer?.(text); if(v25) return v25;
@@ -2715,7 +2724,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=27-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=28-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -2726,7 +2735,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=27-1-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=28-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -2736,7 +2745,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=27-1-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=28-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -3016,7 +3025,9 @@ window.BF_UTIL = {
     unlockApp();
     try{fillProfileForm();updatePersonalUI();renderMonthSummary(null,merged);renderMonth(buildMonthPlan());}catch(e){console.warn(e);}
     try{v26RenderCoursesView();
-    v27Bind();}catch(e){console.warn(e);}
+    v28EnsureGrocerySetup?.();
+    v27Bind();
+    v28Bind();}catch(e){console.warn(e);}
     return true;
   }
   function v26RenderCoursesView(){
@@ -3283,6 +3294,119 @@ window.BF_UTIL = {
   }
 
 
+
+  const V28_MONTH_KEY="bf_v28_smart_month";
+  function v28GetProfile(){
+    const v26=v26StoreGet?.(V26_PROFILE_KEY,null);
+    return v26?.merged || getProfile();
+  }
+  function v28GoalExplanation(goal){
+    return {
+      cut:"Objectif sèche : on garde la musculation prioritaire pour préserver le muscle, avec du cardio contrôlé et une fatigue maîtrisée.",
+      muscle:"Objectif prise de muscle : on cherche du volume efficace, une progression des charges/répétitions et des séances assez complètes.",
+      strength:"Objectif force : on réduit le superflu, on garde les mouvements prioritaires, les repos longs et la qualité technique.",
+      performance:"Objectif performance : on mélange force utile, gainage, cardio intelligent et prévention des blessures.",
+      health:"Objectif santé/remise en forme : on privilégie régularité, technique, cardio modéré, mobilité et récupération.",
+      maintain:"Objectif maintien : on garde une routine équilibrée pour conserver les performances et la forme."
+    }[goal] || "Objectif personnalisé : on adapte le volume, l’intensité et la récupération à ton profil.";
+  }
+  function v28WeekStrategy(week, goal){
+    const base={
+      1:"Semaine 1 : installation technique. Le but est de trouver les bonnes charges, sans aller à l’échec.",
+      2:"Semaine 2 : progression contrôlée. Essaie d’ajouter 1 répétition ou un peu de charge si la technique reste propre.",
+      3:"Semaine 3 : semaine la plus stimulante. Intensité plus haute, mais toujours 1-2 répétitions en réserve.",
+      4:"Semaine 4 : semaine légère. On réduit légèrement la charge ou une série pour récupérer et repartir plus fort."
+    }[week];
+    if(goal==="cut" && week===3) return base+" Garde le cardio mais évite d’exploser la fatigue.";
+    if(goal==="muscle" && week===3) return base+" C’est la meilleure semaine pour pousser le volume intelligemment.";
+    if(goal==="strength" && week===3) return base+" Les repos peuvent monter à 2-3 minutes sur les exercices principaux.";
+    return base;
+  }
+  function v28ModifyForWeek(ex,week,goal){
+    const e={...ex};
+    const baseSets=Number(e.sets)||3;
+    if(week===1){e.sets=Math.max(2,baseSets); e.note="Charge facile/modérée, technique parfaite.";}
+    if(week===2){e.sets=baseSets; e.note="Essaie +1 rep par série ou +2,5 kg si c’est propre.";}
+    if(week===3){e.sets=goal==="strength"?Math.max(baseSets,4):baseSets+1; e.note="Semaine forte : garde 1-2 reps en réserve, pas d’échec sale.";}
+    if(week===4){e.sets=Math.max(2,baseSets-1); e.note="Deload : -10 à -20 % de charge ou 1 série en moins.";}
+    if(goal==="cut" && e.type==="cardio"){e.reps=week===4?"8-12 min":"12-20 min"; e.note="Cardio utile pour le déficit, sans vider les jambes.";}
+    if(goal==="health"){e.note="Priorité confort, technique, amplitude non douloureuse.";}
+    return e;
+  }
+  function v28SessionReason(session,p,week){
+    const name=(session.name||"").toLowerCase();
+    let txt="Cette séance est placée pour développer ton objectif sans dépasser ta récupération.";
+    if(name.includes("jambes")||name.includes("bas")) txt="Séance bas du corps : utile pour construire force, masse musculaire, stabilité et dépense énergétique.";
+    if(name.includes("haut")) txt="Séance haut du corps : équilibre dos/pectoraux/épaules/bras pour progresser sans surcharger les jambes.";
+    if(name.includes("full")) txt="Séance full body : elle répète les mouvements importants et augmente la fréquence de progression.";
+    if(p.goal==="cut") txt+=" En sèche, on garde l’intensité mais on contrôle le volume pour éviter la fatigue.";
+    if(p.goal==="muscle") txt+=" En prise de muscle, le but est de créer assez de volume de qualité pour progresser.";
+    if(p.goal==="strength") txt+=" En force, l’accent est mis sur les exercices principaux et les temps de repos.";
+    if(p.pain && p.pain!=="none") txt+=` Douleur déclarée : ${p.pain}, donc amplitude et charge doivent rester contrôlées.`;
+    return txt;
+  }
+  function v28BuildSmartMonth(){
+    const p=v28GetProfile();
+    let baseSessions=[];
+    try{baseSessions=v27GenerateSessions();}catch(e){console.warn(e);}
+    const weeks=[1,2,3,4].map(w=>({
+      week:w,
+      strategy:v28WeekStrategy(w,p.goal),
+      sessions:baseSessions.map(s=>({
+        ...s,
+        week:w,
+        reason:v28SessionReason(s,p,w),
+        exercises:(s.exercises||[]).map(ex=>v28ModifyForWeek(ex,w,p.goal))
+      }))
+    }));
+    const plan={profile:p,weeks,createdAt:new Date().toISOString()};
+    localStorage.setItem(V28_MONTH_KEY,JSON.stringify(plan));
+    return plan;
+  }
+  function v28RenderSmartMonth(plan=null){
+    plan=plan || JSON.parse(localStorage.getItem(V28_MONTH_KEY)||"null") || v28BuildSmartMonth();
+    const p=plan.profile || v28GetProfile();
+    const profileBox=document.getElementById("smartMonthProfile");
+    if(profileBox){
+      profileBox.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabel(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}<br>${v28GoalExplanation(p.goal)}`;
+    }
+    const box=document.getElementById("smartMonthResult");
+    if(!box) return;
+    box.innerHTML=plan.weeks.map(w=>`<div class="smart-week">
+      <h3>Semaine ${w.week}</h3>
+      <p class="smart-week-intro">${w.strategy}</p>
+      ${w.sessions.map(s=>`<div class="smart-session">
+        <h4>${s.name}</h4>
+        <div class="generated-session-meta"><span class="tag">${s.duration} min</span><span class="tag">${s.exercises.length} exercices</span><span class="tag">${goalLabel(p.goal)}</span></div>
+        <div class="smart-session-reason">${s.reason}</div>
+        ${s.exercises.map((ex,i)=>`<div class="smart-ex-row"><strong>${i+1}. ${ex.name}</strong> — ${ex.sets||3} séries · ${ex.reps||"8-12"} · repos ${ex.rest||"1min30"}<br>${ex.desc||""}<br><em>${ex.note||""}</em></div>`).join("")}
+      </div>`).join("")}
+    </div>`).join("");
+  }
+  function v28CopySmartMonth(){
+    const txt=document.getElementById("smartMonthResult")?.innerText||"";
+    if(!txt.trim()) return alert("Génère d’abord ton plan.");
+    navigator.clipboard?.writeText(txt).then(()=>alert("Plan copié.")).catch(()=>alert("Copie impossible, sélectionne le texte manuellement."));
+  }
+  function v28EnsureGrocerySetup(){
+    const saved=v26StoreGet?.(V26_GROCERY_KEY,null);
+    const box=document.getElementById("coursesSetupPanel");
+    if(!box) return;
+    if(!saved || !saved.store){
+      box.innerHTML=`<h3>Configuration courses requise</h3><p>Tu n’as pas encore choisi ton magasin. Sélectionne ton magasin, ton budget, puis clique sur “Générer ma liste”.</p>`;
+    }else{
+      box.innerHTML=`<h3>Courses configurées</h3><p>Magasin : <strong>${saved.store}</strong> · Budget : <strong>${saved.budget||"normal"}</strong>. Tu peux modifier ces choix à tout moment.</p>`;
+    }
+  }
+  function v28Bind(){
+    document.getElementById("generateSmartMonthBtn")?.addEventListener("click",()=>v28RenderSmartMonth(v28BuildSmartMonth()));
+    document.getElementById("copySmartMonthBtn")?.addEventListener("click",v28CopySmartMonth);
+    document.getElementById("resetSmartMonthBtn")?.addEventListener("click",()=>{localStorage.removeItem(V28_MONTH_KEY);v28RenderSmartMonth(v28BuildSmartMonth());});
+    v28RenderSmartMonth();
+    v28EnsureGrocerySetup();
+  }
+
+
   function init(){
     document.querySelectorAll("[id]").forEach(el=>{ try{ window[el.id]=el; }catch(e){} });
     try{ safeProfile(); }catch(e){ BF_STORE.remove(PROFILE_KEY); }
@@ -3394,7 +3518,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=27-1-1").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=28-1").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
