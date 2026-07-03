@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V28.1</title>
+  <title>Basic-Fit Coach V29</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V28.1 : plan personnalisé stable */
+/* V29 : suivi progression */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -596,7 +596,7 @@ body.app-locked #onboarding,
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V28.1 : plan personnalisé stable définitivement */
+/* V29 : suivi progression définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V28.1 : plan personnalisé stable */
+/* V29 : suivi progression */
 .hint{
   position:fixed;
   left:12px;
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V28.1 : plan personnalisé stable + exercices manuels */
+/* V29 : suivi progression + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -831,7 +831,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V28.1 : onglets simplifiés */
+/* V29 : onglets simplifiés */
 #liveView,#customView,#performancesView,#questionsView,#monthView{
   display:none!important;
 }
@@ -860,7 +860,7 @@ body.app-locked{overflow:auto!important}
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V28.1 — COACH COMPLET</p>
+            <p class="card-kicker">V29 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -966,7 +966,7 @@ body.app-locked{overflow:auto!important}
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV281Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV29Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -982,7 +982,7 @@ body.app-locked{overflow:auto!important}
 
         <section class="safety-card">
           <div>
-            <p class="card-kicker">SÉCURITÉ V28.1</p>
+            <p class="card-kicker">SÉCURITÉ V29</p>
             <h3>Mode secours stable</h3>
             <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
           </div>
@@ -994,7 +994,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V28.1 CLEAN AUDIT</p>
+          <p class="hero-label">V29 SUIVI ADAPTATION</p>
           <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1007,6 +1007,7 @@ body.app-locked{overflow:auto!important}
         <button data-view="dashboard" class="active">🏠<span>Accueil</span></button>
         <button data-view="plan">🗓️<span>Plan</span></button>
         <button data-view="sessions">🏋️<span>Séances</span></button>
+        <button data-view="progress">📈<span>Suivi</span></button>
         <button data-view="nutrition">🥗<span>Nutrition</span></button>
         <button data-view="courses">🛒<span>Courses</span></button>
         <button data-view="coach">🤖<span>Coach</span></button>
@@ -1058,7 +1059,7 @@ body.app-locked{overflow:auto!important}
           </div>
           <div class="quick-grid">
             <button data-quick="Quelle séance tu me conseilles aujourd’hui ?">Quelle séance ?</button>
-            <button data-open="month">Créer mon mois</button>
+            <button data-open="plan">Créer mon plan</button>
             <button data-open="profile">Profil</button>
             <button data-open="custom">Créer séance perso</button>
             <button data-open="performances">Noter une perf</button>
@@ -1100,7 +1101,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V28 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V29 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -1116,7 +1117,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V27 — SÉANCES PERSONNALISÉES</p>
+          <p class="card-kicker">V29 — SÉANCES PERSONNALISÉES</p>
           <h2>Mes séances générées</h2>
           <p>L’app génère tes séances selon ton profil : objectif, niveau, nombre de séances, durée, douleurs et exercices ajoutés manuellement.</p>
 
@@ -1379,6 +1380,99 @@ body.app-locked{overflow:auto!important}
         </article>
       </section>
 
+
+      <section class="view" id="progressView">
+        <article class="card">
+          <p class="card-kicker">V29 — SUIVI PROGRESSION</p>
+          <h2>Noter ma séance</h2>
+          <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
+
+          <div class="v29-form-grid">
+            <label>Séance
+              <select id="progressSessionSelect">
+                <option value="Séance personnalisée">Séance personnalisée</option>
+                <option value="Séance 1">Séance 1</option>
+                <option value="Séance 2">Séance 2</option>
+                <option value="Séance 3">Séance 3</option>
+                <option value="Séance 4">Séance 4</option>
+                <option value="Séance 5">Séance 5</option>
+              </select>
+            </label>
+            <label>Exercice
+              <input id="progressExerciseInput" list="exerciseSuggestions" placeholder="Ex : Presse à cuisses" />
+              <datalist id="exerciseSuggestions"></datalist>
+            </label>
+            <label>Charge utilisée
+              <input id="progressLoadInput" inputmode="decimal" placeholder="Ex : 80" />
+            </label>
+            <label>Unité
+              <select id="progressUnitInput">
+                <option value="kg">kg</option>
+                <option value="min">minutes</option>
+                <option value="sec">secondes</option>
+                <option value="poids du corps">poids du corps</option>
+              </select>
+            </label>
+            <label>Séries
+              <input id="progressSetsInput" inputmode="numeric" placeholder="Ex : 4" />
+            </label>
+            <label>Répétitions
+              <input id="progressRepsInput" inputmode="numeric" placeholder="Ex : 10" />
+            </label>
+            <label>Difficulté ressentie
+              <select id="progressRpeInput">
+                <option value="6">6/10 facile</option>
+                <option value="7">7/10 moyen</option>
+                <option value="8" selected>8/10 dur mais propre</option>
+                <option value="9">9/10 très dur</option>
+                <option value="10">10/10 échec</option>
+              </select>
+            </label>
+            <label>Douleur
+              <select id="progressPainInput">
+                <option value="0" selected>0/10 aucune</option>
+                <option value="1">1/10 très légère</option>
+                <option value="2">2/10 légère</option>
+                <option value="3">3/10 gênante</option>
+                <option value="4">4/10 à surveiller</option>
+                <option value="5">5/10 stop / réduire</option>
+                <option value="6">6+/10 mauvais signe</option>
+              </select>
+            </label>
+            <label>Fatigue générale
+              <select id="progressFatigueInput">
+                <option value="low">Faible</option>
+                <option value="normal" selected>Normale</option>
+                <option value="high">Élevée</option>
+              </select>
+            </label>
+            <label>Poids du corps
+              <input id="progressBodyweightInput" inputmode="decimal" placeholder="Optionnel ex : 75" />
+            </label>
+          </div>
+
+          <label>Notes
+            <textarea id="progressNotesInput" class="small-textarea" placeholder="Ex : bonne séance, genou un peu sensible, machine prise, charge facile..."></textarea>
+          </label>
+
+          <div class="v29-actions">
+            <button type="button" class="primary-btn" id="saveProgressBtn">Enregistrer ma perf</button>
+            <button type="button" class="ghost-btn" id="generateAdaptationBtn">Adapter ma prochaine séance</button>
+            <button type="button" class="ghost-btn" id="copyProgressAdviceBtn">Copier les conseils</button>
+            <button type="button" class="ghost-btn danger-btn" id="clearProgressBtn">Vider le suivi</button>
+          </div>
+
+          <div id="progressStatus" class="validation-status hidden"></div>
+          <div id="nextWorkoutAdvice" class="result-box"></div>
+        </article>
+
+        <article class="card">
+          <p class="card-kicker">HISTORIQUE</p>
+          <h2>Mes dernières performances</h2>
+          <div id="progressHistory"></div>
+        </article>
+      </section>
+
       <section class="view" id="nutritionView">
         <div class="section-head">
           <div>
@@ -1449,7 +1543,7 @@ body.app-locked{overflow:auto!important}
             <button data-quick="Je veux sécher">Sèche</button>
           </div>
           <div id="coachChat" class="chat-log">
-            <div class="msg bot">Je suis ton coach V25. Écris avec tes mots, je comprends les formulations proches.</div>
+            <div class="msg bot">Je suis ton coach Écris avec tes mots, je comprends les formulations proches.</div>
           </div>
           <div class="chat-input-row">
             <input id="coachInput" placeholder="Écris ta question..." />
@@ -1622,8 +1716,8 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY_END="bf_v27_timer_end";
-  const KEY_SOUND="bf_v27_sound";
+  const KEY_END="bf_v28_2_timer_end";
+  const KEY_SOUND="bf_v28_2_sound";
   let timer=null;
   let end=Number(localStorage.getItem(KEY_END)||0);
   let soundOn=localStorage.getItem(KEY_SOUND)!=="off";
@@ -1689,7 +1783,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  const KEY="bf_v27_performances";
+  const KEY="bf_v28_2_performances";
   const DATA=window.BF_DATA;
 
   function data(){ return BF_STORE.get(KEY,{}); }
@@ -1831,6 +1925,9 @@ window.BF_UTIL = {
 
 
 
+  function goalLabelSafe(goal){return (window.goalLabel||((g)=>g||'objectif'))(goal);}
+  function goalAdviceSafe(goal){return (window.goalAdvice||(()=>''))(goal);}
+
   /* V25 global helpers: accessible from every coach module */
   window.v25Has = window.v25Has || function(q,...words){
     q = (window.BF_UTIL?.normalize ? BF_UTIL.normalize(q) : String(q).toLowerCase());
@@ -1839,6 +1936,7 @@ window.BF_UTIL = {
   window.goalLabel = window.goalLabel || function(goal){
     return {cut:"Sèche / perte de gras",muscle:"Prise de muscle",strength:"Force",performance:"Performance / athlétique",health:"Remise en forme / santé",maintain:"Maintien"}[goal] || "Objectif personnalisé";
   };
+  window.goalLabelSafe=window.goalLabel;
   window.goalAdvice = window.goalAdvice || function(goal){
     if(goal==="cut") return "Déficit léger, protéines hautes, muscu régulière et progression contrôlée.";
     if(goal==="muscle") return "Progression sur les charges, volume suffisant, protéines et calories assez hautes.";
@@ -1847,10 +1945,11 @@ window.BF_UTIL = {
     if(goal==="health") return "Habitudes durables, technique, mobilité, cardio modéré et plaisir.";
     return "Régularité, progression douce et équilibre nutrition/récupération.";
   };
+  window.goalAdviceSafe=window.goalAdvice;
   window.v25PersonalProfile = function(){
     const fallback={name:"",weight:75,height:166,age:20,sex:"male",goal:"muscle",level:"intermediate",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
     try{
-      return JSON.parse(localStorage.getItem("bf_v27_profile")||"null") || fallback;
+      return JSON.parse(localStorage.getItem("bf_v28_2_profile")||"null") || fallback;
     }catch(e){ return fallback; }
   };
   window.v25NutritionTargets = function(p){
@@ -1875,22 +1974,22 @@ window.BF_UTIL = {
     const box=(title,body,note="")=>`<div class="personal-answer"><strong>${title}</strong><br>${body}${note?`<span class="small-note">${note}</span>`:""}</div>`;
 
     if(v25Has(q,"résumé personnalisé","resume personnalise","mon résumé","mon profil","donne moi mon résumé","donne moi mon resume")){
-      return box("Résumé personnalisé",`Salut ${name}. Objectif : ${goalLabel(p.goal)}. Profil : ${Math.round(+p.weight||75)} kg, ${Math.round(+p.height||166)} cm, niveau ${levelLabel}, ${p.gymDays||3} séances/semaine d’environ ${p.duration||60} min. Nutrition : environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Point de vigilance : ${painLabel}.`);
+      return box("Résumé personnalisé",`Salut ${name}. Objectif : ${goalLabelSafe(p.goal)}. Profil : ${Math.round(+p.weight||75)} kg, ${Math.round(+p.height||166)} cm, niveau ${levelLabel}, ${p.gymDays||3} séances/semaine d’environ ${p.duration||60} min. Nutrition : environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Point de vigilance : ${painLabel}.`);
     }
     if(v25Has(q,"proteine","protéine","protein","combien de proteines")){
       const perMealLow=Math.round(t.proteinLow/(+p.meals||3));
       const perMealHigh=Math.round(t.proteinHigh/(+p.meals||3));
-      return box("Protéines adaptées à ton profil",`Vu ton poids de ${Math.round(+p.weight||75)} kg et ton objectif ${goalLabel(p.goal)}, vise environ ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Comme tu manges ${p.meals||3} repas/jour, ça fait environ ${perMealLow}-${perMealHigh} g par repas.`,"Exemples : œufs, poulet, jambon, skyr/fromage blanc, thon, steak 5 %, légumineuses selon tes goûts.");
+      return box("Protéines adaptées à ton profil",`Vu ton poids de ${Math.round(+p.weight||75)} kg et ton objectif ${goalLabelSafe(p.goal)}, vise environ ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Comme tu manges ${p.meals||3} repas/jour, ça fait environ ${perMealLow}-${perMealHigh} g par repas.`,"Exemples : œufs, poulet, jambon, skyr/fromage blanc, thon, steak 5 %, légumineuses selon tes goûts.");
     }
     if(v25Has(q,"calorie","calories","kcal","combien manger","maintenance","deficit","déficit","surplus")){
       let extra="Garde ce chiffre 10-14 jours puis ajuste selon la moyenne de ton poids.";
       if(p.goal==="cut") extra="Pour sécher, commence autour de ce déficit léger. Si le poids ne baisse pas après 2 semaines, réduis légèrement les portions.";
       if(p.goal==="muscle") extra="Pour prendre du muscle proprement, évite le gros surplus : monte lentement et suis ton poids.";
       if(p.goal==="strength") extra="Pour la force, mange assez pour récupérer, surtout autour des séances lourdes.";
-      return box("Calories personnalisées",`Avec ${Math.round(+p.weight||75)} kg, ${Math.round(+p.height||166)} cm, ${p.age||20} ans et ${p.gymDays||3} séances/semaine, ton repère est environ ${t.kcal} kcal/jour pour ton objectif ${goalLabel(p.goal)}. ${extra}`);
+      return box("Calories personnalisées",`Avec ${Math.round(+p.weight||75)} kg, ${Math.round(+p.height||166)} cm, ${p.age||20} ans et ${p.gymDays||3} séances/semaine, ton repère est environ ${t.kcal} kcal/jour pour ton objectif ${goalLabelSafe(p.goal)}. ${extra}`);
     }
     if(v25Has(q,"glucide","glucides","carbs","féculent","feculent","riz","pates","pâtes")){
-      return box("Glucides adaptés",`Pour ton objectif ${goalLabel(p.goal)}, garde les glucides comme carburant. Repère actuel : environ ${t.carbs} g/jour. Mets une bonne partie autour de tes séances : riz, pâtes, pommes de terre, semoule, pain complet, fruits.`,"En sèche, baisse les portions sans les supprimer totalement. En muscle/force, garde des glucides autour de l’entraînement.");
+      return box("Glucides adaptés",`Pour ton objectif ${goalLabelSafe(p.goal)}, garde les glucides comme carburant. Repère actuel : environ ${t.carbs} g/jour. Mets une bonne partie autour de tes séances : riz, pâtes, pommes de terre, semoule, pain complet, fruits.`,"En sèche, baisse les portions sans les supprimer totalement. En muscle/force, garde des glucides autour de l’entraînement.");
     }
     if(v25Has(q,"lipide","lipides","gras","graisse","huile")){
       return box("Lipides personnalisés",`Ton repère est environ ${t.fats} g de lipides/jour. Garde des sources simples : huile d’olive, œufs, poissons gras si tu aimes, oléagineux en petite quantité.`,"Attention : les lipides montent vite en calories, surtout en sèche.");
@@ -1921,7 +2020,7 @@ window.BF_UTIL = {
       return box("Conseil douleur personnalisé",`${advice} Douleur vive, gonflement, instabilité ou douleur persistante = stop et avis professionnel.`);
     }
     if(v25Has(q,"stagne","bloque","bloqué","progresse plus","plateau")){
-      return box("Stagnation : analyse personnalisée",`Avec ton objectif ${goalLabel(p.goal)}, vérifie d’abord : sommeil, régularité des ${p.gymDays||3} séances/semaine, protéines ${t.proteinLow}-${t.proteinHigh} g/jour, et progression notée dans Perfs. Si tout est bon, change une seule variable : +1 série, +1 rep, ou petite hausse de charge.`);
+      return box("Stagnation : analyse personnalisée",`Avec ton objectif ${goalLabelSafe(p.goal)}, vérifie d’abord : sommeil, régularité des ${p.gymDays||3} séances/semaine, protéines ${t.proteinLow}-${t.proteinHigh} g/jour, et progression notée dans Perfs. Si tout est bon, change une seule variable : +1 série, +1 rep, ou petite hausse de charge.`);
     }
     if(v25Has(q,"faim","fringale","grignotage","craquage","envie sucre","sucre")){
       let advice="Augmente la satiété : protéines à chaque repas, légumes, féculents simples en portions contrôlées, eau et sommeil.";
@@ -1932,11 +2031,11 @@ window.BF_UTIL = {
       return box("Récupération personnalisée",`Avec ${p.gymDays||3} séances/semaine, ta progression dépend beaucoup du sommeil et de la récupération. Si fatigue haute : garde les mêmes exercices mais baisse la charge de 10-20 % ou enlève une série. Objectif : durer, pas exploser une semaine puis arrêter.`);
     }
     if(v25Has(q,"liste de courses","courses","acheter","meal prep")){
-      return box("Courses personnalisées",`Base pour ton objectif ${goalLabel(p.goal)} : protéines faciles, féculents simples, légumes, fruits et produits pratiques. À privilégier selon ton profil : ${p.likes||"œufs, poulet, riz, pommes de terre, skyr/fromage blanc, légumes, fruits"}. À éviter : ${p.dislikes||"rien de particulier"}.`,"Dans l’onglet Plan, l’app génère aussi une liste de courses automatique.");
+      return box("Courses personnalisées",`Base pour ton objectif ${goalLabelSafe(p.goal)} : protéines faciles, féculents simples, légumes, fruits et produits pratiques. À privilégier selon ton profil : ${p.likes||"œufs, poulet, riz, pommes de terre, skyr/fromage blanc, légumes, fruits"}. À éviter : ${p.dislikes||"rien de particulier"}.`,"Dans l’onglet Plan, l’app génère aussi une liste de courses automatique.");
     }
     if(v25Has(q,"créatine","creatine","whey","complément","complement","supplement")){
       if(v25Has(q,"whey")) return box("Whey personnalisée",`Pour toi, la whey peut être utile seulement si tu n’atteins pas ${t.proteinLow}-${t.proteinHigh} g de protéines/jour avec tes repas. Ce n’est pas obligatoire.`);
-      if(v25Has(q,"créatine","creatine")) return box("Créatine personnalisée",`Pour ton objectif ${goalLabel(p.goal)}, la créatine peut aider surtout force, muscle et performance. Repère courant : 3-5 g/jour. Évite si contre-indication ou doute médical.`);
+      if(v25Has(q,"créatine","creatine")) return box("Créatine personnalisée",`Pour ton objectif ${goalLabelSafe(p.goal)}, la créatine peut aider surtout force, muscle et performance. Repère courant : 3-5 g/jour. Évite si contre-indication ou doute médical.`);
       return box("Compléments",`Base d’abord : entraînement régulier, ${t.proteinLow}-${t.proteinHigh} g de protéines/jour, sommeil et calories adaptées. Les compléments ne remplacent pas ça.`);
     }
     return null;
@@ -2018,8 +2117,13 @@ window.BF_UTIL = {
     if(q.includes("seche")||q.includes("maigrir")) return BF_NUTRITION.answer("je veux sécher");
     if(q.includes("muscle")||q.includes("masse")) return BF_NUTRITION.answer("prendre muscle");
     if(q.includes("explosif")||q.includes("puissant")) return "Explosivité : construis la force sur presse/leg curl/fessiers/mollets + transfert terrain avec accélérations et appuis.";
+    
+    if(q.includes("progression")||q.includes("charge")||q.includes("reps")||q.includes("douleur")||q.includes("fatigue")||q.includes("adapter")){
+      return "Va dans l’onglet Suivi : note ta charge, tes reps, la difficulté, la douleur et la fatigue. L’app te dira si tu dois augmenter, garder, réduire ou remplacer un exercice à la prochaine séance.";
+    }
+
     if(q.includes("programme mois")||q.includes("1 mois")||q.includes("mois")||q.includes("plan")) return "Va dans l’onglet Plan : l’app génère un vrai plan 4 semaines personnalisé avec explications, progression semaine par semaine et adaptation à ton objectif."; 
-    if(q.includes("profil")) return "Va dans Profil : poids, taille, objectif, jours d’entraînement, repas et douleurs. Plus ton profil est précis, plus le mois généré sera adapté."; 
+    if(q.includes("profil")) return "Va dans Profil : poids, taille, objectif, jours d’entraînement, repas et douleurs. Plus ton profil est précis, plus le plan généré sera adapté."; 
     if(q.includes("performance")||q.includes("perf")) return "Va dans Perfs : note machine, charge, reps, séries et ressenti. L’app affichera la dernière perf sous chaque exercice.";
     const v25=window.v25ProAnswer?.(text); if(v25) return v25;
     return "Je peux t’aider sur : objectif, programme, progression, charge, repos, douleur, nutrition, calories, protéines, sèche, muscle, force, récupération, performances et bilan mensuel.";
@@ -2064,7 +2168,7 @@ window.BF_UTIL = {
   }
   function bindChecks(){
     document.querySelectorAll("[data-check]").forEach(box=>{
-      const k="bf_v27_1_check_"+box.dataset.check;
+      const k="bf_v28_2_check_"+box.dataset.check;
       box.checked=localStorage.getItem(k)==="true";
       box.closest(".exercise-card")?.classList.toggle("done",box.checked);
       box.addEventListener("change",()=>{
@@ -2120,7 +2224,7 @@ window.BF_UTIL = {
     const notes=plan.notes.length?`<div class="hint">${plan.notes.map(n=>"• "+n).join("<br>")}</div>`:"";
     customOutput.className="";
     customOutput.innerHTML=`<div class="section-title"><h2>${plan.title}</h2><p class="session-subtitle">${params.free?params.free:"Séance générée depuis tes choix."}</p></div>${notes}${plan.exercises.map((e,i)=>renderExercise(e,i,"custom")).join("")}`;
-    BF_STORE.set("bf_v27_custom_html",customOutput.innerHTML);
+    BF_STORE.set("bf_v28_2_custom_html",customOutput.innerHTML);
     bindChecks(); BF_PERF.updateExerciseLines?.();
     showView("custom");
   }
@@ -2147,8 +2251,8 @@ window.BF_UTIL = {
   }
 
 
-  const PROFILE_KEY="bf_v27_profile";
-  const MONTH_KEY="bf_v27_month_plan";
+  const PROFILE_KEY="bf_v28_2_profile";
+  const MONTH_KEY="bf_v28_2_month_plan";
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
@@ -2195,7 +2299,7 @@ window.BF_UTIL = {
     monthSummary.innerHTML=`<div class="month-pill"><strong>${t.kcal}</strong><span>kcal/jour estimées</span></div><div class="month-pill"><strong>${t.proteinLow}-${t.proteinHigh}g</strong><span>protéines/jour</span></div><div class="month-pill"><strong>${profile.gymDays}x</strong><span>muscu/semaine</span></div>`;
   }
   function renderMonth(plan=BF_STORE.get(MONTH_KEY,null)){
-    if(!window.monthOutput)return;if(!plan){monthOutput.className="month-output empty-state";monthOutput.textContent="Aucun mois généré.";renderMonthSummary(null);return;}
+    if(!window.monthOutput)return;if(!plan){monthOutput.className="month-output empty-state";monthOutput.textContent="Aucun plan généré.";renderMonthSummary(null);return;}
     monthOutput.className="month-output";renderMonthSummary(plan,plan.profile);
     if(activeMonthTab==="sport"){monthOutput.innerHTML=plan.sport.map(w=>`<article class="week-card"><p class="card-kicker">${w.name}</p><h3>${w.focus}</h3><p class="session-subtitle">Ajustement : ${w.mod}</p>${w.days.map(d=>`<div class="day-plan"><strong>${d}</strong></div>`).join("")}</article>`).join("");}
     else if(activeMonthTab==="nutrition"){monthOutput.innerHTML=`<article class="week-card"><h3>Objectif nutrition</h3><p>Calories estimées : <strong>${plan.targets.kcal} kcal/j</strong> • Protéines : <strong>${plan.targets.proteinLow}-${plan.targets.proteinHigh} g/j</strong> • Glucides repère : <strong>${plan.targets.carbs} g/j</strong> • Lipides repère : <strong>${plan.targets.fats} g/j</strong>.</p></article>`+plan.meals.map(w=>`<article class="week-card"><p class="card-kicker">Semaine ${w.week}</p><h3>Repas proposés</h3>${w.days.map(d=>`<div class="day-plan"><strong>${d.day}</strong><div class="meal-grid">${d.meals.map(m=>`<div class="meal-card"><strong>${m[0]}</strong>${m[1]}</div>`).join("")}</div></div>`).join("")}</article>`).join("");}
@@ -2464,7 +2568,7 @@ window.BF_UTIL = {
     analysisPreview.innerHTML=`<h3>Profil détecté</h3>
       <div class="analysis-grid">
         <div class="analysis-item"><strong>Prénom</strong>${p.name||"Non détecté"}</div>
-        <div class="analysis-item"><strong>Objectif</strong>${goalLabel(p.goal)}</div>
+        <div class="analysis-item"><strong>Objectif</strong>${goalLabelSafe(p.goal)}</div>
         <div class="analysis-item"><strong>Poids / taille</strong>${p.weight} kg • ${p.height} cm</div>
         <div class="analysis-item"><strong>Âge</strong>${p.age} ans</div>
         <div class="analysis-item"><strong>Niveau</strong>${p.level}</div>
@@ -2479,8 +2583,8 @@ window.BF_UTIL = {
 
   function updatePersonalUI(){
     const p=getProfile();
-    if(window.personalGreeting) personalGreeting.textContent=`Salut ${p.name||"toi"}, objectif : ${goalLabel(p.goal)}`;
-    if(window.objectiveText) objectiveText.innerHTML=`<span class="goal-chip">${goalLabel(p.goal)}</span> ${goalAdvice(p.goal)}`;
+    if(window.personalGreeting) personalGreeting.textContent=`Salut ${p.name||"toi"}, objectif : ${goalLabelSafe(p.goal)}`;
+    if(window.objectiveText) objectiveText.innerHTML=`<span class="goal-chip">${goalLabelSafe(p.goal)}</span> ${goalAdviceSafe(p.goal)}`;
     if(window.dailyAdviceTitle) dailyAdviceTitle.textContent=p.name ? `Plan du jour pour ${p.name}` : "Plan du jour";
   }
 
@@ -2523,7 +2627,7 @@ window.BF_UTIL = {
     if(p.goal==="performance") sportPriority="développer force utile, gainage, condition physique et récupération";
     if(p.goal==="health") sportPriority="installer une routine simple, durable, avec mobilité et cardio modéré";
     return `<h3>Analyse professionnelle de ton profil</h3>
-      <p>D’après ta présentation, ton objectif principal est <strong>${goalLabel(p.goal)}</strong>. Ton niveau semble <strong>${levelLabel}</strong>, avec <strong>${p.gymDays} séances/semaine</strong> d’environ <strong>${p.duration} min</strong>.</p>
+      <p>D’après ta présentation, ton objectif principal est <strong>${goalLabelSafe(p.goal)}</strong>. Ton niveau semble <strong>${levelLabel}</strong>, avec <strong>${p.gymDays} séances/semaine</strong> d’environ <strong>${p.duration} min</strong>.</p>
       <div class="diagnosis-list">
         <div><strong>Priorité sportive :</strong> ${sportPriority}.</div>
         <div><strong>Nutrition :</strong> viser environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour comme point de départ.</div>
@@ -2565,13 +2669,13 @@ window.BF_UTIL = {
     const {p,t,painLabel,levelLabel,name}=personalContext();
 
     if(v25Has(q,"résumé personnalisé","resume personnalise","mon résumé","mon profil","donne moi mon résumé","donne moi mon resume")){
-      return `${pLine("Résumé personnalisé",`Salut ${name}. Objectif : ${goalLabel(p.goal)}. Profil : ${Math.round(p.weight)} kg, ${Math.round(p.height)} cm, niveau ${levelLabel}, ${p.gymDays} séances/semaine d’environ ${p.duration||60} min. Nutrition : environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Point de vigilance : ${painLabel}.`)}`;
+      return `${pLine("Résumé personnalisé",`Salut ${name}. Objectif : ${goalLabelSafe(p.goal)}. Profil : ${Math.round(p.weight)} kg, ${Math.round(p.height)} cm, niveau ${levelLabel}, ${p.gymDays} séances/semaine d’environ ${p.duration||60} min. Nutrition : environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Point de vigilance : ${painLabel}.`)}`;
     }
 
     if(v25Has(q,"proteine","protéine","protein","combien de proteines")){
       const perMealLow=Math.round(t.proteinLow/(p.meals||3));
       const perMealHigh=Math.round(t.proteinHigh/(p.meals||3));
-      return `${pLine("Protéines adaptées à ton profil",`Vu ton poids de ${Math.round(p.weight)} kg et ton objectif ${goalLabel(p.goal)}, vise environ ${t.proteinLow}-${t.proteinHigh} g de protéines par jour. Comme tu manges ${p.meals||3} repas/jour, ça fait environ ${perMealLow}-${perMealHigh} g par repas.`)}
+      return `${pLine("Protéines adaptées à ton profil",`Vu ton poids de ${Math.round(p.weight)} kg et ton objectif ${goalLabelSafe(p.goal)}, vise environ ${t.proteinLow}-${t.proteinHigh} g de protéines par jour. Comme tu manges ${p.meals||3} repas/jour, ça fait environ ${perMealLow}-${perMealHigh} g par repas.`)}
       <span class="small-note">Exemples simples : œufs, poulet, jambon, skyr/fromage blanc, thon, steak 5 %, légumineuses selon tes goûts.</span>`;
     }
 
@@ -2580,11 +2684,11 @@ window.BF_UTIL = {
       if(p.goal==="cut") extra="Pour sécher, commence autour de ce déficit léger. Si le poids ne baisse pas après 2 semaines, réduis légèrement les portions.";
       if(p.goal==="muscle") extra="Pour prendre du muscle proprement, évite le gros surplus : monte lentement et suis ton poids.";
       if(p.goal==="strength") extra="Pour la force, mange assez pour récupérer, surtout autour des séances lourdes.";
-      return `${pLine("Calories personnalisées",`Avec ${Math.round(p.weight)} kg, ${Math.round(p.height)} cm, ${p.age} ans et ${p.gymDays} séances/semaine, ton repère est environ ${t.kcal} kcal/jour pour ton objectif ${goalLabel(p.goal)}. ${extra}`)}`;
+      return `${pLine("Calories personnalisées",`Avec ${Math.round(p.weight)} kg, ${Math.round(p.height)} cm, ${p.age} ans et ${p.gymDays} séances/semaine, ton repère est environ ${t.kcal} kcal/jour pour ton objectif ${goalLabelSafe(p.goal)}. ${extra}`)}`;
     }
 
     if(v25Has(q,"glucide","glucides","carbs","féculent","feculent","riz","pates","pâtes")){
-      return `${pLine("Glucides adaptés",`Pour ton objectif ${goalLabel(p.goal)}, garde les glucides comme carburant. Repère actuel : environ ${t.carbs} g/jour. Mets une bonne partie autour de tes séances : riz, pâtes, pommes de terre, semoule, pain complet, fruits.`)}
+      return `${pLine("Glucides adaptés",`Pour ton objectif ${goalLabelSafe(p.goal)}, garde les glucides comme carburant. Repère actuel : environ ${t.carbs} g/jour. Mets une bonne partie autour de tes séances : riz, pâtes, pommes de terre, semoule, pain complet, fruits.`)}
       <span class="small-note">Si tu veux sécher, baisse les portions sans les supprimer totalement. Si tu veux prendre du muscle ou de la force, garde des glucides autour de l’entraînement.</span>`;
     }
 
@@ -2627,7 +2731,7 @@ window.BF_UTIL = {
     }
 
     if(v25Has(q,"stagne","bloque","bloqué","progresse plus","plateau")){
-      return `${pLine("Stagnation : analyse personnalisée",`Avec ton objectif ${goalLabel(p.goal)}, vérifie d’abord : sommeil, régularité des ${p.gymDays} séances/semaine, protéines ${t.proteinLow}-${t.proteinHigh} g/jour, et progression notée dans Perfs. Si tout est bon, change une seule variable : +1 série, +1 rep, ou petite hausse de charge.`)}`;
+      return `${pLine("Stagnation : analyse personnalisée",`Avec ton objectif ${goalLabelSafe(p.goal)}, vérifie d’abord : sommeil, régularité des ${p.gymDays} séances/semaine, protéines ${t.proteinLow}-${t.proteinHigh} g/jour, et progression notée dans Perfs. Si tout est bon, change une seule variable : +1 série, +1 rep, ou petite hausse de charge.`)}`;
     }
 
     if(v25Has(q,"faim","fringale","grignotage","craquage","envie sucre","sucre")){
@@ -2641,13 +2745,13 @@ window.BF_UTIL = {
     }
 
     if(v25Has(q,"liste de courses","courses","acheter","meal prep")){
-      return `${pLine("Courses personnalisées",`Base pour ton objectif ${goalLabel(p.goal)} : protéines faciles, féculents simples, légumes, fruits et produits pratiques. À privilégier selon ton profil : ${p.likes||"œufs, poulet, riz, pommes de terre, skyr/fromage blanc, légumes, fruits"}. À éviter : ${p.dislikes||"rien de particulier"}.`)}
+      return `${pLine("Courses personnalisées",`Base pour ton objectif ${goalLabelSafe(p.goal)} : protéines faciles, féculents simples, légumes, fruits et produits pratiques. À privilégier selon ton profil : ${p.likes||"œufs, poulet, riz, pommes de terre, skyr/fromage blanc, légumes, fruits"}. À éviter : ${p.dislikes||"rien de particulier"}.`)}
       <span class="small-note">Dans l’onglet Plan, l’app génère aussi une liste de courses automatique.</span>`;
     }
 
     if(v25Has(q,"créatine","creatine","whey","complément","complement","supplement")){
       if(v25Has(q,"whey")) return `${pLine("Whey personnalisée",`Pour toi, la whey peut être utile seulement si tu n’atteins pas ${t.proteinLow}-${t.proteinHigh} g de protéines/jour avec tes repas. Ce n’est pas obligatoire.`)}`;
-      if(v25Has(q,"créatine","creatine")) return `${pLine("Créatine personnalisée",`Pour ton objectif ${goalLabel(p.goal)}, la créatine peut aider surtout force, muscle et performance. Repère courant : 3-5 g/jour. Évite si contre-indication ou doute médical.`)}`;
+      if(v25Has(q,"créatine","creatine")) return `${pLine("Créatine personnalisée",`Pour ton objectif ${goalLabelSafe(p.goal)}, la créatine peut aider surtout force, muscle et performance. Repère courant : 3-5 g/jour. Évite si contre-indication ou doute médical.`)}`;
       return `${pLine("Compléments",`Base d’abord : entraînement régulier, ${t.proteinLow}-${t.proteinHigh} g de protéines/jour, sommeil et calories adaptées. Les compléments ne remplacent pas ça.`)}`;
     }
 
@@ -2730,7 +2834,7 @@ window.BF_UTIL = {
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=28-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=29-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -2741,7 +2845,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=28-1-1-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=29-1-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -2751,7 +2855,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=28-1-1-1-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=29-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -2854,8 +2958,8 @@ window.BF_UTIL = {
   }
 
 
-  const V26_PROFILE_KEY="bf_v27_profile";
-  const V26_GROCERY_KEY="bf_v27_grocery";
+  const V26_PROFILE_KEY="bf_v28_2_profile";
+  const V26_GROCERY_KEY="bf_v28_2_grocery";
   let v26SportProfile=null;
   let v26NutritionProfile=null;
 
@@ -2910,7 +3014,7 @@ window.BF_UTIL = {
     const level={beginner:"débutant",intermediate:"intermédiaire",advanced:"avancé"}[p.level]||"intermédiaire";
     const pain={none:"aucune douleur majeure détectée",knee:"genou à surveiller",adductor:"adducteurs à surveiller",ankle:"cheville à surveiller",shoulder:"épaule à surveiller",back:"dos à surveiller"}[p.pain]||"limite à surveiller";
     return `<div class="analysis-grid">
-      <div class="analysis-item"><strong>Objectif</strong>${goalLabel(p.goal)}</div>
+      <div class="analysis-item"><strong>Objectif</strong>${goalLabelSafe(p.goal)}</div>
       <div class="analysis-item"><strong>Niveau</strong>${level}</div>
       <div class="analysis-item"><strong>Séances</strong>${p.gymDays} / semaine</div>
       <div class="analysis-item"><strong>Durée</strong>${p.duration} min</div>
@@ -3035,7 +3139,8 @@ window.BF_UTIL = {
       v281UpdateHomeGroceryCard?.();
     v27Bind();
     v28Bind();
-    v281BindCleanUI();}catch(e){console.warn(e);}
+    v281BindCleanUI();
+    v29Bind();}catch(e){console.warn(e);}
     return true;
   }
   function v26RenderCoursesView(){
@@ -3062,7 +3167,7 @@ window.BF_UTIL = {
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV281Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV29Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V26_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -3078,8 +3183,8 @@ window.BF_UTIL = {
 
 
 
-  const V27_MANUAL_EXERCISES_KEY="bf_v27_manual_exercises";
-  const V27_SESSIONS_KEY="bf_v27_generated_sessions";
+  const V27_MANUAL_EXERCISES_KEY="bf_v28_2_manual_exercises";
+  const V27_SESSIONS_KEY="bf_v28_2_generated_sessions";
 
   const V27_EXERCISE_LIBRARY=[
     {name:"Presse à cuisses",muscle:"jambes",type:"machine",level:"beginner",sets:4,reps:"8-12",rest:"1min30-2min",desc:"Pieds stables, descente contrôlée, pousse fort sans verrouiller violemment les genoux.",avoid:["knee_heavy"],priority:true},
@@ -3213,7 +3318,7 @@ window.BF_UTIL = {
     sessions=sessions || JSON.parse(localStorage.getItem(V27_SESSIONS_KEY)||"null") || v27GenerateSessions();
     const summary=document.getElementById("sessionProfileSummary");
     if(summary){
-      summary.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabel(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}`;
+      summary.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabelSafe(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}`;
     }
     const box=document.getElementById("personalSessionsResult");
     if(!box) return;
@@ -3303,6 +3408,11 @@ window.BF_UTIL = {
 
 
 
+
+  // V28.2 : aliases globaux sûrs pour éviter les bugs de génération
+  const goalLabelSafe=(typeof goalLabel!=="undefined")?goalLabel:(window.goalLabel||((g)=>g||"objectif"));
+  const goalAdviceSafe=(typeof goalAdvice!=="undefined")?goalAdvice:(window.goalAdvice||(()=>"" ));
+
   const V28_MONTH_KEY="bf_v28_smart_month";
   function v28GetProfile(){
     const v26=v26StoreGet?.(V26_PROFILE_KEY,null);
@@ -3376,7 +3486,7 @@ window.BF_UTIL = {
     const p=plan.profile || v28GetProfile();
     const profileBox=document.getElementById("smartMonthProfile");
     if(profileBox){
-      profileBox.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabel(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}<br>${v28GoalExplanation(p.goal)}`;
+      profileBox.innerHTML=`<strong>Profil utilisé :</strong> ${goalLabelSafe(p.goal)} · ${p.gymDays||3} séances/semaine · ${p.duration||60} min · niveau ${p.level||"intermediate"} · douleur : ${p.pain||"none"}<br>${v28GoalExplanation(p.goal)}`;
     }
     const box=document.getElementById("smartMonthResult");
     if(!box) return;
@@ -3385,7 +3495,7 @@ window.BF_UTIL = {
       <p class="smart-week-intro">${w.strategy}</p>
       ${w.sessions.map(s=>`<div class="smart-session">
         <h4>${s.name}</h4>
-        <div class="generated-session-meta"><span class="tag">${s.duration} min</span><span class="tag">${s.exercises.length} exercices</span><span class="tag">${goalLabel(p.goal)}</span></div>
+        <div class="generated-session-meta"><span class="tag">${s.duration} min</span><span class="tag">${s.exercises.length} exercices</span><span class="tag">${goalLabelSafe(p.goal)}</span></div>
         <div class="smart-session-reason">${s.reason}</div>
         ${s.exercises.map((ex,i)=>`<div class="smart-ex-row"><strong>${i+1}. ${ex.name}</strong> — ${ex.sets||3} séries · ${ex.reps||"8-12"} · repos ${ex.rest||"1min30"}<br>${ex.desc||""}<br><em>${ex.note||""}</em></div>`).join("")}
       </div>`).join("")}
@@ -3436,6 +3546,182 @@ window.BF_UTIL = {
   }
 
 
+
+  const V29_PROGRESS_KEY="bf_v29_progress_log";
+  const V29_ADVICE_KEY="bf_v29_next_advice";
+
+  function v29GetProgress(){
+    try{return JSON.parse(localStorage.getItem(V29_PROGRESS_KEY)||"[]");}catch(e){return [];}
+  }
+  function v29SaveProgressList(list){
+    localStorage.setItem(V29_PROGRESS_KEY,JSON.stringify(list));
+  }
+  function v29SetStatus(msg,type="ok"){
+    const el=document.getElementById("progressStatus");
+    if(el){el.textContent=msg;el.className="validation-status "+type;el.classList.remove("hidden");}
+  }
+  function v29Number(v, fallback=0){
+    const n=Number(String(v||"").replace(",","."));
+    return Number.isFinite(n)?n:fallback;
+  }
+  function v29ExerciseSuggestions(){
+    const names=new Set();
+    try{
+      (v27AllExercises?.()||[]).forEach(e=>names.add(e.name));
+      const sessions=JSON.parse(localStorage.getItem(V27_SESSIONS_KEY)||"[]");
+      sessions.forEach(s=>(s.exercises||[]).forEach(e=>names.add(e.name)));
+    }catch(e){}
+    const dl=document.getElementById("exerciseSuggestions");
+    if(dl) dl.innerHTML=[...names].sort().map(n=>`<option value="${n}"></option>`).join("");
+  }
+  function v29SaveProgress(){
+    const exercise=(document.getElementById("progressExerciseInput")?.value||"").trim();
+    if(exercise.length<2){v29SetStatus("Ajoute le nom de l’exercice.","err");return;}
+    const entry={
+      id:"perf_"+Date.now(),
+      date:new Date().toISOString(),
+      session:document.getElementById("progressSessionSelect")?.value||"Séance personnalisée",
+      exercise,
+      load:v29Number(document.getElementById("progressLoadInput")?.value,0),
+      unit:document.getElementById("progressUnitInput")?.value||"kg",
+      sets:v29Number(document.getElementById("progressSetsInput")?.value,3),
+      reps:v29Number(document.getElementById("progressRepsInput")?.value,0),
+      rpe:v29Number(document.getElementById("progressRpeInput")?.value,8),
+      pain:v29Number(document.getElementById("progressPainInput")?.value,0),
+      fatigue:document.getElementById("progressFatigueInput")?.value||"normal",
+      bodyweight:v29Number(document.getElementById("progressBodyweightInput")?.value,0),
+      notes:(document.getElementById("progressNotesInput")?.value||"").trim()
+    };
+    const list=v29GetProgress();
+    list.unshift(entry);
+    v29SaveProgressList(list.slice(0,120));
+    v29SetStatus("Performance enregistrée. Tu peux maintenant adapter ta prochaine séance.","ok");
+    v29RenderProgress();
+    v29GenerateAdvice();
+  }
+  function v29LastForExercise(exercise){
+    return v29GetProgress().filter(e=>BF_UTIL.normalize(e.exercise)===BF_UTIL.normalize(exercise)).slice(0,3);
+  }
+  function v29LoadStep(exercise){
+    const q=BF_UTIL.normalize(exercise);
+    if(q.includes("presse")||q.includes("hack")||q.includes("leg")||q.includes("squat")||q.includes("mollet")) return 5;
+    if(q.includes("tirage")||q.includes("rowing")||q.includes("chest")||q.includes("shoulder")||q.includes("developpe")||q.includes("développé")) return 2.5;
+    return 2.5;
+  }
+  function v29AdviceForEntry(e){
+    const recent=v29LastForExercise(e.exercise);
+    const previous=recent[1];
+    const step=v29LoadStep(e.exercise);
+    let title="Garde la même charge";
+    let detail="Continue avec la même charge et cherche une exécution encore plus propre.";
+    let level="normal";
+    if(e.pain>=5){
+      title="Réduis ou remplace l’exercice";
+      detail="Douleur élevée : baisse la charge de 10 à 20 %, réduis l’amplitude douloureuse ou remplace l’exercice. Si la douleur persiste, demande un avis professionnel.";
+      level="warning";
+    }else if(e.pain>=3){
+      title="Surveille la douleur";
+      detail="Douleur gênante : garde la charge, évite l’échec et privilégie une amplitude confortable.";
+      level="warning";
+    }else if(e.rpe<=8 && e.reps>=10 && e.fatigue!=="high"){
+      title=`Augmente légèrement`;
+      detail=`Tu peux essayer +${step} ${e.unit==="kg"?"kg":e.unit} la prochaine fois, ou garder la charge et ajouter 1 répétition par série.`;
+      level="up";
+    }else if(e.rpe>=9 || e.fatigue==="high"){
+      title="Ne monte pas la charge";
+      detail="Séance très dure ou fatigue élevée : garde la charge, voire retire une série si tu te sens encore fatigué.";
+      level="hold";
+    }
+    if(previous){
+      if(e.load>previous.load && e.reps>=previous.reps && e.pain<=2){
+        detail+=" Progression validée par rapport à ta dernière séance.";
+      }else if(e.load<previous.load || e.reps<previous.reps-2){
+        detail+=" La performance baisse un peu : surveille sommeil, nutrition et récupération.";
+      }
+    }
+    return {exercise:e.exercise,title,detail,level};
+  }
+  function v29GenerateAdvice(){
+    const list=v29GetProgress();
+    const box=document.getElementById("nextWorkoutAdvice");
+    if(!box) return null;
+    if(!list.length){
+      box.innerHTML="<p>Note au moins une performance pour obtenir une adaptation.</p>";
+      return null;
+    }
+    const latestByExercise=[];
+    const seen=new Set();
+    for(const e of list){
+      const key=BF_UTIL.normalize(e.exercise);
+      if(!seen.has(key)){
+        seen.add(key);
+        latestByExercise.push(e);
+      }
+      if(latestByExercise.length>=8) break;
+    }
+    const advices=latestByExercise.map(v29AdviceForEntry);
+    const highPain=list.slice(0,6).some(e=>e.pain>=5);
+    const highFatigue=list.slice(0,6).filter(e=>e.fatigue==="high"||e.rpe>=9).length>=3;
+    let global="";
+    if(highPain){
+      global=`<div class="warning-block"><strong>Priorité sécurité :</strong> douleur élevée détectée. La prochaine séance doit être plus légère, sans forcer sur la zone douloureuse.</div>`;
+    }else if(highFatigue){
+      global=`<div class="warning-block"><strong>Fatigue élevée :</strong> fais une séance plus courte ou enlève 1 série sur les exercices principaux.</div>`;
+    }else{
+      global=`<div class="advice-block"><strong>Adaptation globale :</strong> progression normale. Tu peux chercher une petite progression sur les exercices où la technique reste propre.</div>`;
+    }
+    const htmlAdvice=global+advices.map(a=>`<div class="${a.level==="warning"?"warning-block":"advice-block"}">
+      <strong>${a.exercise} — ${a.title}</strong>
+      <p>${a.detail}</p>
+    </div>`).join("");
+    box.innerHTML=`<h3>Conseils pour la prochaine séance</h3>${htmlAdvice}`;
+    localStorage.setItem(V29_ADVICE_KEY,JSON.stringify({date:new Date().toISOString(),advices,highPain,highFatigue,text:box.innerText}));
+    return advices;
+  }
+  function v29RenderProgress(){
+    const box=document.getElementById("progressHistory");
+    if(!box) return;
+    const list=v29GetProgress();
+    if(!list.length){
+      box.innerHTML=`<div class="result-box">Aucune performance enregistrée pour le moment.</div>`;
+      v29GenerateAdvice();
+      return;
+    }
+    box.innerHTML=list.slice(0,20).map(e=>{
+      const d=new Date(e.date);
+      const dateTxt=d.toLocaleDateString("fr-FR")+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+      return `<div class="progress-entry">
+        <strong>${e.exercise}</strong>
+        <p>${dateTxt} · ${e.session}</p>
+        <p>${e.sets} séries · ${e.reps} reps · ${e.load||""} ${e.unit} · difficulté ${e.rpe}/10 · douleur ${e.pain}/10 · fatigue ${e.fatigue}</p>
+        ${e.bodyweight?`<p>Poids du corps : ${e.bodyweight} kg</p>`:""}
+        ${e.notes?`<p>${e.notes}</p>`:""}
+      </div>`;
+    }).join("");
+    v29GenerateAdvice();
+  }
+  function v29ClearProgress(){
+    if(!confirm("Supprimer tout le suivi de progression ?")) return;
+    localStorage.removeItem(V29_PROGRESS_KEY);
+    localStorage.removeItem(V29_ADVICE_KEY);
+    v29RenderProgress();
+    v29SetStatus("Suivi vidé.","ok");
+  }
+  function v29CopyAdvice(){
+    const txt=document.getElementById("nextWorkoutAdvice")?.innerText||"";
+    if(!txt.trim()) return alert("Génère d’abord des conseils.");
+    navigator.clipboard?.writeText(txt).then(()=>alert("Conseils copiés.")).catch(()=>alert("Copie impossible, sélectionne le texte manuellement."));
+  }
+  function v29Bind(){
+    document.getElementById("saveProgressBtn")?.addEventListener("click",v29SaveProgress);
+    document.getElementById("generateAdaptationBtn")?.addEventListener("click",v29GenerateAdvice);
+    document.getElementById("copyProgressAdviceBtn")?.addEventListener("click",v29CopyAdvice);
+    document.getElementById("clearProgressBtn")?.addEventListener("click",v29ClearProgress);
+    v29ExerciseSuggestions();
+    v29RenderProgress();
+  }
+
+
   function init(){
     document.querySelectorAll("[id]").forEach(el=>{ try{ window[el.id]=el; }catch(e){} });
     try{ safeProfile(); }catch(e){ BF_STORE.remove(PROFILE_KEY); }
@@ -3455,7 +3741,7 @@ window.BF_UTIL = {
         tabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ currentSession=b.dataset.session; tabs.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b)); if(document.getElementById("sessionContent")) renderSession(); }));
       }
     }
-    document.getElementById("resetChecksBtn")?.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v27_1_check_")) localStorage.removeItem(k); }); if(document.getElementById("sessionContent")) renderSession(); });
+    document.getElementById("resetChecksBtn")?.addEventListener("click",()=>{ Object.keys(localStorage).forEach(k=>{ if(k.startsWith("bf_v28_2_check_")) localStorage.removeItem(k); }); if(document.getElementById("sessionContent")) renderSession(); });
     document.getElementById("generateCustomBtn")?.addEventListener("click",()=>generateCustom());
     document.getElementById("sendCoachBtn")?.addEventListener("click",sendCoach);
     document.getElementById("coachInput")?.addEventListener("keydown",e=>{ if(e.key==="Enter") sendCoach(); });
@@ -3481,9 +3767,9 @@ window.BF_UTIL = {
     
     document.getElementById("safeRestartIntroBtn")?.addEventListener("click",restartIntroSafe);
     document.getElementById("safeOpenResetBtn")?.addEventListener("click",openSafetyPanel);
-    openSafetyFromProfileBtn?.addEventListener("click",openSafetyPanel);
-    introEmergencyBtn?.addEventListener("click",openSafetyPanel);
-    hardResetLink?.addEventListener("click",()=>{
+    document.getElementById("openSafetyFromProfileBtn")?.addEventListener("click",openSafetyPanel);
+    document.getElementById("introEmergencyBtn")?.addEventListener("click",openSafetyPanel);
+    document.getElementById("hardResetLink")?.addEventListener("click",()=>{
       document.body.classList.remove("app-locked");
       if(window.onboarding){
         onboarding.classList.remove("hidden");
@@ -3494,32 +3780,32 @@ window.BF_UTIL = {
       }
       setTimeout(()=>sportPresentation?.focus(),100);
     });
-    repairIntroBtn?.addEventListener("click",restartIntroSafe);
-    repairProfileBtn?.addEventListener("click",resetProfileOnly);
-    repairMonthBtn?.addEventListener("click",resetMonthOnly);
-    repairSWBtn?.addEventListener("click",resetCacheOnly);
-    repairAllBtn?.addEventListener("click",resetAllData);
-    closeSafetyBtn?.addEventListener("click",closeSafetyPanel);
+    document.getElementById("repairIntroBtn")?.addEventListener("click",restartIntroSafe);
+    document.getElementById("repairProfileBtn")?.addEventListener("click",resetProfileOnly);
+    document.getElementById("repairMonthBtn")?.addEventListener("click",resetMonthOnly);
+    document.getElementById("repairSWBtn")?.addEventListener("click",resetCacheOnly);
+    document.getElementById("repairAllBtn")?.addEventListener("click",resetAllData);
+    document.getElementById("closeSafetyBtn")?.addEventListener("click",closeSafetyPanel);
 
     bindIntroButtonsRobust();
     finalV26Bindings();
     v26Bind();
     v26RenderCoursesView();
     renderMonthSummary(null,getProfile());
-    saveProfileBtn?.addEventListener("click",saveProfile);
-    generateMonthBtn?.addEventListener("click",()=>{ const p=readProfileForm(); BF_STORE.set(PROFILE_KEY,p); const plan=buildMonthPlan(); activeMonthTab="sport"; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x.dataset.monthTab==="sport")); renderMonth(plan); });
-    loadMonthBtn?.addEventListener("click",()=>renderMonth());
-    clearMonthBtn?.addEventListener("click",()=>{ BF_STORE.remove(MONTH_KEY); renderMonth(null); });
-    generateNextMonthBtn?.addEventListener("click",generateNextMonth);
+    document.getElementById("saveProfileBtn")?.addEventListener("click",saveProfile);
+    document.getElementById("generateMonthBtn")?.addEventListener("click",()=>{ const p=readProfileForm(); BF_STORE.set(PROFILE_KEY,p); const plan=buildMonthPlan(); activeMonthTab="sport"; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x.dataset.monthTab==="sport")); renderMonth(plan); });
+    document.getElementById("loadMonthBtn")?.addEventListener("click",()=>renderMonth());
+    document.getElementById("clearMonthBtn")?.addEventListener("click",()=>{ BF_STORE.remove(MONTH_KEY); renderMonth(null); });
+    document.getElementById("generateNextMonthBtn")?.addEventListener("click",generateNextMonth);
     document.querySelectorAll("[data-month-tab]").forEach(b=>b.addEventListener("click",()=>{ activeMonthTab=b.dataset.monthTab; document.querySelectorAll("[data-month-tab]").forEach(x=>x.classList.toggle("active",x===b)); renderMonth(); }));
 
         document.querySelectorAll("[data-start-live]").forEach(b=>b.addEventListener("click",()=>startLive(b.dataset.startLive)));
     startCustomLiveBtn?.addEventListener("click",startLiveFromCustom);
-    saveLivePerfBtn?.addEventListener("click",saveLivePerf);
+    document.getElementById("saveLivePerfBtn")?.addEventListener("click",saveLivePerf);
     liveRestBtn?.addEventListener("click",()=>BF_TIMER.start(90));
     liveReplaceBtn?.addEventListener("click",liveReplacementAnswer);
-    livePrevBtn?.addEventListener("click",()=>{ if(liveIndex>0){ liveIndex--; renderLiveStep(); }});
-    liveNextBtn?.addEventListener("click",()=>{ if(liveIndex<livePlan.length-1){ liveIndex++; renderLiveStep(); } else { liveExerciseTitle.textContent="Séance terminée ✅"; liveExerciseDesc.textContent="Bien joué. Pense à boire et à noter tes dernières perfs si ce n’est pas fait."; liveTags.innerHTML=""; liveBar.style.width="100%"; }});
+    document.getElementById("livePrevBtn")?.addEventListener("click",()=>{ if(liveIndex>0){ liveIndex--; renderLiveStep(); }});
+    document.getElementById("liveNextBtn")?.addEventListener("click",()=>{ if(liveIndex<livePlan.length-1){ liveIndex++; renderLiveStep(); } else { liveExerciseTitle.textContent="Séance terminée ✅"; liveExerciseDesc.textContent="Bien joué. Pense à boire et à noter tes dernières perfs si ce n’est pas fait."; liveTags.innerHTML=""; liveBar.style.width="100%"; }});
     document.addEventListener("click",e=>{
       const note=e.target.closest("[data-note-perf]");
       if(note){ openPerfForMachine(note.dataset.notePerf); return; }
@@ -3530,7 +3816,7 @@ window.BF_UTIL = {
     });
 
     if(document.getElementById("sessionContent")) renderSession();
-    const saved=BF_STORE.get("bf_v27_custom_html","");
+    const saved=BF_STORE.get("bf_v28_2_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
     BF_NUTRITION.init();
@@ -3547,7 +3833,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=28-1-1-1").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=29-1-1").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
