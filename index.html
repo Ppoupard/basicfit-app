@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V28</title>
+  <title>Basic-Fit Coach V28.1</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V28 : plan personnalisé courses */
+/* V28.1 : plan personnalisé stable */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -596,7 +596,7 @@ body.app-locked #onboarding,
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V28 : plan personnalisé courses définitivement */
+/* V28.1 : plan personnalisé stable définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V28 : plan personnalisé courses */
+/* V28.1 : plan personnalisé stable */
 .hint{
   position:fixed;
   left:12px;
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V28 : plan personnalisé courses + exercices manuels */
+/* V28.1 : plan personnalisé stable + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -830,6 +830,11 @@ body.app-locked{overflow:auto!important}
   display:none!important;
 }
 
+
+/* V28.1 : onglets simplifiés */
+#liveView,#customView,#performancesView,#questionsView,#monthView{
+  display:none!important;
+}
 </style>
 </head>
 <body>
@@ -855,7 +860,7 @@ body.app-locked{overflow:auto!important}
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V26 — COACH COMPLET</p>
+            <p class="card-kicker">V28.1 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -961,7 +966,7 @@ body.app-locked{overflow:auto!important}
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV26Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV281Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -977,7 +982,7 @@ body.app-locked{overflow:auto!important}
 
         <section class="safety-card">
           <div>
-            <p class="card-kicker">SÉCURITÉ V26</p>
+            <p class="card-kicker">SÉCURITÉ V28.1</p>
             <h3>Mode secours stable</h3>
             <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
           </div>
@@ -989,7 +994,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V28 PLAN COURSES CLEAN</p>
+          <p class="hero-label">V28.1 CLEAN AUDIT</p>
           <h2>Débloque ton coach, puis reçois des réponses adaptées à ton profil.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1096,7 +1101,7 @@ body.app-locked{overflow:auto!important}
       <section class="view" id="planView">
         <article class="card">
           <p class="card-kicker">V28 — PLAN 4 SEMAINES</p>
-          <h2>Plan personnalisé du mois</h2>
+          <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
             <button type="button" class="primary-btn" id="generateSmartMonthBtn">Générer mon plan personnalisé</button>
@@ -1904,7 +1909,7 @@ window.BF_UTIL = {
       if(p.goal==="strength") advice+=" Priorité : exercices principaux, repos plus long, moins d’exercices mais plus qualitatifs.";
       if(p.goal==="performance") advice+=" Priorité : force utile, gainage, mobilité et condition physique.";
       if(p.goal==="health") advice+=" Priorité : full body simple, mobilité, cardio facile et régularité.";
-      return box("Programme adapté à ton profil",advice,"Va dans l’onglet Mois pour générer ton plan 4 semaines personnalisé.");
+      return box("Programme adapté à ton profil",advice,"Va dans l’onglet Plan pour générer ton plan 4 semaines personnalisé.");
     }
     if(v25Has(q,"douleur","mal","blessure","gêne","gene","genou","dos","épaule","epaule","cheville","adducteur")){
       let advice=`Tu as indiqué : ${painLabel}. Adapte charge, amplitude et exercice si la gêne apparaît.`;
@@ -1927,7 +1932,7 @@ window.BF_UTIL = {
       return box("Récupération personnalisée",`Avec ${p.gymDays||3} séances/semaine, ta progression dépend beaucoup du sommeil et de la récupération. Si fatigue haute : garde les mêmes exercices mais baisse la charge de 10-20 % ou enlève une série. Objectif : durer, pas exploser une semaine puis arrêter.`);
     }
     if(v25Has(q,"liste de courses","courses","acheter","meal prep")){
-      return box("Courses personnalisées",`Base pour ton objectif ${goalLabel(p.goal)} : protéines faciles, féculents simples, légumes, fruits et produits pratiques. À privilégier selon ton profil : ${p.likes||"œufs, poulet, riz, pommes de terre, skyr/fromage blanc, légumes, fruits"}. À éviter : ${p.dislikes||"rien de particulier"}.`,"Dans l’onglet Mois, l’app génère aussi une liste de courses automatique.");
+      return box("Courses personnalisées",`Base pour ton objectif ${goalLabel(p.goal)} : protéines faciles, féculents simples, légumes, fruits et produits pratiques. À privilégier selon ton profil : ${p.likes||"œufs, poulet, riz, pommes de terre, skyr/fromage blanc, légumes, fruits"}. À éviter : ${p.dislikes||"rien de particulier"}.`,"Dans l’onglet Plan, l’app génère aussi une liste de courses automatique.");
     }
     if(v25Has(q,"créatine","creatine","whey","complément","complement","supplement")){
       if(v25Has(q,"whey")) return box("Whey personnalisée",`Pour toi, la whey peut être utile seulement si tu n’atteins pas ${t.proteinLow}-${t.proteinHigh} g de protéines/jour avec tes repas. Ce n’est pas obligatoire.`);
@@ -2030,9 +2035,10 @@ window.BF_UTIL = {
 
   function el(id){ return BF_UTIL.$(id); }
   function showView(view){
+    const target=document.getElementById(view+"View") ? view : "dashboard";
     document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
-    el(view+"View")?.classList.add("active");
-    document.querySelectorAll(".app-nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+    document.getElementById(target+"View")?.classList.add("active");
+    document.querySelectorAll(".app-nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===target));
     window.scrollTo({top:0,behavior:"smooth"});
   }
   function renderExercise(key,i,prefix){
@@ -2198,8 +2204,8 @@ window.BF_UTIL = {
   }
   function generateNextMonth(){
     const old=getProfile();const rw=parseFloat(String(reviewWeight.value).replace(",","."))||old.weight;const review={weight:rw,fatigue:reviewFatigue.value,training:reviewTraining.value,nutrition:reviewNutrition.value,notes:reviewNotes.value.trim()};BF_STORE.set(PROFILE_KEY,{...old,weight:rw});fillProfileForm();const plan=buildMonthPlan(review);const advice=[];
-    if(review.fatigue==="high")advice.push("Fatigue haute : mois suivant démarré plus léger.");if(review.training==="low")advice.push("Peu de séances réalisées : plan plus réaliste à privilégier.");if(review.nutrition==="low")advice.push("Nutrition peu suivie : repas plus simples et répétables.");if(old.goal==="cut"&&rw>=old.weight)advice.push("Sèche : si le poids ne baisse pas, réduis légèrement les portions de féculents ou les grignotages.");if(old.goal==="muscle"&&rw<=old.weight)advice.push("Prise de muscle : augmente un peu les portions autour des séances.");if(!advice.length)advice.push("Mois suivant généré : continue la progression contrôlée.");
-    reviewAdvice.innerHTML=advice.map(a=>"• "+a).join("<br>");renderMonth(plan);alert("Mois suivant généré.");
+    if(review.fatigue==="high")advice.push("Fatigue haute : mois suivant démarré plus léger.");if(review.training==="low")advice.push("Peu de séances réalisées : plan plus réaliste à privilégier.");if(review.nutrition==="low")advice.push("Nutrition peu suivie : repas plus simples et répétables.");if(old.goal==="cut"&&rw>=old.weight)advice.push("Sèche : si le poids ne baisse pas, réduis légèrement les portions de féculents ou les grignotages.");if(old.goal==="muscle"&&rw<=old.weight)advice.push("Prise de muscle : augmente un peu les portions autour des séances.");if(!advice.length)advice.push("Plan suivant généré : continue la progression contrôlée.");
+    reviewAdvice.innerHTML=advice.map(a=>"• "+a).join("<br>");renderMonth(plan);alert("Plan suivant généré.");
   }
 
   let livePlan=[], liveIndex=0, liveSessionName="";
@@ -2607,7 +2613,7 @@ window.BF_UTIL = {
       if(p.goal==="strength") advice+=" Priorité : exercices principaux, repos plus long, moins d’exercices mais plus qualitatifs.";
       if(p.goal==="performance") advice+=" Priorité : force utile, gainage, mobilité et condition physique.";
       if(p.goal==="health") advice+=" Priorité : full body simple, mobilité, cardio facile et régularité.";
-      return `${pLine("Programme adapté à ton profil",advice)}<span class="small-note">Va dans l’onglet Mois pour générer ton plan 4 semaines personnalisé.</span>`;
+      return `${pLine("Programme adapté à ton profil",advice)}<span class="small-note">Va dans l’onglet Plan pour générer ton plan 4 semaines personnalisé.</span>`;
     }
 
     if(v25Has(q,"douleur","mal","blessure","gêne","gene","genou","dos","épaule","epaule","cheville","adducteur")){
@@ -2636,7 +2642,7 @@ window.BF_UTIL = {
 
     if(v25Has(q,"liste de courses","courses","acheter","meal prep")){
       return `${pLine("Courses personnalisées",`Base pour ton objectif ${goalLabel(p.goal)} : protéines faciles, féculents simples, légumes, fruits et produits pratiques. À privilégier selon ton profil : ${p.likes||"œufs, poulet, riz, pommes de terre, skyr/fromage blanc, légumes, fruits"}. À éviter : ${p.dislikes||"rien de particulier"}.`)}
-      <span class="small-note">Dans l’onglet Mois, l’app génère aussi une liste de courses automatique.</span>`;
+      <span class="small-note">Dans l’onglet Plan, l’app génère aussi une liste de courses automatique.</span>`;
     }
 
     if(v25Has(q,"créatine","creatine","whey","complément","complement","supplement")){
@@ -2719,12 +2725,12 @@ window.BF_UTIL = {
 
   function resetMonthOnly(){
     BF_STORE.remove(MONTH_KEY);
-    safeSetStatus("Programme du mois effacé. Tu peux en générer un nouveau depuis l’onglet Mois.");
+    safeSetStatus("Programme du mois effacé. Tu peux en générer un nouveau depuis l’onglet Plan.");
   }
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=28-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=28-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -2735,7 +2741,7 @@ window.BF_UTIL = {
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=28-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=28-1-1-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -2745,7 +2751,7 @@ window.BF_UTIL = {
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=28-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=28-1-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -2981,7 +2987,7 @@ window.BF_UTIL = {
     const rows=data.items.map(i=>`<tr><td>${i.cat}</td><td>${i.name}</td><td>${i.qty.toFixed(i.qty<1?1:0)} ${i.unit}</td><td>≈ ${i.price.toFixed(2)} €</td></tr>`).join("");
     const budgetLabel={eco:"économique",normal:"normal",comfort:"confort"}[data.budget]||"normal";
     return `<h3>Liste de courses ${period==="month"?"du mois":"de la semaine"}</h3>
-      <p><span class="price-badge">${data.store}</span><span class="price-badge">Budget ${budgetLabel}</span><span class="price-badge">Semaine ≈ ${data.weekTotal.toFixed(0)} €</span><span class="price-badge">Mois ≈ ${data.monthTotal.toFixed(0)} €</span></p>
+      <p><span class="price-badge">${data.store}</span><span class="price-badge">Budget ${budgetLabel}</span><span class="price-badge">Semaine ≈ ${data.weekTotal.toFixed(0)} €</span><span class="price-badge">Plan ≈ ${data.monthTotal.toFixed(0)} €</span></p>
       <table class="grocery-table"><thead><tr><th>Catégorie</th><th>Produit</th><th>Quantité</th><th>Prix estimé</th></tr></thead><tbody>${rows}</tbody></table>
       <div class="diagnosis-list">
         <div><strong>Alternatives économiques :</strong> œufs, jambon, fromage blanc, riz, pâtes, pommes de terre, bananes.</div>
@@ -3026,8 +3032,10 @@ window.BF_UTIL = {
     try{fillProfileForm();updatePersonalUI();renderMonthSummary(null,merged);renderMonth(buildMonthPlan());}catch(e){console.warn(e);}
     try{v26RenderCoursesView();
     v28EnsureGrocerySetup?.();
+      v281UpdateHomeGroceryCard?.();
     v27Bind();
-    v28Bind();}catch(e){console.warn(e);}
+    v28Bind();
+    v281BindCleanUI();}catch(e){console.warn(e);}
     return true;
   }
   function v26RenderCoursesView(){
@@ -3054,7 +3062,7 @@ window.BF_UTIL = {
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV26Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV281Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V26_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -3407,6 +3415,27 @@ window.BF_UTIL = {
   }
 
 
+
+  function v281UpdateHomeGroceryCard(){
+    const saved=window.v26StoreGet?.(window.V26_GROCERY_KEY,null);
+    const txt=document.getElementById("grocerySetupHomeText");
+    if(!txt) return;
+    if(saved && saved.store){
+      txt.innerHTML=`Magasin configuré : <strong>${saved.store}</strong> · Budget : <strong>${saved.budget||"normal"}</strong>.`;
+    }else{
+      txt.textContent="Aucun magasin configuré. Va dans Courses pour choisir ton magasin et obtenir une estimation semaine/mois.";
+    }
+  }
+  function v281BindCleanUI(){
+    document.querySelectorAll("[data-view-jump]").forEach(btn=>{
+      if(btn.dataset.v281Bound) return;
+      btn.dataset.v281Bound="1";
+      btn.addEventListener("click",()=>showView(btn.dataset.viewJump));
+    });
+    v281UpdateHomeGroceryCard();
+  }
+
+
   function init(){
     document.querySelectorAll("[id]").forEach(el=>{ try{ window[el.id]=el; }catch(e){} });
     try{ safeProfile(); }catch(e){ BF_STORE.remove(PROFILE_KEY); }
@@ -3500,7 +3529,7 @@ window.BF_UTIL = {
       if(live){ startSingleExerciseLive(live.dataset.liveOne); return; }
     });
 
-    renderSession();
+    if(document.getElementById("sessionContent")) renderSession();
     const saved=BF_STORE.get("bf_v27_custom_html","");
     if(saved){ customOutput.className=""; customOutput.innerHTML=saved; bindChecks(); }
     BF_PERF.init();
@@ -3518,7 +3547,7 @@ window.BF_UTIL = {
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=28-1").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=28-1-1-1").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
