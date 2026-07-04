@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V36.3</title>
+  <title>Basic-Fit Coach V37</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V36.3 : nettoyage du bas de l'application */
+/* V37 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V36.3 : suppression du texte parasite tout en bas */
+/* V37 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V36.3 : mode séance live + actions rapides */
+/* V37 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -339,7 +339,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V36.3 : profil + programme mensuel */
+/* V37 : profil + programme mensuel */
 .month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
 .month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
 .month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
@@ -350,7 +350,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
 
 
-/* V36.3 : onboarding + personnalisation par objectif */
+/* V37 : onboarding + personnalisation par objectif */
 .onboarding{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(7,10,18,.82);backdrop-filter:blur(22px)}
 .onboarding-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(53,208,127,.08)),var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55);padding:20px}
 .onboarding-card>p:not(.card-kicker){color:var(--muted);margin:8px 0 16px}
@@ -363,7 +363,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.objective-strip{align-items:flex-start;flex-direction:column}.objective-strip button{width:100%}}
 
 
-/* V36.3 : base coach pro élargie */
+/* V37 : base coach pro élargie */
 .pro-base-card{
   display:flex;
   justify-content:space-between;
@@ -390,7 +390,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.pro-base-card{flex-direction:column;align-items:flex-start}.pro-base-card button{width:100%}}
 
 
-/* V36.3 : présentation libre intelligente */
+/* V37 : présentation libre intelligente */
 .free-onboarding-card{width:min(820px,100%)}
 .presentation-textarea{min-height:260px;font-size:15px;line-height:1.5;resize:vertical}
 .free-actions{grid-template-columns:1fr 1fr 1fr}
@@ -402,7 +402,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.free-actions{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}
 
 
-/* V36.3 : introduction obligatoire + déblocage */
+/* V37 : introduction obligatoire + déblocage */
 body.app-locked .app-shell{filter:blur(10px);pointer-events:none;user-select:none}
 body.app-locked{overflow:hidden}
 .intro-gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 20% 10%,rgba(255,209,102,.18),transparent 30%),radial-gradient(circle at 80% 20%,rgba(125,179,255,.18),transparent 32%),rgba(7,10,18,.92);backdrop-filter:blur(24px);overflow:auto}
@@ -435,7 +435,7 @@ body.app-locked{overflow:hidden}
 @media(max-width:700px){.intro-steps-ui{grid-template-columns:1fr}.intro-actions{grid-template-columns:1fr}.intro-card{border-radius:26px;padding:16px}}
 
 
-/* V36.3 : réponses coach personnalisées */
+/* V37 : réponses coach personnalisées */
 .personal-answer{
   border:1px solid rgba(255,209,102,.18);
   background:linear-gradient(135deg,rgba(255,209,102,.10),rgba(53,208,127,.07));
@@ -447,7 +447,7 @@ body.app-locked{overflow:hidden}
 .personal-answer .small-note{display:block;color:var(--muted);font-size:12.5px;margin-top:6px}
 
 
-/* V36.3 : sécurité anti-bug */
+/* V37 : sécurité anti-bug */
 .safety-card{
   display:flex;
   justify-content:space-between;
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V36.3.1 : stratégies objectifs */
+/* V37.1 : stratégies objectifs */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -550,7 +550,7 @@ body.app-locked #onboarding{
 }
 
 
-/* V36.3 : correctif écran flou / impossible d'écrire */
+/* V37 : correctif écran flou / impossible d'écrire */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -590,13 +590,13 @@ body.app-locked #onboarding,
 }
 
 
-/* V36.3 : validation forcée */
+/* V37 : validation forcée */
 .validation-status{margin-top:10px;border:1px solid rgba(125,179,255,.22);background:rgba(125,179,255,.08);color:#E6F0FF;padding:10px;border-radius:16px;font-size:13px}
 .validation-status.ok{border-color:rgba(53,208,127,.28);background:rgba(53,208,127,.10);color:#DFFFEA}
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V36.3.1 : stratégies objectifs définitivement */
+/* V37.1 : stratégies objectifs définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V36.3.1 : stratégies objectifs */
+/* V37.1 : stratégies objectifs */
 .hint{
   position:fixed;
   left:12px;
@@ -685,7 +685,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V36.3 : double présentation + courses */
+/* V37 : double présentation + courses */
 .v26-intro-card{width:min(980px,100%)}
 .v26-steps{grid-template-columns:repeat(6,1fr)}
 .v26-step-panel{
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V36.3.1 : stratégies objectifs + exercices manuels */
+/* V37.1 : stratégies objectifs + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -813,7 +813,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V36.3 : plan personnalisé + interface simplifiée */
+/* V37 : plan personnalisé + interface simplifiée */
 .v28-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
 .smart-week{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:24px;padding:14px;margin:14px 0}
 .smart-week h3{margin-bottom:4px}
@@ -825,18 +825,18 @@ body.app-locked{overflow:auto!important}
 .smart-ex-row strong{color:#fff}
 @media(max-width:760px){.v28-actions button{width:100%}}
 
-/* V36.3 : onglets simplifiés */
+/* V37 : onglets simplifiés */
 #customView,#performancesView,#questionsView{
   display:none!important;
 }
 
 
-/* V36.3 : onglets simplifiés */
+/* V37 : onglets simplifiés */
 #customView,#performancesView,#questionsView,#monthView{
   display:none!important;
 }
 
-/* V36.3 : menus + courses liées */
+/* V37 : menus + courses liées */
 .v32-menu-config{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
 .v32-menu-config label,#menusView label{display:flex;flex-direction:column;gap:7px;color:#C7D3E4;font-size:13px;font-weight:900}
 .v32-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
@@ -892,7 +892,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V36.3 : nutrition personnalisée avancée */
+/* V37 : nutrition personnalisée avancée */
 .bf34-nutrition-card{
   border-color:rgba(53,208,127,.18);
   background:
@@ -946,7 +946,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V36.3 : profil relié à nutrition */
+/* V37 : profil relié à nutrition */
 .bf341-profile-link{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.06);
@@ -972,7 +972,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:520px){.bf341-metric-grid{grid-template-columns:1fr}}
 
 
-/* V36.3 : objectif calories + macros */
+/* V37 : objectif calories + macros */
 .bf35-plan-card{
   border:1px solid rgba(255,209,102,.20);
   background:
@@ -1011,7 +1011,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:520px){.bf35-macro-grid{grid-template-columns:1fr}.bf35-actions button{width:100%}}
 
 
-/* V36.3 : stratégies nutrition par objectif */
+/* V37 : stratégies nutrition par objectif */
 .bf351-strategy-panel{
   border:1px solid rgba(255,255,255,.10);
   background:
@@ -1040,7 +1040,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:820px){.bf351-goal-grid{grid-template-columns:1fr}}
 
 
-/* V36.3.1 : sports contraintes tout-en-un */
+/* V37.1 : sports contraintes tout-en-un */
 #planView,#sessionsView,#liveView,#progressView,#menusView,#coursesView,#diagnosticView{
   display:none !important;
 }
@@ -1101,7 +1101,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V36.3 : autres sports / contraintes */
+/* V37 : autres sports / contraintes */
 .bf361-load-box{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.06);
@@ -1125,7 +1125,7 @@ body.app-locked{overflow:auto!important}
 .bf361-warning{color:#FFE7E7;background:rgba(255,107,107,.10);border-color:rgba(255,107,107,.24)}
 
 
-/* V36.3 : formulaire conseil nutrition synchronisé */
+/* V37 : formulaire conseil nutrition synchronisé */
 .bf363-sync-note{
   border:1px solid rgba(53,208,127,.18);
   background:rgba(53,208,127,.07);
@@ -1136,6 +1136,29 @@ body.app-locked{overflow:auto!important}
   font-size:13px;
 }
 .bf363-sync-note strong{color:#fff}
+
+
+/* V37 : nettoyage interface et suppression des doublons */
+.v37-clean-note{
+  border:1px solid rgba(255,209,102,.18);
+  background:rgba(255,209,102,.07);
+  border-radius:18px;
+  padding:12px;
+  margin:12px 0;
+  color:#C7D3E4;
+  font-size:13px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.v37-clean-note strong{color:#fff}
+.v37-clean-note button{white-space:nowrap}
+@media(max-width:760px){
+  .v37-clean-note{align-items:stretch}
+  .v37-clean-note button{width:100%}
+}
 
 </style>
 </head>
@@ -1162,7 +1185,7 @@ body.app-locked{overflow:auto!important}
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V36.3 — COACH COMPLET</p>
+            <p class="card-kicker">V37 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -1268,7 +1291,7 @@ body.app-locked{overflow:auto!important}
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV363Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV37Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -1284,7 +1307,7 @@ body.app-locked{overflow:auto!important}
 
         <section class="safety-card">
           <div>
-            <p class="card-kicker">SÉCURITÉ V36.3</p>
+            <p class="card-kicker">SÉCURITÉ V37</p>
             <h3>Mode secours stable</h3>
             <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
           </div>
@@ -1296,7 +1319,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V36.3 SYNC FORMULAIRE NUTRITION</p>
+          <p class="hero-label">V37 INTERFACE NETTOYÉE</p>
           <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -1328,7 +1351,7 @@ body.app-locked{overflow:auto!important}
         <article class="card v30-launchpad" id="v30Launchpad">
           <div class="section-head">
             <div>
-              <p class="card-kicker">PARCOURS V36.3</p>
+              <p class="card-kicker">PARCOURS V37</p>
               <h3>Utilise l’app dans le bon ordre</h3>
             </div>
             <button class="ghost-btn" id="v30SelfTestBtn">Tester l’app</button>
@@ -1492,7 +1515,7 @@ body.app-locked{overflow:auto!important}
         <article class="card">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V36.3 — ENTRAÎNEMENT TOUT-EN-UN</p>
+              <p class="card-kicker">V37 — ENTRAÎNEMENT TOUT-EN-UN</p>
               <h2>Mon espace entraînement</h2>
               <p>Plan, séances, live et suivi sont regroupés ici. Les anciens onglets existent toujours techniquement, mais tout est piloté depuis cet espace.</p>
             </div>
@@ -1542,7 +1565,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V36.3 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V37 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -1558,7 +1581,7 @@ body.app-locked{overflow:auto!important}
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V36.3 — SÉANCES INTELLIGENTES</p>
+          <p class="card-kicker">V37 — SÉANCES INTELLIGENTES</p>
           <h2>Mes séances : auto, semi-auto ou manuel</h2>
           <p>L’app peut recommander un split comme un coach, mais tu peux aussi choisir ton split ou créer tes séances toi-même. Jusqu’à 6 séances/semaine sont possibles.</p>
 
@@ -1566,7 +1589,7 @@ body.app-locked{overflow:auto!important}
           <div class="bf33-strategy-card">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V36.3 — CHOIX DU SPLIT</p>
+                <p class="card-kicker">V37 — CHOIX DU SPLIT</p>
                 <h3>Comment tu veux construire tes séances ?</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf33RefreshRecommendationBtn">Recalculer la recommandation</button>
@@ -1723,7 +1746,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="liveView">
         <article class="card">
-          <p class="card-kicker">V36.3 — LIVE PERSONNALISÉ</p>
+          <p class="card-kicker">V37 — LIVE PERSONNALISÉ</p>
           <h2>Séance en direct</h2>
           <p>Choisis une séance générée, suis les exercices un par un, note tes perfs, lance le repos et enregistre automatiquement dans le suivi.</p>
 
@@ -1924,7 +1947,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="progressView">
         <article class="card">
-          <p class="card-kicker">V36.3 — SUIVI PROGRESSION</p>
+          <p class="card-kicker">V37 — SUIVI PROGRESSION</p>
           <h2>Noter ma séance</h2>
           <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
 
@@ -2025,7 +2048,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
 
           <div class="v36-nutrition-shell" id="v36NutritionShell">
-            <p class="card-kicker">V36.3 — NUTRITION TOUT-EN-UN</p>
+            <p class="card-kicker">V37 — NUTRITION TOUT-EN-UN</p>
             <h2>Mon espace nutrition</h2>
             <p>Plan nutrition, préférences, menus et courses sont regroupés ici pour éviter les allers-retours.</p>
 
@@ -2035,6 +2058,13 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               <button data-nutrition-section="menus">Menus</button>
               <button data-nutrition-section="courses">Courses</button>
             </div>
+
+            
+          <div class="v37-clean-note" id="v37NutritionCoachNote">
+            <span><strong>Conseils rapides :</strong> les questions nutrition sont maintenant dans l’onglet Coach. Nutrition sert à calculer le plan, générer les menus et préparer les courses.</span>
+            <button type="button" class="ghost-btn" id="v37AskCoachNutritionBtn">Poser une question au Coach</button>
+          </div>
+
 
             <div class="v36-section active" id="v36NutritionPlanSection">
               <div id="v36NutritionPlanMount"></div>
@@ -2059,7 +2089,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           </div>
 
         <article class="card bf34-nutrition-card">
-          <p class="card-kicker">V36.3 — NUTRITION PERSONNALISÉE</p>
+          <p class="card-kicker">V37 — NUTRITION PERSONNALISÉE</p>
           <h2>Mes préférences alimentaires</h2>
           <p>Ces réglages servent aux menus, aux courses et aux remplacements automatiques.</p>
 
@@ -2081,7 +2111,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf351-strategy-panel" id="bf351StrategyPanel">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V36.3 — OBJECTIFS NUTRITION</p>
+                <p class="card-kicker">V37 — OBJECTIFS NUTRITION</p>
                 <h3>Ce que l’app propose pour chaque objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf351ShowAllStrategiesBtn">Afficher toutes les stratégies</button>
@@ -2093,7 +2123,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf35-plan-card" id="bf35NutritionPlanCard">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V36.3 — PLAN NUTRITIONNEL</p>
+                <p class="card-kicker">V37 — PLAN NUTRITIONNEL</p>
                 <h3>Calories et macros selon ton objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf35RefreshNutritionPlanBtn">Recalculer</button>
@@ -2153,55 +2183,17 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div id="bf34NutritionResult" class="result-box"></div>
         </article>
 
-        <article class="card form-card">
-          <div class="form-grid">
-            <label>Poids <input id="nutritionWeight" inputmode="decimal" value="75" /></label>
-            <label>Objectif
-              <select id="nutritionGoal">
-                <option value="performance">Performance</option>
-                <option value="cut">Sèche</option>
-                <option value="muscle">Prise de muscle</option>
-                <option value="compétition">Sport / compétition</option>
-                <option value="recovery">Récupération</option>
-              </select>
-            </label>
-            <label>Moment
-              <select id="nutritionMoment">
-                <option value="before">Avant séance</option>
-                <option value="after">Après séance</option>
-                <option value="day">Journée complète</option>
-                <option value="evening">Soir tard</option>
-                <option value="compétitionday">Contrainte importante</option>
-              </select>
-            </label>
-            <label>Faim
-              <select id="nutritionHunger">
-                <option value="normal">Normale</option>
-                <option value="low">Pas très faim</option>
-                <option value="high">Très faim</option>
-              </select>
-            </label>
-          </div>
-          <button class="primary-btn full" id="generateNutritionBtn">Générer conseil nutrition</button>
-          <div id="nutritionResult" class="result-box">Ton conseil apparaîtra ici.</div>
-        </article>
+        
 
-        <article class="card chat-card">
-          <p class="card-kicker">QUESTION NUTRITION</p>
-          <div id="nutritionChat" class="chat-log">
-            <div class="msg bot">Pose une question : calories, protéines, repas, sèche, muscle, faim, compléments. Le coach utilise ton profil pour répondre.</div>
-          </div>
-          <div class="chat-input-row">
-            <input id="nutritionInput" placeholder="Écris ta question nutrition..." />
-            <button id="sendNutritionBtn">Envoyer</button>
-          </div>
-        </article>
+
+        
+
       </section>
 
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V36.3 — DIAGNOSTIC PROFOND</p>
+          <p class="card-kicker">V37 — DIAGNOSTIC PROFOND</p>
           <h2>Diagnostic complet</h2>
           <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Les tests de durée et de split sont maintenant isolés : ils n’utilisent pas tes séances manuelles ni l’ancien état sauvegardé.</p>
 
@@ -2221,7 +2213,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=36-3-1-1-1-1</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=37-1-1-1-1</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -2269,9 +2261,9 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="menusView">
         <article class="card">
-          <p class="card-kicker">V36.3 — MENUS + COURSES</p>
+          <p class="card-kicker">V37 — MENUS + COURSES</p>
           <h2>Menus personnalisés de la semaine</h2>
-          <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V36.3 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
+          <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V37 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
           <div class="v32-menu-config">
             <label>Objectif nutrition
               <select id="v32MenuGoal">
@@ -2318,7 +2310,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
         <article class="card">
           <p class="card-kicker">COURSES</p>
           <h2>Liste de courses personnalisée</h2>
-          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V36.3 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
+          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V37 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
           <div class="v26-grid">
             <label>Magasin
               <select id="coursesStore">
@@ -2858,7 +2850,8 @@ window.BF_UTIL = {
     if(q.includes("cree")||q.includes("crée")||q.includes("genere")||q.includes("séance perso")||q.includes("seance perso")) return createCustom(text);
     if((q.includes("seance")||q.includes("programme"))&&(q.includes("conseil")||q.includes("quoi faire")||q.includes("aujourd"))) return recommend(text);
     if(q.includes("machine")||q.includes("occup")||q.includes("indisponible")||q.includes("remplacer")) return replacement(text);
-        if(q.includes("poids")&&q.includes("nutrition")){return "Dans Nutrition, le bloc “Profil utilisé par la nutrition” reprend le poids, la taille, l’âge, l’objectif et les repas du Profil. Clique sur Actualiser depuis Profil si tu viens de modifier ton poids.";}
+            if(q.includes("conseil nutrition")||q.includes("question nutrition")){return "V37 a supprimé le conseil nutrition rapide et la question nutrition dans Nutrition. Pour les questions, utilise l’onglet Coach. Nutrition garde le plan, menus et courses.";}
+if(q.includes("poids")&&q.includes("nutrition")){return "Dans Nutrition, le bloc “Profil utilisé par la nutrition” reprend le poids, la taille, l’âge, l’objectif et les repas du Profil. Clique sur Actualiser depuis Profil si tu viens de modifier ton poids.";}
 if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes("creatine")||q.includes("protéine")||q.includes("proteine")) return BF_NUTRITION.answer(text);
     if(q.includes("charge")||q.includes("poids")||q.includes("kg")) return "Charge : les 2 dernières reps doivent être dures mais propres. Si tu peux faire beaucoup plus, augmente. Si la technique casse, baisse.";
     if(q.includes("repos")||q.includes("pause")) return "Repos : gros exercices 1min30-2min, exercices moyens 1min15, accessoires environ 1min.";
@@ -3607,7 +3600,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=36-3-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=37-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -3618,7 +3611,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=36-3-1-1-1-1-1-reset-"+Date.now();
+      location.href=location.pathname+"?v=37-1-1-1-1-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -3628,7 +3621,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=36-3-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=37-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -3947,7 +3940,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV363Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV37Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V30_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -4900,10 +4893,11 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       if(id==="v36GenerateMenusBtn"){ e.preventDefault(); v36GenerateMenusCourses(); }
       if(id==="v36RefreshCoursesBtn"){ e.preventDefault(); v36RefreshCourses(); }
       if(id==="v36OpenDiagnosticBtn"){ e.preventDefault(); v36OpenDiagnostic(); }
+      if(id==="v37AskCoachNutritionBtn"){ e.preventDefault(); v37OpenCoachForNutrition(); }
 
     }catch(err){
       console.error("Fallback génération V34", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=36-3-1-1-1-1-1-1-1-1-1-1 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=37-1-1-1-1-1-1-1-1-1-1 puis réessaie.");
     }
   }
 
@@ -4950,7 +4944,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     const box=document.getElementById("v30SystemCheck");
     if(!box) return;
     box.classList.remove("hidden");
-    box.innerHTML=`<h3>Test système V36.3</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
+    box.innerHTML=`<h3>Test système V37</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
       tests.map(([name,ok])=>`<div class="v30-test-line"><strong>${name}</strong><span>${ok?"✅ OK":"⚠️ À vérifier"}</span></div>`).join("")+
       `</div>`;
     v30RefreshLaunchpad();
@@ -6024,7 +6018,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
 
-  /* V36.3 : profil canonique synchronisé */
+  /* V37 : profil canonique synchronisé */
 
   function bf331StorageProfile(){
     let p=null;
@@ -6295,6 +6289,40 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
 
+
+  function v37OpenCoachForNutrition(){
+    try{
+      showView?.("coach");
+      const input=document.getElementById("coachInput");
+      if(input){
+        input.value="J’ai une question nutrition : ";
+        input.focus();
+      }
+    }catch(e){}
+  }
+  function v37CleanUIDiagnostic(){
+    const results=[];
+    try{
+      const removed=[
+        ["Conseil nutrition rapide supprimé",!document.getElementById("generateNutritionBtn") && !document.getElementById("nutritionWeight")],
+        ["Question nutrition supprimée",!document.getElementById("nutritionChat") && !document.getElementById("nutritionInput") && !document.getElementById("sendNutritionBtn")],
+        ["Coach conserve les questions",!!document.getElementById("coachInput") && !!document.getElementById("coachChat")],
+        ["Nutrition garde plan/menus/courses",!!document.getElementById("bf35NutritionPlanResult") && !!document.getElementById("v36MenusMount") && !!document.getElementById("v36CoursesMount")],
+        ["Note de redirection Coach",!!document.getElementById("v37NutritionCoachNote")]
+      ];
+      removed.forEach(([name,ok])=>results.push(bf322Result(name,ok,ok?"OK":"Élément absent ou encore présent au mauvais endroit.")));
+    }catch(e){
+      results.push(bf322Result("Diagnostic nettoyage V37",false,String(e)));
+    }
+    return results;
+  }
+  function v37Bind(){
+    if(window.__v37_bound) return;
+    window.__v37_bound=true;
+    document.getElementById("v37AskCoachNutritionBtn")?.addEventListener("click",v37OpenCoachForNutrition);
+  }
+
+
   function v36Diagnostic(){
     const results=[];
     try{
@@ -6506,7 +6534,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=36-3") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
+    results.push(bf322Result("Version chargée", location.href.includes("v=37") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
@@ -6517,8 +6545,8 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(...bf341ProfileNutritionDiagnostic());
       results.push(...bf35Diagnostic());
       results.push(...v36Diagnostic());
+      results.push(...v37CleanUIDiagnostic());
       results.push(...bf362ForcedProfileDiagnostic());
-      results.push(...bf363NutritionQuickSyncDiagnostic());
       results.push(...bf361ExternalLoadDiagnostic());
       results.push(...bf351StrategiesDiagnostic());
       results.push(...bf322RunGenerationChecks(true));
@@ -6553,14 +6581,14 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V36.3\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V37\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=36-3-1-1-1-1
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=37-1-1-1-1
 2. Si tu vois encore une ancienne version, supprime l’ancienne icône de l’écran d’accueil
-3. Ouvre Safari, recharge avec ?v=36-3-1-1-1-1-1-1-1-1
+3. Ouvre Safari, recharge avec ?v=37-1-1-1-1-1-1-1-1
 4. Ré-ajoute l’app à l’écran d’accueil`;
     alert(msg);
   }
@@ -6602,6 +6630,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       bf35Bind?.();
       bf322Bind?.();
       v36Bind?.();
+      v37Bind?.();
       bf324BindProfileApply?.();
       v29RenderProgress?.();
       v28RenderSmartMonth?.();
@@ -6729,7 +6758,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=36-3").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=37").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
