@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V39.2</title>
+  <title>Basic-Fit Coach V38.9</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="BF Coach" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icons/icon-180.png" />
 <style>
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V39.2 : nettoyage du bas de l'application */
+/* V38.9 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V39.2 : suppression du texte parasite tout en bas */
+/* V38.9 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V39.2 : mode séance live + actions rapides */
+/* V38.9 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -339,7 +339,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V39.2 : profil + programme mensuel */
+/* V38.9 : profil + programme mensuel */
 .month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
 .month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
 .month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
@@ -350,7 +350,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
 
 
-/* V39.2 : onboarding + personnalisation par objectif */
+/* V38.9 : onboarding + personnalisation par objectif */
 .onboarding{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(7,10,18,.82);backdrop-filter:blur(22px)}
 .onboarding-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(53,208,127,.08)),var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55);padding:20px}
 .onboarding-card>p:not(.card-kicker){color:var(--muted);margin:8px 0 16px}
@@ -363,7 +363,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.objective-strip{align-items:flex-start;flex-direction:column}.objective-strip button{width:100%}}
 
 
-/* V39.2 : base coach pro élargie */
+/* V38.9 : base coach pro élargie */
 .pro-base-card{
   display:flex;
   justify-content:space-between;
@@ -390,7 +390,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.pro-base-card{flex-direction:column;align-items:flex-start}.pro-base-card button{width:100%}}
 
 
-/* V39.2 : présentation libre intelligente */
+/* V38.9 : présentation libre intelligente */
 .free-onboarding-card{width:min(820px,100%)}
 .presentation-textarea{min-height:260px;font-size:15px;line-height:1.5;resize:vertical}
 .free-actions{grid-template-columns:1fr 1fr 1fr}
@@ -402,7 +402,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.free-actions{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}
 
 
-/* V39.2 : introduction obligatoire + déblocage */
+/* V38.9 : introduction obligatoire + déblocage */
 body.app-locked .app-shell{filter:blur(10px);pointer-events:none;user-select:none}
 body.app-locked{overflow:hidden}
 .intro-gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 20% 10%,rgba(255,209,102,.18),transparent 30%),radial-gradient(circle at 80% 20%,rgba(125,179,255,.18),transparent 32%),rgba(7,10,18,.92);backdrop-filter:blur(24px);overflow:auto}
@@ -435,7 +435,7 @@ body.app-locked{overflow:hidden}
 @media(max-width:700px){.intro-steps-ui{grid-template-columns:1fr}.intro-actions{grid-template-columns:1fr}.intro-card{border-radius:26px;padding:16px}}
 
 
-/* V39.2 : réponses coach personnalisées */
+/* V38.9 : réponses coach personnalisées */
 .personal-answer{
   border:1px solid rgba(255,209,102,.18);
   background:linear-gradient(135deg,rgba(255,209,102,.10),rgba(53,208,127,.07));
@@ -447,7 +447,7 @@ body.app-locked{overflow:hidden}
 .personal-answer .small-note{display:block;color:var(--muted);font-size:12.5px;margin-top:6px}
 
 
-/* V39.2 : sécurité anti-bug */
+/* V38.9 : sécurité anti-bug */
 .safety-card{
   display:flex;
   justify-content:space-between;
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V39.2 : stratégies objectifs */
+/* V38.9.1 : stratégies objectifs */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -550,7 +550,7 @@ body.app-locked #onboarding{
 }
 
 
-/* V39.2 : correctif écran flou / impossible d'écrire */
+/* V38.9 : correctif écran flou / impossible d'écrire */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -590,13 +590,13 @@ body.app-locked #onboarding,
 }
 
 
-/* V39.2 : validation forcée */
+/* V38.9 : validation forcée */
 .validation-status{margin-top:10px;border:1px solid rgba(125,179,255,.22);background:rgba(125,179,255,.08);color:#E6F0FF;padding:10px;border-radius:16px;font-size:13px}
 .validation-status.ok{border-color:rgba(53,208,127,.28);background:rgba(53,208,127,.10);color:#DFFFEA}
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V39.2 : stratégies objectifs définitivement */
+/* V38.9.1 : stratégies objectifs définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : stratégies objectifs */
+/* V38.9.1 : stratégies objectifs */
 .hint{
   position:fixed;
   left:12px;
@@ -685,7 +685,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : double présentation + courses */
+/* V38.9 : double présentation + courses */
 .v26-intro-card{width:min(980px,100%)}
 .v26-steps{grid-template-columns:repeat(6,1fr)}
 .v26-step-panel{
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : stratégies objectifs + exercices manuels */
+/* V38.9.1 : stratégies objectifs + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -813,7 +813,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : plan personnalisé + interface simplifiée */
+/* V38.9 : plan personnalisé + interface simplifiée */
 .v28-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
 .smart-week{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:24px;padding:14px;margin:14px 0}
 .smart-week h3{margin-bottom:4px}
@@ -825,18 +825,18 @@ body.app-locked{overflow:auto!important}
 .smart-ex-row strong{color:#fff}
 @media(max-width:760px){.v28-actions button{width:100%}}
 
-/* V39.2 : onglets simplifiés */
+/* V38.9 : onglets simplifiés */
 #customView,#performancesView,#questionsView{
   display:none!important;
 }
 
 
-/* V39.2 : onglets simplifiés */
+/* V38.9 : onglets simplifiés */
 #customView,#performancesView,#questionsView,#monthView{
   display:none!important;
 }
 
-/* V39.2 : menus + courses liées */
+/* V38.9 : menus + courses liées */
 .v32-menu-config{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
 .v32-menu-config label,#menusView label{display:flex;flex-direction:column;gap:7px;color:#C7D3E4;font-size:13px;font-weight:900}
 .v32-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
@@ -892,7 +892,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : nutrition personnalisée avancée */
+/* V38.9 : nutrition personnalisée avancée */
 .bf34-nutrition-card{
   border-color:rgba(53,208,127,.18);
   background:
@@ -946,7 +946,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : profil relié à nutrition */
+/* V38.9 : profil relié à nutrition */
 .bf341-profile-link{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.06);
@@ -972,7 +972,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:520px){.bf341-metric-grid{grid-template-columns:1fr}}
 
 
-/* V39.2 : objectif calories + macros */
+/* V38.9 : objectif calories + macros */
 .bf35-plan-card{
   border:1px solid rgba(255,209,102,.20);
   background:
@@ -1011,7 +1011,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:520px){.bf35-macro-grid{grid-template-columns:1fr}.bf35-actions button{width:100%}}
 
 
-/* V39.2 : stratégies nutrition par objectif */
+/* V38.9 : stratégies nutrition par objectif */
 .bf351-strategy-panel{
   border:1px solid rgba(255,255,255,.10);
   background:
@@ -1040,7 +1040,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:820px){.bf351-goal-grid{grid-template-columns:1fr}}
 
 
-/* V39.2 : sports contraintes tout-en-un */
+/* V38.9.1 : sports contraintes tout-en-un */
 #planView,#sessionsView,#liveView,#progressView,#menusView,#coursesView,#diagnosticView{
   display:none !important;
 }
@@ -1101,7 +1101,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : autres sports / contraintes */
+/* V38.9 : autres sports / contraintes */
 .bf361-load-box{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.06);
@@ -1125,7 +1125,7 @@ body.app-locked{overflow:auto!important}
 .bf361-warning{color:#FFE7E7;background:rgba(255,107,107,.10);border-color:rgba(255,107,107,.24)}
 
 
-/* V39.2 : formulaire conseil nutrition synchronisé */
+/* V38.9 : formulaire conseil nutrition synchronisé */
 .bf363-sync-note{
   border:1px solid rgba(53,208,127,.18);
   background:rgba(53,208,127,.07);
@@ -1138,7 +1138,7 @@ body.app-locked{overflow:auto!important}
 .bf363-sync-note strong{color:#fff}
 
 
-/* V39.2 : nettoyage interface et suppression des doublons */
+/* V38.9 : nettoyage interface et suppression des doublons */
 .v37-clean-note{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.07);
@@ -1161,7 +1161,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : accueil tableau de bord quotidien */
+/* V38.9 : accueil tableau de bord quotidien */
 .v371-daily-dashboard{
   border-color:rgba(255,209,102,.22);
   background:
@@ -1234,7 +1234,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V39.2 : refonte visuelle premium */
+/* V38.9 : refonte visuelle premium */
 :root{
   --bg:#060913;
   --bg2:#0B1020;
@@ -1505,7 +1505,7 @@ input:focus, select:focus, textarea:focus{
 }
 
 
-/* V39.2 : vraie refonte mobile premium */
+/* V38.9 : vraie refonte mobile premium */
 :root{
   --radius:26px;
   --shadow:0 24px 70px rgba(0,0,0,.52);
@@ -1778,7 +1778,7 @@ main{
 }
 
 
-/* V39.2 : nouvel utilisateur */
+/* V38.9 : runtime intro fix */
 .app-shell{
   max-width:430px !important;
 }
@@ -1982,7 +1982,7 @@ main{
 }
 
 
-/* V39.2 : correction critique navigation premium */
+/* V38.9 : correction critique navigation premium */
 .app-shell{
   max-width:430px !important;
   overflow-x:hidden !important;
@@ -2101,7 +2101,7 @@ body[data-active-view="dashboard"] .timer-dock{
 }
 
 
-/* V39.2 : corrections issues détectées audit */
+/* V38.9 : corrections issues détectées audit */
 body[data-active-view="dashboard"] .timer-dock,
 body[data-active-view="dashboard"] .clean-timer,
 body[data-active-view="dashboard"] aside.timer-dock,
@@ -2166,9 +2166,9 @@ body:not([data-active-view]) .timer-dock{
   padding-bottom:calc(28px + var(--nav-h,76px)) !important;
 }
 
-/* V39.2 : polish téléphone conservé */
+/* V38.9 : polish téléphone conservé */
 
-/* V39.2 : mode essai propre */
+/* V38.9 : mode essai propre */
 .v386-demo-card{
   border-color:rgba(76,224,145,.22) !important;
   background:
@@ -2203,286 +2203,44 @@ body:not([data-active-view]) .timer-dock{
 }
 
 
-/* V39.2 : nouvel utilisateur autonome */
-#safetyPanel.safety-panel{
-  z-index:30000 !important;
-  position:fixed !important;
-  inset:0 !important;
-  display:grid;
-  place-items:center;
-  padding:16px !important;
-  background:rgba(3,6,12,.92) !important;
-  backdrop-filter:blur(18px) !important;
-  pointer-events:auto !important;
-  visibility:visible !important;
-  opacity:1 !important;
+/* ============================================================
+   V38.9 — FIX UI MOBILE + TIMER CONTEXTUEL
+   ============================================================ */
+:root{
+  --safe-top:env(safe-area-inset-top, 0px);
 }
-#safetyPanel.safety-panel.hidden{
+
+/* Le timer global n'apparaît que dans Entraînement > Live */
+.timer-dock,
+.clean-timer{
   display:none !important;
-}
-#safetyPanel article{
-  width:min(620px,100%) !important;
-  max-height:88dvh !important;
-  overflow:auto !important;
-  position:relative !important;
-  z-index:30001 !important;
-  background:
-    radial-gradient(circle at 100% 0%,rgba(255,107,122,.14),transparent 32%),
-    linear-gradient(180deg,rgba(17,24,41,.98),rgba(8,12,22,.99)) !important;
-  border:1px solid rgba(255,255,255,.12) !important;
-}
-body.v389-rescue-open{
-  overflow:hidden !important;
-}
-body.v389-rescue-open #onboarding{
+  visibility:hidden !important;
   pointer-events:none !important;
 }
-.v389-rescue-live{
-  margin:10px 0 14px;
-  padding:11px 12px;
-  border-radius:16px;
-  background:rgba(76,224,145,.09);
-  border:1px solid rgba(76,224,145,.22);
-  color:#E9FFF1;
-  font-size:13px;
-}
-.v389-rescue-danger{
-  background:linear-gradient(135deg,#ff6b7a,#ffb703) !important;
-  color:#170B0D !important;
+
+body[data-active-view="training"][data-training-section="live"] .timer-dock,
+body[data-active-view="training"][data-training-section="live"] .clean-timer{
+  display:grid !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
 }
 
-
-/* V39.2 : portions nutritionnelles précises */
-.bf39-portion-calculator{
-  border-color:rgba(255,209,102,.20) !important;
-  background:
-    radial-gradient(circle at 100% 0%,rgba(255,209,102,.14),transparent 34%),
-    linear-gradient(180deg,rgba(17,24,41,.96),rgba(8,12,22,.99)) !important;
+/* Navigation mobile : aucun libellé ne doit être coupé */
+#appNav.app-nav button{
+  font-size:9px !important;
+  letter-spacing:-.25px !important;
+  text-align:center !important;
 }
-.bf39-day-card{
-  border:1px solid rgba(255,255,255,.09);
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.025));
-  border-radius:26px;
-  padding:14px;
-  margin:12px 0;
-}
-.bf39-day-head{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:10px;
-}
-.bf39-day-head h3{margin:0}
-.bf39-day-type{
-  display:inline-flex;
-  align-items:center;
-  padding:7px 10px;
-  border-radius:999px;
-  font-size:11px;
-  font-weight:900;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.05);
-}
-.bf39-day-type.training{
-  color:#12160f;
-  background:linear-gradient(135deg,#78E7A2,#4CE091);
-  border-color:transparent;
-}
-.bf39-day-type.rest{
-  color:#DCE8FF;
-  background:rgba(130,174,255,.10);
-  border-color:rgba(130,174,255,.20);
-}
-.bf39-day-macros{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:7px;
-  margin:8px 0 12px;
-}
-.bf39-macro-chip{
-  padding:8px 5px;
-  border-radius:14px;
-  text-align:center;
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.07);
-}
-.bf39-macro-chip strong{
-  display:block;
-  font-size:15px;
-}
-.bf39-macro-chip span{
-  color:var(--muted);
-  font-size:10px;
-}
-.bf39-meal{
-  border-radius:22px;
-  padding:13px;
-  margin:10px 0;
-  background:rgba(5,9,16,.58);
-  border:1px solid rgba(255,255,255,.07);
-}
-.bf39-meal-head{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:10px;
-}
-.bf39-meal-title strong{display:block;font-size:16px}
-.bf39-meal-title span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-.bf39-meal-total{
-  flex:0 0 auto;
-  font-size:11px;
-  font-weight:900;
-  color:#161109;
-  background:linear-gradient(135deg,#FFD166,#FFB703);
-  padding:7px 9px;
-  border-radius:14px;
-}
-.bf39-food-list{
-  display:grid;
-  gap:7px;
-}
-.bf39-food-row{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:10px;
-  align-items:center;
-  padding:9px 10px;
-  border-radius:16px;
-  background:rgba(255,255,255,.035);
-  border:1px solid rgba(255,255,255,.055);
-}
-.bf39-food-row strong{font-size:13px}
-.bf39-food-qty{
-  text-align:right;
-  font-weight:900;
-  font-size:12px;
-  color:#FFF2C7;
-}
-.bf39-swap{
-  margin-top:8px;
-  border-radius:16px;
-  background:rgba(130,174,255,.055);
-  border:1px solid rgba(130,174,255,.12);
-  overflow:hidden;
-}
-.bf39-swap summary{
-  cursor:pointer;
-  padding:9px 10px;
-  font-size:12px;
-  font-weight:900;
-  color:#DCE8FF;
-}
-.bf39-swap-body{
-  padding:0 10px 10px;
-  font-size:12px;
-  color:#B9C7DA;
-}
-.bf39-portion-result{
-  display:grid;
-  gap:10px;
-}
-.bf39-portion-pair{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-.bf39-portion-box{
-  padding:14px;
-  border-radius:20px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);
-}
-.bf39-portion-box strong{display:block;font-size:16px;margin-bottom:5px}
-.bf39-portion-box .big{
-  font-size:24px;
-  font-weight:950;
-  letter-spacing:-.04em;
-  color:#FFF2C7;
-}
-.bf39-source-note{
-  margin-top:10px;
-  padding:10px 12px;
-  border-radius:16px;
-  background:rgba(255,209,102,.06);
-  border:1px solid rgba(255,209,102,.14);
-  color:#D8E1EF;
-  font-size:12px;
-}
-@media(max-width:430px){
-  .bf39-day-macros{grid-template-columns:1fr 1fr}
-  .bf39-portion-pair{grid-template-columns:1fr}
-  .bf39-food-row{grid-template-columns:1fr}
-  .bf39-food-qty{text-align:left}
+#appNav.app-nav button[data-view="training"]{
+  font-size:8.4px !important;
+  letter-spacing:-.45px !important;
 }
 
-
-/* V39.2 : cohérence globale */
-.bf391-intro-facts{
-  margin:12px 0 14px;
-  padding:14px;
-  border-radius:22px;
-  background:rgba(255,255,255,.035);
-  border:1px solid rgba(255,255,255,.075);
-}
-.bf391-coherence-note{
-  margin:10px 0;
-  padding:11px 12px;
-  border-radius:16px;
-  background:rgba(76,224,145,.07);
-  border:1px solid rgba(76,224,145,.16);
-  font-size:12px;
-  color:#DDF9E8;
-}
-.bf391-gap-note{
-  margin-top:10px;
-  padding:10px 12px;
-  border-radius:16px;
-  background:rgba(255,209,102,.065);
-  border:1px solid rgba(255,209,102,.14);
-  color:#E6EDF8;
-  font-size:12px;
-}
-.bf391-warning{
-  background:rgba(255,107,122,.07);
-  border-color:rgba(255,107,122,.18);
-}
-
-
-/* V39.2 : multi-sport + 2 repas */
-.bf392-sport-module{
-  margin:10px 0;
-  padding:14px;
-  border-radius:22px;
-  background:
-    radial-gradient(circle at 100% 0%,rgba(76,224,145,.14),transparent 36%),
-    rgba(76,224,145,.055);
-  border:1px solid rgba(76,224,145,.17);
-}
-.bf392-sport-module.competition{
-  background:
-    radial-gradient(circle at 100% 0%,rgba(255,209,102,.16),transparent 36%),
-    rgba(255,209,102,.055);
-  border-color:rgba(255,209,102,.18);
-}
-.bf392-sport-module h4{margin:0 0 5px;font-size:15px}
-.bf392-sport-module p{margin:4px 0 8px;color:var(--muted);font-size:12px}
-.bf392-activity-row{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
-.bf392-activity-chip{
-  display:inline-flex;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:900;
-  background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08)
-}
-.bf392-activity-chip.gym{color:#DCE8FF}
-.bf392-activity-chip.sport{color:#CFFFE0}
-.bf392-activity-chip.competition{color:#FFF0B6}
-.bf392-schedule-note{
-  margin:10px 0;padding:11px 12px;border-radius:16px;
-  background:rgba(130,174,255,.06);border:1px solid rgba(130,174,255,.14);font-size:12px
-}
-.bf392-sport-type-grid{
-  display:flex;flex-wrap:wrap;gap:6px;margin-top:8px
+/* Espace respirable au-dessus du contenu sur iPhone */
+@media(max-width:520px){
+  main{
+    padding-top:16px !important;
+  }
 }
 
 </style>
@@ -2510,7 +2268,7 @@ body.v389-rescue-open #onboarding{
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V39.2 — COACH COMPLET</p>
+            <p class="card-kicker">V38.9 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -2540,69 +2298,8 @@ body.v389-rescue-open #onboarding{
         <div class="v26-step-panel hidden" id="v26SportPanel">
           <h2>Présentation sportive libre</h2>
           <p class="intro-lead">Présente ton profil sportif : objectif physique, niveau à la salle, nombre de séances, durée, machines préférées, douleurs ou limites.</p>
-          
-          <div class="bf391-intro-facts" id="bf391IntroFacts">
-            <p class="small-note"><strong>Infos indispensables :</strong> ces valeurs servent aux calculs d’entraînement et de nutrition. Elles ne sont plus inventées automatiquement.</p>
-            <div class="form-grid">
-              <label>Poids (kg)
-                <input id="bf391IntroWeight" inputmode="decimal" placeholder="ex : 75">
-              </label>
-              <label>Taille (cm)
-                <input id="bf391IntroHeight" inputmode="numeric" placeholder="ex : 175">
-              </label>
-              <label>Âge
-                <input id="bf391IntroAge" inputmode="numeric" placeholder="ex : 25">
-              </label>
-              <label>Sexe pour le calcul énergétique
-                <select id="bf391IntroSex">
-                  <option value="">Choisir</option>
-                  <option value="male">Homme</option>
-                  <option value="female">Femme</option>
-                </select>
-              </label>
-              <label>Objectif principal
-                <select id="bf391IntroGoal">
-                  <option value="">Choisir</option>
-                  <option value="cut">Sèche / perdre du gras</option>
-                  <option value="muscle">Prise de muscle</option>
-                  <option value="strength">Force</option>
-                  <option value="performance">Performance / athlétique</option>
-                  <option value="health">Remise en forme / santé</option>
-                  <option value="maintain">Maintien</option>
-                </select>
-              </label>
-              <label>Séances muscu / semaine
-                <select id="bf391IntroGymDays">
-                  <option value="2">2</option>
-                  <option value="3" selected>3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                </select>
-              </label>
-              <label>Durée habituelle
-                <select id="bf391IntroDuration">
-                  <option value="30">30 min</option>
-                  <option value="45">45 min</option>
-                  <option value="60" selected>60 min</option>
-                  <option value="75">75 min</option>
-                </select>
-              </label>
-
-              <label>Jours de salle
-                <input id="bf392IntroGymSchedule" placeholder="ex : lundi, mardi, jeudi, vendredi, samedi">
-              </label>
-              <label>Autres sports / cardio
-                <input id="bf392IntroSportSchedule" placeholder="ex : tennis mercredi, running mardi, natation samedi">
-              </label>
-              <label>Compétition / match / tournoi
-                <input id="bf392IntroCompetitionSchedule" placeholder="ex : tournoi samedi, match dimanche, course dimanche">
-              </label>
-            </div>
-          </div>
-
-<label>Ton profil sportif
-            <textarea id="sportPresentation" class="presentation-textarea" placeholder="Exemple : J’ai 25 ans. Mon objectif est de progresser physiquement. Je peux m’entraîner 3 fois par semaine pendant environ 1 heure. Je préfère les machines et je veux que le programme tienne compte de mes autres sports, contraintes et éventuelles douleurs."></textarea>
+          <label>Ton profil sportif
+            <textarea id="sportPresentation" class="presentation-textarea" placeholder="Exemple : Je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle proprement. Je peux aller à Basic-Fit 3 fois par semaine pendant 1h. Je préfère les machines. Je veux éviter les exercices trop risqués pour le genou car j’ai parfois une gêne."></textarea>
           </label>
           <div class="intro-actions">
             <button type="button" class="ghost-btn" id="sportExampleBtn">Remplir exemple sport</button>
@@ -2677,7 +2374,7 @@ body.v389-rescue-open #onboarding{
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV392Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV389Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -2693,7 +2390,7 @@ body.v389-rescue-open #onboarding{
 
         <section class="safety-card">
           <div>
-            <p class="card-kicker">SÉCURITÉ V39.2</p>
+            <p class="card-kicker">SÉCURITÉ V38.9</p>
             <h3>Mode secours stable</h3>
             <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
           </div>
@@ -2705,7 +2402,7 @@ body.v389-rescue-open #onboarding{
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V39.2 NOUVEL UTILISATEUR</p>
+          <p class="hero-label">V38.9 RUNTIME INTRO FIX</p>
           <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -2758,7 +2455,7 @@ body.v389-rescue-open #onboarding{
         <article class="card v371-daily-dashboard" id="v371DailyDashboard">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V39.2 — ACCUEIL PREMIUM</p>
+              <p class="card-kicker">V38.9 — ACCUEIL PREMIUM</p>
               <h2>Ton tableau de bord</h2>
               <p>L’app te résume quoi faire aujourd’hui : entraînement, nutrition, contraintes et actions rapides.</p>
             </div>
@@ -2803,7 +2500,7 @@ body.v389-rescue-open #onboarding{
         <article class="card v30-launchpad" id="v30Launchpad">
           <div class="section-head">
             <div>
-              <p class="card-kicker">PARCOURS V39.2</p>
+              <p class="card-kicker">PARCOURS V38.9</p>
               <h3>Utilise l’app dans le bon ordre</h3>
             </div>
             <button class="ghost-btn" id="v30SelfTestBtn">Tester l’app</button>
@@ -2923,7 +2620,7 @@ body.v389-rescue-open #onboarding{
           </div>
           <div class="result-box">
             <strong>Lien essai propre :</strong><br>
-            <code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=39-1&amp;fresh=1</code>
+            <code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=38-9&amp;fresh=1</code>
             <p class="small-note">Le paramètre <strong>fresh=1</strong> vide les données locales de l’app sur l’appareil qui ouvre le lien.</p>
           </div>
         </article>
@@ -2939,19 +2636,26 @@ body.v389-rescue-open #onboarding{
             </div>
             <button type="button" class="ghost-btn" id="v36OpenDiagnosticBtn">Ouvrir le diagnostic</button>
           </div>
-          <div id="v36DiagnosticMount"></div>
+          
+        <article class="card accent-card" id="v389VersionBadge">
+          <div class="card-kicker">VERSION ACTIVE</div>
+          <h3>Basic-Fit Coach V38.9</h3>
+          <p>Nutrition unifiée · portions sécurisées · timer contextuel · cache navigation corrigé.</p>
+        </article>
+
+        <div id="v36DiagnosticMount"></div>
         </article>
 
         <article class="card accent-card"><h3>Profil = programme plus intelligent</h3><p>Le coach utilise ton poids, ta taille, ton objectif, tes jours d’entraînement, tes douleurs et tes repas pour créer ton mois sportif et nutrition.</p></article>
         <article class="card form-card">
           <div class="form-grid">
-            <label>Prénom <input id="profileName" placeholder="ex : Alex"></label>
-            <label>Poids actuel en kg <input id="profileWeight" inputmode="decimal" value="70"></label>
-            <label>Taille en cm <input id="profileHeight" inputmode="numeric" value="175"></label>
-            <label>Âge <input id="profileAge" inputmode="numeric" value="25"></label>
+            <label>Prénom <input id="profileName" placeholder="ex : Pablo"></label>
+            <label>Poids actuel en kg <input id="profileWeight" inputmode="decimal" value="75"></label>
+            <label>Taille en cm <input id="profileHeight" inputmode="numeric" value="166"></label>
+            <label>Âge <input id="profileAge" inputmode="numeric" value="20"></label>
             <label>Sexe <select id="profileSex"><option value="male" selected>Homme</option><option value="female">Femme</option></select></label>
-            <label>Objectif principal <select id="profileGoal"><option value="cut">Sèche / perdre du gras</option><option value="muscle">Prise de muscle</option><option value="strength">Force</option><option value="performance">Performance / athlétique</option><option value="health" selected>Remise en forme / santé</option><option value="maintain">Maintien</option></select></label>
-            <label>Niveau salle <select id="profileLevel"><option value="beginner" selected>Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé</option></select></label>
+            <label>Objectif principal <select id="profileGoal"><option value="cut">Sèche / perdre du gras</option><option value="muscle" selected>Prise de muscle</option><option value="strength">Force</option><option value="performance">Performance / athlétique</option><option value="health">Remise en forme / santé</option><option value="maintain">Maintien</option></select></label>
+            <label>Niveau salle <select id="profileLevel"><option value="beginner">Débutant</option><option value="intermediate" selected>Intermédiaire</option><option value="advanced">Avancé</option></select></label>
             <label>Séances muscu/semaine <select id="profileGymDays">
                 <option value="2">2 séances/semaine</option>
                 <option value="3" selected>3 séances/semaine</option>
@@ -2960,19 +2664,15 @@ body.v389-rescue-open #onboarding{
                 <option value="6">6 séances/semaine</option>
               </select></label>
             <label>Durée séance <select id="profileDuration"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>60 min</option><option value="75">75 min</option></select></label>
-            <label>Repas/jour <select id="profileMeals"><option value="2">2 repas</option><option value="3" selected>3 repas</option><option value="4">3 repas + collation</option></select></label>
-            
-            <label>Jours de salle
-              <input id="profileGymSchedule" placeholder="ex : lundi, mardi, jeudi, vendredi, samedi">
-            </label>
-            <label>Autres sports / cardio <input id="profileSportball" placeholder="ex : tennis mercredi, running mardi, football jeudi, natation samedi"></label>
-            <label>Contrainte importante <input id="profileCompétition" placeholder="ex : tournoi samedi, match dimanche, course dimanche, travail tard jeudi"></label>
+            <label>Repas/jour <select id="profileMeals"><option value="2" selected>2 repas</option><option value="3">3 repas</option><option value="4">3 repas + collation</option></select></label>
+            <label>Autres sports / cardio <input id="profileSportball" placeholder="ex : cardio mercredi, sport collectif samedi"></label>
+            <label>Contrainte importante <input id="profileCompétition" placeholder="ex : compétition dimanche, travail tard jeudi"></label>
             <label>Douleurs à surveiller <select id="profilePain"><option value="none">Aucune</option><option value="knee">Genou</option><option value="adductor">Adducteurs</option><option value="ankle">Cheville</option><option value="shoulder">Épaule</option><option value="back">Dos</option></select></label>
             <label>Budget nutrition <select id="profileBudget"><option value="simple" selected>Simple / économique</option><option value="normal">Normal</option><option value="varied">Plus varié</option></select></label>
           </div>
-          <label>Aliments que tu aimes <textarea id="profileLikes" placeholder="ex : poulet, riz, yaourt, fruits, légumes..."></textarea></label>
+          <label>Aliments que tu aimes <textarea id="profileLikes" placeholder="ex : œufs, jambon, skyr, pommes de terre, brocoli, banane..."></textarea></label>
           <label>Présentation libre <textarea id="profilePresentation" placeholder="Ta présentation complète..."></textarea></label>
-          <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : aliment non aimé, allergie ou restriction..."></textarea></label>
+          <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : poisson, petit-déjeuner, ketchup..."></textarea></label>
           <button class="primary-btn full" id="saveProfileBtn">Sauvegarder mon profil</button>
 
           <button type="button" class="ghost-btn full" id="bf321ApplyProfileBtn">Appliquer ce profil et régénérer plan/séances/menus avec cette durée</button>
@@ -2988,7 +2688,7 @@ body.v389-rescue-open #onboarding{
         <article class="card">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V39.2 — ENTRAÎNEMENT TOUT-EN-UN</p>
+              <p class="card-kicker">V38.9 — ENTRAÎNEMENT TOUT-EN-UN</p>
               <h2>Mon espace entraînement</h2>
               <p>Plan, séances, live et suivi sont regroupés ici. Les anciens onglets existent toujours techniquement, mais tout est piloté depuis cet espace.</p>
             </div>
@@ -3038,7 +2738,7 @@ body.v389-rescue-open #onboarding{
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V39.2 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V38.9 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -3054,7 +2754,7 @@ body.v389-rescue-open #onboarding{
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V39.2 — SÉANCES INTELLIGENTES</p>
+          <p class="card-kicker">V38.9 — SÉANCES INTELLIGENTES</p>
           <h2>Mes séances : auto, semi-auto ou manuel</h2>
           <p>L’app peut recommander un split comme un coach, mais tu peux aussi choisir ton split ou créer tes séances toi-même. Jusqu’à 6 séances/semaine sont possibles.</p>
 
@@ -3062,7 +2762,7 @@ body.v389-rescue-open #onboarding{
           <div class="bf33-strategy-card">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V39.2 — CHOIX DU SPLIT</p>
+                <p class="card-kicker">V38.9 — CHOIX DU SPLIT</p>
                 <h3>Comment tu veux construire tes séances ?</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf33RefreshRecommendationBtn">Recalculer la recommandation</button>
@@ -3180,7 +2880,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
             <label>Difficulté
               <select id="manualExerciseLevel">
                 <option value="beginner">Facile</option>
-                <option value="intermediate">Intermédiaire</option>
+                <option value="intermediate" selected>Intermédiaire</option>
                 <option value="advanced">Avancé</option>
               </select>
             </label>
@@ -3219,7 +2919,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="liveView">
         <article class="card">
-          <p class="card-kicker">V39.2 — LIVE PERSONNALISÉ</p>
+          <p class="card-kicker">V38.9 — LIVE PERSONNALISÉ</p>
           <h2>Séance en direct</h2>
           <p>Choisis une séance générée, suis les exercices un par un, note tes perfs, lance le repos et enregistre automatiquement dans le suivi.</p>
 
@@ -3420,7 +3120,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="progressView">
         <article class="card">
-          <p class="card-kicker">V39.2 — SUIVI PROGRESSION</p>
+          <p class="card-kicker">V38.9 — SUIVI PROGRESSION</p>
           <h2>Noter ma séance</h2>
           <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
 
@@ -3521,7 +3221,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
 
           <div class="v36-nutrition-shell" id="v36NutritionShell">
-            <p class="card-kicker">V39.2 — NUTRITION TOUT-EN-UN</p>
+            <p class="card-kicker">V38.9 — NUTRITION TOUT-EN-UN</p>
             <h2>Mon espace nutrition</h2>
             <p>Plan nutrition, préférences, menus et courses sont regroupés ici pour éviter les allers-retours.</p>
 
@@ -3562,7 +3262,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           </div>
 
         <article class="card bf34-nutrition-card">
-          <p class="card-kicker">V39.2 — NUTRITION PERSONNALISÉE</p>
+          <p class="card-kicker">V38.9 — NUTRITION PERSONNALISÉE</p>
           <h2>Mes préférences alimentaires</h2>
           <p>Ces réglages servent aux menus, aux courses et aux remplacements automatiques.</p>
 
@@ -3584,7 +3284,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf351-strategy-panel" id="bf351StrategyPanel">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V39.2 — OBJECTIFS NUTRITION</p>
+                <p class="card-kicker">V38.9 — OBJECTIFS NUTRITION</p>
                 <h3>Ce que l’app propose pour chaque objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf351ShowAllStrategiesBtn">Afficher toutes les stratégies</button>
@@ -3596,7 +3296,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf35-plan-card" id="bf35NutritionPlanCard">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V39.2 — PLAN NUTRITIONNEL</p>
+                <p class="card-kicker">V38.9 — PLAN NUTRITIONNEL</p>
                 <h3>Calories et macros selon ton objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf35RefreshNutritionPlanBtn">Recalculer</button>
@@ -3666,7 +3366,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V39.2 — DIAGNOSTIC PROFOND</p>
+          <p class="card-kicker">V38.9 — DIAGNOSTIC PROFOND</p>
           <h2>Diagnostic complet</h2>
           <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Les tests de durée et de split sont maintenant isolés : ils n’utilisent pas tes séances manuelles ni l’ancien état sauvegardé.</p>
 
@@ -3686,7 +3386,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=39-1</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=38-9-1-1-1-1-1-1</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -3733,55 +3433,10 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
 
       <section class="view" id="menusView">
-
-        <article class="card bf39-portion-calculator" id="bf39PortionCalculator">
-          <div class="section-head">
-            <div>
-              <p class="card-kicker">V39.2 — PORTIONS PRÉCISES</p>
-              <h2>Combien je dois mettre dans mon assiette ?</h2>
-              <p>Choisis une source de glucides et une source de protéines. L’app calcule une portion pratique selon ton profil, ton objectif et le type de journée.</p>
-            </div>
-          </div>
-          <div class="form-grid">
-            <label>Glucides
-              <select id="bf39CarbSelect">
-                <option value="Riz">Riz</option>
-                <option value="Pâtes">Pâtes</option>
-                <option value="Pommes de terre">Pommes de terre</option>
-                <option value="Pain complet">Pain complet</option>
-                <option value="Flocons d’avoine">Flocons d’avoine</option>
-              </select>
-            </label>
-            <label>Protéines
-              <select id="bf39ProteinSelect">
-                <option value="Poulet">Poulet</option>
-                <option value="Jambon blanc">Jambon blanc</option>
-                <option value="Œufs">Œufs</option>
-                <option value="Thon">Thon</option>
-                <option value="Skyr/fromage blanc">Skyr</option>
-                <option value="Fromage blanc">Fromage blanc</option>
-              </select>
-            </label>
-            <label>Type de journée
-              <select id="bf39DayTypeSelect">
-                <option value="auto">Automatique</option>
-                <option value="training">Jour entraînement</option>
-                <option value="rest">Jour repos</option>
-              </select>
-            </label>
-          </div>
-          <div class="button-row">
-            <button type="button" class="primary-btn" id="bf39CalcPortionBtn">Calculer mes portions</button>
-          </div>
-          <div id="bf39PortionCalcResult" class="result-box">
-            Choisis tes aliments puis calcule. Les quantités sont des estimations pratiques à ajuster avec l’étiquette du produit réellement acheté.
-          </div>
-        </article>
-
         <article class="card">
-          <p class="card-kicker">V39.2 — MENUS + COURSES</p>
+          <p class="card-kicker">V38.9 — MENUS + COURSES</p>
           <h2>Menus personnalisés de la semaine</h2>
-          <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V39.2 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
+          <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V38.9 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
           <div class="v32-menu-config">
             <label>Objectif nutrition
               <select id="v32MenuGoal">
@@ -3818,8 +3473,8 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div id="v32MenusResult"></div>
         </article>
         <article class="card">
-          <p class="card-kicker">COURSES LIÉES AUX PORTIONS V39.2</p>
-          <h2>Liste de courses calculée depuis les portions</h2>
+          <p class="card-kicker">COURSES LIÉES AUX MENUS</p>
+          <h2>Liste de courses générée par les repas</h2>
           <div id="v32MenuShoppingResult" class="result-box">Génère d’abord tes menus, puis clique sur “Créer les courses depuis les menus”.</div>
         </article>
       </section>
@@ -3828,7 +3483,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
         <article class="card">
           <p class="card-kicker">COURSES</p>
           <h2>Liste de courses personnalisée</h2>
-          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V39.2 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
+          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V38.9 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
           <div class="v26-grid">
             <label>Magasin
               <select id="coursesStore">
@@ -3864,14 +3519,13 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">MODE SECOURS</p>
           <h2>Réparer l’app</h2>
           <p>Utilise ces boutons seulement si l’app bug, reste bloquée, affiche une ancienne version ou si le profil semble corrompu.</p>
-          <div class="v389-rescue-live" id="v389RescueLive">Mode secours autonome prêt.</div>
           <div class="repair-grid">
-            <button type="button" class="ghost-btn" id="repairIntroBtn">Refaire l’introduction</button>
-            <button type="button" class="ghost-btn" id="repairProfileBtn">Effacer profil seulement</button>
-            <button type="button" class="ghost-btn" id="repairMonthBtn">Effacer programme du mois</button>
-            <button type="button" class="ghost-btn" id="repairSWBtn">Vider cache PWA</button>
-            <button type="button" class="primary-btn danger-full v389-rescue-danger" id="repairAllBtn">Reset complet</button>
-            <button type="button" class="ghost-btn" id="closeSafetyBtn">Fermer</button>
+            <button class="ghost-btn" id="repairIntroBtn">Refaire l’introduction</button>
+            <button class="ghost-btn" id="repairProfileBtn">Effacer profil seulement</button>
+            <button class="ghost-btn" id="repairMonthBtn">Effacer programme du mois</button>
+            <button class="ghost-btn" id="repairSWBtn">Vider cache PWA</button>
+            <button class="primary-btn danger-full" id="repairAllBtn">Reset complet</button>
+            <button class="ghost-btn" id="closeSafetyBtn">Fermer</button>
           </div>
           <div id="repairStatus" class="result-box"></div>
         </article>
@@ -3896,7 +3550,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
       const params=new URLSearchParams(location.search);
       const fresh=params.get("fresh")==="1" || params.get("demo")==="1" || params.get("resetlocal")==="1";
       if(!fresh) return;
-      if(sessionStorage.getItem("bf_v3810_fresh_done")==="1") return;
+      if(sessionStorage.getItem("bf_v389_fresh_done")==="1") return;
 
       const keys=[];
       for(let i=0;i<localStorage.length;i++){
@@ -3908,162 +3562,13 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           localStorage.removeItem(k);
         }
       });
-      sessionStorage.setItem("bf_v3810_fresh_done","1");
-      const cleanUrl=location.origin+location.pathname+"?v=39-1&demo=ready";
+      sessionStorage.setItem("bf_v389_fresh_done","1");
+      const cleanUrl=location.origin+location.pathname+"?v=38-9&demo=ready";
       location.replace(cleanUrl);
     }catch(e){
-      console.warn("V38.8 fresh preboot",e);
+      console.warn("V38.9 fresh preboot",e);
     }
   })();
-
-  (function v389InstallAutonomousRescue(){
-    const APP_KEYS = {
-      profile:["bf_v30_profile"],
-      month:["bf_v28_2_month_plan","bf_v30_smart_month","bf_v30_generated_sessions","bf_v33_session_strategy","bf_v33_manual_sessions"],
-      allPrefixes:["bf_","BF_","basicfit","coach"]
-    };
-
-    function byId(id){ return document.getElementById(id); }
-
-    function status(msg){
-      const box=byId("repairStatus");
-      const live=byId("v389RescueLive");
-      if(box) box.textContent=msg;
-      if(live) live.textContent=msg;
-    }
-
-    function open(){
-      const panel=byId("safetyPanel");
-      if(!panel) return false;
-      panel.classList.remove("hidden");
-      panel.style.display="grid";
-      panel.style.zIndex="30000";
-      panel.style.pointerEvents="auto";
-      document.body.classList.add("v389-rescue-open");
-      status("Mode secours ouvert. Choisis une action.");
-      return true;
-    }
-
-    function close(){
-      const panel=byId("safetyPanel");
-      if(panel){
-        panel.classList.add("hidden");
-        panel.style.display="";
-      }
-      document.body.classList.remove("v389-rescue-open");
-    }
-
-    function removeKeys(keys){
-      try{ keys.forEach(k=>localStorage.removeItem(k)); return true; }
-      catch(e){ return false; }
-    }
-
-    function clearAllAppData(){
-      try{
-        const keys=[];
-        for(let i=0;i<localStorage.length;i++){
-          const k=localStorage.key(i);
-          if(k) keys.push(k);
-        }
-        keys.forEach(k=>{
-          if(APP_KEYS.allPrefixes.some(p=>k.startsWith(p) || k.includes(p))){
-            localStorage.removeItem(k);
-          }
-        });
-        return true;
-      }catch(e){ return false; }
-    }
-
-    async function clearPwa(){
-      try{
-        if("serviceWorker" in navigator){
-          const regs=await navigator.serviceWorker.getRegistrations();
-          await Promise.all(regs.map(r=>r.unregister()));
-        }
-        if(window.caches){
-          const names=await caches.keys();
-          await Promise.all(names.map(n=>caches.delete(n)));
-        }
-        return true;
-      }catch(e){ return false; }
-    }
-
-    function goFresh(){
-      location.href=location.origin+location.pathname+"?v=39-1&fresh=1&_="+Date.now();
-    }
-
-    async function action(id){
-      if(id==="introEmergencyBtn" || id==="safeOpenResetBtn" || id==="openSafetyFromProfileBtn"){
-        open(); return;
-      }
-      if(id==="hardResetLink"){
-        clearAllAppData();
-        goFresh();
-        return;
-      }
-      if(id==="repairIntroBtn"){
-        removeKeys(APP_KEYS.profile);
-        try{ localStorage.removeItem("bf_v3810_onboarding_complete"); }catch(e){}
-        close();
-        goFresh();
-        return;
-      }
-      if(id==="repairProfileBtn"){
-        removeKeys(APP_KEYS.profile);
-        status("Profil effacé. Recharge ou relance l’introduction.");
-        return;
-      }
-      if(id==="repairMonthBtn"){
-        removeKeys(APP_KEYS.month);
-        status("Programme, séances et stratégie du mois effacés.");
-        return;
-      }
-      if(id==="repairSWBtn"){
-        status("Nettoyage du cache PWA en cours…");
-        const ok=await clearPwa();
-        status(ok ? "Cache PWA vidé. Recharge l’app." : "Impossible de vider tout le cache.");
-        return;
-      }
-      if(id==="repairAllBtn"){
-        clearAllAppData();
-        await clearPwa();
-        goFresh();
-        return;
-      }
-      if(id==="closeSafetyBtn"){
-        close(); return;
-      }
-      if(id==="safeRestartIntroBtn" || id==="restartIntroBtn"){
-        removeKeys(APP_KEYS.profile);
-        try{ localStorage.removeItem("bf_v3810_onboarding_complete"); }catch(e){}
-        goFresh();
-      }
-    }
-
-    document.addEventListener("click",function(e){
-      const btn=e.target && e.target.closest ? e.target.closest("button") : null;
-      if(!btn) return;
-      const ids=[
-        "introEmergencyBtn","safeOpenResetBtn","openSafetyFromProfileBtn","hardResetLink",
-        "repairIntroBtn","repairProfileBtn","repairMonthBtn","repairSWBtn","repairAllBtn",
-        "closeSafetyBtn","safeRestartIntroBtn","restartIntroBtn"
-      ];
-      if(!ids.includes(btn.id)) return;
-      e.preventDefault();
-      e.stopPropagation();
-      if(typeof e.stopImmediatePropagation==="function") e.stopImmediatePropagation();
-      Promise.resolve(action(btn.id)).catch(err=>{
-        console.error("V38.9 rescue",err);
-        status("Erreur secours : "+String(err && err.message ? err.message : err));
-      });
-    },true);
-
-    window.__v389Rescue={
-      open,close,clearAllAppData,clearPwa,goFresh,
-      isReady:()=>true
-    };
-  })();
-
 
 window.BF_DATA = {
   machines: {
@@ -4308,7 +3813,7 @@ window.BF_UTIL = {
 
 
 (function(){
-  function weight(){ const w=parseFloat((BF_UTIL.$("nutritionWeight")?.value||"70").replace(",",".")); return isFinite(w)&&w>30&&w<180?w:70; }
+  function weight(){ const w=parseFloat((BF_UTIL.$("nutritionWeight")?.value||"75").replace(",",".")); return isFinite(w)&&w>30&&w<180?w:75; }
   function plan(){
     const w=weight(), goal=BF_UTIL.$("nutritionGoal").value, moment=BF_UTIL.$("nutritionMoment").value, hunger=BF_UTIL.$("nutritionHunger").value;
     let pLow=Math.round(w*1.4), pHigh=Math.round(w*2.0);
@@ -4381,20 +3886,20 @@ window.BF_UTIL = {
   };
   window.goalAdviceSafe=window.goalAdvice;
   window.v25PersonalProfile = function(){
-    const fallback={name:"",weight:70,height:175,age:25,sex:"male",goal:"health",level:"beginner",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
+    const fallback={name:"",weight:75,height:166,age:20,sex:"male",goal:"muscle",level:"intermediate",gymDays:3,duration:60,meals:3,pain:"none",likes:"",dislikes:""};
     try{
       return JSON.parse(localStorage.getItem("bf_v30_profile")||"null") || fallback;
     }catch(e){ return fallback; }
   };
   window.v25NutritionTargets = function(p){
-    const bmr=Math.round(10*(+p.weight||70)+6.25*(+p.height||175)-5*(+p.age||25)+(p.sex==="female"?-161:5));
+    const bmr=Math.round(10*(+p.weight||75)+6.25*(+p.height||166)-5*(+p.age||20)+(p.sex==="female"?-161:5));
     let factor=(+p.gymDays||3)>=4?1.65:((+p.gymDays||3)>=3?1.55:1.45);
     let kcal=Math.round(bmr*factor);
     if(p.goal==="cut") kcal-=350;
     if(p.goal==="muscle") kcal+=250;
-    const proteinLow=Math.round((+p.weight||70)*(p.goal==="cut"?1.8:1.6));
-    const proteinHigh=Math.round((+p.weight||70)*(p.goal==="cut"?2.2:2.0));
-    const fats=Math.round((+p.weight||70)*0.8);
+    const proteinLow=Math.round((+p.weight||75)*(p.goal==="cut"?1.8:1.6));
+    const proteinHigh=Math.round((+p.weight||75)*(p.goal==="cut"?2.2:2.0));
+    const fats=Math.round((+p.weight||75)*0.8);
     const carbs=Math.max(120,Math.round((kcal-((proteinLow*4)+(fats*9)))/4));
     return {bmr,kcal,proteinLow,proteinHigh,fats,carbs};
   };
@@ -4408,19 +3913,19 @@ window.BF_UTIL = {
     const box=(title,body,note="")=>`<div class="personal-answer"><strong>${title}</strong><br>${body}${note?`<span class="small-note">${note}</span>`:""}</div>`;
 
     if(v25Has(q,"résumé personnalisé","resume personnalise","mon résumé","mon profil","donne moi mon résumé","donne moi mon resume")){
-      return box("Résumé personnalisé",`Salut ${name}. Objectif : ${goalLabelSafe(p.goal)}. Profil : ${Math.round(+p.weight||70)} kg, ${Math.round(+p.height||175)} cm, niveau ${levelLabel}, ${p.gymDays||3} séances/semaine d’environ ${p.duration||60} min. Nutrition : environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Point de vigilance : ${painLabel}.`);
+      return box("Résumé personnalisé",`Salut ${name}. Objectif : ${goalLabelSafe(p.goal)}. Profil : ${Math.round(+p.weight||75)} kg, ${Math.round(+p.height||166)} cm, niveau ${levelLabel}, ${p.gymDays||3} séances/semaine d’environ ${p.duration||60} min. Nutrition : environ ${t.kcal} kcal/jour et ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Point de vigilance : ${painLabel}.`);
     }
     if(v25Has(q,"proteine","protéine","protein","combien de proteines")){
       const perMealLow=Math.round(t.proteinLow/(+p.meals||3));
       const perMealHigh=Math.round(t.proteinHigh/(+p.meals||3));
-      return box("Protéines adaptées à ton profil",`Vu ton poids de ${Math.round(+p.weight||70)} kg et ton objectif ${goalLabelSafe(p.goal)}, vise environ ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Comme tu manges ${p.meals||3} repas/jour, ça fait environ ${perMealLow}-${perMealHigh} g par repas.`,"Exemples : œufs, poulet, jambon, skyr/fromage blanc, thon, steak 5 %, légumineuses selon tes goûts.");
+      return box("Protéines adaptées à ton profil",`Vu ton poids de ${Math.round(+p.weight||75)} kg et ton objectif ${goalLabelSafe(p.goal)}, vise environ ${t.proteinLow}-${t.proteinHigh} g de protéines/jour. Comme tu manges ${p.meals||3} repas/jour, ça fait environ ${perMealLow}-${perMealHigh} g par repas.`,"Exemples : œufs, poulet, jambon, skyr/fromage blanc, thon, steak 5 %, légumineuses selon tes goûts.");
     }
     if(v25Has(q,"calorie","calories","kcal","combien manger","maintenance","deficit","déficit","surplus")){
       let extra="Garde ce chiffre 10-14 jours puis ajuste selon la moyenne de ton poids.";
       if(p.goal==="cut") extra="Pour sécher, commence autour de ce déficit léger. Si le poids ne baisse pas après 2 semaines, réduis légèrement les portions.";
       if(p.goal==="muscle") extra="Pour prendre du muscle proprement, évite le gros surplus : monte lentement et suis ton poids.";
       if(p.goal==="strength") extra="Pour la force, mange assez pour récupérer, surtout autour des séances lourdes.";
-      return box("Calories personnalisées",`Avec ${Math.round(+p.weight||70)} kg, ${Math.round(+p.height||175)} cm, ${p.age||25} ans et ${p.gymDays||3} séances/semaine, ton repère est environ ${t.kcal} kcal/jour pour ton objectif ${goalLabelSafe(p.goal)}. ${extra}`);
+      return box("Calories personnalisées",`Avec ${Math.round(+p.weight||75)} kg, ${Math.round(+p.height||166)} cm, ${p.age||20} ans et ${p.gymDays||3} séances/semaine, ton repère est environ ${t.kcal} kcal/jour pour ton objectif ${goalLabelSafe(p.goal)}. ${extra}`);
     }
     if(v25Has(q,"glucide","glucides","carbs","féculent","feculent","riz","pates","pâtes")){
       return box("Glucides adaptés",`Pour ton objectif ${goalLabelSafe(p.goal)}, garde les glucides comme carburant. Repère actuel : environ ${t.carbs} g/jour. Mets une bonne partie autour de tes séances : riz, pâtes, pommes de terre, semoule, pain complet, fruits.`,"En sèche, baisse les portions sans les supprimer totalement. En muscle/force, garde des glucides autour de l’entraînement.");
@@ -4715,33 +4220,27 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
-    return saved || {weight:70,height:175,age:25,sex:"male",goal:"health",level:"beginner",gymDays:3,duration:60,meals:3,sportball:"",compétition:"",pain:"none",budget:"simple",likes:"",dislikes:"",presentation:""};
+    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,duration:60,meals:2,sportball:"",compétition:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:"",presentation:""};
   }
   function fillProfileForm(){
     const p=getProfile();
     if(!window.profileWeight) return;
     profileName.value=p.name||""; profileWeight.value=p.weight; profileHeight.value=p.height; profileAge.value=p.age; profileSex.value=p.sex;
-    profileGoal.value=p.goal; profileLevel.value=p.level; profileGymDays.value=p.gymDays; if(window.profileGymSchedule) profileGymSchedule.value=p.gymSchedule||""; if(window.profileDuration) profileDuration.value=p.duration||60; profileMeals.value=p.meals;
+    profileGoal.value=p.goal; profileLevel.value=p.level; profileGymDays.value=p.gymDays; if(window.profileDuration) profileDuration.value=p.duration||60; profileMeals.value=p.meals;
     profileSportball.value=p.sportball||""; profileCompétition.value=p.compétition||""; profilePain.value=p.pain||"none"; profileBudget.value=p.budget||"simple";
     profileLikes.value=p.likes||""; if(window.profilePresentation) profilePresentation.value=p.presentation||""; profileDislikes.value=p.dislikes||""; if(window.reviewWeight) reviewWeight.value=p.weight||"";
   }
   function readProfileForm(){
-    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||70,height:parseFloat(profileHeight.value)||175,age:parseFloat(profileAge.value)||25,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,gymSchedule:profileGymSchedule?.value?.trim()||"",duration:parseInt(profileDuration?.value,10)||60,meals:parseInt(profileMeals.value,10)||3,sportball:profileSportball.value.trim(),compétition:profileCompétition.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim(),presentation:profilePresentation?.value?.trim()||""};
+    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,duration:parseInt(profileDuration?.value,10)||60,meals:parseInt(profileMeals.value,10)||2,sportball:profileSportball.value.trim(),compétition:profileCompétition.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim(),presentation:profilePresentation?.value?.trim()||""};
   }
   function saveProfile(){const p=readProfileForm();BF_STORE.set(PROFILE_KEY,p);
       try{ bf323ClearGeneratedBeforeRegen(); bf321SyncProfileEverywhere(p,{clearGenerated:true}); }catch(e){ console.warn(e); }alert("Profil sauvegardé. Le plan, les séances, les menus et les courses vont utiliser ce nouveau profil.");renderMonthSummary(null,p);updatePersonalUI();}
-  function mifflin(p){return bf391Mifflin(p);}
+  function mifflin(p){return Math.round(10*p.weight + 6.25*p.height - 5*p.age + (p.sex==="male"?5:-161));}
   function nutritionTargets(p,review=null){
-    const plan=bf391CalculateNutritionPlan(p,bf34GetPrefs?.()||{});
-    let kcal=plan.target;
-    if(review?.fatigue==="high") kcal+=100;
-    if(review?.nutrition==="low"&&p.goal==="cut") kcal+=100;
-    return {
-      bmr:plan.bmr,kcal,
-      proteinLow:Math.round(plan.protein*0.95),
-      proteinHigh:Math.round(plan.protein*1.05),
-      fats:plan.fat,carbs:plan.carbs
-    };
+    const bmr=mifflin(p);let factor=p.gymDays>=4?1.65:(p.gymDays>=3?1.55:1.45);let kcal=Math.round(bmr*factor);
+    if(p.goal==="cut") kcal-=350;if(p.goal==="muscle") kcal+=250;if(review?.fatigue==="high") kcal+=100;if(review?.nutrition==="low"&&p.goal==="cut") kcal+=100;
+    const proteinLow=Math.round(p.weight*(p.goal==="cut"?1.8:1.6));const proteinHigh=Math.round(p.weight*(p.goal==="cut"?2.2:2.0));const fats=Math.round(p.weight*0.8);const carbs=Math.max(120,Math.round((kcal-((proteinLow*4)+(fats*9)))/4));
+    return {bmr,kcal,proteinLow,proteinHigh,fats,carbs};
   }
   function sportMonth(p,review=null){
     const fatigueHigh=review?.fatigue==="high";
@@ -5009,9 +4508,9 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(!height) height=extractNumberAfter(raw,[/(\d{3})\s*cm/i,/taille\s*(?:de|:)?\s*(\d{3})/i]);
     return {
       name:detectName(raw),
-      weight:extractNumberAfter(raw,[/(\d{2,3}(?:[,.]\d+)?)\s*kg/i,/poids\s*(?:de|:)?\s*(\d{2,3}(?:[,.]\d+)?)/i]) || 70,
-      height:height || 175,
-      age:extractNumberAfter(raw,[/(\d{1,2})\s*ans/i,/âge\s*(?:de|:)?\s*(\d{1,2})/i,/age\s*(?:de|:)?\s*(\d{1,2})/i]) || 25,
+      weight:extractNumberAfter(raw,[/(\d{2,3}(?:[,.]\d+)?)\s*kg/i,/poids\s*(?:de|:)?\s*(\d{2,3}(?:[,.]\d+)?)/i]) || 75,
+      height:height || 166,
+      age:extractNumberAfter(raw,[/(\d{1,2})\s*ans/i,/âge\s*(?:de|:)?\s*(\d{1,2})/i,/age\s*(?:de|:)?\s*(\d{1,2})/i]) || 20,
       sex:detectSex(BF_UTIL.normalize(raw)),
       goal:detectGoal(BF_UTIL.normalize(raw)),
       level:detectLevel(BF_UTIL.normalize(raw)),
@@ -5030,8 +4529,6 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
   function renderAnalysisPreview(p){
     const painLabel={none:"Aucune",knee:"Genou",adductor:"Adducteurs",ankle:"Cheville",shoulder:"Épaule",back:"Dos"}[p.pain]||"Aucune";
-    const analysisPreview=document.getElementById("analysisPreview");
-    if(!analysisPreview) return;
     analysisPreview.classList.remove("hidden");
     analysisPreview.innerHTML=`<h3>Profil détecté</h3>
       <div class="analysis-grid">
@@ -5108,64 +4605,9 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     badgeAnalyze?.classList.toggle("active",step==="analyze");
     badgeUnlock?.classList.toggle("active",step==="unlock");
   }
-  
-  const BF3810_ONBOARDING_KEY="bf_v3810_onboarding_complete";
-
-  function bf3810RawSavedProfile(){
-    try{
-      const direct=localStorage.getItem("bf_v30_profile");
-      if(direct){
-        const parsed=JSON.parse(direct);
-        if(parsed && typeof parsed==="object") return parsed;
-      }
-    }catch(e){}
-    return null;
-  }
-
-  function bf3810HasRealSavedProfile(){
-    const p=bf3810RawSavedProfile();
-    if(!p) return false;
-    const x=p.merged&&typeof p.merged==="object"?p.merged:p;
-    const validAnthro=Number(x.weight)>=35&&Number(x.height)>=130&&Number(x.age)>=16;
-    const validGoal=Object.keys(BF391_NUTRITION_STRATEGIES).includes(x.goal);
-    const validTraining=Number(x.gymDays)>=2&&Number(x.gymDays)<=6;
-    return !!(validAnthro&&validGoal&&validTraining);
-  }
-
-  function bf3810OnboardingDone(){
-    try{
-      if(localStorage.getItem(BF3810_ONBOARDING_KEY)==="1") return true;
-      if(bf3810HasRealSavedProfile()){
-        localStorage.setItem(BF3810_ONBOARDING_KEY,"1");
-        return true;
-      }
-    }catch(e){}
-    return false;
-  }
-
-  function bf3810MarkOnboardingDone(){
-    try{ localStorage.setItem(BF3810_ONBOARDING_KEY,"1"); }catch(e){}
-  }
-
-  function bf3810ClearOnboardingDone(){
-    try{ localStorage.removeItem(BF3810_ONBOARDING_KEY); }catch(e){}
-  }
-
-  function bf3810NewUserDiagnostic(){
-    const results=[];
-    try{
-      results.push(bf322Result("Marqueur onboarding explicite",typeof bf3810OnboardingDone==="function","La décision intro ne dépend plus des valeurs par défaut du formulaire."));
-      results.push(bf322Result("Détection profil réellement sauvegardé",typeof bf3810HasRealSavedProfile==="function","Seul un vrai profil local permet de sauter l’intro."));
-      results.push(bf322Result("Profil par défaut neutre",document.getElementById("profileWeight")?.value!=="75" && document.getElementById("profileHeight")?.value!=="166","Valeurs initiales génériques et indépendantes du propriétaire."));
-    }catch(e){
-      results.push(bf322Result("Diagnostic nouvel utilisateur V39.2",false,String(e)));
-    }
-    return results;
-  }
-
-
   function showOnboardingIfNeeded(){
-    if(!bf3810OnboardingDone()){
+    const p=bf321CanonicalProfile();
+    if(!p || (!p.presentation && !p.name && !p.goal)){
       lockApp();
       v26ShowStep("Welcome");
     }else{
@@ -5305,13 +4747,11 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
   function openSafetyPanel(){
-    if(window.__v389Rescue?.open) return window.__v389Rescue.open();
     safetyPanel?.classList.remove("hidden");
     safeSetStatus("Choisis une réparation. Le reset complet doit être utilisé seulement si l’app bug vraiment.");
   }
 
   function closeSafetyPanel(){
-    if(window.__v389Rescue?.close) return window.__v389Rescue.close();
     safetyPanel?.classList.add("hidden");
   }
 
@@ -5336,9 +4776,9 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       parsedPresentationProfile=null;
       const p=safeProfile() || {};
       if(window.onPresentation) onPresentation.value=p.presentation||"";
-      document.getElementById("analysisPreview")?.classList.add("hidden");
-      document.getElementById("coachDiagnosis")?.classList.add("hidden");
-      document.getElementById("unlockPanel")?.classList.add("hidden");
+      analysisPreview?.classList.add("hidden");
+      coachDiagnosis?.classList.add("hidden");
+      unlockPanel?.classList.add("hidden");
       lockApp();
       setIntroStep("write");
       closeSafetyPanel();
@@ -5359,7 +4799,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=39-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=38-9-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -5370,7 +4810,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=39-1"+Date.now();
+      location.href=location.pathname+"?v=38-9-1-1-1-1-1-1-1-reset-"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -5380,7 +4820,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=39-1. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=38-9-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -5516,74 +4956,8 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(v26Has(q,"grand frais")) return "Grand Frais";
     return document.getElementById("groceryStore")?.value || "Hyper U / Super U";
   }
-
-  function bf391ReadIntroFacts(){
-    const num=id=>Number(String(document.getElementById(id)?.value||"").replace(",","."));
-    return {
-      weight:num("bf391IntroWeight"),
-      height:num("bf391IntroHeight"),
-      age:num("bf391IntroAge"),
-      sex:document.getElementById("bf391IntroSex")?.value||"",
-      goal:document.getElementById("bf391IntroGoal")?.value||"",
-      gymDays:Number(document.getElementById("bf391IntroGymDays")?.value||3),
-      duration:Number(document.getElementById("bf391IntroDuration")?.value||60),
-      gymSchedule:(document.getElementById("bf392IntroGymSchedule")?.value||"").trim(),
-      sportSchedule:(document.getElementById("bf392IntroSportSchedule")?.value||"").trim(),
-      competitionSchedule:(document.getElementById("bf392IntroCompetitionSchedule")?.value||"").trim()
-    };
-  }
-  function bf391ValidateIntroFacts(){
-    const f=bf391ReadIntroFacts();
-    const problems=[];
-    if(!(f.weight>=35&&f.weight<=250)) problems.push("poids");
-    if(!(f.height>=130&&f.height<=220)) problems.push("taille");
-    if(!(f.age>=16&&f.age<=90)) problems.push("âge");
-    if(!["male","female"].includes(f.sex)) problems.push("sexe");
-    if(!Object.keys(BF391_NUTRITION_STRATEGIES).includes(f.goal)) problems.push("objectif");
-    if(problems.length){
-      setValidationStatus("Complète correctement : "+problems.join(", ")+".","err");
-      document.getElementById("bf391IntroFacts")?.scrollIntoView({behavior:"smooth",block:"center"});
-      return null;
-    }
-    return f;
-  }
-  function bf391CoherenceDiagnostic(){
-    const results=[];
-    try{
-      const male=bf391CalculateNutritionPlan({weight:75,height:175,age:25,sex:"male",goal:"maintain",gymDays:3,meals:3});
-      const female=bf391CalculateNutritionPlan({weight:75,height:175,age:25,sex:"female",goal:"maintain",gymDays:3,meals:3});
-      const checks=[
-        ["Formule sexe cohérente",male.bmr>female.bmr],
-        ["Moteur nutrition unique",typeof bf391CalculateNutritionPlan==="function"],
-        ["Sèche déficit modéré",bf391CalculateNutritionPlan({...male.profile,goal:"cut"}).target<male.maintenance],
-        ["Muscle surplus léger",bf391CalculateNutritionPlan({...male.profile,goal:"muscle"}).target>male.maintenance],
-        ["Protéines plage sportive interne",Object.values(BF391_NUTRITION_STRATEGIES).every(s=>s.proteinKg>=1.5&&s.proteinKg<=1.8)],
-        ["Intro structurée",!!document.getElementById("bf391IntroFacts")],
-        ["Durées cohérentes",bf323ExerciseTargetByDuration(30)===4&&bf323ExerciseTargetByDuration(45)===5&&bf323ExerciseTargetByDuration(60)===6&&bf323ExerciseTargetByDuration(75)===7]
-      ];
-      checks.forEach(([name,ok])=>results.push(bf322Result(name,ok,ok?"OK":"Incohérence détectée.")));
-    }catch(e){
-      results.push(bf322Result("Diagnostic cohérence V39.2",false,String(e)));
-    }
-    return results;
-  }
-
-
   function v26AnalyzeSport(raw){
     const base=analyzePresentation(raw);
-    const facts=bf391ReadIntroFacts?.()||{};
-    Object.assign(base,{
-      weight:facts.weight||base.weight,
-      height:facts.height||base.height,
-      age:facts.age||base.age,
-      sex:facts.sex||base.sex,
-      goal:facts.goal||base.goal,
-      gymDays:facts.gymDays||base.gymDays,
-      duration:facts.duration||base.duration,
-      gymSchedule:facts.gymSchedule||base.gymSchedule||"",
-      sportball:facts.sportSchedule||base.sportball||"",
-      "compétition":facts.competitionSchedule||base["compétition"]||base.competition||""
-    });
     base.sportPresentation=raw;
     base.trainingPreference=v26Has(raw,"machine","machines")?"machines":(v26Has(raw,"haltère","haltere","libre")?"charges libres":"mixte");
     base.avoid=v26Has(raw,"éviter","eviter") ? "certains exercices à éviter détectés" : "";
@@ -5690,8 +5064,6 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       </div>`;
   }
   function v26AnalyzeSportAction(){
-    const facts=bf391ValidateIntroFacts();
-    if(!facts) return false;
     const txt=v26Text("sportPresentation");
     if(txt.length<25){setValidationStatus("Écris une présentation sportive un peu plus complète.","err");return false;}
     v26SportProfile=v26AnalyzeSport(txt);
@@ -5723,7 +5095,6 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(!v26NutritionProfile && !v26AnalyzeNutritionAction()) return false;
     const merged={...v26SportProfile, meals:v26NutritionProfile.meals, likes:v26NutritionProfile.likes||v26SportProfile.likes, dislikes:v26NutritionProfile.dislikes||v26SportProfile.dislikes, presentation:v26SportProfile.sportPresentation+"\\n\\nNutrition : "+v26NutritionProfile.nutritionPresentation};
     BF_STORE.set(PROFILE_KEY,merged);
-    bf3810MarkOnboardingDone();
     v26StoreSet(V30_PROFILE_KEY,{sport:v26SportProfile,nutrition:v26NutritionProfile,merged});
     v26StoreSet(V30_GROCERY_KEY,v26NutritionProfile);
     unlockApp();
@@ -5754,7 +5125,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function v26Bind(){
     document.getElementById("v26StartBtn")?.addEventListener("click",()=>v26ShowStep("Sport"));
     document.getElementById("sportExampleBtn")?.addEventListener("click",()=>{
-      sportPresentation.value="J’ai 25 ans. Je veux progresser physiquement avec un programme adapté à mon objectif. Je peux aller à Basic-Fit 3 fois par semaine pendant environ 1 heure. Je préfère les machines. Je veux que le programme tienne compte de mes autres sports, contraintes et éventuelles douleurs.";
+      sportPresentation.value="Je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle proprement sans trop prendre de gras. Je peux aller à Basic-Fit 3 fois par semaine pendant environ 1h. Je préfère les machines. J’ai parfois une gêne au genou donc je veux faire attention.";
       sportPresentation.focus();
     });
     document.getElementById("analyzeSportBtn")?.addEventListener("click",v26AnalyzeSportAction);
@@ -5768,7 +5139,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV392Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV389Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V30_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -6735,11 +6106,10 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       if(id==="v382HeroStartBtn"){ e.preventDefault(); v371OpenTraining("live"); }
       if(id==="v382HeroNutritionBtn"){ e.preventDefault(); v371OpenNutrition("plan"); }
       if(id==="v386CopyDemoLinkBtn"){ e.preventDefault(); v386BindDemo(); document.getElementById("v386CopyDemoLinkBtn")?.click(); }
-      if(id==="bf39CalcPortionBtn"){ e.preventDefault(); bf39RenderQuickPortion(); }
 
     }catch(err){
       console.error("Fallback génération V34", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=39-1 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=38-9-1-1-1-1-1-1-1-1-1-1-1-1-1-1 puis réessaie.");
     }
   }
 
@@ -6786,7 +6156,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     const box=document.getElementById("v30SystemCheck");
     if(!box) return;
     box.classList.remove("hidden");
-    box.innerHTML=`<h3>Test système V39.2</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
+    box.innerHTML=`<h3>Test système V38.9</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
       tests.map(([name,ok])=>`<div class="v30-test-line"><strong>${name}</strong><span>${ok?"✅ OK":"⚠️ À vérifier"}</span></div>`).join("")+
       `</div>`;
     v30RefreshLaunchpad();
@@ -7045,8 +6415,21 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
   function v32BuildMenus(){
     const config=v32MenuConfig(), days=["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
-    const plan=days.map((day,i)=>{const meals=[]; if(config.meals>=3) meals.push({type:"Petit-déjeuner",...v32PickMeal("breakfast",i,config)}); meals.push({type:"Repas 1",...v32PickMeal("lunch",i,config)}); meals.push({type:"Repas 2",...v32PickMeal("dinner",i,config)}); if(config.meals>=4) meals.push({type:"Collation",...v32PickMeal("snack",i,config)}); return {day,meals};});
-    const profileLinked=bf341CurrentProfile?.()||config.profile||{}; const nutritionPlan=bf35BuildNutritionPlan?.(profileLinked,bf34GetPrefs?.())||null; const data={config,profileLinked,proteinTarget:nutritionPlan?.protein||bf341ProteinTarget?.(profileLinked)||0,calorieHint:nutritionPlan?{target:nutritionPlan.target,maintenance:nutritionPlan.maintenance}:bf341CalorieHint?.(profileLinked)||null,nutritionPlan,plan,createdAt:new Date().toISOString()};
+    const profileLinked=bf341CurrentProfile?.()||config.profile||{};
+    const nutritionPlan=bf35BuildNutritionPlan?.(profileLinked,bf34GetPrefs?.())||null;
+    const plan=days.map((day,i)=>{
+      const meals=[];
+      if(config.meals>=3) meals.push({type:"Petit-déjeuner",...v32PickMeal("breakfast",i,config)});
+      meals.push({type:"Repas 1",...v32PickMeal("lunch",i,config)});
+      meals.push({type:"Repas 2",...v32PickMeal("dinner",i,config)});
+      if(config.meals>=4) meals.push({type:"Collation",...v32PickMeal("snack",i,config)});
+      const scaled=meals.map(meal=>{
+        const scale=bf39MenuScale(nutritionPlan,meal.type,config.meals);
+        return {type:meal.type,...bf39ScaleMealPortions(meal,scale)};
+      });
+      return {day,meals:scaled};
+    });
+    const data={config,profileLinked,proteinTarget:nutritionPlan?.protein||bf341ProteinTarget?.(profileLinked)||0,calorieHint:nutritionPlan?{target:nutritionPlan.target,maintenance:nutritionPlan.maintenance}:bf341CalorieHint?.(profileLinked)||null,nutritionPlan,plan,createdAt:new Date().toISOString()};
     v32StoreSet(V32_MENUS_KEY,data);
     v26StoreSet?.(window.V30_GROCERY_KEY||"bf_v30_grocery",{store:config.store,budget:config.budget,meals:config.meals});
     return data;
@@ -7105,6 +6488,76 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     "œufs":["poulet","jambon blanc","thon","fromage blanc"]
   };
 
+
+  /* ==========================================================
+     V38.9 — MOTEUR NUTRITION UNIQUE
+     ========================================================== */
+  function bf39CanonicalGoal(goal){
+    const g=BF_UTIL?.normalize ? BF_UTIL.normalize(String(goal||"maintain")) : String(goal||"maintain").toLowerCase();
+    if(["cut","seche","sèche","perte de gras","perdre du gras","fat loss","lose"].some(x=>g.includes(x))) return "cut";
+    if(["muscle","bulk","prise de muscle","masse"].some(x=>g.includes(x))) return "muscle";
+    if(["strength","force"].some(x=>g.includes(x))) return "strength";
+    if(["performance","athletique","athlétique","sport"].some(x=>g.includes(x))) return "performance";
+    if(["health","sante","santé","remise en forme"].some(x=>g.includes(x))) return "health";
+    return "maintain";
+  }
+
+  function bf39NormalizeSex(sex){
+    const s=String(sex||"male").toLowerCase();
+    return ["female","femme","woman","f"].includes(s) ? "female" : "male";
+  }
+
+  function bf39BMR(profile={}){
+    const p=profile||{};
+    const weight=Number(p.weight)||75;
+    const height=Number(p.height)||166;
+    const age=Number(p.age)||20;
+    const sex=bf39NormalizeSex(p.sex);
+    return Math.round(10*weight + 6.25*height - 5*age + (sex==="female" ? -161 : 5));
+  }
+
+  function bf39ProteinKg(goal){
+    const g=bf39CanonicalGoal(goal);
+    const s=BF351_GOAL_STRATEGIES?.[g] || BF351_GOAL_STRATEGIES?.maintain;
+    return Number(s?.proteinKg)||1.6;
+  }
+
+  const BF39_PORTION_CAPS={
+    kg:{min:0.03,max:0.60,step:0.01},
+    "pièce":{min:1,max:6,step:1},
+    "boîte":{min:0.5,max:3,step:0.5}
+  };
+
+  function bf39RoundStep(value,step){
+    const s=Number(step)||1;
+    return Math.round((Number(value)||0)/s)*s;
+  }
+
+  function bf39ClampPortion(qty,unit,scale=1){
+    const cap=BF39_PORTION_CAPS[unit] || {min:0.01,max:10,step:0.01};
+    const raw=(Number(qty)||0)*(Number(scale)||1);
+    const clamped=Math.max(cap.min,Math.min(cap.max,raw));
+    return Number(bf39RoundStep(clamped,cap.step).toFixed(3));
+  }
+
+  function bf39ScaleMealPortions(meal,scale=1){
+    const safe={...(meal||{})};
+    safe.items=(meal?.items||[]).map(item=>{
+      const [name,qty,unit]=item;
+      return [name,bf39ClampPortion(qty,unit,scale),unit];
+    });
+    safe.protein=Math.max(0,Math.round((Number(meal?.protein)||0)*Math.max(0.65,Math.min(1.5,Number(scale)||1))));
+    return safe;
+  }
+
+  function bf39MenuScale(plan,mealType,mealsPerDay){
+    const perMeal=(Number(plan?.target)||2200)/Math.max(2,Number(mealsPerDay)||3);
+    const reference=String(mealType||"").toLowerCase().includes("collation") ? 350 :
+                    String(mealType||"").toLowerCase().includes("petit") ? 500 : 700;
+    return Math.max(0.75,Math.min(1.35,perMeal/reference));
+  }
+
+
   function bf341Num(v,fallback=0){
     const n=Number(String(v ?? "").replace(",","."));
     return Number.isFinite(n) && n>0 ? n : fallback;
@@ -7112,15 +6565,15 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function bf341NormalizeProfile(p={}){
     return {
       ...p,
-      age:bf341Num(p.age,25),
-      height:bf341Num(p.height,175),
-      weight:bf341Num(p.weight,70),
+      age:bf341Num(p.age,20),
+      height:bf341Num(p.height,166),
+      weight:bf341Num(p.weight,75),
       gymDays:Math.max(2,Math.min(6,bf341Num(p.gymDays,3))),
       duration:bf341Num(p.duration,60),
-      meals:Math.max(2,Math.min(4,bf341Num(p.meals,3))),
-      sex:p.sex==="female"?"female":"male",
-      goal:p.goal||"health",
-      level:p.level||"beginner",
+      meals:Math.max(2,Math.min(5,bf341Num(p.meals,3))),
+      sex:bf39NormalizeSex(p.sex),
+      goal:bf39CanonicalGoal(p.goal||"muscle"),
+      level:p.level||"intermediate",
       pain:p.pain||"none"
     };
   }
@@ -7164,7 +6617,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     const p=bf341CurrentProfile?.() || {};
     const fields=bf363FindNutritionQuickFields();
     if(fields.weight){
-      fields.weight.value=String(Math.round(Number(p.weight)||70));
+      fields.weight.value=String(Math.round(Number(p.weight)||75));
       fields.weight.dataset.syncedFromProfile="1";
       fields.weight.readOnly=true;
       fields.weight.title="Synchronisé depuis Profil";
@@ -7185,19 +6638,19 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(card && !card.querySelector(".bf363-sync-note")){
       const note=document.createElement("div");
       note.className="bf363-sync-note";
-      note.innerHTML=`<strong>Synchronisé avec Profil :</strong> poids ${Math.round(Number(p.weight)||70)} kg · objectif ${goalLabelSafe?.(p.goal)||p.goal||"-"} · repas ${p.meals||3}/jour.`;
+      note.innerHTML=`<strong>Synchronisé avec Profil :</strong> poids ${Math.round(Number(p.weight)||75)} kg · objectif ${goalLabelSafe?.(p.goal)||p.goal||"-"} · repas ${p.meals||3}/jour.`;
       const before=card.querySelector("button, .primary-btn") || card.firstChild;
       card.insertBefore(note,before);
     }else if(card){
       const note=card.querySelector(".bf363-sync-note");
-      if(note) note.innerHTML=`<strong>Synchronisé avec Profil :</strong> poids ${Math.round(Number(p.weight)||70)} kg · objectif ${goalLabelSafe?.(p.goal)||p.goal||"-"} · repas ${p.meals||3}/jour.`;
+      if(note) note.innerHTML=`<strong>Synchronisé avec Profil :</strong> poids ${Math.round(Number(p.weight)||75)} kg · objectif ${goalLabelSafe?.(p.goal)||p.goal||"-"} · repas ${p.meals||3}/jour.`;
     }
     return fields;
   }
   function bf363NutritionQuickProfile(){
     const p=bf341CurrentProfile?.() || {};
     return {
-      weight:Number(p.weight)||70,
+      weight:Number(p.weight)||75,
       goal:p.goal||"maintain",
       meals:Number(p.meals)||3,
       gymDays:Number(p.gymDays)||3,
@@ -7227,11 +6680,17 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     return bf341NormalizeProfile(p);
   }
   function bf341ProteinTarget(profile=null){
-    return bf391CalculateNutritionPlan(profile||bf341CurrentProfile(),bf34GetPrefs?.()||{}).protein;
+    const p=bf341NormalizeProfile(profile||bf341CurrentProfile());
+    return Math.round(p.weight*bf39ProteinKg(p.goal));
   }
   function bf341CalorieHint(profile=null){
-    const plan=bf391CalculateNutritionPlan(profile||bf341CurrentProfile(),bf34GetPrefs?.()||{});
-    return {maintenance:plan.maintenance,target:plan.target};
+    const p=bf341NormalizeProfile(profile||bf341CurrentProfile());
+    // Estimation volontairement simple offline, pas une prescription médicale.
+    const bmr=bf39BMR(p);
+    const factor=p.gymDays>=5?1.65:(p.gymDays>=3?1.5:1.35);
+    const maintenance=Math.round(bmr*factor/50)*50;
+    const target=p.goal==="cut"?maintenance-350:(p.goal==="muscle"?maintenance+250:maintenance);
+    return {maintenance,target};
   }
 
 
@@ -7239,7 +6698,62 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   const BF35_NUTRITION_PLAN_KEY="bf_v35_nutrition_plan";
 
 
-  let BF351_GOAL_STRATEGIES=null;
+  const BF351_GOAL_STRATEGIES={
+    cut:{
+      label:"Sèche / perdre du gras",
+      kcalDelta:-400,
+      proteinKg:2.1,
+      fatKg:0.8,
+      carbMode:"modéré",
+      mealFocus:["protéines à chaque repas","légumes/volume alimentaire","glucides contrôlés autour de l’entraînement","éviter déficit extrême"],
+      explanation:"Créer un déficit calorique modéré pour perdre du gras tout en gardant la masse musculaire. Les protéines sont hautes et les glucides restent suffisants pour s’entraîner."
+    },
+    muscle:{
+      label:"Prise de muscle",
+      kcalDelta:250,
+      proteinKg:1.8,
+      fatKg:0.9,
+      carbMode:"élevé utile",
+      mealFocus:["léger surplus calorique","protéines régulières","glucides pour progresser","repas faciles à répéter"],
+      explanation:"Créer un léger surplus pour soutenir la progression sans prise de gras excessive. Les glucides aident à performer sur les séances."
+    },
+    strength:{
+      label:"Force",
+      kcalDelta:150,
+      proteinKg:1.8,
+      fatKg:0.9,
+      carbMode:"haut autour des séances",
+      mealFocus:["pas de déficit agressif","glucides avant/après entraînement","protéines régulières","récupération prioritaire"],
+      explanation:"La force demande de l’énergie et une bonne récupération. L’app évite les déficits agressifs et place plus de carburant autour des entraînements."
+    },
+    performance:{
+      label:"Performance / athlétique",
+      kcalDelta:100,
+      proteinKg:1.7,
+      fatKg:0.85,
+      carbMode:"suffisant",
+      mealFocus:["énergie stable","glucides suffisants","digestion simple avant séance","hydratation/régularité"],
+      explanation:"Objectif : soutenir le volume d’entraînement, la récupération et l’intensité. Les glucides sont plus importants que dans une sèche stricte."
+    },
+    health:{
+      label:"Remise en forme / santé",
+      kcalDelta:-100,
+      proteinKg:1.6,
+      fatKg:0.8,
+      carbMode:"équilibré",
+      mealFocus:["repas simples","protéines suffisantes","plus de régularité","déficit léger si besoin"],
+      explanation:"Objectif : améliorer les habitudes sans stratégie extrême. L’app vise une alimentation régulière, assez protéinée et facile à tenir."
+    },
+    maintain:{
+      label:"Maintien",
+      kcalDelta:0,
+      proteinKg:1.6,
+      fatKg:0.8,
+      carbMode:"équilibré",
+      mealFocus:["calories proches maintenance","poids stable","performance stable","flexibilité alimentaire"],
+      explanation:"Objectif : garder le poids et la performance stables, avec une base protéinée et des calories proches de la maintenance."
+    }
+  };
 
 
   function v36MoveChildren(sourceId,targetId,placeholderText=""){
@@ -7252,6 +6766,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(!nodes.length && placeholderText) target.innerHTML=`<div class="result-box">${placeholderText}</div>`;
   }
   function v36ShowTrainingSection(section="plan"){
+    document.body.dataset.trainingSection=section;
     document.querySelectorAll("#v36TrainingTabs button").forEach(b=>b.classList.toggle("active",b.dataset.trainingSection===section));
     document.querySelectorAll("#trainingView .v36-section").forEach(s=>s.classList.remove("active"));
     const id={
@@ -7372,6 +6887,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     document.getElementById("v36DiagnosticMount")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   function v36Bind(){
+    if(!document.body.dataset.trainingSection) document.body.dataset.trainingSection="plan";
     if(window.__v36_bound){
       v36MountTraining();v36MountNutrition();v36MountDiagnostic();v36RefreshTraining();v36RefreshNutrition();return;
     }
@@ -7397,94 +6913,6 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
 
-
-  const BF391_NUTRITION_STRATEGIES={
-    cut:{label:"Sèche / perdre du gras",kcalDelta:-300,proteinKg:1.8,fatKg:0.8,carbMode:"modéré",type:"cut",
-      mealFocus:["déficit modéré","protéines régulières","légumes et satiété","glucides conservés pour s’entraîner"],
-      explanation:"Déficit modéré et progressif. L’app évite de compenser en créant des portions extrêmes sur un seul repas."},
-    muscle:{label:"Prise de muscle",kcalDelta:200,proteinKg:1.8,fatKg:0.9,carbMode:"suffisant",type:"bulk",
-      mealFocus:["léger surplus","protéines régulières","glucides répartis","progression du poids suivie"],
-      explanation:"Léger surplus énergétique avec des portions réparties sur la journée plutôt qu’un repas surdimensionné."},
-    strength:{label:"Force",kcalDelta:100,proteinKg:1.7,fatKg:0.9,carbMode:"suffisant",type:"performance",
-      mealFocus:["énergie stable","protéines régulières","glucides autour des séances","récupération"],
-      explanation:"Apport proche de la maintenance ou légèrement supérieur pour soutenir force et récupération."},
-    performance:{label:"Performance / athlétique",kcalDelta:100,proteinKg:1.6,fatKg:0.85,carbMode:"adapté à la charge",type:"performance",
-      mealFocus:["énergie disponible","glucides répartis","digestion simple avant effort","récupération"],
-      explanation:"L’app garde des glucides suffisants mais plafonne les portions d’un seul repas et répartit le reste."},
-    health:{label:"Remise en forme / santé",kcalDelta:0,proteinKg:1.5,fatKg:0.8,carbMode:"équilibré",type:"maintain",
-      mealFocus:["repas simples","régularité","protéines suffisantes","progression durable"],
-      explanation:"Base équilibrée proche de la maintenance, sans déficit automatique si l’objectif principal n’est pas la perte de gras."},
-    maintain:{label:"Maintien",kcalDelta:0,proteinKg:1.5,fatKg:0.8,carbMode:"équilibré",type:"maintain",
-      mealFocus:["poids stable","énergie stable","protéines régulières","flexibilité"],
-      explanation:"Calories proches de la maintenance et répartition simple à tenir dans la durée."}
-  };
-
-  BF351_GOAL_STRATEGIES=BF391_NUTRITION_STRATEGIES;
-
-  function bf391Mifflin(profile={}){
-    const p=bf341NormalizeProfile?.(profile)||profile;
-    const sexAdj=p.sex==="female"?-161:5;
-    return Math.round(10*Number(p.weight||70)+6.25*Number(p.height||175)-5*Number(p.age||25)+sexAdj);
-  }
-
-  function bf391ActivityFactor(profile={}){
-    const p=bf341NormalizeProfile?.(profile)||profile;
-    const days=Math.max(2,Math.min(6,Number(p.gymDays)||3));
-    const base={2:1.42,3:1.48,4:1.55,5:1.62,6:1.68}[days]||1.48;
-    const load=bf361TrainingLoadProfile?.(p)||{};
-    let factor=base;
-    if(load.hasCardio) factor+=0.04;
-    if(load.hasOtherSport) factor+=0.04;
-    if(load.hasCompetition) factor+=0.04;
-    if(load.hasWorkConstraint && !load.hasCardio && !load.hasOtherSport) factor-=0.02;
-    return Math.max(1.35,Math.min(1.82,Number(factor.toFixed(2))));
-  }
-
-  function bf391CalculateNutritionPlan(profile={},prefs={}){
-    const p=bf341NormalizeProfile?.(profile)||profile;
-    const strategy=BF391_NUTRITION_STRATEGIES[p.goal]||BF391_NUTRITION_STRATEGIES.maintain;
-    const bmr=bf391Mifflin(p);
-    const activityFactor=bf391ActivityFactor(p);
-    const maintenance=bf35Round(bmr*activityFactor,50);
-    let target=bf35Round(maintenance+strategy.kcalDelta,50);
-
-    if(strategy.type==="cut"){
-      const floor=bf35Round(Math.max(bmr*1.05,maintenance*0.80),50);
-      target=Math.max(target,floor);
-    }
-
-    const protein=bf35Round(Number(p.weight||70)*strategy.proteinKg,1);
-    const fat=bf35Round(Number(p.weight||70)*strategy.fatKg,1);
-    let carbs=bf35Round((target-protein*4-fat*9)/4,5);
-    if(carbs<100){
-      carbs=100;
-      target=bf35Round(protein*4+fat*9+carbs*4,50);
-    }
-
-    const meals=Math.max(2,Math.min(4,Number(p.meals)||3));
-    const proteinPerMeal=Math.round(protein/meals);
-    const proteinGeneralMin=Math.max(20,Math.round(Number(p.weight||70)*0.25));
-
-    return {
-      profile:p,prefs:prefs||{},strategy,bmr,activityFactor,maintenance,target,
-      delta:target-maintenance,protein,fat,carbs,
-      perMeal:{
-        kcal:Math.round(target/meals),
-        protein:proteinPerMeal,
-        proteinGeneralMin,
-        carbs:Math.round(carbs/meals),
-        fat:Math.round(fat/meals)
-      },
-      model:"BF391",
-      createdAt:new Date().toISOString()
-    };
-  }
-
-  function bf391NutritionSourceNote(){
-    return `<div class="bf391-coherence-note"><strong>Repères utilisés :</strong> formule de Mifflin–St Jeor différenciée selon le sexe pour l’estimation du métabolisme de repos ; base alimentaire simplifiée avec valeurs arrondies ; pour la référence française de composition, consulte la Table Ciqual 2025, et compare toujours avec l’étiquette du produit acheté. Les portions sont des estimations pratiques, pas une prescription médicale.</div>`;
-  }
-
-
   function bf351StrategyForGoal(goal){
     return BF351_GOAL_STRATEGIES[goal] || BF351_GOAL_STRATEGIES.maintain;
   }
@@ -7503,15 +6931,58 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   function bf35Round(n,step=5){return Math.round(Number(n||0)/step)*step;}
-  function bf35ActivityFactor(p){ return bf391ActivityFactor(p); }
+  function bf35ActivityFactor(p){
+    const days=Number(p.gymDays)||3;
+    let factor=1.38;
+    if(days>=6) factor=1.72;
+    else if(days>=5) factor=1.65;
+    else if(days>=3) factor=1.5;
+    const load=bf361TrainingLoadProfile?.(p)||{};
+    if(load.hasCardio) factor+=0.06;
+    if(load.hasOtherSport) factor+=0.06;
+    if(load.hasCompetition) factor+=0.08;
+    if(load.hasWorkConstraint && !load.hasCardio && !load.hasOtherSport) factor-=0.03;
+    return Math.max(1.3,Math.min(1.85,Number(factor.toFixed(2))));
+  }
   function bf35GoalStrategy(goal){
-    const s=BF391_NUTRITION_STRATEGIES[goal]||BF391_NUTRITION_STRATEGIES.maintain;
-    return {...s};
+    goal=bf39CanonicalGoal(goal||"maintain");
+    const s=bf351StrategyForGoal(goal);
+    return {
+      type:goal==="cut"?"cut":(goal==="muscle"?"bulk":(goal==="maintain"?"maintain":(goal==="health"?"maintain":"performance"))),
+      label:s.label,
+      kcalDelta:s.kcalDelta,
+      proteinKg:s.proteinKg,
+      fatKg:s.fatKg,
+      carbMode:s.carbMode,
+      mealFocus:s.mealFocus,
+      explanation:s.explanation
+    };
   }
   function bf35BuildNutritionPlan(profile=null,prefs=null){
-    const p=bf341NormalizeProfile?.(profile||bf341CurrentProfile?.()||{})||{};
-    const pref=prefs||bf34GetPrefs?.()||{};
-    const plan=bf391CalculateNutritionPlan(p,pref);
+    const p=bf341NormalizeProfile?.(profile||bf341CurrentProfile?.()||{}) || {};
+    const pref=prefs || bf34GetPrefs?.() || {};
+    const strategy=bf35GoalStrategy(p.goal);
+    const bmr=bf39BMR(p);
+    const maintenance=bf35Round(bmr*bf35ActivityFactor(p),50);
+    let target=bf35Round(maintenance + strategy.kcalDelta,50);
+    if(strategy.type==="cut"){
+      const minSafe=bf35Round(Math.max(1500, bmr*1.15),50);
+      target=Math.max(target,minSafe);
+    }
+    const protein=bf35Round(p.weight*strategy.proteinKg,1);
+    const fat=bf35Round(p.weight*strategy.fatKg,1);
+    let carbs=bf35Round((target - protein*4 - fat*9)/4,5);
+    if(carbs<80){
+      carbs=80;
+      target=bf35Round(protein*4 + fat*9 + carbs*4,50);
+    }
+    const perMeal={
+      kcal:Math.round(target/(p.meals||3)),
+      protein:Math.round(protein/(p.meals||3)),
+      carbs:Math.round(carbs/(p.meals||3)),
+      fat:Math.round(fat/(p.meals||3))
+    };
+    const plan={profile:p,prefs:pref,strategy,maintenance,target,delta:target-maintenance,protein,fat,carbs,perMeal,createdAt:new Date().toISOString()};
     localStorage.setItem(BF35_NUTRITION_PLAN_KEY,JSON.stringify(plan));
     return plan;
   }
@@ -7539,10 +7010,10 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       <div class="bf35-macro"><strong>${plan.profile.weight} kg</strong><span>poids utilisé</span></div>
       <div class="bf35-macro"><strong>${plan.profile.gymDays}×</strong><span>séances/semaine</span></div>
     </div>
-    ${bf391NutritionSourceNote()}<div class="diagnosis-list">
+    <div class="diagnosis-list">
       <div><strong>Sèche :</strong> l’app vise un déficit modéré, pas une restriction extrême.</div>
       <div><strong>Prise de muscle :</strong> l’app vise un surplus léger et assez de glucides pour l’entraînement.</div>
-      <div><strong>Répartition :</strong> les grammes de protéines par repas sont un repère indicatif ; l’app ne force plus un repas énorme pour atteindre le total journalier.</div><div><strong>Menus :</strong> clique sur “Appliquer ce plan aux menus” pour régénérer avec cette cible.</div><div><strong>Autres sports/contraintes :</strong> ${bf361LoadSummary?.(plan.profile)||"non renseigné"}</div><div><strong>Priorités objectif :</strong> ${(plan.strategy.mealFocus||[]).join(" · ")}</div>
+      <div><strong>Menus :</strong> clique sur “Appliquer ce plan aux menus” pour régénérer avec cette cible.</div><div><strong>Autres sports/contraintes :</strong> ${bf361LoadSummary?.(plan.profile)||"non renseigné"}</div><div><strong>Priorités objectif :</strong> ${(plan.strategy.mealFocus||[]).join(" · ")}</div>
     </div>`;
   }
   function bf35ApplyNutritionPlan(){
@@ -7727,881 +7198,6 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     const top=candidates.slice(0,Math.min(3,candidates.length));
     return top[day % top.length] || candidates[0] || bank[0];
   }
-
-  const BF39_FOOD_DB={
-    "Riz":{role:"carb",kcal:360,p:7,c:79,f:0.8,cookedFactor:2.8,minG:50,maxG:140,raw:true},
-    "Pâtes":{role:"carb",kcal:350,p:12,c:72,f:1.5,cookedFactor:2.5,minG:50,maxG:140,raw:true},
-    "Pommes de terre":{role:"carb",kcal:80,p:2,c:17,f:0.1,minG:200,maxG:600,raw:true},
-    "Pain complet":{role:"carb",kcal:250,p:9,c:45,f:4,minG:40,maxG:180},
-    "Flocons d’avoine":{role:"carb",kcal:370,p:13,c:60,f:7,minG:30,maxG:100},
-    "Poulet":{role:"protein",kcal:110,p:23,c:0,f:1.5,minG:100,maxG:220,raw:true,cookedYield:0.75},
-    "Jambon blanc":{role:"protein",kcal:120,p:20,c:1,f:4,minG:70,maxG:160,sliceG:35},
-    "Œufs":{role:"protein",unit:"piece",kcalUnit:72,pUnit:6.3,cUnit:0.4,fUnit:5,minUnit:2,maxUnit:4},
-    "Thon":{role:"protein",unit:"boîte",kcalUnit:156,pUnit:34,cUnit:0,fUnit:1.3,minUnit:1,maxUnit:1,drainedG:130},
-    "Skyr/fromage blanc":{role:"protein",kcal:60,p:10,c:4,f:0.2,minG:150,maxG:350},
-    "Fromage blanc":{role:"protein",kcal:75,p:8,c:4,f:3,minG:150,maxG:350},
-    "Bananes":{role:"fruit",kcal:90,p:1.1,c:20,f:0.3,unitG:120,minG:120,maxG:240},
-    "Pommes":{role:"fruit",kcal:52,p:0.3,c:12,f:0.2,unitG:150,minG:150,maxG:300},
-    "Brocoli / légumes verts":{role:"veg",kcal:35,p:2.5,c:4,f:0.4,minG:150,maxG:300},
-    "Haricots verts":{role:"veg",kcal:30,p:2,c:4,f:0.2,minG:150,maxG:300},
-    "Crudités":{role:"veg",kcal:35,p:1.5,c:6,f:0.4,minG:150,maxG:300},
-    "Salade/crudités":{role:"veg",kcal:30,p:1.5,c:4,f:0.3,minG:150,maxG:300},
-    "Huile d’olive":{role:"fat",kcal:900,p:0,c:0,f:100,minG:5,maxG:15}
-  };
-
-  const BF39_ALIASES={
-    "jambon blanc":"Jambon blanc","jambon":"Jambon blanc",
-    "poulet":"Poulet","oeufs":"Œufs","œufs":"Œufs",
-    "thon":"Thon","fromage blanc":"Fromage blanc",
-    "skyr/fromage blanc":"Skyr/fromage blanc","skyr":"Skyr/fromage blanc",
-    "riz":"Riz","pates":"Pâtes","pâtes":"Pâtes",
-    "pommes de terre":"Pommes de terre","pain complet":"Pain complet",
-    "flocons d avoine":"Flocons d’avoine","flocons d’avoine":"Flocons d’avoine",
-    "banane":"Bananes","bananes":"Bananes","pomme":"Pommes","pommes":"Pommes",
-    "brocoli":"Brocoli / légumes verts","brocoli / legumes verts":"Brocoli / légumes verts",
-    "haricots verts":"Haricots verts","crudites":"Crudités","crudités":"Crudités",
-    "salade/crudites":"Salade/crudités","salade/crudités":"Salade/crudités",
-    "huile d olive":"Huile d’olive","huile d’olive":"Huile d’olive"
-  };
-
-  const BF39_EQUIV_GROUPS={
-    carb:["Riz","Pâtes","Pommes de terre","Pain complet","Flocons d’avoine"],
-    protein:["Poulet","Jambon blanc","Œufs","Thon","Skyr/fromage blanc","Fromage blanc"],
-    fruit:["Bananes","Pommes"],
-    veg:["Brocoli / légumes verts","Haricots verts","Crudités","Salade/crudités"]
-  };
-
-  V32_PRICE_MAP["Huile d’olive"]=9;
-
-  function bf39RoundTo(v,step=5){
-    return Math.max(0,Math.round(Number(v||0)/step)*step);
-  }
-  function bf39Clamp(v,min,max){
-    return Math.max(min,Math.min(max,v));
-  }
-  function bf39CanonicalName(name){
-    if(BF39_FOOD_DB[name]) return name;
-    const n=BF_UTIL.normalize(String(name||""));
-    if(BF39_ALIASES[n]) return BF39_ALIASES[n];
-    const key=Object.keys(BF39_FOOD_DB).find(k=>BF_UTIL.normalize(k)===n);
-    return key||name;
-  }
-  function bf39PortionItem(name,amount,unit="g"){
-    const canonical=bf39CanonicalName(name);
-    if(unit==="piece" || unit==="boîte") return {name:canonical,qty:Number(amount),unit};
-    const g=bf39RoundTo(amount,5);
-    return {name:canonical,qty:g/1000,unit:"kg",grams:g};
-  }
-  function bf39ItemMacros(item){
-    const name=bf39CanonicalName(item.name);
-    const db=BF39_FOOD_DB[name];
-    if(!db) return {kcal:0,p:0,c:0,f:0};
-    if(db.unit){
-      const q=Number(item.qty)||0;
-      return {kcal:db.kcalUnit*q,p:db.pUnit*q,c:db.cUnit*q,f:db.fUnit*q};
-    }
-    const g=item.grams!=null ? Number(item.grams) : (item.unit==="kg"?(Number(item.qty)||0)*1000:(Number(item.qty)||0));
-    const ratio=g/100;
-    return {kcal:db.kcal*ratio,p:db.p*ratio,c:db.c*ratio,f:db.f*ratio};
-  }
-  function bf39SumMacros(items=[]){
-    return items.reduce((a,it)=>{
-      const m=bf39ItemMacros(it);
-      a.kcal+=m.kcal;a.p+=m.p;a.c+=m.c;a.f+=m.f;
-      return a;
-    },{kcal:0,p:0,c:0,f:0});
-  }
-  function bf39TrainingIndexes(days=3){
-    const map={
-      2:[1,4],
-      3:[0,2,4],
-      4:[0,1,3,5],
-      5:[0,1,2,4,5],
-      6:[0,1,2,3,4,5]
-    };
-    return map[Math.max(2,Math.min(6,Number(days)||3))]||map[3];
-  }
-  function bf39MealShares(meals=3){
-    if(Number(meals)<=2) return {"Repas 1":0.50,"Repas 2":0.50};
-    if(Number(meals)>=4) return {"Petit-déjeuner":0.23,"Repas 1":0.32,"Repas 2":0.30,"Collation":0.15};
-    return {"Petit-déjeuner":0.28,"Repas 1":0.38,"Repas 2":0.34};
-  }
-  function bf39DayTargets(plan,training){
-    const p=plan||{};
-    const kcal=Math.round(p.target||2200);
-    const protein=Math.round(p.protein||120);
-    const carbs=Math.round((p.carbs||250)*(training?1.05:0.96));
-    const fat=Math.max(35,Math.round((kcal-protein*4-carbs*4)/9));
-    return {kcal,p:protein,c:carbs,f:fat,training:!!training};
-  }
-
-  function bf391PracticalMax(name,targets={},training=false){
-    const n=bf39CanonicalName(name);
-    const highCarb=training && Number(targets.c||0)>=300;
-    const map={
-      "Riz":highCarb?140:120,
-      "Pâtes":highCarb?140:120,
-      "Pommes de terre":highCarb?600:500,
-      "Pain complet":highCarb?180:140,
-      "Flocons d’avoine":highCarb?100:80,
-      "Poulet":220,
-      "Jambon blanc":160,
-      "Skyr/fromage blanc":350,
-      "Fromage blanc":350,
-      "Huile d’olive":15
-    };
-    return map[n]??BF39_FOOD_DB[n]?.maxG??1000;
-  }
-
-  function bf391DayGapAdvice(day){
-    const a=day.actual||{},t=day.targets||{};
-    const parts=[];
-    const kcalPct=t.kcal?Math.round((a.kcal/t.kcal)*100):100;
-    if(kcalPct<85) parts.push(`Le menu couvre environ ${kcalPct}% de la cible estimée : ajoute plutôt une collation ou augmente une autre prise, au lieu de dépasser les plafonds d’une seule assiette.`);
-    else if(kcalPct>115) parts.push(`Le menu dépasse sensiblement la cible estimée : réduis une portion de féculent ou de matière grasse.`);
-    else parts.push("Les quantités restent dans une zone pratique et le total de la journée est proche de la cible estimée.");
-    if((t.p||0)-(a.p||0)>15) parts.push("Protéines un peu basses : complète avec une portion raisonnable de skyr/fromage blanc, œufs ou une autre source déjà prévue.");
-    if((t.c||0)-(a.c||0)>35) parts.push("Glucides encore bas : répartis le complément sur un autre repas ou une collation, plutôt que de monter à 190 g de pâtes ou riz crus.");
-    return parts.join(" ");
-  }
-
-  function bf391PortionSanity(data){
-    const violations=[];
-    (data?.plan||[]).forEach(day=>(day.meals||[]).forEach(meal=>(meal.portionItems||[]).forEach(item=>{
-      const n=item.name;
-      const g=item.grams!=null?Number(item.grams):(item.unit==="kg"?Number(item.qty||0)*1000:null);
-      if((n==="Riz"||n==="Pâtes")&&g>140) violations.push(`${day.day} ${n} ${g}g`);
-      if(n==="Poulet"&&g>220) violations.push(`${day.day} Poulet ${g}g`);
-      if(n==="Jambon blanc"&&g>160) violations.push(`${day.day} Jambon ${g}g`);
-      if(n==="Huile d’olive"&&g>15) violations.push(`${day.day} Huile ${g}g`);
-      if(n==="Œufs"&&Number(item.qty)>4) violations.push(`${day.day} Œufs ${item.qty}`);
-    })));
-    return violations;
-  }
-
-
-  function bf39MacroAmount(db,role,nutrientTarget){
-    if(db.unit){
-      const per=role==="protein"?db.pUnit:(role==="carb"?db.cUnit:1);
-      return bf39Clamp(Math.round(nutrientTarget/Math.max(per,0.1)),db.minUnit||1,db.maxUnit||6);
-    }
-    const per=role==="protein"?db.p:(role==="carb"?db.c:1);
-    const grams=100*nutrientTarget/Math.max(per,0.1);
-    return bf39RoundTo(bf39Clamp(grams,db.minG||0,db.maxG||1000),5);
-  }
-  function bf39FixedPortion(name,type){
-    const db=BF39_FOOD_DB[name];
-    if(!db) return null;
-    if(db.role==="veg"){
-      return bf39PortionItem(name,(type==="Petit-déjeuner"||type==="Collation")?150:200);
-    }
-    if(db.role==="fruit"){
-      return bf39PortionItem(name,db.unitG||150);
-    }
-    return null;
-  }
-  function bf39PortionMeal(template,type,targets,share,training){
-    const rawNames=(template?.items||[]).map(it=>bf39CanonicalName(it[0])).filter(Boolean);
-    const names=[...new Set(rawNames)];
-    const items=[];
-
-    // 1) portions fixes fruits/légumes
-    names.forEach(name=>{
-      const fixed=bf39FixedPortion(name,type);
-      if(fixed) items.push(fixed);
-    });
-
-    // 2) glucides calculés
-    const carbNames=names.filter(n=>BF39_FOOD_DB[n]?.role==="carb");
-    let current=bf39SumMacros(items);
-    const carbNeed=Math.max(15,targets.c*share-current.c);
-    carbNames.forEach(name=>{
-      const db=BF39_FOOD_DB[name];
-      const eachNeed=carbNeed/Math.max(1,carbNames.length);
-      let amount=bf39MacroAmount(db,"carb",eachNeed);
-      if(!db.unit) amount=Math.min(amount,bf391PracticalMax(name,targets,training));
-      items.push(db.unit?bf39PortionItem(name,amount,db.unit):bf39PortionItem(name,amount));
-    });
-
-    // 3) protéines calculées, après protéines déjà apportées par féculents
-    current=bf39SumMacros(items);
-    const proteinNames=names.filter(n=>BF39_FOOD_DB[n]?.role==="protein");
-    const proteinNeed=Math.max(10,targets.p*share-current.p);
-    proteinNames.forEach(name=>{
-      const db=BF39_FOOD_DB[name];
-      const eachNeed=proteinNeed/Math.max(1,proteinNames.length);
-      let amount=bf39MacroAmount(db,"protein",eachNeed);
-      if(!db.unit) amount=Math.min(amount,bf391PracticalMax(name,targets,training));
-      items.push(db.unit?bf39PortionItem(name,amount,db.unit):bf39PortionItem(name,amount));
-    });
-
-    // 4) si aucun aliment connu n'a été retenu, garder les items d'origine
-    if(!items.length){
-      (template?.items||[]).forEach(([name,qty,unit])=>{
-        const canonical=bf39CanonicalName(name);
-        const grams=unit==="kg"?(Number(qty)||0)*1000:(Number(qty)||0);
-        items.push(unit==="pièce"?bf39PortionItem(canonical,qty,"piece"):
-          unit==="boîte"?bf39PortionItem(canonical,qty,"boîte"):
-          bf39PortionItem(canonical,grams));
-      });
-    }
-
-    // 5) compléter les lipides avec huile sur les repas principaux
-    current=bf39SumMacros(items);
-    const isMain=type==="Repas 1"||type==="Repas 2";
-    if(isMain){
-      const fatNeed=Math.max(0,targets.f*share-current.f);
-      if(fatNeed>=4){
-        const oilG=bf39RoundTo(bf39Clamp(fatNeed,5,25),5);
-        items.push(bf39PortionItem("Huile d’olive",oilG));
-      }
-    }
-
-    const macros=bf39SumMacros(items);
-    return {
-      ...template,
-      type,
-      items:items.map(it=>[it.name,it.qty,it.unit]),
-      portionItems:items,
-      macros:{
-        kcal:Math.round(macros.kcal),
-        p:Math.round(macros.p),
-        c:Math.round(macros.c),
-        f:Math.round(macros.f)
-      },
-      targetShare:share,
-      trainingDay:training
-    };
-  }
-  function bf39FormatSlices(g,sliceG=35){
-    const x=g/sliceG;
-    const low=Math.max(1,Math.floor(x));
-    const high=Math.max(low,Math.ceil(x));
-    return low===high?`${low} tranche${low>1?"s":""}`:`${low}–${high} tranches`;
-  }
-  function bf39FormatItem(item){
-    const name=bf39CanonicalName(item.name);
-    const db=BF39_FOOD_DB[name]||{};
-    if(item.unit==="piece"){
-      const q=Math.round(Number(item.qty)||0);
-      return `${q} œuf${q>1?"s":""}`;
-    }
-    if(item.unit==="boîte"){
-      const q=Number(item.qty)||0;
-      return `${q} boîte${q>1?"s":""} · ≈ ${Math.round(q*(db.drainedG||130))} g égoutté`;
-    }
-    const g=item.grams!=null?Number(item.grams):(Number(item.qty)||0)*1000;
-    if(name==="Riz"||name==="Pâtes"){
-      return `${Math.round(g)} g cru · ≈ ${bf39RoundTo(g*(db.cookedFactor||2.5),5)} g cuit`;
-    }
-    if(name==="Poulet"){
-      return `${Math.round(g)} g cru · ≈ ${bf39RoundTo(g*(db.cookedYield||0.75),5)} g cuit`;
-    }
-    if(name==="Jambon blanc"){
-      return `${Math.round(g)} g · ≈ ${bf39FormatSlices(g,db.sliceG||35)}`;
-    }
-    if(name==="Pommes de terre"){
-      return `${Math.round(g)} g crues`;
-    }
-    if(name==="Bananes"){
-      const n=Math.max(1,Math.round(g/(db.unitG||120)));
-      return `${Math.round(g)} g · ≈ ${n} banane${n>1?"s":""}`;
-    }
-    if(name==="Pommes"){
-      const n=Math.max(1,Math.round(g/(db.unitG||150)));
-      return `${Math.round(g)} g · ≈ ${n} pomme${n>1?"s":""}`;
-    }
-    if(name==="Huile d’olive"){
-      return `${Math.round(g)} g · ≈ ${Math.max(1,Math.round(g/5))} c. à café`;
-    }
-    return `${Math.round(g)} g`;
-  }
-  function bf39EquivalentPortion(sourceItem,targetName){
-    const sourceName=bf39CanonicalName(sourceItem.name);
-    const target=BF39_FOOD_DB[targetName];
-    const sourceDb=BF39_FOOD_DB[sourceName];
-    if(!sourceDb||!target) return null;
-    const sourceMacros=bf39ItemMacros(sourceItem);
-    const role=sourceDb.role;
-    const nutrient=role==="protein"?sourceMacros.p:(role==="carb"?sourceMacros.c:null);
-    if(nutrient==null) return null;
-    const amount=bf39MacroAmount(target,role,nutrient);
-    return target.unit?bf39PortionItem(targetName,amount,target.unit):bf39PortionItem(targetName,amount);
-  }
-  function bf39Alternatives(item){
-    const name=bf39CanonicalName(item.name);
-    const role=BF39_FOOD_DB[name]?.role;
-    const group=BF39_EQUIV_GROUPS[role]||[];
-    return group.filter(x=>x!==name).slice(0,3).map(target=>{
-      const portion=bf39EquivalentPortion(item,target);
-      return portion?`${target} : ${bf39FormatItem(portion)}`:null;
-    }).filter(Boolean);
-  }
-  function bf39MealHtml(meal){
-    const foodRows=(meal.portionItems||[]).map(item=>{
-      const alts=bf39Alternatives(item);
-      return `<div class="bf39-food-row"><strong>${item.name}</strong><div class="bf39-food-qty">${bf39FormatItem(item)}</div></div>
-        ${alts.length?`<details class="bf39-swap"><summary>Remplacements équivalents</summary><div class="bf39-swap-body">${alts.join("<br>")}</div></details>`:""}`;
-    }).join("");
-    return `<div class="bf39-meal">
-      <div class="bf39-meal-head">
-        <div class="bf39-meal-title"><strong>${meal.type}</strong><span>${meal.name}</span></div>
-        <div class="bf39-meal-total">≈ ${meal.macros?.kcal||0} kcal</div>
-      </div>
-      <div class="mini-row">
-        <span class="bf34-chip">${meal.macros?.p||0} g prot.</span>
-        <span class="bf34-chip">${meal.macros?.c||0} g gluc.</span>
-        <span class="bf34-chip">${meal.macros?.f||0} g lip.</span>
-      </div>
-      <div class="bf39-food-list">${foodRows}</div>
-    </div>`;
-  }
-  function bf39DayTotals(meals=[]){
-    return meals.reduce((a,m)=>{
-      a.kcal+=m.macros?.kcal||0;a.p+=m.macros?.p||0;a.c+=m.macros?.c||0;a.f+=m.macros?.f||0;return a;
-    },{kcal:0,p:0,c:0,f:0});
-  }
-
-  function bf39RecalcMeal(meal){
-    meal.items=(meal.portionItems||[]).map(it=>[it.name,it.qty,it.unit]);
-    const macros=bf39SumMacros(meal.portionItems||[]);
-    meal.macros={kcal:Math.round(macros.kcal),p:Math.round(macros.p),c:Math.round(macros.c),f:Math.round(macros.f)};
-    return meal;
-  }
-  function bf39BalanceDayMeals(meals,targets){
-    const mains=meals.filter(m=>m.type==="Repas 1"||m.type==="Repas 2");
-    // Ajuste les lipides par pas pratiques de 5 g d'huile.
-    for(let guard=0;guard<12;guard++){
-      const actual=bf39DayTotals(meals);
-      const diff=targets.f-actual.f;
-      if(Math.abs(diff)<=3) break;
-      let changed=false;
-      const ordered=diff>0?mains:[...mains].reverse();
-      for(const meal of ordered){
-        let oil=meal.portionItems.find(i=>i.name==="Huile d’olive");
-        if(diff>0){
-          if(!oil){
-            oil=bf39PortionItem("Huile d’olive",5);
-            meal.portionItems.push(oil);
-            changed=true; bf39RecalcMeal(meal); break;
-          }
-          const g=oil.grams??oil.qty*1000;
-          if(g<15){
-            const ng=Math.min(15,g+5);
-            oil.grams=ng;oil.qty=ng/1000;oil.unit="kg";
-            changed=true;bf39RecalcMeal(meal);break;
-          }
-        }else if(oil){
-          const g=oil.grams??oil.qty*1000;
-          if(g>5){
-            const ng=Math.max(5,g-5);
-            oil.grams=ng;oil.qty=ng/1000;oil.unit="kg";
-            changed=true;bf39RecalcMeal(meal);break;
-          }
-        }
-      }
-      if(!changed) break;
-    }
-
-    // Ajuste les glucides avec des pas culinaires réalistes.
-    const carbItems=[];
-    meals.forEach(meal=>(meal.portionItems||[]).forEach(item=>{
-      const db=BF39_FOOD_DB[item.name];
-      if(db?.role==="carb") carbItems.push({meal,item,db});
-    }));
-    for(let guard=0;guard<30;guard++){
-      const actual=bf39DayTotals(meals);
-      const diff=targets.c-actual.c;
-      if(Math.abs(diff)<=8) break;
-      let changed=false;
-      for(const ref of carbItems){
-        const {meal,item,db}=ref;
-        const g=item.grams??item.qty*1000;
-        const step=item.name==="Pommes de terre"?50:10;
-        const maxG=bf391PracticalMax(item.name,targets,!!targets.training);
-        const ng=diff>0?Math.min(maxG,g+step):Math.max(db.minG,g-step);
-        if(ng!==g){
-          item.grams=ng;item.qty=ng/1000;item.unit="kg";
-          bf39RecalcMeal(meal);
-          changed=true;
-          break;
-        }
-      }
-      if(!changed) break;
-    }
-    meals.forEach(bf39RecalcMeal);
-    return meals;
-  }
-
-
-  function bf39BuildMenus(){
-    const config=v32MenuConfig();
-    const profileLinked=bf341CurrentProfile?.()||config.profile||{};
-    const nutritionPlan=bf35BuildNutritionPlan?.(profileLinked,bf34GetPrefs?.())||null;
-    const days=["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
-    const trainingIndexes=bf39TrainingIndexes(profileLinked.gymDays||3);
-    const shares=bf39MealShares(config.meals);
-    const plan=days.map((day,i)=>{
-      const training=trainingIndexes.includes(i);
-      const targets=bf39DayTargets(nutritionPlan,training);
-      const templates=[];
-      if(config.meals>=3) templates.push({type:"Petit-déjeuner",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("breakfast",i,config):v32PickMeal("breakfast",i,config))});
-      templates.push({type:"Repas 1",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("lunch",i,config):v32PickMeal("lunch",i,config))});
-      templates.push({type:"Repas 2",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("dinner",i,config):v32PickMeal("dinner",i,config))});
-      if(config.meals>=4) templates.push({type:"Collation",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("snack",i,config):v32PickMeal("snack",i,config))});
-      const meals=templates.map(x=>bf39PortionMeal(x.meal||{},x.type,targets,shares[x.type]||0.25,training));
-      bf39BalanceDayMeals(meals,targets);
-      return {day,training,targets,meals,actual:bf39DayTotals(meals)};
-    });
-    const data={
-      config,profileLinked,
-      proteinTarget:nutritionPlan?.protein||bf341ProteinTarget?.(profileLinked)||0,
-      calorieHint:nutritionPlan?{target:nutritionPlan.target,maintenance:nutritionPlan.maintenance}:bf341CalorieHint?.(profileLinked)||null,
-      nutritionPlan,plan,portionVersion:"V39.2",createdAt:new Date().toISOString()
-    };
-    v32StoreSet(V32_MENUS_KEY,data);
-    v26StoreSet?.(window.V30_GROCERY_KEY||"bf_v30_grocery",{store:config.store,budget:config.budget,meals:config.meals});
-    return data;
-  }
-  function bf39RenderMenus(data=null){
-    data=data||v32StoreGet(V32_MENUS_KEY,null);
-    if(!data || data.portionVersion!=="V39.2") data=bf39BuildMenus();
-    const summary=document.getElementById("v32MenuSummary");
-    if(summary){
-      summary.innerHTML=`<strong>Menus V39.2 :</strong> objectif ${goalLabelSafe(data.config.goal)} · poids ${data.profileLinked?.weight||"-"} kg · cible ≈ ${data.nutritionPlan?.target||"-"} kcal/j · protéines ≈ ${data.proteinTarget||"-"} g/j · ${data.config.meals} repas/jour.
-      <div class="bf39-source-note"><strong>Portions automatiques :</strong> les jours entraînement/repo sont répartis automatiquement d’après le nombre de séances. Valeurs simplifiées et arrondies. Référence française de composition : Anses, Table Ciqual 2025. Les produits exacts varient : vérifie l’étiquette du produit acheté.</div>${bf391NutritionSourceNote()}`;
-    }
-    const box=document.getElementById("v32MenusResult");
-    if(!box) return;
-    box.innerHTML=data.plan.map(d=>`<div class="bf39-day-card">
-      <div class="bf39-day-head"><h3>${d.day}</h3><span class="bf39-day-type ${d.training?"training":"rest"}">${d.training?"Jour entraînement":"Jour repos"}</span></div>
-      <div class="bf39-day-macros">
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.kcal)}</strong><span>kcal menu</span></div>
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.p)} g</strong><span>protéines</span></div>
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.c)} g</strong><span>glucides</span></div>
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.f)} g</strong><span>lipides</span></div>
-      </div>
-      ${d.meals.map(bf39MealHtml).join("")}
-      <div class="bf391-gap-note">${bf391DayGapAdvice(d)}</div>
-    </div>`).join("");
-    v30RefreshLaunchpad?.();
-  }
-
-  // Remplace les générateurs V32 par le moteur V39.2
-  v32BuildMenus=bf39BuildMenus;
-  v32RenderMenus=bf39RenderMenus;
-
-  function bf39QuickPortionPair(){
-    const profile=bf341CurrentProfile?.()||{};
-    const plan=bf35BuildNutritionPlan?.(profile,bf34GetPrefs?.())||bf35GetNutritionPlan?.()||{};
-    const mode=document.getElementById("bf39DayTypeSelect")?.value||"auto";
-    const training=mode==="training" ? true : (mode==="rest" ? false : true);
-    const targets=bf39DayTargets(plan,training);
-    const shares=bf39MealShares(profile.meals||3);
-    const share=shares["Repas 1"]||0.38;
-    const carbName=bf39CanonicalName(document.getElementById("bf39CarbSelect")?.value||"Riz");
-    const proteinName=bf39CanonicalName(document.getElementById("bf39ProteinSelect")?.value||"Poulet");
-    const carbDb=BF39_FOOD_DB[carbName], proteinDb=BF39_FOOD_DB[proteinName];
-    const carbAmount=bf39MacroAmount(carbDb,"carb",targets.c*share);
-    const proteinAmount=bf39MacroAmount(proteinDb,"protein",targets.p*share);
-    const carbItem=carbDb.unit?bf39PortionItem(carbName,carbAmount,carbDb.unit):bf39PortionItem(carbName,carbAmount);
-    const proteinItem=proteinDb.unit?bf39PortionItem(proteinName,proteinAmount,proteinDb.unit):bf39PortionItem(proteinName,proteinAmount);
-    return {training,targets,share,carbItem,proteinItem,plan,profile};
-  }
-  function bf39RenderQuickPortion(){
-    const box=document.getElementById("bf39PortionCalcResult");
-    if(!box) return;
-    const x=bf39QuickPortionPair();
-    const cm=bf39ItemMacros(x.carbItem), pm=bf39ItemMacros(x.proteinItem);
-    box.innerHTML=`<div class="bf39-portion-result">
-      <div class="mini-row"><span class="bf39-day-type ${x.training?"training":"rest"}">${x.training?"Jour entraînement":"Jour repos"}</span><span class="bf34-chip">objectif repas ≈ ${Math.round((x.plan.target||2200)*x.share)} kcal</span></div>
-      <div class="bf39-portion-pair">
-        <div class="bf39-portion-box"><strong>${x.carbItem.name}</strong><div class="big">${bf39FormatItem(x.carbItem)}</div><p>≈ ${Math.round(cm.c)} g glucides · ${Math.round(cm.kcal)} kcal</p></div>
-        <div class="bf39-portion-box"><strong>${x.proteinItem.name}</strong><div class="big">${bf39FormatItem(x.proteinItem)}</div><p>≈ ${Math.round(pm.p)} g protéines · ${Math.round(pm.kcal)} kcal</p></div>
-      </div>
-      <div class="bf39-source-note">Ajoute en général une portion de légumes au repas principal. L’huile et les autres aliments du repas comptent aussi dans les calories et les lipides.</div>
-    </div>`;
-  }
-  function bf39Bind(){
-    if(window.__bf39_bound){return;}
-    window.__bf39_bound=true;
-    document.getElementById("bf39CalcPortionBtn")?.addEventListener("click",bf39RenderQuickPortion);
-  }
-  function bf39Diagnostic(){
-    const results=[];
-    try{
-      const p={weight:75,height:175,age:25,goal:"performance",level:"intermediate",gymDays:3,duration:60,meals:3};
-      const fakePlan={target:2500,protein:135,carbs:330,fat:70};
-      const targets=bf39DayTargets(fakePlan,true);
-      const meal=bf39PortionMeal(V32_MEAL_BANK.lunch[0],"Repas 1",targets,0.38,true);
-      const rice=meal.portionItems.find(i=>i.name==="Riz");
-      const chicken=meal.portionItems.find(i=>i.name==="Poulet");
-      const ham=bf39PortionItem("Jambon blanc",120);
-      const checks=[
-        ["DB aliments V39.2",Object.keys(BF39_FOOD_DB).length>=18],
-        ["Riz portionné",!!rice && rice.grams>=50],
-        ["Poulet portionné",!!chicken && chicken.grams>=100],
-        ["Jambon en tranches",bf39FormatItem(ham).includes("tranche")],
-        ["Riz cru + cuit",rice && bf39FormatItem(rice).includes("cru") && bf39FormatItem(rice).includes("cuit")],
-        ["Macros repas",meal.macros.kcal>0 && meal.macros.p>0 && meal.macros.c>0],
-        ["Équilibrage journée",typeof bf39BalanceDayMeals==="function"],
-        ["Remplacements",rice && bf39Alternatives(rice).length>=2],
-        ["Calculateur visible",!!document.getElementById("bf39PortionCalculator")],
-        ["Plafonds portions cohérents",bf391PortionSanity(bf39BuildMenus()).length===0]
-      ];
-      checks.forEach(([name,ok])=>results.push(bf322Result(name,ok,ok?"OK":"Échec moteur portions.")));
-    }catch(e){
-      results.push(bf322Result("Diagnostic portions V39.2",false,String(e)));
-    }
-    return results;
-  }
-
-
-
-  const BF392_DAYS=["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
-  const BF392_DAY_LABELS=["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
-
-  function bf392DayIndexesFromText(text){
-    const days=bf361FindDays?.(text)||[];
-    return [...new Set(days.map(d=>BF392_DAYS.indexOf(d)).filter(i=>i>=0))];
-  }
-
-  function bf392DefaultGymIndexes(days=3){
-    const map={
-      2:[1,4],
-      3:[0,2,4],
-      4:[0,1,3,5],
-      5:[0,1,3,4,5],
-      6:[0,1,2,3,4,5]
-    };
-    return map[Math.max(2,Math.min(6,Number(days)||3))]||map[3];
-  }
-
-  function bf392DetectSportTypes(text){
-    const t=BF_UTIL.normalize(String(text||""));
-    const types=[];
-    const push=(key,regex)=>{if(regex.test(t)) types.push(key);};
-    push("team",/football|foot|basket|handball|rugby|hockey|volley|futsal/);
-    push("racket",/tennis|padel|badminton|squash|ping pong|tennis de table/);
-    push("running",/running|course|trail|footing|jogging|athletisme|athlétisme|marathon/);
-    push("cycling",/velo|vélo|cyclisme|bike|vtt/);
-    push("swimming",/natation|nage|piscine/);
-    push("combat",/boxe|mma|judo|karate|karaté|taekwondo|lutte|jiu jitsu|kickboxing/);
-    push("mixed",/crossfit|hyrox|circuit training|hiit|fitness/);
-    push("endurance",/cardio|endurance|rameur|elliptique|triathlon/);
-    return [...new Set(types.length?types:["generic"])];
-  }
-
-  function bf392SportTypeLabel(type){
-    return {
-      team:"sport collectif",
-      racket:"sport de raquette",
-      running:"course / running",
-      cycling:"vélo",
-      swimming:"natation",
-      combat:"sport de combat",
-      mixed:"effort mixte",
-      endurance:"endurance / cardio",
-      generic:"autre sport"
-    }[type]||type;
-  }
-
-  function bf392SportLoadClass(types=[]){
-    if(types.includes("running")||types.includes("cycling")||types.includes("swimming")||types.includes("endurance")) return "endurance";
-    if(types.includes("team")||types.includes("racket")||types.includes("combat")||types.includes("mixed")) return "intermittent";
-    return "generic";
-  }
-
-  function bf392Schedule(profile={}){
-    const p=profile||{};
-    const explicitGym=bf392DayIndexesFromText(p.gymSchedule||"");
-    const gym=explicitGym.length?explicitGym:bf392DefaultGymIndexes(p.gymDays||3);
-    const sportText=p.sportball||"";
-    const sport=bf392DayIndexesFromText(sportText);
-    const competitionText=p["compétition"]||p.competition||"";
-    const competition=bf392DayIndexesFromText(competitionText);
-    const sportTypes=bf392DetectSportTypes(sportText+" "+competitionText);
-    return {
-      gym,sport,competition,
-      explicitGym:explicitGym.length>0,
-      sportTypes,
-      loadClass:bf392SportLoadClass(sportTypes)
-    };
-  }
-
-  function bf392DayActivity(profile,index){
-    const s=bf392Schedule(profile);
-    const gym=s.gym.includes(index);
-    const sport=s.sport.includes(index);
-    const competition=s.competition.includes(index);
-    const active=gym||sport||competition;
-    const type=competition?"competition":(gym&&sport?"double":(sport?"sport":(gym?"gym":"rest")));
-    return {gym,sport,competition,active,type,sportTypes:s.sportTypes,loadClass:s.loadClass,schedule:s};
-  }
-
-  function bf392ActivityLabel(a){
-    return {
-      rest:"Repos",
-      gym:"Salle",
-      sport:"Autre sport",
-      double:"Salle + autre sport",
-      competition:"Compétition / match / tournoi"
-    }[a?.type]||"Repos";
-  }
-
-  function bf392TwoMealShares(a){
-    if(!a?.active) return {"Repas 1":0.50,"Repas 2":0.50,"support":0};
-    let support=0.15;
-    if(a.type==="sport") support=a.loadClass==="endurance"?0.20:0.18;
-    if(a.type==="double") support=a.loadClass==="endurance"?0.24:0.22;
-    if(a.type==="competition") support=0.22;
-    const main=(1-support)/2;
-    return {"Repas 1":main,"Repas 2":main,"support":support};
-  }
-
-  function bf392SupportTemplate(a){
-    const load=a?.loadClass||"generic";
-    if(a?.type==="competition"){
-      return {
-        name:"Module compétition / match / tournoi",
-        timing:"À répartir autour de l’épreuve selon son horaire et ta tolérance digestive. L’app ne suppose pas que tout doit être mangé juste avant.",
-        items:[bf39PortionItem("Bananes",240),bf39PortionItem("Skyr/fromage blanc",250),bf39PortionItem("Flocons d’avoine",60)]
-      };
-    }
-    if(a?.type==="double"){
-      return {
-        name:"Module double activité",
-        timing:"Salle + autre sport le même jour : répartis ce module autour des efforts, sans en faire obligatoirement une seule prise.",
-        items:[bf39PortionItem("Bananes",240),bf39PortionItem("Skyr/fromage blanc",250),bf39PortionItem("Flocons d’avoine",60)]
-      };
-    }
-    if(load==="endurance"){
-      return {
-        name:"Module sport d’endurance",
-        timing:"À placer autour de l’effort selon sa durée, son intensité et l’horaire des deux repas principaux.",
-        items:[bf39PortionItem("Bananes",120),bf39PortionItem("Skyr/fromage blanc",200),bf39PortionItem("Flocons d’avoine",60)]
-      };
-    }
-    if(load==="intermittent"){
-      return {
-        name:"Module sport intermittent",
-        timing:"Pour sport collectif, raquette, combat ou effort mixte : répartis autour de l’entraînement selon l’horaire et la digestion.",
-        items:[bf39PortionItem("Bananes",120),bf39PortionItem("Skyr/fromage blanc",200),bf39PortionItem("Flocons d’avoine",45)]
-      };
-    }
-    return {
-      name:"Module autour du sport",
-      timing:"À placer avant ou après selon l’horaire de ton sport et de tes deux repas principaux.",
-      items:[bf39PortionItem("Bananes",120),bf39PortionItem("Skyr/fromage blanc",200),bf39PortionItem("Flocons d’avoine",35)]
-    };
-  }
-
-  function bf392ScaleSupportModule(a,targets,share){
-    const tpl=bf392SupportTemplate(a);
-    let items=tpl.items.map(x=>({...x}));
-    const current=bf39SumMacros(items);
-    const kcalTarget=Math.max(250,Math.round((targets.kcal||2200)*(share||0.15)));
-    const ratio=bf39Clamp(kcalTarget/Math.max(current.kcal,1),0.75,1.35);
-
-    items=items.map(item=>{
-      const db=BF39_FOOD_DB[item.name];
-      if(!db||db.unit) return item;
-      const g=item.grams??item.qty*1000;
-      let ng=bf39RoundTo(g*ratio,5);
-      if(item.name==="Bananes") ng=bf39Clamp(ng,120,240);
-      if(item.name==="Skyr/fromage blanc") ng=bf39Clamp(ng,150,350);
-      if(item.name==="Flocons d’avoine") ng=bf39Clamp(ng,25,80);
-      return bf39PortionItem(item.name,ng);
-    });
-
-    const macros=bf39SumMacros(items);
-    return {
-      type:"Autour du sport",
-      name:tpl.name,
-      timing:tpl.timing,
-      supportModule:true,
-      activityType:a.type,
-      sportTypes:a.sportTypes||[],
-      portionItems:items,
-      items:items.map(it=>[it.name,it.qty,it.unit]),
-      macros:{kcal:Math.round(macros.kcal),p:Math.round(macros.p),c:Math.round(macros.c),f:Math.round(macros.f)}
-    };
-  }
-
-  function bf392ActivityChips(a){
-    const chips=[];
-    if(a.gym) chips.push(`<span class="bf392-activity-chip gym">Salle</span>`);
-    if(a.sport){
-      const label=(a.sportTypes||[]).map(bf392SportTypeLabel).join(" + ");
-      chips.push(`<span class="bf392-activity-chip sport">${label||"Autre sport"}</span>`);
-    }
-    if(a.competition) chips.push(`<span class="bf392-activity-chip competition">Compétition</span>`);
-    if(!chips.length) chips.push(`<span class="bf392-activity-chip">Repos</span>`);
-    return chips.join("");
-  }
-
-  function bf392SupportHtml(meal){
-    return `<div class="bf392-sport-module ${meal.activityType==="competition"?"competition":""}">
-      <h4>${meal.name}</h4>
-      <p>${meal.timing||""}</p>
-      <div class="bf392-sport-type-grid">${(meal.sportTypes||[]).map(t=>`<span class="bf392-activity-chip sport">${bf392SportTypeLabel(t)}</span>`).join("")}</div>
-      <div class="mini-row">
-        <span class="bf34-chip">≈ ${meal.macros?.kcal||0} kcal</span>
-        <span class="bf34-chip">${meal.macros?.p||0} g prot.</span>
-        <span class="bf34-chip">${meal.macros?.c||0} g gluc.</span>
-      </div>
-      <div class="bf39-food-list">
-        ${(meal.portionItems||[]).map(item=>`<div class="bf39-food-row"><strong>${item.name}</strong><div class="bf39-food-qty">${bf39FormatItem(item)}</div></div>`).join("")}
-      </div>
-    </div>`;
-  }
-
-  function bf392MealHtml(meal){
-    return meal.supportModule?bf392SupportHtml(meal):bf39MealHtml(meal);
-  }
-
-  function bf392DayGapAdvice(day){
-    const a=day.actual||{},t=day.targets||{};
-    const pct=t.kcal?Math.round(a.kcal/t.kcal*100):100;
-    if(day.mealPattern==="2+sport" && day.activity?.active){
-      if(pct<88) return `2 repas principaux conservés. Le module sport est séparé. La journée couvre environ ${pct}% de la cible estimée : ajuste d’abord le module sport ou répartis légèrement sur les deux repas, sans créer une assiette énorme.`;
-      if(pct>112) return `2 repas principaux + module sport, mais le total dépasse sensiblement la cible estimée. Réduis d’abord le module ou une matière grasse.`;
-      return "Structure cohérente : 2 repas principaux + un module autour du sport, compté dans les calories et les courses mais séparé des vrais repas.";
-    }
-    return bf391DayGapAdvice(day);
-  }
-
-  function bf392BuildMenus(){
-    const config=v32MenuConfig();
-    const profileLinked=bf341CurrentProfile?.()||config.profile||{};
-    const nutritionPlan=bf35BuildNutritionPlan?.(profileLinked,bf34GetPrefs?.())||null;
-
-    const plan=BF392_DAY_LABELS.map((day,i)=>{
-      const activity=bf392DayActivity(profileLinked,i);
-      const targets=bf39DayTargets(nutritionPlan,activity.active);
-      const twoMeals=Number(config.meals)===2;
-      const shares=twoMeals?bf392TwoMealShares(activity):bf39MealShares(config.meals);
-
-      const templates=[];
-      if(config.meals>=3) templates.push({type:"Petit-déjeuner",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("breakfast",i,config):v32PickMeal("breakfast",i,config))});
-      templates.push({type:"Repas 1",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("lunch",i,config):v32PickMeal("lunch",i,config))});
-      templates.push({type:"Repas 2",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("dinner",i,config):v32PickMeal("dinner",i,config))});
-      if(config.meals>=4) templates.push({type:"Collation",meal:(typeof bf34PickMeal==="function"?bf34PickMeal("snack",i,config):v32PickMeal("snack",i,config))});
-
-      const meals=templates.map(x=>bf39PortionMeal(x.meal||{},x.type,targets,shares[x.type]||0.25,activity.active));
-
-      if(twoMeals && activity.active && shares.support>0){
-        meals.splice(1,0,bf392ScaleSupportModule(activity,targets,shares.support));
-      }
-
-      bf39BalanceDayMeals(meals.filter(m=>!m.supportModule),targets);
-      const actual=bf39DayTotals(meals);
-
-      return {
-        day,activity,training:activity.active,targets,meals,actual,
-        mealPattern:twoMeals&&activity.active?"2+sport":String(config.meals)
-      };
-    });
-
-    const data={
-      config,profileLinked,
-      proteinTarget:nutritionPlan?.protein||bf341ProteinTarget?.(profileLinked)||0,
-      calorieHint:nutritionPlan?{target:nutritionPlan.target,maintenance:nutritionPlan.maintenance}:bf341CalorieHint?.(profileLinked)||null,
-      nutritionPlan,
-      schedule:bf392Schedule(profileLinked),
-      plan,
-      portionVersion:"V39.2",
-      createdAt:new Date().toISOString()
-    };
-
-    v32StoreSet(V32_MENUS_KEY,data);
-    v26StoreSet?.(window.V30_GROCERY_KEY||"bf_v30_grocery",{store:config.store,budget:config.budget,meals:config.meals});
-    return data;
-  }
-
-  function bf392RenderMenus(data=null){
-    data=data||v32StoreGet(V32_MENUS_KEY,null);
-    if(!data || data.portionVersion!=="V39.2") data=bf392BuildMenus();
-
-    const summary=document.getElementById("v32MenuSummary");
-    if(summary){
-      const s=data.schedule||{};
-      const labels=arr=>(arr||[]).map(i=>BF392_DAY_LABELS[i]).join(", ")||"non renseignés";
-      const sports=(s.sportTypes||[]).map(bf392SportTypeLabel).join(", ");
-      summary.innerHTML=`<strong>Menus V39.2 :</strong> objectif ${goalLabelSafe(data.config.goal)} · poids ${data.profileLinked?.weight||"-"} kg · cible ≈ ${data.nutritionPlan?.target||"-"} kcal/j · protéines ≈ ${data.proteinTarget||"-"} g/j · ${data.config.meals} repas principaux/jour.
-        <div class="bf392-schedule-note"><strong>Planning utilisé :</strong> salle ${labels(s.gym)} · autre sport ${labels(s.sport)} · compétition ${labels(s.competition)}. Types détectés : ${sports||"aucun"}. ${s.explicitGym?"Jours de salle renseignés manuellement.":"Jours de salle répartis automatiquement faute de planning précis."}</div>
-        <div class="bf39-source-note"><strong>Cas 2 repas :</strong> les jours sportifs, l’app garde 2 vrais repas et ajoute un module autour du sport. Ce module compte dans les calories et les courses mais n’est pas présenté comme un troisième repas principal.</div>
-        ${bf391NutritionSourceNote()}`;
-    }
-
-    const box=document.getElementById("v32MenusResult");
-    if(!box) return;
-
-    box.innerHTML=data.plan.map(d=>`<div class="bf39-day-card">
-      <div class="bf39-day-head"><h3>${d.day}</h3><span class="bf39-day-type ${d.activity?.active?"training":"rest"}">${bf392ActivityLabel(d.activity)}</span></div>
-      <div class="bf392-activity-row">${bf392ActivityChips(d.activity||{})}</div>
-      <div class="bf39-day-macros">
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.kcal)}</strong><span>kcal menu</span></div>
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.p)} g</strong><span>protéines</span></div>
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.c)} g</strong><span>glucides</span></div>
-        <div class="bf39-macro-chip"><strong>${Math.round(d.actual.f)} g</strong><span>lipides</span></div>
-      </div>
-      ${d.meals.map(bf392MealHtml).join("")}
-      <div class="bf391-gap-note">${bf392DayGapAdvice(d)}</div>
-    </div>`).join("");
-
-    v30RefreshLaunchpad?.();
-  }
-
-  function bf392Diagnostic(){
-    const results=[];
-    try{
-      const cases=[
-        {name:"Football",sportball:"football mardi jeudi",expected:"team"},
-        {name:"Tennis",sportball:"tennis mercredi",expected:"racket"},
-        {name:"Running",sportball:"running mardi samedi",expected:"running"},
-        {name:"Vélo",sportball:"vélo dimanche",expected:"cycling"},
-        {name:"Natation",sportball:"natation mercredi",expected:"swimming"},
-        {name:"Boxe",sportball:"boxe mardi jeudi",expected:"combat"},
-        {name:"CrossFit",sportball:"crossfit samedi",expected:"mixed"}
-      ];
-      cases.forEach(c=>{
-        const types=bf392DetectSportTypes(c.sportball);
-        results.push(bf322Result(`Détection ${c.name}`,types.includes(c.expected),types.join(",")));
-      });
-
-      const p={
-        weight:77,height:167,age:20,sex:"male",goal:"cut",
-        gymDays:5,gymSchedule:"lundi mardi jeudi vendredi samedi",
-        meals:2,sportball:"tennis mercredi et running dimanche",
-        "compétition":"tournoi samedi"
-      };
-      const s=bf392Schedule(p);
-      const wed=bf392DayActivity(p,2);
-      const sat=bf392DayActivity(p,5);
-      const sun=bf392DayActivity(p,6);
-      const shares=bf392TwoMealShares(wed);
-
-      const checks=[
-        ["Planning salle explicite",s.gym.length===5&&s.explicitGym],
-        ["Mercredi autre sport",wed.type==="sport"],
-        ["Samedi compétition",sat.type==="competition"],
-        ["Dimanche running",sun.type==="sport"],
-        ["2 repas + support = 100 %",Math.abs(shares["Repas 1"]+shares["Repas 2"]+shares.support-1)<0.001],
-        ["Module sport séparé",bf392ScaleSupportModule(wed,{kcal:2500,p:140,c:350,f:60},shares.support).supportModule===true]
-      ];
-      checks.forEach(([name,ok])=>results.push(bf322Result(name,ok,ok?"OK":"Échec V39.2.")));
-
-    }catch(e){
-      results.push(bf322Result("Diagnostic multi-sport V39.2",false,String(e)));
-    }
-    return results;
-  }
-
-  v32BuildMenus=bf392BuildMenus;
-  v32RenderMenus=bf392RenderMenus;
-
-
   function bf34NutritionSummary(){
     const prefs=bf34GetPrefs();
     const box=document.getElementById("bf34NutritionResult");
@@ -8720,7 +7316,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
 
-  /* V39.2 : profil canonique synchronisé */
+  /* V38.9 : profil canonique synchronisé */
 
   function bf331StorageProfile(){
     let p=null;
@@ -9002,32 +7598,13 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
 
-
-  function v389RescueDiagnostic(){
-    const results=[];
-    try{
-      const panel=document.getElementById("safetyPanel");
-      const required=[
-        "introEmergencyBtn","safeOpenResetBtn","repairIntroBtn","repairProfileBtn",
-        "repairMonthBtn","repairSWBtn","repairAllBtn","closeSafetyBtn"
-      ];
-      required.forEach(id=>results.push(bf322Result(`Secours ${id}`,!!document.getElementById(id),document.getElementById(id)?"Présent.":"Manquant.")));
-      results.push(bf322Result("Contrôleur secours autonome",!!window.__v389Rescue && window.__v389Rescue.isReady(),"Indépendant de init()."));
-      results.push(bf322Result("Panneau au-dessus intro",!!panel && getComputedStyle(panel).zIndex==="30000","z-index secours prioritaire."));
-    }catch(e){
-      results.push(bf322Result("Diagnostic secours V39.2",false,String(e)));
-    }
-    return results;
-  }
-
-
   function v388BootRuntimeDiagnostic(){
     const results=[];
     try{
       results.push(bf322Result("Boot JavaScript exécuté",true,"Le diagnostic s’exécute donc le script principal a démarré."));
       results.push(bf322Result("Contrôleur intro actif",window.__v387_intro_delegate===true,"Gestionnaire intro indépendant actif."));
       results.push(bf322Result("Bouton intro disponible",!!document.getElementById("v26StartBtn"),"Bouton de départ présent."));
-      results.push(bf322Result("Déblocage V38.8 disponible",!!document.getElementById("unlockV392Btn"),"Bouton final présent."));
+      results.push(bf322Result("Déblocage V38.9 disponible",!!document.getElementById("unlockV389Btn"),"Bouton final présent."));
       results.push(bf322Result("Fresh preboot sûr",typeof v386HandleFreshMode==="function","Fresh mode disponible sans appel prématuré."));
     }catch(e){
       results.push(bf322Result("Diagnostic runtime V38.9",false,String(e)));
@@ -9079,7 +7656,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       case "analyzeNutritionBtn":
         v26AnalyzeNutritionAction();
         return true;
-      case "unlockV392Btn":
+      case "unlockV389Btn":
         v26UnlockApp();
         return true;
       default:
@@ -9096,7 +7673,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       if(!btn) return;
       const ids=[
         "v26StartBtn","sportExampleBtn","analyzeSportBtn","goNutritionBtn",
-        "nutritionExampleBtn","analyzeNutritionBtn","unlockV392Btn"
+        "nutritionExampleBtn","analyzeNutritionBtn","unlockV389Btn"
       ];
       if(!ids.includes(btn.id)) return;
 
@@ -9108,7 +7685,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         v387HandleIntroAction(btn.id);
       }catch(err){
         console.error("V38.7 intro action",btn.id,err);
-        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=39-1 ou utilise le mode secours.","err");
+        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=38-9 ou utilise le mode secours.","err");
       }
     },true);
   }
@@ -9116,7 +7693,8 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function v387PrepareIntro(){
     try{
       v387InstallIntroDelegation();
-      if(typeof bf3810OnboardingDone==="function" && !bf3810OnboardingDone()){
+      const p=bf321CanonicalProfile?.();
+      if(!p || (!p.presentation && !p.name && !p.goal)){
         lockApp?.();
         v26ShowStep?.("Welcome");
       }
@@ -9136,7 +7714,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     try{
       const required=[
         "v26StartBtn","sportPresentation","analyzeSportBtn","goNutritionBtn",
-        "nutritionPresentation","analyzeNutritionBtn","unlockV392Btn"
+        "nutritionPresentation","analyzeNutritionBtn","unlockV389Btn"
       ];
       required.forEach(id=>{
         results.push(bf322Result(`Intro ID ${id}`,!!document.getElementById(id),document.getElementById(id)?"Présent.":"Manquant."));
@@ -9169,15 +7747,15 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
           localStorage.removeItem(k);
         }
       });
-      sessionStorage.setItem("bf_v3810_fresh_done","1");
+      sessionStorage.setItem("bf_v389_fresh_done","1");
       return true;
     }catch(e){return false;}
   }
   function v386HandleFreshMode(){
     if(!v386IsFreshMode()) return;
-    if(sessionStorage.getItem("bf_v3810_fresh_done")==="1") return;
+    if(sessionStorage.getItem("bf_v389_fresh_done")==="1") return;
     v386ClearLocalAppData();
-    const cleanUrl=location.origin+location.pathname+"?v=39-1&demo=ready";
+    const cleanUrl=location.origin+location.pathname+"?v=38-9&demo=ready";
     location.replace(cleanUrl);
   }
   function v386ShowToast(msg){
@@ -9192,7 +7770,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     }catch(e){}
   }
   function v386DemoLink(){
-    return location.origin+location.pathname+"?v=39-1&fresh=1";
+    return location.origin+location.pathname+"?v=38-9&fresh=1";
   }
   function v386BindDemo(){
     const txt=document.getElementById("v386DemoLinkText");
@@ -9216,7 +7794,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(bf322Result("Lien essai propre",!!document.getElementById("v386DemoLinkText"),"Carte mode essai présente dans Profil."));
       results.push(bf322Result("Fresh mode disponible",typeof v386HandleFreshMode==="function" && typeof v386ClearLocalAppData==="function","Paramètre ?fresh=1 disponible."));
     }catch(e){
-      results.push(bf322Result("Diagnostic démo V38.8",false,String(e)));
+      results.push(bf322Result("Diagnostic démo V38.9",false,String(e)));
     }
     return results;
   }
@@ -9378,7 +7956,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         ["Dashboard premium", !!document.getElementById("v371DailyDashboard")],
         ["Navigation premium", !!document.getElementById("appNav")],
         ["Coach premium", !!document.getElementById("coachChat")],
-        ["CSS premium injecté", document.documentElement.innerHTML.includes("V39.2 : refonte visuelle premium")]
+        ["CSS premium injecté", document.documentElement.innerHTML.includes("V38.9 : refonte visuelle premium")]
       ];
       checks.forEach(([name, ok])=>results.push(bf322Result(name, ok, ok ? "OK" : "Élément visuel manquant.")));
     }catch(e){
@@ -9618,6 +8196,65 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
 
+
+  function bf39NutritionIntegrityDiagnostic(){
+    const backup=bf322Backup?.() || {};
+    const results=[];
+    try{
+      const base={goal:"cut",level:"intermediate",pain:"none",gymDays:4,duration:60,age:20,height:180,weight:80,meals:4,sex:"male"};
+      const cut=bf35BuildNutritionPlan({...base,goal:"cut"});
+      const expectedCut=Math.round(80*BF351_GOAL_STRATEGIES.cut.proteinKg);
+      results.push(bf322Result(
+        "Sèche = protéines hautes",
+        cut.protein===expectedCut && cut.protein>=160,
+        `Protéines : ${cut.protein} g pour 80 kg. Attendu moteur unique : ${expectedCut} g.`
+      ));
+
+      const scaledKg=bf39ClampPortion(0.5,"kg",2);
+      const scaledPiece=bf39ClampPortion(4,"pièce",2);
+      const scaledBox=bf39ClampPortion(2,"boîte",2);
+      const capsOk=scaledKg<=0.60 && scaledKg>=0.03 &&
+                   scaledPiece<=6 && scaledPiece>=1 &&
+                   scaledBox<=3 && scaledBox>=0.5;
+      results.push(bf322Result(
+        "Plafonds portions cohérents",
+        capsOk,
+        `kg ${scaledKg} · pièces ${scaledPiece} · boîtes ${scaledBox}.`
+      ));
+
+      const male=bf39BMR({...base,sex:"male"});
+      const female=bf39BMR({...base,sex:"female"});
+      results.push(bf322Result(
+        "Formule sexe cohérente",
+        male>female && male-female===166,
+        `BMR homme ${male} · femme ${female}.`
+      ));
+
+      const planMuscle=bf35BuildNutritionPlan({...base,goal:"muscle"});
+      const linkedProtein=bf341ProteinTarget({...base,goal:"muscle"});
+      results.push(bf322Result(
+        "Moteur nutrition unique",
+        planMuscle.protein===linkedProtein,
+        `Plan ${planMuscle.protein} g · menus/profil ${linkedProtein} g.`
+      ));
+
+      const meal={name:"Test",items:[["Poulet",0.5,"kg"],["Œufs",5,"pièce"],["Thon",2,"boîte"]],protein:50};
+      const scaled=bf39ScaleMealPortions(meal,2);
+      const safe=scaled.items.every(([n,q,u])=>Number.isFinite(q) && q>0);
+      results.push(bf322Result(
+        "Moteur portions stable",
+        safe,
+        safe ? "Aucun échec moteur portions." : "Échec moteur portions."
+      ));
+    }catch(e){
+      results.push(bf322Result("Diagnostic nutrition V38.9",false,String(e)));
+    }finally{
+      try{bf322Restore?.(backup);window.__bf362ForcedProfile=null;bf341RenderNutritionProfile?.();bf34NutritionSummary?.();}catch(e){}
+    }
+    return results;
+  }
+
+
   function bf341ProfileNutritionDiagnostic(){
     const backup=bf322Backup?.() || {};
     const results=[];
@@ -9763,7 +8400,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=39") || document.body.innerText.includes("V32.4"), "URL ou interface en V32.4."));
+    results.push(bf322Result("Version chargée", location.href.includes("v=38-9") || document.title.includes("V38.9"), `Titre : ${document.title}`));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
@@ -9773,6 +8410,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(...bf34Diagnostic());
       results.push(...bf341ProfileNutritionDiagnostic());
       results.push(...bf35Diagnostic());
+      results.push(...bf39NutritionIntegrityDiagnostic());
       results.push(...v36Diagnostic());
       results.push(...v37CleanUIDiagnostic());
       results.push(...v38VisualDiagnostic());
@@ -9784,11 +8422,6 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(...v386DemoDiagnostic());
       results.push(...v387IntroDiagnostic());
       results.push(...v388BootRuntimeDiagnostic());
-      results.push(...v389RescueDiagnostic());
-      results.push(...bf3810NewUserDiagnostic());
-      results.push(...bf39Diagnostic());
-      results.push(...bf391CoherenceDiagnostic());
-      results.push(...bf392Diagnostic());
       results.push(...v371DashboardDiagnostic());
       results.push(...bf362ForcedProfileDiagnostic());
       results.push(...bf361ExternalLoadDiagnostic());
@@ -9825,15 +8458,15 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V39.2\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V38.9\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=39-1
-2. Si tu vois encore une ancienne version, supprime l’ancienne icône de l’écran d’accueil
-3. Ouvre Safari, recharge avec ?v=39-1
-4. Ré-ajoute l’app à l’écran d’accueil`;
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=38-9&fresh=1
+2. Teste d’abord dans Safari
+3. Supprime l’ancienne icône si l’écran d’accueil garde une vieille version
+4. Ré-ajoute l’app seulement après avoir vu V38.9`;
     alert(msg);
   }
   function bf322Bind(){
@@ -9879,7 +8512,6 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       v382Bind?.();
       v383Bind?.();
       v386BindDemo?.();
-      bf39Bind?.();
       bf324BindProfileApply?.();
       v29RenderProgress?.();
       v28RenderSmartMonth?.();
@@ -9931,7 +8563,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       document.getElementById("unlockPanel")?.classList.add("hidden");
       const area=document.getElementById("onPresentation");
       if(area){
-        area.value="J’ai 25 ans et je veux progresser physiquement avec un programme adapté. Je peux aller à la salle 3 fois par semaine pendant environ 1 heure. Je préfère les machines. Je mange 3 repas par jour et je veux une alimentation simple, réaliste et adaptée à mon objectif.";
+        area.value="Salut je m’appelle Pablo, j’ai 20 ans, je mesure 1m66 pour 75 kg. Je veux prendre du muscle proprement sans trop prendre de gras. Je peux aller à la salle 3 fois par semaine pendant environ 1h. Je préfère les machines. Je mange 2 à 3 repas par jour, j’aime le riz, les œufs, le poulet, le skyr, les pommes de terre et les bananes. J’ai parfois une gêne au genou donc je veux faire attention.";
         area.focus();
       }
     });
@@ -10007,7 +8639,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=39-2").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=38-9").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   

@@ -1,7 +1,5 @@
-const CACHE_NAME = 'basicfit-coach-v39-2-onefile';
+const CACHE_NAME = 'basicfit-coach-v38-9-onefile';
 const ASSETS = [
-  './',
-  './index.html',
   './manifest.webmanifest',
   './icons/icon-180.png',
   './icons/icon-192.png',
@@ -14,18 +12,50 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.map(k => k !== CACHE_NAME ? caches.delete(k) : null))));
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request)));
+  const request = event.request;
+
+  if (request.mode === 'navigate' || request.destination === 'document') {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy));
+          return response;
+        })
+        .catch(() => caches.match('./index.html').then(r => r || caches.match('./')))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request).then(cached => {
+      if (cached) return cached;
+      return fetch(request).then(response => {
+        if (request.method === 'GET' && response && response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+        }
+        return response;
+      });
+    })
+  );
 });
 
 self.addEventListener('notificationclick', event => {
   event.notification.close();
-  event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(list => {
-    for (const client of list) if ('focus' in client) return client.focus();
-    if (clients.openWindow) return clients.openWindow('./index.html');
-  }));
+  event.waitUntil(
+    clients.matchAll({type:'window', includeUncontrolled:true}).then(list => {
+      for (const client of list) if ('focus' in client) return client.focus();
+      if (clients.openWindow) return clients.openWindow('./index.html?v=38-9');
+    })
+  );
 });
