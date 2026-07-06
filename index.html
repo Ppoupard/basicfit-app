@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V40</title>
+  <title>Basic-Fit Coach V40.1</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2620,7 +2620,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
 
 /* ============================================================
-   V40 — NUTRITION PRO COMPLÈTE
+   V40.1 — NUTRITION PRO COMPLÈTE
    ============================================================ */
 .v40-hero-card,
 .v40-energy-card,
@@ -3226,7 +3226,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
           </div>
           <div class="result-box">
             <strong>Lien essai propre :</strong><br>
-            <code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=40&amp;fresh=1</code>
+            <code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=40-1&amp;fresh=1</code>
             <p class="small-note">Le paramètre <strong>fresh=1</strong> vide les données locales de l’app sur l’appareil qui ouvre le lien.</p>
           </div>
         </article>
@@ -3243,10 +3243,10 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
             <button type="button" class="ghost-btn" id="v36OpenDiagnosticBtn">Ouvrir le diagnostic</button>
           </div>
           
-        <article class="card accent-card" id="v40VersionBadge">
+        <article class="card accent-card" id="v401VersionBadge">
           <div class="card-kicker">VERSION ACTIVE</div>
-          <h3>Basic-Fit Coach V40</h3>
-          <p>Nutrition Pro · repas conseillés · portions crues/cuites · dépense repos/activité · coach quotidien.</p>
+          <h3>Basic-Fit Coach V40.1</h3>
+          <p>Nutrition Pro · génération menus/courses corrigée · synchronisation sûre · clics uniques.</p>
         </article>
 
         <div id="v36DiagnosticMount"></div>
@@ -3853,7 +3853,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               <article class="card v40-hero-card" id="v40NutritionProCard">
                 <div class="section-head">
                   <div>
-                    <p class="card-kicker">V40 — NUTRITION PRO</p>
+                    <p class="card-kicker">V40.1 — NUTRITION PRO</p>
                     <h3>Ton coach nutrition concret</h3>
                     <p>Objectif du jour, dépense au repos, activité, organisation des repas, portions crues/cuites et conseil du coach.</p>
                   </div>
@@ -4263,7 +4263,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=40</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=40-1</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -4311,7 +4311,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="menusView">
         <article class="card">
-          <p class="card-kicker">V40 — MENUS + COURSES</p>
+          <p class="card-kicker">V40.1 — MENUS + COURSES</p>
           <h2>Menus personnalisés de la semaine</h2>
           <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V40 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
           <div class="v32-menu-config">
@@ -4440,7 +4440,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
         }
       });
       sessionStorage.setItem("bf_v40_fresh_done","1");
-      const cleanUrl=location.origin+location.pathname+"?v=40&demo=ready";
+      const cleanUrl=location.origin+location.pathname+"?v=40-1-1&demo=ready";
       location.replace(cleanUrl);
     }catch(e){
       console.warn("V40 fresh preboot",e);
@@ -5676,7 +5676,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=40." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=40-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -5687,7 +5687,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=40"+Date.now();
+      location.href=location.pathname+"?v=40-1"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -5697,7 +5697,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=40. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=40-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -6922,6 +6922,8 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function v291DirectClickFallback(e){
     const id=e.target?.id;
 
+    if(e.target?.dataset?.bfDirectBound==="1") return;
+
       if(e.target?.dataset?.open){ const view=e.target.dataset.open; if(document.getElementById(view+"View")){ e.preventDefault(); showView(view); } }
 
     if(!id) return;
@@ -6986,7 +6988,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     }catch(err){
       console.error("Fallback génération V34", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=40 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=40-1 puis réessaie.");
     }
   }
 
@@ -7516,8 +7518,9 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       const note=document.createElement("div");
       note.className="bf363-sync-note";
       note.innerHTML=`<strong>Synchronisé avec Profil :</strong> poids ${Math.round(Number(p.weight)||75)} kg · objectif ${goalLabelSafe?.(p.goal)||p.goal||"-"} · repas ${p.meals||3}/jour.`;
-      const before=card.querySelector("button, .primary-btn") || card.firstChild;
-      card.insertBefore(note,before);
+      const before=card.querySelector(":scope > button, :scope > .primary-btn") || null;
+      if(before && before.parentElement===card) card.insertBefore(note,before);
+      else card.prepend(note);
     }else if(card){
       const note=card.querySelector(".bf363-sync-note");
       if(note) note.innerHTML=`<strong>Synchronisé avec Profil :</strong> poids ${Math.round(Number(p.weight)||75)} kg · objectif ${goalLabelSafe?.(p.goal)||p.goal||"-"} · repas ${p.meals||3}/jour.`;
@@ -7753,7 +7756,10 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       bf35ApplyNutritionPlan?.();
       showView?.("nutrition");
       v36ShowNutritionSection("menus");
-    }catch(e){alert("Erreur pendant la génération nutrition.");}
+    }catch(e){
+      console.error("V40.1 génération nutrition",e);
+      alert("Erreur pendant la génération nutrition.");
+    }
   }
   function v36RefreshCourses(){
     try{
@@ -7911,7 +7917,11 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       v32RenderShopping(v32BuildShoppingFromMenus(data));
       bf35RenderNutritionPlan(plan);
       showView?.("menus");
-    }catch(e){console.error(e);alert("Erreur pendant l’application du plan nutrition.");}
+    }catch(e){
+      console.error("V40.1 application plan nutrition",e);
+      alert("Erreur pendant l’application du plan nutrition.");
+      throw e;
+    }
   }
   function bf35ExplainNutritionGoal(){
     const plan=bf35GetNutritionPlan();
@@ -8572,7 +8582,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         v387HandleIntroAction(btn.id);
       }catch(err){
         console.error("V38.7 intro action",btn.id,err);
-        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=40 ou utilise le mode secours.","err");
+        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=40-1 ou utilise le mode secours.","err");
       }
     },true);
   }
@@ -8642,7 +8652,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(!v386IsFreshMode()) return;
     if(sessionStorage.getItem("bf_v40_fresh_done")==="1") return;
     v386ClearLocalAppData();
-    const cleanUrl=location.origin+location.pathname+"?v=40&demo=ready";
+    const cleanUrl=location.origin+location.pathname+"?v=40-1-1&demo=ready";
     location.replace(cleanUrl);
   }
   function v386ShowToast(msg){
@@ -8657,7 +8667,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     }catch(e){}
   }
   function v386DemoLink(){
-    return location.origin+location.pathname+"?v=40&fresh=1";
+    return location.origin+location.pathname+"?v=40-1-1&fresh=1";
   }
   function v386BindDemo(){
     const txt=document.getElementById("v386DemoLinkText");
@@ -9264,7 +9274,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V40 — NUTRITION PRO COMPLÈTE
+     V40.1 — NUTRITION PRO COMPLÈTE
      ========================================================== */
   const BF40_NUTRITION_SETTINGS_KEY="bf_v40_nutrition_settings";
 
@@ -9695,6 +9705,35 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     v40RenderPro();
   }
+
+  function v401NutritionGenerationDiagnostic(){
+    const results=[];
+    try{
+      const html=document.documentElement.innerHTML;
+      results.push(bf322Result(
+        "V40.1 insertion synchronisation sûre",
+        html.includes(':scope > button, :scope > .primary-btn') && html.includes("card.prepend(note)"),
+        "La note de synchronisation n’utilise plus un descendant profond comme insertBefore."
+      ));
+      results.push(bf322Result(
+        "V40.1 anti double-clic fallback",
+        html.includes('dataset?.bfDirectBound==="1"') && typeof v401MarkDirectBindings==="function",
+        "Le fallback global ignore les boutons déjà reliés normalement."
+      ));
+      const menuBtn=document.getElementById("v36GenerateMenusBtn");
+      const applyBtn=document.getElementById("bf35ApplyNutritionPlanBtn");
+      results.push(bf322Result(
+        "V40.1 boutons nutrition marqués",
+        menuBtn?.dataset?.bfDirectBound==="1" && applyBtn?.dataset?.bfDirectBound==="1",
+        "Menus + plan nutrition sont protégés contre le double déclenchement."
+      ));
+    }catch(e){
+      results.push(bf322Result("Diagnostic V40.1 génération nutrition",false,String(e)));
+    }
+    return results;
+  }
+
+
   function v40NutritionProDiagnostic(){
     const results=[];
     try{
@@ -9722,7 +9761,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
       results.push(bf322Result("V40 bindings actifs",window.__v40_bound===true,"Contrôleur V40 initialisé."));
     }catch(e){
-      results.push(bf322Result("Diagnostic V40 Nutrition Pro",false,String(e)));
+      results.push(bf322Result("Diagnostic V40.1 Nutrition Pro",false,String(e)));
     }
     return results;
   }
@@ -10165,7 +10204,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=40") || document.title.includes("V40"), `Titre : ${document.title}`));
+    results.push(bf322Result("Version chargée", location.href.includes("v=40-1") || document.title.includes("V40.1"), `Titre : ${document.title}`));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
@@ -10178,6 +10217,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(...bf39NutritionIntegrityDiagnostic());
       results.push(...v39DailyNutritionDiagnostic());
       results.push(...v40NutritionProDiagnostic());
+      results.push(...v401NutritionGenerationDiagnostic());
       results.push(...v36Diagnostic());
       results.push(...v37CleanUIDiagnostic());
       results.push(...v38VisualDiagnostic());
@@ -10225,12 +10265,12 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V40\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V40.1.1\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=40&fresh=1
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=40-1-1&fresh=1
 2. Teste d’abord dans Safari
 3. Supprime l’ancienne icône si l’écran d’accueil garde une vieille version
 4. Ré-ajoute l’app seulement après avoir vu V40`;
@@ -10259,6 +10299,16 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       alert("Profil appliqué : plan, séances, nutrition, menus et courses ont été régénérés avec les nouvelles infos.");
     });
   }
+
+  function v401MarkDirectBindings(){
+    const ids=["bf322RunFullTestBtn", "bf322RunGenerationTestBtn", "bf33AddManualSessionBtn", "bf33ApplyStrategyBtn", "bf33UseManualSessionsBtn", "bf33UseRecommendedBtn", "bf341RefreshNutritionProfileBtn", "bf34RegenerateMenusBtn", "bf34SavePrefsBtn", "bf34ShowReplacementsBtn", "bf351ShowAllStrategiesBtn", "bf35ApplyNutritionPlanBtn", "bf35ExplainNutritionGoalBtn", "bf35RefreshNutritionPlanBtn", "generateAdaptationBtn", "generateGroceriesBtn", "generatePersonalSessionsBtn", "generateSmartMonthBtn", "saveProgressBtn", "v31NextExerciseBtn", "v31PrevExerciseBtn", "v31SaveSetBtn", "v31StartLiveBtn", "v32GenerateMenusBtn", "v32GenerateShoppingFromMenusBtn", "v36GenerateMenusBtn", "v36GeneratePlanBtn", "v36GenerateSessionsBtn", "v36OpenDiagnosticBtn", "v36RefreshCoursesBtn", "v36RefreshProgressBtn", "v36StartLiveShortcutBtn", "v371OpenCoursesBtn", "v371OpenMenusBtn", "v371OpenTrainingBtn", "v371QuickCoachBtn", "v371QuickNutritionBtn", "v371QuickPlanBtn", "v371QuickProgressBtn", "v371QuickSessionsBtn", "v371RefreshDashboardBtn", "v371StartTodayBtn", "v37AskCoachNutritionBtn", "v382HeroNutritionBtn", "v382HeroStartBtn"];
+    ids.forEach(id=>{
+      const el=document.getElementById(id);
+      if(el) el.dataset.bfDirectBound="1";
+    });
+  }
+
+
   function bf324BindEverything(){
     try{
       v27Bind?.();
@@ -10288,6 +10338,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       v31PopulateSessions?.();
       v31RenderLive?.();
       v30RefreshLaunchpad?.();
+      v401MarkDirectBindings?.();
     }catch(e){
       console.warn("V34 deep bind", e);
     }
@@ -10408,7 +10459,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=40").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=40-1").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   
