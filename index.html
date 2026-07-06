@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V40.3</title>
+  <title>Basic-Fit Coach V41</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V40 : nettoyage du bas de l'application */
+/* V41 : nettoyage du bas de l'application */
 .clean-timer{
   grid-template-columns:1fr repeat(4,auto);
 }
@@ -249,7 +249,7 @@ tr:last-child td{border-bottom:0}
 }
 
 
-/* V40 : suppression du texte parasite tout en bas */
+/* V41 : suppression du texte parasite tout en bas */
 .page-end-spacer{
   height: calc(92px + var(--safe-bottom));
   pointer-events:none;
@@ -267,7 +267,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V40 : mode séance live + actions rapides */
+/* V41 : mode séance live + actions rapides */
 .exercise-actions{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -339,7 +339,7 @@ body > div:not(.app-shell):last-child{
 }
 
 
-/* V40 : profil + programme mensuel */
+/* V41 : profil + programme mensuel */
 .month-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
 .month-pill{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:13px;box-shadow:var(--shadow)}
 .month-pill strong{display:block;font-size:22px;color:#fff;letter-spacing:-.7px}.month-pill span{color:var(--muted);font-size:12px}
@@ -350,7 +350,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:760px){.month-summary{grid-template-columns:1fr}.meal-grid{grid-template-columns:1fr}.shopping-list{columns:1}}
 
 
-/* V40 : onboarding + personnalisation par objectif */
+/* V41 : onboarding + personnalisation par objectif */
 .onboarding{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(7,10,18,.82);backdrop-filter:blur(22px)}
 .onboarding-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(53,208,127,.08)),var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55);padding:20px}
 .onboarding-card>p:not(.card-kicker){color:var(--muted);margin:8px 0 16px}
@@ -363,7 +363,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.objective-strip{align-items:flex-start;flex-direction:column}.objective-strip button{width:100%}}
 
 
-/* V40 : base coach pro élargie */
+/* V41 : base coach pro élargie */
 .pro-base-card{
   display:flex;
   justify-content:space-between;
@@ -390,7 +390,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.pro-base-card{flex-direction:column;align-items:flex-start}.pro-base-card button{width:100%}}
 
 
-/* V40 : présentation libre intelligente */
+/* V41 : présentation libre intelligente */
 .free-onboarding-card{width:min(820px,100%)}
 .presentation-textarea{min-height:260px;font-size:15px;line-height:1.5;resize:vertical}
 .free-actions{grid-template-columns:1fr 1fr 1fr}
@@ -402,7 +402,7 @@ body > div:not(.app-shell):last-child{
 @media(max-width:620px){.free-actions{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}
 
 
-/* V40 : introduction obligatoire + déblocage */
+/* V41 : introduction obligatoire + déblocage */
 body.app-locked .app-shell{filter:blur(10px);pointer-events:none;user-select:none}
 body.app-locked{overflow:hidden}
 .intro-gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 20% 10%,rgba(255,209,102,.18),transparent 30%),radial-gradient(circle at 80% 20%,rgba(125,179,255,.18),transparent 32%),rgba(7,10,18,.92);backdrop-filter:blur(24px);overflow:auto}
@@ -435,7 +435,7 @@ body.app-locked{overflow:hidden}
 @media(max-width:700px){.intro-steps-ui{grid-template-columns:1fr}.intro-actions{grid-template-columns:1fr}.intro-card{border-radius:26px;padding:16px}}
 
 
-/* V40 : réponses coach personnalisées */
+/* V41 : réponses coach personnalisées */
 .personal-answer{
   border:1px solid rgba(255,209,102,.18);
   background:linear-gradient(135deg,rgba(255,209,102,.10),rgba(53,208,127,.07));
@@ -447,7 +447,7 @@ body.app-locked{overflow:hidden}
 .personal-answer .small-note{display:block;color:var(--muted);font-size:12.5px;margin-top:6px}
 
 
-/* V40 : sécurité anti-bug */
+/* V41 : sécurité anti-bug */
 .safety-card{
   display:flex;
   justify-content:space-between;
@@ -523,7 +523,7 @@ body.app-locked{overflow:hidden}
 }
 
 
-/* V40.3 : stratégies objectifs */
+/* V41 : stratégies objectifs */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:.22;
@@ -550,7 +550,7 @@ body.app-locked #onboarding{
 }
 
 
-/* V40 : correctif écran flou / impossible d'écrire */
+/* V41 : correctif écran flou / impossible d'écrire */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -590,13 +590,13 @@ body.app-locked #onboarding,
 }
 
 
-/* V40 : validation forcée */
+/* V41 : validation forcée */
 .validation-status{margin-top:10px;border:1px solid rgba(125,179,255,.22);background:rgba(125,179,255,.08);color:#E6F0FF;padding:10px;border-radius:16px;font-size:13px}
 .validation-status.ok{border-color:rgba(53,208,127,.28);background:rgba(53,208,127,.10);color:#DFFFEA}
 .validation-status.err{border-color:rgba(255,99,99,.35);background:rgba(255,99,99,.10);color:#FFECEC}
 
 
-/* V40.3 : stratégies objectifs définitivement */
+/* V41 : stratégies objectifs définitivement */
 body.app-locked .app-shell{
   filter:none!important;
   opacity:1!important;
@@ -637,7 +637,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40.3 : stratégies objectifs */
+/* V41 : stratégies objectifs */
 .hint{
   position:fixed;
   left:12px;
@@ -685,7 +685,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40 : double présentation + courses */
+/* V41 : double présentation + courses */
 .v26-intro-card{width:min(980px,100%)}
 .v26-steps{grid-template-columns:repeat(6,1fr)}
 .v26-step-panel{
@@ -743,7 +743,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40.3 : stratégies objectifs + exercices manuels */
+/* V41 : stratégies objectifs + exercices manuels */
 .v27-controls{
   display:flex;
   gap:10px;
@@ -813,7 +813,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40 : plan personnalisé + interface simplifiée */
+/* V41 : plan personnalisé + interface simplifiée */
 .v28-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
 .smart-week{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:24px;padding:14px;margin:14px 0}
 .smart-week h3{margin-bottom:4px}
@@ -825,18 +825,18 @@ body.app-locked{overflow:auto!important}
 .smart-ex-row strong{color:#fff}
 @media(max-width:760px){.v28-actions button{width:100%}}
 
-/* V40 : onglets simplifiés */
+/* V41 : onglets simplifiés */
 #customView,#performancesView,#questionsView{
   display:none!important;
 }
 
 
-/* V40 : onglets simplifiés */
+/* V41 : onglets simplifiés */
 #customView,#performancesView,#questionsView,#monthView{
   display:none!important;
 }
 
-/* V40 : menus + courses liées */
+/* V41 : menus + courses liées */
 .v32-menu-config{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
 .v32-menu-config label,#menusView label{display:flex;flex-direction:column;gap:7px;color:#C7D3E4;font-size:13px;font-weight:900}
 .v32-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
@@ -892,7 +892,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40 : nutrition personnalisée avancée */
+/* V41 : nutrition personnalisée avancée */
 .bf34-nutrition-card{
   border-color:rgba(53,208,127,.18);
   background:
@@ -946,7 +946,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40 : profil relié à nutrition */
+/* V41 : profil relié à nutrition */
 .bf341-profile-link{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.06);
@@ -972,7 +972,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:520px){.bf341-metric-grid{grid-template-columns:1fr}}
 
 
-/* V40 : objectif calories + macros */
+/* V41 : objectif calories + macros */
 .bf35-plan-card{
   border:1px solid rgba(255,209,102,.20);
   background:
@@ -1011,7 +1011,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:520px){.bf35-macro-grid{grid-template-columns:1fr}.bf35-actions button{width:100%}}
 
 
-/* V40 : stratégies nutrition par objectif */
+/* V41 : stratégies nutrition par objectif */
 .bf351-strategy-panel{
   border:1px solid rgba(255,255,255,.10);
   background:
@@ -1040,7 +1040,7 @@ body.app-locked{overflow:auto!important}
 @media(max-width:820px){.bf351-goal-grid{grid-template-columns:1fr}}
 
 
-/* V40.3 : sports contraintes tout-en-un */
+/* V41 : sports contraintes tout-en-un */
 #planView,#sessionsView,#liveView,#progressView,#menusView,#coursesView,#diagnosticView{
   display:none !important;
 }
@@ -1101,7 +1101,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40 : autres sports / contraintes */
+/* V41 : autres sports / contraintes */
 .bf361-load-box{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.06);
@@ -1125,7 +1125,7 @@ body.app-locked{overflow:auto!important}
 .bf361-warning{color:#FFE7E7;background:rgba(255,107,107,.10);border-color:rgba(255,107,107,.24)}
 
 
-/* V40 : formulaire conseil nutrition synchronisé */
+/* V41 : formulaire conseil nutrition synchronisé */
 .bf363-sync-note{
   border:1px solid rgba(53,208,127,.18);
   background:rgba(53,208,127,.07);
@@ -1138,7 +1138,7 @@ body.app-locked{overflow:auto!important}
 .bf363-sync-note strong{color:#fff}
 
 
-/* V40 : nettoyage interface et suppression des doublons */
+/* V41 : nettoyage interface et suppression des doublons */
 .v37-clean-note{
   border:1px solid rgba(255,209,102,.18);
   background:rgba(255,209,102,.07);
@@ -1161,7 +1161,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40 : accueil tableau de bord quotidien */
+/* V41 : accueil tableau de bord quotidien */
 .v371-daily-dashboard{
   border-color:rgba(255,209,102,.22);
   background:
@@ -1234,7 +1234,7 @@ body.app-locked{overflow:auto!important}
 }
 
 
-/* V40 : refonte visuelle premium */
+/* V41 : refonte visuelle premium */
 :root{
   --bg:#060913;
   --bg2:#0B1020;
@@ -1505,7 +1505,7 @@ input:focus, select:focus, textarea:focus{
 }
 
 
-/* V40 : vraie refonte mobile premium */
+/* V41 : vraie refonte mobile premium */
 :root{
   --radius:26px;
   --shadow:0 24px 70px rgba(0,0,0,.52);
@@ -1778,7 +1778,7 @@ main{
 }
 
 
-/* V40 : runtime intro fix */
+/* V41 : runtime intro fix */
 .app-shell{
   max-width:430px !important;
 }
@@ -1982,7 +1982,7 @@ main{
 }
 
 
-/* V40 : correction critique navigation premium */
+/* V41 : correction critique navigation premium */
 .app-shell{
   max-width:430px !important;
   overflow-x:hidden !important;
@@ -2101,7 +2101,7 @@ body[data-active-view="dashboard"] .timer-dock{
 }
 
 
-/* V40 : corrections issues détectées audit */
+/* V41 : corrections issues détectées audit */
 body[data-active-view="dashboard"] .timer-dock,
 body[data-active-view="dashboard"] .clean-timer,
 body[data-active-view="dashboard"] aside.timer-dock,
@@ -2166,9 +2166,9 @@ body:not([data-active-view]) .timer-dock{
   padding-bottom:calc(28px + var(--nav-h,76px)) !important;
 }
 
-/* V40 : polish téléphone conservé */
+/* V41 : polish téléphone conservé */
 
-/* V40 : mode essai propre */
+/* V41 : mode essai propre */
 .v386-demo-card{
   border-color:rgba(76,224,145,.22) !important;
   background:
@@ -2204,7 +2204,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V40 — FIX UI MOBILE + TIMER CONTEXTUEL
+   V41 — FIX UI MOBILE + TIMER CONTEXTUEL
    ============================================================ */
 :root{
   --safe-top:env(safe-area-inset-top, 0px);
@@ -2245,7 +2245,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
 
 /* ============================================================
-   V40 — SUIVI NUTRITION QUOTIDIEN
+   V41 — SUIVI NUTRITION QUOTIDIEN
    ============================================================ */
 .v39-daily-card,
 .v39-weight-card{
@@ -2620,7 +2620,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
 
 /* ============================================================
-   V40.3 — NUTRITION PRO COMPLÈTE
+   V41 — NUTRITION PRO COMPLÈTE
    ============================================================ */
 .v40-hero-card,
 .v40-energy-card,
@@ -2849,7 +2849,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
 
 /* ============================================================
-   V40.3 — SYNCHRONISATION NUTRITION
+   V41 — SYNCHRONISATION NUTRITION
    ============================================================ */
 .v403-profile-sync-card{
   margin-top:14px;
@@ -2866,6 +2866,232 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 }
 .v403-profile-sync-card div{
   color:var(--muted);
+}
+
+
+/* ============================================================
+   V41 — NUTRITION AUTO SIMPLE
+   ============================================================ */
+.v41-engine-section,
+#v37NutritionCoachNote{
+  display:none !important;
+}
+.v41-simple-tabs{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+.v41-simple-tabs button{
+  min-height:48px;
+}
+.v41-auto-note{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  border:1px solid rgba(31,215,132,.24);
+  background:rgba(31,215,132,.07);
+  border-radius:16px;
+  padding:12px 14px;
+  margin:12px 0 16px;
+  color:var(--muted);
+}
+.v41-auto-note strong{
+  color:var(--success);
+  flex:0 0 auto;
+}
+.v41-auto-status{
+  border:1px solid rgba(255,198,53,.24);
+  background:rgba(255,198,53,.08);
+  border-radius:16px;
+  padding:13px 14px;
+  line-height:1.45;
+}
+.v41-day-block{
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  border-radius:18px;
+  overflow:hidden;
+}
+.v41-day-block + .v41-day-block{
+  margin-top:12px;
+}
+.v41-day-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:13px 14px;
+  border-bottom:1px solid var(--border);
+}
+.v41-day-head strong{
+  font-size:1.02rem;
+}
+.v41-day-head span{
+  color:var(--muted);
+  font-size:.82rem;
+}
+.v41-meal-card{
+  padding:14px;
+}
+.v41-meal-card + .v41-meal-card{
+  border-top:1px solid var(--border);
+}
+.v41-meal-top{
+  display:grid;
+  grid-template-columns:72px minmax(0,1fr) auto;
+  align-items:start;
+  gap:10px;
+  margin-bottom:10px;
+}
+.v41-meal-time{
+  color:var(--accent);
+  font-weight:900;
+}
+.v41-meal-top h4{
+  margin:0;
+  font-size:1rem;
+}
+.v41-meal-top small{
+  color:var(--muted);
+  white-space:nowrap;
+}
+.v41-ingredients{
+  display:grid;
+  gap:7px;
+}
+.v41-ingredient{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:9px 11px;
+}
+.v41-ingredient strong{
+  overflow-wrap:anywhere;
+}
+.v41-ingredient span{
+  color:var(--accent);
+  font-weight:900;
+  white-space:nowrap;
+}
+.v41-week-meals{
+  display:grid;
+  gap:12px;
+}
+.v41-plan-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:14px;
+}
+.v41-plan-metric{
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  border-radius:16px;
+  padding:13px;
+}
+.v41-plan-metric span{
+  display:block;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.v41-plan-metric strong{
+  display:block;
+  margin-top:4px;
+  font-size:1.12rem;
+}
+.v41-plan-explain{
+  margin-top:14px;
+  border:1px solid rgba(255,198,53,.22);
+  background:rgba(255,198,53,.07);
+  border-radius:16px;
+  padding:13px 14px;
+  line-height:1.45;
+}
+.v41-day-targets{
+  display:grid;
+  gap:9px;
+}
+.v41-target-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto auto;
+  gap:12px;
+  align-items:center;
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  border-radius:15px;
+  padding:12px 13px;
+}
+.v41-target-row strong{
+  display:block;
+}
+.v41-target-row small{
+  color:var(--muted);
+}
+.v41-target-row span{
+  font-weight:900;
+  white-space:nowrap;
+}
+.v41-course-group{
+  margin-top:16px;
+}
+.v41-course-group h4{
+  margin:0 0 9px;
+}
+.v41-course-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.v41-course-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  border-radius:14px;
+  padding:10px 11px;
+}
+.v41-course-item span{
+  color:var(--accent);
+  font-weight:900;
+  white-space:nowrap;
+}
+.v41-courses-total{
+  border:1px solid rgba(31,215,132,.26);
+  background:rgba(31,215,132,.07);
+  border-radius:16px;
+  padding:13px 14px;
+  line-height:1.45;
+}
+@media(max-width:600px){
+  .v41-simple-tabs{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  }
+  .v41-simple-tabs button{
+    font-size:11px !important;
+    padding:8px 5px !important;
+  }
+  .v41-meal-top{
+    grid-template-columns:62px minmax(0,1fr);
+  }
+  .v41-meal-top small{
+    grid-column:1 / -1;
+  }
+  .v41-plan-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .v41-course-grid{
+    grid-template-columns:1fr;
+  }
+  .v41-target-row{
+    grid-template-columns:minmax(0,1fr) auto;
+  }
+  .v41-target-row span:last-child{
+    grid-column:1 / -1;
+    color:var(--muted);
+    font-weight:700;
+  }
 }
 
 </style>
@@ -2893,7 +3119,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V40 — COACH COMPLET</p>
+            <p class="card-kicker">V41 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -2999,7 +3225,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
           <div class="analysis-preview" id="nutritionAnalysisPreview"></div>
           <div class="coach-diagnosis" id="nutritionDiagnosis"></div>
           <div class="coach-diagnosis" id="groceryPreview"></div>
-          <button type="button" class="primary-btn full" id="unlockV40Btn">Débloquer toute l’app</button>
+          <button type="button" class="primary-btn full" id="unlockV41Btn">Débloquer toute l’app</button>
         </div>
 
         <div id="validationStatus" class="validation-status hidden"></div>
@@ -3015,7 +3241,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
         <section class="safety-card">
           <div>
-            <p class="card-kicker">SÉCURITÉ V40</p>
+            <p class="card-kicker">SÉCURITÉ V41</p>
             <h3>Mode secours stable</h3>
             <p>Si l’app se bloque, tu peux relancer l’introduction ou ouvrir le mode secours.</p>
           </div>
@@ -3027,7 +3253,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V40 SUIVI NUTRITION QUOTIDIEN</p>
+          <p class="hero-label">V41 SUIVI NUTRITION QUOTIDIEN</p>
           <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
@@ -3080,7 +3306,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
         <article class="card v371-daily-dashboard" id="v371DailyDashboard">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V40 — ACCUEIL PREMIUM</p>
+              <p class="card-kicker">V41 — ACCUEIL PREMIUM</p>
               <h2>Ton tableau de bord</h2>
               <p>L’app te résume quoi faire aujourd’hui : entraînement, nutrition, contraintes et actions rapides.</p>
             </div>
@@ -3127,7 +3353,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
         <article class="card v30-launchpad" id="v30Launchpad">
           <div class="section-head">
             <div>
-              <p class="card-kicker">PARCOURS V40</p>
+              <p class="card-kicker">PARCOURS V41</p>
               <h3>Utilise l’app dans le bon ordre</h3>
             </div>
             <button class="ghost-btn" id="v30SelfTestBtn">Tester l’app</button>
@@ -3247,7 +3473,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
           </div>
           <div class="result-box">
             <strong>Lien essai propre :</strong><br>
-            <code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=40-3&amp;fresh=1</code>
+            <code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=41&amp;fresh=1</code>
             <p class="small-note">Le paramètre <strong>fresh=1</strong> vide les données locales de l’app sur l’appareil qui ouvre le lien.</p>
           </div>
         </article>
@@ -3264,10 +3490,10 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
             <button type="button" class="ghost-btn" id="v36OpenDiagnosticBtn">Ouvrir le diagnostic</button>
           </div>
           
-        <article class="card accent-card" id="v403VersionBadge">
+        <article class="card accent-card" id="v41VersionBadge">
           <div class="card-kicker">VERSION ACTIVE</div>
-          <h3>Basic-Fit Coach V40.3</h3>
-          <p>Nutrition Pro · menus Auto reliés au Coach · horaires personnalisés · profil synchronisé partout.</p>
+          <h3>Basic-Fit Coach V41</h3>
+          <p>Nutrition Auto · l’app choisit les repas, les portions et prépare les courses.</p>
         </article>
 
         <div id="v36DiagnosticMount"></div>
@@ -3291,7 +3517,23 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
                 <option value="6">6 séances/semaine</option>
               </select></label>
             <label>Durée séance <select id="profileDuration"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>60 min</option><option value="75">75 min</option></select></label>
-            <label>Repas/jour <select id="profileMeals"><option value="2" selected>2 repas</option><option value="3">3 repas</option><option value="4">3 repas + collation</option></select></label>
+            <label class="v41-secondary-profile">Habitude actuelle de repas <select id="profileMeals"><option value="2" selected>2 repas</option><option value="3">3 repas</option><option value="4">3 repas + collation</option></select></label>
+            <label>Heure de lever habituelle <input id="profileWakeTime" type="time" value="07:30"></label>
+            <label>Heure de coucher habituelle <input id="profileSleepTime" type="time" value="23:30"></label>
+            <label>Heure d’entraînement habituelle <input id="profileTrainingTime" type="time" value="19:30"></label>
+            <label>Style de repas <select id="profileMealStyle">
+              <option value="simple" selected>Simple et rapide</option>
+              <option value="no_cook">Très peu de cuisine</option>
+              <option value="budget">Petit budget</option>
+              <option value="batch">Batch cooking</option>
+              <option value="varied">Varié</option>
+            </select></label>
+            <label>Temps de cuisine maximum <select id="profileCookingTime">
+              <option value="10">10 min</option>
+              <option value="20" selected>20 min</option>
+              <option value="30">30 min</option>
+              <option value="45">45 min ou plus</option>
+            </select></label>
             <label>Autres sports / cardio <input id="profileSportball" placeholder="ex : cardio mercredi, sport collectif samedi"></label>
             <label>Contrainte importante <input id="profileCompétition" placeholder="ex : compétition dimanche, travail tard jeudi"></label>
             <label>Douleurs à surveiller <select id="profilePain"><option value="none">Aucune</option><option value="knee">Genou</option><option value="adductor">Adducteurs</option><option value="ankle">Cheville</option><option value="shoulder">Épaule</option><option value="back">Dos</option></select></label>
@@ -3300,6 +3542,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
           <label>Aliments que tu aimes <textarea id="profileLikes" placeholder="ex : œufs, jambon, skyr, pommes de terre, brocoli, banane..."></textarea></label>
           <label>Présentation libre <textarea id="profilePresentation" placeholder="Ta présentation complète..."></textarea></label>
           <label>Aliments à éviter <textarea id="profileDislikes" placeholder="ex : poisson, petit-déjeuner, ketchup..."></textarea></label>
+          <label>Restrictions / allergies alimentaires <textarea id="profileRestrictions" placeholder="ex : sans lactose, sans gluten, pas de porc..."></textarea></label>
           <button class="primary-btn full" id="saveProfileBtn">Sauvegarder mon profil</button>
 
           <button type="button" class="ghost-btn full" id="bf321ApplyProfileBtn">Appliquer ce profil et régénérer plan/séances/menus avec cette durée</button>
@@ -3315,7 +3558,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
         <article class="card">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V40 — ENTRAÎNEMENT TOUT-EN-UN</p>
+              <p class="card-kicker">V41 — ENTRAÎNEMENT TOUT-EN-UN</p>
               <h2>Mon espace entraînement</h2>
               <p>Plan, séances, live et suivi sont regroupés ici. Les anciens onglets existent toujours techniquement, mais tout est piloté depuis cet espace.</p>
             </div>
@@ -3365,7 +3608,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V40 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V41 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -3381,7 +3624,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V40 — SÉANCES INTELLIGENTES</p>
+          <p class="card-kicker">V41 — SÉANCES INTELLIGENTES</p>
           <h2>Mes séances : auto, semi-auto ou manuel</h2>
           <p>L’app peut recommander un split comme un coach, mais tu peux aussi choisir ton split ou créer tes séances toi-même. Jusqu’à 6 séances/semaine sont possibles.</p>
 
@@ -3389,7 +3632,7 @@ body[data-active-view="training"][data-training-section="live"] .clean-timer{
           <div class="bf33-strategy-card">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V40 — CHOIX DU SPLIT</p>
+                <p class="card-kicker">V41 — CHOIX DU SPLIT</p>
                 <h3>Comment tu veux construire tes séances ?</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf33RefreshRecommendationBtn">Recalculer la recommandation</button>
@@ -3546,7 +3789,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="liveView">
         <article class="card">
-          <p class="card-kicker">V40 — LIVE PERSONNALISÉ</p>
+          <p class="card-kicker">V41 — LIVE PERSONNALISÉ</p>
           <h2>Séance en direct</h2>
           <p>Choisis une séance générée, suis les exercices un par un, note tes perfs, lance le repos et enregistre automatiquement dans le suivi.</p>
 
@@ -3747,7 +3990,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="progressView">
         <article class="card">
-          <p class="card-kicker">V40 — SUIVI PROGRESSION</p>
+          <p class="card-kicker">V41 — SUIVI PROGRESSION</p>
           <h2>Noter ma séance</h2>
           <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
 
@@ -3848,33 +4091,103 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
 
           <div class="v36-nutrition-shell" id="v36NutritionShell">
-            <p class="card-kicker">V40 — NUTRITION TOUT-EN-UN</p>
-            <h2>Mon espace nutrition</h2>
-            <p>Plan nutrition, préférences, menus et courses sont regroupés ici pour éviter les allers-retours.</p>
+            <p class="card-kicker">V41 — NUTRITION AUTO</p>
+            <h2>Tu suis, l’app s’occupe du reste</h2>
+            <p>Ton profil pilote automatiquement les repas, les portions, le plan nutrition et les courses.</p>
 
-            <div class="v36-tabs" id="v36NutritionTabs">
-              <button class="active" data-nutrition-section="pro">Coach Pro</button>
-              <button data-nutrition-section="daily">Aujourd’hui</button>
-              <button data-nutrition-section="plan">Plan nutrition</button>
-              <button data-nutrition-section="preferences">Préférences</button>
-              <button data-nutrition-section="menus">Menus</button>
-              <button data-nutrition-section="courses">Courses</button>
+            <div class="v36-tabs v41-simple-tabs" id="v36NutritionTabs">
+              <button class="active" data-nutrition-section="meals">🍽️ Mes repas</button>
+              <button data-nutrition-section="plan">📊 Mon plan</button>
+              <button data-nutrition-section="courses">🛒 Mes courses</button>
             </div>
 
             
-          <div class="v37-clean-note" id="v37NutritionCoachNote">
-            <span><strong>Conseils rapides :</strong> les questions nutrition sont maintenant dans l’onglet Coach. Nutrition sert à calculer le plan, générer les menus et préparer les courses.</span>
-            <button type="button" class="ghost-btn" id="v37AskCoachNutritionBtn">Poser une question au Coach</button>
+          <div class="v41-auto-note" id="v41AutoNutritionNote">
+            <strong>Mode automatique :</strong>
+            <span>les repas, portions, horaires repères et courses sont recalculés à partir de ton Profil.</span>
           </div>
 
 
 
 
-            <div class="v36-section active" id="v40NutritionProSection">
+
+            <div class="v36-section active" id="v41MealsSection">
+              <article class="card v41-meals-hero">
+                <div class="section-head">
+                  <div>
+                    <p class="card-kicker">MES REPAS</p>
+                    <h3>Voici exactement quoi manger</h3>
+                    <p id="v41MealsIntro">L’app prépare automatiquement ta semaine selon le Coach et ton Profil.</p>
+                  </div>
+                </div>
+                <div id="v41AutoStatus" class="v41-auto-status"></div>
+              </article>
+
+              <article class="card" id="v41TodayCard">
+                <div class="section-head">
+                  <div>
+                    <p class="card-kicker">AUJOURD’HUI</p>
+                    <h3 id="v41TodayTitle">Mes repas du jour</h3>
+                  </div>
+                </div>
+                <div id="v41TodayMeals"></div>
+              </article>
+
+              <article class="card">
+                <div class="section-head">
+                  <div>
+                    <p class="card-kicker">MA SEMAINE</p>
+                    <h3>Les 7 jours préparés pour toi</h3>
+                    <p>Les quantités sont affichées directement en grammes ou en unités pratiques.</p>
+                  </div>
+                </div>
+                <div id="v41WeekMeals" class="v41-week-meals"></div>
+              </article>
+            </div>
+
+            <div class="v36-section" id="v41PlanSection">
+              <article class="card">
+                <div class="section-head">
+                  <div>
+                    <p class="card-kicker">MON PLAN</p>
+                    <h3>Pourquoi tu manges comme ça</h3>
+                    <p>Le plan se met à jour automatiquement quand ton Profil change.</p>
+                  </div>
+                </div>
+                <div id="v41PlanSummary"></div>
+              </article>
+
+              <article class="card">
+                <div class="section-head">
+                  <div>
+                    <p class="card-kicker">SELON LA JOURNÉE</p>
+                    <h3>Repos, musculation, football, match</h3>
+                    <p>Les besoins estimés évoluent selon le type de journée.</p>
+                  </div>
+                </div>
+                <div id="v41DayTargets" class="v41-day-targets"></div>
+              </article>
+            </div>
+
+            <div class="v36-section" id="v41CoursesSection">
+              <article class="card">
+                <div class="section-head">
+                  <div>
+                    <p class="card-kicker">MES COURSES</p>
+                    <h3>Tout ce qu’il faut pour suivre les repas</h3>
+                    <p>La liste est regroupée automatiquement à partir des repas de la semaine.</p>
+                  </div>
+                </div>
+                <div id="v41CoursesSummary"></div>
+                <div id="v41CoursesList"></div>
+              </article>
+            </div>
+
+            <div class="v36-section v41-engine-section" id="v40NutritionProSection">
               <article class="card v40-hero-card" id="v40NutritionProCard">
                 <div class="section-head">
                   <div>
-                    <p class="card-kicker">V40.3 — NUTRITION PRO</p>
+                    <p class="card-kicker">V41 — NUTRITION PRO</p>
                     <h3>Ton coach nutrition concret</h3>
                     <p>Objectif du jour, dépense au repos, activité, organisation des repas, portions crues/cuites et conseil du coach.</p>
                   </div>
@@ -4045,11 +4358,11 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               </article>
             </div>
 
-            <div class="v36-section" id="v36NutritionDailySection">
+            <div class="v36-section v41-engine-section" id="v36NutritionDailySection">
               <article class="card v39-daily-card" id="v39DailyNutritionCard">
                 <div class="section-head">
                   <div>
-                    <p class="card-kicker">V40 — SUIVI DU JOUR</p>
+                    <p class="card-kicker">V41 — SUIVI DU JOUR</p>
                     <h3>Calories et protéines aujourd’hui</h3>
                     <p id="v39TodayDate">Chargement de la journée...</p>
                   </div>
@@ -4119,7 +4432,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
                   <div>
                     <p class="card-kicker">TENDANCE DU POIDS</p>
                     <h3>Voir la tendance, pas une seule pesée</h3>
-                    <p>Enregistre ton poids régulièrement. La V40 compare les valeurs des 30 derniers jours.</p>
+                    <p>Enregistre ton poids régulièrement. La V41 compare les valeurs des 30 derniers jours.</p>
                   </div>
                 </div>
 
@@ -4148,20 +4461,20 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               </article>
             </div>
 
-            <div class="v36-section" id="v36NutritionPlanSection">
+            <div class="v36-section v41-engine-section" id="v36NutritionPlanSection">
               <div id="v36NutritionPlanMount"></div>
             </div>
-            <div class="v36-section" id="v36NutritionPreferencesSection">
+            <div class="v36-section v41-engine-section" id="v36NutritionPreferencesSection">
               <div id="v36NutritionPrefsMount"></div>
             </div>
-            <div class="v36-section" id="v36NutritionMenusSection">
+            <div class="v36-section v41-engine-section" id="v36NutritionMenusSection">
               <div class="v36-proxy-head">
                 <h3>Menus de la semaine</h3>
                 <button type="button" class="primary-btn" id="v36GenerateMenusBtn">Générer menus + courses</button>
               </div>
               <div id="v36MenusMount"></div>
             </div>
-            <div class="v36-section" id="v36NutritionCoursesSection">
+            <div class="v36-section v41-engine-section" id="v36NutritionCoursesSection">
               <div class="v36-proxy-head">
                 <h3>Liste de courses</h3>
                 <button type="button" class="primary-btn" id="v36RefreshCoursesBtn">Actualiser les courses</button>
@@ -4171,7 +4484,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           </div>
 
         <article class="card bf34-nutrition-card">
-          <p class="card-kicker">V40 — NUTRITION PERSONNALISÉE</p>
+          <p class="card-kicker">V41 — NUTRITION PERSONNALISÉE</p>
           <h2>Mes préférences alimentaires</h2>
           <p>Ces réglages servent aux menus, aux courses et aux remplacements automatiques.</p>
           <div class="v403-profile-sync-card" id="v403PrefsProfileSync">
@@ -4197,7 +4510,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf351-strategy-panel" id="bf351StrategyPanel">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V40 — OBJECTIFS NUTRITION</p>
+                <p class="card-kicker">V41 — OBJECTIFS NUTRITION</p>
                 <h3>Ce que l’app propose pour chaque objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf351ShowAllStrategiesBtn">Afficher toutes les stratégies</button>
@@ -4209,7 +4522,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf35-plan-card" id="bf35NutritionPlanCard">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V40 — PLAN NUTRITIONNEL</p>
+                <p class="card-kicker">V41 — PLAN NUTRITIONNEL</p>
                 <h3>Calories et macros selon ton objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf35RefreshNutritionPlanBtn">Recalculer</button>
@@ -4279,7 +4592,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V40 — DIAGNOSTIC PROFOND</p>
+          <p class="card-kicker">V41 — DIAGNOSTIC PROFOND</p>
           <h2>Diagnostic complet</h2>
           <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Les tests de durée et de split sont maintenant isolés : ils n’utilisent pas tes séances manuelles ni l’ancien état sauvegardé.</p>
 
@@ -4299,7 +4612,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=40-3</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=41</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -4347,9 +4660,9 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="menusView">
         <article class="card">
-          <p class="card-kicker">V40.3 — MENUS + COURSES</p>
+          <p class="card-kicker">V41 — MENUS + COURSES</p>
           <h2>Menus personnalisés de la semaine</h2>
-          <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V40 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
+          <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V41 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
           <div class="v32-menu-config">
             <label>Objectif nutrition
               <select id="v32MenuGoal">
@@ -4403,7 +4716,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
         <article class="card">
           <p class="card-kicker">COURSES</p>
           <h2>Liste de courses personnalisée</h2>
-          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V40 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
+          <p>Liste semaine/mois adaptée à ton objectif, ton magasin, ton budget et tes préférences alimentaires.</p><div id="coursesLinkedToMenusNote" class="coach-diagnosis"><strong>V41 :</strong> tu peux aussi générer les courses automatiquement depuis les menus dans l’onglet Menus.</div>
           <div class="v26-grid">
             <label>Magasin
               <select id="coursesStore">
@@ -4483,10 +4796,10 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
         }
       });
       sessionStorage.setItem("bf_v40_fresh_done","1");
-      const cleanUrl=location.origin+location.pathname+"?v=40-3-1&demo=ready";
+      const cleanUrl=location.origin+location.pathname+"?v=41&demo=ready";
       location.replace(cleanUrl);
     }catch(e){
-      console.warn("V40 fresh preboot",e);
+      console.warn("V41 fresh preboot",e);
     }
   })();
 
@@ -5021,9 +5334,9 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(originalView==="sessions") v36ShowTrainingSection?.("sessions");
     if(originalView==="live") v36ShowTrainingSection?.("live");
     if(originalView==="progress") v36ShowTrainingSection?.("progress");
-    if(originalView==="menus") v36ShowNutritionSection?.("menus");
+    if(originalView==="menus") v36ShowNutritionSection?.("meals");
     if(originalView==="courses") v36ShowNutritionSection?.("courses");
-    if(view==="nutrition") bf363SyncNutritionQuickForm?.();
+    if(view==="nutrition"){ bf363SyncNutritionQuickForm?.(); v41EnterNutrition?.(); }
     if(view==="dashboard") v371RenderDashboard?.();
     if(view==="dashboard") v382RenderCleanHero?.();
     if(originalView==="diagnostic") v36OpenDiagnostic?.();
@@ -5140,18 +5453,25 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   let activeMonthTab="sport";
   function getProfile(){
     const saved=BF_STORE.get(PROFILE_KEY,null);
-    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,duration:60,meals:2,sportball:"",compétition:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:"",presentation:""};
+    return saved || {weight:75,height:166,age:20,sex:"male",goal:"performance",level:"intermediate",gymDays:3,duration:60,meals:2,wakeTime:"07:30",sleepTime:"23:30",trainingTime:"19:30",mealStyle:"simple",cookingTime:20,sportball:"",compétition:"",pain:"none",budget:"simple",likes:"œufs, jambon, skyr, pommes de terre, brocoli, haricots verts, banane, pomme",dislikes:"",restrictions:"",presentation:""};
   }
   function fillProfileForm(){
     const p=getProfile();
     if(!window.profileWeight) return;
     profileName.value=p.name||""; profileWeight.value=p.weight; profileHeight.value=p.height; profileAge.value=p.age; profileSex.value=p.sex;
     profileGoal.value=p.goal; profileLevel.value=p.level; profileGymDays.value=p.gymDays; if(window.profileDuration) profileDuration.value=p.duration||60; profileMeals.value=p.meals;
+    if(window.profileWakeTime) profileWakeTime.value=p.wakeTime||"07:30";
+    if(window.profileSleepTime) profileSleepTime.value=p.sleepTime||"23:30";
+    if(window.profileTrainingTime) profileTrainingTime.value=p.trainingTime||"19:30";
+    if(window.profileMealStyle) profileMealStyle.value=p.mealStyle||"simple";
+    if(window.profileCookingTime) profileCookingTime.value=String(p.cookingTime||20);
     profileSportball.value=p.sportball||""; profileCompétition.value=p.compétition||""; profilePain.value=p.pain||"none"; profileBudget.value=p.budget||"simple";
-    profileLikes.value=p.likes||""; if(window.profilePresentation) profilePresentation.value=p.presentation||""; profileDislikes.value=p.dislikes||""; if(window.reviewWeight) reviewWeight.value=p.weight||"";
+    profileLikes.value=p.likes||""; if(window.profilePresentation) profilePresentation.value=p.presentation||""; profileDislikes.value=p.dislikes||"";
+    if(window.profileRestrictions) profileRestrictions.value=p.restrictions||"";
+    if(window.reviewWeight) reviewWeight.value=p.weight||"";
   }
   function readProfileForm(){
-    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,duration:parseInt(profileDuration?.value,10)||60,meals:parseInt(profileMeals.value,10)||2,sportball:profileSportball.value.trim(),compétition:profileCompétition.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim(),presentation:profilePresentation?.value?.trim()||""};
+    return {weight:parseFloat(String(profileWeight.value).replace(",","."))||75,height:parseFloat(profileHeight.value)||166,age:parseFloat(profileAge.value)||20,sex:profileSex.value,goal:profileGoal.value,level:profileLevel.value,gymDays:parseInt(profileGymDays.value,10)||3,duration:parseInt(profileDuration?.value,10)||60,meals:parseInt(profileMeals.value,10)||2,wakeTime:profileWakeTime?.value||"07:30",sleepTime:profileSleepTime?.value||"23:30",trainingTime:profileTrainingTime?.value||"19:30",mealStyle:profileMealStyle?.value||"simple",cookingTime:parseInt(profileCookingTime?.value,10)||20,sportball:profileSportball.value.trim(),compétition:profileCompétition.value.trim(),pain:profilePain.value,budget:profileBudget.value,likes:profileLikes.value.trim(),dislikes:profileDislikes.value.trim(),restrictions:profileRestrictions?.value?.trim()||"",presentation:profilePresentation?.value?.trim()||""};
   }
   function saveProfile(){const p=readProfileForm();BF_STORE.set(PROFILE_KEY,p);
       try{ bf323ClearGeneratedBeforeRegen(); bf321SyncProfileEverywhere(p,{clearGenerated:true}); }catch(e){ console.warn(e); }alert("Profil sauvegardé. Le plan, les séances, les menus et les courses vont utiliser ce nouveau profil.");renderMonthSummary(null,p);updatePersonalUI();}
@@ -5719,7 +6039,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=40-3." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=41." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -5730,7 +6050,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=40-3"+Date.now();
+      location.href=location.pathname+"?v=41"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -5740,7 +6060,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=40-3. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=41. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -6059,7 +6379,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       nutritionPresentation.focus();
     });
     document.getElementById("analyzeNutritionBtn")?.addEventListener("click",v26AnalyzeNutritionAction);
-    document.getElementById("unlockV40Btn")?.addEventListener("click",v26UnlockApp);
+    document.getElementById("unlockV41Btn")?.addEventListener("click",v26UnlockApp);
     document.getElementById("generateGroceriesBtn")?.addEventListener("click",()=>{
       const current=v26StoreGet(V30_GROCERY_KEY,{});
       current.store=document.getElementById("coursesStore")?.value||current.store||"Hyper U / Super U";
@@ -7023,15 +7343,15 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       if(id==="v371QuickPlanBtn"){ e.preventDefault(); v371OpenTraining("plan"); }
       if(id==="v371QuickSessionsBtn"){ e.preventDefault(); v371OpenTraining("sessions"); }
       if(id==="v371QuickProgressBtn"){ e.preventDefault(); v371OpenTraining("progress"); }
-      if(id==="v371QuickNutritionBtn"){ e.preventDefault(); v371OpenNutrition("pro"); }
+      if(id==="v371QuickNutritionBtn"){ e.preventDefault(); v371OpenNutrition("meals"); }
       if(id==="v371QuickCoachBtn"){ e.preventDefault(); v371OpenCoach(); }
       if(id==="v382HeroStartBtn"){ e.preventDefault(); v371OpenTraining("live"); }
-      if(id==="v382HeroNutritionBtn"){ e.preventDefault(); v371OpenNutrition("pro"); }
+      if(id==="v382HeroNutritionBtn"){ e.preventDefault(); v371OpenNutrition("meals"); }
       if(id==="v386CopyDemoLinkBtn"){ e.preventDefault(); v386BindDemo(); document.getElementById("v386CopyDemoLinkBtn")?.click(); }
 
     }catch(err){
       console.error("Fallback génération V34", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=40-3 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=41 puis réessaie.");
     }
   }
 
@@ -7078,7 +7398,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     const box=document.getElementById("v30SystemCheck");
     if(!box) return;
     box.classList.remove("hidden");
-    box.innerHTML=`<h3>Test système V40</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
+    box.innerHTML=`<h3>Test système V41</h3><p>${okCount}/${tests.length} contrôles OK.</p><div class="v30-test-list">`+
       tests.map(([name,ok])=>`<div class="v30-test-line"><strong>${name}</strong><span>${ok?"✅ OK":"⚠️ À vérifier"}</span></div>`).join("")+
       `</div>`;
     v30RefreshLaunchpad();
@@ -7424,7 +7744,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V40 — MOTEUR NUTRITION UNIQUE
+     V41 — MOTEUR NUTRITION UNIQUE
      ========================================================== */
   function bf39CanonicalGoal(goal){
     const g=BF_UTIL?.normalize ? BF_UTIL.normalize(String(goal||"maintain")) : String(goal||"maintain").toLowerCase();
@@ -7713,20 +8033,18 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     document.getElementById(id)?.classList.add("active");
     v36RefreshTraining();
   }
-  function v36ShowNutritionSection(section="plan"){
+  function v36ShowNutritionSection(section="meals"){
+    const allowed=["meals","plan","courses"];
+    if(!allowed.includes(section)) section=section==="courses"?"courses":"meals";
     document.querySelectorAll("#v36NutritionTabs button").forEach(b=>b.classList.toggle("active",b.dataset.nutritionSection===section));
     document.querySelectorAll("#nutritionView .v36-section").forEach(s=>s.classList.remove("active"));
     const id={
-      pro:"v40NutritionProSection",
-      daily:"v36NutritionDailySection",
-      plan:"v36NutritionPlanSection",
-      preferences:"v36NutritionPreferencesSection",
-      menus:"v36NutritionMenusSection",
-      courses:"v36NutritionCoursesSection"
-    }[section]||"v40NutritionProSection";
+      meals:"v41MealsSection",
+      plan:"v41PlanSection",
+      courses:"v41CoursesSection"
+    }[section]||"v41MealsSection";
     document.getElementById(id)?.classList.add("active");
-    v36RefreshNutrition();
-    bf363SyncNutritionQuickForm?.();
+    try{ v41RenderAll?.(false); }catch(e){ console.warn("V41 section refresh",e); }
   }
   function v36MountTraining(){
     v36MoveChildren("planView","v36PlanMount","Le plan sera affiché ici.");
@@ -7774,6 +8092,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       bf363SyncNutritionQuickForm?.();
       v39RenderTracker?.();
       v40RenderPro?.();
+      v41RenderAll?.(false);
       const menus=v32StoreGet?.("bf_v32_week_menus",null);
       if(menus) v32RenderMenus?.(menus);
       const shopping=v32StoreGet?.("bf_v32_menu_shopping",null);
@@ -7812,7 +8131,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       showView?.("nutrition");
       v36ShowNutritionSection("menus");
     }catch(e){
-      console.error("V40.3 génération nutrition",e);
+      console.error("V41 génération nutrition",e);
       alert("Erreur pendant la génération nutrition.");
     }
   }
@@ -7852,7 +8171,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     v36RefreshTraining();
     v36RefreshNutrition();
-    v36ShowNutritionSection("pro");
+    v36ShowNutritionSection("meals");
   }
 
 
@@ -7973,7 +8292,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       bf35RenderNutritionPlan(plan);
       showView?.("menus");
     }catch(e){
-      console.error("V40.3 application plan nutrition",e);
+      console.error("V41 application plan nutrition",e);
       alert("Erreur pendant l’application du plan nutrition.");
       throw e;
     }
@@ -8265,7 +8584,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
 
-  /* V40 : profil canonique synchronisé */
+  /* V41 : profil canonique synchronisé */
 
   function bf331StorageProfile(){
     let p=null;
@@ -8348,7 +8667,8 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       "v32GenerateMenusBtn","v32GenerateShoppingFromMenusBtn","v32MenusResult","v32MenuShoppingResult",
       "generateGroceriesBtn","groceriesResult","saveProfileBtn","bf321ApplyProfileBtn","appNav",
       "v39DailyNutritionCard","v39MealForm","v39AddMealBtn","v39TodayEntries","v39WeightForm","v39SaveWeightBtn","v39WeekHistory","v39DashboardProgress",
-      "v40NutritionProCard","v40EnergyGrid","v40MealReco","v40MealSchedule","v40FoodSelect","v40FoodResult","v40RecipeResult","v40CoachAdvice"
+      "v40NutritionProCard","v40EnergyGrid","v40MealReco","v40MealSchedule","v40FoodSelect","v40FoodResult","v40RecipeResult","v40CoachAdvice",
+      "v41MealsSection","v41PlanSection","v41CoursesSection","v41TodayMeals","v41WeekMeals","v41PlanSummary","v41CoursesList"
     ];
   }
   function bf322StorageKeys(){
@@ -8368,7 +8688,8 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       "bf_v35_nutrition_plan",
       "bf_v39_daily_nutrition",
       "bf_v39_weight_log",
-      "bf_v40_nutrition_settings"
+      "bf_v40_nutrition_settings",
+      "bf_v41_nutrition_fingerprint"
     ];
   }
   function bf322Backup(){
@@ -8559,10 +8880,10 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(bf322Result("Boot JavaScript exécuté",true,"Le diagnostic s’exécute donc le script principal a démarré."));
       results.push(bf322Result("Contrôleur intro actif",window.__v387_intro_delegate===true,"Gestionnaire intro indépendant actif."));
       results.push(bf322Result("Bouton intro disponible",!!document.getElementById("v26StartBtn"),"Bouton de départ présent."));
-      results.push(bf322Result("Déblocage V40 disponible",!!document.getElementById("unlockV40Btn"),"Bouton final présent."));
+      results.push(bf322Result("Déblocage V41 disponible",!!document.getElementById("unlockV41Btn"),"Bouton final présent."));
       results.push(bf322Result("Fresh preboot sûr",typeof v386HandleFreshMode==="function","Fresh mode disponible sans appel prématuré."));
     }catch(e){
-      results.push(bf322Result("Diagnostic runtime V40",false,String(e)));
+      results.push(bf322Result("Diagnostic runtime V41",false,String(e)));
     }
     return results;
   }
@@ -8611,7 +8932,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       case "analyzeNutritionBtn":
         v26AnalyzeNutritionAction();
         return true;
-      case "unlockV40Btn":
+      case "unlockV41Btn":
         v26UnlockApp();
         return true;
       default:
@@ -8628,7 +8949,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       if(!btn) return;
       const ids=[
         "v26StartBtn","sportExampleBtn","analyzeSportBtn","goNutritionBtn",
-        "nutritionExampleBtn","analyzeNutritionBtn","unlockV40Btn"
+        "nutritionExampleBtn","analyzeNutritionBtn","unlockV41Btn"
       ];
       if(!ids.includes(btn.id)) return;
 
@@ -8640,7 +8961,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         v387HandleIntroAction(btn.id);
       }catch(err){
         console.error("V38.7 intro action",btn.id,err);
-        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=40-3 ou utilise le mode secours.","err");
+        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=41 ou utilise le mode secours.","err");
       }
     },true);
   }
@@ -8669,7 +8990,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     try{
       const required=[
         "v26StartBtn","sportPresentation","analyzeSportBtn","goNutritionBtn",
-        "nutritionPresentation","analyzeNutritionBtn","unlockV40Btn"
+        "nutritionPresentation","analyzeNutritionBtn","unlockV41Btn"
       ];
       required.forEach(id=>{
         results.push(bf322Result(`Intro ID ${id}`,!!document.getElementById(id),document.getElementById(id)?"Présent.":"Manquant."));
@@ -8677,7 +8998,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(bf322Result("Intro délégation installée",window.__v387_intro_delegate===true,"Gestionnaire de clic indépendant de init()."));
       results.push(bf322Result("Intro fonctions disponibles",typeof v26ShowStep==="function" && typeof v26AnalyzeSportAction==="function" && typeof v26AnalyzeNutritionAction==="function" && typeof v26UnlockApp==="function","Fonctions du parcours disponibles."));
     }catch(e){
-      results.push(bf322Result("Diagnostic intro V40",false,String(e)));
+      results.push(bf322Result("Diagnostic intro V41",false,String(e)));
     }
     return results;
   }
@@ -8710,7 +9031,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(!v386IsFreshMode()) return;
     if(sessionStorage.getItem("bf_v40_fresh_done")==="1") return;
     v386ClearLocalAppData();
-    const cleanUrl=location.origin+location.pathname+"?v=40-3-1&demo=ready";
+    const cleanUrl=location.origin+location.pathname+"?v=41&demo=ready";
     location.replace(cleanUrl);
   }
   function v386ShowToast(msg){
@@ -8725,7 +9046,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     }catch(e){}
   }
   function v386DemoLink(){
-    return location.origin+location.pathname+"?v=40-3-1&fresh=1";
+    return location.origin+location.pathname+"?v=41&fresh=1";
   }
   function v386BindDemo(){
     const txt=document.getElementById("v386DemoLinkText");
@@ -8749,7 +9070,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(bf322Result("Lien essai propre",!!document.getElementById("v386DemoLinkText"),"Carte mode essai présente dans Profil."));
       results.push(bf322Result("Fresh mode disponible",typeof v386HandleFreshMode==="function" && typeof v386ClearLocalAppData==="function","Paramètre ?fresh=1 disponible."));
     }catch(e){
-      results.push(bf322Result("Diagnostic démo V40",false,String(e)));
+      results.push(bf322Result("Diagnostic démo V41",false,String(e)));
     }
     return results;
   }
@@ -8864,7 +9185,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(window.__v382_bound){v382RenderCleanHero?.();return;}
     window.__v382_bound=true;
     document.getElementById("v382HeroStartBtn")?.addEventListener("click",()=>v371OpenTraining?.("live"));
-    document.getElementById("v382HeroNutritionBtn")?.addEventListener("click",()=>v371OpenNutrition?.("pro"));
+    document.getElementById("v382HeroNutritionBtn")?.addEventListener("click",()=>v371OpenNutrition?.("meals"));
     v382RenderCleanHero();
   }
   function v382CleanHomeDiagnostic(){
@@ -8911,7 +9232,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         ["Dashboard premium", !!document.getElementById("v371DailyDashboard")],
         ["Navigation premium", !!document.getElementById("appNav")],
         ["Coach premium", !!document.getElementById("coachChat")],
-        ["CSS premium injecté", document.documentElement.innerHTML.includes("V40 : refonte visuelle premium")]
+        ["CSS premium injecté", document.documentElement.innerHTML.includes("V41 : refonte visuelle premium")]
       ];
       checks.forEach(([name, ok])=>results.push(bf322Result(name, ok, ok ? "OK" : "Élément visuel manquant.")));
     }catch(e){
@@ -8923,7 +9244,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V40 — SUIVI NUTRITION QUOTIDIEN
+     V41 — SUIVI NUTRITION QUOTIDIEN
      ========================================================== */
   const BF39_DAILY_NUTRITION_KEY="bf_v39_daily_nutrition";
   const BF39_WEIGHT_LOG_KEY="bf_v39_weight_log";
@@ -9308,23 +9629,23 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       const totals=v39Totals(sample);
       const plan={target:2200,protein:160};
       const summary=v39Summary(sample,plan);
-      results.push(bf322Result("V40 total calories",totals.calories===1500,`${totals.calories} kcal calculées.`));
-      results.push(bf322Result("V40 total protéines",totals.protein===105,`${totals.protein} g calculés.`));
-      results.push(bf322Result("V40 reste calories",summary.calorieRemaining===700,`${summary.calorieRemaining} kcal restantes.`));
-      results.push(bf322Result("V40 reste protéines",summary.proteinRemaining===55,`${summary.proteinRemaining} g restants.`));
-      results.push(bf322Result("V40 UI suivi quotidien",[
+      results.push(bf322Result("V41 total calories",totals.calories===1500,`${totals.calories} kcal calculées.`));
+      results.push(bf322Result("V41 total protéines",totals.protein===105,`${totals.protein} g calculés.`));
+      results.push(bf322Result("V41 reste calories",summary.calorieRemaining===700,`${summary.calorieRemaining} kcal restantes.`));
+      results.push(bf322Result("V41 reste protéines",summary.proteinRemaining===55,`${summary.proteinRemaining} g restants.`));
+      results.push(bf322Result("V41 UI suivi quotidien",[
         "v39DailyNutritionCard","v39MealForm","v39TodayEntries","v39WeightForm","v39WeekHistory","v39DashboardProgress"
       ].every(id=>!!document.getElementById(id)),"Tous les blocs du suivi quotidien sont présents."));
-      results.push(bf322Result("V40 boutons reliés",window.__v39_bound===true,"Contrôleur V40 initialisé."));
+      results.push(bf322Result("V41 boutons reliés",window.__v39_bound===true,"Contrôleur V41 initialisé."));
       const before=v39LoadWeightLog().length;
       const pureSeries=v39WeightSeries(30,[
         {date:v39DateKey(new Date(Date.now()-5*86400000)),weight:75.2},
         {date:v39DateKey(),weight:74.8}
       ]);
-      results.push(bf322Result("V40 tendance poids",pureSeries.length===2 && pureSeries[0].weight===75.2 && pureSeries[1].weight===74.8,`Série test : ${pureSeries.length} points.`));
-      results.push(bf322Result("V40 diagnostic sans écriture",v39LoadWeightLog().length===before,"Le diagnostic ne modifie pas les données utilisateur."));
+      results.push(bf322Result("V41 tendance poids",pureSeries.length===2 && pureSeries[0].weight===75.2 && pureSeries[1].weight===74.8,`Série test : ${pureSeries.length} points.`));
+      results.push(bf322Result("V41 diagnostic sans écriture",v39LoadWeightLog().length===before,"Le diagnostic ne modifie pas les données utilisateur."));
     }catch(e){
-      results.push(bf322Result("Diagnostic V40 suivi nutrition",false,String(e)));
+      results.push(bf322Result("Diagnostic V41 suivi nutrition",false,String(e)));
     }
     return results;
   }
@@ -9332,7 +9653,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V40.3 — NUTRITION PRO COMPLÈTE
+     V41 — NUTRITION PRO COMPLÈTE
      ========================================================== */
   const BF40_NUTRITION_SETTINGS_KEY="bf_v40_nutrition_settings";
 
@@ -9766,8 +10087,309 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V40.3 — SYNCHRONISATION NUTRITION GLOBALE
+     V41 — SYNCHRONISATION NUTRITION GLOBALE
      ========================================================== */
+
+
+  /* ==========================================================
+     V41 — NUTRITION AUTO
+     ========================================================== */
+  const BF41_FINGERPRINT_KEY="bf_v41_nutrition_fingerprint";
+
+  function v41ProfileNutritionSettings(){
+    const p=bf341CurrentProfile?.() || bf321CanonicalProfile?.() || {};
+    const current=v40LoadSettings?.() || {};
+    const settings={
+      ...current,
+      wakeTime:p.wakeTime||current.wakeTime||"07:30",
+      sleepTime:p.sleepTime||current.sleepTime||"23:30",
+      trainingTime:p.trainingTime||current.trainingTime||"19:30",
+      mealPreference:"auto"
+    };
+    v40SaveSettings?.(settings);
+    return settings;
+  }
+
+  function v41NutritionFingerprint(){
+    const p=bf341CurrentProfile?.() || {};
+    const prefs=bf34GetPrefs?.() || {};
+    const s=v41ProfileNutritionSettings();
+    return JSON.stringify({
+      weight:p.weight,height:p.height,age:p.age,sex:p.sex,goal:p.goal,
+      gymDays:p.gymDays,sportball:p.sportball,competition:p.compétition,
+      budget:p.budget,likes:p.likes,dislikes:p.dislikes,restrictions:p.restrictions,
+      mealStyle:p.mealStyle,cookingTime:p.cookingTime,
+      wakeTime:s.wakeTime,sleepTime:s.sleepTime,trainingTime:s.trainingTime,
+      prefs
+    });
+  }
+
+  function v41FormatQty(qty,unit){
+    const q=Number(qty)||0;
+    if(unit==="kg") return `${Math.round(q*1000)} g`;
+    if(unit==="boîte") return `${Number(q.toFixed(1))} boîte${q>1?"s":""}`;
+    if(unit==="pièce") return `${Number(q.toFixed(1))} pièce${q>1?"s":""}`;
+    if(unit==="L") return `${Number(q.toFixed(2))} L`;
+    return `${Number(q.toFixed(q<1?2:1))} ${unit||""}`.trim();
+  }
+
+  function v41TodayIndex(){
+    const d=new Date().getDay();
+    return d===0 ? 6 : d-1;
+  }
+
+  function v41MealTimesForData(data){
+    const settings=v41ProfileNutritionSettings();
+    const pattern=data?.config?.mealPattern || v403MenuPatternFromControls?.(data?.profileLinked);
+    return v403MealTimes?.(pattern,settings) || [];
+  }
+
+  function v41MealCardHtml(meal,time,index){
+    const ingredients=(meal.items||[]).map(([name,qty,unit])=>`
+      <div class="v41-ingredient">
+        <strong>${v39Escape?.(name)||name}</strong>
+        <span>${v41FormatQty(qty,unit)}</span>
+      </div>
+    `).join("");
+    return `<div class="v41-meal-card">
+      <div class="v41-meal-top">
+        <div class="v41-meal-time">${time||"--:--"}</div>
+        <div><h4>${v39Escape?.(meal.type)||meal.type}</h4><small>${v39Escape?.(meal.name)||meal.name}</small></div>
+        <small>≈ ${Math.round(meal.protein||0)} g protéines</small>
+      </div>
+      <div class="v41-ingredients">${ingredients}</div>
+    </div>`;
+  }
+
+  function v41DayBlockHtml(dayData,times,highlight=false){
+    return `<div class="v41-day-block ${highlight?"v41-today-highlight":""}">
+      <div class="v41-day-head">
+        <strong>${dayData.day}</strong>
+        <span>${dayData.meals.length} prises prévues</span>
+      </div>
+      ${dayData.meals.map((meal,i)=>v41MealCardHtml(meal,times[i],i)).join("")}
+    </div>`;
+  }
+
+  function v41RenderMeals(data){
+    if(!data) return;
+    const times=v41MealTimesForData(data);
+    const idx=v41TodayIndex();
+    const today=data.plan[idx] || data.plan[0];
+
+    const title=document.getElementById("v41TodayTitle");
+    if(title) title.textContent=`${today.day} — tes repas`;
+
+    const todayBox=document.getElementById("v41TodayMeals");
+    if(todayBox) todayBox.innerHTML=v41DayBlockHtml(today,times,true);
+
+    const weekBox=document.getElementById("v41WeekMeals");
+    if(weekBox) weekBox.innerHTML=data.plan.map((day,i)=>v41DayBlockHtml(day,times,i===idx)).join("");
+
+    const intro=document.getElementById("v41MealsIntro");
+    if(intro){
+      intro.textContent=`Organisation choisie par le Coach : ${data.config.mealPatternLabel||v403PatternLabel(data.config.mealPattern)}. Horaires repères basés sur ton Profil.`;
+    }
+  }
+
+  function v41RenderPlan(){
+    const p=bf341CurrentProfile?.() || {};
+    const prefs=bf34GetPrefs?.() || {};
+    const plan=bf35BuildNutritionPlan?.(p,prefs) || {};
+    const settings=v41ProfileNutritionSettings();
+    const energy=v40DailyEnergy?.(settings) || {};
+    const pattern=v40MealPlanType?.(energy,settings) || "3";
+    const reason=v40MealReason?.(pattern,energy,settings) || {label:v403PatternLabel(pattern),why:"organisation simple et tenable"};
+
+    const summary=document.getElementById("v41PlanSummary");
+    if(summary){
+      summary.innerHTML=`
+        <div class="v41-plan-grid">
+          <div class="v41-plan-metric"><span>Objectif</span><strong>${goalLabelSafe?.(p.goal)||p.goal||"-"}</strong></div>
+          <div class="v41-plan-metric"><span>Métabolisme repos</span><strong>${energy.bmr||"-"} kcal</strong></div>
+          <div class="v41-plan-metric"><span>Maintenance estimée</span><strong>${plan.maintenance||energy.expenditure||"-"} kcal</strong></div>
+          <div class="v41-plan-metric"><span>Cible moyenne</span><strong>${plan.target||energy.target||"-"} kcal</strong></div>
+          <div class="v41-plan-metric"><span>Protéines</span><strong>${plan.protein||energy.protein||"-"} g</strong></div>
+          <div class="v41-plan-metric"><span>Organisation</span><strong>${reason.label}</strong></div>
+        </div>
+        <div class="v41-plan-explain"><strong>Pourquoi :</strong> ${reason.why}. Le plan privilégie une organisation que tu peux simplement suivre sans recalculer tes repas toi-même.</div>
+      `;
+    }
+
+    const targets=document.getElementById("v41DayTargets");
+    if(targets){
+      const rows=[
+        ["rest","Jour repos"],
+        ["muscu","Jour musculation"],
+        ["foot","Jour football"],
+        ["match","Jour match"],
+        ["double","Double séance"]
+      ].map(([type,label])=>{
+        const e=v40DailyEnergy?.({...settings,dayType:type}) || {};
+        return `<div class="v41-target-row">
+          <div><strong>${label}</strong><small>${e.carbNote?`Glucides ${e.carbNote}`:""}</small></div>
+          <span>${e.target||"-"} kcal</span>
+          <span>${e.protein||plan.protein||"-"} g protéines</span>
+        </div>`;
+      }).join("");
+      targets.innerHTML=rows;
+    }
+  }
+
+  function v41CourseGroup(name){
+    const n=BF_UTIL.normalize?.(name)||String(name||"").toLowerCase();
+    if(["poulet","jambon","thon","oeuf","œuf","skyr","fromage blanc","steak","saumon","dinde"].some(x=>n.includes(x))) return "Protéines";
+    if(["riz","pate","pâte","pomme de terre","pain","avoine","semoule"].some(x=>n.includes(x))) return "Féculents";
+    if(["banane","pomme","fruit"].some(x=>n.includes(x))) return "Fruits";
+    if(["brocoli","haricot","crudite","crudité","salade","legume","légume"].some(x=>n.includes(x))) return "Légumes";
+    return "Autres";
+  }
+
+  function v41RenderCourses(shopping){
+    if(!shopping) return;
+    const summary=document.getElementById("v41CoursesSummary");
+    if(summary){
+      summary.innerHTML=`<div class="v41-courses-total">
+        <strong>Semaine estimée : ≈ ${shopping.total.toFixed(0)} €</strong><br>
+        Magasin : ${shopping.config.store} · budget ${shopping.config.budget}.<br>
+        <small>Les prix restent des estimations hors ligne ; les quantités viennent directement des repas générés.</small>
+      </div>`;
+    }
+
+    const grouped={};
+    (shopping.items||[]).forEach(item=>{
+      const group=v41CourseGroup(item.name);
+      (grouped[group] ||= []).push(item);
+    });
+
+    const order=["Protéines","Féculents","Légumes","Fruits","Autres"];
+    const box=document.getElementById("v41CoursesList");
+    if(box){
+      box.innerHTML=order.filter(g=>grouped[g]?.length).map(group=>`
+        <div class="v41-course-group">
+          <h4>${group}</h4>
+          <div class="v41-course-grid">
+            ${grouped[group].map(item=>`
+              <div class="v41-course-item">
+                <strong>${v39Escape?.(item.name)||item.name}</strong>
+                <span>${v41FormatQty(item.qty,item.unit)}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+  }
+
+  function v41SyncProfileNutritionInputs(){
+    const p=bf341CurrentProfile?.() || {};
+    const current=v40LoadSettings?.() || {};
+    const settings={
+      ...current,
+      wakeTime:p.wakeTime||current.wakeTime||"07:30",
+      sleepTime:p.sleepTime||current.sleepTime||"23:30",
+      trainingTime:p.trainingTime||current.trainingTime||"19:30",
+      mealPreference:"auto"
+    };
+    v40SaveSettings?.(settings);
+    v403SyncNutritionEverywhere?.();
+    return settings;
+  }
+
+  function v41EnsureAutoNutrition(force=false){
+    v41SyncProfileNutritionInputs();
+    const fingerprint=v41NutritionFingerprint();
+    const previous=localStorage.getItem(BF41_FINGERPRINT_KEY)||"";
+    let menus=v32StoreGet?.("bf_v32_week_menus",null);
+    let shopping=v32StoreGet?.("bf_v32_menu_shopping",null);
+
+    if(force || !menus || !shopping || previous!==fingerprint){
+      const menuSelect=document.getElementById("v32MenuMeals");
+      const goalSelect=document.getElementById("v32MenuGoal");
+      if(menuSelect) menuSelect.value="auto";
+      if(goalSelect) goalSelect.value="auto";
+      menus=v32BuildMenus?.();
+      shopping=v32BuildShoppingFromMenus?.(menus);
+      localStorage.setItem(BF41_FINGERPRINT_KEY,fingerprint);
+    }
+
+    return {menus,shopping,fingerprint};
+  }
+
+  function v41RenderAll(force=false){
+    const data=v41EnsureAutoNutrition(force);
+    v41RenderMeals(data.menus);
+    v41RenderPlan();
+    v41RenderCourses(data.shopping);
+
+    const status=document.getElementById("v41AutoStatus");
+    if(status && data.menus){
+      const p=data.menus.config.mealPattern;
+      status.innerHTML=`<strong>Plan prêt.</strong> ${v403PatternLabel(p)} · portions calculées · courses regroupées automatiquement.`;
+    }
+    return data;
+  }
+
+  function v41EnterNutrition(){
+    try{
+      v41RenderAll(false);
+      v36ShowNutritionSection?.("meals");
+    }catch(e){
+      console.error("V41 nutrition auto",e);
+      const status=document.getElementById("v41AutoStatus");
+      if(status) status.textContent="Impossible de générer la nutrition automatiquement. Lance le diagnostic depuis Profil.";
+    }
+  }
+
+  function v41NutritionAutoDiagnostic(){
+    const results=[];
+    try{
+      const data=v41EnsureAutoNutrition(false);
+      const menus=data.menus;
+      const shopping=data.shopping;
+      const times=v41MealTimesForData(menus);
+
+      results.push(bf322Result(
+        "V41 seulement 3 onglets nutrition",
+        [...document.querySelectorAll("#v36NutritionTabs button")].map(b=>b.dataset.nutritionSection).join(",")==="meals,plan,courses",
+        "Mes repas · Mon plan · Mes courses."
+      ));
+
+      results.push(bf322Result(
+        "V41 repas générés automatiquement",
+        menus?.plan?.length===7 && menus.plan.every(d=>d.meals?.length>0),
+        `${menus?.plan?.length||0} jours générés.`
+      ));
+
+      results.push(bf322Result(
+        "V41 portions visibles",
+        menus?.plan?.some(d=>d.meals?.some(m=>m.items?.some(i=>Number(i[1])>0))),
+        "Les repas contiennent des quantités exploitables."
+      ));
+
+      results.push(bf322Result(
+        "V41 horaires reliés au Profil",
+        times.length===menus?.plan?.[0]?.meals?.length && times.every(t=>/^\d{2}:\d{2}$/.test(t)),
+        `Horaires : ${times.join(" · ")}.`
+      ));
+
+      results.push(bf322Result(
+        "V41 courses générées depuis les repas",
+        shopping?.items?.length>0 && shopping.total>=0,
+        `${shopping?.items?.length||0} articles regroupés.`
+      ));
+
+      results.push(bf322Result(
+        "V41 anciennes interfaces cachées",
+        !!document.querySelector(".v41-engine-section") && getComputedStyle(document.querySelector(".v41-engine-section")).display==="none",
+        "Les moteurs restent présents mais invisibles."
+      ));
+    }catch(e){
+      results.push(bf322Result("Diagnostic V41 Nutrition Auto",false,String(e)));
+    }
+    return results;
+  }
+
 
   function v403BudgetProfileToPrefs(budget){
     return ({simple:"eco",normal:"normal",varied:"comfort"}[budget]) || "normal";
@@ -9816,10 +10438,10 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       ...current,
       liked,
       avoid,
-      restrictions:Array.isArray(current.restrictions)?current.restrictions:[],
-      mealStyle:current.mealStyle||"simple",
+      restrictions:v403MergeUniqueLists(current.restrictions||[],v403SplitProfileList(profile.restrictions||"")),
+      mealStyle:profile.mealStyle||current.mealStyle||"simple",
       budgetPriority:v403BudgetProfileToPrefs(profile.budget||"normal"),
-      cookingTime:Number(current.cookingTime)||20
+      cookingTime:Number(profile.cookingTime)||Number(current.cookingTime)||20
     };
     bf34SavePrefs?.(synced);
     return synced;
@@ -9832,6 +10454,9 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       ...current,
       likes:bf34PrettyList?.(p.liked||[]) || "",
       dislikes:bf34PrettyList?.(p.avoid||[]) || "",
+      restrictions:bf34PrettyList?.(p.restrictions||[]) || "",
+      mealStyle:p.mealStyle||current.mealStyle||"simple",
+      cookingTime:Number(p.cookingTime)||Number(current.cookingTime)||20,
       budget:v403BudgetPrefsToProfile(p.budgetPriority)
     };
     try{ BF_STORE?.set?.(PROFILE_KEY,updated); }catch(e){}
@@ -10030,7 +10655,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       const state=v403CoachNutritionState();
       const autoPattern=v403MenuPatternFromControls(state.profile);
       results.push(bf322Result(
-        "V40.3 menus Auto suivent le Coach",
+        "V41 menus Auto suivent le Coach",
         autoPattern===state.recommendedPattern,
         `Coach : ${state.recommendedPattern} · menus Auto : ${autoPattern}.`
       ));
@@ -10038,7 +10663,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       const mockConfig={style:"simple",goal:"muscle",prefs:bf34GetPrefs?.()||{}};
       const meals=v403MenuMealsForPattern("3s",0,mockConfig);
       results.push(bf322Result(
-        "V40.3 3 repas + collation réel",
+        "V41 3 repas + collation réel",
         meals.length===4 && meals.some(x=>x.type==="Collation"),
         `Prises générées : ${meals.map(x=>x.type).join(" / ")}.`
       ));
@@ -10047,7 +10672,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         wakeTime:"07:30",sleepTime:"23:30",trainingTime:"19:30",dayType:"foot"
       });
       results.push(bf322Result(
-        "V40.3 horaires dans la journée",
+        "V41 horaires dans la journée",
         times.length===4 && times.every(x=>/^\d{2}:\d{2}$/.test(x)),
         `Horaires test : ${times.join(" · ")}.`
       ));
@@ -10057,18 +10682,18 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       const profileLikes=v403SplitProfileList(profile.likes||"");
       const likedSynced=profileLikes.every(x=>(prefs.liked||[]).includes(x));
       results.push(bf322Result(
-        "V40.3 aliments Profil → Préférences",
+        "V41 aliments Profil → Préférences",
         likedSynced,
         likedSynced ? "Aliments aimés synchronisés." : "Un aliment du profil manque dans Préférences."
       ));
 
       results.push(bf322Result(
-        "V40.3 cartes profil synchronisé",
+        "V41 cartes profil synchronisé",
         !!document.getElementById("v403CoachProfileSync") && !!document.getElementById("v403PrefsProfileSync"),
         "Coach Pro et Préférences affichent la source Profil."
       ));
     }catch(e){
-      results.push(bf322Result("Diagnostic V40.3 synchronisation",false,String(e)));
+      results.push(bf322Result("Diagnostic V41 synchronisation",false,String(e)));
     }
     return results;
   }
@@ -10132,7 +10757,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       try{
         v402RecalculateNutritionPro(btn);
       }catch(error){
-        console.error("V40.3 recalcul nutrition",error);
+        console.error("V41 recalcul nutrition",error);
         btn.textContent="Erreur de recalcul";
         setTimeout(()=>{
           if(btn && btn.isConnected!==false) btn.textContent=btn.dataset.v402OriginalText || "Recalculer";
@@ -10146,17 +10771,17 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     try{
       const btn=document.getElementById("v40RefreshProBtn");
       results.push(bf322Result(
-        "V40.3 contrôleur Recalculer indépendant",
+        "V41 contrôleur Recalculer indépendant",
         window.__v402_recalculate_delegate===true,
         "Le clic Recalculer ne dépend plus de v40Bind()."
       ));
       results.push(bf322Result(
-        "V40.3 bouton Recalculer présent",
+        "V41 bouton Recalculer présent",
         !!btn,
         btn ? "Bouton trouvé." : "Bouton absent."
       ));
       results.push(bf322Result(
-        "V40.3 moteur de recalcul disponible",
+        "V41 moteur de recalcul disponible",
         typeof v402RecalculateNutritionPro==="function" &&
         typeof v40RenderEnergy==="function" &&
         typeof v40RenderMealCoach==="function" &&
@@ -10164,7 +10789,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         "Les blocs énergie, repas et coach sont reliés au recalcul."
       ));
     }catch(e){
-      results.push(bf322Result("Diagnostic V40.3 Recalculer",false,String(e)));
+      results.push(bf322Result("Diagnostic V41 Recalculer",false,String(e)));
     }
     return results;
   }
@@ -10175,24 +10800,24 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     try{
       const html=document.documentElement.innerHTML;
       results.push(bf322Result(
-        "V40.3 insertion synchronisation sûre",
+        "V41 insertion synchronisation sûre",
         html.includes(':scope > button, :scope > .primary-btn') && html.includes("card.prepend(note)"),
         "La note de synchronisation n’utilise plus un descendant profond comme insertBefore."
       ));
       results.push(bf322Result(
-        "V40.3 anti double-clic fallback",
+        "V41 anti double-clic fallback",
         html.includes('dataset?.bfDirectBound==="1"') && typeof v401MarkDirectBindings==="function",
         "Le fallback global ignore les boutons déjà reliés normalement."
       ));
       const menuBtn=document.getElementById("v36GenerateMenusBtn");
       const applyBtn=document.getElementById("bf35ApplyNutritionPlanBtn");
       results.push(bf322Result(
-        "V40.3 boutons nutrition marqués",
+        "V41 boutons nutrition marqués",
         menuBtn?.dataset?.bfDirectBound==="1" && applyBtn?.dataset?.bfDirectBound==="1",
         "Menus + plan nutrition sont protégés contre le double déclenchement."
       ));
     }catch(e){
-      results.push(bf322Result("Diagnostic V40.3 génération nutrition",false,String(e)));
+      results.push(bf322Result("Diagnostic V41 génération nutrition",false,String(e)));
     }
     return results;
   }
@@ -10203,29 +10828,29 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     try{
       const settings={dayType:"foot",trainingTime:"19:30",muscuMinutes:60,sportMinutes:90,intensity:"medium",mealPreference:"auto",appetite:"normal",dailyPriority:"balanced"};
       const energy=v40DailyEnergy(settings);
-      results.push(bf322Result("V40 dépense repos",Number.isFinite(energy.bmr) && energy.bmr>1000,`BMR : ${energy.bmr} kcal.`));
-      results.push(bf322Result("V40 dépense activité",energy.sport>0 && energy.expenditure>energy.bmr,`Sport : ${energy.sport} kcal · total ${energy.expenditure} kcal.`));
-      results.push(bf322Result("V40 cible calories",energy.target>1200 && energy.target<5000,`Cible : ${energy.target} kcal.`));
+      results.push(bf322Result("V41 dépense repos",Number.isFinite(energy.bmr) && energy.bmr>1000,`BMR : ${energy.bmr} kcal.`));
+      results.push(bf322Result("V41 dépense activité",energy.sport>0 && energy.expenditure>energy.bmr,`Sport : ${energy.sport} kcal · total ${energy.expenditure} kcal.`));
+      results.push(bf322Result("V41 cible calories",energy.target>1200 && energy.target<5000,`Cible : ${energy.target} kcal.`));
 
       const pasta=v40FoodMacros("pasta","raw",100);
-      results.push(bf322Result("V40 pâtes crues 100 g",pasta.kcal===350 && pasta.protein===12,`${pasta.kcal} kcal · ${pasta.protein} g prot.`));
+      results.push(bf322Result("V41 pâtes crues 100 g",pasta.kcal===350 && pasta.protein===12,`${pasta.kcal} kcal · ${pasta.protein} g prot.`));
 
       const riceCooked=v40FoodMacros("rice","cooked",200);
-      results.push(bf322Result("V40 riz cuit 200 g",riceCooked.kcal===260 && Math.round(riceCooked.carbs)===56,`${riceCooked.kcal} kcal · ${riceCooked.carbs} g gluc.`));
+      results.push(bf322Result("V41 riz cuit 200 g",riceCooked.kcal===260 && Math.round(riceCooked.carbs)===56,`${riceCooked.kcal} kcal · ${riceCooked.carbs} g gluc.`));
 
       const recipe=v40GenerateRecipe("pastaChicken",750,45);
-      results.push(bf322Result("V40 calcul inverse grammes",recipe.parts.length>=3 && recipe.totals.kcal>500 && recipe.totals.protein>=35,`${Math.round(recipe.totals.kcal)} kcal · ${Math.round(recipe.totals.protein)} g prot.`));
+      results.push(bf322Result("V41 calcul inverse grammes",recipe.parts.length>=3 && recipe.totals.kcal>500 && recipe.totals.protein>=35,`${Math.round(recipe.totals.kcal)} kcal · ${Math.round(recipe.totals.protein)} g prot.`));
 
       const type=v40MealPlanType(energy,settings);
-      results.push(bf322Result("V40 organisation repas",["2","2s","3","3s","4"].includes(type),`Organisation : ${type}.`));
+      results.push(bf322Result("V41 organisation repas",["2","2s","3","3s","4"].includes(type),`Organisation : ${type}.`));
 
-      results.push(bf322Result("V40 UI nutrition pro",[
+      results.push(bf322Result("V41 UI nutrition pro",[
         "v40NutritionProCard","v40EnergyGrid","v40MealReco","v40FoodSelect","v40FoodResult","v40RecipeResult","v40CoachAdvice"
       ].every(id=>!!document.getElementById(id)),"Tous les blocs Nutrition Pro sont présents."));
 
-      results.push(bf322Result("V40 bindings actifs",window.__v40_bound===true,"Contrôleur V40 initialisé."));
+      results.push(bf322Result("V41 bindings actifs",window.__v40_bound===true,"Contrôleur V41 initialisé."));
     }catch(e){
-      results.push(bf322Result("Diagnostic V40.3 Nutrition Pro",false,String(e)));
+      results.push(bf322Result("Diagnostic V41 Nutrition Pro",false,String(e)));
     }
     return results;
   }
@@ -10340,7 +10965,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     document.getElementById("v371QuickPlanBtn")?.addEventListener("click",()=>v371OpenTraining("plan"));
     document.getElementById("v371QuickSessionsBtn")?.addEventListener("click",()=>v371OpenTraining("sessions"));
     document.getElementById("v371QuickProgressBtn")?.addEventListener("click",()=>v371OpenTraining("progress"));
-    document.getElementById("v371QuickNutritionBtn")?.addEventListener("click",()=>v371OpenNutrition("pro"));
+    document.getElementById("v371QuickNutritionBtn")?.addEventListener("click",()=>v371OpenNutrition("meals"));
     document.getElementById("v371QuickCoachBtn")?.addEventListener("click",v371OpenCoach);
     v371RenderDashboard();
   }
@@ -10513,7 +11138,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         safe ? "Aucun échec moteur portions." : "Échec moteur portions."
       ));
     }catch(e){
-      results.push(bf322Result("Diagnostic nutrition V40",false,String(e)));
+      results.push(bf322Result("Diagnostic nutrition V41",false,String(e)));
     }finally{
       try{bf322Restore?.(backup);window.__bf362ForcedProfile=null;bf341RenderNutritionProfile?.();bf34NutritionSummary?.();}catch(e){}
     }
@@ -10606,8 +11231,8 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       ["Accueil guidé", "v30SelfTestBtn", el=>window.__bf_v30_bound===true],
       ["Stratégie séances V34", "bf33ApplyStrategyBtn", el=>window.__bf33_bound===true],
       ["Nutrition V34", "bf34SavePrefsBtn", el=>window.__bf34_bound===true],
-      ["Suivi nutrition V40", "v39AddMealBtn", el=>window.__v39_bound===true],
-      ["Nutrition Pro V40", "v40AddFoodToDayBtn", el=>window.__v40_bound===true]
+      ["Suivi nutrition V41", "v39AddMealBtn", el=>window.__v39_bound===true],
+      ["Nutrition Pro V41", "v40AddFoodToDayBtn", el=>window.__v40_bound===true]
     ];
     return checks.map(([name,id,test])=>{
       const el=document.getElementById(id);
@@ -10658,7 +11283,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     const funcs=[
       ["Profil sync","bf321SyncProfileEverywhere"],["Plan","v28BuildSmartMonth"],["Séances","v27GenerateSessions"],
-      ["Live","v31StartLive"],["Suivi","v29GenerateAdvice"],["Suivi nutrition V40","v39RenderTracker"],["Nutrition Pro V40","v40RenderPro"],["Menus","v32BuildMenus"],["Courses menus","v32BuildShoppingFromMenus"],["Courses classiques","v26RenderGroceryList"]
+      ["Live","v31StartLive"],["Suivi","v29GenerateAdvice"],["Suivi nutrition V41","v39RenderTracker"],["Nutrition Pro V41","v40RenderPro"],["Menus","v32BuildMenus"],["Courses menus","v32BuildShoppingFromMenus"],["Courses classiques","v26RenderGroceryList"]
     ];
     funcs.forEach(([label,name])=>{
       let t="undefined";
@@ -10668,7 +11293,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=40-3") || document.title.includes("V40.3"), `Titre : ${document.title}`));
+    results.push(bf322Result("Version chargée", location.href.includes("v=41") || document.title.includes("V41"), `Titre : ${document.title}`));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
@@ -10684,6 +11309,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(...v401NutritionGenerationDiagnostic());
       results.push(...v402RecalculateDiagnostic());
       results.push(...v403NutritionSyncDiagnostic());
+      results.push(...v41NutritionAutoDiagnostic());
       results.push(...v36Diagnostic());
       results.push(...v37CleanUIDiagnostic());
       results.push(...v38VisualDiagnostic());
@@ -10731,15 +11357,15 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V40.3.1\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V41.1\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=40-3-1&fresh=1
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=41&fresh=1
 2. Teste d’abord dans Safari
 3. Supprime l’ancienne icône si l’écran d’accueil garde une vieille version
-4. Ré-ajoute l’app seulement après avoir vu V40`;
+4. Ré-ajoute l’app seulement après avoir vu V41`;
     alert(msg);
   }
   function bf322Bind(){
@@ -10925,7 +11551,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=40-3").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=41").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   

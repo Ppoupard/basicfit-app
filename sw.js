@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basicfit-coach-v40-3-onefile';
+const CACHE_NAME = 'basicfit-coach-v41-onefile';
 const ASSETS = [
   './manifest.webmanifest',
   './icons/icon-180.png',
@@ -55,7 +55,7 @@ self.addEventListener('notificationclick', event => {
   event.waitUntil(
     clients.matchAll({type:'window', includeUncontrolled:true}).then(list => {
       for (const client of list) if ('focus' in client) return client.focus();
-      if (clients.openWindow) return clients.openWindow('./index.html?v=40-3');
+      if (clients.openWindow) return clients.openWindow('./index.html?v=41');
     })
   );
 });
