@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basicfit-coach-v43-1-priority-engine';
+const CACHE_NAME = 'basicfit-coach-v43-2-mono-activity';
 const ASSETS = [
   './index.html',
   './manifest.webmanifest',
@@ -56,7 +56,7 @@ self.addEventListener('notificationclick', event => {
   event.waitUntil(
     clients.matchAll({type:'window', includeUncontrolled:true}).then(list => {
       for (const client of list) if ('focus' in client) return client.focus();
-      if (clients.openWindow) return clients.openWindow('./index.html?v=43-1');
+      if (clients.openWindow) return clients.openWindow('./index.html?v=43-2');
     })
   );
 });

@@ -1,6 +1,6 @@
 {
-  "name": "Basic-Fit Coach V43.1 — Moteur intelligent",
-  "short_name": "BF Coach V43",
+  "name": "Basic-Fit Coach — V43.2",
+  "short_name": "Coach V43.2",
   "start_url": "./index.html?v=43-1",
   "display": "standalone",
   "background_color": "#070A12",
