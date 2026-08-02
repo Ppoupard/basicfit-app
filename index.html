@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V43.4 — Parcours calisthénie</title>
+  <title>Basic-Fit Coach V43.5 — Parcours Athlète</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2863,7 +2863,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.4 — NUTRITION AUTO SIMPLE
+   V43.5 — NUTRITION AUTO SIMPLE
    ============================================================ */
 .v41-engine-section,
 #v37NutritionCoachNote{
@@ -3089,7 +3089,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.4 — PLANNING SPORTIF + NUTRITION PAR JOUR
+   V43.5 — PLANNING SPORTIF + NUTRITION PAR JOUR
    ============================================================ */
 .v411-schedule-card{
   margin:16px 0;
@@ -3165,7 +3165,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.4 — PROFIL CLEANUP
+   V43.5 — PROFIL CLEANUP
    ============================================================ */
 .v412-profile-shell{
   display:grid;
@@ -3222,7 +3222,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.4 — ENTRAÎNEMENT AUTO
+   V43.5 — ENTRAÎNEMENT AUTO
    ============================================================ */
 .v42-training-shell{
   display:grid;
@@ -3436,7 +3436,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 
 
 /* ==========================================================
-   V43.4 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
+   V43.5 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
    ========================================================== */
 .v43-athlete-card{
   position:relative;
@@ -3510,7 +3510,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 }
 
 
-/* V43.4 — une activité guidée par jour */
+/* V43.5 — une activité guidée par jour */
 #v43AthleteJourneyCard{display:none!important}
 .v432-engine-settings{grid-template-columns:repeat(3,minmax(0,1fr))}
 .v432-day-selects{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -3524,7 +3524,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 @media(max-width:760px){.v432-engine-settings{grid-template-columns:1fr 1fr}.v432-day-selects{grid-template-columns:1fr}}
 
 /* ==========================================================
-   V43.4 — GUIDE VISUEL ORIGINAL DES MOUVEMENTS
+   V43.5 — GUIDE VISUEL ORIGINAL DES MOUVEMENTS
    Illustrations SVG intégrées : disponibles hors ligne.
    ========================================================== */
 .v433-exercise-card{
@@ -3580,7 +3580,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 }
 
 
-/* V43.4 — parcours calisthénie automatique */
+/* V43.5 — parcours calisthénie automatique */
 .v434-auto-level{min-height:42px;display:flex;align-items:center;padding:10px 12px;border:1px solid rgba(255,209,102,.25);border-radius:13px;background:rgba(255,209,102,.07);font-size:12px;font-weight:900;color:#fff3c4}
 .v434-assessment{margin-top:14px;padding:15px;border:1px solid rgba(125,179,255,.22);border-radius:20px;background:linear-gradient(145deg,rgba(125,179,255,.07),rgba(255,209,102,.035))}
 .v434-test-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
@@ -3602,6 +3602,68 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 .v434-criterion{display:inline-flex;margin-top:5px;padding:3px 7px;border-radius:999px;background:rgba(255,209,102,.1);color:#ffe7a2;font-size:9px;font-weight:900}
 @media(max-width:820px){.v434-test-grid{grid-template-columns:1fr 1fr}.v434-phase-progress{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:520px){.v434-test-grid{grid-template-columns:1fr}.v434-phase-progress{grid-template-columns:repeat(2,minmax(0,1fr))}.v434-assessment-actions>*{width:100%}}
+
+
+/* ==========================================================
+   V43.5 — PARCOURS ATHLÈTE FAÇON JEU VIDÉO
+   ========================================================== */
+#dashboardView #v382CleanHero{display:none!important}
+#dashboardView #v43AthleteJourneyCard,
+#dashboardView #v435MissionCard,
+#dashboardView #v435UnlockCard{display:block!important}
+#v43AthleteJourneyCard{margin-top:2px!important}
+.v43-athlete-card{
+  background:
+    radial-gradient(circle at 92% 0%,rgba(255,209,102,.23),transparent 34%),
+    radial-gradient(circle at 0% 100%,rgba(53,208,127,.16),transparent 37%),
+    linear-gradient(145deg,rgba(20,28,48,.98),rgba(7,11,20,.99))!important;
+  border-color:rgba(255,209,102,.2)!important;
+  box-shadow:0 24px 70px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.06)!important;
+}
+.v435-player-line{display:flex;align-items:center;gap:10px;margin:3px 0 13px;position:relative;z-index:1}
+.v435-avatar{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-weight:1000;font-size:18px;background:linear-gradient(145deg,rgba(255,209,102,.24),rgba(53,208,127,.16));border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.v435-player-copy strong{display:block;font-size:16px}.v435-player-copy small{color:var(--muted)}
+.v435-meta-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px;position:relative;z-index:1}
+.v435-meta{padding:10px;border-radius:15px;background:rgba(255,255,255,.045);border:1px solid var(--border)}
+.v435-meta strong{display:block;font-size:15px}.v435-meta small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.v43-domain-card{appearance:none;width:100%;text-align:left;color:var(--text);font:inherit;cursor:pointer;transition:transform .16s ease,border-color .16s ease}
+.v43-domain-card:active{transform:scale(.98)}
+.v43-domain-card[data-domain="calisthenics"]{border-color:rgba(53,208,127,.22)}
+.v43-domain-card[data-domain="gym"]{border-color:rgba(125,179,255,.22)}
+.v43-domain-card[data-domain="cardio"]{border-color:rgba(255,107,107,.22)}
+.v43-domain-card[data-domain="nutrition"]{border-color:rgba(255,209,102,.22)}
+.v435-card{position:relative;overflow:hidden}
+.v435-card::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-80px;top:-90px;background:radial-gradient(circle,rgba(125,179,255,.13),transparent 68%);pointer-events:none}
+.v435-mission-list{display:grid;gap:9px;margin-top:13px;position:relative;z-index:1}
+.v435-mission{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px;border-radius:17px;border:1px solid var(--border);background:rgba(255,255,255,.035)}
+.v435-mission.done{border-color:rgba(53,208,127,.3);background:rgba(53,208,127,.065)}
+.v435-mission-icon{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.07);font-size:18px}
+.v435-mission-copy strong{display:block;font-size:13px}.v435-mission-copy small{display:block;color:var(--muted);font-size:10px;line-height:1.35;margin-top:3px}
+.v435-mission-side{text-align:right}.v435-mission-side b{display:block;font-size:11px;color:var(--accent)}
+.v435-mission-side button{margin-top:5px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,.05);color:var(--text);padding:6px 8px;font-size:9px;font-weight:900}
+.v435-complete-mark{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:rgba(53,208,127,.18);color:#bfffe0;font-weight:1000}
+.v435-daily-bonus{margin-top:10px;padding:10px 12px;border-radius:15px;background:rgba(255,209,102,.07);border:1px solid rgba(255,209,102,.18);font-size:11px;color:var(--muted)}
+.v435-unlock-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:12px;position:relative;z-index:1}
+.v435-unlock-main,.v435-week-box{padding:13px;border-radius:18px;border:1px solid var(--border);background:rgba(255,255,255,.035)}
+.v435-unlock-main h3{margin:4px 0 5px}.v435-unlock-main p,.v435-week-box p{color:var(--muted);font-size:11px;line-height:1.45}
+.v435-unlock-track,.v435-week-track{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
+.v435-unlock-track i,.v435-week-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.v435-feed{display:grid;gap:7px;margin-top:12px;position:relative;z-index:1}
+.v435-feed-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:9px;align-items:center;padding:8px 0;border-top:1px solid rgba(255,255,255,.06)}
+.v435-feed-row:first-child{border-top:0}.v435-feed-row span{font-size:17px}.v435-feed-row strong{font-size:11px}.v435-feed-row small{display:block;color:var(--muted);font-size:9px;margin-top:2px}.v435-feed-row b{font-size:11px;color:var(--accent)}
+.v435-badge-row{display:flex;gap:7px;overflow:auto;padding:2px 0 4px;margin-top:10px;scrollbar-width:none}.v435-badge-row::-webkit-scrollbar{display:none}
+.v435-badge{flex:0 0 auto;padding:7px 9px;border-radius:13px;border:1px solid var(--border);background:rgba(255,255,255,.04);font-size:10px;font-weight:850;color:var(--muted)}
+.v435-badge.unlocked{color:#fff;border-color:rgba(255,209,102,.28);background:rgba(255,209,102,.08)}
+.v435-toast{position:fixed;left:50%;bottom:calc(98px + var(--safe-bottom));transform:translate(-50%,18px);z-index:120;min-width:min(330px,calc(100vw - 34px));padding:12px 14px;border-radius:17px;background:rgba(12,18,30,.97);border:1px solid rgba(53,208,127,.35);box-shadow:0 18px 50px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:.22s ease;text-align:center;font-weight:900}
+.v435-toast.show{opacity:1;transform:translate(-50%,0)}
+.v435-toast small{display:block;color:var(--muted);font-weight:700;margin-top:2px}
+@media(max-width:520px){
+  .v43-domain-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .v435-meta-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .v435-unlock-grid{grid-template-columns:1fr}
+  .v435-mission{grid-template-columns:36px minmax(0,1fr) auto}
+}
+
 </style>
 </head>
 <body data-active-view="dashboard">
@@ -3627,7 +3689,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V43.4 — COACH COMPLET</p>
+            <p class="card-kicker">V43.5 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -3761,8 +3823,8 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">V43 PARCOURS ATHLÈTE INTELLIGENT</p>
-          <h2>Ton parcours est clair : profil, plan, séances, suivi, nutrition et courses.</h2>
+          <p class="hero-label">V43.5 PARCOURS ATHLÈTE</p>
+          <h2>Progresse, gagne de l’XP et débloque la suite sans sacrifier la qualité de tes séances.</h2>
           <p id="todayLine">Chargement du jour...</p>
         </div>
         <div class="hero-orb">
@@ -3805,11 +3867,15 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
         <article class="card v43-athlete-card" id="v43AthleteJourneyCard">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V43.4 — PARCOURS ATHLÈTE</p>
-              <h2>Toute l’app devient une progression</h2>
-              <p>Salle, calisthénie, préparation football, nutrition, récupération et régularité alimentent le même parcours.</p>
+              <p class="card-kicker">V43.5 — PARCOURS ATHLÈTE</p>
+              <h2>Ton parcours d’athlète</h2>
+              <p>Salle, calisthénie, cardio, nutrition, récupération et régularité alimentent le même niveau Athlète.</p>
             </div>
-            <span class="tag">Socle actif</span>
+            <span class="tag" id="v435PlayerTag">Joueur actif</span>
+          </div>
+          <div class="v435-player-line">
+            <div class="v435-avatar" id="v435Avatar">BF</div>
+            <div class="v435-player-copy"><strong id="v435PlayerName">Athlète</strong><small id="v435PlayerSubtitle">Parcours local et personnel</small></div>
           </div>
           <div class="v43-level-hero">
             <div class="v43-level-main">
@@ -3823,8 +3889,42 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
           </div>
           <div class="v43-progress-track"><div class="v43-progress-fill" id="v43GlobalProgressFill"></div></div>
           <div class="v43-domain-grid" id="v43DomainGrid"></div>
-          <p class="v43-level-note">Ces niveaux représentent ta progression dans l’application, pas un classement sportif officiel. Les figures avancées resteront soumises à de vrais prérequis physiques.</p>
+          <div class="v435-meta-grid">
+            <div class="v435-meta"><strong id="v435StreakValue">0</strong><small>semaines régulières</small></div>
+            <div class="v435-meta"><strong id="v435WeekValue">0/0</strong><small>séances cette semaine</small></div>
+            <div class="v435-meta"><strong id="v435MissionValue">0%</strong><small>missions du jour</small></div>
+          </div>
+          <p class="v43-level-note">L’XP récompense les actions réellement effectuées. Les compétences et figures restent débloquées uniquement par leurs prérequis physiques.</p>
         </article>
+
+        <article class="card v435-card" id="v435MissionCard">
+          <div class="section-head">
+            <div><p class="card-kicker">MISSIONS DU JOUR</p><h2 id="v435MissionTitle">Ta journée</h2><p id="v435MissionSubtitle">Termine les actions utiles, sans ajouter de volume inutile.</p></div>
+            <span class="tag" id="v435MissionTag">0/0</span>
+          </div>
+          <div class="v435-mission-list" id="v435MissionList"></div>
+          <div class="v435-daily-bonus" id="v435DailyBonus">Bonus régularité disponible après la mission principale et une action de suivi.</div>
+        </article>
+
+        <article class="card v435-card" id="v435UnlockCard">
+          <div class="section-head">
+            <div><p class="card-kicker">PROCHAINE ÉTAPE</p><h2>Ce que tu peux débloquer</h2><p>La progression de jeu et la progression physique restent reliées, mais distinctes.</p></div>
+            <span class="tag" id="v435RankTag">Niveau 1</span>
+          </div>
+          <div class="v435-unlock-grid">
+            <div class="v435-unlock-main">
+              <small>COMPÉTENCE</small><h3 id="v435UnlockTitle">Bilan des bases</h3><p id="v435UnlockText">Complète ton test de départ pour personnaliser le parcours.</p>
+              <div class="v435-unlock-track"><i id="v435UnlockFill" style="width:0%"></i></div>
+            </div>
+            <div class="v435-week-box">
+              <small>SEMAINE ACTUELLE</small><h3 id="v435WeekTitle">0 séance terminée</h3><p id="v435WeekText">L’app suit uniquement les séances prévues.</p>
+              <div class="v435-week-track"><i id="v435WeekFill" style="width:0%"></i></div>
+            </div>
+          </div>
+          <div class="v435-badge-row" id="v435BadgeRow"></div>
+          <div class="v435-feed" id="v435XpFeed"></div>
+        </article>
+        <div class="v435-toast" id="v435Toast"></div>
 
         <section class="objective-strip" id="objectiveStrip">
           <div>
@@ -3840,7 +3940,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
         <article class="card v371-daily-dashboard" id="v371DailyDashboard">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V43.4 — ACCUEIL PREMIUM</p>
+              <p class="card-kicker">V43.5 — ACCUEIL PREMIUM</p>
               <h2>Ton tableau de bord</h2>
               <p>L’app te résume quoi faire aujourd’hui : entraînement, nutrition, contraintes et actions rapides.</p>
             </div>
@@ -4076,7 +4176,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
             <article class="card v43-planner-card" id="v43MultiPlannerCard">
               <div class="section-head">
                 <div>
-                  <p class="card-kicker">V43.4 — SÉANCES D’ABORD</p>
+                  <p class="card-kicker">V43.5 — SÉANCES D’ABORD</p>
                   <h2>Une seule activité guidée par jour</h2>
                   <p>Choisis soit Salle, soit Calisthénie, soit Cardio, soit Repos. Le football et les matchs restent des contraintes extérieures utilisées pour adapter la séance.</p>
                 </div>
@@ -4266,7 +4366,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 </div>
 <div class="result-box">
 <strong>Lien essai propre :</strong><br/>
-<code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=43-4&amp;fresh=1</code>
+<code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=43-5&amp;fresh=1</code>
 <p class="small-note">Le paramètre <strong>fresh=1</strong> vide les données locales de l’app sur l’appareil qui ouvre le lien.</p>
 </div>
 </article>
@@ -4281,8 +4381,8 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 </div>
 <article class="card accent-card" id="v421VersionBadge">
 <div class="card-kicker">VERSION ACTIVE</div>
-<h3>Basic-Fit Coach V43.4</h3>
-<p>Socle V43 actif · planning multi-activités · niveaux universels · moteurs V42 conservés en arrière-plan.</p>
+<h3>Basic-Fit Coach V43.5</h3>
+<p>Planning mono-activité · séances intelligentes · XP universel · progression calisthénie par prérequis.</p>
 </article>
 <div id="v36DiagnosticMount"></div>
 </article>
@@ -4297,7 +4397,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
           <article class="card">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.4 — ENTRAÎNEMENT AUTO</p>
+                <p class="card-kicker">V43.5 — ENTRAÎNEMENT AUTO</p>
                 <h2>Tu ouvres, tu suis ta séance</h2>
                 <p>Le planning choisit une activité guidée par jour. En calisthénie, le test des six bases décide automatiquement des mouvements avant de débloquer les figures.</p>
               </div>
@@ -4409,7 +4509,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V43.4 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V43.5 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -4425,7 +4525,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V43.4 — SÉANCES INTELLIGENTES</p>
+          <p class="card-kicker">V43.5 — SÉANCES INTELLIGENTES</p>
           <h2>Mes séances : auto, semi-auto ou manuel</h2>
           <p>L’app peut recommander un split comme un coach, mais tu peux aussi choisir ton split ou créer tes séances toi-même. Jusqu’à 6 séances/semaine sont possibles.</p>
 
@@ -4433,7 +4533,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
           <div class="bf33-strategy-card">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.4 — CHOIX DU SPLIT</p>
+                <p class="card-kicker">V43.5 — CHOIX DU SPLIT</p>
                 <h3>Comment tu veux construire tes séances ?</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf33RefreshRecommendationBtn">Recalculer la recommandation</button>
@@ -4590,7 +4690,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="liveView">
         <article class="card">
-          <p class="card-kicker">V43.4 — LIVE PERSONNALISÉ</p>
+          <p class="card-kicker">V43.5 — LIVE PERSONNALISÉ</p>
           <h2>Séance en direct</h2>
           <p>Choisis une séance générée, suis les exercices un par un, note tes perfs, lance le repos et enregistre automatiquement dans le suivi.</p>
 
@@ -4791,7 +4891,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="progressView">
         <article class="card">
-          <p class="card-kicker">V43.4 — SUIVI PROGRESSION</p>
+          <p class="card-kicker">V43.5 — SUIVI PROGRESSION</p>
           <h2>Noter ma séance</h2>
           <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
 
@@ -4892,7 +4992,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
 
           <div class="v36-nutrition-shell" id="v36NutritionShell">
-            <p class="card-kicker">V43.4 — NUTRITION AUTO</p>
+            <p class="card-kicker">V43.5 — NUTRITION AUTO</p>
             <h2>Tu suis, l’app s’occupe du reste</h2>
             <p>Ton profil pilote automatiquement les repas, les portions, le plan nutrition et les courses.</p>
 
@@ -4988,7 +5088,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               <article class="card v40-hero-card" id="v40NutritionProCard">
                 <div class="section-head">
                   <div>
-                    <p class="card-kicker">V43.4 — NUTRITION PRO</p>
+                    <p class="card-kicker">V43.5 — NUTRITION PRO</p>
                     <h3>Ton coach nutrition concret</h3>
                     <p>Objectif du jour, dépense au repos, activité, organisation des repas, portions crues/cuites et conseil du coach.</p>
                   </div>
@@ -5163,7 +5263,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               <article class="card v39-daily-card" id="v39DailyNutritionCard">
                 <div class="section-head">
                   <div>
-                    <p class="card-kicker">V43.4 — SUIVI DU JOUR</p>
+                    <p class="card-kicker">V43.5 — SUIVI DU JOUR</p>
                     <h3>Calories et protéines aujourd’hui</h3>
                     <p id="v39TodayDate">Chargement de la journée...</p>
                   </div>
@@ -5285,7 +5385,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           </div>
 
         <article class="card bf34-nutrition-card">
-          <p class="card-kicker">V43.4 — NUTRITION PERSONNALISÉE</p>
+          <p class="card-kicker">V43.5 — NUTRITION PERSONNALISÉE</p>
           <h2>Mes préférences alimentaires</h2>
           <p>Ces réglages servent aux menus, aux courses et aux remplacements automatiques.</p>
           <div class="v403-profile-sync-card" id="v403PrefsProfileSync">
@@ -5311,7 +5411,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf351-strategy-panel" id="bf351StrategyPanel">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.4 — OBJECTIFS NUTRITION</p>
+                <p class="card-kicker">V43.5 — OBJECTIFS NUTRITION</p>
                 <h3>Ce que l’app propose pour chaque objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf351ShowAllStrategiesBtn">Afficher toutes les stratégies</button>
@@ -5323,7 +5423,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf35-plan-card" id="bf35NutritionPlanCard">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.4 — PLAN NUTRITIONNEL</p>
+                <p class="card-kicker">V43.5 — PLAN NUTRITIONNEL</p>
                 <h3>Calories et macros selon ton objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf35RefreshNutritionPlanBtn">Recalculer</button>
@@ -5393,7 +5493,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V43.4 — DIAGNOSTIC PROFOND</p>
+          <p class="card-kicker">V43.5 — DIAGNOSTIC PROFOND</p>
           <h2>Diagnostic complet</h2>
           <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Les tests de durée et de split sont maintenant isolés : ils n’utilisent pas tes séances manuelles ni l’ancien état sauvegardé.</p>
 
@@ -5413,7 +5513,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=43-4</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=43-5</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -5461,7 +5561,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="menusView">
         <article class="card">
-          <p class="card-kicker">V43.4 — MENUS + COURSES</p>
+          <p class="card-kicker">V43.5 — MENUS + COURSES</p>
           <h2>Menus personnalisés de la semaine</h2>
           <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V43 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
           <div class="v32-menu-config">
@@ -5597,7 +5697,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
         }
       });
       sessionStorage.setItem("bf_v40_fresh_done","1");
-      const cleanUrl=location.origin+location.pathname+"?v=43-4&demo=ready";
+      const cleanUrl=location.origin+location.pathname+"?v=43-5&demo=ready";
       location.replace(cleanUrl);
     }catch(e){
       console.warn("V41 fresh preboot",e);
@@ -6841,7 +6941,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=43-4." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=43-5." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -6852,7 +6952,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=43-4"+Date.now();
+      location.href=location.pathname+"?v=43-5"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -6862,7 +6962,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=43-4. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=43-5. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -8153,7 +8253,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     }catch(err){
       console.error("Fallback génération V34", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=43-4 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=43-5 puis réessaie.");
     }
   }
 
@@ -8815,7 +8915,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.4 — ENTRAÎNEMENT AUTO
+     V43.5 — ENTRAÎNEMENT AUTO
      ========================================================== */
   const BF42_TRAINING_FP_KEY="bf_v42_training_fingerprint";
   const BF42_BASE_SESSIONS_KEY="bf_v42_base_sessions";
@@ -9216,19 +9316,19 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       const missing=required.filter(id=>!document.getElementById(id));
 
       results.push(bf322Result(
-        "V43.4 architecture Entraînement Auto",
+        "V43.5 architecture Entraînement Auto",
         missing.length===0,
         missing.length ? `Manquants : ${missing.join(", ")}` : "Les 4 nouveaux mounts V42 sont présents."
       ));
 
       results.push(bf322Result(
-        "V43.4 Live monté dans Ma séance",
+        "V43.5 Live monté dans Ma séance",
         !!document.getElementById("v42LiveMount") &&
         !!document.getElementById("v31LiveSessionSelect"),
         "Le moteur Live reste relié à Ma séance."
       ));
     }catch(e){
-      results.push(bf322Result("Diagnostic V43.4 architecture",false,String(e)));
+      results.push(bf322Result("Diagnostic V43.5 architecture",false,String(e)));
     }
     return results;
   }
@@ -10236,7 +10336,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         v387HandleIntroAction(btn.id);
       }catch(err){
         console.error("V38.7 intro action",btn.id,err);
-        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=43-4 ou utilise le mode secours.","err");
+        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=43-5 ou utilise le mode secours.","err");
       }
     },true);
   }
@@ -10306,7 +10406,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(!v386IsFreshMode()) return;
     if(sessionStorage.getItem("bf_v40_fresh_done")==="1") return;
     v386ClearLocalAppData();
-    const cleanUrl=location.origin+location.pathname+"?v=43-4&demo=ready";
+    const cleanUrl=location.origin+location.pathname+"?v=43-5&demo=ready";
     location.replace(cleanUrl);
   }
   function v386ShowToast(msg){
@@ -10321,7 +10421,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     }catch(e){}
   }
   function v386DemoLink(){
-    return location.origin+location.pathname+"?v=43-4&fresh=1";
+    return location.origin+location.pathname+"?v=43-5&fresh=1";
   }
   function v386BindDemo(){
     const txt=document.getElementById("v386DemoLinkText");
@@ -11367,12 +11467,12 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.4 — NUTRITION AUTO
+     V43.5 — NUTRITION AUTO
      ========================================================== */
 
 
   /* ==========================================================
-     V43.4 — PROFIL CLEANUP
+     V43.5 — PROFIL CLEANUP
      ========================================================== */
   function v412ShowProfileTab(section="profile"){
     const allowed=["profile","planning","diagnostic"];
@@ -11470,7 +11570,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.4 — PLANNING SPORTIF HEBDOMADAIRE
+     V43.5 — PLANNING SPORTIF HEBDOMADAIRE
      ========================================================== */
   const V411_DAY_KEYS=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
   const V411_DAY_LABELS={
@@ -13059,7 +13159,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=43-4") || document.title.includes("V43.4"), `Titre : ${document.title}`));
+    results.push(bf322Result("Version chargée", location.href.includes("v=43-5") || document.title.includes("V43.5"), `Titre : ${document.title}`));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
@@ -13128,15 +13228,15 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V43.4\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V43.5\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=43-4&fresh=1
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=43-5&fresh=1
 2. Teste d’abord dans Safari
 3. Supprime l’ancienne icône si l’écran d’accueil garde une vieille version
-4. Ré-ajoute l’app seulement après avoir vu V43.4`;
+4. Ré-ajoute l’app seulement après avoir vu V43.5`;
     alert(msg);
   }
   function bf322Bind(){
@@ -13175,7 +13275,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.4 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
+     V43.5 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
      ========================================================== */
   const BF43_MULTI_SCHEDULE_KEY="bf_v43_multi_schedule";
   const BF43_IDEAL_PREFS_KEY="bf_v43_ideal_preferences";
@@ -13575,7 +13675,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(bf322Result("V43 semaine idéale respecte le football",fixedOk,`Score ${suggested.score}% · contraintes mardi, vendredi et dimanche conservées.`));
       const progress=v43ComputeAthleteProgress();
       results.push(bf322Result("V43 niveaux universels",Object.keys(progress.domains).length===6,"Salle · calisthénie · prépa football · nutrition · récupération · régularité."));
-    }catch(e){results.push(bf322Result("Diagnostic V43.4",false,String(e)));}
+    }catch(e){results.push(bf322Result("Diagnostic V43.5",false,String(e)));}
     return results;
   }
   function v43Bind(){
@@ -13589,7 +13689,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   }
 
   /* ==========================================================
-     V43.4 — MOTEUR DE SÉANCES PRIORITAIRE ET MULTI-ACTIVITÉS
+     V43.5 — MOTEUR DE SÉANCES PRIORITAIRE ET MULTI-ACTIVITÉS
      ========================================================== */
   const BF431_ENGINE_PREFS_KEY="bf_v431_training_engine_preferences";
   const BF431_ASSIGNMENT_KEY="bf_v431_week_assignment";
@@ -13957,26 +14057,26 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     v42RenderToday(data,assignment);v42RenderWeek(data,assignment);v42RenderProgress();try{v31PopulateSessions?.();}catch(e){}return {data,assignment};
   }
   function v42StartTodaySession(){
-    try{const {assignment}=v42RenderAll(false);const today=assignment[v42TodayIndex()];if(!today?.session){alert("Aucune séance guidée n’est prévue aujourd’hui.");return;}v31PopulateSessions?.();const select=document.getElementById("v31LiveSessionSelect");if(select) select.value=String(today.sessionIndex||0);v31StartLive?.();setTimeout(()=>{try{v42ShowTrainingSection("today");v42RenderAll(false);}catch(e){}},0);}catch(e){console.error("V43.4 lancement séance",e);alert("Impossible de lancer la séance du jour.");}
+    try{const {assignment}=v42RenderAll(false);const today=assignment[v42TodayIndex()];if(!today?.session){alert("Aucune séance guidée n’est prévue aujourd’hui.");return;}v31PopulateSessions?.();const select=document.getElementById("v31LiveSessionSelect");if(select) select.value=String(today.sessionIndex||0);v31StartLive?.();setTimeout(()=>{try{v42ShowTrainingSection("today");v42RenderAll(false);}catch(e){}},0);}catch(e){console.error("V43.5 lancement séance",e);alert("Impossible de lancer la séance du jour.");}
   }
   function v43SavePlanning(){
     try{
       const prefs=v43ReadIdealPrefs();localStorage.setItem(BF43_IDEAL_PREFS_KEY,JSON.stringify(prefs));localStorage.setItem(BF431_ENGINE_PREFS_KEY,JSON.stringify(prefs));
       const schedule=v43SaveSchedule(v43ReadScheduleEditor());const legacy=v43SyncLegacyForm(schedule);const base=readProfileForm?.()||getProfile?.()||{};const profile={...base,gymDays:v43ActivityCount(schedule,"gym"),weeklySchedule:legacy,multiSchedule:schedule,trainingPriority:prefs.priority,calisGoal:prefs.calisGoal,calisLevel:prefs.calisLevel};BF_STORE?.set?.(PROFILE_KEY,profile);
-      try{bf321SyncProfileEverywhere?.(profile,{clearGenerated:true});}catch(e){console.warn("V43.4 sync",e);}try{v41RenderAll?.(true);}catch(e){console.warn("V43.4 nutrition",e);}try{v42RenderAll?.(true);}catch(e){console.warn("V43.4 training",e);}v43RenderAthleteProgress();v43SetPlanningStatus(`Planning sauvegardé. ${v431PriorityCopy(prefs)}`,"ok");
-    }catch(e){console.error("V43.4 save planning",e);v43SetPlanningStatus("Impossible de sauvegarder le planning multi-activités.","err");}
+      try{bf321SyncProfileEverywhere?.(profile,{clearGenerated:true});}catch(e){console.warn("V43.5 sync",e);}try{v41RenderAll?.(true);}catch(e){console.warn("V43.5 nutrition",e);}try{v42RenderAll?.(true);}catch(e){console.warn("V43.5 training",e);}v43RenderAthleteProgress();v43SetPlanningStatus(`Planning sauvegardé. ${v431PriorityCopy(prefs)}`,"ok");
+    }catch(e){console.error("V43.5 save planning",e);v43SetPlanningStatus("Impossible de sauvegarder le planning multi-activités.","err");}
   }
   function v431Diagnostic(){
     const results=[];
     const oldEngine=localStorage.getItem(BF431_ENGINE_PREFS_KEY),oldIdeal=localStorage.getItem(BF43_IDEAL_PREFS_KEY);
     try{
-      const ids=["v431TrainingPriority","v431CalisGoal","v431CalisLevel","v431PriorityNote"];const missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.4 préférences de priorité",missing.length===0,missing.length?`Manquants : ${missing.join(", ")}`:"Priorité, objectif et niveau calisthénie sont configurables."));
+      const ids=["v431TrainingPriority","v431CalisGoal","v431CalisLevel","v431PriorityNote"];const missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.5 préférences de priorité",missing.length===0,missing.length?`Manquants : ${missing.join(", ")}`:"Priorité, objectif et niveau calisthénie sont configurables."));
       const prefs={...v431LoadPrefs(),priority:"calisthenics",calisGoal:"pullups",calisLevel:"foundations"};localStorage.setItem(BF431_ENGINE_PREFS_KEY,JSON.stringify(prefs));localStorage.setItem(BF43_IDEAL_PREFS_KEY,JSON.stringify(prefs));
       const schedule=v43EmptyMultiSchedule();schedule.days.monday=v43NormalizeDay({activities:["gym","calisthenics"],primary:"calisthenics",availableMinutes:60});schedule.days.tuesday=v43NormalizeDay({activities:["football"]});schedule.days.sunday=v43NormalizeDay({activities:["match"]});const profile={...(v42EffectiveProfile?.()||{}),multiSchedule:schedule};const base=v27GenerateSessions?.({profile,noSave:true})||[];const data={profile,schedule:v43LegacySchedule(schedule),weekSessions:v42BuildWeekSessions(base,profile,1),cycleWeek:1};const assignment=v42BuildWeekAssignment(data);const monday=assignment[0];
-      results.push(bf322Result("V43.4 priorité calisthénie respectée",monday.primary==="calisthenics"&&monday.blocks?.find(b=>b.activity==="calisthenics")?.role==="main",`${monday.session?.name||"Aucune séance"} · ${monday.session?.duration||0} min.`));
-      const duplicatePull=monday.blocks?.find(b=>b.activity==="gym")?.exercises?.some(v431IsPullOverlap);results.push(bf322Result("V43.4 salle sans doublon avec objectif tirage",!duplicatePull,"La salle complémentaire évite tirages, rowing et curls lorsque les tractions sont prioritaires."));
-      const footSchedule=v43EmptyMultiSchedule();footSchedule.days.friday=v43NormalizeDay({activities:["football","gym","calisthenics"],primary:"football",availableMinutes:50});const footProfile={...profile,multiSchedule:footSchedule};const footBase=v27GenerateSessions?.({profile:footProfile,noSave:true})||[];const footData={profile:footProfile,schedule:v43LegacySchedule(footSchedule),weekSessions:v42BuildWeekSessions(footBase,footProfile,1),cycleWeek:1};const friday=v42BuildWeekAssignment(footData)[4];const safe=friday.blocks?.every(b=>b.role!=="main" || b.activity!=="gym") && (friday.session?.duration||0)<=50;results.push(bf322Result("V43.4 triple journée plafonnée",safe,`${friday.session?.name||"Aucune"} · ${friday.session?.duration||0} min complémentaires.`));
-    }catch(e){results.push(bf322Result("Diagnostic V43.4 moteur intelligent",false,String(e)));}
+      results.push(bf322Result("V43.5 priorité calisthénie respectée",monday.primary==="calisthenics"&&monday.blocks?.find(b=>b.activity==="calisthenics")?.role==="main",`${monday.session?.name||"Aucune séance"} · ${monday.session?.duration||0} min.`));
+      const duplicatePull=monday.blocks?.find(b=>b.activity==="gym")?.exercises?.some(v431IsPullOverlap);results.push(bf322Result("V43.5 salle sans doublon avec objectif tirage",!duplicatePull,"La salle complémentaire évite tirages, rowing et curls lorsque les tractions sont prioritaires."));
+      const footSchedule=v43EmptyMultiSchedule();footSchedule.days.friday=v43NormalizeDay({activities:["football","gym","calisthenics"],primary:"football",availableMinutes:50});const footProfile={...profile,multiSchedule:footSchedule};const footBase=v27GenerateSessions?.({profile:footProfile,noSave:true})||[];const footData={profile:footProfile,schedule:v43LegacySchedule(footSchedule),weekSessions:v42BuildWeekSessions(footBase,footProfile,1),cycleWeek:1};const friday=v42BuildWeekAssignment(footData)[4];const safe=friday.blocks?.every(b=>b.role!=="main" || b.activity!=="gym") && (friday.session?.duration||0)<=50;results.push(bf322Result("V43.5 triple journée plafonnée",safe,`${friday.session?.name||"Aucune"} · ${friday.session?.duration||0} min complémentaires.`));
+    }catch(e){results.push(bf322Result("Diagnostic V43.5 moteur intelligent",false,String(e)));}
     finally{
       if(oldEngine===null) localStorage.removeItem(BF431_ENGINE_PREFS_KEY); else localStorage.setItem(BF431_ENGINE_PREFS_KEY,oldEngine);
       if(oldIdeal===null) localStorage.removeItem(BF43_IDEAL_PREFS_KEY); else localStorage.setItem(BF43_IDEAL_PREFS_KEY,oldIdeal);
@@ -13984,17 +14084,17 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     return results;
   }
   function v42TrainingAutoDiagnostic(){
-    const results=[];try{const data=v42EnsureTrainingAuto(false),assignment=v42BuildWeekAssignment(data),guided=assignment.filter(d=>d.session);results.push(bf322Result("V43.4 planning → séances guidées",guided.every(d=>Array.isArray(d.session.exercises)&&d.session.exercises.length>0),`${guided.length} journées guidées générées.`));results.push(bf322Result("V43.4 durées journalières respectées",guided.every(d=>(d.session.duration||0)<=Math.max(d.availableMinutes||60,15)),guided.map(d=>`${d.label} ${d.session.duration}/${d.availableMinutes} min`).join(" · ")));results.push(bf322Result("V43.4 matchs protégés",assignment.filter(d=>d.activities.includes("match")).every(d=>!d.session || v431SessionLegRatio(d.session)===0),"Aucune jambe lourde ajoutée le jour du match."));results.push(...v431Diagnostic());}catch(e){results.push(bf322Result("Diagnostic V43.4 Entraînement",false,String(e)));}return results;
+    const results=[];try{const data=v42EnsureTrainingAuto(false),assignment=v42BuildWeekAssignment(data),guided=assignment.filter(d=>d.session);results.push(bf322Result("V43.5 planning → séances guidées",guided.every(d=>Array.isArray(d.session.exercises)&&d.session.exercises.length>0),`${guided.length} journées guidées générées.`));results.push(bf322Result("V43.5 durées journalières respectées",guided.every(d=>(d.session.duration||0)<=Math.max(d.availableMinutes||60,15)),guided.map(d=>`${d.label} ${d.session.duration}/${d.availableMinutes} min`).join(" · ")));results.push(bf322Result("V43.5 matchs protégés",assignment.filter(d=>d.activities.includes("match")).every(d=>!d.session || v431SessionLegRatio(d.session)===0),"Aucune jambe lourde ajoutée le jour du match."));results.push(...v431Diagnostic());}catch(e){results.push(bf322Result("Diagnostic V43.5 Entraînement",false,String(e)));}return results;
   }
   function v43Bind(){
     if(window.__v43_bound){v43FillIdealPrefs();v43RenderAthleteProgress();return;}window.__v43_bound=true;const schedule=v43LoadSchedule(true);v43RenderDayEditor(schedule);v43FillIdealPrefs();v43SyncLegacyForm(schedule);v43RenderAthleteProgress();document.getElementById("v43DayEditor")?.addEventListener("change",v43HandleEditorChange);document.querySelectorAll("#v43PlanningModeTabs [data-v43-mode]").forEach(btn=>btn.addEventListener("click",()=>v43SetPlanningMode(btn.dataset.v43Mode)));document.getElementById("v43SuggestWeekBtn")?.addEventListener("click",()=>{v43SetPlanningMode("ideal");v43SuggestWeek();});document.getElementById("v43ApplySuggestionBtn")?.addEventListener("click",v43ApplySuggestion);document.getElementById("v43SavePlanningBtn")?.addEventListener("click",v43SavePlanning);["v431TrainingPriority","v431CalisGoal","v431CalisLevel"].forEach(id=>document.getElementById(id)?.addEventListener("change",v431RenderPriorityNote));
   }
 
   /* ==========================================================
-     V43.4 — UNE ACTIVITÉ GUIDÉE + FOOTBALL EXTÉRIEUR
+     V43.5 — UNE ACTIVITÉ GUIDÉE + FOOTBALL EXTÉRIEUR
      Priorité : qualité et pertinence des séances.
      ========================================================== */
-  const BF432_VERSION="43-4";
+  const BF432_VERSION="43-5";
   const V432_INTERNAL=["rest","gym","calisthenics","cardio"];
   const V432_EXTERNAL=["none","football","match"];
 
@@ -14180,28 +14280,28 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function v42RenderWeek(data,assignment){const box=document.getElementById("v42WeekSchedule"),tag=document.getElementById("v42WeekCycleTag"),todayIndex=v42TodayIndex();if(tag) tag.textContent=`Semaine ${data.cycleWeek}/4`;if(!box) return;box.innerHTML=assignment.map(day=>{const label=v43DayActivitiesLabel(day),sessionText=day.session?`<strong>${v39Escape?.(day.session.name)||day.session.name}</strong><small>${day.session.duration} min · ${(day.session.exercises||[]).length} étapes/exercices</small><span class="v431-day-quality">${day.quality}</span>`:`<strong>${day.internalActivity==="rest"?"Repos":"Aucune séance"}</strong><small>${day.externalFootball==="match"?"Match extérieur":day.externalFootball==="football"?"Football extérieur":"Récupération"}</small>`;return `<div class="v42-week-row ${day.index===todayIndex?"v42-today-row":""}"><div class="v42-week-day"><strong>${day.label}</strong><small>${day.index===todayIndex?"Aujourd’hui":""}</small></div><div class="v42-week-session">${sessionText}</div><span class="v42-day-badge">${label}</span></div>`;}).join("");}
 
   function v43SavePlanning(){
-    try{const prefs=v43ReadIdealPrefs();localStorage.setItem(BF43_IDEAL_PREFS_KEY,JSON.stringify(prefs));localStorage.setItem(BF431_ENGINE_PREFS_KEY,JSON.stringify(prefs));const schedule=v43SaveSchedule(v43ReadScheduleEditor()),legacy=v43SyncLegacyForm(schedule),base=readProfileForm?.()||getProfile?.()||{},profile={...base,gymDays:v43ActivityCount(schedule,"gym"),weeklySchedule:legacy,multiSchedule:schedule,trainingPriority:prefs.priority,gymGoal:prefs.gymGoal,calisGoal:prefs.calisGoal,calisLevel:prefs.calisLevel,calisEquipment:prefs.calisEquipment,cardioGoal:prefs.cardioGoal};BF_STORE?.set?.(PROFILE_KEY,profile);try{bf321SyncProfileEverywhere?.(profile,{clearGenerated:true});}catch(e){}try{v41RenderAll?.(true);}catch(e){}try{v42RenderAll?.(true);}catch(e){}v43SetPlanningStatus("Planning sauvegardé : une activité guidée maximum par jour. Les séances ont été reconstruites autour du football extérieur.","ok");}catch(e){console.error("V43.4 save",e);v43SetPlanningStatus("Impossible de sauvegarder le planning.","err");}
+    try{const prefs=v43ReadIdealPrefs();localStorage.setItem(BF43_IDEAL_PREFS_KEY,JSON.stringify(prefs));localStorage.setItem(BF431_ENGINE_PREFS_KEY,JSON.stringify(prefs));const schedule=v43SaveSchedule(v43ReadScheduleEditor()),legacy=v43SyncLegacyForm(schedule),base=readProfileForm?.()||getProfile?.()||{},profile={...base,gymDays:v43ActivityCount(schedule,"gym"),weeklySchedule:legacy,multiSchedule:schedule,trainingPriority:prefs.priority,gymGoal:prefs.gymGoal,calisGoal:prefs.calisGoal,calisLevel:prefs.calisLevel,calisEquipment:prefs.calisEquipment,cardioGoal:prefs.cardioGoal};BF_STORE?.set?.(PROFILE_KEY,profile);try{bf321SyncProfileEverywhere?.(profile,{clearGenerated:true});}catch(e){}try{v41RenderAll?.(true);}catch(e){}try{v42RenderAll?.(true);}catch(e){}v43SetPlanningStatus("Planning sauvegardé : une activité guidée maximum par jour. Les séances ont été reconstruites autour du football extérieur.","ok");}catch(e){console.error("V43.5 save",e);v43SetPlanningStatus("Impossible de sauvegarder le planning.","err");}
   }
   function v430Diagnostic(){return v432Diagnostic();}
   function v431Diagnostic(){return v432Diagnostic();}
   function v432Diagnostic(){
-    const results=[];try{const ids=["v43MultiPlannerCard","v43DayEditor","v432DesiredCardio","v432GymGoal","v432CalisEquipment","v432CardioGoal"],missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.4 interface mono-activité",!missing.length,missing.length?`Manquants : ${missing.join(", ")}`:"Une activité app + football extérieur par jour."));const s=v43EmptyMultiSchedule();s.days.monday=v43NormalizeDay({internalActivity:"calisthenics",externalFootball:"football"});results.push(bf322Result("V43.4 séparation activité / football",s.days.monday.activities.length===2&&s.days.monday.internalActivity==="calisthenics"&&s.days.monday.externalFootball==="football","La calisthénie reste la seule séance guidée ; le foot est une contrainte extérieure."));const suggested=v43SuggestIdealSchedule(s,{...v431LoadPrefs(),gym:2,calis:2,cardio:1});const onePerDay=V43_DAY_KEYS.every(day=>V432_INTERNAL.includes(suggested.schedule.days[day].internalActivity));results.push(bf322Result("V43.4 semaine idéale sans combinaison interne",onePerDay,`Score ${suggested.score}% · aucune journée Salle + Calisthénie ou Salle + Cardio.`));}catch(e){results.push(bf322Result("Diagnostic V43.4",false,String(e)));}return results;
+    const results=[];try{const ids=["v43MultiPlannerCard","v43DayEditor","v432DesiredCardio","v432GymGoal","v432CalisEquipment","v432CardioGoal"],missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.5 interface mono-activité",!missing.length,missing.length?`Manquants : ${missing.join(", ")}`:"Une activité app + football extérieur par jour."));const s=v43EmptyMultiSchedule();s.days.monday=v43NormalizeDay({internalActivity:"calisthenics",externalFootball:"football"});results.push(bf322Result("V43.5 séparation activité / football",s.days.monday.activities.length===2&&s.days.monday.internalActivity==="calisthenics"&&s.days.monday.externalFootball==="football","La calisthénie reste la seule séance guidée ; le foot est une contrainte extérieure."));const suggested=v43SuggestIdealSchedule(s,{...v431LoadPrefs(),gym:2,calis:2,cardio:1});const onePerDay=V43_DAY_KEYS.every(day=>V432_INTERNAL.includes(suggested.schedule.days[day].internalActivity));results.push(bf322Result("V43.5 semaine idéale sans combinaison interne",onePerDay,`Score ${suggested.score}% · aucune journée Salle + Calisthénie ou Salle + Cardio.`));}catch(e){results.push(bf322Result("Diagnostic V43.5",false,String(e)));}return results;
   }
-  function v42TrainingAutoDiagnostic(){const results=[];try{const data=v42EnsureTrainingAuto(false),assignment=v42BuildWeekAssignment(data),guided=assignment.filter(d=>d.session);results.push(bf322Result("V43.4 une séance guidée maximum",assignment.every(d=>!d.session||d.blocks.length===1),`${guided.length} séances guidées sur la semaine.`));results.push(bf322Result("V43.4 durées respectées",guided.every(d=>(d.session.duration||0)<=d.availableMinutes),guided.map(d=>`${d.label} ${d.session.duration}/${d.availableMinutes} min`).join(" · ")));results.push(bf322Result("V43.4 matchs protégés",assignment.filter(d=>d.externalFootball==="match").every(d=>!d.session||(d.session.duration||0)<=15),"Aucune séance normale ajoutée le jour du match."));results.push(...v432Diagnostic());}catch(e){results.push(bf322Result("Diagnostic V43.4 Entraînement",false,String(e)));}return results;}
+  function v42TrainingAutoDiagnostic(){const results=[];try{const data=v42EnsureTrainingAuto(false),assignment=v42BuildWeekAssignment(data),guided=assignment.filter(d=>d.session);results.push(bf322Result("V43.5 une séance guidée maximum",assignment.every(d=>!d.session||d.blocks.length===1),`${guided.length} séances guidées sur la semaine.`));results.push(bf322Result("V43.5 durées respectées",guided.every(d=>(d.session.duration||0)<=d.availableMinutes),guided.map(d=>`${d.label} ${d.session.duration}/${d.availableMinutes} min`).join(" · ")));results.push(bf322Result("V43.5 matchs protégés",assignment.filter(d=>d.externalFootball==="match").every(d=>!d.session||(d.session.duration||0)<=15),"Aucune séance normale ajoutée le jour du match."));results.push(...v432Diagnostic());}catch(e){results.push(bf322Result("Diagnostic V43.5 Entraînement",false,String(e)));}return results;}
   function v43Bind(){
     if(window.__v43_bound){v43FillIdealPrefs();v43RenderDayEditor(v43LoadSchedule(true));return;}window.__v43_bound=true;const schedule=v43LoadSchedule(true);v43RenderDayEditor(schedule);v43FillIdealPrefs();v43SyncLegacyForm(schedule);document.getElementById("v43DayEditor")?.addEventListener("change",v43HandleEditorChange);document.querySelectorAll("#v43PlanningModeTabs [data-v43-mode]").forEach(btn=>btn.addEventListener("click",()=>v43SetPlanningMode(btn.dataset.v43Mode)));document.getElementById("v43SuggestWeekBtn")?.addEventListener("click",()=>{v43SetPlanningMode("ideal");v43SuggestWeek();});document.getElementById("v43ApplySuggestionBtn")?.addEventListener("click",v43ApplySuggestion);document.getElementById("v43SavePlanningBtn")?.addEventListener("click",v43SavePlanning);["v431TrainingPriority","v432GymGoal","v431CalisGoal","v431CalisLevel","v432CalisEquipment","v432CardioGoal"].forEach(id=>document.getElementById(id)?.addEventListener("change",v431RenderPriorityNote));
   }
-  /* END V43.4 */
+  /* END V43.5 */
 
-  /* END V43.4 */
+  /* END V43.5 */
 
 
 
   /* ==========================================================
-     V43.4 — GUIDE VISUEL ORIGINAL DES MOUVEMENTS
+     V43.5 — GUIDE VISUEL ORIGINAL DES MOUVEMENTS
      Les schémas sont des repères simplifiés, pas des copies du livre.
      ========================================================== */
-  const BF433_VERSION="43-4";
+  const BF433_VERSION="43-5";
   function v433Norm(value){
     try{return BF_UTIL?.normalize?.(String(value||""))||String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
     catch(e){return String(value||"").toLowerCase();}
@@ -14402,19 +14502,19 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function v433Diagnostic(){
     const samples=["Tractions strictes","Tractions australiennes","Suspension active","Pompes strictes","Dips stricts","Pistol squat assisté","Gainage","Bateau","L-sit","Équilibre face au mur","Front lever une jambe","Back lever straddle","Skin the cat contrôlé","Muscle-up négatif","Drapeau pieds au sol","Presse à cuisses","Tirage horizontal","Leg curl","Intervalles"];
     const keys=samples.map(name=>v433MovementKey({name})),generic=keys.filter(k=>k==="generic").length,svgOk=samples.every(name=>v433VisualHtml({name}).includes("<svg"));
-    return [bf322Result("V43.4 guide visuel chargé",typeof v433VisualHtml==="function"&&svgOk,`${samples.length} mouvements de test produisent un schéma SVG.`),bf322Result("V43.4 couverture des mouvements principaux",generic===0,generic?`${generic} mouvements principaux sans famille dédiée.`:"Calisthénie, salle et cardio couverts."),bf322Result("V43.4 illustrations hors ligne",!document.querySelector('[src^="http"]'),"Les schémas sont intégrés dans index.html sans dépendance distante.")];
+    return [bf322Result("V43.5 guide visuel chargé",typeof v433VisualHtml==="function"&&svgOk,`${samples.length} mouvements de test produisent un schéma SVG.`),bf322Result("V43.5 couverture des mouvements principaux",generic===0,generic?`${generic} mouvements principaux sans famille dédiée.`:"Calisthénie, salle et cardio couverts."),bf322Result("V43.5 illustrations hors ligne",!document.querySelector('[src^="http"]'),"Les schémas sont intégrés dans index.html sans dépendance distante.")];
   }
   const v433PreviousTrainingDiagnostic=v42TrainingAutoDiagnostic;
   v42TrainingAutoDiagnostic=function(){const base=typeof v433PreviousTrainingDiagnostic==="function"?v433PreviousTrainingDiagnostic():[];return [...base,...v433Diagnostic()];};
-  /* END V43.4 */
+  /* END V43.5 */
 
 
 
   /* ==========================================================
-     V43.4 — PARCOURS CALISTHÉNIE AUTOMATIQUE
+     V43.5 — PARCOURS CALISTHÉNIE AUTOMATIQUE
      Fondations du livre reformulées en moteur original.
      ========================================================== */
-  const BF434_VERSION="43-4";
+  const BF434_VERSION="43-5";
   const BF434_PATH_KEY="bf_v434_calisthenics_path";
   const V434_SKILL_LABELS={pullups:"Tractions",pushups:"Pompes",dips:"Dips",legs:"Jambes",core:"Gainage",lsit:"L-sit"};
   const V434_GOAL_LABELS={foundations:"Bases complètes",pullups:"Tractions",lsit:"L-sit",handstand:"Équilibre",planche90:"90°",flag:"Drapeau",muscleup:"Muscle-up",frontlever:"Front lever",backlever:"Back lever"};
@@ -14548,13 +14648,213 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   const v434PreviousSavePerformance=v31SavePerformance;
   v31SavePerformance=function(){const data=v31Current?.(),ex=data?.current,value=Number(document.getElementById("v31LiveReps")?.value)||0,pain=Number(document.getElementById("v31LivePain")?.value)||0;v434PreviousSavePerformance();if(v434MaybeAdvanceFromPerformance(ex,value,pain)){v31SetStatus?.("Performance enregistrée et prochaine étape calisthénie débloquée.","ok");try{localStorage.removeItem(BF42_TRAINING_FINGERPRINT_KEY);v42RenderAll?.(true);}catch(e){}}};
   const v434PreviousDiagnostic=v42TrainingAutoDiagnostic;
-  function v434Diagnostic(){const results=[];try{const ids=["v434AssessmentCard","v434AnalyzeBtn","v434AssessmentSummary","v434PathProgress","v434AutoLevelDisplay"],missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.4 test des 6 bases",!missing.length,missing.length?`Manquants : ${missing.join(", ")}`:"Tractions, pompes, dips, jambes, gainage et L-sit présents."));const p=v434DefaultPath();p.assessmentComplete=true;p.fundamentals.pullups=v434AnalyzeSkill("pullups","strict",10);p.fundamentals.pushups=v434AnalyzeSkill("pushups","strict",20);p.fundamentals.dips=v434AnalyzeSkill("dips","strict",12);p.fundamentals.legs=v434AnalyzeSkill("legs","assisted_pistol",10);p.fundamentals.core=v434AnalyzeSkill("core","plank",60);p.fundamentals.lsit=v434AnalyzeSkill("lsit","tuck",10);results.push(bf322Result("V43.4 passage Phase 1 vers Phase 2",v434PhaseReady(p),`${v434PassedCount(p)}/6 bases validées selon les critères du parcours.`));const locked=v434GoalLock("muscleup",v434DefaultPath(),{calisEquipment:"full"},{});results.push(bf322Result("V43.4 figures verrouillées sans bases",locked.locked,locked.missing.join(" · ")));const session=v434FoundationSession({activities:["calisthenics"]},{calisGoal:"foundations"},60,{sameFootball:false,sameMatch:false,nextMatch:false},{},v434DefaultPath());results.push(bf322Result("V43.4 séance Phase 1 complète",session.exercises.length===6&&session.exercises.every(e=>e.pathSkill),`${session.exercises.length} bases · ${session.format}.`));const adv=v434AdvancedSession({activities:["calisthenics"]},{calisGoal:"frontlever",calisEquipment:"full"},45,{sameFootball:false,sameMatch:false,nextMatch:false},{},p);results.push(bf322Result("V43.4 séance Phase 2 par objectif",adv.pathPhase===2&&adv.exercises[0]?.pathGoal==="frontlever",`${adv.name} · étape ${adv.pathStage}.`));}catch(e){results.push(bf322Result("Diagnostic V43.4",false,String(e)));}return results;}
+  function v434Diagnostic(){const results=[];try{const ids=["v434AssessmentCard","v434AnalyzeBtn","v434AssessmentSummary","v434PathProgress","v434AutoLevelDisplay"],missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.5 test des 6 bases",!missing.length,missing.length?`Manquants : ${missing.join(", ")}`:"Tractions, pompes, dips, jambes, gainage et L-sit présents."));const p=v434DefaultPath();p.assessmentComplete=true;p.fundamentals.pullups=v434AnalyzeSkill("pullups","strict",10);p.fundamentals.pushups=v434AnalyzeSkill("pushups","strict",20);p.fundamentals.dips=v434AnalyzeSkill("dips","strict",12);p.fundamentals.legs=v434AnalyzeSkill("legs","assisted_pistol",10);p.fundamentals.core=v434AnalyzeSkill("core","plank",60);p.fundamentals.lsit=v434AnalyzeSkill("lsit","tuck",10);results.push(bf322Result("V43.5 passage Phase 1 vers Phase 2",v434PhaseReady(p),`${v434PassedCount(p)}/6 bases validées selon les critères du parcours.`));const locked=v434GoalLock("muscleup",v434DefaultPath(),{calisEquipment:"full"},{});results.push(bf322Result("V43.5 figures verrouillées sans bases",locked.locked,locked.missing.join(" · ")));const session=v434FoundationSession({activities:["calisthenics"]},{calisGoal:"foundations"},60,{sameFootball:false,sameMatch:false,nextMatch:false},{},v434DefaultPath());results.push(bf322Result("V43.5 séance Phase 1 complète",session.exercises.length===6&&session.exercises.every(e=>e.pathSkill),`${session.exercises.length} bases · ${session.format}.`));const adv=v434AdvancedSession({activities:["calisthenics"]},{calisGoal:"frontlever",calisEquipment:"full"},45,{sameFootball:false,sameMatch:false,nextMatch:false},{},p);results.push(bf322Result("V43.5 séance Phase 2 par objectif",adv.pathPhase===2&&adv.exercises[0]?.pathGoal==="frontlever",`${adv.name} · étape ${adv.pathStage}.`));}catch(e){results.push(bf322Result("Diagnostic V43.5",false,String(e)));}return results;}
   v42TrainingAutoDiagnostic=function(){const base=typeof v434PreviousDiagnostic==="function"?v434PreviousDiagnostic():[];return [...base,...v434Diagnostic()];};
   function v434OpenAssessment(){document.querySelector('[data-view="profile"]')?.click();setTimeout(()=>{document.querySelector('[data-profile-section="planning"]')?.click();document.getElementById("v434AssessmentCard")?.scrollIntoView({behavior:"smooth",block:"start"});},80);}
   function v434Bind(){if(window.__v434_bound){v434RenderPathUI();return;}window.__v434_bound=true;document.getElementById("v434AnalyzeBtn")?.addEventListener("click",v434AnalyzeAndSave);document.getElementById("v434ResetBtn")?.addEventListener("click",v434ResetAssessment);document.getElementById("v434OpenAssessmentBtn")?.addEventListener("click",v434OpenAssessment);Object.values(V434_TEST_IDS).forEach(ids=>document.getElementById(ids.variant)?.addEventListener("change",v434UpdateUnits));document.addEventListener("click",e=>{const btn=e.target.closest?.("[data-v434-advance]");if(btn) v434AdvanceGoal(btn.dataset.v434Advance);});document.getElementById("v431CalisGoal")?.addEventListener("change",()=>{v434RenderPathUI();try{localStorage.removeItem(BF42_TRAINING_FINGERPRINT_KEY);v42RenderAll?.(true);}catch(e){}});v434FillAssessmentForm();v434RenderPathUI();}
   const v434PreviousBind=v43Bind;
   v43Bind=function(){v434PreviousBind();v434Bind();};
-  /* END V43.4 */
+  /* END V43.5 */
+
+
+
+  /* ==========================================================
+     V43.5 — MOTEUR UNIVERSEL DE NIVEAUX, XP ET MISSIONS
+     ========================================================== */
+  const BF435_EVENTS_KEY="bf_v435_xp_events";
+  const BF435_PROGRESS_KEY="bf_v435_game_progress";
+  const V435_DOMAIN_META={
+    gym:{icon:"🏋️",label:"Salle",view:"training"},
+    calisthenics:{icon:"🤸",label:"Calisthénie",view:"training"},
+    cardio:{icon:"🏃",label:"Cardio",view:"training"},
+    nutrition:{icon:"🍽️",label:"Nutrition",view:"nutrition"},
+    recovery:{icon:"😴",label:"Récupération",view:"training"},
+    regularity:{icon:"🔥",label:"Régularité",view:"dashboard"}
+  };
+  let v435ToastTimer=null;
+
+  function v435DateKey(date=new Date()){
+    try{return v39DateKey(date);}catch(e){}
+    const d=date instanceof Date?date:new Date(date);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  }
+  function v435WeekStart(date=new Date()){
+    const d=date instanceof Date?new Date(date):new Date(date);d.setHours(12,0,0,0);const delta=(d.getDay()+6)%7;d.setDate(d.getDate()-delta);return d;
+  }
+  function v435WeekKey(date=new Date()){return v435DateKey(v435WeekStart(date));}
+  function v435SafeEvents(){try{const data=JSON.parse(localStorage.getItem(BF435_EVENTS_KEY)||"[]");return Array.isArray(data)?data.filter(x=>x&&x.key&&x.domain):[];}catch(e){return [];}}
+  function v435SaveEvents(events){localStorage.setItem(BF435_EVENTS_KEY,JSON.stringify((events||[]).slice(-600)));}
+  function v435HasEvent(key){return v435SafeEvents().some(e=>e.key===key);}
+  function v435EventsForDate(key=v435DateKey()){return v435SafeEvents().filter(e=>(e.meta?.date||v435DateKey(e.createdAt))===key);}
+  function v435ShowToast(event){
+    const box=document.getElementById("v435Toast");if(!box||!event)return;
+    box.innerHTML=`+${event.xp} XP · ${v39Escape?.(event.label)||event.label}<small>${V435_DOMAIN_META[event.domain]?.label||"Parcours Athlète"}</small>`;
+    box.classList.add("show");clearTimeout(v435ToastTimer);v435ToastTimer=setTimeout(()=>box.classList.remove("show"),2300);
+  }
+  function v435Award(payload={},options={}){
+    const key=String(payload.key||"");const xp=Math.max(0,Math.round(Number(payload.xp)||0));const domain=V435_DOMAIN_META[payload.domain]?payload.domain:"regularity";
+    if(!key||!xp||v435HasEvent(key)) return false;
+    const event={id:`xp_${Date.now()}_${Math.random().toString(36).slice(2,7)}`,key,type:payload.type||"reward",domain,xp,label:String(payload.label||"Progression"),createdAt:new Date().toISOString(),meta:payload.meta||{}};
+    const events=v435SafeEvents();events.push(event);v435SaveEvents(events);
+    if(options.toast!==false) v435ShowToast(event);
+    if(options.render!==false) setTimeout(v435RenderGame,0);
+    return event;
+  }
+  function v435LevelFromXp(xp,domain=false){
+    let safe=Math.max(0,Math.round(Number(xp)||0)),level=1,spent=0,required=domain?160:300,guard=0;
+    while(safe-spent>=required&&guard<200){spent+=required;level++;required=(domain?160:300)+(level-1)*(domain?45:80);guard++;}
+    const current=safe-spent,percent=Math.min(100,Math.round(current/required*100));return {xp:safe,level,current,next:required,remaining:Math.max(0,required-current),percent};
+  }
+  function v435Rank(level){if(level>=41)return"Élite personnelle";if(level>=31)return"Maîtrise";if(level>=21)return"Athlète confirmé";if(level>=11)return"Athlète en progression";if(level>=6)return"Fondations";return"Nouveau départ";}
+  function v435Profile(){try{return bf341CurrentProfile?.()||getProfile?.()||{};}catch(e){return {};}}
+  function v435TodayDay(date=new Date()){
+    const index=(date.getDay()+6)%7,key=V43_DAY_KEYS[index],schedule=v43NormalizeSchedule(v43LoadSchedule(true));return {index,key,...schedule.days[key]};
+  }
+  function v435SessionDomain(session={},date=new Date()){
+    const planned=v435TodayDay(date)?.internalActivity;
+    if(session.pathPhase||session.pathGoal||(session.exercises||[]).some(ex=>ex.pathSkill||ex.pathGoal)||session.activity==="calisthenics") return "calisthenics";
+    const text=v433Norm?.(`${session.name||""} ${session.activity||""}`)||String(session.name||"").toLowerCase();
+    if(session.activity==="cardio"||text.includes("cardio")||text.includes("endurance")||text.includes("intervalle")) return "cardio";
+    if(["gym","calisthenics","cardio"].includes(planned)) return planned;
+    return "gym";
+  }
+  function v435SeedSetupRewards(){
+    const profile=v435Profile(),schedule=v43LoadSchedule(false),path=typeof v434LoadPath==="function"?v434LoadPath():null;
+    const seeds=[];
+    if(profile.name&&Number(profile.weight)>0&&profile.goal) seeds.push({key:"setup:profile",domain:"regularity",xp:30,label:"Profil sportif complété"});
+    if(schedule&&v43ScheduleConfigured(schedule)) seeds.push({key:"setup:planning",domain:"regularity",xp:40,label:"Semaine sportive configurée"});
+    if(path?.assessmentComplete) seeds.push({key:"setup:calis_assessment",domain:"calisthenics",xp:50,label:"Bilan des six bases terminé"});
+    if(localStorage.getItem("bf_v32_week_menus")) seeds.push({key:"setup:nutrition_plan",domain:"nutrition",xp:30,label:"Plan nutrition préparé"});
+    seeds.forEach(s=>v435Award({...s,type:"setup",meta:{date:v435DateKey()}},{toast:false,render:false}));
+  }
+  function v435ComputeProgress(){
+    v435SeedSetupRewards();const events=v435SafeEvents(),domainXp=Object.fromEntries(Object.keys(V435_DOMAIN_META).map(k=>[k,0]));
+    events.forEach(e=>{if(domainXp[e.domain]!==undefined)domainXp[e.domain]+=Math.max(0,Number(e.xp)||0);});
+    const totalXp=Object.values(domainXp).reduce((a,b)=>a+b,0),global=v435LevelFromXp(totalXp,false);
+    const result={version:2,totalXp,level:global.level,rank:v435Rank(global.level),global,domains:Object.fromEntries(Object.entries(domainXp).map(([key,xp])=>[key,v435LevelFromXp(xp,true)])),eventCount:events.length,updatedAt:new Date().toISOString()};
+    try{localStorage.setItem(BF435_PROGRESS_KEY,JSON.stringify(result));localStorage.setItem(BF43_PROGRESS_KEY,JSON.stringify(result));}catch(e){}
+    return result;
+  }
+  function v435NutritionState(dateKey=v435DateKey()){
+    let day={entries:[]};try{day=v39GetDay?.(dateKey)||day;}catch(e){}const count=Array.isArray(day.entries)?day.entries.length:0,profile=v435Profile(),target=Math.max(1,Math.min(3,Number(profile.meals)||2));return {count,target,done:count>=target};
+  }
+  function v435SessionDone(dateKey,domain){return v435SafeEvents().some(e=>e.type==="session_complete"&&e.domain===domain&&(e.meta?.date||v435DateKey(e.createdAt))===dateKey);}
+  function v435PerformanceDone(dateKey,domain){return v435SafeEvents().some(e=>e.type==="performance"&&e.domain===domain&&(e.meta?.date||v435DateKey(e.createdAt))===dateKey);}
+  function v435RecoveryDone(dateKey){return v435HasEvent(`recovery:rest:${dateKey}`);}
+  function v435PrimaryDone(dateKey=v435DateKey()){
+    const day=v435TodayDay();if(day.internalActivity==="rest")return v435RecoveryDone(dateKey);return v435SessionDone(dateKey,day.internalActivity);
+  }
+  function v435SyncDailyBonus(){
+    const date=v435DateKey(),primary=v435PrimaryDone(date),nutrition=v435NutritionState(date).done,perf=v435EventsForDate(date).some(e=>e.type==="performance");
+    if(primary&&(nutrition||perf||v435TodayDay().internalActivity==="rest")) v435Award({key:`regularity:day:${date}`,type:"daily_consistency",domain:"regularity",xp:15,label:"Journée cohérente",meta:{date}},{toast:false,render:false});
+  }
+  function v435WeekStats(date=new Date()){
+    const start=v435WeekStart(date),schedule=v43NormalizeSchedule(v43LoadSchedule(true)),events=v435SafeEvents();let planned=0,completed=0;
+    V43_DAY_KEYS.forEach((key,index)=>{const activity=schedule.days[key].internalActivity;if(activity==="rest")return;planned++;const d=new Date(start);d.setDate(start.getDate()+index);const dateKey=v435DateKey(d);if(events.some(e=>e.type==="session_complete"&&e.domain===activity&&(e.meta?.date||v435DateKey(e.createdAt))===dateKey))completed++;});
+    const percent=planned?Math.round(completed/planned*100):100;return {planned,completed,percent,startKey:v435WeekKey(date)};
+  }
+  function v435SyncWeeklyBonus(){const w=v435WeekStats();if(w.planned>0&&w.completed>=w.planned)v435Award({key:`regularity:week:${w.startKey}`,type:"weekly_consistency",domain:"regularity",xp:75,label:"Semaine sportive accomplie",meta:{date:v435DateKey(),week:w.startKey}},{toast:false,render:false});}
+  function v435Streak(){
+    const weeks=new Set(v435SafeEvents().filter(e=>e.type==="weekly_consistency").map(e=>e.meta?.week).filter(Boolean));let count=0,d=v435WeekStart();
+    for(let i=0;i<52;i++){const key=v435WeekKey(d);if(weeks.has(key)){count++;d.setDate(d.getDate()-7);continue;}if(i===0){d.setDate(d.getDate()-7);continue;}break;}return count;
+  }
+  function v435MissionData(){
+    const date=v435DateKey(),day=v435TodayDay(),nutrition=v435NutritionState(date),path=typeof v434LoadPath==="function"?v434LoadPath():null,missions=[];
+    const activity=day.internalActivity,activityMeta=V435_DOMAIN_META[activity];
+    if(activity==="rest") missions.push({id:"rest",icon:"😴",title:"Respecter ta récupération",detail:day.externalFootball==="match"?"Match extérieur : aucune séance supplémentaire dans l’app.":"Le repos prévu fait partie du programme.",xp:20,done:v435RecoveryDone(date),action:"claim-rest",button:"Valider"});
+    else missions.push({id:"session",icon:activityMeta?.icon||"🎯",title:`Terminer ta séance ${activityMeta?.label||"du jour"}`,detail:`Une seule activité guidée, adaptée à ta semaine et au football extérieur.`,xp:50,done:v435SessionDone(date,activity),action:"training",button:"Ouvrir"});
+    if(activity==="calisthenics"&&!path?.assessmentComplete) missions.push({id:"assessment",icon:"🧭",title:"Faire le bilan des six bases",detail:"Il détermine automatiquement les mouvements de tes séances.",xp:50,done:false,action:"assessment",button:"Tester"});
+    if(activity!=="rest") missions.push({id:"performance",icon:"📈",title:"Enregistrer une performance propre",detail:"Une seule récompense par domaine et par jour.",xp:10,done:v435PerformanceDone(date,activity),action:"training",button:"Noter"});
+    missions.push({id:"nutrition",icon:"🍽️",title:"Renseigner tes repas du jour",detail:`${nutrition.count}/${nutrition.target} entrée${nutrition.target>1?"s":""} utile${nutrition.target>1?"s":""} enregistrée${nutrition.target>1?"s":""}.`,xp:15,done:nutrition.done,action:"nutrition",button:"Ajouter"});
+    return missions.slice(0,4);
+  }
+  function v435UnlockData(progress){
+    try{
+      const path=v434LoadPath?.();
+      if(!path?.assessmentComplete)return {title:"Bilan des six bases",text:"Complète le test initial pour que les séances suivent automatiquement ton vrai niveau.",percent:0};
+      const weak=Object.keys(V434_SKILL_LABELS).find(k=>!path.fundamentals[k]?.passed);
+      if(weak){const state=path.fundamentals[weak],step=V434_FOUNDATION_STEPS[weak]?.[Math.max(0,(state.stage||1)-1)];const pct=step?Math.min(100,Math.round((Number(state.value)||0)/(Number(step.criterionValue)||1)*100)):0;return {title:`${V434_SKILL_LABELS[weak]} · étape ${state.stage||1}`,text:step?`${step.name} — objectif : ${step.criterion}.`:"Continue les fondations avec une exécution propre.",percent:pct};}
+      const prefs=v431LoadPrefs?.()||{},goal=prefs.calisGoal||"foundations";
+      if(V434_ADVANCED_GOALS.includes(goal)){const lock=v434GoalLock(goal,path,prefs,v435Profile());if(lock.locked)return {title:`${V434_GOAL_LABELS[goal]} verrouillé`,text:lock.missing.join(" · "),percent:0};const step=v434CurrentAdvancedStep(goal,path);const state=path.advanced[goal]||{stage:1};const total=V434_ADVANCED_PATHS[goal]?.length||1;return {title:`${V434_GOAL_LABELS[goal]} · étape ${state.stage||1}/${total}`,text:`${step.name} — ${step.criterion}.`,percent:Math.round(((state.stage||1)-1)/total*100)};}
+    }catch(e){}
+    return {title:`Niveau Athlète ${progress.level+1}`,text:`Encore ${progress.global.remaining} XP pour atteindre le prochain niveau global.`,percent:progress.global.percent};
+  }
+  function v435Badges(){
+    const events=v435SafeEvents(),path=typeof v434LoadPath==="function"?v434LoadPath():null;
+    return [
+      {icon:"🪪",label:"Profil prêt",ok:v435HasEvent("setup:profile")},
+      {icon:"📅",label:"Semaine prête",ok:v435HasEvent("setup:planning")},
+      {icon:"🧭",label:"Bases testées",ok:!!path?.assessmentComplete},
+      {icon:"🏁",label:"Première séance",ok:events.some(e=>e.type==="session_complete")},
+      {icon:"🔥",label:"Semaine accomplie",ok:events.some(e=>e.type==="weekly_consistency")}
+    ];
+  }
+  function v435EventIcon(e){return V435_DOMAIN_META[e.domain]?.icon||"✨";}
+  function v435RenderMissions(){
+    const missions=v435MissionData(),done=missions.filter(m=>m.done).length,list=document.getElementById("v435MissionList"),tag=document.getElementById("v435MissionTag"),value=document.getElementById("v435MissionValue"),title=document.getElementById("v435MissionTitle");
+    if(title)title.textContent=new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});if(tag)tag.textContent=`${done}/${missions.length}`;if(value)value.textContent=`${missions.length?Math.round(done/missions.length*100):100}%`;
+    if(list)list.innerHTML=missions.map(m=>`<div class="v435-mission ${m.done?"done":""}"><div class="v435-mission-icon">${m.icon}</div><div class="v435-mission-copy"><strong>${v39Escape?.(m.title)||m.title}</strong><small>${v39Escape?.(m.detail)||m.detail}</small></div><div class="v435-mission-side"><b>+${m.xp} XP</b>${m.done?'<span class="v435-complete-mark">✓</span>':`<button type="button" data-v435-action="${m.action}">${m.button}</button>`}</div></div>`).join("");
+    const bonus=document.getElementById("v435DailyBonus"),awarded=v435HasEvent(`regularity:day:${v435DateKey()}`);if(bonus)bonus.innerHTML=awarded?"✅ Bonus régularité obtenu aujourd’hui : +15 XP.":"Bonus régularité : termine la mission principale et une action de suivi utile.";
+  }
+  function v435RenderGame(){
+    v435SyncDailyBonus();v435SyncWeeklyBonus();const data=v435ComputeProgress(),events=v435SafeEvents(),profile=v435Profile();
+    const level=document.getElementById("v43GlobalLevel"),rank=document.getElementById("v43GlobalRank"),xp=document.getElementById("v43GlobalXp"),next=document.getElementById("v43NextLevelXp"),fill=document.getElementById("v43GlobalProgressFill"),grid=document.getElementById("v43DomainGrid"),message=document.getElementById("v43GlobalMessage");
+    if(level)level.textContent=String(data.level);if(rank)rank.textContent=data.rank;if(xp)xp.textContent=`${data.totalXp} XP`;if(next)next.textContent=`${data.global.remaining} XP avant le niveau ${data.level+1}`;if(fill)fill.style.width=`${data.global.percent}%`;if(message)message.textContent="Chaque niveau vient de séances, suivis et habitudes réellement enregistrés.";
+    const name=String(profile.name||"Athlète").trim()||"Athlète",avatar=document.getElementById("v435Avatar");if(document.getElementById("v435PlayerName"))document.getElementById("v435PlayerName").textContent=name;if(avatar)avatar.textContent=name.slice(0,2).toUpperCase();if(document.getElementById("v435PlayerSubtitle"))document.getElementById("v435PlayerSubtitle").textContent=`${data.rank} · ${data.eventCount} action${data.eventCount>1?"s":""} récompensée${data.eventCount>1?"s":""}`;
+    if(document.getElementById("v435PlayerTag"))document.getElementById("v435PlayerTag").textContent=`Niveau ${data.level}`;if(document.getElementById("v435RankTag"))document.getElementById("v435RankTag").textContent=data.rank;
+    if(grid)grid.innerHTML=Object.entries(V435_DOMAIN_META).map(([key,meta])=>{const d=data.domains[key];return `<button type="button" class="v43-domain-card" data-domain="${key}" data-v435-open="${meta.view}"><div><strong>${meta.icon} ${meta.label}</strong><b>Niv. ${d.level}</b></div><small>${d.xp} XP · ${d.remaining} avant le suivant</small><div class="v43-domain-bar"><i style="width:${d.percent}%"></i></div></button>`;}).join("");
+    const week=v435WeekStats();if(document.getElementById("v435StreakValue"))document.getElementById("v435StreakValue").textContent=String(v435Streak());if(document.getElementById("v435WeekValue"))document.getElementById("v435WeekValue").textContent=`${week.completed}/${week.planned}`;if(document.getElementById("v435WeekTitle"))document.getElementById("v435WeekTitle").textContent=`${week.completed}/${week.planned} séance${week.planned>1?"s":""} terminée${week.completed>1?"s":""}`;if(document.getElementById("v435WeekText"))document.getElementById("v435WeekText").textContent=week.planned?"Seules les séances prévues dans ton planning comptent pour la régularité.":"Ajoute des séances à ton planning pour lancer le suivi hebdomadaire.";if(document.getElementById("v435WeekFill"))document.getElementById("v435WeekFill").style.width=`${week.percent}%`;
+    const unlock=v435UnlockData(data);if(document.getElementById("v435UnlockTitle"))document.getElementById("v435UnlockTitle").textContent=unlock.title;if(document.getElementById("v435UnlockText"))document.getElementById("v435UnlockText").textContent=unlock.text;if(document.getElementById("v435UnlockFill"))document.getElementById("v435UnlockFill").style.width=`${unlock.percent}%`;
+    const badges=v435Badges(),badgeBox=document.getElementById("v435BadgeRow");if(badgeBox)badgeBox.innerHTML=badges.map(b=>`<span class="v435-badge ${b.ok?"unlocked":""}">${b.icon} ${b.label}${b.ok?" ✓":""}</span>`).join("");
+    const feed=document.getElementById("v435XpFeed"),recent=[...events].sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt))).slice(0,5);if(feed)feed.innerHTML=recent.length?recent.map(e=>`<div class="v435-feed-row"><span>${v435EventIcon(e)}</span><div><strong>${v39Escape?.(e.label)||e.label}</strong><small>${new Date(e.createdAt).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit"})} · ${V435_DOMAIN_META[e.domain]?.label||e.domain}</small></div><b>+${e.xp}</b></div>`).join(""):`<div class="v435-feed-row"><span>🎮</span><div><strong>Ton aventure commence</strong><small>Termine une mission pour gagner tes premiers XP.</small></div><b>0 XP</b></div>`;
+    v435RenderMissions();return data;
+  }
+  v43RenderAthleteProgress=function(){return v435RenderGame();};
+  function v435RecordSession(session,startedAt){
+    if(!session)return;const dateObj=startedAt?new Date(startedAt):new Date(),date=v435DateKey(dateObj),domain=v435SessionDomain(session,dateObj),duration=Number(session.duration)||0,xp=duration&&duration<=20?35:50;
+    v435Award({key:`session:${date}:${domain}`,type:"session_complete",domain,xp,label:`Séance ${V435_DOMAIN_META[domain]?.label||"sportive"} terminée`,meta:{date,name:session.name||"Séance guidée",duration}});
+  }
+  function v435SyncNutritionAwards(quiet=false){const date=v435DateKey(),state=v435NutritionState(date);if(state.count>=1)v435Award({key:`nutrition:log:${date}`,type:"nutrition_log",domain:"nutrition",xp:10,label:"Suivi nutrition commencé",meta:{date,count:state.count}},{toast:false,render:false});if(state.done)v435Award({key:`nutrition:complete:${date}`,type:"nutrition_complete",domain:"nutrition",xp:15,label:"Repas du jour renseignés",meta:{date,count:state.count,target:state.target}},{toast:!quiet,render:false});v435RenderGame();}
+  function v435RecordPerformance(ex){const date=v435DateKey(),session=v31Current?.()?.state?.session||{},domain=v435SessionDomain(session);v435Award({key:`performance:${date}:${domain}`,type:"performance",domain,xp:10,label:"Performance propre enregistrée",meta:{date,exercise:ex?.name||"Exercice"}});}
+  function v435SkillReward(ex){
+    const path=v434LoadPath?.();if(ex?.pathSkill){const s=path?.fundamentals?.[ex.pathSkill];v435Award({key:`skill:${ex.pathSkill}:${s?.stage||1}:${!!s?.passed}`,type:"skill_unlock",domain:"calisthenics",xp:80,label:`Nouvelle étape : ${V434_SKILL_LABELS[ex.pathSkill]}`,meta:{date:v435DateKey(),skill:ex.pathSkill,stage:s?.stage||1}});}else if(ex?.pathGoal){const s=path?.advanced?.[ex.pathGoal];v435Award({key:`skill:${ex.pathGoal}:${s?.stage||1}:${!!s?.mastered}`,type:"skill_unlock",domain:"calisthenics",xp:150,label:`Progression : ${V434_GOAL_LABELS[ex.pathGoal]}`,meta:{date:v435DateKey(),skill:ex.pathGoal,stage:s?.stage||1}});}
+  }
+
+  const v435PreviousFinish=v31Finish;
+  v31Finish=function(){const data=v31Current?.(),session=data?.state?.session,startedAt=data?.state?.startedAt;v435PreviousFinish();if(session)v435RecordSession(session,startedAt);};
+  const v435PreviousSavePerformance=v31SavePerformance;
+  v31SavePerformance=function(){const ex=v31Current?.()?.current;v435PreviousSavePerformance();if(ex)v435RecordPerformance(ex);};
+  const v435PreviousAdvance=v434MaybeAdvanceFromPerformance;
+  v434MaybeAdvanceFromPerformance=function(ex,value,pain){const ok=v435PreviousAdvance(ex,value,pain);if(ok)v435SkillReward(ex);return ok;};
+  const v435PreviousAddEntry=v39AddEntry;
+  v39AddEntry=function(entry,key=v39DateKey()){const day=v435PreviousAddEntry(entry,key);if(key===v435DateKey())setTimeout(v435SyncNutritionAwards,0);return day;};
+  const v435PreviousSaveWeight=v39SaveWeight;
+  v39SaveWeight=function(weight,key=v39DateKey()){const log=v435PreviousSaveWeight(weight,key);v435Award({key:`nutrition:weight:${v435WeekKey(v39DateFromKey(key))}`,type:"weight_log",domain:"nutrition",xp:5,label:"Suivi du poids mis à jour",meta:{date:key}},{toast:false});return log;};
+  const v435PreviousAnalyze=v434AnalyzeAndSave;
+  v434AnalyzeAndSave=function(){v435PreviousAnalyze();v435SeedSetupRewards();v435RenderGame();};
+  const v435PreviousSavePlanning=v43SavePlanning;
+  v43SavePlanning=function(){v435PreviousSavePlanning();v435SeedSetupRewards();v435RenderGame();};
+  const v435PreviousTrainingDiagnostic=v42TrainingAutoDiagnostic;
+  function v435Diagnostic(){
+    const results=[];try{const ids=["v43AthleteJourneyCard","v435MissionCard","v435UnlockCard","v435MissionList","v435XpFeed"],missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.5 accueil jeu vidéo",!missing.length,missing.length?`Manquants : ${missing.join(", ")}`:"Niveau global, domaines, missions, déblocage et historique présents."));const before=v435SafeEvents().length,key=`diag:${Date.now()}`;v435Award({key,type:"diagnostic",domain:"regularity",xp:1,label:"Test anti-doublon"},{toast:false,render:false});v435Award({key,type:"diagnostic",domain:"regularity",xp:1,label:"Test anti-doublon"},{toast:false,render:false});const after=v435SafeEvents().length;results.push(bf322Result("V43.5 anti-double XP",after===before+1,"Une même clé ne peut être récompensée qu’une fois."));const events=v435SafeEvents().filter(e=>e.key!==key);v435SaveEvents(events);const progress=v435ComputeProgress();results.push(bf322Result("V43.5 six domaines universels",Object.keys(progress.domains).length===6,"Salle · calisthénie · cardio · nutrition · récupération · régularité."));results.push(bf322Result("V43.5 football hors niveau interne",!Object.keys(progress.domains).includes("football"),"Le football reste une contrainte extérieure au moteur de séances."));}catch(e){results.push(bf322Result("Diagnostic V43.5",false,String(e)));}return results;
+  }
+  v42TrainingAutoDiagnostic=function(){const base=typeof v435PreviousTrainingDiagnostic==="function"?v435PreviousTrainingDiagnostic():[];return [...base,...v435Diagnostic()];};
+  function v435HandleAction(action){
+    if(action==="training"){showView?.("training");try{v42ShowTrainingSection?.("today");}catch(e){}return;}
+    if(action==="nutrition"){try{v39OpenDaily?.();}catch(e){showView?.("nutrition");}return;}
+    if(action==="assessment"){v434OpenAssessment?.();return;}
+    if(action==="claim-rest"){const date=v435DateKey();v435Award({key:`recovery:rest:${date}`,type:"recovery",domain:"recovery",xp:20,label:"Récupération respectée",meta:{date}});return;}
+  }
+  function v435Bind(){
+    if(window.__v435_bound){v435RenderGame();return;}window.__v435_bound=true;
+    document.addEventListener("click",event=>{const action=event.target.closest?.("[data-v435-action]")?.dataset.v435Action;if(action){event.preventDefault();v435HandleAction(action);return;}const open=event.target.closest?.("[data-v435-open]")?.dataset.v435Open;if(open){showView?.(open);}});
+    v435SyncNutritionAwards(true);v435RenderGame();
+  }
+  window.__BF435_TEST={
+    award:v435Award,events:v435SafeEvents,compute:v435ComputeProgress,missions:v435MissionData,
+    render:v435RenderGame,recordSession:v435RecordSession,nutritionState:v435NutritionState,
+    weekStats:v435WeekStats,unlock:v435UnlockData,clear(){localStorage.removeItem(BF435_EVENTS_KEY);localStorage.removeItem(BF435_PROGRESS_KEY);v435RenderGame();}
+  };
+
 
   function bf324BindEverything(){
     try{
@@ -14581,6 +14881,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       v383Bind?.();
       v386BindDemo?.();
       v43Bind?.();
+      v435Bind?.();
       v433Bind?.();
       bf324BindProfileApply?.();
       v29RenderProgress?.();
@@ -14710,7 +15011,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=43-4").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=43-5").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   

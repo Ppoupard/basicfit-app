@@ -1,7 +1,7 @@
 {
-  "name": "Basic-Fit Coach — V43.4 Parcours calisthénie",
-  "short_name": "Coach V43.4",
-  "start_url": "./index.html?v=43-4",
+  "name": "Basic-Fit Coach — V43.5 Parcours Athlète",
+  "short_name": "Coach V43.5",
+  "start_url": "./index.html?v=43-5",
   "display": "standalone",
   "background_color": "#070A12",
   "theme_color": "#FFD166",
