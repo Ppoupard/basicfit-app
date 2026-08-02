@@ -1,7 +1,7 @@
 {
-  "name": "Programme Basic-Fit Coach V42.1",
-  "short_name": "BF Coach V42.1",
-  "start_url": "./index.html",
+  "name": "Basic-Fit Coach V43.0 — Parcours Athlète",
+  "short_name": "BF Coach V43",
+  "start_url": "./index.html?v=43-0",
   "display": "standalone",
   "background_color": "#070A12",
   "theme_color": "#FFD166",
