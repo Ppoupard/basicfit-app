@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Basic-Fit Coach V43.0</title>
+  <title>Basic-Fit Coach V43.1</title>
   <meta name="theme-color" content="#070A12" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2863,7 +2863,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.0 — NUTRITION AUTO SIMPLE
+   V43.1 — NUTRITION AUTO SIMPLE
    ============================================================ */
 .v41-engine-section,
 #v37NutritionCoachNote{
@@ -3089,7 +3089,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.0 — PLANNING SPORTIF + NUTRITION PAR JOUR
+   V43.1 — PLANNING SPORTIF + NUTRITION PAR JOUR
    ============================================================ */
 .v411-schedule-card{
   margin:16px 0;
@@ -3165,7 +3165,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.0 — PROFIL CLEANUP
+   V43.1 — PROFIL CLEANUP
    ============================================================ */
 .v412-profile-shell{
   display:grid;
@@ -3222,7 +3222,7 @@ body:not([data-active-view]) .timer-dock{
 
 
 /* ============================================================
-   V43.0 — ENTRAÎNEMENT AUTO
+   V43.1 — ENTRAÎNEMENT AUTO
    ============================================================ */
 .v42-training-shell{
   display:grid;
@@ -3436,7 +3436,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 
 
 /* ==========================================================
-   V43.0 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
+   V43.1 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
    ========================================================== */
 .v43-athlete-card{
   position:relative;
@@ -3495,6 +3495,16 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 .v43-proposal-row{display:grid;grid-template-columns:88px minmax(0,1fr);gap:9px;padding:8px 0;border-top:1px solid rgba(255,255,255,.065)}.v43-proposal-row:first-of-type{border-top:0}.v43-proposal-row span{color:var(--muted);font-size:11px}.v43-warning{margin-top:9px;color:#ffd1d1;font-size:11px}
 .v43-activity-summary{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.v43-activity-summary span{padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.07);font-size:10px;font-weight:850}
 .v43-calis-preview{display:grid;gap:8px}.v43-calis-preview div{padding:11px;border-radius:15px;background:rgba(255,255,255,.045);border:1px solid var(--border)}.v43-calis-preview strong{display:block}.v43-calis-preview small{color:var(--muted)}
+
+.v431-engine-settings{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:4px}.v431-priority-note{margin:-4px 0 12px;padding:11px 13px;border-radius:15px;background:rgba(53,208,127,.07);border:1px solid rgba(53,208,127,.17);color:var(--muted);font-size:12px;line-height:1.45}
+.v431-block-chip{display:inline-flex;align-items:center;gap:5px;margin-bottom:4px;padding:3px 7px;border-radius:999px;background:rgba(125,179,255,.12);border:1px solid rgba(125,179,255,.22);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.35px;color:#dceaff}
+.v431-session-plan{display:grid;gap:8px;margin:10px 0 12px}
+.v431-session-block{padding:11px 12px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.035)}
+.v431-session-block strong{display:block}.v431-session-block small{display:block;color:var(--muted);margin-top:4px;line-height:1.4}
+.v431-session-block.main{border-color:rgba(53,208,127,.35);background:rgba(53,208,127,.07)}
+.v431-session-block.secondary{border-color:rgba(125,179,255,.25)}
+.v431-session-block.micro{border-color:rgba(255,209,102,.25);background:rgba(255,209,102,.05)}
+.v431-day-quality{display:inline-flex;margin-top:5px;padding:3px 7px;border-radius:999px;background:rgba(53,208,127,.09);font-size:9px;font-weight:850;color:#dfffea}
 @media(max-width:720px){
   .v43-domain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v43-ideal-settings{grid-template-columns:repeat(2,minmax(0,1fr))}.v43-day-grid{grid-template-columns:1fr}.v43-planner-actions{grid-template-columns:1fr}.v43-level-hero{grid-template-columns:1fr}.v43-xp-total{text-align:left}.v43-level-main{align-items:flex-start}
 }
@@ -3524,7 +3534,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
         <div class="intro-top">
           <div class="brand-badge">BF</div>
           <div>
-            <p class="card-kicker">V43.0 — COACH COMPLET</p>
+            <p class="card-kicker">V43.1 — COACH COMPLET</p>
             <h1>Construis ton coach personnel</h1>
           </div>
         </div>
@@ -3702,7 +3712,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
         <article class="card v43-athlete-card" id="v43AthleteJourneyCard">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V43.0 — PARCOURS ATHLÈTE</p>
+              <p class="card-kicker">V43.1 — PARCOURS ATHLÈTE</p>
               <h2>Toute l’app devient une progression</h2>
               <p>Salle, calisthénie, préparation football, nutrition, récupération et régularité alimentent le même parcours.</p>
             </div>
@@ -3737,7 +3747,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
         <article class="card v371-daily-dashboard" id="v371DailyDashboard">
           <div class="section-head">
             <div>
-              <p class="card-kicker">V43.0 — ACCUEIL PREMIUM</p>
+              <p class="card-kicker">V43.1 — ACCUEIL PREMIUM</p>
               <h2>Ton tableau de bord</h2>
               <p>L’app te résume quoi faire aujourd’hui : entraînement, nutrition, contraintes et actions rapides.</p>
             </div>
@@ -3973,7 +3983,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
             <article class="card v43-planner-card" id="v43MultiPlannerCard">
               <div class="section-head">
                 <div>
-                  <p class="card-kicker">V43.0 — PLANNING INTELLIGENT</p>
+                  <p class="card-kicker">V43.1 — PLANNING INTELLIGENT</p>
                   <h2>Une journée peut contenir plusieurs activités</h2>
                   <p>Combine football, match, salle, calisthénie, cardio ou mobilité. L’app conserve les contraintes fixes et peut proposer ta semaine idéale.</p>
                 </div>
@@ -4003,6 +4013,37 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
                   <select id="v43DefaultMinutes"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>60 min</option><option value="75">75 min</option><option value="90">90 min</option></select>
                 </label>
               </div>
+
+              <div class="v43-ideal-settings v431-engine-settings" id="v431EngineSettings">
+                <label>Priorité sportive
+                  <select id="v431TrainingPriority">
+                    <option value="balanced">Équilibrée</option>
+                    <option value="calisthenics">Calisthénie prioritaire</option>
+                    <option value="gym">Salle prioritaire</option>
+                    <option value="football">Football prioritaire</option>
+                  </select>
+                </label>
+                <label>Objectif calisthénie
+                  <select id="v431CalisGoal">
+                    <option value="foundations">Bases complètes</option>
+                    <option value="pullups">Tractions</option>
+                    <option value="lsit">L-sit</option>
+                    <option value="handstand">Équilibre</option>
+                    <option value="muscleup">Muscle-up</option>
+                    <option value="frontlever">Front lever</option>
+                    <option value="backlever">Back lever</option>
+                  </select>
+                </label>
+                <label>Niveau calisthénie
+                  <select id="v431CalisLevel">
+                    <option value="starter">Débutant</option>
+                    <option value="foundations" selected>Fondations</option>
+                    <option value="intermediate">Intermédiaire</option>
+                    <option value="advanced">Avancé</option>
+                  </select>
+                </label>
+              </div>
+              <div class="v431-priority-note" id="v431PriorityNote">Priorité équilibrée : l’app répartit salle et calisthénie sans sacrifier le football ni les matchs.</div>
 
               <div class="v43-day-grid" id="v43DayEditor"></div>
 
@@ -4081,7 +4122,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 </div>
 <div class="result-box">
 <strong>Lien essai propre :</strong><br/>
-<code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=43-0&amp;fresh=1</code>
+<code id="v386DemoLinkText">https://ppoupard.github.io/basicfit-app/?v=43-1&amp;fresh=1</code>
 <p class="small-note">Le paramètre <strong>fresh=1</strong> vide les données locales de l’app sur l’appareil qui ouvre le lien.</p>
 </div>
 </article>
@@ -4096,7 +4137,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 </div>
 <article class="card accent-card" id="v421VersionBadge">
 <div class="card-kicker">VERSION ACTIVE</div>
-<h3>Basic-Fit Coach V43.0</h3>
+<h3>Basic-Fit Coach V43.1</h3>
 <p>Socle V43 actif · planning multi-activités · niveaux universels · moteurs V42 conservés en arrière-plan.</p>
 </article>
 <div id="v36DiagnosticMount"></div>
@@ -4112,9 +4153,9 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
           <article class="card">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.0 — ENTRAÎNEMENT AUTO</p>
+                <p class="card-kicker">V43.1 — ENTRAÎNEMENT AUTO</p>
                 <h2>Tu ouvres, tu suis ta séance</h2>
-                <p>Le planning choisit les jours salle. L’app construit les séances, applique la progression sur 4 semaines et te montre uniquement ce que tu dois faire.</p>
+                <p>Le planning analyse salle, calisthénie, football et match. La priorité choisie décide de la séance principale, des blocs secondaires et du volume à préserver.</p>
               </div>
             </div>
 
@@ -4142,7 +4183,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
               <div class="section-head">
                 <div>
                   <p class="card-kicker">SÉANCE PRÉVUE</p>
-                  <h3 id="v42TodaySessionName">Aucune séance salle aujourd’hui</h3>
+                  <h3 id="v42TodaySessionName">Aucune séance guidée aujourd’hui</h3>
                   <p id="v42TodaySessionReason"></p>
                 </div>
               </div>
@@ -4159,7 +4200,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
                 <div>
                   <p class="card-kicker">MA SEMAINE</p>
                   <h2>Ton planning d’entraînement</h2>
-                  <p>Les séances salle sont assignées automatiquement aux jours Musculation et Double séance.</p>
+                  <p>Chaque journée reçoit une séance cohérente avec ses activités, sa priorité, le temps disponible et la proximité du football ou du match.</p>
                 </div>
                 <span class="tag" id="v42WeekCycleTag">Semaine 1/4</span>
               </div>
@@ -4210,7 +4251,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 
       <section class="view" id="planView">
         <article class="card">
-          <p class="card-kicker">V43.0 — PLAN 4 SEMAINES</p>
+          <p class="card-kicker">V43.1 — PLAN 4 SEMAINES</p>
           <h2>Plan personnalisé 4 semaines</h2>
           <p>Ce plan utilise ton objectif, ton niveau, ta fréquence, ta durée, tes douleurs et tes exercices manuels. Il remplace les anciens plans trop génériques haut/bas du corps.</p>
           <div class="v28-actions">
@@ -4226,7 +4267,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
 
       <section class="view" id="sessionsView">
         <article class="card">
-          <p class="card-kicker">V43.0 — SÉANCES INTELLIGENTES</p>
+          <p class="card-kicker">V43.1 — SÉANCES INTELLIGENTES</p>
           <h2>Mes séances : auto, semi-auto ou manuel</h2>
           <p>L’app peut recommander un split comme un coach, mais tu peux aussi choisir ton split ou créer tes séances toi-même. Jusqu’à 6 séances/semaine sont possibles.</p>
 
@@ -4234,7 +4275,7 @@ body[data-active-view="training"][data-training-section="today"] .clean-timer{
           <div class="bf33-strategy-card">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.0 — CHOIX DU SPLIT</p>
+                <p class="card-kicker">V43.1 — CHOIX DU SPLIT</p>
                 <h3>Comment tu veux construire tes séances ?</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf33RefreshRecommendationBtn">Recalculer la recommandation</button>
@@ -4391,7 +4432,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="liveView">
         <article class="card">
-          <p class="card-kicker">V43.0 — LIVE PERSONNALISÉ</p>
+          <p class="card-kicker">V43.1 — LIVE PERSONNALISÉ</p>
           <h2>Séance en direct</h2>
           <p>Choisis une séance générée, suis les exercices un par un, note tes perfs, lance le repos et enregistre automatiquement dans le suivi.</p>
 
@@ -4592,7 +4633,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="progressView">
         <article class="card">
-          <p class="card-kicker">V43.0 — SUIVI PROGRESSION</p>
+          <p class="card-kicker">V43.1 — SUIVI PROGRESSION</p>
           <h2>Noter ma séance</h2>
           <p>Entre tes performances après une séance. L’app utilise ces données pour te conseiller sur la prochaine séance.</p>
 
@@ -4693,7 +4734,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
 
           <div class="v36-nutrition-shell" id="v36NutritionShell">
-            <p class="card-kicker">V43.0 — NUTRITION AUTO</p>
+            <p class="card-kicker">V43.1 — NUTRITION AUTO</p>
             <h2>Tu suis, l’app s’occupe du reste</h2>
             <p>Ton profil pilote automatiquement les repas, les portions, le plan nutrition et les courses.</p>
 
@@ -4789,7 +4830,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               <article class="card v40-hero-card" id="v40NutritionProCard">
                 <div class="section-head">
                   <div>
-                    <p class="card-kicker">V43.0 — NUTRITION PRO</p>
+                    <p class="card-kicker">V43.1 — NUTRITION PRO</p>
                     <h3>Ton coach nutrition concret</h3>
                     <p>Objectif du jour, dépense au repos, activité, organisation des repas, portions crues/cuites et conseil du coach.</p>
                   </div>
@@ -4964,7 +5005,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
               <article class="card v39-daily-card" id="v39DailyNutritionCard">
                 <div class="section-head">
                   <div>
-                    <p class="card-kicker">V43.0 — SUIVI DU JOUR</p>
+                    <p class="card-kicker">V43.1 — SUIVI DU JOUR</p>
                     <h3>Calories et protéines aujourd’hui</h3>
                     <p id="v39TodayDate">Chargement de la journée...</p>
                   </div>
@@ -5086,7 +5127,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           </div>
 
         <article class="card bf34-nutrition-card">
-          <p class="card-kicker">V43.0 — NUTRITION PERSONNALISÉE</p>
+          <p class="card-kicker">V43.1 — NUTRITION PERSONNALISÉE</p>
           <h2>Mes préférences alimentaires</h2>
           <p>Ces réglages servent aux menus, aux courses et aux remplacements automatiques.</p>
           <div class="v403-profile-sync-card" id="v403PrefsProfileSync">
@@ -5112,7 +5153,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf351-strategy-panel" id="bf351StrategyPanel">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.0 — OBJECTIFS NUTRITION</p>
+                <p class="card-kicker">V43.1 — OBJECTIFS NUTRITION</p>
                 <h3>Ce que l’app propose pour chaque objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf351ShowAllStrategiesBtn">Afficher toutes les stratégies</button>
@@ -5124,7 +5165,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <div class="bf35-plan-card" id="bf35NutritionPlanCard">
             <div class="section-head">
               <div>
-                <p class="card-kicker">V43.0 — PLAN NUTRITIONNEL</p>
+                <p class="card-kicker">V43.1 — PLAN NUTRITIONNEL</p>
                 <h3>Calories et macros selon ton objectif</h3>
               </div>
               <button type="button" class="ghost-btn" id="bf35RefreshNutritionPlanBtn">Recalculer</button>
@@ -5194,7 +5235,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="diagnosticView">
         <article class="card">
-          <p class="card-kicker">V43.0 — DIAGNOSTIC PROFOND</p>
+          <p class="card-kicker">V43.1 — DIAGNOSTIC PROFOND</p>
           <h2>Diagnostic complet</h2>
           <p>Ce test vérifie les onglets, les boutons réellement reliés au chargement normal, le profil, les générations et le stockage local. Les tests de durée et de split sont maintenant isolés : ils n’utilisent pas tes séances manuelles ni l’ancien état sauvegardé.</p>
 
@@ -5214,7 +5255,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
           <p class="card-kicker">SI UN TEST ÉCHOUE</p>
           <h2>Que faire ?</h2>
           <div class="diagnosis-list">
-            <div><strong>Bouton mort :</strong> recharge avec <code>?v=43-0</code>, puis relance le diagnostic.</div>
+            <div><strong>Bouton mort :</strong> recharge avec <code>?v=43-1</code>, puis relance le diagnostic.</div>
             <div><strong>Ancienne version visible :</strong> supprime l’ancienne app de l’écran d’accueil iPhone et rajoute-la depuis Safari.</div>
             <div><strong>Plan qui ne change pas :</strong> va dans Profil puis clique sur “Appliquer ce profil et régénérer plan/séances/menus avec cette durée”.</div>
           </div>
@@ -5262,7 +5303,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
 
       <section class="view" id="menusView">
         <article class="card">
-          <p class="card-kicker">V43.0 — MENUS + COURSES</p>
+          <p class="card-kicker">V43.1 — MENUS + COURSES</p>
           <h2>Menus personnalisés de la semaine</h2>
           <p>Génère une semaine de repas selon ton objectif, ton nombre de repas, ton budget, ton magasin et tes préférences. Ensuite l’app transforme les menus en liste de courses.</p><div id="bf35MenusPlanNote" class="coach-diagnosis"><strong>Plan nutrition :</strong> régénère après avoir calculé ton plan dans Nutrition.</div><div id="bf34MenusNote" class="coach-diagnosis"><strong>V43 :</strong> les menus tiennent compte de tes aliments aimés, aliments à éviter, restrictions, budget et temps de cuisine.</div>
           <div class="v32-menu-config">
@@ -5398,7 +5439,7 @@ Gainage planche | 3 | 30-45 sec | 45 sec | abdos"></textarea>
         }
       });
       sessionStorage.setItem("bf_v40_fresh_done","1");
-      const cleanUrl=location.origin+location.pathname+"?v=43-0&demo=ready";
+      const cleanUrl=location.origin+location.pathname+"?v=43-1&demo=ready";
       location.replace(cleanUrl);
     }catch(e){
       console.warn("V41 fresh preboot",e);
@@ -6642,7 +6683,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
   async function resetCacheOnly(){
     const ok=await clearPwaCaches();
-    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=43-0." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
+    safeSetStatus(ok ? "Cache PWA vidé. Recharge la page avec ?v=43-1." : "Impossible de vider totalement le cache, mais tu peux supprimer l’icône iPhone et rouvrir Safari.");
   }
 
   async function resetAllData(){
@@ -6653,7 +6694,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         if(k.startsWith("bf_") || k.includes("basicfit")) localStorage.removeItem(k);
       });
       await clearPwaCaches();
-      location.href=location.pathname+"?v=43-0"+Date.now();
+      location.href=location.pathname+"?v=43-1"+Date.now();
     }catch(e){
       localStorage.clear();
       location.reload();
@@ -6663,7 +6704,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   window.addEventListener("error",e=>{
     const box=document.createElement("div");
     box.className="error-box";
-    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=43-0. Détail : "+String(e.message||"erreur");
+    box.innerHTML="Erreur détectée dans l’app. Ouvre le mode secours, ou recharge avec ?v=43-1. Détail : "+String(e.message||"erreur");
     document.body.appendChild(box);
     setTimeout(()=>box.remove(),10000);
   });
@@ -7954,7 +7995,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     }catch(err){
       console.error("Fallback génération V34", err);
-      alert("Un bug a bloqué la génération. Recharge la page avec ?v=43-0 puis réessaie.");
+      alert("Un bug a bloqué la génération. Recharge la page avec ?v=43-1 puis réessaie.");
     }
   }
 
@@ -8616,7 +8657,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.0 — ENTRAÎNEMENT AUTO
+     V43.1 — ENTRAÎNEMENT AUTO
      ========================================================== */
   const BF42_TRAINING_FP_KEY="bf_v42_training_fingerprint";
   const BF42_BASE_SESSIONS_KEY="bf_v42_base_sessions";
@@ -9017,19 +9058,19 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       const missing=required.filter(id=>!document.getElementById(id));
 
       results.push(bf322Result(
-        "V43.0 architecture Entraînement Auto",
+        "V43.1 architecture Entraînement Auto",
         missing.length===0,
         missing.length ? `Manquants : ${missing.join(", ")}` : "Les 4 nouveaux mounts V42 sont présents."
       ));
 
       results.push(bf322Result(
-        "V43.0 Live monté dans Ma séance",
+        "V43.1 Live monté dans Ma séance",
         !!document.getElementById("v42LiveMount") &&
         !!document.getElementById("v31LiveSessionSelect"),
         "Le moteur Live reste relié à Ma séance."
       ));
     }catch(e){
-      results.push(bf322Result("Diagnostic V43.0 architecture",false,String(e)));
+      results.push(bf322Result("Diagnostic V43.1 architecture",false,String(e)));
     }
     return results;
   }
@@ -10037,7 +10078,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         v387HandleIntroAction(btn.id);
       }catch(err){
         console.error("V38.7 intro action",btn.id,err);
-        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=43-0 ou utilise le mode secours.","err");
+        setValidationStatus?.("Erreur intro détectée. Recharge la page avec ?v=43-1 ou utilise le mode secours.","err");
       }
     },true);
   }
@@ -10107,7 +10148,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     if(!v386IsFreshMode()) return;
     if(sessionStorage.getItem("bf_v40_fresh_done")==="1") return;
     v386ClearLocalAppData();
-    const cleanUrl=location.origin+location.pathname+"?v=43-0&demo=ready";
+    const cleanUrl=location.origin+location.pathname+"?v=43-1&demo=ready";
     location.replace(cleanUrl);
   }
   function v386ShowToast(msg){
@@ -10122,7 +10163,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     }catch(e){}
   }
   function v386DemoLink(){
-    return location.origin+location.pathname+"?v=43-0&fresh=1";
+    return location.origin+location.pathname+"?v=43-1&fresh=1";
   }
   function v386BindDemo(){
     const txt=document.getElementById("v386DemoLinkText");
@@ -11168,12 +11209,12 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.0 — NUTRITION AUTO
+     V43.1 — NUTRITION AUTO
      ========================================================== */
 
 
   /* ==========================================================
-     V43.0 — PROFIL CLEANUP
+     V43.1 — PROFIL CLEANUP
      ========================================================== */
   function v412ShowProfileTab(section="profile"){
     const allowed=["profile","planning","diagnostic"];
@@ -11271,7 +11312,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.0 — PLANNING SPORTIF HEBDOMADAIRE
+     V43.1 — PLANNING SPORTIF HEBDOMADAIRE
      ========================================================== */
   const V411_DAY_KEYS=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
   const V411_DAY_LABELS={
@@ -12860,7 +12901,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
     results.push(bf322Result("LocalStorage", !!window.localStorage, "Stockage local disponible."));
     results.push(bf322Result("Service worker", "serviceWorker" in navigator, "Cache/PWA supporté par le navigateur."));
-    results.push(bf322Result("Version chargée", location.href.includes("v=43-0") || document.title.includes("V43.0"), `Titre : ${document.title}`));
+    results.push(bf322Result("Version chargée", location.href.includes("v=43-1") || document.title.includes("V43.1"), `Titre : ${document.title}`));
 
     if(kind==="full" || kind==="generation"){
       bf324BindEverything?.();
@@ -12929,15 +12970,15 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
   function bf322CopyReport(){
     const report=JSON.parse(localStorage.getItem(BF322_REPORT_KEY)||"null");
     if(!report) return alert("Lance d’abord un diagnostic.");
-    const txt=`Diagnostic Basic-Fit Coach V43.0\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
+    const txt=`Diagnostic Basic-Fit Coach V43.1\n${report.ok}/${report.total} OK · ${report.bad} erreurs\n\n`+report.results.map(r=>`${r.ok?"OK":"BUG"} - ${r.name} : ${r.detail}`).join("\n");
     navigator.clipboard?.writeText(txt).then(()=>alert("Rapport copié.")).catch(()=>alert("Copie impossible, sélectionne le rapport manuellement."));
   }
   function bf322CacheHelp(){
     const msg=`Cache iPhone / GitHub Pages :
-1. Ouvre https://ppoupard.github.io/basicfit-app/?v=43-0&fresh=1
+1. Ouvre https://ppoupard.github.io/basicfit-app/?v=43-1&fresh=1
 2. Teste d’abord dans Safari
 3. Supprime l’ancienne icône si l’écran d’accueil garde une vieille version
-4. Ré-ajoute l’app seulement après avoir vu V43.0`;
+4. Ré-ajoute l’app seulement après avoir vu V43.1`;
     alert(msg);
   }
   function bf322Bind(){
@@ -12976,7 +13017,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
 
 
   /* ==========================================================
-     V43.0 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
+     V43.1 — PARCOURS ATHLÈTE + PLANNING MULTI-ACTIVITÉS
      ========================================================== */
   const BF43_MULTI_SCHEDULE_KEY="bf_v43_multi_schedule";
   const BF43_IDEAL_PREFS_KEY="bf_v43_ideal_preferences";
@@ -13376,7 +13417,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
       results.push(bf322Result("V43 semaine idéale respecte le football",fixedOk,`Score ${suggested.score}% · contraintes mardi, vendredi et dimanche conservées.`));
       const progress=v43ComputeAthleteProgress();
       results.push(bf322Result("V43 niveaux universels",Object.keys(progress.domains).length===6,"Salle · calisthénie · prépa football · nutrition · récupération · régularité."));
-    }catch(e){results.push(bf322Result("Diagnostic V43.0",false,String(e)));}
+    }catch(e){results.push(bf322Result("Diagnostic V43.1",false,String(e)));}
     return results;
   }
   function v43Bind(){
@@ -13388,7 +13429,409 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
     document.getElementById("v43ApplySuggestionBtn")?.addEventListener("click",v43ApplySuggestion);
     document.getElementById("v43SavePlanningBtn")?.addEventListener("click",v43SavePlanning);
   }
-  /* END V43.0 */
+
+  /* ==========================================================
+     V43.1 — MOTEUR DE SÉANCES PRIORITAIRE ET MULTI-ACTIVITÉS
+     ========================================================== */
+  const BF431_ENGINE_PREFS_KEY="bf_v431_training_engine_preferences";
+  const BF431_ASSIGNMENT_KEY="bf_v431_week_assignment";
+
+  function v431LoadPrefs(){
+    let saved={};
+    try{saved=JSON.parse(localStorage.getItem(BF431_ENGINE_PREFS_KEY)||localStorage.getItem(BF43_IDEAL_PREFS_KEY)||"{}");}catch(e){}
+    let profile={};try{profile=bf341CurrentProfile?.()||getProfile?.()||{};}catch(e){}
+    const levelFallback=profile.level==="advanced"?"advanced":profile.level==="beginner"?"starter":"foundations";
+    return {
+      gym:Number(saved.gym??profile.gymDays??3),
+      calis:Number(saved.calis??2),
+      mobility:Number(saved.mobility??2),
+      minutes:Number(saved.minutes??profile.duration??60),
+      priority:["balanced","calisthenics","gym","football"].includes(saved.priority)?saved.priority:"balanced",
+      calisGoal:["foundations","pullups","lsit","handstand","muscleup","frontlever","backlever"].includes(saved.calisGoal)?saved.calisGoal:"foundations",
+      calisLevel:["starter","foundations","intermediate","advanced"].includes(saved.calisLevel)?saved.calisLevel:levelFallback
+    };
+  }
+  function v43LoadIdealPrefs(){return v431LoadPrefs();}
+  function v43ReadIdealPrefs(){
+    return {
+      gym:Number(document.getElementById("v43DesiredGym")?.value)||0,
+      calis:Number(document.getElementById("v43DesiredCalis")?.value)||0,
+      mobility:Number(document.getElementById("v43DesiredMobility")?.value)||0,
+      minutes:Number(document.getElementById("v43DefaultMinutes")?.value)||60,
+      priority:document.getElementById("v431TrainingPriority")?.value||"balanced",
+      calisGoal:document.getElementById("v431CalisGoal")?.value||"foundations",
+      calisLevel:document.getElementById("v431CalisLevel")?.value||"foundations"
+    };
+  }
+  function v431PriorityCopy(prefs=v431LoadPrefs()){
+    const goal={foundations:"les bases complètes",pullups:"les tractions",lsit:"le L-sit",handstand:"l’équilibre",muscleup:"le muscle-up",frontlever:"le front lever",backlever:"le back lever"}[prefs.calisGoal]||"les bases";
+    if(prefs.priority==="calisthenics") return `Calisthénie prioritaire : les meilleurs créneaux servent ${goal}. La salle complète le travail sans doubler les mêmes mouvements.`;
+    if(prefs.priority==="gym") return "Salle prioritaire : la calisthénie devient surtout un bloc technique court autour des séances de musculation.";
+    if(prefs.priority==="football") return "Football prioritaire : les séances complémentaires protègent les jambes, les matchs et la fraîcheur terrain.";
+    return "Priorité équilibrée : l’app répartit salle et calisthénie sans sacrifier le football ni les matchs.";
+  }
+  function v431RenderPriorityNote(){const el=document.getElementById("v431PriorityNote");if(el) el.textContent=v431PriorityCopy(v43ReadIdealPrefs());}
+  function v43FillIdealPrefs(){
+    const p=v431LoadPrefs();
+    const map={v43DesiredGym:p.gym,v43DesiredCalis:p.calis,v43DesiredMobility:p.mobility,v43DefaultMinutes:p.minutes,v431TrainingPriority:p.priority,v431CalisGoal:p.calisGoal,v431CalisLevel:p.calisLevel};
+    Object.entries(map).forEach(([id,val])=>{const el=document.getElementById(id);if(el) el.value=String(val);});
+    v431RenderPriorityNote();
+  }
+
+  function v431AutoPrimary(activities=[],prefs=v431LoadPrefs(),existing=null){
+    const acts=activities||[];
+    if(acts.includes("match")) return "match";
+    // La priorité choisie pour ce jour est toujours respectée. La priorité globale
+    // sert surtout à construire la semaine et à départager les nouveaux jours.
+    if(existing && acts.includes(existing)) return existing;
+    if(prefs.priority==="calisthenics" && acts.includes("calisthenics")) return "calisthenics";
+    if(prefs.priority==="gym" && acts.includes("gym")) return "gym";
+    if(prefs.priority==="football" && acts.includes("football")) return "football";
+    return v43PickPrimary(acts);
+  }
+  function v431CandidateScore(schedule,index,type,prefs){
+    let score=v43CandidateScore(schedule,index,type);
+    if(score<=-9000) return score;
+    const acts=v43CircularDay(schedule,index).activities;
+    const prev=v43CircularDay(schedule,index-1).activities;
+    const next=v43CircularDay(schedule,index+1).activities;
+    if(prefs.priority==="calisthenics"){
+      if(type==="calisthenics"){
+        score+=acts.filter(a=>a!=="rest").length===0?32:0;
+        if(acts.includes("gym")) score+=8;
+        if(acts.includes("football")) score-=18;
+        if(prev.includes("match")||next.includes("match")) score-=18;
+      }
+      if(type==="gym"){
+        if(acts.includes("calisthenics")) score-=8;
+        if(next.includes("calisthenics")||prev.includes("calisthenics")) score-=5;
+      }
+    }
+    if(prefs.priority==="gym"){
+      if(type==="gym" && acts.filter(a=>a!=="rest").length===0) score+=24;
+      if(type==="calisthenics" && acts.includes("gym")) score+=14;
+    }
+    if(prefs.priority==="football"){
+      if((type==="gym"||type==="calisthenics") && (acts.includes("football")||next.includes("match"))) score-=25;
+    }
+    return score;
+  }
+  function v431AddBestActivities(schedule,type,target,warnings,prefs){
+    let current=v43ActivityCount(schedule,type);
+    while(current<target){
+      const candidates=V43_DAY_KEYS.map((day,index)=>({day,index,score:v431CandidateScore(schedule,index,type,prefs)})).sort((a,b)=>b.score-a.score);
+      const best=candidates[0];
+      if(!best || best.score<=-9000){warnings.push(`Impossible de placer toutes les séances ${V43_ACTIVITY_META[type].label.toLowerCase()} sans surcharger la semaine.`);break;}
+      const d=schedule.days[best.day];
+      d.activities=d.activities.filter(a=>a!=="rest");d.activities.push(type);d.activities=[...new Set(d.activities)];
+      d.primary=v431AutoPrimary(d.activities,prefs,d.primary);
+      current++;
+    }
+  }
+  function v43SuggestIdealSchedule(baseSchedule,prefs={}){
+    const merged={...v431LoadPrefs(),...prefs};
+    const warnings=[];const schedule=v43PreservedBaseForIdeal(baseSchedule);
+    const order=merged.priority==="calisthenics"?["calisthenics","gym","mobility"]:["gym","calisthenics","mobility"];
+    const targets={gym:v43Clamp(merged.gym,0,6),calisthenics:v43Clamp(merged.calis,0,5),mobility:v43Clamp(merged.mobility,0,7)};
+    order.forEach(type=>v431AddBestActivities(schedule,type,targets[type],warnings,merged));
+    for(const day of V43_DAY_KEYS){
+      const d=schedule.days[day];
+      schedule.days[day]=v43NormalizeDay({...d,primary:v431AutoPrimary(d.activities,merged,d.primary),availableMinutes:d.availableMinutes||merged.minutes||60});
+    }
+    return {schedule,score:v43WeekScore(schedule),warnings,reasons:Object.fromEntries(V43_DAY_KEYS.map((day,index)=>[day,v431DayReason(schedule.days[day],index,schedule,merged)])),prefs:merged};
+  }
+  function v431DayReason(day,index,schedule,prefs=v431LoadPrefs()){
+    const acts=day.activities||[];const primary=v431AutoPrimary(acts,prefs,day.primary);
+    const base=v43DayGuidance(acts,index,[]);
+    if(primary==="calisthenics") return `Calisthénie principale. ${base} Le bloc salle, s’il existe, devient complémentaire.`;
+    if(primary==="gym") return `Salle principale. ${base} La calisthénie reste technique et courte.`;
+    if(primary==="football") return `Football principal. ${base}`;
+    return base;
+  }
+
+  function v431Exercise(name,sets,reps,rest,note,muscle="gainage",skill="bases",block="Calisthénie"){
+    return {name,sets,reps,rest,note,desc:note,muscle,type:"poids du corps",skill,block};
+  }
+  function v431CalisSkillBlock(goal,level){
+    const byGoal={
+      pullups:{
+        starter:[v431Exercise("Tractions australiennes",4,"8-12","1min15","Corps gainé, poitrine vers la barre, amplitude propre.","dos","tractions"),v431Exercise("Suspension active",3,"15-25 sec","1 min","Épaules basses, prise stable, sans douleur.","dos","tractions")],
+        foundations:[v431Exercise("Tractions négatives",4,"3-5","1min30","Monte avec aide puis descends lentement sans lâcher la position.","dos","tractions"),v431Exercise("Tractions australiennes difficiles",3,"10-15","1min15","Pieds avancés et corps rigide.","dos","tractions")],
+        intermediate:[v431Exercise("Tractions strictes",5,"4-7","1min45","Départ bras tendus, aucune impulsion, garde 1 à 2 répétitions en réserve.","dos","tractions"),v431Exercise("Tractions scapulaires",3,"8-12","1 min","Bras tendus, abaisse puis relâche les omoplates avec contrôle.","dos","tractions")],
+        advanced:[v431Exercise("Tractions explosives",5,"3-5","2 min","Accélère fort sans balancier, cherche une trajectoire haute.","dos","tractions"),v431Exercise("Tractions poitrine-barre contrôlées",4,"3-6","2 min","Poitrine vers la barre, descente maîtrisée.","dos","tractions")]
+      },
+      lsit:{
+        starter:[v431Exercise("Maintien en appui",5,"6-10 sec","45 sec","Pousse fort dans les supports, épaules basses.","abdos","l-sit"),v431Exercise("Relevés de genoux assis",4,"8-12","45 sec","Buste haut, monte les genoux sans élan.","abdos","l-sit")],
+        foundations:[v431Exercise("Tuck L-sit",5,"6-10 sec","1 min","Genoux regroupés, bassin décollé, bras tendus.","abdos","l-sit"),v431Exercise("Relevés de jambes",4,"8-10","1 min","Contrôle la montée et la descente.","abdos","l-sit")],
+        intermediate:[v431Exercise("L-sit une jambe",5,"5-8 sec/côté","1 min","Alterne la jambe tendue sans perdre la hauteur du bassin.","abdos","l-sit"),v431Exercise("Compression assise",4,"10-15","45 sec","Mains au sol, décolle les talons sans arrondir excessivement le dos.","abdos","l-sit")],
+        advanced:[v431Exercise("L-sit",6,"8-15 sec","1min15","Jambes tendues, épaules basses, respiration contrôlée.","abdos","l-sit"),v431Exercise("L-sit suspendu",4,"8-12 sec","1min15","Évite le balancier et garde les jambes hautes.","abdos","l-sit")]
+      },
+      handstand:{
+        starter:[v431Exercise("Position piquée",4,"20-30 sec","1 min","Hanches hautes, épaules poussées au-dessus des mains.","épaules","équilibre"),v431Exercise("Mobilité poignets et épaules",3,"30 sec","30 sec","Amplitude douce, aucune douleur forcée.","épaules","équilibre")],
+        foundations:[v431Exercise("Équilibre dos au mur",5,"20-30 sec","1min15","Aligne mains, épaules et bassin, apprends à sortir proprement.","épaules","équilibre"),v431Exercise("Pompes piquées",4,"6-10","1min15","Tête entre les mains, descente contrôlée.","épaules","équilibre")],
+        intermediate:[v431Exercise("Équilibre face au mur",5,"20-35 sec","1min30","Rapproche-toi progressivement du mur en gardant le corps gainé.","épaules","équilibre"),v431Exercise("Décollages de pieds au mur",5,"3-5 essais","1min30","Décollage bref, contrôle avant durée.","épaules","équilibre")],
+        advanced:[v431Exercise("Équilibre libre",8,"10-25 sec/essai","1min30","Essais frais, sortie maîtrisée, arrête lorsque la ligne se dégrade.","épaules","équilibre"),v431Exercise("Équilibre au mur — ligne",4,"30 sec","1 min","Travail de précision avant la fatigue.","épaules","équilibre")]
+      },
+      muscleup:{
+        starter:[v431Exercise("Tractions australiennes explosives",5,"5-8","1min30","Accélère sans casser le gainage.","dos","muscle-up"),v431Exercise("Dips assistés",4,"8-12","1min15","Amplitude confortable et épaules stables.","pectoraux","muscle-up")],
+        foundations:[v431Exercise("Tractions strictes",5,"4-7","1min45","Construis la force avant de chercher la transition.","dos","muscle-up"),v431Exercise("Dips sur barre droite assistés",4,"5-8","1min30","Barre proche du buste, mouvement contrôlé.","pectoraux","muscle-up")],
+        intermediate:[v431Exercise("Tractions explosives",5,"3-5","2 min","Cherche de la hauteur, sans gros balancier.","dos","muscle-up"),v431Exercise("Dips droits sur barre",4,"6-10","1min45","Verrouillage stable et descente propre.","pectoraux","muscle-up")],
+        advanced:[v431Exercise("Muscle-up négatif",5,"2-4","2 min","Transition lente et symétrique, aucun passage coude par coude.","dos","muscle-up"),v431Exercise("Tractions poitrine-barre",5,"3-5","2 min","Puissance propre avant les essais complets.","dos","muscle-up")]
+      },
+      frontlever:{
+        starter:[v431Exercise("Bateau",4,"20-35 sec","1 min","Bas du dos en contact avec le sol, respiration contrôlée.","abdos","front lever"),v431Exercise("Tractions scapulaires suspendues",4,"6-10","1min15","Bras tendus, travaille la dépression des omoplates.","dos","front lever")],
+        foundations:[v431Exercise("Tuck front lever",6,"6-12 sec","1min30","Bassin à hauteur des épaules, genoux groupés.","dos","front lever"),v431Exercise("Rowing australien",4,"8-12","1min15","Tire la poitrine sans casser le corps.","dos","front lever")],
+        intermediate:[v431Exercise("Tuck front lever avancé",6,"5-10 sec","1min45","Ouvre progressivement les hanches sans perdre l’horizontale.","dos","front lever"),v431Exercise("Négatifs front lever groupés",4,"3-5","1min45","Descente lente avec arrêt contrôlé.","dos","front lever")],
+        advanced:[v431Exercise("Front lever une jambe / straddle",6,"3-7 sec","2 min","Choisis la variante que tu tiens sans cambrer.","dos","front lever"),v431Exercise("Négatifs front lever",4,"2-4","2 min","Contrôle l’horizontale avant de descendre.","dos","front lever")]
+      },
+      backlever:{
+        starter:[v431Exercise("Suspension active",4,"20-30 sec","1 min","Prise solide et épaules engagées.","dos","back lever"),v431Exercise("Montées de genoux suspendu",4,"8-10","1min15","Sans balancier, contrôle du bassin.","abdos","back lever")],
+        foundations:[v431Exercise("Position inversée groupée",5,"10-20 sec","1min30","Reste compact et protège les épaules.","dos","back lever"),v431Exercise("Skin the cat partiel",4,"3-5","1min30","Amplitude progressive, aucune douleur à l’avant de l’épaule.","épaules","back lever")],
+        intermediate:[v431Exercise("Back lever négatif groupé",5,"3-5","1min45","Descends lentement, bras tendus, arrête avant la douleur.","dos","back lever"),v431Exercise("Skin the cat contrôlé",4,"3-5","1min45","Ne force jamais l’extension d’épaule.","épaules","back lever")],
+        advanced:[v431Exercise("Back lever straddle",6,"3-7 sec","2 min","Bassin aligné, bras tendus, aucune gêne biceps/épaule.","dos","back lever"),v431Exercise("Back lever négatif",4,"2-4","2 min","Contrôle l’horizontale puis remonte avec aide.","dos","back lever")]
+      }
+    };
+    const normalized=byGoal[goal]?goal:"pullups";
+    return (byGoal[normalized][level]||byGoal[normalized].foundations).map(x=>({...x}));
+  }
+  function v431FoundationBlock(level){
+    const blocks={
+      starter:[v431Exercise("Pompes inclinées",3,"10-15","1 min","Corps aligné, support stable.","pectoraux","pompes"),v431Exercise("Squats profonds contrôlés",3,"10-15","1 min","Genoux dans l’axe, amplitude sans douleur.","jambes","jambes"),v431Exercise("Gainage adapté",3,"25-35 sec","45 sec","Bassin neutre et respiration régulière.","abdos","gainage")],
+      foundations:[v431Exercise("Pompes strictes",3,"8-15","1min15","Amplitude complète et 1 à 2 répétitions en réserve.","pectoraux","pompes"),v431Exercise("Dips assistés ou négatifs",3,"6-10","1min15","Épaules stables, amplitude confortable.","pectoraux","dips"),v431Exercise("Pistol squat assisté",3,"6-10/côté","1min15","Utilise un support et arrête si genou ou cheville gêne.","jambes","jambes"),v431Exercise("Gainage",3,"40-60 sec","1 min","Qualité avant durée.","abdos","gainage")],
+      intermediate:[v431Exercise("Pompes difficiles",4,"8-15","1min15","Choisis une variante propre : diamant ou archer assistée.","pectoraux","pompes"),v431Exercise("Dips stricts",4,"6-12","1min30","Descente contrôlée et épaules basses.","pectoraux","dips"),v431Exercise("Pistol squat assisté / libre",3,"5-8/côté","1min30","Variante adaptée à la mobilité et aux articulations.","jambes","jambes"),v431Exercise("Gainage bateau",3,"30-45 sec","1 min","Dos plaqué et respiration lente.","abdos","gainage")],
+      advanced:[v431Exercise("Pompes archer alternées",4,"6-10/côté","1min30","Transfert contrôlé, épaules stables.","pectoraux","pompes"),v431Exercise("Dips droits",4,"6-10","1min45","Barre proche du buste, pas d’élan.","pectoraux","dips"),v431Exercise("Pistol squat",4,"5-8/côté","1min30","Amplitude propre, adapte si charge football élevée.","jambes","jambes"),v431Exercise("L-sit",4,"8-15 sec","1min15","Arrête avant de perdre la position.","abdos","l-sit")]
+    };
+    return (blocks[level]||blocks.foundations).map(x=>({...x}));
+  }
+  function v431CalisSession(day,prefs,role="main",minutes=45,context={},profile={}){
+    const level=prefs.calisLevel||"foundations";
+    const goal=prefs.calisGoal||"foundations";
+    let exercises=[];
+    if(goal==="foundations") exercises=v431FoundationBlock(level);
+    else exercises=[...v431CalisSkillBlock(goal,level),...v431FoundationBlock(level).slice(0,role==="main"?3:1)];
+    const pain=v431PainFlags(profile);
+    const protectLegs=day.activities.some(a=>["football","match"].includes(a))||context.nextMatch||context.nextFootball;
+    exercises=exercises.filter(ex=>{
+      const n=v431ExerciseNorm(ex);
+      if((protectLegs||pain.lower) && (n.includes("pistol")||n.includes("fente")||n.includes("saut")||n.includes("jambes"))) return false;
+      if(pain.shoulder && ["handstand","muscle-up","back lever","dips","equilibre","pompes difficiles","pompes archer"].some(x=>n.includes(BF_UTIL.normalize?.(x)||x))) return false;
+      if(pain.back && ["front lever","back lever","superman"].some(x=>n.includes(x))) return false;
+      return true;
+    });
+    if(!exercises.length){
+      exercises=[v431Exercise("Gainage respiré",3,"20-30 sec","45 sec","Version sans douleur, bassin neutre et respiration lente.","abdos","sécurité"),v431Exercise("Contrôle scapulaire léger",3,"8-10","45 sec","Petite amplitude et aucune gêne articulaire.","dos","sécurité")];
+    }
+    const target=minutes<=15?2:minutes<=30?4:minutes<=45?5:6;
+    exercises=exercises.slice(0,target);
+    if(role!=="main") exercises=exercises.map(ex=>({...ex,sets:Math.max(2,Math.min(Number(ex.sets)||3,role==="micro"?2:3)),note:`${ex.note} Bloc ${role==="micro"?"très court":"secondaire"} : arrête avant la fatigue importante.`}));
+    const safety=protectLegs?" Jambes volontairement protégées autour du football ou du match.":pain.lower||pain.shoulder||pain.back?" Les exercices ont été filtrés selon la douleur déclarée.":"";
+    return {activity:"calisthenics",role,duration:minutes,name:goal==="foundations"?"Calisthénie — Fondations":`Calisthénie — ${{pullups:"Tractions",lsit:"L-sit",handstand:"Équilibre",muscleup:"Muscle-up",frontlever:"Front lever",backlever:"Back lever"}[goal]||"Objectif"}`,exercises,reason:`${role==="main"?"Priorité du jour":"Complément du jour"} · niveau ${level} · qualité avant quantité.${safety}`};
+  }
+  function v431SessionLegRatio(session){
+    const list=session?.exercises||[];if(!list.length) return 0;
+    return list.filter(e=>["jambes","mollets","fessiers","quadriceps","ischios"].includes(BF_UTIL.normalize?.(e.muscle)||String(e.muscle||"").toLowerCase())).length/list.length;
+  }
+  function v431SessionOverlap(session,goal){
+    const pull=["dos","biceps"],push=["pectoraux","épaules","triceps"],core=["abdos"];
+    const avoid=["pullups","muscleup","frontlever","backlever"].includes(goal)?pull:["handstand"].includes(goal)?push:goal==="lsit"?core:[];
+    return (session?.exercises||[]).filter(e=>avoid.includes(BF_UTIL.normalize?.(e.muscle)||String(e.muscle||"").toLowerCase())).length;
+  }
+  function v431ExerciseNorm(ex){return BF_UTIL.normalize?.(`${ex?.name||""} ${ex?.muscle||""}`)||String(`${ex?.name||""} ${ex?.muscle||""}`).toLowerCase();}
+  function v431IsPullOverlap(ex){const n=v431ExerciseNorm(ex);return ["dos","biceps","tirage","rowing","traction","curl","dorsal"].some(x=>n.includes(x));}
+  function v431IsPushOverlap(ex){const n=v431ExerciseNorm(ex);return ["pectoraux","epaule","triceps","chest press","shoulder press","pec deck","developpe"].some(x=>n.includes(x));}
+  function v431IsCoreOverlap(ex){const n=v431ExerciseNorm(ex);return ["abdos","gainage","plank","crunch"].some(x=>n.includes(x));}
+  function v431PainFlags(profile={}){const n=BF_UTIL.normalize?.(profile.pain||"")||String(profile.pain||"").toLowerCase();return {lower:["genou","knee","cheville","ankle","adducteur","adductor"].some(x=>n.includes(x)),shoulder:["epaule","shoulder","coude","elbow","poignet","wrist"].some(x=>n.includes(x)),back:["dos","back"].some(x=>n.includes(x))};}
+  function v431AdaptGymSession(session,day,prefs,role,minutes,context={}){
+    const copy=v43Clone(session||{name:"Salle complémentaire",exercises:[]});
+    let list=copy.exercises||[];
+    const calisMain=day.activities.includes("calisthenics") && (day.primary==="calisthenics" || prefs.priority==="calisthenics");
+    const preserveLegs=day.activities.some(a=>["football","match"].includes(a)) || context.nextMatch || context.nextFootball || context.prevMatch;
+    if(preserveLegs) list=list.filter(e=>!["jambes","mollets","fessiers","quadriceps","ischios"].includes(BF_UTIL.normalize?.(e.muscle)||String(e.muscle||"").toLowerCase()));
+    if(calisMain){
+      const pullGoal=["pullups","muscleup","frontlever","backlever"].includes(prefs.calisGoal);
+      const pushGoal=prefs.calisGoal==="handstand";
+      const coreGoal=prefs.calisGoal==="lsit";
+      list=list.filter(e=>{
+        if(pullGoal && v431IsPullOverlap(e)) return false;
+        if(pushGoal && v431IsPushOverlap(e)) return false;
+        if(coreGoal && v431IsCoreOverlap(e)) return false;
+        return true;
+      });
+    }
+    const target=minutes<=20?2:minutes<=35?3:minutes<=50?4:6;
+    if(list.length<target){
+      const extra=(v27AllExercises?.()||[]).filter(e=>{
+        if(list.some(x=>x.name===e.name)) return false;
+        if(context.profile && typeof v27ExerciseAllowed==="function" && !v27ExerciseAllowed(e,context.profile)) return false;
+        if(preserveLegs && ["jambes","mollets","fessiers","quadriceps","ischios"].includes(BF_UTIL.normalize?.(e.muscle)||String(e.muscle||"").toLowerCase())) return false;
+        if(calisMain && ["pullups","muscleup","frontlever","backlever"].includes(prefs.calisGoal) && v431IsPullOverlap(e)) return false;
+        if(calisMain && prefs.calisGoal==="handstand" && v431IsPushOverlap(e)) return false;
+        if(calisMain && prefs.calisGoal==="lsit" && v431IsCoreOverlap(e)) return false;
+        return true;
+      });
+      for(const e of extra){if(list.length>=target) break;list.push(e);}
+    }
+    list=list.slice(0,target).map(e=>({...e,sets:Math.max(2,Math.min(Number(e.sets)||3,role==="main"?4:3)),note:`${e.note||e.desc||"Exécution propre."} ${role!=="main"?"Complément : garde 2 répétitions en réserve.":""}`,block:"Salle"}));
+    copy.activity="gym";copy.role=role;copy.duration=list.length?minutes:0;copy.exercises=list;
+    copy.name=role==="main"?copy.name:`Salle complémentaire — ${copy.name}`;
+    copy.reason=preserveLegs?"Jambes protégées à cause du football ou du match proche.":calisMain?"La salle complète la priorité calisthénie sans répéter le même travail.":"Séance adaptée à la semaine réelle.";
+    return copy;
+  }
+  function v431ContextForDay(days,index){
+    const get=offset=>days[(index+offset+7)%7]?.activities||[];
+    return {prev:get(-1),next:get(1),prevMatch:get(-1).includes("match"),nextMatch:get(1).includes("match"),nextFootball:get(1).includes("football"),prevFootball:get(-1).includes("football")};
+  }
+  function v431ChooseGymSession(pool,used,day,context,prefs){
+    const available=(pool||[]).map((s,i)=>({s,i}));
+    available.sort((a,b)=>{
+      const score=item=>{
+        let val=used.has(item.i)?-15:20;
+        const legs=v431SessionLegRatio(item.s);
+        if(context.nextMatch||context.nextFootball||day.activities.includes("football")||day.activities.includes("match")) val-=legs*180;
+        else val+=legs*15;
+        if(day.activities.includes("calisthenics") && (day.primary==="calisthenics"||prefs.priority==="calisthenics")) val-=v431SessionOverlap(item.s,prefs.calisGoal)*18;
+        return val;
+      };
+      return score(b)-score(a);
+    });
+    const chosen=available[0]||{s:pool?.[0]||{name:"Salle",exercises:[]},i:0};used.add(chosen.i);return chosen.s;
+  }
+  function v431RolesForDay(day,prefs){
+    const acts=day.activities||[];const primary=v431AutoPrimary(acts,prefs,day.primary);const roles={};
+    acts.forEach(a=>roles[a]=a===primary?"main":"secondary");
+    if(acts.includes("match")){roles.match="main";if(roles.gym) roles.gym="micro";if(roles.calisthenics) roles.calisthenics="micro";}
+    else if(acts.includes("football") && primary==="football"){
+      if(roles.gym) roles.gym=acts.includes("calisthenics")?"micro":"secondary";
+      if(roles.calisthenics) roles.calisthenics="micro";
+    }else if(acts.includes("football") && primary==="calisthenics"){
+      roles.calisthenics="main";if(roles.gym) roles.gym="micro";roles.football="secondary";
+    }
+    return {primary,roles};
+  }
+  function v431MinutesForDay(day,roles,prefs=v431LoadPrefs()){
+    const total=v43Clamp(day.availableMinutes||60,15,180);const out={};
+    const train=["gym","calisthenics"].filter(a=>day.activities.includes(a));
+    if(!train.length) return out;
+    const fixedPrimary=["football","match"].includes(day.primary);
+    if(train.length===1){
+      const a=train[0];
+      if(day.primary==="match") out[a]=Math.min(12,total);
+      else if(day.primary==="football") out[a]=Math.min(roles[a]==="micro"?15:35,total);
+      else out[a]=roles[a]==="micro"?Math.min(15,total):roles[a]==="secondary"?Math.min(40,total):total;
+      return out;
+    }
+    if(fixedPrimary){
+      const calisFirst=prefs.priority==="calisthenics";
+      out.calisthenics=Math.min(calisFirst?15:12,Math.max(8,Math.round(total*.25)));
+      out.gym=Math.min(calisFirst?25:30,Math.max(15,total-out.calisthenics));
+      if(day.primary==="match"){out.calisthenics=Math.min(out.calisthenics,8);out.gym=Math.min(out.gym,15);}
+      return out;
+    }
+    const main=train.find(a=>roles[a]==="main")||train[0];const other=train.find(a=>a!==main);
+    out[main]=Math.max(25,Math.round(total*.62));out[other]=Math.max(15,total-out[main]);
+    return out;
+  }
+  function v431CombineBlocks(day,blocks,prefs){
+    const blocksWithExercises=blocks.filter(b=>b && (b.exercises||[]).length);
+    if(!blocksWithExercises.length) return null;
+    const main=blocksWithExercises.find(b=>b.role==="main")||blocksWithExercises[0];
+    const duration=blocksWithExercises.reduce((sum,b)=>sum+(Number(b.duration)||0),0);
+    const exercises=blocksWithExercises.flatMap(b=>(b.exercises||[]).map(e=>({...e,block:b.activity==="calisthenics"?"Calisthénie":"Salle"})));
+    const names=blocksWithExercises.map(b=>b.name);
+    return {name:names.join(" + "),duration,exercises,blocks:blocksWithExercises,primary:main.activity,goal:prefs.calisGoal,reason:blocksWithExercises.map(b=>b.reason).join(" "),week:v42CycleWeek(),dayKey:day.key};
+  }
+  function v42TrainingFingerprint(){
+    const p=bf341CurrentProfile?.()||bf321CanonicalProfile?.()||{};const schedule=v411ResolvedWeeklySchedule?.(p)||{};const strategy=bf33GetStrategy?.()||{};const prefs=v431LoadPrefs();
+    return JSON.stringify({goal:p.goal,level:p.level,duration:p.duration,pain:p.pain,weight:p.weight,schedule,multiSchedule:p.multiSchedule||v43LoadSchedule?.(false)||null,strategy,prefs});
+  }
+  function v42BuildWeekAssignment(data){
+    const rich=v43ScheduleForProfile?.(data.profile)||v43LoadSchedule(true);const prefs=v431LoadPrefs();
+    const days=V43_DAY_KEYS.map((key,index)=>{const d=v43NormalizeDay(rich?.days?.[key]||{});return {key,label:V43_DAY_LABELS[key],index,type:data.schedule[key]||"rest",activities:d.activities,primary:v431AutoPrimary(d.activities,prefs,d.primary),availableMinutes:d.availableMinutes||data.profile?.duration||60,locked:d.locked};});
+    const used=new Set();const pool=data.weekSessions||[];
+    const assignment=days.map((day,index)=>{
+      const context=v431ContextForDay(days,index);const {primary,roles}=v431RolesForDay(day,prefs);day.primary=primary;const mins=v431MinutesForDay(day,roles,prefs);const blocks=[];
+      if(day.activities.includes("calisthenics")) blocks.push(v431CalisSession(day,prefs,roles.calisthenics||"secondary",mins.calisthenics||15,context,data.profile));
+      if(day.activities.includes("gym")){
+        const base=v431ChooseGymSession(pool,used,day,context,prefs);
+        blocks.push(v431AdaptGymSession(base,day,prefs,roles.gym||"secondary",mins.gym||30,{...context,profile:data.profile}));
+      }
+      const session=v431CombineBlocks(day,blocks,prefs);
+      return {...day,isGym:day.activities.includes("gym"),isCalis:day.activities.includes("calisthenics"),session,blocks,quality:v431DayQuality(day,context,session)};
+    });
+    return assignment;
+  }
+  function v431DayQuality(day,context,session){
+    if(day.activities.includes("match") && session?.exercises?.some(e=>["jambes","mollets","fessiers","quadriceps","ischios"].includes(BF_UTIL.normalize?.(e.muscle)||String(e.muscle||"").toLowerCase()))) return "À alléger";
+    if((context.nextMatch||context.nextFootball) && v431SessionLegRatio(session)>.25) return "Jambes à surveiller";
+    if(day.activities.includes("calisthenics") && day.primary==="calisthenics") return "Priorité calis respectée";
+    return session?"Cohérent avec la semaine":"Récupération / activité fixe";
+  }
+  function v42ExerciseHtml(ex,index){
+    const sets=ex.sets||3,reps=ex.reps||"8-12",rest=ex.rest||"1min30";
+    return `<div class="v42-exercise-row"><div class="v42-exercise-number">${index+1}</div><div>${ex.block?`<span class="v431-block-chip">${v39Escape?.(ex.block)||ex.block}</span>`:""}<strong>${v39Escape?.(ex.name)||ex.name||"Exercice"}</strong><small>${v39Escape?.(ex.note||ex.desc||"Exécution propre et contrôlée.")||"Exécution propre et contrôlée."}</small></div><div class="v42-exercise-prescription">${sets} × ${reps}<br><small>repos ${rest}</small></div></div>`;
+  }
+  function v431BlocksHtml(blocks=[]){return `<div class="v431-session-plan">${blocks.map(b=>`<div class="v431-session-block ${b.role}"><strong>${b.activity==="calisthenics"?"🤸":"🏋️"} ${v39Escape?.(b.name)||b.name}</strong><small>${b.duration} min · ${b.role==="main"?"séance principale":b.role==="micro"?"micro-bloc":"bloc secondaire"}<br>${v39Escape?.(b.reason)||b.reason}</small></div>`).join("")}</div>`;}
+  function v42RenderToday(data,assignment){
+    const todayIndex=v42TodayIndex(),today=assignment[todayIndex],copy=v42DayTypeCopy(today?.type||"rest");
+    const title=document.getElementById("v42TodayTitle"),subtitle=document.getElementById("v42TodaySubtitle"),status=document.getElementById("v42TodayStatus"),sessionName=document.getElementById("v42TodaySessionName"),reason=document.getElementById("v42TodaySessionReason"),preview=document.getElementById("v42TodaySessionPreview"),startBtn=document.getElementById("v42StartTodaySessionBtn"),weekTag=document.getElementById("v42CycleWeekTag");
+    const richLabel=today?.activities?.length?v43DayActivitiesLabel(today.activities):copy.title;const richGuidance=today?.activities?.length?v431DayReason(today,today.index,{days:Object.fromEntries(assignment.map(d=>[d.key,d]))},v431LoadPrefs()):copy.status;
+    if(title) title.textContent=`${today?.label||"Aujourd’hui"} — ${richLabel}`;if(subtitle) subtitle.textContent=richGuidance;if(weekTag) weekTag.textContent=`Semaine ${data.cycleWeek}/4`;
+    if(status){status.classList.toggle("v42-rest",!today?.session);status.innerHTML=`<strong>${richGuidance}</strong><br><span class="v431-day-quality">${today?.quality||"Semaine analysée"}</span>`;}
+    if(today?.session){
+      if(sessionName) sessionName.textContent=today.session.name||"Séance du jour";if(reason) reason.textContent=today.session.reason||"Séance adaptée à ta priorité et à la semaine.";
+      if(preview) preview.innerHTML=v431BlocksHtml(today.blocks)+`<div class="v42-session-list">${(today.session.exercises||[]).map(v42ExerciseHtml).join("")}</div>`;
+      if(startBtn){startBtn.hidden=false;startBtn.dataset.dayKey=today.key;startBtn.dataset.sessionIndex=String(today.sessionIndex??0);startBtn.textContent="Lancer ma séance guidée";}
+    }else{
+      if(sessionName) sessionName.textContent=today?.activities?.includes("mobility")?"Mobilité / récupération planifiée":"Aucune séance guidée aujourd’hui";
+      if(reason) reason.textContent="L’app respecte le planning et n’ajoute pas de volume inutile.";
+      if(preview) preview.innerHTML=today?.activities?.includes("mobility")?`<div class="v43-calis-preview"><div><strong>Mobilité douce</strong><small>10 à 20 min, sans douleur : chevilles, hanches, épaules et respiration.</small></div></div>`:"";
+      if(startBtn){startBtn.hidden=true;delete startBtn.dataset.sessionIndex;}
+    }
+    try{v31RenderLive?.();}catch(e){}
+  }
+  function v42RenderWeek(data,assignment){
+    const box=document.getElementById("v42WeekSchedule"),tag=document.getElementById("v42WeekCycleTag"),todayIndex=v42TodayIndex();if(tag) tag.textContent=`Semaine ${data.cycleWeek}/4`;if(!box) return;
+    box.innerHTML=assignment.map(day=>{const typeLabel=v43DayActivitiesLabel(day.activities||[]);const sessionText=day.session?`<strong>${v39Escape?.(day.session.name)||day.session.name}</strong><small>${day.session.duration||0} min · ${(day.session.exercises||[]).length} exercices · ${day.primary==="calisthenics"?"calisthénie prioritaire":day.primary==="gym"?"salle prioritaire":"priorité "+(V43_ACTIVITY_META[day.primary]?.short||day.primary)}</small><span class="v431-day-quality">${day.quality}</span>`:`<strong>${typeLabel}</strong><small>${day.activities?.includes("mobility")?"Mobilité / récupération":"Aucune séance complémentaire"}</small>`;return `<div class="v42-week-row ${day.index===todayIndex?"v42-today-row":""}"><div class="v42-week-day"><strong>${day.label}</strong><small>${day.index===todayIndex?"Aujourd’hui":""}</small></div><div class="v42-week-session">${sessionText}</div><span class="v42-day-badge">${typeLabel}</span></div>`;}).join("");
+  }
+  function v42RenderAll(force=false){
+    const data=v42EnsureTrainingAuto(force);const assignment=v42BuildWeekAssignment(data);const guided=assignment.filter(d=>d.session).map((d,i)=>{d.sessionIndex=i;d.session.dayLabel=d.label;return d.session;});
+    localStorage.setItem(window.V30_SESSIONS_KEY||"bf_v30_generated_sessions",JSON.stringify(guided));localStorage.setItem(BF431_ASSIGNMENT_KEY,JSON.stringify(assignment));
+    v42RenderToday(data,assignment);v42RenderWeek(data,assignment);v42RenderProgress();try{v31PopulateSessions?.();}catch(e){}return {data,assignment};
+  }
+  function v42StartTodaySession(){
+    try{const {assignment}=v42RenderAll(false);const today=assignment[v42TodayIndex()];if(!today?.session){alert("Aucune séance guidée n’est prévue aujourd’hui.");return;}v31PopulateSessions?.();const select=document.getElementById("v31LiveSessionSelect");if(select) select.value=String(today.sessionIndex||0);v31StartLive?.();setTimeout(()=>{try{v42ShowTrainingSection("today");v42RenderAll(false);}catch(e){}},0);}catch(e){console.error("V43.1 lancement séance",e);alert("Impossible de lancer la séance du jour.");}
+  }
+  function v43SavePlanning(){
+    try{
+      const prefs=v43ReadIdealPrefs();localStorage.setItem(BF43_IDEAL_PREFS_KEY,JSON.stringify(prefs));localStorage.setItem(BF431_ENGINE_PREFS_KEY,JSON.stringify(prefs));
+      const schedule=v43SaveSchedule(v43ReadScheduleEditor());const legacy=v43SyncLegacyForm(schedule);const base=readProfileForm?.()||getProfile?.()||{};const profile={...base,gymDays:v43ActivityCount(schedule,"gym"),weeklySchedule:legacy,multiSchedule:schedule,trainingPriority:prefs.priority,calisGoal:prefs.calisGoal,calisLevel:prefs.calisLevel};BF_STORE?.set?.(PROFILE_KEY,profile);
+      try{bf321SyncProfileEverywhere?.(profile,{clearGenerated:true});}catch(e){console.warn("V43.1 sync",e);}try{v41RenderAll?.(true);}catch(e){console.warn("V43.1 nutrition",e);}try{v42RenderAll?.(true);}catch(e){console.warn("V43.1 training",e);}v43RenderAthleteProgress();v43SetPlanningStatus(`Planning sauvegardé. ${v431PriorityCopy(prefs)}`,"ok");
+    }catch(e){console.error("V43.1 save planning",e);v43SetPlanningStatus("Impossible de sauvegarder le planning multi-activités.","err");}
+  }
+  function v431Diagnostic(){
+    const results=[];
+    const oldEngine=localStorage.getItem(BF431_ENGINE_PREFS_KEY),oldIdeal=localStorage.getItem(BF43_IDEAL_PREFS_KEY);
+    try{
+      const ids=["v431TrainingPriority","v431CalisGoal","v431CalisLevel","v431PriorityNote"];const missing=ids.filter(id=>!document.getElementById(id));results.push(bf322Result("V43.1 préférences de priorité",missing.length===0,missing.length?`Manquants : ${missing.join(", ")}`:"Priorité, objectif et niveau calisthénie sont configurables."));
+      const prefs={...v431LoadPrefs(),priority:"calisthenics",calisGoal:"pullups",calisLevel:"foundations"};localStorage.setItem(BF431_ENGINE_PREFS_KEY,JSON.stringify(prefs));localStorage.setItem(BF43_IDEAL_PREFS_KEY,JSON.stringify(prefs));
+      const schedule=v43EmptyMultiSchedule();schedule.days.monday=v43NormalizeDay({activities:["gym","calisthenics"],primary:"calisthenics",availableMinutes:60});schedule.days.tuesday=v43NormalizeDay({activities:["football"]});schedule.days.sunday=v43NormalizeDay({activities:["match"]});const profile={...(v42EffectiveProfile?.()||{}),multiSchedule:schedule};const base=v27GenerateSessions?.({profile,noSave:true})||[];const data={profile,schedule:v43LegacySchedule(schedule),weekSessions:v42BuildWeekSessions(base,profile,1),cycleWeek:1};const assignment=v42BuildWeekAssignment(data);const monday=assignment[0];
+      results.push(bf322Result("V43.1 priorité calisthénie respectée",monday.primary==="calisthenics"&&monday.blocks?.find(b=>b.activity==="calisthenics")?.role==="main",`${monday.session?.name||"Aucune séance"} · ${monday.session?.duration||0} min.`));
+      const duplicatePull=monday.blocks?.find(b=>b.activity==="gym")?.exercises?.some(v431IsPullOverlap);results.push(bf322Result("V43.1 salle sans doublon avec objectif tirage",!duplicatePull,"La salle complémentaire évite tirages, rowing et curls lorsque les tractions sont prioritaires."));
+      const footSchedule=v43EmptyMultiSchedule();footSchedule.days.friday=v43NormalizeDay({activities:["football","gym","calisthenics"],primary:"football",availableMinutes:50});const footProfile={...profile,multiSchedule:footSchedule};const footBase=v27GenerateSessions?.({profile:footProfile,noSave:true})||[];const footData={profile:footProfile,schedule:v43LegacySchedule(footSchedule),weekSessions:v42BuildWeekSessions(footBase,footProfile,1),cycleWeek:1};const friday=v42BuildWeekAssignment(footData)[4];const safe=friday.blocks?.every(b=>b.role!=="main" || b.activity!=="gym") && (friday.session?.duration||0)<=50;results.push(bf322Result("V43.1 triple journée plafonnée",safe,`${friday.session?.name||"Aucune"} · ${friday.session?.duration||0} min complémentaires.`));
+    }catch(e){results.push(bf322Result("Diagnostic V43.1 moteur intelligent",false,String(e)));}
+    finally{
+      if(oldEngine===null) localStorage.removeItem(BF431_ENGINE_PREFS_KEY); else localStorage.setItem(BF431_ENGINE_PREFS_KEY,oldEngine);
+      if(oldIdeal===null) localStorage.removeItem(BF43_IDEAL_PREFS_KEY); else localStorage.setItem(BF43_IDEAL_PREFS_KEY,oldIdeal);
+    }
+    return results;
+  }
+  function v42TrainingAutoDiagnostic(){
+    const results=[];try{const data=v42EnsureTrainingAuto(false),assignment=v42BuildWeekAssignment(data),guided=assignment.filter(d=>d.session);results.push(bf322Result("V43.1 planning → séances guidées",guided.every(d=>Array.isArray(d.session.exercises)&&d.session.exercises.length>0),`${guided.length} journées guidées générées.`));results.push(bf322Result("V43.1 durées journalières respectées",guided.every(d=>(d.session.duration||0)<=Math.max(d.availableMinutes||60,15)),guided.map(d=>`${d.label} ${d.session.duration}/${d.availableMinutes} min`).join(" · ")));results.push(bf322Result("V43.1 matchs protégés",assignment.filter(d=>d.activities.includes("match")).every(d=>!d.session || v431SessionLegRatio(d.session)===0),"Aucune jambe lourde ajoutée le jour du match."));results.push(...v431Diagnostic());}catch(e){results.push(bf322Result("Diagnostic V43.1 Entraînement",false,String(e)));}return results;
+  }
+  function v43Bind(){
+    if(window.__v43_bound){v43FillIdealPrefs();v43RenderAthleteProgress();return;}window.__v43_bound=true;const schedule=v43LoadSchedule(true);v43RenderDayEditor(schedule);v43FillIdealPrefs();v43SyncLegacyForm(schedule);v43RenderAthleteProgress();document.getElementById("v43DayEditor")?.addEventListener("change",v43HandleEditorChange);document.querySelectorAll("#v43PlanningModeTabs [data-v43-mode]").forEach(btn=>btn.addEventListener("click",()=>v43SetPlanningMode(btn.dataset.v43Mode)));document.getElementById("v43SuggestWeekBtn")?.addEventListener("click",()=>{v43SetPlanningMode("ideal");v43SuggestWeek();});document.getElementById("v43ApplySuggestionBtn")?.addEventListener("click",v43ApplySuggestion);document.getElementById("v43SavePlanningBtn")?.addEventListener("click",v43SavePlanning);["v431TrainingPriority","v431CalisGoal","v431CalisLevel"].forEach(id=>document.getElementById(id)?.addEventListener("change",v431RenderPriorityNote));
+  }
+  /* END V43.1 */
 
 
   function bf324BindEverything(){
@@ -13544,7 +13987,7 @@ if(q.includes("nutrition")||q.includes("manger")||q.includes("whey")||q.includes
         renderQuestions();
     updateToday();
     BF_TIMER.update();
-    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=43-0").catch(()=>{}));
+    if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=43-1").catch(()=>{}));
   }
   window.BF_APP={showView,generateCustom,addMessage,botMessage};
   

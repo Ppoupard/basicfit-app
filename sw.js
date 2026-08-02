@@ -1,5 +1,6 @@
-const CACHE_NAME = 'basicfit-coach-v43-0-athlete-foundation';
+const CACHE_NAME = 'basicfit-coach-v43-1-priority-engine';
 const ASSETS = [
+  './index.html',
   './manifest.webmanifest',
   './icons/icon-180.png',
   './icons/icon-192.png',
@@ -55,7 +56,7 @@ self.addEventListener('notificationclick', event => {
   event.waitUntil(
     clients.matchAll({type:'window', includeUncontrolled:true}).then(list => {
       for (const client of list) if ('focus' in client) return client.focus();
-      if (clients.openWindow) return clients.openWindow('./index.html?v=43-0');
+      if (clients.openWindow) return clients.openWindow('./index.html?v=43-1');
     })
   );
 });
